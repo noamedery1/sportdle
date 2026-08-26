@@ -37,6 +37,7 @@ const SHEET_EVENTS   = 'events';
 const SHEET_DAILY    = 'daily';
 const SHEET_FIXES    = 'fixes';
 const SHEET_FEEDBACK  = 'feedback';
+const SHEET_TOTALS   = 'totals';
 
 /* רשימות סגורות. שינוי מועדון או עמדה מחייב שינוי כאן — במכוון. */
 const CLUBS  = ['beitar', 'hapoel-bs', 'hapoel-ta', 'maccabi-haifa', 'maccabi-ta'];
@@ -197,42 +198,69 @@ function handleAck_(d) {
   return json_({ ok: true, marked: n });
 }
 
-/* ---------- סטטיסטיקה — כמו קודם ---------- */
+/* ---------- סטטיסטיקה ----------
+   עמודת המועדון נוספה **בסוף**, ולא באמצע, כדי שכל השורות שנרשמו
+   עד היום ישמרו על המשמעות שלהן. שורה בלי מועדון היא מביתרדל הישן,
+   שהוא הלקוח היחיד שאינו שולח את השדה — ולכן ברירת המחדל היא בית"ר
+   ולא ריק. */
+function clubOf_(d) {
+  var c = str_(d.club, 20);
+  return CLUBS.indexOf(c) === -1 ? 'beitar' : c;
+}
+
 function handleEvent_(d) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_EVENTS);
   if (!sh) {
     sh = ss.insertSheet(SHEET_EVENTS);
-    sh.appendRow(['זמן', 'סוג', 'חידה', 'ניחושים', 'פוצח']);
+    sh.appendRow(['זמן', 'סוג', 'חידה', 'ניחושים', 'פוצח', 'מועדון']);
     sh.setFrozenRows(1);
+  } else if (sh.getLastColumn() < 6) {
+    sh.getRange(1, 6).setValue('מועדון');
   }
   sh.appendRow([
     new Date(),
     str_(d.type, 20),
     str_(d.puzzle, 60),
     Number(d.guesses) || '',
-    d.won === true ? 'כן' : (d.won === false ? 'לא' : '')
+    d.won === true ? 'כן' : (d.won === false ? 'לא' : ''),
+    clubOf_(d)
   ]);
   rollup_(ss, d);
   return json_({ ok: true });
 }
 
-/** סיכום יומי מתגלגל — כדי שלא תצטרך לחשב ידנית */
+/** סיכום יומי מתגלגל — כדי שלא תצטרך לחשב ידנית.
+    המפתח הוא **מועדון + חידה**, לא חידה לבדה. חמשת המועדונים סופרים
+    חידות מאותו מספר, ולכן חידה 12 של חיפה וחידה 12 של בית"ר היו
+    נבלעות באותה שורה — כל הסטטיסטיקה של ארבעה מועדונים הייתה
+    מתערבבת עם זו של החמישי.
+
+    עמודה 7 היא סכום הניחושים המצטבר (ממנו נגזר הממוצע), ועמודה 8
+    היא המועדון. שתיהן בסוף כדי לא להזיז את מה שכבר רשום, ושורה
+    היסטורית בלי מועדון נחשבת לבית"ר — כי זה מה שהיא. */
 function rollup_(ss, d) {
   if (!d.puzzle) return;
+  var club = clubOf_(d);
   var sh = ss.getSheetByName(SHEET_DAILY);
   if (!sh) {
     sh = ss.insertSheet(SHEET_DAILY);
-    sh.appendRow(['חידה', 'נכנסו', 'סיימו', 'פיצחו', 'אחוז הצלחה', 'ממוצע ניחושים']);
+    sh.appendRow(['חידה', 'נכנסו', 'סיימו', 'פיצחו', 'אחוז הצלחה',
+                  'ממוצע ניחושים', 'סכום ניחושים', 'מועדון']);
     sh.setFrozenRows(1);
+  } else if (sh.getLastColumn() < 8) {
+    sh.getRange(1, 7, 1, 2).setValues([['סכום ניחושים', 'מועדון']]);
   }
 
   var data = sh.getDataRange().getValues();
   var row = -1;
-  for (var i = 1; i < data.length; i++) if (data[i][0] == d.puzzle) { row = i + 1; break; }
+  for (var i = 1; i < data.length; i++)
+    if (data[i][0] == d.puzzle && String(data[i][7] || 'beitar') === club) { row = i + 1; break; }
   if (row === -1) {
-    sh.appendRow([d.puzzle, 0, 0, 0, '', '']);
+    sh.appendRow([d.puzzle, 0, 0, 0, '', '', 0, club]);
     row = sh.getLastRow();
+  } else if (!data[row - 1][7]) {
+    sh.getRange(row, 8).setValue(club);       // השלמה לשורה היסטורית
   }
 
   var cur = sh.getRange(row, 1, 1, 6).getValues()[0];
@@ -253,6 +281,101 @@ function rollup_(ss, d) {
     done ? Math.round(wins / done * 100) + '%' : '',
     wins ? (sum / wins).toFixed(1) : ''
   ]]);
+}
+
+/* ============================================================
+   ניקוי שבועי של events
+   ------------------------------------------------------------
+   גיליון events גדל בשורה לכל צפייה. הוא לא נחוץ לטווח ארוך: כל מה
+   שרוצים ממנו כבר מסוכם ב-daily (לפי חידה) וב-totals (מצטבר לתמיד).
+   הניקוי סוכם קודם לתוך totals, ורק אחר כך מוחק — ובאותו סדר, כדי
+   שנפילה באמצע תשאיר את הנתונים ולא תמחק אותם בלי לספור.
+
+   התקנה, פעם אחת: לבחור בעורך את הפונקציה installWeeklyPurge
+   וללחוץ Run. היא מתקינה טריגר לכל יום ראשון ב-04:00.
+
+   שם הפונקציה בלי קו תחתון בסוף — פונקציה שנגמרת בקו תחתון היא
+   פרטית ב-Apps Script, ואי אפשר לבחור אותה כיעד של טריגר.
+   ============================================================ */
+function purgeEvents() {
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(30000)) { console.log('הניקוי דילג — נעול'); return; }
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var ev = ss.getSheetByName(SHEET_EVENTS);
+    if (!ev) { console.log('אין גיליון events'); return; }
+
+    var last = ev.getLastRow();
+    if (last < 2) { console.log('events ריק'); return; }
+
+    var cols = Math.max(ev.getLastColumn(), 6);
+    var v = ev.getRange(2, 1, last - 1, cols).getValues();
+
+    /* צבירה לפי מועדון */
+    var agg = {};
+    for (var i = 0; i < v.length; i++) {
+      var club = CLUBS.indexOf(String(v[i][5])) === -1 ? 'beitar' : String(v[i][5]);
+      var a = agg[club] || (agg[club] = { views: 0, done: 0, wins: 0, sum: 0 });
+      var type = String(v[i][1]);
+      if (type === 'view') a.views++;
+      else if (type === 'done') {
+        a.done++;
+        if (String(v[i][4]) === 'כן') { a.wins++; a.sum += Number(v[i][3]) || 0; }
+      }
+    }
+
+    /* מיזוג ל-totals — מצטבר, לא מוחלף */
+    var tot = ss.getSheetByName(SHEET_TOTALS);
+    if (!tot) {
+      tot = ss.insertSheet(SHEET_TOTALS);
+      tot.appendRow(['מועדון', 'נכנסו', 'סיימו', 'פיצחו',
+                     'אחוז הצלחה', 'ממוצע ניחושים', 'סכום ניחושים', 'נוקה לאחרונה']);
+      tot.setFrozenRows(1);
+    }
+    var td = tot.getDataRange().getValues();
+    var now = new Date();
+
+    for (var club2 in agg) {
+      var a2 = agg[club2], r = -1;
+      for (var j = 1; j < td.length; j++) if (String(td[j][0]) === club2) { r = j + 1; break; }
+      if (r === -1) { tot.appendRow([club2, 0, 0, 0, '', '', 0, '']); r = tot.getLastRow(); }
+
+      var cur = tot.getRange(r, 1, 1, 8).getValues()[0];
+      var views = (Number(cur[1]) || 0) + a2.views;
+      var done  = (Number(cur[2]) || 0) + a2.done;
+      var wins  = (Number(cur[3]) || 0) + a2.wins;
+      var sum   = (Number(cur[6]) || 0) + a2.sum;
+
+      tot.getRange(r, 2, 1, 7).setValues([[
+        views, done, wins,
+        done ? Math.round(wins / done * 100) + '%' : '',
+        wins ? (sum / wins).toFixed(1) : '',
+        sum, now
+      ]]);
+    }
+
+    /* מוחקים בדיוק את השורות שנקראו. שורה שנרשמה בין הקריאה למחיקה
+       יושבת אחרי last, עולה מקום, ותיספר בניקוי הבא. */
+    ev.deleteRows(2, last - 1);
+    console.log('נוקו ' + (last - 1) + ' שורות; totals עודכן ל-' +
+                Object.keys(agg).length + ' מועדונים');
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/** להריץ פעם אחת מהעורך. מחליף טריגר קיים ולא מוסיף עליו. */
+function installWeeklyPurge() {
+  var all = ScriptApp.getProjectTriggers();
+  for (var i = 0; i < all.length; i++)
+    if (all[i].getHandlerFunction() === 'purgeEvents') ScriptApp.deleteTrigger(all[i]);
+
+  ScriptApp.newTrigger('purgeEvents')
+    .timeBased().onWeekDay(ScriptApp.WeekDay.SUNDAY).atHour(4).create();
+
+  var msg = 'הותקן טריגר: ניקוי events כל יום ראשון ב-04:00';
+  console.log(msg);
+  return msg;
 }
 
 /* ============================================================
