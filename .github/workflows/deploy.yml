@@ -40,11 +40,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: מקור
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: src-repo
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "20"
 
@@ -68,7 +68,7 @@ jobs:
 
       - name: מאגר הפריסה
         if: steps.secrets.outputs.ready == 'yes'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: ${{ env.DEPLOY_REPO }}
           token: ${{ secrets.DEPLOY_TOKEN }}
