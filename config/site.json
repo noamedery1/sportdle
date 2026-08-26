@@ -9,7 +9,7 @@
   "ogImage": "https://sportdle.up.railway.app/sportdle/og.png",
   "shareStyle": "safe",
   "shuffleSeed": 20260825,
-  "analyticsUrl": "",
+  "analyticsUrl": "https://script.google.com/macros/s/AKfycbzE5Zr3VV92MPq_xQ9uU4N1uWdBxnP28be4MIFuhF_-qtAyIsDERHfmAb7gHuEuehUV/exec",
 
   "_firebase": [
     "פרויקט אחד לכל המועדונים. ההפרדה היא בנתיב: rooms/<slug>/<code>.",
