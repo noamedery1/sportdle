@@ -1,0 +1,8064 @@
+{
+ "club": "maccabi-haifa",
+ "source": "worldfootball",
+ "team": "te1254/maccabi-haifa",
+ "range": [
+  1969,
+  2025
+ ],
+ "stoppedAt": null,
+ "seasons": {
+  "1970": [
+   {
+    "name": "Moti Lubetski",
+    "pos": "DF",
+    "pid": "moti-lubetski",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Dani Rom",
+    "pos": "FW",
+    "pid": "dani-rom",
+    "nat": "Israel",
+    "born": 1940
+   }
+  ],
+  "1971": [
+   {
+    "name": "Moti Lubetski",
+    "pos": "DF",
+    "pid": "moti-lubetski",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Dani Rom",
+    "pos": "FW",
+    "pid": "dani-rom",
+    "nat": "Israel",
+    "born": 1940
+   }
+  ],
+  "1972": [
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Dani Rom",
+    "pos": "FW",
+    "pid": "dani-rom",
+    "nat": "Israel",
+    "born": 1940
+   }
+  ],
+  "1973": [
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Dani Rom",
+    "pos": "FW",
+    "pid": "dani-rom",
+    "nat": "Israel",
+    "born": 1940
+   }
+  ],
+  "1974": [
+   {
+    "name": "Imanuel Schwartz",
+    "pos": "GK",
+    "pid": "imanuel-schwartz",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Mordechai Berger",
+    "pos": "DF",
+    "pid": "mordechai-berger",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Yehoshua Gal",
+    "pos": "FW",
+    "pid": "yehoshua-gal",
+    "nat": "Israel",
+    "born": 1951
+   }
+  ],
+  "1975": [
+   {
+    "name": "Imanuel Schwartz",
+    "pos": "GK",
+    "pid": "imanuel-schwartz",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Yehoshua Gal",
+    "pos": "FW",
+    "pid": "yehoshua-gal",
+    "nat": "Israel",
+    "born": 1951
+   }
+  ],
+  "1976": [
+   {
+    "name": "Imanuel Schwartz",
+    "pos": "GK",
+    "pid": "imanuel-schwartz",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Jeshaayahu Schwager",
+    "pos": "DF",
+    "pid": "jeshaayahu-schwager",
+    "nat": "Israel",
+    "born": 1946
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   }
+  ],
+  "1977": [
+   {
+    "name": "Imanuel Schwartz",
+    "pos": "GK",
+    "pid": "imanuel-schwartz",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   }
+  ],
+  "1978": [
+   {
+    "name": "Imanuel Schwartz",
+    "pos": "GK",
+    "pid": "imanuel-schwartz",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Yohanan Vollach",
+    "pos": "DF",
+    "pid": "yohanan-vollach",
+    "nat": "Israel",
+    "born": 1944
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   }
+  ],
+  "1979": [
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Yohanan Vollach",
+    "pos": "DF",
+    "pid": "yohanan-vollach",
+    "nat": "Israel",
+    "born": 1944
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   }
+  ],
+  "1980": [
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   }
+  ],
+  "1981": [
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1982": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1983": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Elisha Levy",
+    "pos": "MF",
+    "pid": "elisha-levy",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1984": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1985": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Yaron Parselani",
+    "pos": "DF",
+    "pid": "yaron-parselani",
+    "nat": "Israel",
+    "born": 1959
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1986": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Ronny Rosenthal",
+    "pos": "FW",
+    "pid": "ronny-rosenthal",
+    "nat": "Israel",
+    "born": 1963
+   }
+  ],
+  "1987": [
+   {
+    "name": "Avi Ran",
+    "pos": "GK",
+    "pid": "avi-ran",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Eli Cohen",
+    "pos": "DF",
+    "pid": "eli-cohen",
+    "nat": "Israel",
+    "born": 1961
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Daniel Brailovsky",
+    "pos": "MF",
+    "pid": "daniel-brailovsky",
+    "nat": "Israel",
+    "born": 1958
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Baruch Maman",
+    "pos": "MF",
+    "pid": "baruch-maman",
+    "nat": "Israel",
+    "born": 1955
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1988": [
+   {
+    "name": "Boni Ginzburg",
+    "pos": "GK",
+    "pid": "boni-ginzburg",
+    "nat": "Israel",
+    "born": 1964
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Rafi Osmo",
+    "pos": "DF",
+    "pid": "rafi-osmo",
+    "nat": "Israel",
+    "born": 1963
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Daniel Brailovsky",
+    "pos": "MF",
+    "pid": "daniel-brailovsky",
+    "nat": "Israel",
+    "born": 1958
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1989": [
+   {
+    "name": "Giora Antman",
+    "pos": "GK",
+    "pid": "giora-antman",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Zahi Armeli",
+    "pos": "FW",
+    "pid": "zahi-armeli",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1990": [
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Zion Marili",
+    "pos": "DF",
+    "pid": "zion-marili",
+    "nat": "Israel",
+    "born": 1957
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Tal Banin",
+    "pos": "MF",
+    "pid": "tal-banin",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Nir Klinger",
+    "pos": "MF",
+    "pid": "nir-klinger",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Moshe Selecter",
+    "pos": "MF",
+    "pid": "moshe-selecter",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Eric Groeleken",
+    "pos": "FW",
+    "pid": "eric-groeleken",
+    "nat": "Netherlands",
+    "born": 1966
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1991": [
+   {
+    "name": "Viktor Chanov",
+    "pos": "GK",
+    "pid": "viktor-chanov",
+    "nat": "Ukraine",
+    "born": 1959
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Vladimir Bezsonov",
+    "pos": "DF",
+    "pid": "vladimir-bezsonov",
+    "nat": "Ukraine",
+    "born": 1958
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Tal Banin",
+    "pos": "MF",
+    "pid": "tal-banin",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Moshe Eisenberg",
+    "pos": "FW",
+    "pid": "moshe-eisenberg",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1992": [
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Tal Banin",
+    "pos": "MF",
+    "pid": "tal-banin",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1993": [
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Alon Hazan",
+    "pos": "MF",
+    "pid": "alon-hazan",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Ivan Getsko",
+    "pos": "FW",
+    "pid": "ivan-getsko",
+    "nat": "Ukraine",
+    "born": 1968
+   },
+   {
+    "name": "Ofer Mizrahi",
+    "pos": "FW",
+    "pid": "ofer-mizrahi",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Itay Mordechai",
+    "pos": "FW",
+    "pid": "itay-mordechai",
+    "nat": "Israel",
+    "born": 1967
+   }
+  ],
+  "1994": [
+   {
+    "name": "Rafi Cohen",
+    "pos": "GK",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Eitan Aharoni",
+    "pos": "DF",
+    "pid": "eitan-aharoni",
+    "nat": "Israel",
+    "born": 1962
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Moshe Glam",
+    "pos": "DF",
+    "pid": "moshe-glam",
+    "nat": "Israel",
+    "born": 1968
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Roman Pets",
+    "pos": "DF",
+    "pid": "roman-pets",
+    "nat": "Ukraine",
+    "born": 1969
+   },
+   {
+    "name": "Daniel Zabar",
+    "pos": "DF",
+    "pid": "daniel-zabar",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Alon Hazan",
+    "pos": "MF",
+    "pid": "alon-hazan",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Serhiy Kandaurov",
+    "pos": "MF",
+    "pid": "serhiy-kandaurov",
+    "nat": "Ukraine",
+    "born": 1971
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Lior Rosenthal",
+    "pos": "MF",
+    "pid": "lior-rosenthal",
+    "nat": "Israel",
+    "born": 1965
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Ivan Getsko",
+    "pos": "FW",
+    "pid": "ivan-getsko",
+    "nat": "Ukraine",
+    "born": 1968
+   },
+   {
+    "name": "Shay Holtzman",
+    "pos": "FW",
+    "pid": "shay-holtzman",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Alon Mizrahi",
+    "pos": "FW",
+    "pid": "alon-mizrahi",
+    "nat": "Israel",
+    "born": 1971
+   }
+  ],
+  "1995": [
+   {
+    "name": "Rafi Cohen",
+    "pos": "GK",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Sagi Strauss",
+    "pos": "GK",
+    "pid": "sagi-strauss",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Najwan Ghrayib",
+    "pos": "DF",
+    "pid": "najwan-ghrayib",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Moshe Glam",
+    "pos": "DF",
+    "pid": "moshe-glam",
+    "nat": "Israel",
+    "born": 1968
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Roman Pets",
+    "pos": "DF",
+    "pid": "roman-pets",
+    "nat": "Ukraine",
+    "born": 1969
+   },
+   {
+    "name": "Daniel Zabar",
+    "pos": "DF",
+    "pid": "daniel-zabar",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Avraham Abukarat",
+    "pos": "MF",
+    "pid": "avraham-abukarat",
+    "nat": "Israel",
+    "born": 1960
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Alon Hazan",
+    "pos": "MF",
+    "pid": "alon-hazan",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Serhiy Kandaurov",
+    "pos": "MF",
+    "pid": "serhiy-kandaurov",
+    "nat": "Ukraine",
+    "born": 1971
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Haim Revivo",
+    "pos": "MF",
+    "pid": "haim-revivo",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Shlomi Amar",
+    "pos": "FW",
+    "pid": "shlomi-amar",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ivan Getsko",
+    "pos": "FW",
+    "pid": "ivan-getsko",
+    "nat": "Ukraine",
+    "born": 1968
+   },
+   {
+    "name": "Ofer Shitrit",
+    "pos": "FW",
+    "pid": "ofer-shitrit",
+    "nat": "Israel",
+    "born": 1970
+   }
+  ],
+  "1996": [
+   {
+    "name": "Rafi Cohen",
+    "pos": "GK",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Edgardo Adinolfi",
+    "pos": "DF",
+    "pid": "edgardo-adinolfi",
+    "nat": "Uruguay",
+    "born": 1974
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Golan Deree",
+    "pos": "DF",
+    "pid": "golan-deree",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Kobi Ganon",
+    "pos": "DF",
+    "pid": "kobi-ganon",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Moshe Glam",
+    "pos": "DF",
+    "pid": "moshe-glam",
+    "nat": "Israel",
+    "born": 1968
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Jaroslav Kentoš",
+    "pos": "DF",
+    "pid": "jaroslav-kentos",
+    "nat": "Slovakia",
+    "born": 1974
+   },
+   {
+    "name": "Eyal Berkovic",
+    "pos": "MF",
+    "pid": "eyal-berkovic",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Alon Hazan",
+    "pos": "MF",
+    "pid": "alon-hazan",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Serhiy Kandaurov",
+    "pos": "MF",
+    "pid": "serhiy-kandaurov",
+    "nat": "Ukraine",
+    "born": 1971
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Haim Revivo",
+    "pos": "MF",
+    "pid": "haim-revivo",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Ofer Shitrit",
+    "pos": "FW",
+    "pid": "ofer-shitrit",
+    "nat": "Israel",
+    "born": 1970
+   }
+  ],
+  "1997": [
+   {
+    "name": "Dudu Aouate",
+    "pos": "GK",
+    "pid": "dudu-aouate",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Ronen Dahan",
+    "pos": "GK",
+    "pid": "ronen-dahan",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Boni Ginzburg",
+    "pos": "GK",
+    "pid": "boni-ginzburg",
+    "nat": "Israel",
+    "born": 1964
+   },
+   {
+    "name": "Serhiy Balanchuk",
+    "pos": "DF",
+    "pid": "serhiy-balanchuk",
+    "nat": "Ukraine",
+    "born": 1975
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Oshri Cohen",
+    "pos": "DF",
+    "pid": "oshri-cohen",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Golan Deree",
+    "pos": "DF",
+    "pid": "golan-deree",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Kobi Ganon",
+    "pos": "DF",
+    "pid": "kobi-ganon",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Moshe Glam",
+    "pos": "DF",
+    "pid": "moshe-glam",
+    "nat": "Israel",
+    "born": 1968
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Moti Kol Tov",
+    "pos": "DF",
+    "pid": "moti-kol-tov",
+    "nat": "Israel",
+    "born": 1978
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "DF",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Michael Tsitsiashvili",
+    "pos": "DF",
+    "pid": "michael-tsitsiashvili",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Daniel Zabar",
+    "pos": "DF",
+    "pid": "daniel-zabar",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Ami Asulin",
+    "pos": "MF",
+    "pid": "ami-asulin",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Roberto Garcia",
+    "pos": "MF",
+    "pid": "roberto-garcia",
+    "nat": "Argentina",
+    "born": 1969
+   },
+   {
+    "name": "Beni Hadad",
+    "pos": "MF",
+    "pid": "beni-hadad",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Aiman Halahla",
+    "pos": "MF",
+    "pid": "aiman-halahla",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Serhiy Kandaurov",
+    "pos": "MF",
+    "pid": "serhiy-kandaurov",
+    "nat": "Ukraine",
+    "born": 1971
+   },
+   {
+    "name": "Ofir Kopel",
+    "pos": "MF",
+    "pid": "ofir-kopel",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Eliaz Levy",
+    "pos": "MF",
+    "pid": "eliaz-levy",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Zohar Meir",
+    "pos": "MF",
+    "pid": "zohar-meir",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Idan Shum",
+    "pos": "MF",
+    "pid": "idan-shum",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Shachar Simantov",
+    "pos": "MF",
+    "pid": "shachar-simantov",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Ragid Baransi",
+    "pos": "FW",
+    "pid": "ragid-baransi",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Sabo Barić",
+    "pos": "FW",
+    "pid": "sabo-baric",
+    "nat": "Croatia",
+    "born": null
+   },
+   {
+    "name": "David Ben Shushan",
+    "pos": "FW",
+    "pid": "david-ben-shushan",
+    "nat": "Israel",
+    "born": 1978
+   },
+   {
+    "name": "Vasyl Novokhatskiy",
+    "pos": "FW",
+    "pid": "vasyl-novokhatskiy",
+    "nat": "Ukraine",
+    "born": 1967
+   },
+   {
+    "name": "Hezi Shirazi",
+    "pos": "FW",
+    "pid": "hezi-shirazi",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Amir Turgeman",
+    "pos": "FW",
+    "pid": "amir-turgeman",
+    "nat": "Israel",
+    "born": 1972
+   }
+  ],
+  "1998": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Boni Ginzburg",
+    "pos": "GK",
+    "pid": "boni-ginzburg",
+    "nat": "Israel",
+    "born": 1964
+   },
+   {
+    "name": "Serhiy Balanchuk",
+    "pos": "DF",
+    "pid": "serhiy-balanchuk",
+    "nat": "Ukraine",
+    "born": 1975
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Golan Deree",
+    "pos": "DF",
+    "pid": "golan-deree",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "DF",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Michael Tsitsiashvili",
+    "pos": "DF",
+    "pid": "michael-tsitsiashvili",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Savo Barać",
+    "pos": "MF",
+    "pid": "savo-barac",
+    "nat": "Montenegro",
+    "born": 1970
+   },
+   {
+    "name": "Ibrahim Duro",
+    "pos": "MF",
+    "pid": "ibrahim-duro",
+    "nat": "Bosnia-Herzegovina",
+    "born": 1970
+   },
+   {
+    "name": "Assi Kalman",
+    "pos": "MF",
+    "pid": "assi-kalman",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ofir Kopel",
+    "pos": "MF",
+    "pid": "ofir-kopel",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Ronny Levy",
+    "pos": "MF",
+    "pid": "ronny-levy",
+    "nat": "Israel",
+    "born": 1966
+   },
+   {
+    "name": "Erez Masika",
+    "pos": "MF",
+    "pid": "erez-masika",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ragid Baransi",
+    "pos": "FW",
+    "pid": "ragid-baransi",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Tzahi Iloz",
+    "pos": "FW",
+    "pid": "tzahi-iloz",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Alon Mizrahi",
+    "pos": "FW",
+    "pid": "alon-mizrahi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Vladimir Niederhaus",
+    "pos": "FW",
+    "pid": "vladimir-niederhaus",
+    "nat": "Kazakhstan",
+    "born": 1967
+   },
+   {
+    "name": "Hezi Shirazi",
+    "pos": "FW",
+    "pid": "hezi-shirazi",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Nadiv Simantov",
+    "pos": "FW",
+    "pid": "nadiv-simantov",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Jiří Vávra",
+    "pos": "FW",
+    "pid": "jiri-vavra",
+    "nat": "Czech Republic",
+    "born": 1975
+   }
+  ],
+  "1999": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Boni Ginzburg",
+    "pos": "GK",
+    "pid": "boni-ginzburg",
+    "nat": "Israel",
+    "born": 1964
+   },
+   {
+    "name": "Eyal Wakrat",
+    "pos": "GK",
+    "pid": "eyal-wakrat",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "DF",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Shuki Nagar",
+    "pos": "DF",
+    "pid": "shuki-nagar",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Amos Sasy",
+    "pos": "DF",
+    "pid": "amos-sasy",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Michael Tsitsiashvili",
+    "pos": "DF",
+    "pid": "michael-tsitsiashvili",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Yossi Benayoun",
+    "pos": "MF",
+    "pid": "yossi-benayoun",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Jerzy Brzęczek",
+    "pos": "MF",
+    "pid": "jerzy-brzeczek",
+    "nat": "Poland",
+    "born": 1971
+   },
+   {
+    "name": "Shlomi Dahan",
+    "pos": "MF",
+    "pid": "shlomi-dahan",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Ibrahim Duro",
+    "pos": "MF",
+    "pid": "ibrahim-duro",
+    "nat": "Bosnia-Herzegovina",
+    "born": 1970
+   },
+   {
+    "name": "Emerson Pereira",
+    "pos": "MF",
+    "pid": "emerson-pereira",
+    "nat": "Brazil",
+    "born": 1973
+   },
+   {
+    "name": "Beni Hadad",
+    "pos": "MF",
+    "pid": "beni-hadad",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Ala Halahla",
+    "pos": "MF",
+    "pid": "ala-halahla",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Radovan Hromádko",
+    "pos": "MF",
+    "pid": "radovan-hromadko",
+    "nat": "Czech Republic",
+    "born": 1969
+   },
+   {
+    "name": "Assi Kalman",
+    "pos": "MF",
+    "pid": "assi-kalman",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Ofir Kopel",
+    "pos": "MF",
+    "pid": "ofir-kopel",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Erez Masika",
+    "pos": "MF",
+    "pid": "erez-masika",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Haim Silvas",
+    "pos": "MF",
+    "pid": "haim-silvas",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Lior Asulin",
+    "pos": "FW",
+    "pid": "lior-asulin",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Shlomi Ben Hamo",
+    "pos": "FW",
+    "pid": "shlomi-ben-hamo",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Oren Danziger",
+    "pos": "FW",
+    "pid": "oren-danziger",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Ronen Harazi",
+    "pos": "FW",
+    "pid": "ronen-harazi",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Viktor Paço",
+    "pos": "FW",
+    "pid": "viktor-paco",
+    "nat": "Albania",
+    "born": 1974
+   },
+   {
+    "name": "Nadiv Simantov",
+    "pos": "FW",
+    "pid": "nadiv-simantov",
+    "nat": "Israel",
+    "born": 1980
+   }
+  ],
+  "2000": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Avi Perets",
+    "pos": "GK",
+    "pid": "avi-perets",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Vasiliy Ivanov",
+    "pos": "DF",
+    "pid": "vasiliy-ivanov",
+    "nat": "Russia",
+    "born": 1970
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "DF",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Shuki Nagar",
+    "pos": "DF",
+    "pid": "shuki-nagar",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Amos Sasy",
+    "pos": "DF",
+    "pid": "amos-sasy",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Yossi Benayoun",
+    "pos": "MF",
+    "pid": "yossi-benayoun",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Jerzy Brzęczek",
+    "pos": "MF",
+    "pid": "jerzy-brzeczek",
+    "nat": "Poland",
+    "born": 1971
+   },
+   {
+    "name": "Georgi Gakhokidze",
+    "pos": "MF",
+    "pid": "georgi-gakhokidze",
+    "nat": "Georgia",
+    "born": 1975
+   },
+   {
+    "name": "Radosław Michalski",
+    "pos": "MF",
+    "pid": "radoslaw-michalski",
+    "nat": "Poland",
+    "born": 1969
+   },
+   {
+    "name": "Raimondas Žutautas",
+    "pos": "MF",
+    "pid": "raimondas-zutautas",
+    "nat": "Lithuania",
+    "born": 1972
+   },
+   {
+    "name": "Lior Asulin",
+    "pos": "FW",
+    "pid": "lior-asulin",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Shlomi Ben Hamo",
+    "pos": "FW",
+    "pid": "shlomi-ben-hamo",
+    "nat": "Israel",
+    "born": null
+   },
+   {
+    "name": "Serghei Cleşcenco",
+    "pos": "FW",
+    "pid": "serghei-clescenco",
+    "nat": "Moldova",
+    "born": 1972
+   },
+   {
+    "name": "Rafi Cohen",
+    "pos": "FW",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Nadiv Simantov",
+    "pos": "FW",
+    "pid": "nadiv-simantov",
+    "nat": "Israel",
+    "born": 1980
+   }
+  ],
+  "2001": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Avi Perets",
+    "pos": "GK",
+    "pid": "avi-perets",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Golan Deree",
+    "pos": "DF",
+    "pid": "golan-deree",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Eliran Elkayam",
+    "pos": "DF",
+    "pid": "eliran-elkayam",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Vasiliy Ivanov",
+    "pos": "DF",
+    "pid": "vasiliy-ivanov",
+    "nat": "Russia",
+    "born": 1970
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Andrey Ostrovski",
+    "pos": "DF",
+    "pid": "andrey-ostrovski",
+    "nat": "Belarus",
+    "born": 1973
+   },
+   {
+    "name": "Ami Tayar",
+    "pos": "DF",
+    "pid": "ami-tayar",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yossi Benayoun",
+    "pos": "MF",
+    "pid": "yossi-benayoun",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Manor Hassan",
+    "pos": "MF",
+    "pid": "manor-hassan",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Radosław Michalski",
+    "pos": "MF",
+    "pid": "radoslaw-michalski",
+    "nat": "Poland",
+    "born": 1969
+   },
+   {
+    "name": "Nenad Pralija",
+    "pos": "MF",
+    "pid": "nenad-pralija",
+    "nat": "Croatia",
+    "born": 1970
+   },
+   {
+    "name": "Raimondas Žutautas",
+    "pos": "MF",
+    "pid": "raimondas-zutautas",
+    "nat": "Lithuania",
+    "born": 1972
+   },
+   {
+    "name": "Lior Asulin",
+    "pos": "FW",
+    "pid": "lior-asulin",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Yakubu Ayegbeni",
+    "pos": "FW",
+    "pid": "yakubu-ayegbeni",
+    "nat": "Nigeria",
+    "born": 1982
+   },
+   {
+    "name": "Serghei Cleşcenco",
+    "pos": "FW",
+    "pid": "serghei-clescenco",
+    "nat": "Moldova",
+    "born": 1972
+   },
+   {
+    "name": "Rafi Cohen",
+    "pos": "FW",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   }
+  ],
+  "2002": [
+   {
+    "name": "Dudu Aouate",
+    "pos": "GK",
+    "pid": "dudu-aouate",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Marco Balbul",
+    "pos": "DF",
+    "pid": "marco-balbul",
+    "nat": "Israel",
+    "born": 1967
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Eric Ejiofor",
+    "pos": "DF",
+    "pid": "eric-ejiofor",
+    "nat": "Nigeria",
+    "born": 1979
+   },
+   {
+    "name": "Camel Gabarin",
+    "pos": "DF",
+    "pid": "camel-gabarin",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Andrey Ostrovski",
+    "pos": "DF",
+    "pid": "andrey-ostrovski",
+    "nat": "Belarus",
+    "born": 1973
+   },
+   {
+    "name": "Eyal Almoshnino",
+    "pos": "MF",
+    "pid": "eyal-almoshnino",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Reuven Atar",
+    "pos": "MF",
+    "pid": "reuven-atar",
+    "nat": "Israel",
+    "born": 1969
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yossi Benayoun",
+    "pos": "MF",
+    "pid": "yossi-benayoun",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Nenad Pralija",
+    "pos": "MF",
+    "pid": "nenad-pralija",
+    "nat": "Croatia",
+    "born": 1970
+   },
+   {
+    "name": "Đovani Roso",
+    "pos": "MF",
+    "pid": "dovani-roso",
+    "nat": "Croatia",
+    "born": 1972
+   },
+   {
+    "name": "Raimondas Žutautas",
+    "pos": "MF",
+    "pid": "raimondas-zutautas",
+    "nat": "Lithuania",
+    "born": 1972
+   },
+   {
+    "name": "Lior Asulin",
+    "pos": "FW",
+    "pid": "lior-asulin",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Yakubu Ayegbeni",
+    "pos": "FW",
+    "pid": "yakubu-ayegbeni",
+    "nat": "Nigeria",
+    "born": 1982
+   },
+   {
+    "name": "Rafi Cohen",
+    "pos": "FW",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Nir Sivilia",
+    "pos": "FW",
+    "pid": "nir-sivilia",
+    "nat": "Israel",
+    "born": 1975
+   }
+  ],
+  "2003": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Dudu Aouate",
+    "pos": "GK",
+    "pid": "dudu-aouate",
+    "nat": "Israel",
+    "born": 1977
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Assaf Abrahami",
+    "pos": "DF",
+    "pid": "assaf-abrahami",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Eric Ejiofor",
+    "pos": "DF",
+    "pid": "eric-ejiofor",
+    "nat": "Nigeria",
+    "born": 1979
+   },
+   {
+    "name": "Camel Gabarin",
+    "pos": "DF",
+    "pid": "camel-gabarin",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Yossi Nagar",
+    "pos": "DF",
+    "pid": "yossi-nagar",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Liad Amir",
+    "pos": "MF",
+    "pid": "liad-amir",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Shai Biruk",
+    "pos": "MF",
+    "pid": "shai-biruk",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Guillermo Israilevich",
+    "pos": "MF",
+    "pid": "guillermo-israilevich",
+    "nat": "Argentina",
+    "born": 1982
+   },
+   {
+    "name": "Nenad Pralija",
+    "pos": "MF",
+    "pid": "nenad-pralija",
+    "nat": "Croatia",
+    "born": 1970
+   },
+   {
+    "name": "Đovani Roso",
+    "pos": "MF",
+    "pid": "dovani-roso",
+    "nat": "Croatia",
+    "born": 1972
+   },
+   {
+    "name": "Michael Zandberg",
+    "pos": "MF",
+    "pid": "michael-zandberg",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Raimondas Žutautas",
+    "pos": "MF",
+    "pid": "raimondas-zutautas",
+    "nat": "Lithuania",
+    "born": 1972
+   },
+   {
+    "name": "Elyaniv Barda",
+    "pos": "FW",
+    "pid": "elyaniv-barda",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Rafi Cohen",
+    "pos": "FW",
+    "pid": "rafi-cohen",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Eran Levy",
+    "pos": "FW",
+    "pid": "eran-levy",
+    "nat": "Israel",
+    "born": 1985
+   }
+  ],
+  "2004": [
+   {
+    "name": "Omri Abadi",
+    "pos": "GK",
+    "pid": "omri-abadi",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Assaf Abrahami",
+    "pos": "DF",
+    "pid": "assaf-abrahami",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Eitan Azaria",
+    "pos": "DF",
+    "pid": "eitan-azaria",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Eric Ejiofor",
+    "pos": "DF",
+    "pid": "eric-ejiofor",
+    "nat": "Nigeria",
+    "born": 1979
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Avishay Jano",
+    "pos": "DF",
+    "pid": "avishay-jano",
+    "nat": "Israel",
+    "born": 1970
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Haim Megrelishveli",
+    "pos": "DF",
+    "pid": "haim-megrelishveli",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Yossi Nagar",
+    "pos": "DF",
+    "pid": "yossi-nagar",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Shai Biruk",
+    "pos": "MF",
+    "pid": "shai-biruk",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Omer Buksenbaum",
+    "pos": "MF",
+    "pid": "omer-buksenbaum",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Marcos Paulo",
+    "pos": "MF",
+    "pid": "marcos-paulo",
+    "nat": "Brazil",
+    "born": 1977
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Đovani Roso",
+    "pos": "MF",
+    "pid": "dovani-roso",
+    "nat": "Croatia",
+    "born": 1972
+   },
+   {
+    "name": "Idan Tal",
+    "pos": "MF",
+    "pid": "idan-tal",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Elad Zachko",
+    "pos": "MF",
+    "pid": "elad-zachko",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Michael Zandberg",
+    "pos": "MF",
+    "pid": "michael-zandberg",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Pavel Zavadil",
+    "pos": "MF",
+    "pid": "pavel-zavadil",
+    "nat": "Czech Republic",
+    "born": 1978
+   },
+   {
+    "name": "Elyaniv Barda",
+    "pos": "FW",
+    "pid": "elyaniv-barda",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Oshri Gita",
+    "pos": "FW",
+    "pid": "oshri-gita",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Eran Levy",
+    "pos": "FW",
+    "pid": "eran-levy",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Zoran Zekić",
+    "pos": "FW",
+    "pid": "zoran-zekic",
+    "nat": "Croatia",
+    "born": 1974
+   }
+  ],
+  "2005": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eitan Azaria",
+    "pos": "DF",
+    "pid": "eitan-azaria",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Najwan Ghrayib",
+    "pos": "DF",
+    "pid": "najwan-ghrayib",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Haim Megrelishveli",
+    "pos": "DF",
+    "pid": "haim-megrelishveli",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Ori Uzan",
+    "pos": "DF",
+    "pid": "ori-uzan",
+    "nat": "Israel",
+    "born": 1978
+   },
+   {
+    "name": "Wescley",
+    "pos": "DF",
+    "pid": "wescley",
+    "nat": "Brazil",
+    "born": 1984
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Shai Biruk",
+    "pos": "MF",
+    "pid": "shai-biruk",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Dirceu",
+    "pos": "MF",
+    "pid": "dirceu",
+    "nat": "Brazil",
+    "born": 1977
+   },
+   {
+    "name": "Ravid Gazal",
+    "pos": "MF",
+    "pid": "ravid-gazal",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Shlomi Hanuka",
+    "pos": "MF",
+    "pid": "shlomi-hanuka",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Đovani Roso",
+    "pos": "MF",
+    "pid": "dovani-roso",
+    "nat": "Croatia",
+    "born": 1972
+   },
+   {
+    "name": "Idan Tal",
+    "pos": "MF",
+    "pid": "idan-tal",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Michael Zandberg",
+    "pos": "MF",
+    "pid": "michael-zandberg",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Elyaniv Barda",
+    "pos": "FW",
+    "pid": "elyaniv-barda",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Eden Ben Basat",
+    "pos": "FW",
+    "pid": "eden-ben-basat",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Roberto Colautti",
+    "pos": "FW",
+    "pid": "roberto-colautti",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Eran Levy",
+    "pos": "FW",
+    "pid": "eran-levy",
+    "nat": "Israel",
+    "born": 1985
+   }
+  ],
+  "2006": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Shai Maimon",
+    "pos": "DF",
+    "pid": "shai-maimon",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Haim Megrelishveli",
+    "pos": "DF",
+    "pid": "haim-megrelishveli",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Rafael Olarra",
+    "pos": "DF",
+    "pid": "rafael-olarra",
+    "nat": "Chile",
+    "born": 1978
+   },
+   {
+    "name": "Klemi Saban",
+    "pos": "DF",
+    "pid": "klemi-saban",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Muhamad Shahbary",
+    "pos": "DF",
+    "pid": "muhamad-shahbary",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Ori Uzan",
+    "pos": "DF",
+    "pid": "ori-uzan",
+    "nat": "Israel",
+    "born": 1978
+   },
+   {
+    "name": "Walid Badir",
+    "pos": "MF",
+    "pid": "walid-badir",
+    "nat": "Israel",
+    "born": 1974
+   },
+   {
+    "name": "Shai Biruk",
+    "pos": "MF",
+    "pid": "shai-biruk",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Dirceu",
+    "pos": "MF",
+    "pid": "dirceu",
+    "nat": "Brazil",
+    "born": 1977
+   },
+   {
+    "name": "Ravid Gazal",
+    "pos": "MF",
+    "pid": "ravid-gazal",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Fernando Lorefice",
+    "pos": "MF",
+    "pid": "fernando-lorefice",
+    "nat": "Argentina",
+    "born": 1983
+   },
+   {
+    "name": "Víctor Ormazábal",
+    "pos": "MF",
+    "pid": "victor-ormazabal",
+    "nat": "Argentina",
+    "born": 1985
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Idan Tal",
+    "pos": "MF",
+    "pid": "idan-tal",
+    "nat": "Israel",
+    "born": 1975
+   },
+   {
+    "name": "Michael Zandberg",
+    "pos": "MF",
+    "pid": "michael-zandberg",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Shlomi Arbeitman",
+    "pos": "FW",
+    "pid": "shlomi-arbeitman",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eden Ben Basat",
+    "pos": "FW",
+    "pid": "eden-ben-basat",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Maor Buzaglo",
+    "pos": "FW",
+    "pid": "maor-buzaglo",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Roberto Colautti",
+    "pos": "FW",
+    "pid": "roberto-colautti",
+    "nat": "Israel",
+    "born": 1982
+   }
+  ],
+  "2007": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Islam Cana'an",
+    "pos": "DF",
+    "pid": "islam-canaan",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Mor Mamam",
+    "pos": "DF",
+    "pid": "mor-mamam",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Haim Megrelishveli",
+    "pos": "DF",
+    "pid": "haim-megrelishveli",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Rafael Olarra",
+    "pos": "DF",
+    "pid": "rafael-olarra",
+    "nat": "Chile",
+    "born": 1978
+   },
+   {
+    "name": "Muhamad Shahbary",
+    "pos": "DF",
+    "pid": "muhamad-shahbary",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Dirceu",
+    "pos": "MF",
+    "pid": "dirceu",
+    "nat": "Brazil",
+    "born": 1977
+   },
+   {
+    "name": "Ravid Gazal",
+    "pos": "MF",
+    "pid": "ravid-gazal",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Beram Kayal",
+    "pos": "MF",
+    "pid": "beram-kayal",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Alain Masudi",
+    "pos": "MF",
+    "pid": "alain-masudi",
+    "nat": "DR Congo",
+    "born": 1978
+   },
+   {
+    "name": "Maor Melikson",
+    "pos": "MF",
+    "pid": "maor-melikson",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Abbass Suan",
+    "pos": "MF",
+    "pid": "abbass-suan",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Xavier",
+    "pos": "MF",
+    "pid": "xavier",
+    "nat": "Brazil",
+    "born": 1980
+   },
+   {
+    "name": "Shlomi Arbeitman",
+    "pos": "FW",
+    "pid": "shlomi-arbeitman",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Roberto Colautti",
+    "pos": "FW",
+    "pid": "roberto-colautti",
+    "nat": "Israel",
+    "born": 1982
+   },
+   {
+    "name": "Tomer Hemed",
+    "pos": "FW",
+    "pid": "tomer-hemed",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   }
+  ],
+  "2008": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Diego Crosa",
+    "pos": "DF",
+    "pid": "diego-crosa",
+    "nat": "Argentina",
+    "born": 1976
+   },
+   {
+    "name": "Eliran Danin",
+    "pos": "DF",
+    "pid": "eliran-danin",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Ronny Gafni",
+    "pos": "DF",
+    "pid": "ronny-gafni",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Adoram Keisy",
+    "pos": "DF",
+    "pid": "adoram-keisy",
+    "nat": "Israel",
+    "born": 1972
+   },
+   {
+    "name": "Shai Maimon",
+    "pos": "DF",
+    "pid": "shai-maimon",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Mor Mamam",
+    "pos": "DF",
+    "pid": "mor-mamam",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Tsepo Masilela",
+    "pos": "DF",
+    "pid": "tsepo-masilela",
+    "nat": "South Africa",
+    "born": 1985
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Muhamad Shahbary",
+    "pos": "DF",
+    "pid": "muhamad-shahbary",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Mohamad Shakhbari",
+    "pos": "DF",
+    "pid": "mohamad-shakhbari",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Omri Afek",
+    "pos": "MF",
+    "pid": "omri-afek",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Shlomi Hanuka",
+    "pos": "MF",
+    "pid": "shlomi-hanuka",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Beram Kayal",
+    "pos": "MF",
+    "pid": "beram-kayal",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Lohav Kiyal",
+    "pos": "MF",
+    "pid": "lohav-kiyal",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "René Lima",
+    "pos": "MF",
+    "pid": "rene-lima",
+    "nat": "Argentina",
+    "born": 1985
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Renato",
+    "pos": "MF",
+    "pid": "renato",
+    "nat": "Brazil",
+    "born": 1985
+   },
+   {
+    "name": "Đovani Roso",
+    "pos": "MF",
+    "pid": "dovani-roso",
+    "nat": "Croatia",
+    "born": 1972
+   },
+   {
+    "name": "Shlomi Arbeitman",
+    "pos": "FW",
+    "pid": "shlomi-arbeitman",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Oshri Gita",
+    "pos": "FW",
+    "pid": "oshri-gita",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   }
+  ],
+  "2009": [
+   {
+    "name": "Gad Amos",
+    "pos": "GK",
+    "pid": "gad-amos",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "John Culma",
+    "pos": "DF",
+    "pid": "john-culma",
+    "nat": "Colombia",
+    "born": 1981
+   },
+   {
+    "name": "Ronny Gafni",
+    "pos": "DF",
+    "pid": "ronny-gafni",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Leonid Krupnik",
+    "pos": "DF",
+    "pid": "leonid-krupnik",
+    "nat": "USA",
+    "born": 1979
+   },
+   {
+    "name": "Tsepo Masilela",
+    "pos": "DF",
+    "pid": "tsepo-masilela",
+    "nat": "South Africa",
+    "born": 1985
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Muhamad Shahbary",
+    "pos": "DF",
+    "pid": "muhamad-shahbary",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Omri Afek",
+    "pos": "MF",
+    "pid": "omri-afek",
+    "nat": "Israel",
+    "born": 1979
+   },
+   {
+    "name": "Mohammad Darwish",
+    "pos": "MF",
+    "pid": "mohammad-darwish",
+    "nat": "Palestine",
+    "born": 1991
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Beram Kayal",
+    "pos": "MF",
+    "pid": "beram-kayal",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Israel Zaguri",
+    "pos": "MF",
+    "pid": "israel-zaguri",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Shlomi Arbeitman",
+    "pos": "FW",
+    "pid": "shlomi-arbeitman",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Thembinkosi Fanteni",
+    "pos": "FW",
+    "pid": "thembinkosi-fanteni",
+    "nat": "South Africa",
+    "born": 1984
+   },
+   {
+    "name": "Mohammad Ghadir",
+    "pos": "FW",
+    "pid": "mohammad-ghadir",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Ransford Osei",
+    "pos": "FW",
+    "pid": "ransford-osei",
+    "nat": "Ghana",
+    "born": 1990
+   }
+  ],
+  "2010": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Haim Susskind",
+    "pos": "GK",
+    "pid": "haim-susskind",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Rotem Bensal",
+    "pos": "DF",
+    "pid": "rotem-bensal",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "John Culma",
+    "pos": "DF",
+    "pid": "john-culma",
+    "nat": "Colombia",
+    "born": 1981
+   },
+   {
+    "name": "Alon Harazi",
+    "pos": "DF",
+    "pid": "alon-harazi",
+    "nat": "Israel",
+    "born": 1971
+   },
+   {
+    "name": "Jorge Teixeira",
+    "pos": "DF",
+    "pid": "jorge-teixeira",
+    "nat": "Portugal",
+    "born": 1986
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Shai Maimon",
+    "pos": "DF",
+    "pid": "shai-maimon",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Tsepo Masilela",
+    "pos": "DF",
+    "pid": "tsepo-masilela",
+    "nat": "South Africa",
+    "born": 1985
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Ziv Oson",
+    "pos": "DF",
+    "pid": "ziv-oson",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Shlomi Azulay",
+    "pos": "MF",
+    "pid": "shlomi-azulay",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Mohammad Darwish",
+    "pos": "MF",
+    "pid": "mohammad-darwish",
+    "nat": "Palestine",
+    "born": 1991
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Beram Kayal",
+    "pos": "MF",
+    "pid": "beram-kayal",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Ali Ottman",
+    "pos": "MF",
+    "pid": "ali-ottman",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Sintayehu Sallalich",
+    "pos": "MF",
+    "pid": "sintayehu-sallalich",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Tiago Dutra",
+    "pos": "MF",
+    "pid": "tiago-dutra",
+    "nat": "Brazil",
+    "born": 1990
+   },
+   {
+    "name": "Israel Zaguri",
+    "pos": "MF",
+    "pid": "israel-zaguri",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Shlomi Arbeitman",
+    "pos": "FW",
+    "pid": "shlomi-arbeitman",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Sadat Bukari",
+    "pos": "FW",
+    "pid": "sadat-bukari",
+    "nat": "Ghana",
+    "born": 1989
+   },
+   {
+    "name": "Vladimer Dvalishvili",
+    "pos": "FW",
+    "pid": "vladimer-dvalishvili",
+    "nat": "Georgia",
+    "born": 1986
+   },
+   {
+    "name": "Mohammad Ghadir",
+    "pos": "FW",
+    "pid": "mohammad-ghadir",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Mohammed Kalibat",
+    "pos": "FW",
+    "pid": "mohammed-kalibat",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   }
+  ],
+  "2011": [
+   {
+    "name": "Tom Al-Madon",
+    "pos": "GK",
+    "pid": "tom-al-madon",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Arik Benado",
+    "pos": "DF",
+    "pid": "arik-benado",
+    "nat": "Israel",
+    "born": 1973
+   },
+   {
+    "name": "John Culma",
+    "pos": "DF",
+    "pid": "john-culma",
+    "nat": "Colombia",
+    "born": 1981
+   },
+   {
+    "name": "Sari Falah",
+    "pos": "DF",
+    "pid": "sari-falah",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Shai Maimon",
+    "pos": "DF",
+    "pid": "shai-maimon",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Tsepo Masilela",
+    "pos": "DF",
+    "pid": "tsepo-masilela",
+    "nat": "South Africa",
+    "born": 1985
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Andriy Pilyavsky",
+    "pos": "DF",
+    "pid": "andriy-pilyavsky",
+    "nat": "Ukraine",
+    "born": 1988
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Shlomi Azulay",
+    "pos": "MF",
+    "pid": "shlomi-azulay",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Mohammad Darwish",
+    "pos": "MF",
+    "pid": "mohammad-darwish",
+    "nat": "Palestine",
+    "born": 1991
+   },
+   {
+    "name": "Liad Elmaliach",
+    "pos": "MF",
+    "pid": "liad-elmaliach",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Ali Ottman",
+    "pos": "MF",
+    "pid": "ali-ottman",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Sintayehu Sallalich",
+    "pos": "MF",
+    "pid": "sintayehu-sallalich",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Shadi Shaaban",
+    "pos": "MF",
+    "pid": "shadi-shaaban",
+    "nat": "Palestine",
+    "born": 1992
+   },
+   {
+    "name": "Idan Vered",
+    "pos": "MF",
+    "pid": "idan-vered",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Seidu Yahaya",
+    "pos": "MF",
+    "pid": "seidu-yahaya",
+    "nat": "Ghana",
+    "born": 1989
+   },
+   {
+    "name": "Vladimer Dvalishvili",
+    "pos": "FW",
+    "pid": "vladimer-dvalishvili",
+    "nat": "Georgia",
+    "born": 1986
+   },
+   {
+    "name": "Mohammad Ghadir",
+    "pos": "FW",
+    "pid": "mohammad-ghadir",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Tomer Hemed",
+    "pos": "FW",
+    "pid": "tomer-hemed",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Mohammed Kalibat",
+    "pos": "FW",
+    "pid": "mohammed-kalibat",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Alex Zahavi",
+    "pos": "FW",
+    "pid": "alex-zahavi",
+    "nat": "Israel",
+    "born": 1991
+   }
+  ],
+  "2012": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Bojan Šaranov",
+    "pos": "GK",
+    "pid": "bojan-saranov",
+    "nat": "Serbia",
+    "born": 1987
+   },
+   {
+    "name": "Jurica Buljat",
+    "pos": "DF",
+    "pid": "jurica-buljat",
+    "nat": "Croatia",
+    "born": 1986
+   },
+   {
+    "name": "Edin Cocalić",
+    "pos": "DF",
+    "pid": "edin-cocalic",
+    "nat": "Bosnia-Herzegovina",
+    "born": 1987
+   },
+   {
+    "name": "Itzhak Cohen",
+    "pos": "DF",
+    "pid": "itzhak-cohen",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Orel Dgani",
+    "pos": "DF",
+    "pid": "orel-dgani",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Sari Falah",
+    "pos": "DF",
+    "pid": "sari-falah",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gavriel Griner",
+    "pos": "DF",
+    "pid": "gavriel-griner",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Chen Azriel",
+    "pos": "MF",
+    "pid": "chen-azriel",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Tamir Cohen",
+    "pos": "MF",
+    "pid": "tamir-cohen",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Mohammad Darwish",
+    "pos": "MF",
+    "pid": "mohammad-darwish",
+    "nat": "Palestine",
+    "born": 1991
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Ataa Jaber",
+    "pos": "MF",
+    "pid": "ataa-jaber",
+    "nat": "Palestine",
+    "born": 1994
+   },
+   {
+    "name": "Ali Ottman",
+    "pos": "MF",
+    "pid": "ali-ottman",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Eran Rozenbom",
+    "pos": "MF",
+    "pid": "eran-rozenbom",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Shadi Shaaban",
+    "pos": "MF",
+    "pid": "shadi-shaaban",
+    "nat": "Palestine",
+    "born": 1992
+   },
+   {
+    "name": "Idan Vered",
+    "pos": "MF",
+    "pid": "idan-vered",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Seidu Yahaya",
+    "pos": "MF",
+    "pid": "seidu-yahaya",
+    "nat": "Ghana",
+    "born": 1989
+   },
+   {
+    "name": "Wiyam Amashe",
+    "pos": "FW",
+    "pid": "wiyam-amashe",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Roi Atar",
+    "pos": "FW",
+    "pid": "roi-atar",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Danijel Cesarec",
+    "pos": "FW",
+    "pid": "danijel-cesarec",
+    "nat": "Croatia",
+    "born": 1983
+   },
+   {
+    "name": "Mohammad Ghadir",
+    "pos": "FW",
+    "pid": "mohammad-ghadir",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Shoval Gozlan",
+    "pos": "FW",
+    "pid": "shoval-gozlan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Mohammed Kalibat",
+    "pos": "FW",
+    "pid": "mohammed-kalibat",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Ismaeel Ryan",
+    "pos": "FW",
+    "pid": "ismaeel-ryan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Alon Turgeman",
+    "pos": "FW",
+    "pid": "alon-turgeman",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Dela Yampolsky",
+    "pos": "FW",
+    "pid": "dela-yampolsky",
+    "nat": "Israel",
+    "born": 1988
+   }
+  ],
+  "2013": [
+   {
+    "name": "Nir Davidovitch",
+    "pos": "GK",
+    "pid": "nir-davidovitch",
+    "nat": "Israel",
+    "born": 1976
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Ron Shushan",
+    "pos": "GK",
+    "pid": "ron-shushan",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Amir Naser A Din",
+    "pos": "DF",
+    "pid": "amir-naser-a-din",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Edin Cocalić",
+    "pos": "DF",
+    "pid": "edin-cocalic",
+    "nat": "Bosnia-Herzegovina",
+    "born": 1987
+   },
+   {
+    "name": "Joel Damahou",
+    "pos": "DF",
+    "pid": "joel-damahou",
+    "nat": "Ivory Coast",
+    "born": 1987
+   },
+   {
+    "name": "Martynas Dapkus",
+    "pos": "DF",
+    "pid": "martynas-dapkus",
+    "nat": "Lithuania",
+    "born": 1993
+   },
+   {
+    "name": "Orel Dgani",
+    "pos": "DF",
+    "pid": "orel-dgani",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Oded Elkayam",
+    "pos": "DF",
+    "pid": "oded-elkayam",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Sari Falah",
+    "pos": "DF",
+    "pid": "sari-falah",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Andriy Pilyavsky",
+    "pos": "DF",
+    "pid": "andriy-pilyavsky",
+    "nat": "Ukraine",
+    "born": 1988
+   },
+   {
+    "name": "Samuel Scheimann",
+    "pos": "DF",
+    "pid": "samuel-scheimann",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Yuval Yosipovich",
+    "pos": "DF",
+    "pid": "yuval-yosipovich",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Chen Azriel",
+    "pos": "MF",
+    "pid": "chen-azriel",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Shlomi Azulay",
+    "pos": "MF",
+    "pid": "shlomi-azulay",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Tamir Cohen",
+    "pos": "MF",
+    "pid": "tamir-cohen",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Ataa Jaber",
+    "pos": "MF",
+    "pid": "ataa-jaber",
+    "nat": "Palestine",
+    "born": 1994
+   },
+   {
+    "name": "Ali Ottman",
+    "pos": "MF",
+    "pid": "ali-ottman",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Idan Vered",
+    "pos": "MF",
+    "pid": "idan-vered",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Liroy Zhairi",
+    "pos": "MF",
+    "pid": "liroy-zhairi",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Wiyam Amashe",
+    "pos": "FW",
+    "pid": "wiyam-amashe",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Hen Ezra",
+    "pos": "FW",
+    "pid": "hen-ezra",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Shoval Gozlan",
+    "pos": "FW",
+    "pid": "shoval-gozlan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Daniel Haber",
+    "pos": "FW",
+    "pid": "daniel-haber",
+    "nat": "Canada",
+    "born": 1992
+   },
+   {
+    "name": "Mohammed Kalibat",
+    "pos": "FW",
+    "pid": "mohammed-kalibat",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Dino Ndlovu",
+    "pos": "FW",
+    "pid": "dino-ndlovu",
+    "nat": "South Africa",
+    "born": 1990
+   },
+   {
+    "name": "Ismaeel Ryan",
+    "pos": "FW",
+    "pid": "ismaeel-ryan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Alon Turgeman",
+    "pos": "FW",
+    "pid": "alon-turgeman",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Dela Yampolsky",
+    "pos": "FW",
+    "pid": "dela-yampolsky",
+    "nat": "Israel",
+    "born": 1988
+   }
+  ],
+  "2014": [
+   {
+    "name": "Tal Bomshtein",
+    "pos": "GK",
+    "pid": "tal-bomshtein",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Bojan Šaranov",
+    "pos": "GK",
+    "pid": "bojan-saranov",
+    "nat": "Serbia",
+    "born": 1987
+   },
+   {
+    "name": "Ron Shushan",
+    "pos": "GK",
+    "pid": "ron-shushan",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Edin Cocalić",
+    "pos": "DF",
+    "pid": "edin-cocalic",
+    "nat": "Bosnia-Herzegovina",
+    "born": 1987
+   },
+   {
+    "name": "Martynas Dapkus",
+    "pos": "DF",
+    "pid": "martynas-dapkus",
+    "nat": "Lithuania",
+    "born": 1993
+   },
+   {
+    "name": "Sari Falah",
+    "pos": "DF",
+    "pid": "sari-falah",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Andriy Pilyavsky",
+    "pos": "DF",
+    "pid": "andriy-pilyavsky",
+    "nat": "Ukraine",
+    "born": 1988
+   },
+   {
+    "name": "Samuel Scheimann",
+    "pos": "DF",
+    "pid": "samuel-scheimann",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Avihay Yadin",
+    "pos": "DF",
+    "pid": "avihay-yadin",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Yuval Yosipovich",
+    "pos": "DF",
+    "pid": "yuval-yosipovich",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Ran Abukarat",
+    "pos": "MF",
+    "pid": "ran-abukarat",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Elad Gabay",
+    "pos": "MF",
+    "pid": "elad-gabay",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eyal Golasa",
+    "pos": "MF",
+    "pid": "eyal-golasa",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Ataa Jaber",
+    "pos": "MF",
+    "pid": "ataa-jaber",
+    "nat": "Palestine",
+    "born": 1994
+   },
+   {
+    "name": "Adi Konstantinos",
+    "pos": "MF",
+    "pid": "adi-konstantinos",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Micha Lauta",
+    "pos": "MF",
+    "pid": "micha-lauta",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Rayo",
+    "pos": "MF",
+    "pid": "rayo",
+    "nat": "Spain",
+    "born": 1986
+   },
+   {
+    "name": "Idan Vered",
+    "pos": "MF",
+    "pid": "idan-vered",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Shimon Abuhazira",
+    "pos": "FW",
+    "pid": "shimon-abuhazira",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Hen Ezra",
+    "pos": "FW",
+    "pid": "hen-ezra",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Shoval Gozlan",
+    "pos": "FW",
+    "pid": "shoval-gozlan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Dor Hugi",
+    "pos": "FW",
+    "pid": "dor-hugi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Mohammed Kalibat",
+    "pos": "FW",
+    "pid": "mohammed-kalibat",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Yaniv Katan",
+    "pos": "FW",
+    "pid": "yaniv-katan",
+    "nat": "Israel",
+    "born": 1981
+   },
+   {
+    "name": "Tamás Priskin",
+    "pos": "FW",
+    "pid": "tamas-priskin",
+    "nat": "Hungary",
+    "born": 1986
+   },
+   {
+    "name": "Ismaeel Ryan",
+    "pos": "FW",
+    "pid": "ismaeel-ryan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Alon Turgeman",
+    "pos": "FW",
+    "pid": "alon-turgeman",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Shon Weissman",
+    "pos": "FW",
+    "pid": "shon-weissman",
+    "nat": "Israel",
+    "born": 1996
+   }
+  ],
+  "2015": [
+   {
+    "name": "Tal Bomshtein",
+    "pos": "GK",
+    "pid": "tal-bomshtein",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Ohad Levita",
+    "pos": "GK",
+    "pid": "ohad-levita",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Vladimir Stojković",
+    "pos": "GK",
+    "pid": "vladimir-stojkovic",
+    "nat": "Serbia",
+    "born": 1983
+   },
+   {
+    "name": "Amir Naser A Din",
+    "pos": "DF",
+    "pid": "amir-naser-a-din",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Orel Dgani",
+    "pos": "DF",
+    "pid": "orel-dgani",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Abraham Paz",
+    "pos": "DF",
+    "pid": "abraham-paz",
+    "nat": "Spain",
+    "born": 1979
+   },
+   {
+    "name": "Samuel Scheimann",
+    "pos": "DF",
+    "pid": "samuel-scheimann",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Avihay Yadin",
+    "pos": "DF",
+    "pid": "avihay-yadin",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Ran Abukarat",
+    "pos": "MF",
+    "pid": "ran-abukarat",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Yossi Benayoun",
+    "pos": "MF",
+    "pid": "yossi-benayoun",
+    "nat": "Israel",
+    "born": 1980
+   },
+   {
+    "name": "Eran Biton",
+    "pos": "MF",
+    "pid": "eran-biton",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Elad Gabay",
+    "pos": "MF",
+    "pid": "elad-gabay",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Gustavo Boccoli",
+    "pos": "MF",
+    "pid": "gustavo-boccoli",
+    "nat": "Brazil",
+    "born": 1978
+   },
+   {
+    "name": "Míchel",
+    "pos": "MF",
+    "pid": "michel",
+    "nat": "Spain",
+    "born": 1985
+   },
+   {
+    "name": "Kobi Moyal",
+    "pos": "MF",
+    "pid": "kobi-moyal",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Rayo",
+    "pos": "MF",
+    "pid": "rayo",
+    "nat": "Spain",
+    "born": 1986
+   },
+   {
+    "name": "Idan Vered",
+    "pos": "MF",
+    "pid": "idan-vered",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Wiyam Amashe",
+    "pos": "FW",
+    "pid": "wiyam-amashe",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eliran Atar",
+    "pos": "FW",
+    "pid": "eliran-atar",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Hen Ezra",
+    "pos": "FW",
+    "pid": "hen-ezra",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Itay Shechter",
+    "pos": "FW",
+    "pid": "itay-shechter",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Alon Turgeman",
+    "pos": "FW",
+    "pid": "alon-turgeman",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Shon Weissman",
+    "pos": "FW",
+    "pid": "shon-weissman",
+    "nat": "Israel",
+    "born": 1996
+   }
+  ],
+  "2016": [
+   {
+    "name": "Amir Edri",
+    "pos": "GK",
+    "pid": "amir-edri",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Ohad Levita",
+    "pos": "GK",
+    "pid": "ohad-levita",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Gil Ofek",
+    "pos": "GK",
+    "pid": "gil-ofek",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Vladimir Stojković",
+    "pos": "GK",
+    "pid": "vladimir-stojkovic",
+    "nat": "Serbia",
+    "born": 1983
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Shay Ben David",
+    "pos": "DF",
+    "pid": "shay-ben-david",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Orel Dgani",
+    "pos": "DF",
+    "pid": "orel-dgani",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Marc Valiente",
+    "pos": "DF",
+    "pid": "marc-valiente",
+    "nat": "Spain",
+    "born": 1987
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Eyal Meshumar",
+    "pos": "DF",
+    "pid": "eyal-meshumar",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Yuval Yosipovich",
+    "pos": "DF",
+    "pid": "yuval-yosipovich",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Ran Abukarat",
+    "pos": "MF",
+    "pid": "ran-abukarat",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Eran Biton",
+    "pos": "MF",
+    "pid": "eran-biton",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Or Eiloz",
+    "pos": "MF",
+    "pid": "or-eiloz",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ataa Jaber",
+    "pos": "MF",
+    "pid": "ataa-jaber",
+    "nat": "Palestine",
+    "born": 1994
+   },
+   {
+    "name": "Ofir Kriaf",
+    "pos": "MF",
+    "pid": "ofir-kriaf",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Eran Malkin",
+    "pos": "MF",
+    "pid": "eran-malkin",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Ludovic Obraniak",
+    "pos": "MF",
+    "pid": "ludovic-obraniak",
+    "nat": "Poland",
+    "born": 1984
+   },
+   {
+    "name": "Romário",
+    "pos": "MF",
+    "pid": "romario",
+    "nat": "Brazil",
+    "born": 1989
+   },
+   {
+    "name": "Gil Vermouth",
+    "pos": "MF",
+    "pid": "gil-vermouth",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eliran Atar",
+    "pos": "FW",
+    "pid": "eliran-atar",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Hen Ezra",
+    "pos": "FW",
+    "pid": "hen-ezra",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Shoval Gozlan",
+    "pos": "FW",
+    "pid": "shoval-gozlan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Shahar Hirsh",
+    "pos": "FW",
+    "pid": "shahar-hirsh",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Glynor Plet",
+    "pos": "FW",
+    "pid": "glynor-plet",
+    "nat": "Netherlands",
+    "born": 1987
+   },
+   {
+    "name": "Ismaeel Ryan",
+    "pos": "FW",
+    "pid": "ismaeel-ryan",
+    "nat": "Israel",
+    "born": 1994
+   }
+  ],
+  "2017": [
+   {
+    "name": "Omri Glazer",
+    "pos": "GK",
+    "pid": "omri-glazer",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ohad Levita",
+    "pos": "GK",
+    "pid": "ohad-levita",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Gil Ofek",
+    "pos": "GK",
+    "pid": "gil-ofek",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Iyad Abu Abaid",
+    "pos": "DF",
+    "pid": "iyad-abu-abaid",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Shay Ben David",
+    "pos": "DF",
+    "pid": "shay-ben-david",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Peter Elias",
+    "pos": "DF",
+    "pid": "peter-elias",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Hólmar Eyjólfsson",
+    "pos": "DF",
+    "pid": "holmar-eyjolfsson",
+    "nat": "Iceland",
+    "born": 1990
+   },
+   {
+    "name": "Yahav Gurfinkel",
+    "pos": "DF",
+    "pid": "yahav-gurfinkel",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Alaa Jafer",
+    "pos": "DF",
+    "pid": "alaa-jafer",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Gary Kagelmacher",
+    "pos": "DF",
+    "pid": "gary-kagelmacher",
+    "nat": "Uruguay",
+    "born": 1988
+   },
+   {
+    "name": "Dekel Keinan",
+    "pos": "DF",
+    "pid": "dekel-keinan",
+    "nat": "Israel",
+    "born": 1984
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Marc Valiente",
+    "pos": "DF",
+    "pid": "marc-valiente",
+    "nat": "Spain",
+    "born": 1987
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Mohammad Abu Fani",
+    "pos": "MF",
+    "pid": "mohammad-abu-fani",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Enis Alushi",
+    "pos": "MF",
+    "pid": "enis-alushi",
+    "nat": "Kosovo",
+    "born": 1985
+   },
+   {
+    "name": "Eran Biton",
+    "pos": "MF",
+    "pid": "eran-biton",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Yaniv Brik",
+    "pos": "MF",
+    "pid": "yaniv-brik",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Or Eiloz",
+    "pos": "MF",
+    "pid": "or-eiloz",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Roi Kehat",
+    "pos": "MF",
+    "pid": "roi-kehat",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Kamil Vacek",
+    "pos": "MF",
+    "pid": "kamil-vacek",
+    "nat": "Czech Republic",
+    "born": 1987
+   },
+   {
+    "name": "Eithan Velblum",
+    "pos": "MF",
+    "pid": "eithan-velblum",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Gil Vermouth",
+    "pos": "MF",
+    "pid": "gil-vermouth",
+    "nat": "Israel",
+    "born": 1985
+   },
+   {
+    "name": "Eliran Atar",
+    "pos": "FW",
+    "pid": "eliran-atar",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Mohammad Awwad",
+    "pos": "FW",
+    "pid": "mohammad-awwad",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Fitim Azemi",
+    "pos": "FW",
+    "pid": "fitim-azemi",
+    "nat": "Norway",
+    "born": 1992
+   },
+   {
+    "name": "Omer Damari",
+    "pos": "FW",
+    "pid": "omer-damari",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Ismaeel Ryan",
+    "pos": "FW",
+    "pid": "ismaeel-ryan",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Amit Zenati",
+    "pos": "FW",
+    "pid": "amit-zenati",
+    "nat": "Israel",
+    "born": 1997
+   }
+  ],
+  "2018": [
+   {
+    "name": "Omri Glazer",
+    "pos": "GK",
+    "pid": "omri-glazer",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ohad Levita",
+    "pos": "GK",
+    "pid": "ohad-levita",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Gil Ofek",
+    "pos": "GK",
+    "pid": "gil-ofek",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Allyson",
+    "pos": "DF",
+    "pid": "allyson",
+    "nat": "Brazil",
+    "born": 1990
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Omri Ben Harush",
+    "pos": "DF",
+    "pid": "omri-ben-harush",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Ernest Mabouka",
+    "pos": "DF",
+    "pid": "ernest-mabouka",
+    "nat": "Cameroon",
+    "born": 1988
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Etiënne Reijnen",
+    "pos": "DF",
+    "pid": "etienne-reijnen",
+    "nat": "Netherlands",
+    "born": 1987
+   },
+   {
+    "name": "Gal Alberman",
+    "pos": "MF",
+    "pid": "gal-alberman",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Shlomi Azulay",
+    "pos": "MF",
+    "pid": "shlomi-azulay",
+    "nat": "Israel",
+    "born": 1990
+   },
+   {
+    "name": "Caio",
+    "pos": "MF",
+    "pid": "caio",
+    "nat": "Brazil",
+    "born": 1986
+   },
+   {
+    "name": "Roi Kehat",
+    "pos": "MF",
+    "pid": "roi-kehat",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Georgi Kostadinov",
+    "pos": "MF",
+    "pid": "georgi-kostadinov",
+    "nat": "Bulgaria",
+    "born": 1990
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Stefanos Athanasiadis",
+    "pos": "FW",
+    "pid": "stefanos-athanasiadis",
+    "nat": "Greece",
+    "born": 1988
+   },
+   {
+    "name": "Mohammad Awwad",
+    "pos": "FW",
+    "pid": "mohammad-awwad",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Maor Buzaglo",
+    "pos": "FW",
+    "pid": "maor-buzaglo",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Omer Damari",
+    "pos": "FW",
+    "pid": "omer-damari",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Ofir Mizrahi",
+    "pos": "FW",
+    "pid": "ofir-mizrahi",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Sintayehu Sallalich",
+    "pos": "FW",
+    "pid": "sintayehu-sallalich",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Amit Zenati",
+    "pos": "FW",
+    "pid": "amit-zenati",
+    "nat": "Israel",
+    "born": 1997
+   }
+  ],
+  "2019": [
+   {
+    "name": "Omri Glazer",
+    "pos": "GK",
+    "pid": "omri-glazer",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Guy Haimov",
+    "pos": "GK",
+    "pid": "guy-haimov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Gil Ofek",
+    "pos": "GK",
+    "pid": "gil-ofek",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Allyson",
+    "pos": "DF",
+    "pid": "allyson",
+    "nat": "Brazil",
+    "born": 1990
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Ernest Mabouka",
+    "pos": "DF",
+    "pid": "ernest-mabouka",
+    "nat": "Cameroon",
+    "born": 1988
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Etiënne Reijnen",
+    "pos": "DF",
+    "pid": "etienne-reijnen",
+    "nat": "Netherlands",
+    "born": 1987
+   },
+   {
+    "name": "Mohammad Abu Fani",
+    "pos": "MF",
+    "pid": "mohammad-abu-fani",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Gal Alberman",
+    "pos": "MF",
+    "pid": "gal-alberman",
+    "nat": "Israel",
+    "born": 1983
+   },
+   {
+    "name": "Manuel Iturra",
+    "pos": "MF",
+    "pid": "manuel-iturra",
+    "nat": "Chile",
+    "born": 1984
+   },
+   {
+    "name": "Roi Kehat",
+    "pos": "MF",
+    "pid": "roi-kehat",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Georges Mandjeck",
+    "pos": "MF",
+    "pid": "georges-mandjeck",
+    "nat": "Cameroon",
+    "born": 1988
+   },
+   {
+    "name": "Maxim Plakushchenko",
+    "pos": "MF",
+    "pid": "maxim-plakushchenko",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Seydouba Soumah",
+    "pos": "MF",
+    "pid": "seydouba-soumah",
+    "nat": "Guinea",
+    "born": 1991
+   },
+   {
+    "name": "Mohammad Awwad",
+    "pos": "FW",
+    "pid": "mohammad-awwad",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Kerim Frei",
+    "pos": "FW",
+    "pid": "kerim-frei",
+    "nat": "Turkey",
+    "born": 1993
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Sintayehu Sallalich",
+    "pos": "FW",
+    "pid": "sintayehu-sallalich",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Yarden Shua",
+    "pos": "FW",
+    "pid": "yarden-shua",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Shon Weissman",
+    "pos": "FW",
+    "pid": "shon-weissman",
+    "nat": "Israel",
+    "born": 1996
+   }
+  ],
+  "2020": [
+   {
+    "name": "Josh Cohen",
+    "pos": "GK",
+    "pid": "josh-cohen",
+    "nat": "USA",
+    "born": 1992
+   },
+   {
+    "name": "Guy Haimov",
+    "pos": "GK",
+    "pid": "guy-haimov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Joe Kuzminsky",
+    "pos": "GK",
+    "pid": "joe-kuzminsky",
+    "nat": "USA",
+    "born": 1994
+   },
+   {
+    "name": "Gil Ofek",
+    "pos": "GK",
+    "pid": "gil-ofek",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Adar Azrual",
+    "pos": "DF",
+    "pid": "adar-azrual",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Ernest Mabouka",
+    "pos": "DF",
+    "pid": "ernest-mabouka",
+    "nat": "Cameroon",
+    "born": 1988
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Trent Sainsbury",
+    "pos": "DF",
+    "pid": "trent-sainsbury",
+    "nat": "Australia",
+    "born": 1992
+   },
+   {
+    "name": "Ikouwem Utin",
+    "pos": "DF",
+    "pid": "ikouwem-utin",
+    "nat": "Nigeria",
+    "born": 1999
+   },
+   {
+    "name": "Yuval Ashkenazi",
+    "pos": "MF",
+    "pid": "yuval-ashkenazi",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Ibrahim Goabara",
+    "pos": "MF",
+    "pid": "ibrahim-goabara",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Maor Levi",
+    "pos": "MF",
+    "pid": "maor-levi",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Maxim Plakushchenko",
+    "pos": "MF",
+    "pid": "maxim-plakushchenko",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Mohammad Awwad",
+    "pos": "FW",
+    "pid": "mohammad-awwad",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Tjaronn Chery",
+    "pos": "FW",
+    "pid": "tjaronn-chery",
+    "nat": "Suriname",
+    "born": 1988
+   },
+   {
+    "name": "Nehorai Ifrah",
+    "pos": "FW",
+    "pid": "nehorai-ifrah",
+    "nat": "Israel",
+    "born": 2003
+   },
+   {
+    "name": "Stav Nachmani",
+    "pos": "FW",
+    "pid": "stav-nachmani",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Suf Podgoreanu",
+    "pos": "FW",
+    "pid": "suf-podgoreanu",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Sintayehu Sallalich",
+    "pos": "FW",
+    "pid": "sintayehu-sallalich",
+    "nat": "Israel",
+    "born": 1991
+   },
+   {
+    "name": "Yarden Shua",
+    "pos": "FW",
+    "pid": "yarden-shua",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Yanic Wildschut",
+    "pos": "FW",
+    "pid": "yanic-wildschut",
+    "nat": "Suriname",
+    "born": 1991
+   }
+  ],
+  "2021": [
+   {
+    "name": "Josh Cohen",
+    "pos": "GK",
+    "pid": "josh-cohen",
+    "nat": "USA",
+    "born": 1992
+   },
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Omri Glazer",
+    "pos": "GK",
+    "pid": "omri-glazer",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Adar Azrual",
+    "pos": "DF",
+    "pid": "adar-azrual",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Ayed Habshi",
+    "pos": "DF",
+    "pid": "ayed-habshi",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Ronny Laufer",
+    "pos": "DF",
+    "pid": "ronny-laufer",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Yonatan Levi",
+    "pos": "DF",
+    "pid": "yonatan-levi",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Ernest Mabouka",
+    "pos": "DF",
+    "pid": "ernest-mabouka",
+    "nat": "Cameroon",
+    "born": 1988
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Bogdan Planić",
+    "pos": "DF",
+    "pid": "bogdan-planic",
+    "nat": "Serbia",
+    "born": 1992
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Daniel Yosef",
+    "pos": "DF",
+    "pid": "daniel-yosef",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Mohammad Abu Fani",
+    "pos": "MF",
+    "pid": "mohammad-abu-fani",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Yuval Ashkenazi",
+    "pos": "MF",
+    "pid": "yuval-ashkenazi",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Omer Atzili",
+    "pos": "MF",
+    "pid": "omer-atzili",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Ibrahim Goabara",
+    "pos": "MF",
+    "pid": "ibrahim-goabara",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "José Rodríguez",
+    "pos": "MF",
+    "pid": "jose-rodriguez",
+    "nat": "Spain",
+    "born": 1994
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Maor Levi",
+    "pos": "MF",
+    "pid": "maor-levi",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Mohammad Awwad",
+    "pos": "FW",
+    "pid": "mohammad-awwad",
+    "nat": "Israel",
+    "born": 1997
+   },
+   {
+    "name": "Tjaronn Chery",
+    "pos": "FW",
+    "pid": "tjaronn-chery",
+    "nat": "Suriname",
+    "born": 1988
+   },
+   {
+    "name": "Godsway Donyoh",
+    "pos": "FW",
+    "pid": "godsway-donyoh",
+    "nat": "Ghana",
+    "born": 1994
+   },
+   {
+    "name": "Nehorai Ifrah",
+    "pos": "FW",
+    "pid": "nehorai-ifrah",
+    "nat": "Israel",
+    "born": 2003
+   },
+   {
+    "name": "Shadi Masarwa",
+    "pos": "FW",
+    "pid": "shadi-masarwa",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Stav Nachmani",
+    "pos": "FW",
+    "pid": "stav-nachmani",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Yanic Wildschut",
+    "pos": "FW",
+    "pid": "yanic-wildschut",
+    "nat": "Suriname",
+    "born": 1991
+   }
+  ],
+  "2022": [
+   {
+    "name": "Ariel Bardugo",
+    "pos": "GK",
+    "pid": "ariel-bardugo",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Josh Cohen",
+    "pos": "GK",
+    "pid": "josh-cohen",
+    "nat": "USA",
+    "born": 1992
+   },
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Itamar Israeli",
+    "pos": "GK",
+    "pid": "itamar-israeli",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Roei Mishpati",
+    "pos": "GK",
+    "pid": "roei-mishpati",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Mickaël Alphonse",
+    "pos": "DF",
+    "pid": "mickael-alphonse",
+    "nat": "Guadeloupe",
+    "born": 1989
+   },
+   {
+    "name": "Ofri Arad",
+    "pos": "DF",
+    "pid": "ofri-arad",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Adar Azrual",
+    "pos": "DF",
+    "pid": "adar-azrual",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Evyatar Barak",
+    "pos": "DF",
+    "pid": "evyatar-barak",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Ori Dahan",
+    "pos": "DF",
+    "pid": "ori-dahan",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Shon Goldberg",
+    "pos": "DF",
+    "pid": "shon-goldberg",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Saleh Hamud",
+    "pos": "DF",
+    "pid": "saleh-hamud",
+    "nat": "Israel",
+    "born": 2003
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Bogdan Planić",
+    "pos": "DF",
+    "pid": "bogdan-planic",
+    "nat": "Serbia",
+    "born": 1992
+   },
+   {
+    "name": "Ryan Strain",
+    "pos": "DF",
+    "pid": "ryan-strain",
+    "nat": "Australia",
+    "born": 1997
+   },
+   {
+    "name": "Taleb Tawatha",
+    "pos": "DF",
+    "pid": "taleb-tawatha",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Mohammad Abu Fani",
+    "pos": "MF",
+    "pid": "mohammad-abu-fani",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Omer Atzili",
+    "pos": "MF",
+    "pid": "omer-atzili",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Dolev Bura",
+    "pos": "MF",
+    "pid": "dolev-bura",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Ben Franko",
+    "pos": "MF",
+    "pid": "ben-franko",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Mohamad Ghadir",
+    "pos": "MF",
+    "pid": "mohamad-ghadir",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Mahmoud Jaber",
+    "pos": "MF",
+    "pid": "mahmoud-jaber",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "José Rodríguez",
+    "pos": "MF",
+    "pid": "jose-rodriguez",
+    "nat": "Spain",
+    "born": 1994
+   },
+   {
+    "name": "Neta Lavi",
+    "pos": "MF",
+    "pid": "neta-lavi",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Maor Levi",
+    "pos": "MF",
+    "pid": "maor-levi",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Ali Mohamed",
+    "pos": "MF",
+    "pid": "ali-mohamed",
+    "nat": "Niger",
+    "born": 1995
+   },
+   {
+    "name": "Ihab Abu Alshech",
+    "pos": "FW",
+    "pid": "ihab-abu-alshech",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Tjaronn Chery",
+    "pos": "FW",
+    "pid": "tjaronn-chery",
+    "nat": "Suriname",
+    "born": 1988
+   },
+   {
+    "name": "Dean David",
+    "pos": "FW",
+    "pid": "dean-david",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Godsway Donyoh",
+    "pos": "FW",
+    "pid": "godsway-donyoh",
+    "nat": "Ghana",
+    "born": 1994
+   },
+   {
+    "name": "Nehorai Ifrah",
+    "pos": "FW",
+    "pid": "nehorai-ifrah",
+    "nat": "Israel",
+    "born": 2003
+   },
+   {
+    "name": "Anan Khalaili",
+    "pos": "FW",
+    "pid": "anan-khalaili",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Shadi Masarwa",
+    "pos": "FW",
+    "pid": "shadi-masarwa",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Ben Sahar",
+    "pos": "FW",
+    "pid": "ben-sahar",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Mavis Tchibota",
+    "pos": "FW",
+    "pid": "mavis-tchibota",
+    "nat": "Congo",
+    "born": 1996
+   }
+  ],
+  "2023": [
+   {
+    "name": "Josh Cohen",
+    "pos": "GK",
+    "pid": "josh-cohen",
+    "nat": "USA",
+    "born": 1992
+   },
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Shareef Keouf",
+    "pos": "GK",
+    "pid": "shareef-keouf",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Roei Mishpati",
+    "pos": "GK",
+    "pid": "roei-mishpati",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Dylan Batubinsika",
+    "pos": "DF",
+    "pid": "dylan-batubinsika",
+    "nat": "DR Congo",
+    "born": 1996
+   },
+   {
+    "name": "Pierre Cornud",
+    "pos": "DF",
+    "pid": "pierre-cornud",
+    "nat": "France",
+    "born": 1996
+   },
+   {
+    "name": "Yinon Eliyahu",
+    "pos": "DF",
+    "pid": "yinon-eliyahu",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Shon Goldberg",
+    "pos": "DF",
+    "pid": "shon-goldberg",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Raz Meir",
+    "pos": "DF",
+    "pid": "raz-meir",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Sun Menachem",
+    "pos": "DF",
+    "pid": "sun-menachem",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Abdoulaye Seck",
+    "pos": "DF",
+    "pid": "abdoulaye-seck",
+    "nat": "Senegal",
+    "born": 1992
+   },
+   {
+    "name": "Daniel Sundgren",
+    "pos": "DF",
+    "pid": "daniel-sundgren",
+    "nat": "Sweden",
+    "born": 1990
+   },
+   {
+    "name": "Mohammad Abu Fani",
+    "pos": "MF",
+    "pid": "mohammad-abu-fani",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Omer Atzili",
+    "pos": "MF",
+    "pid": "omer-atzili",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Mahmoud Jaber",
+    "pos": "MF",
+    "pid": "mahmoud-jaber",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Ali Mohamed",
+    "pos": "MF",
+    "pid": "ali-mohamed",
+    "nat": "Niger",
+    "born": 1995
+   },
+   {
+    "name": "Goni Naor",
+    "pos": "MF",
+    "pid": "goni-naor",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Basam Zaarura",
+    "pos": "MF",
+    "pid": "basam-zaarura",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Aviel Zargary",
+    "pos": "MF",
+    "pid": "aviel-zargary",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Tjaronn Chery",
+    "pos": "FW",
+    "pid": "tjaronn-chery",
+    "nat": "Suriname",
+    "born": 1988
+   },
+   {
+    "name": "Dean David",
+    "pos": "FW",
+    "pid": "dean-david",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Anan Khalaili",
+    "pos": "FW",
+    "pid": "anan-khalaili",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Shadi Masarwa",
+    "pos": "FW",
+    "pid": "shadi-masarwa",
+    "nat": "Israel",
+    "born": 2000
+   },
+   {
+    "name": "Frantzdy Pierrot",
+    "pos": "FW",
+    "pid": "frantzdy-pierrot",
+    "nat": "Haiti",
+    "born": 1995
+   },
+   {
+    "name": "Suf Podgoreanu",
+    "pos": "FW",
+    "pid": "suf-podgoreanu",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Nikita Rukavytsya",
+    "pos": "FW",
+    "pid": "nikita-rukavytsya",
+    "nat": "Australia",
+    "born": 1987
+   },
+   {
+    "name": "Diaa Sabi'a",
+    "pos": "FW",
+    "pid": "diaa-sabia",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Ben Sahar",
+    "pos": "FW",
+    "pid": "ben-sahar",
+    "nat": "Israel",
+    "born": 1989
+   },
+   {
+    "name": "Mavis Tchibota",
+    "pos": "FW",
+    "pid": "mavis-tchibota",
+    "nat": "Congo",
+    "born": 1996
+   },
+   {
+    "name": "Nehurai Yifrach",
+    "pos": "FW",
+    "pid": "nehurai-yifrach",
+    "nat": "Israel",
+    "born": 2003
+   }
+  ],
+  "2024": [
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Nitai Greis",
+    "pos": "GK",
+    "pid": "nitai-greis",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Shareef Keouf",
+    "pos": "GK",
+    "pid": "shareef-keouf",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Itamar Nizan",
+    "pos": "GK",
+    "pid": "itamar-nizan",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Noam Shavit",
+    "pos": "GK",
+    "pid": "noam-shavit",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Ange Andino",
+    "pos": "DF",
+    "pid": "ange-andino",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Pierre Cornud",
+    "pos": "DF",
+    "pid": "pierre-cornud",
+    "nat": "France",
+    "born": 1996
+   },
+   {
+    "name": "Ilay Feingold",
+    "pos": "DF",
+    "pid": "ilay-feingold",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Shon Goldberg",
+    "pos": "DF",
+    "pid": "shon-goldberg",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Maor Kandil",
+    "pos": "DF",
+    "pid": "maor-kandil",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Abdoulaye Seck",
+    "pos": "DF",
+    "pid": "abdoulaye-seck",
+    "nat": "Senegal",
+    "born": 1992
+   },
+   {
+    "name": "Lorenco Šimić",
+    "pos": "DF",
+    "pid": "lorenco-simic",
+    "nat": "Croatia",
+    "born": 1996
+   },
+   {
+    "name": "Daniel Sundgren",
+    "pos": "DF",
+    "pid": "daniel-sundgren",
+    "nat": "Sweden",
+    "born": 1990
+   },
+   {
+    "name": "Ziv Ben Shimol",
+    "pos": "MF",
+    "pid": "ziv-ben-shimol",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Mahmoud Jaber",
+    "pos": "MF",
+    "pid": "mahmoud-jaber",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Lior Kasa",
+    "pos": "MF",
+    "pid": "lior-kasa",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Roy Katri",
+    "pos": "MF",
+    "pid": "roy-katri",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Gadi Kinda",
+    "pos": "MF",
+    "pid": "gadi-kinda",
+    "nat": "Israel",
+    "born": 1994
+   },
+   {
+    "name": "Yarin Levi",
+    "pos": "MF",
+    "pid": "yarin-levi",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Ali Mohamed",
+    "pos": "MF",
+    "pid": "ali-mohamed",
+    "nat": "Niger",
+    "born": 1995
+   },
+   {
+    "name": "Goni Naor",
+    "pos": "MF",
+    "pid": "goni-naor",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Kenny Saief",
+    "pos": "MF",
+    "pid": "kenny-saief",
+    "nat": "USA",
+    "born": 1993
+   },
+   {
+    "name": "Show",
+    "pos": "MF",
+    "pid": "show",
+    "nat": "Angola",
+    "born": 1999
+   },
+   {
+    "name": "Omer Dahan",
+    "pos": "FW",
+    "pid": "omer-dahan",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Dean David",
+    "pos": "FW",
+    "pid": "dean-david",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ilay Hajaj",
+    "pos": "FW",
+    "pid": "ilay-hajaj",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Tomer Hemed",
+    "pos": "FW",
+    "pid": "tomer-hemed",
+    "nat": "Israel",
+    "born": 1987
+   },
+   {
+    "name": "Anan Khalaili",
+    "pos": "FW",
+    "pid": "anan-khalaili",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Daniil Lesovoy",
+    "pos": "FW",
+    "pid": "daniil-lesovoy",
+    "nat": "Russia",
+    "born": 1998
+   },
+   {
+    "name": "Frantzdy Pierrot",
+    "pos": "FW",
+    "pid": "frantzdy-pierrot",
+    "nat": "Haiti",
+    "born": 1995
+   },
+   {
+    "name": "Suf Podgoreanu",
+    "pos": "FW",
+    "pid": "suf-podgoreanu",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Erik Shuranov",
+    "pos": "FW",
+    "pid": "erik-shuranov",
+    "nat": "Germany",
+    "born": 2002
+   }
+  ],
+  "2025": [
+   {
+    "name": "Glenn Alvin",
+    "pos": "GK",
+    "pid": "glenn-alvin",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Nitai Greis",
+    "pos": "GK",
+    "pid": "nitai-greis",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Shareef Keouf",
+    "pos": "GK",
+    "pid": "shareef-keouf",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Tomás Sultani",
+    "pos": "GK",
+    "pid": "tomas-sultani",
+    "nat": "Argentina",
+    "born": 1998
+   },
+   {
+    "name": "Elad Amir",
+    "pos": "DF",
+    "pid": "elad-amir",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Roey Elimelech",
+    "pos": "DF",
+    "pid": "roey-elimelech",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Rami Gershon",
+    "pos": "DF",
+    "pid": "rami-gershon",
+    "nat": "Israel",
+    "born": 1988
+   },
+   {
+    "name": "Shon Goldberg",
+    "pos": "DF",
+    "pid": "shon-goldberg",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Maor Kandil",
+    "pos": "DF",
+    "pid": "maor-kandil",
+    "nat": "Israel",
+    "born": 1993
+   },
+   {
+    "name": "Tomer Lannes",
+    "pos": "DF",
+    "pid": "tomer-lannes",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Vital N'Simba",
+    "pos": "DF",
+    "pid": "vital-nsimba",
+    "nat": "DR Congo",
+    "born": 1993
+   },
+   {
+    "name": "Pedrão",
+    "pos": "DF",
+    "pid": "pedrao",
+    "nat": "Brazil",
+    "born": 1997
+   },
+   {
+    "name": "Abdoulaye Seck",
+    "pos": "DF",
+    "pid": "abdoulaye-seck",
+    "nat": "Senegal",
+    "born": 1992
+   },
+   {
+    "name": "Oleksandr Syrota",
+    "pos": "DF",
+    "pid": "oleksandr-syrota",
+    "nat": "Ukraine",
+    "born": 2000
+   },
+   {
+    "name": "Adir Waheb",
+    "pos": "DF",
+    "pid": "adir-waheb",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Getachew Yabelo",
+    "pos": "DF",
+    "pid": "getachew-yabelo",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Amit Arazi",
+    "pos": "MF",
+    "pid": "amit-arazi",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Ethane Azoulay",
+    "pos": "MF",
+    "pid": "ethane-azoulay",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Itay Ehud",
+    "pos": "MF",
+    "pid": "itay-ehud",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Liam Hermesh",
+    "pos": "MF",
+    "pid": "liam-hermesh",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Mahmoud Jaber",
+    "pos": "MF",
+    "pid": "mahmoud-jaber",
+    "nat": "Israel",
+    "born": 1999
+   },
+   {
+    "name": "Ali Mohamed",
+    "pos": "MF",
+    "pid": "ali-mohamed",
+    "nat": "Niger",
+    "born": 1995
+   },
+   {
+    "name": "Lior Refaelov",
+    "pos": "MF",
+    "pid": "lior-refaelov",
+    "nat": "Israel",
+    "born": 1986
+   },
+   {
+    "name": "Kenny Saief",
+    "pos": "MF",
+    "pid": "kenny-saief",
+    "nat": "USA",
+    "born": 1993
+   },
+   {
+    "name": "Omer Dahan",
+    "pos": "FW",
+    "pid": "omer-dahan",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Dean David",
+    "pos": "FW",
+    "pid": "dean-david",
+    "nat": "Israel",
+    "born": 1996
+   },
+   {
+    "name": "Ilay Hajaj",
+    "pos": "FW",
+    "pid": "ilay-hajaj",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Nehorai Ifrah",
+    "pos": "FW",
+    "pid": "nehorai-ifrah",
+    "nat": "Israel",
+    "born": 2003
+   },
+   {
+    "name": "Iyad Khalaili",
+    "pos": "FW",
+    "pid": "iyad-khalaili",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "FW",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Matías Nahuel",
+    "pos": "FW",
+    "pid": "matias-nahuel",
+    "nat": "Spain",
+    "born": 1996
+   },
+   {
+    "name": "Ricardinho",
+    "pos": "FW",
+    "pid": "ricardinho",
+    "nat": "Brazil",
+    "born": 2001
+   },
+   {
+    "name": "Diaa Sabi'a",
+    "pos": "FW",
+    "pid": "diaa-sabia",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Xander Severina",
+    "pos": "FW",
+    "pid": "xander-severina",
+    "nat": "Curaçao",
+    "born": 2001
+   },
+   {
+    "name": "Erik Shuranov",
+    "pos": "FW",
+    "pid": "erik-shuranov",
+    "nat": "Germany",
+    "born": 2002
+   },
+   {
+    "name": "Nehurai Yifrach",
+    "pos": "FW",
+    "pid": "nehurai-yifrach",
+    "nat": "Israel",
+    "born": 2003
+   }
+  ],
+  "2026": [
+   {
+    "name": "Royie Fucs",
+    "pos": "GK",
+    "pid": "royie-fucs",
+    "nat": "Israel",
+    "born": 1998
+   },
+   {
+    "name": "Shareef Keouf",
+    "pos": "GK",
+    "pid": "shareef-keouf",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Georgiy Yermakov",
+    "pos": "GK",
+    "pid": "georgiy-yermakov",
+    "nat": "Ukraine",
+    "born": 2002
+   },
+   {
+    "name": "Elad Amir",
+    "pos": "DF",
+    "pid": "elad-amir",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Jelle Bataille",
+    "pos": "DF",
+    "pid": "jelle-bataille",
+    "nat": "Belgium",
+    "born": 1999
+   },
+   {
+    "name": "Pierre Cornud",
+    "pos": "DF",
+    "pid": "pierre-cornud",
+    "nat": "France",
+    "born": 1996
+   },
+   {
+    "name": "Lisav Eissat",
+    "pos": "DF",
+    "pid": "lisav-eissat",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Yinon Faingezicht",
+    "pos": "DF",
+    "pid": "yinon-faingezicht",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Shon Goldberg",
+    "pos": "DF",
+    "pid": "shon-goldberg",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Pedrão",
+    "pos": "DF",
+    "pid": "pedrao",
+    "nat": "Brazil",
+    "born": 1997
+   },
+   {
+    "name": "Abdoulaye Seck",
+    "pos": "DF",
+    "pid": "abdoulaye-seck",
+    "nat": "Senegal",
+    "born": 1992
+   },
+   {
+    "name": "Noam Sztejfman",
+    "pos": "DF",
+    "pid": "noam-sztejfman",
+    "nat": "Israel",
+    "born": 2008
+   },
+   {
+    "name": "Tommy Tsitsuashvili",
+    "pos": "DF",
+    "pid": "tommy-tsitsuashvili",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Zohar Zasano",
+    "pos": "DF",
+    "pid": "zohar-zasano",
+    "nat": "Israel",
+    "born": 2001
+   },
+   {
+    "name": "Peter Agba",
+    "pos": "MF",
+    "pid": "peter-agba",
+    "nat": "Nigeria",
+    "born": 2002
+   },
+   {
+    "name": "Ethane Azoulay",
+    "pos": "MF",
+    "pid": "ethane-azoulay",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Eylon Baruch",
+    "pos": "MF",
+    "pid": "eylon-baruch",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Daniel Darzi",
+    "pos": "MF",
+    "pid": "daniel-darzi",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Cédric Don",
+    "pos": "MF",
+    "pid": "cedric-don",
+    "nat": "Ivory Coast",
+    "born": 2004
+   },
+   {
+    "name": "Itay Ehud",
+    "pos": "MF",
+    "pid": "itay-ehud",
+    "nat": "Israel",
+    "born": 2006
+   },
+   {
+    "name": "Dolev Haziza",
+    "pos": "MF",
+    "pid": "dolev-haziza",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Liam Hermesh",
+    "pos": "MF",
+    "pid": "liam-hermesh",
+    "nat": "Israel",
+    "born": 2004
+   },
+   {
+    "name": "Lior Kasa",
+    "pos": "MF",
+    "pid": "lior-kasa",
+    "nat": "Israel",
+    "born": 2005
+   },
+   {
+    "name": "Ali Mohamed",
+    "pos": "MF",
+    "pid": "ali-mohamed",
+    "nat": "Niger",
+    "born": 1995
+   },
+   {
+    "name": "Navot Ratner",
+    "pos": "MF",
+    "pid": "navot-ratner",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Kenny Saief",
+    "pos": "MF",
+    "pid": "kenny-saief",
+    "nat": "USA",
+    "born": 1993
+   },
+   {
+    "name": "Itay Solomon",
+    "pos": "MF",
+    "pid": "itay-solomon",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Manuel Benson",
+    "pos": "FW",
+    "pid": "manuel-benson",
+    "nat": "Angola",
+    "born": 1997
+   },
+   {
+    "name": "Niv Gabay",
+    "pos": "FW",
+    "pid": "niv-gabay",
+    "nat": "Israel",
+    "born": 2007
+   },
+   {
+    "name": "Kenji Gorré",
+    "pos": "FW",
+    "pid": "kenji-gorre",
+    "nat": "Curaçao",
+    "born": 1994
+   },
+   {
+    "name": "Adam Grimberg",
+    "pos": "FW",
+    "pid": "adam-grimberg",
+    "nat": "Israel",
+    "born": 2009
+   },
+   {
+    "name": "Đorđe Jovanović",
+    "pos": "FW",
+    "pid": "dordje-jovanovic",
+    "nat": "Serbia",
+    "born": 1999
+   },
+   {
+    "name": "Silva Kani",
+    "pos": "FW",
+    "pid": "silva-kani",
+    "nat": "Togo",
+    "born": 2003
+   },
+   {
+    "name": "Liam Luski",
+    "pos": "FW",
+    "pid": "liam-luski",
+    "nat": "Israel",
+    "born": 2009
+   },
+   {
+    "name": "Guy Melamed",
+    "pos": "FW",
+    "pid": "guy-melamed",
+    "nat": "Israel",
+    "born": 1992
+   },
+   {
+    "name": "Michael Ohana",
+    "pos": "FW",
+    "pid": "michael-ohana",
+    "nat": "Israel",
+    "born": 1995
+   },
+   {
+    "name": "Suf Podgoreanu",
+    "pos": "FW",
+    "pid": "suf-podgoreanu",
+    "nat": "Israel",
+    "born": 2002
+   },
+   {
+    "name": "Trivante Stewart",
+    "pos": "FW",
+    "pid": "trivante-stewart",
+    "nat": "Jamaica",
+    "born": 2000
+   }
+  ]
+ }
+}

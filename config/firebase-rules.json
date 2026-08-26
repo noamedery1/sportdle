@@ -1,0 +1,20 @@
+{
+  "rules": {
+    "rooms": {
+      "$slug": {
+        "$code": {
+          ".read": true,
+          ".write": true,
+          ".validate": "$code.length === 4",
+          "settings": {
+            "rounds":   { ".validate": "newData.isNumber() && newData.val() <= 20" },
+            "revealMs": { ".validate": "newData.isNumber() && newData.val() >= 4000" }
+          },
+          "players": {
+            "$uid": { ".validate": "newData.hasChildren(['name'])" }
+          }
+        }
+      }
+    }
+  }
+}

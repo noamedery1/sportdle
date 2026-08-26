@@ -1,0 +1,1450 @@
+{
+ "club": "hapoel-ta",
+ "source": "wikilang",
+ "links": [
+  {
+   "he": "שלום אביטן",
+   "en": "Shalom Avitan"
+  },
+  {
+   "he": "שביט אלימלך",
+   "en": "Shavit Elimelech"
+  },
+  {
+   "he": "יגאל אנטבי",
+   "en": "Yigal Antebi"
+  },
+  {
+   "he": "דוד אמסלם (כדורגלן)",
+   "en": "David Amsalem"
+  },
+  {
+   "he": "תום אלמדון",
+   "en": "Tom Almadon"
+  },
+  {
+   "he": "איבזיטו אוגבונה",
+   "en": "Ibezito Ogbonna"
+  },
+  {
+   "he": "יוסי אבוקסיס",
+   "en": "Yossi Abukasis"
+  },
+  {
+   "he": "שי אבוטבול",
+   "en": "Shay Abutbul"
+  },
+  {
+   "he": "כפיר אודי",
+   "en": "Kfir Udi"
+  },
+  {
+   "he": "כפיר אדרי",
+   "en": "Kfir Edri"
+  },
+  {
+   "he": "משה אוחיון (כדורגלן)",
+   "en": "Moshe Ohayon"
+  },
+  {
+   "he": "מילאן אוסטרץ",
+   "en": "Milan Osterc"
+  },
+  {
+   "he": "דני איימוס",
+   "en": "Danny Amos (footballer, born 1987)"
+  },
+  {
+   "he": "אפולה אדל",
+   "en": "Apoula Edel"
+  },
+  {
+   "he": "נוסא איגיבור",
+   "en": "Nosa Igiebor"
+  },
+  {
+   "he": "דן איינבינדר",
+   "en": "Dan Einbinder"
+  },
+  {
+   "he": "מתן אוחיון",
+   "en": "Matan Ohayon"
+  },
+  {
+   "he": "הרמוני איקנדה",
+   "en": "Harmony Ikande"
+  },
+  {
+   "he": "חסן אבו זייד",
+   "en": "Hasan Abu Zaid"
+  },
+  {
+   "he": "ברנקו איליץ'",
+   "en": "Branko Ilić"
+  },
+  {
+   "he": "עומרי אלטמן",
+   "en": "Omri Altman"
+  },
+  {
+   "he": "מירקו אורמוש",
+   "en": "Mirko Oremuš"
+  },
+  {
+   "he": "פטר אורלנדיץ'",
+   "en": "Petar Orlandić"
+  },
+  {
+   "he": "דניס אונישנקו",
+   "en": "Denys Onyshchenko"
+  },
+  {
+   "he": "ליביו אנטל",
+   "en": "Liviu Antal"
+  },
+  {
+   "he": "אור אוסטוינד",
+   "en": "Or Ostvind"
+  },
+  {
+   "he": "שלומי אזולאי (קשר)",
+   "en": "Shlomi Yosef Azulay"
+  },
+  {
+   "he": "שלומי אזולאי (חלוץ)",
+   "en": "Shlomi Azulay"
+  },
+  {
+   "he": "דור אלו",
+   "en": "Dor Elo"
+  },
+  {
+   "he": "איאד אבו עביד",
+   "en": "Eyad Abu Abaid"
+  },
+  {
+   "he": "אריה אלטר",
+   "en": "Arie Alter"
+  },
+  {
+   "he": "טל איילה",
+   "en": "Tal Ayela"
+  },
+  {
+   "he": "אור אינברום",
+   "en": "Lior Inbrum"
+  },
+  {
+   "he": "איתי אלקסלסי",
+   "en": "Itay Elkaslasy"
+  },
+  {
+   "he": "ניסו אביטן",
+   "en": "Nisso Avitan"
+  },
+  {
+   "he": "מייקל אולהה",
+   "en": "Michael Olaha"
+  },
+  {
+   "he": "שי אליאס",
+   "en": "Shay Elias"
+  },
+  {
+   "he": "שי אייזן",
+   "en": "Shay Ayzen"
+  },
+  {
+   "he": "תומר אליהו",
+   "en": "Tomer Eliyahu"
+  },
+  {
+   "he": "אלן אוז'בולט",
+   "en": "Alen Ožbolt"
+  },
+  {
+   "he": "אולוביו אדפמי",
+   "en": "Olubayo Adefemi"
+  },
+  {
+   "he": "אלי אוזן",
+   "en": "Eli Uzan"
+  },
+  {
+   "he": "גוראן אנטוניץ'",
+   "en": "Goran Antonić"
+  },
+  {
+   "he": "רועי אלקוקין",
+   "en": "Roei Alkukin"
+  },
+  {
+   "he": "דאגלס אווסו",
+   "en": "Douglas Owusu"
+  },
+  {
+   "he": "עמרי אפק",
+   "en": "Omri Afek"
+  },
+  {
+   "he": "שלומי ארבייטמן",
+   "en": "Shlomi Arbeitman"
+  },
+  {
+   "he": "דדי בן דיין",
+   "en": "Dedi Ben Dayan"
+  },
+  {
+   "he": "ואליד באדיר",
+   "en": "Walid Badir"
+  },
+  {
+   "he": "תומר בן-יוסף",
+   "en": "Tomer Ben Yosef"
+  },
+  {
+   "he": "ליאור אסולין",
+   "en": "Lior Asulin"
+  },
+  {
+   "he": "וינסנט אניימה",
+   "en": "Vincent Enyeama"
+  },
+  {
+   "he": "מאור בוזגלו",
+   "en": "Maor Buzaglo"
+  },
+  {
+   "he": "מזואה אנסומבו",
+   "en": "Nsumbu Mazuwa"
+  },
+  {
+   "he": "פיני בלילי",
+   "en": "Pini Balili"
+  },
+  {
+   "he": "עדן בן בסט",
+   "en": "Eden Ben Basat"
+  },
+  {
+   "he": "דני בונדר",
+   "en": "Dani Bondar"
+  },
+  {
+   "he": "ג'ורג' בורבה",
+   "en": "George Borba"
+  },
+  {
+   "he": "גיא אסולין",
+   "en": "Gai Assulin"
+  },
+  {
+   "he": "יעקב אקהויז",
+   "en": "Ya'akov Ekhoiz"
+  },
+  {
+   "he": "גיורא אנטמן",
+   "en": "Giora Antman"
+  },
+  {
+   "he": "ברק בדש",
+   "en": "Barak Badash"
+  },
+  {
+   "he": "עידו אקסברד",
+   "en": "Ido Exbard"
+  },
+  {
+   "he": "דודו ביטון",
+   "en": "Dudu Biton"
+  },
+  {
+   "he": "אילן בכר (כדורגלן)",
+   "en": "Ilan Bakhar"
+  },
+  {
+   "he": "טל בן-חיים (1989)",
+   "en": "Tal Ben Haim (footballer, born 1989)"
+  },
+  {
+   "he": "ירוסלב באקו",
+   "en": "Jarosław Bako"
+  },
+  {
+   "he": "אמידו באלדה",
+   "en": "Amido Baldé"
+  },
+  {
+   "he": "יעקב בוזגלו",
+   "en": "Jacob Buzaglo"
+  },
+  {
+   "he": "בן ביטון",
+   "en": "Ben Bitton"
+  },
+  {
+   "he": "קלאודיו בומבה",
+   "en": "Claudiu Bumba"
+  },
+  {
+   "he": "חמזה בארי",
+   "en": "Hamza Barry"
+  },
+  {
+   "he": "גליל בן שאנן",
+   "en": "Galil Ben Shanan"
+  },
+  {
+   "he": "ירון בן דב",
+   "en": "Yaron Ben-Dov"
+  },
+  {
+   "he": "אייל בן עמי",
+   "en": "Eyal Ben Ami"
+  },
+  {
+   "he": "עמית ביטון",
+   "en": "Amit Bitton"
+  },
+  {
+   "he": "עמנואל בואטנג",
+   "en": "Emmanuel Boateng (footballer, born 1997)"
+  },
+  {
+   "he": "חסן בדג'ייב",
+   "en": "Khasanbi Bidzhiyev"
+  },
+  {
+   "he": "אמבאלה אמבוטה ביסקוט",
+   "en": "Mbala Mbuta Biscotte"
+  },
+  {
+   "he": "צבי ארליך",
+   "en": "Zvi Erlich"
+  },
+  {
+   "he": "אור בלוריאן",
+   "en": "Or Blorian"
+  },
+  {
+   "he": "גיא בדש",
+   "en": "Guy Badash"
+  },
+  {
+   "he": "אופק ביטון",
+   "en": "Ofek Biton"
+  },
+  {
+   "he": "אלכסנדר בולייביץ'",
+   "en": "Aleksandar Boljević"
+  },
+  {
+   "he": "עמנואל בואטנג (1996)",
+   "en": "Emmanuel Boateng (footballer, born 1996)"
+  },
+  {
+   "he": "ברוך דגו",
+   "en": "Baruch Dego"
+  },
+  {
+   "he": "שמעון גרשון",
+   "en": "Shimon Gershon"
+  },
+  {
+   "he": "אליניב ברדה",
+   "en": "Elyaniv Barda"
+  },
+  {
+   "he": "דניאל דה רידר",
+   "en": "Daniël de Ridder"
+  },
+  {
+   "he": "לוסיאנו דה ברונו",
+   "en": "Luciano De Bruno"
+  },
+  {
+   "he": "גיורגי דרסליה",
+   "en": "Giorgi Daraselia"
+  },
+  {
+   "he": "רמי דואני",
+   "en": "Rami Duani"
+  },
+  {
+   "he": "אסי דומב",
+   "en": "Asi Domb"
+  },
+  {
+   "he": "גאבור הולמאי",
+   "en": "Gábor Halmai"
+  },
+  {
+   "he": "דאגלס דה סילבה",
+   "en": "Douglas da Silva"
+  },
+  {
+   "he": "אלירן דנין",
+   "en": "Eliran Danin"
+  },
+  {
+   "he": "וילי ברגר",
+   "en": "Willy Berger"
+  },
+  {
+   "he": "בראיין גרזיצ'יץ'",
+   "en": "Bryan Gerzicich"
+  },
+  {
+   "he": "פדרו גלבאן",
+   "en": "Pedro Galván (footballer)"
+  },
+  {
+   "he": "עומר דמארי",
+   "en": "Omer Damari"
+  },
+  {
+   "he": "רועי דיין",
+   "en": "Roei Dayan"
+  },
+  {
+   "he": "אריק דג'מבה-דג'מבה",
+   "en": "Eric Djemba-Djemba"
+  },
+  {
+   "he": "רועי גורדנה",
+   "en": "Roei Gordana"
+  },
+  {
+   "he": "אוראל דגני",
+   "en": "Orel Dgani"
+  },
+  {
+   "he": "אדי גוטליב",
+   "en": "Edi Gotlieb"
+  },
+  {
+   "he": "פרנסיס בנג'מין",
+   "en": "Francis Benjamin"
+  },
+  {
+   "he": "שובל גוזלן",
+   "en": "Shoval Gozlan"
+  },
+  {
+   "he": "סער בנבנישתי",
+   "en": "Sa'ar Benbenishti"
+  },
+  {
+   "he": "ניקולס גורובסוב",
+   "en": "Nicolás Gorobsov"
+  },
+  {
+   "he": "דודו דהאן",
+   "en": "Dudu Dahan"
+  },
+  {
+   "he": "שון גולדברג",
+   "en": "Sean Goldberg"
+  },
+  {
+   "he": "יואב ג'ראפי",
+   "en": "Yoav Gerafi"
+  },
+  {
+   "he": "אדווינס גירדוואיניס",
+   "en": "Edvinas Girdvainis"
+  },
+  {
+   "he": "יעקב בריהון",
+   "en": "Ya'akov Berihon"
+  },
+  {
+   "he": "מוטי ברשצקי",
+   "en": "Moti Barshazki"
+  },
+  {
+   "he": "מסאי דגו",
+   "en": "Messay Dego"
+  },
+  {
+   "he": "קייס גאנם",
+   "en": "Qays Ghanem"
+  },
+  {
+   "he": "יהב גורפינקל",
+   "en": "Yahav Gurfinkel"
+  },
+  {
+   "he": "עומאר בראון",
+   "en": "Omar Browne"
+  },
+  {
+   "he": "רונן גבאי",
+   "en": "Ronen Gabay"
+  },
+  {
+   "he": "דני גרופר",
+   "en": "Denny Gropper"
+  },
+  {
+   "he": "ג'וזף גנדה",
+   "en": "Joseph Ganda (footballer)"
+  },
+  {
+   "he": "אושר דוידה",
+   "en": "Osher Davida"
+  },
+  {
+   "he": "פבלו גונסאלס",
+   "en": "Pablo González (footballer, born 1993)"
+  },
+  {
+   "he": "רן בנימין",
+   "en": "Ran Binyamin"
+  },
+  {
+   "he": "ג'ורג' דיבה",
+   "en": "George Diba"
+  },
+  {
+   "he": "דניאל דאפה",
+   "en": "Daniel Dappa"
+  },
+  {
+   "he": "רונן חרזי",
+   "en": "Ronen Harazi"
+  },
+  {
+   "he": "יעקב חודורוב",
+   "en": "Ya'akov Hodorov"
+  },
+  {
+   "he": "טל חן",
+   "en": "Tal Hen"
+  },
+  {
+   "he": "סלים טועמה",
+   "en": "Salim Tuama"
+  },
+  {
+   "he": "תומר חליבה",
+   "en": "Tomer Haliva"
+  },
+  {
+   "he": "אלון חזן",
+   "en": "Alon Hazan"
+  },
+  {
+   "he": "מיכאל זנדברג",
+   "en": "Michael Zandberg"
+  },
+  {
+   "he": "פליקס חלפון",
+   "en": "Felix Halfon"
+  },
+  {
+   "he": "גילי ורמוט",
+   "en": "Gil Vermouth"
+  },
+  {
+   "he": "יחזקאל חזום",
+   "en": "Yehezkel Chazom"
+  },
+  {
+   "he": "אלין טופוזאקוב",
+   "en": "Elin Topuzakov"
+  },
+  {
+   "he": "אלון חלפון",
+   "en": "Alon Halfon"
+  },
+  {
+   "he": "זאב חיימוביץ'",
+   "en": "Ze'ev Haimovich"
+  },
+  {
+   "he": "עידן ורד",
+   "en": "Idan Vered"
+  },
+  {
+   "he": "אריאל הרוש",
+   "en": "Ariel Harush"
+  },
+  {
+   "he": "ערן זהבי",
+   "en": "Eran Zahavi"
+  },
+  {
+   "he": "נמניה ווצ'יצ'ביץ'",
+   "en": "Nemanja Vučićević"
+  },
+  {
+   "he": "איאד ח'וטבא",
+   "en": "Eyad Hutba"
+  },
+  {
+   "he": "יוסי זאנה",
+   "en": "Yossi Zana"
+  },
+  {
+   "he": "מוריס ז'אנו",
+   "en": "Moris Jano"
+  },
+  {
+   "he": "שמעון הרוש",
+   "en": "Shimon Harush"
+  },
+  {
+   "he": "ישראל זגורי",
+   "en": "Yisrael Zaguri"
+  },
+  {
+   "he": "עופר ורטה",
+   "en": "Ofer Verta"
+  },
+  {
+   "he": "לוקאס וינטרה",
+   "en": "Loukas Vyntra"
+  },
+  {
+   "he": "לוטם זינו",
+   "en": "Lotem Zino"
+  },
+  {
+   "he": "אסי טובי",
+   "en": "Assi Tubi"
+  },
+  {
+   "he": "ניב זריהן",
+   "en": "Niv Zrihan"
+  },
+  {
+   "he": "דור חוגי",
+   "en": "Dor Hugi"
+  },
+  {
+   "he": "שחר הירש",
+   "en": "Shahar Hirsh"
+  },
+  {
+   "he": "אמיליוס זובאס",
+   "en": "Emilijus Zubas"
+  },
+  {
+   "he": "נריוס ואלסקיס",
+   "en": "Nerijus Valskis"
+  },
+  {
+   "he": "גיא חדידה",
+   "en": "Guy Hadida"
+  },
+  {
+   "he": "רועי זיקרי",
+   "en": "Roei Zikri"
+  },
+  {
+   "he": "רונאלדו ואסקס",
+   "en": "Ronaldo Vásquez"
+  },
+  {
+   "he": "אמנון חרל\"פ",
+   "en": "Amnon Harlap"
+  },
+  {
+   "he": "בויאן ורוצ'ינה",
+   "en": "Bojan Vručina"
+  },
+  {
+   "he": "רומן ואסיליוק",
+   "en": "Raman Vasilyuk"
+  },
+  {
+   "he": "רותם חטואל",
+   "en": "Rotem Hatuel"
+  },
+  {
+   "he": "יואב הופמייסטר",
+   "en": "Yoav Hofmayster"
+  },
+  {
+   "he": "עידו וייר",
+   "en": "Ido Vaier"
+  },
+  {
+   "he": "אמציה לבקוביץ'",
+   "en": "Amatsia Levkovich"
+  },
+  {
+   "he": "עידן טל",
+   "en": "Idan Tal"
+  },
+  {
+   "he": "אבי כנפו",
+   "en": "Avi Knafo"
+  },
+  {
+   "he": "גילי לנדאו",
+   "en": "Gili Landau"
+  },
+  {
+   "he": "איוואן יוליץ'",
+   "en": "Ivan Jolić"
+  },
+  {
+   "he": "רפעת טורק",
+   "en": "Rifaat Turk"
+  },
+  {
+   "he": "יעקב כהן (כדורגלן)",
+   "en": "Jacob Cohen (footballer)"
+  },
+  {
+   "he": "סמואל יבואה",
+   "en": "Samuel Yeboah"
+  },
+  {
+   "he": "איליה יברויאן",
+   "en": "Yeghia Yavruyan"
+  },
+  {
+   "he": "דימיטר טלקייסקי",
+   "en": "Dimitar Telkiyski"
+  },
+  {
+   "he": "בן לוז",
+   "en": "Ben Luz"
+  },
+  {
+   "he": "מהראן לאלא",
+   "en": "Mahran Lala"
+  },
+  {
+   "he": "אלמוג כהן (כדורגלן)",
+   "en": "Almog Cohen (footballer)"
+  },
+  {
+   "he": "אביחי ידין",
+   "en": "Avihai Yadin"
+  },
+  {
+   "he": "שמעון כהן (כדורגלן)",
+   "en": "Shimon Cohen"
+  },
+  {
+   "he": "אלרואי כהן",
+   "en": "Alroey Cohen"
+  },
+  {
+   "he": "גבי לסרי",
+   "en": "Gabi Lasri"
+  },
+  {
+   "he": "גדעון טיש",
+   "en": "Gideon Tish"
+  },
+  {
+   "he": "רן יצחק",
+   "en": "Ran Itzhak"
+  },
+  {
+   "he": "ליאור לוי",
+   "en": "Lior Levi"
+  },
+  {
+   "he": "דמיאן לוקאשיק",
+   "en": "Damian Łukasik"
+  },
+  {
+   "he": "אהוד כחילה",
+   "en": "Ehud Kachila"
+  },
+  {
+   "he": "לידור כהן",
+   "en": "Lidor Cohen"
+  },
+  {
+   "he": "איסומאילה לינגאנה",
+   "en": "Issoumaila Lingane"
+  },
+  {
+   "he": "אריק ינקו",
+   "en": "Arik Yanko"
+  },
+  {
+   "he": "רובי לבקוביץ'",
+   "en": "Robi Levkovich"
+  },
+  {
+   "he": "שגיב יחזקאל",
+   "en": "Sagiv Yehezkel"
+  },
+  {
+   "he": "רז כהן",
+   "en": "Raz Cohen"
+  },
+  {
+   "he": "ניר לקס",
+   "en": "Nir Lax"
+  },
+  {
+   "he": "גיל יצחק",
+   "en": "Gil Itzhak"
+  },
+  {
+   "he": "עידן כהן (כדורגלן)",
+   "en": "Idan Cohen (footballer)"
+  },
+  {
+   "he": "מרקו יאנקוביץ'",
+   "en": "Marko Janković (footballer, born 1995)"
+  },
+  {
+   "he": "ישראל כהן (כדורגלן)",
+   "en": "Israel Cohen (footballer)"
+  },
+  {
+   "he": "מוחמד קליל טראורה",
+   "en": "Mohamed Kalil Traoré"
+  },
+  {
+   "he": "לואיזוס לואיזו",
+   "en": "Loizos Loizou"
+  },
+  {
+   "he": "דורון ליידנר",
+   "en": "Doron Leidner"
+  },
+  {
+   "he": "אור ישראלוב",
+   "en": "Or Israelov"
+  },
+  {
+   "he": "סתיו למקין",
+   "en": "Stav Lemkin"
+  },
+  {
+   "he": "הישאם לאיוס",
+   "en": "Hisham Layous"
+  },
+  {
+   "he": "פרנאן מאיימבו",
+   "en": "Fernand Mayembo"
+  },
+  {
+   "he": "סתיו טוריאל",
+   "en": "Stav Turiel"
+  },
+  {
+   "he": "איליי טמם",
+   "en": "Ilay Tamam"
+  },
+  {
+   "he": "אלון מזרחי",
+   "en": "Alon Mizrahi"
+  },
+  {
+   "he": "אייל משומר",
+   "en": "Eyal Meshumar"
+  },
+  {
+   "he": "גד מכנס",
+   "en": "Gad Machnes (footballer)"
+  },
+  {
+   "he": "קלמי סבן",
+   "en": "Klemi Saban"
+  },
+  {
+   "he": "מנואל ניירה",
+   "en": "Manuel Neira"
+  },
+  {
+   "he": "ארז מסיקה",
+   "en": "Erez Mesika"
+  },
+  {
+   "he": "ביברס נאתכו",
+   "en": "Bibars Natcho"
+  },
+  {
+   "he": "זוראב מנטשאשווילי",
+   "en": "Zurab Menteshashvili"
+  },
+  {
+   "he": "ויקטור מרעי",
+   "en": "Victor Merey"
+  },
+  {
+   "he": "איתמר ניצן",
+   "en": "Itamar Nitzan"
+  },
+  {
+   "he": "חנן ממן",
+   "en": "Hanan Maman"
+  },
+  {
+   "he": "קז'ימיש מוסקאל",
+   "en": "Kazimierz Moskal (footballer)"
+  },
+  {
+   "he": "ניר נחום",
+   "en": "Nir Nachum"
+  },
+  {
+   "he": "לוקאס סאשה",
+   "en": "Lucas Sasha"
+  },
+  {
+   "he": "סיראז' נסאר",
+   "en": "Siraj Nassar"
+  },
+  {
+   "he": "איצ'ה מנחם",
+   "en": "Itche Menahem"
+  },
+  {
+   "he": "ריף מסיקה",
+   "en": "Reef Mesika"
+  },
+  {
+   "he": "שרון מימר",
+   "en": "Sharon Mimer"
+  },
+  {
+   "he": "נמניה ניקוליץ' (כדורגלן מונטנגרי)",
+   "en": "Nemanja Nikolić (footballer, born 1988)"
+  },
+  {
+   "he": "לוסיו מרניאו",
+   "en": "Lúcio Maranhão"
+  },
+  {
+   "he": "דולי מנגה",
+   "en": "Dolly Menga"
+  },
+  {
+   "he": "אזקיאל נדואסל",
+   "en": "Ezechiel N'Douassel"
+  },
+  {
+   "he": "מייקל סיטון",
+   "en": "Michael Seaton (footballer)"
+  },
+  {
+   "he": "גאבור מרטון",
+   "en": "Gábor Márton"
+  },
+  {
+   "he": "אנס מחאמיד",
+   "en": "Anas Mahamid"
+  },
+  {
+   "he": "רז מאיר",
+   "en": "Raz Meir"
+  },
+  {
+   "he": "דמיטרו מיכאילנקו",
+   "en": "Dmytro Mykhaylenko"
+  },
+  {
+   "he": "פייסל מוליץ'",
+   "en": "Fejsal Mulić"
+  },
+  {
+   "he": "שון מלכה",
+   "en": "Sean Malka"
+  },
+  {
+   "he": "אברהם נודלמן",
+   "en": "Avraham Nudelman"
+  },
+  {
+   "he": "יוחנן סוקניק",
+   "en": "Yohanan Sukenik"
+  },
+  {
+   "he": "זיו מורגן",
+   "en": "Ziv Morgan"
+  },
+  {
+   "he": "סטפן מרינוביץ'",
+   "en": "Stefan Marinovic"
+  },
+  {
+   "he": "עמית מאיר",
+   "en": "Amit Meir"
+  },
+  {
+   "he": "גוני נאור",
+   "en": "Goni Naor"
+  },
+  {
+   "he": "חיים נוריאלי",
+   "en": "Haim Nurieli"
+  },
+  {
+   "he": "אולריך מלקה",
+   "en": "Ulrich Meleke"
+  },
+  {
+   "he": "אדוארדו מרקש",
+   "en": "Eduardo Marques"
+  },
+  {
+   "he": "לי און מזרחי",
+   "en": "Li On Mizrahi"
+  },
+  {
+   "he": "מילאן מקאריץ'",
+   "en": "Milan Makarić"
+  },
+  {
+   "he": "שאנדה סילבה",
+   "en": "Xande Silva"
+  },
+  {
+   "he": "דוד פרימו",
+   "en": "David Primo"
+  },
+  {
+   "he": "שייע פייגנבוים",
+   "en": "Yehoshua Feigenbaum"
+  },
+  {
+   "he": "ג'ון פנטסיל",
+   "en": "John Paintsil"
+  },
+  {
+   "he": "עומר פרץ",
+   "en": "Omer Peretz"
+  },
+  {
+   "he": "משה סיני",
+   "en": "Moshe Sinai"
+  },
+  {
+   "he": "חאבייר פאס",
+   "en": "Javier Páez"
+  },
+  {
+   "he": "דוד פיזנטי",
+   "en": "David Pizanti"
+  },
+  {
+   "he": "ראובן עובד",
+   "en": "Reuven Oved"
+  },
+  {
+   "he": "עידן סרור",
+   "en": "Idan Srur"
+  },
+  {
+   "he": "פאביו ג'וניור פריירה",
+   "en": "Fábio Júnior (footballer, born 1977)"
+  },
+  {
+   "he": "ביוואן פרנסמן",
+   "en": "Bevan Fransman"
+  },
+  {
+   "he": "הרצל פריצנר",
+   "en": "Herzl Fritzner"
+  },
+  {
+   "he": "סאבו פאביצ'ביץ'",
+   "en": "Savo Pavićević"
+  },
+  {
+   "he": "מריו פצ'אלקה",
+   "en": "Mário Pečalka"
+  },
+  {
+   "he": "ויאם עמאשה",
+   "en": "Weaam Amasha"
+  },
+  {
+   "he": "סארי פלאח",
+   "en": "Sari Falah"
+  },
+  {
+   "he": "אישטוון פישונט",
+   "en": "István Pisont"
+  },
+  {
+   "he": "מחמוד עבאס (כדורגלן)",
+   "en": "Mahmoud Abbas (footballer)"
+  },
+  {
+   "he": "סבסטיאן סימרוטיץ'",
+   "en": "Sebastjan Cimirotič"
+  },
+  {
+   "he": "חן עזרא",
+   "en": "Hen Ezra"
+  },
+  {
+   "he": "סינטאיהו סלליך",
+   "en": "Sintayehu Sallalich"
+  },
+  {
+   "he": "אחמד עאבד",
+   "en": "Ahmed Abed"
+  },
+  {
+   "he": "בסארט עבדורחימי",
+   "en": "Besart Abdurahimi"
+  },
+  {
+   "he": "אמיר עגייב",
+   "en": "Amir Agayev"
+  },
+  {
+   "he": "רמזי ספורי",
+   "en": "Ramzi Safouri"
+  },
+  {
+   "he": "מיכאי פינטילי",
+   "en": "Mihai Pintilii"
+  },
+  {
+   "he": "עומר פדידה",
+   "en": "Omer Fadida"
+  },
+  {
+   "he": "מרקו סימיץ'",
+   "en": "Marko Simić"
+  },
+  {
+   "he": "מאוויס צ'יבוטה",
+   "en": "Mavis Tchibota"
+  },
+  {
+   "he": "ג'ון צ'יבויקה",
+   "en": "John Chibuike"
+  },
+  {
+   "he": "סרגיי פוגודין",
+   "en": "Serhiy Pohodin"
+  },
+  {
+   "he": "משה פוליאקוב",
+   "en": "Moshe Poliakov"
+  },
+  {
+   "he": "מרווין פירסמן",
+   "en": "Marvin Peersman"
+  },
+  {
+   "he": "רונן פייגנבוים",
+   "en": "Ronen Feigenbaum"
+  },
+  {
+   "he": "אנז'-פרדי פלומה",
+   "en": "Ange-Freddy Plumain"
+  },
+  {
+   "he": "שחר פיבן",
+   "en": "Shahar Piven"
+  },
+  {
+   "he": "סטפן ספירובסקי",
+   "en": "Stefan Spirovski"
+  },
+  {
+   "he": "שלמה פוליאקוב",
+   "en": "Shlomo Poliakov"
+  },
+  {
+   "he": "מאיר פרץ",
+   "en": "Maor Peretz"
+  },
+  {
+   "he": "בוהדן סרנבסקי",
+   "en": "Bohdan Sarnavskyi"
+  },
+  {
+   "he": "עומר סניור",
+   "en": "Omer Senior"
+  },
+  {
+   "he": "בריאן פאסי",
+   "en": "Bryan Passi"
+  },
+  {
+   "he": "חיים רביבו",
+   "en": "Haim Revivo"
+  },
+  {
+   "he": "יוסי שבחון",
+   "en": "Yossi Shivhon"
+  },
+  {
+   "he": "רוני קלדרון",
+   "en": "Ronnie Calderon"
+  },
+  {
+   "he": "לריאה קינגסטון",
+   "en": "Laryea Kingston"
+  },
+  {
+   "he": "עומרי קנדה",
+   "en": "Omri Kende"
+  },
+  {
+   "he": "סרגיי קלשצ'נקו",
+   "en": "Serghei Cleșcenco"
+  },
+  {
+   "he": "גיא צרפתי",
+   "en": "Guy Tzarfati"
+  },
+  {
+   "he": "רומאן רוקי",
+   "en": "Romain Rocchi"
+  },
+  {
+   "he": "סיאנדה קולו",
+   "en": "Siyanda Xulu"
+  },
+  {
+   "he": "רחביה רוזנבוים",
+   "en": "Rehavia Rosenbaum"
+  },
+  {
+   "he": "בוריס קליימן",
+   "en": "Boris Klaiman"
+  },
+  {
+   "he": "נחמן קסטרו",
+   "en": "Nachman Castro"
+  },
+  {
+   "he": "יורגן קולין",
+   "en": "Jürgen Colin"
+  },
+  {
+   "he": "דיאן ראצ'וניצה",
+   "en": "Dean Računica"
+  },
+  {
+   "he": "ישראל ראש",
+   "en": "Israel Rosh"
+  },
+  {
+   "he": "קלאודמיר פריירה",
+   "en": "Claudemir (footballer, born 1984)"
+  },
+  {
+   "he": "בן רייכרט",
+   "en": "Ben Reichert"
+  },
+  {
+   "he": "קאווה ססיליו דה סילבה",
+   "en": "Cauê (footballer, born 1989)"
+  },
+  {
+   "he": "דוד קלטינס",
+   "en": "David Keltjens"
+  },
+  {
+   "he": "אנטואן קונט",
+   "en": "Antoine Conte"
+  },
+  {
+   "he": "קאיו אלבס",
+   "en": "Caio (footballer, born 1986)"
+  },
+  {
+   "he": "חוסה רודריגס מרטינס",
+   "en": "José Rodríguez (footballer, born 1994)"
+  },
+  {
+   "he": "רוג'ר ברנרדו",
+   "en": "Roger Bernardo"
+  },
+  {
+   "he": "שי רביבו",
+   "en": "Shay Revivo"
+  },
+  {
+   "he": "זיו קבדה",
+   "en": "Ziv Caveda"
+  },
+  {
+   "he": "ארמנדו קופר",
+   "en": "Armando Cooper"
+  },
+  {
+   "he": "אסף צור",
+   "en": "Assaf Tzur"
+  },
+  {
+   "he": "פרנסיס קיירמה",
+   "en": "Francis Kyeremeh"
+  },
+  {
+   "he": "דמבה קמארה",
+   "en": "Demba Camara"
+  },
+  {
+   "he": "פליפה רודריגס",
+   "en": "Felipe Rodríguez (footballer, born 1990)"
+  },
+  {
+   "he": "לירן רוטמן",
+   "en": "Liran Rotman"
+  },
+  {
+   "he": "לבאן קוטליה",
+   "en": "Levan Kutalia"
+  },
+  {
+   "he": "פארלי רוסה",
+   "en": "Farley Rosa"
+  },
+  {
+   "he": "דאבור רופניק",
+   "en": "Davor Rupnik"
+  },
+  {
+   "he": "חוטפריט רומראטו",
+   "en": "Godfried Roemeratoe"
+  },
+  {
+   "he": "אל ים קנצפולסקי",
+   "en": "El Yam Kancepolsky"
+  },
+  {
+   "he": "דוד קופרמן",
+   "en": "David Cuperman"
+  },
+  {
+   "he": "עזיז קאיונדו",
+   "en": "Aziz Kayondo"
+  },
+  {
+   "he": "רוי קורין",
+   "en": "Roy Korine"
+  },
+  {
+   "he": "מקס צ'ליץ'",
+   "en": "Maks Čelić"
+  },
+  {
+   "he": "אורי קרגולה",
+   "en": "Uri Karagula"
+  },
+  {
+   "he": "אנדריאן קרייב",
+   "en": "Andrian Kraev"
+  },
+  {
+   "he": "מרקוס קוקו",
+   "en": "Marcus Coco"
+  },
+  {
+   "he": "דוד שווייצר",
+   "en": "David Schweitzer"
+  },
+  {
+   "he": "לירן שטראובר",
+   "en": "Liran Strauber"
+  },
+  {
+   "he": "טוטו תמוז",
+   "en": "Toto Tamuz"
+  },
+  {
+   "he": "אבי תקווה",
+   "en": "Avi Tikva"
+  },
+  {
+   "he": "שלום תקווה",
+   "en": "Shalom Tikva"
+  },
+  {
+   "he": "איתי שכטר",
+   "en": "Itay Shechter"
+  },
+  {
+   "he": "בן שהר",
+   "en": "Ben Sahar"
+  },
+  {
+   "he": "עופר שטרית",
+   "en": "Ofer Shitrit"
+  },
+  {
+   "he": "אדמונד שמילוביץ'",
+   "en": "Edmond Schmilovich"
+  },
+  {
+   "he": "גל שיש",
+   "en": "Gal Shish"
+  },
+  {
+   "he": "שמואל שיימן",
+   "en": "Samuel Scheimann"
+  },
+  {
+   "he": "גיא שרעבי",
+   "en": "Guy Sharabi"
+  },
+  {
+   "he": "אלון תורג'מן",
+   "en": "Alon Turgeman"
+  },
+  {
+   "he": "מרקו שולר",
+   "en": "Marko Šuler"
+  },
+  {
+   "he": "עמירן שקלים",
+   "en": "Amiran Shkalim"
+  },
+  {
+   "he": "רם שטראוס",
+   "en": "Ram Strauss"
+  },
+  {
+   "he": "איגור שקווירין",
+   "en": "Igor Shkvyrin"
+  },
+  {
+   "he": "ארון שוינפלד",
+   "en": "Aaron Schoenfeld"
+  },
+  {
+   "he": "יעקב שוורץ",
+   "en": "Ya'akov Schwartz"
+  },
+  {
+   "he": "דאמיר שובשיץ'",
+   "en": "Damir Šovšić"
+  },
+  {
+   "he": "ארנסטס שטקוס",
+   "en": "Ernestas Šetkus"
+  },
+  {
+   "he": "עדן שרם",
+   "en": "Eden Shrem"
+  },
+  {
+   "he": "רז שלמה",
+   "en": "Raz Shlomo"
+  },
+  {
+   "he": "איתמר שבירו",
+   "en": "Itamar Shviro"
+  },
+  {
+   "he": "גד עמוס",
+   "en": "Gad Amos"
+  },
+  {
+   "he": "שיקו",
+   "en": "Chico (footballer, born 1998)"
+  }
+ ]
+}

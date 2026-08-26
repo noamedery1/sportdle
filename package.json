@@ -1,0 +1,19 @@
+{
+  "name": "sportdel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ספורטדל — חידת שחקן יומית לחמישה מועדוני כדורגל ישראליים",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "scrape": "node scripts/scrape.mjs",
+    "enrich": "node scripts/enrich.mjs",
+    "build": "node scripts/build.mjs",
+    "all": "npm run scrape && npm run enrich && npm run build",
+    "serve": "node scripts/serve.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0"
+  }
+}

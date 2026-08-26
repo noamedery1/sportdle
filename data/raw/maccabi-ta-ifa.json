@@ -1,0 +1,3818 @@
+{
+ "club": "maccabi-ta",
+ "source": "ifa",
+ "teamId": 1061,
+ "stoppedAt": null,
+ "seasons": {
+  "2003": [
+   {
+    "id": "1748",
+    "full": "יעקב אבדיאב",
+    "short": "יעקב אבדיאב",
+    "foreign": false
+   },
+   {
+    "id": "1749",
+    "full": "סאלם אבו סיאם",
+    "short": "סאלם אבו סיאם",
+    "foreign": false
+   },
+   {
+    "id": "1411",
+    "full": "אלכסנדר אוברוב",
+    "short": "אלכסנדר אוברוב",
+    "foreign": false
+   },
+   {
+    "id": "1412",
+    "full": "אלי ביטון",
+    "short": "אלי ביטון",
+    "foreign": false
+   },
+   {
+    "id": "1414",
+    "full": "דדי בן דיין",
+    "short": "דדי בן דיין",
+    "foreign": false
+   },
+   {
+    "id": "1415",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "1416",
+    "full": "טל בנין",
+    "short": "טל בנין",
+    "foreign": false
+   },
+   {
+    "id": "1417",
+    "full": "גדי ברומר",
+    "short": "גדי ברומר",
+    "foreign": false
+   },
+   {
+    "id": "1418",
+    "full": "גולדברג רודריגו",
+    "short": "גולדברג רודריגו",
+    "foreign": true
+   },
+   {
+    "id": "34050",
+    "full": "ברוך דגו",
+    "short": "ברוך דגו",
+    "foreign": false
+   },
+   {
+    "id": "1419",
+    "full": "דניאל היידמן",
+    "short": "דניאל היידמן",
+    "foreign": false
+   },
+   {
+    "id": "1421",
+    "full": "אורן זיתוני",
+    "short": "אורן זיתוני",
+    "foreign": false
+   },
+   {
+    "id": "1765",
+    "full": "לירן כהן",
+    "short": "לירן כהן",
+    "foreign": false
+   },
+   {
+    "id": "1423",
+    "full": "מני לוי",
+    "short": "מני לוי",
+    "foreign": false
+   },
+   {
+    "id": "34326",
+    "full": "ארוס מאוריציו פרננדו",
+    "short": "ארוס פרננדו",
+    "foreign": true
+   },
+   {
+    "id": "1424",
+    "full": "קובי מוסה",
+    "short": "קובי מוסה",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "1425",
+    "full": "דן משען",
+    "short": "דן משען",
+    "foreign": false
+   },
+   {
+    "id": "13592",
+    "full": "יוסי נישרי",
+    "short": "יוסי נישרי",
+    "foreign": false
+   },
+   {
+    "id": "1426",
+    "full": "אבי נמני",
+    "short": "אבי נמני",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "1774",
+    "full": "ראובן עובד",
+    "short": "ראובן עובד",
+    "foreign": false
+   },
+   {
+    "id": "1775",
+    "full": "מיכאל עמר",
+    "short": "מיכאל עמר",
+    "foreign": false
+   },
+   {
+    "id": "1429",
+    "full": "גל פליאן",
+    "short": "גל פליאן",
+    "foreign": false
+   },
+   {
+    "id": "41769",
+    "full": "ג'ון פנסטיל",
+    "short": "גון פנסטיל",
+    "foreign": false
+   },
+   {
+    "id": "268",
+    "full": "פרוחננקובס אנדרס",
+    "short": "פרוחננקובס אנדרס",
+    "foreign": true
+   },
+   {
+    "id": "6112",
+    "full": "אביעד פרנקו אברהם",
+    "short": "אביעד אברהם",
+    "foreign": false
+   },
+   {
+    "id": "1639",
+    "full": "גיא צרפתי",
+    "short": "גיא צרפתי",
+    "foreign": false
+   },
+   {
+    "id": "102",
+    "full": "אורן רותם",
+    "short": "אורן רותם",
+    "foreign": false
+   },
+   {
+    "id": "34365",
+    "full": "רייס לינו ברונו",
+    "short": "רייס ברונו",
+    "foreign": true
+   },
+   {
+    "id": "1548",
+    "full": "קובי רפואה",
+    "short": "קובי רפואה",
+    "foreign": false
+   },
+   {
+    "id": "34377",
+    "full": "אסף שדה",
+    "short": "אסף שדה",
+    "foreign": false
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   },
+   {
+    "id": "1431",
+    "full": "איל שן",
+    "short": "איל שן",
+    "foreign": false
+   },
+   {
+    "id": "1422",
+    "full": "עמיר תורג'מן",
+    "short": "עמיר תורגמן",
+    "foreign": false
+   }
+  ],
+  "2004": [
+   {
+    "id": "1749",
+    "full": "סאלם אבו סיאם",
+    "short": "סאלם אבו סיאם",
+    "foreign": false
+   },
+   {
+    "id": "50436",
+    "full": "אדורנו אלדו",
+    "short": "אדורנו אלדו",
+    "foreign": true
+   },
+   {
+    "id": "1411",
+    "full": "אלכסנדר אוברוב",
+    "short": "אלכסנדר אוברוב",
+    "foreign": false
+   },
+   {
+    "id": "1412",
+    "full": "אלי ביטון",
+    "short": "אלי ביטון",
+    "foreign": false
+   },
+   {
+    "id": "1415",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "1417",
+    "full": "גדי ברומר",
+    "short": "גדי ברומר",
+    "foreign": false
+   },
+   {
+    "id": "34050",
+    "full": "ברוך דגו",
+    "short": "ברוך דגו",
+    "foreign": false
+   },
+   {
+    "id": "1757",
+    "full": "רועי דיין",
+    "short": "רועי דיין",
+    "foreign": false
+   },
+   {
+    "id": "1421",
+    "full": "אורן זיתוני",
+    "short": "אורן זיתוני",
+    "foreign": false
+   },
+   {
+    "id": "1765",
+    "full": "לירן כהן",
+    "short": "לירן כהן",
+    "foreign": false
+   },
+   {
+    "id": "1764",
+    "full": "תמיר כהן",
+    "short": "תמיר כהן",
+    "foreign": false
+   },
+   {
+    "id": "1423",
+    "full": "מני לוי",
+    "short": "מני לוי",
+    "foreign": false
+   },
+   {
+    "id": "1424",
+    "full": "קובי מוסה",
+    "short": "קובי מוסה",
+    "foreign": false
+   },
+   {
+    "id": "1634",
+    "full": "ארז מסיקה",
+    "short": "ארז מסיקה",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "17580",
+    "full": "גל ניר",
+    "short": "גל ניר",
+    "foreign": false
+   },
+   {
+    "id": "13319",
+    "full": "קובי נכטיילר",
+    "short": "קובי נכטיילר",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "1774",
+    "full": "ראובן עובד",
+    "short": "ראובן עובד",
+    "foreign": false
+   },
+   {
+    "id": "1429",
+    "full": "גל פליאן",
+    "short": "גל פליאן",
+    "foreign": false
+   },
+   {
+    "id": "41769",
+    "full": "ג'ון פנסטיל",
+    "short": "גון פנסטיל",
+    "foreign": false
+   },
+   {
+    "id": "268",
+    "full": "פרוחננקובס אנדרס",
+    "short": "פרוחננקובס אנדרס",
+    "foreign": true
+   },
+   {
+    "id": "4398",
+    "full": "קוביקה אנז'יי",
+    "short": "קוביקה אנזיי",
+    "foreign": true
+   },
+   {
+    "id": "1779",
+    "full": "אסף ישראל קריספיס",
+    "short": "אסף קריספיס",
+    "foreign": false
+   },
+   {
+    "id": "34365",
+    "full": "רייס לינו ברונו",
+    "short": "רייס ברונו",
+    "foreign": true
+   },
+   {
+    "id": "34377",
+    "full": "אסף שדה",
+    "short": "אסף שדה",
+    "foreign": false
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   }
+  ],
+  "2005": [
+   {
+    "id": "1749",
+    "full": "סאלם אבו סיאם",
+    "short": "סאלם אבו סיאם",
+    "foreign": false
+   },
+   {
+    "id": "1412",
+    "full": "אלי ביטון",
+    "short": "אלי ביטון",
+    "foreign": false
+   },
+   {
+    "id": "8358",
+    "full": "עידן ביטון",
+    "short": "עידן ביטון",
+    "foreign": false
+   },
+   {
+    "id": "14264",
+    "full": "אופיר בר",
+    "short": "אופיר בר",
+    "foreign": false
+   },
+   {
+    "id": "34050",
+    "full": "ברוך דגו",
+    "short": "ברוך דגו",
+    "foreign": false
+   },
+   {
+    "id": "8363",
+    "full": "ברק ורד",
+    "short": "ברק ורד",
+    "foreign": false
+   },
+   {
+    "id": "1421",
+    "full": "אורן זיתוני",
+    "short": "אורן זיתוני",
+    "foreign": false
+   },
+   {
+    "id": "9665",
+    "full": "רומן חאוסטוב",
+    "short": "רומן חאוסטוב",
+    "foreign": false
+   },
+   {
+    "id": "13286",
+    "full": "אופיר חיים",
+    "short": "אופיר חיים",
+    "foreign": false
+   },
+   {
+    "id": "1765",
+    "full": "לירן כהן",
+    "short": "לירן כהן",
+    "foreign": false
+   },
+   {
+    "id": "1764",
+    "full": "תמיר כהן",
+    "short": "תמיר כהן",
+    "foreign": false
+   },
+   {
+    "id": "571",
+    "full": "ערן לוי",
+    "short": "ערן לוי",
+    "foreign": false
+   },
+   {
+    "id": "55387",
+    "full": "גובניניו-זר מארסיו פביאנו",
+    "short": "גובניניו פביאנו",
+    "foreign": false
+   },
+   {
+    "id": "55470",
+    "full": "אמיל-ברטרנד מבמבה",
+    "short": "אמיל מבמבה",
+    "foreign": false
+   },
+   {
+    "id": "1424",
+    "full": "קובי מוסה",
+    "short": "קובי מוסה",
+    "foreign": false
+   },
+   {
+    "id": "1634",
+    "full": "ארז מסיקה",
+    "short": "ארז מסיקה",
+    "foreign": false
+   },
+   {
+    "id": "55365",
+    "full": "אדוארדו מרקוש",
+    "short": "אדוארדו מרקוש",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "13291",
+    "full": "שוקי נגאר",
+    "short": "שוקי נגאר",
+    "foreign": false
+   },
+   {
+    "id": "17580",
+    "full": "גל ניר",
+    "short": "גל ניר",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "268",
+    "full": "פרוחננקובס אנדרס",
+    "short": "פרוחננקובס אנדרס",
+    "foreign": true
+   },
+   {
+    "id": "34365",
+    "full": "רייס לינו ברונו",
+    "short": "רייס ברונו",
+    "foreign": true
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   },
+   {
+    "id": "8376",
+    "full": "יקיר שינה",
+    "short": "יקיר שינה",
+    "foreign": false
+   }
+  ],
+  "2006": [
+   {
+    "id": "1749",
+    "full": "סאלם אבו סיאם",
+    "short": "סאלם אבו סיאם",
+    "foreign": false
+   },
+   {
+    "id": "63590",
+    "full": "קאקו בלסינג",
+    "short": "קאקו בלסינג",
+    "foreign": false
+   },
+   {
+    "id": "63587",
+    "full": "אייל ברקוביץ",
+    "short": "אייל ברקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "8481",
+    "full": "ליאור ג'אן",
+    "short": "ליאור גאן",
+    "foreign": false
+   },
+   {
+    "id": "50437",
+    "full": "ז'וזה דוארטה",
+    "short": "זוזה דוארטה",
+    "foreign": false
+   },
+   {
+    "id": "1757",
+    "full": "רועי דיין",
+    "short": "רועי דיין",
+    "foreign": false
+   },
+   {
+    "id": "8484",
+    "full": "אליאור וקנין",
+    "short": "אליאור וקנין",
+    "foreign": false
+   },
+   {
+    "id": "13286",
+    "full": "אופיר חיים",
+    "short": "אופיר חיים",
+    "foreign": false
+   },
+   {
+    "id": "8485",
+    "full": "גיא חיימוב",
+    "short": "גיא חיימוב",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "1765",
+    "full": "לירן כהן",
+    "short": "לירן כהן",
+    "foreign": false
+   },
+   {
+    "id": "1764",
+    "full": "תמיר כהן",
+    "short": "תמיר כהן",
+    "foreign": false
+   },
+   {
+    "id": "2968",
+    "full": "אסף מנדס",
+    "short": "אסף מנדס",
+    "foreign": false
+   },
+   {
+    "id": "1634",
+    "full": "ארז מסיקה",
+    "short": "ארז מסיקה",
+    "foreign": false
+   },
+   {
+    "id": "71170",
+    "full": "הנרי מקינאווה",
+    "short": "הנרי מקינאווה",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "1426",
+    "full": "אבי נמני",
+    "short": "אבי נמני",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "34141",
+    "full": "ג'ובאני רוסו",
+    "short": "גובאני רוסו",
+    "foreign": false
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   },
+   {
+    "id": "8496",
+    "full": "אורי שטרית",
+    "short": "אורי שטרית",
+    "foreign": false
+   },
+   {
+    "id": "8376",
+    "full": "יקיר שינה",
+    "short": "יקיר שינה",
+    "foreign": false
+   },
+   {
+    "id": "8497",
+    "full": "יצחק שמש",
+    "short": "יצחק שמש",
+    "foreign": false
+   }
+  ],
+  "2007": [
+   {
+    "id": "30687",
+    "full": "חי אטיאס",
+    "short": "חי אטיאס",
+    "foreign": false
+   },
+   {
+    "id": "79338",
+    "full": "דז'אן איליץ",
+    "short": "דזאן איליץ",
+    "foreign": false
+   },
+   {
+    "id": "1525",
+    "full": "משה ביטון",
+    "short": "משה ביטון",
+    "foreign": false
+   },
+   {
+    "id": "8481",
+    "full": "ליאור ג'אן",
+    "short": "ליאור גאן",
+    "foreign": false
+   },
+   {
+    "id": "1757",
+    "full": "רועי דיין",
+    "short": "רועי דיין",
+    "foreign": false
+   },
+   {
+    "id": "72098",
+    "full": "קאלה דרשלר",
+    "short": "קאלה דרשלר",
+    "foreign": false
+   },
+   {
+    "id": "13313",
+    "full": "אבי יחיאל",
+    "short": "אבי יחיאל",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "1765",
+    "full": "לירן כהן",
+    "short": "לירן כהן",
+    "foreign": false
+   },
+   {
+    "id": "14073",
+    "full": "תמיר כחלון",
+    "short": "תמיר כחלון",
+    "foreign": false
+   },
+   {
+    "id": "1424",
+    "full": "קובי מוסה",
+    "short": "קובי מוסה",
+    "foreign": false
+   },
+   {
+    "id": "1634",
+    "full": "ארז מסיקה",
+    "short": "ארז מסיקה",
+    "foreign": false
+   },
+   {
+    "id": "72445",
+    "full": "מילאן מרדאקוביץ'",
+    "short": "מילאן מרדאקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "72447",
+    "full": "מילאן מרטינוביץ'",
+    "short": "מילאן מרטינוביץ",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "1426",
+    "full": "אבי נמני",
+    "short": "אבי נמני",
+    "foreign": false
+   },
+   {
+    "id": "64",
+    "full": "גיא סולומון",
+    "short": "גיא סולומון",
+    "foreign": false
+   },
+   {
+    "id": "14646",
+    "full": "עומר פרץ",
+    "short": "עומר פרץ",
+    "foreign": false
+   },
+   {
+    "id": "34141",
+    "full": "ג'ובאני רוסו",
+    "short": "גובאני רוסו",
+    "foreign": false
+   },
+   {
+    "id": "13327",
+    "full": "יוסי שבחון",
+    "short": "יוסי שבחון",
+    "foreign": false
+   },
+   {
+    "id": "8496",
+    "full": "אורי שטרית",
+    "short": "אורי שטרית",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2008": [
+   {
+    "id": "93320",
+    "full": "ג'ונתן ויקטור ג'רארד אסוס",
+    "short": "גונתן אסוס",
+    "foreign": false
+   },
+   {
+    "id": "93316",
+    "full": "ג'ו אמרסון ביזרה בסטוס",
+    "short": "גו בסטוס",
+    "foreign": false
+   },
+   {
+    "id": "26149",
+    "full": "דודו ביטון",
+    "short": "דודו ביטון",
+    "foreign": false
+   },
+   {
+    "id": "8481",
+    "full": "ליאור ג'אן",
+    "short": "ליאור גאן",
+    "foreign": false
+   },
+   {
+    "id": "1618",
+    "full": "רביד גזל",
+    "short": "רביד גזל",
+    "foreign": false
+   },
+   {
+    "id": "84046",
+    "full": "רודי חדד",
+    "short": "רודי חדד",
+    "foreign": false
+   },
+   {
+    "id": "84099",
+    "full": "דראגוסלב יבריץ'",
+    "short": "דראגוסלב יבריץ",
+    "foreign": false
+   },
+   {
+    "id": "13313",
+    "full": "אבי יחיאל",
+    "short": "אבי יחיאל",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "5542",
+    "full": "אדר כהן",
+    "short": "אדר כהן",
+    "foreign": false
+   },
+   {
+    "id": "1424",
+    "full": "קובי מוסה",
+    "short": "קובי מוסה",
+    "foreign": false
+   },
+   {
+    "id": "55384",
+    "full": "אלן מסודי",
+    "short": "אלן מסודי",
+    "foreign": false
+   },
+   {
+    "id": "1634",
+    "full": "ארז מסיקה",
+    "short": "ארז מסיקה",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "64",
+    "full": "גיא סולומון",
+    "short": "גיא סולומון",
+    "foreign": false
+   },
+   {
+    "id": "4431",
+    "full": "יניב עזרן",
+    "short": "יניב עזרן",
+    "foreign": false
+   },
+   {
+    "id": "14646",
+    "full": "עומר פרץ",
+    "short": "עומר פרץ",
+    "foreign": false
+   },
+   {
+    "id": "5559",
+    "full": "אלעד קיזר",
+    "short": "אלעד קיזר",
+    "foreign": false
+   },
+   {
+    "id": "79040",
+    "full": "יאניק קמנאן",
+    "short": "יאניק קמנאן",
+    "foreign": false
+   },
+   {
+    "id": "13357",
+    "full": "דן רומן",
+    "short": "דן רומן",
+    "foreign": false
+   },
+   {
+    "id": "13327",
+    "full": "יוסי שבחון",
+    "short": "יוסי שבחון",
+    "foreign": false
+   },
+   {
+    "id": "8496",
+    "full": "אורי שטרית",
+    "short": "אורי שטרית",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   },
+   {
+    "id": "11142",
+    "full": "עמירן שקלים",
+    "short": "עמירן שקלים",
+    "foreign": false
+   }
+  ],
+  "2009": [
+   {
+    "id": "15387",
+    "full": "עודד אמיתי",
+    "short": "עודד אמיתי",
+    "foreign": false
+   },
+   {
+    "id": "93320",
+    "full": "ג'ונתן ויקטור ג'רארד אסוס",
+    "short": "גונתן אסוס",
+    "foreign": false
+   },
+   {
+    "id": "17719",
+    "full": "מאור בוזגלו",
+    "short": "מאור בוזגלו",
+    "foreign": false
+   },
+   {
+    "id": "6166",
+    "full": "אורי ביטון",
+    "short": "אורי ביטון",
+    "foreign": false
+   },
+   {
+    "id": "8481",
+    "full": "ליאור ג'אן",
+    "short": "ליאור גאן",
+    "foreign": false
+   },
+   {
+    "id": "102977",
+    "full": "אריק הורט",
+    "short": "אריק הורט",
+    "foreign": false
+   },
+   {
+    "id": "8485",
+    "full": "גיא חיימוב",
+    "short": "גיא חיימוב",
+    "foreign": false
+   },
+   {
+    "id": "49822",
+    "full": "איגור טומסיץ'",
+    "short": "איגור טומסיץ",
+    "foreign": false
+   },
+   {
+    "id": "55375",
+    "full": "איליה יבוריאן",
+    "short": "איליה יבוריאן",
+    "foreign": false
+   },
+   {
+    "id": "84099",
+    "full": "דראגוסלב יבריץ'",
+    "short": "דראגוסלב יבריץ",
+    "foreign": false
+   },
+   {
+    "id": "13313",
+    "full": "אבי יחיאל",
+    "short": "אבי יחיאל",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "34071",
+    "full": "גיז'רמו ישראלביץ'",
+    "short": "גיזרמו ישראלביץ",
+    "foreign": false
+   },
+   {
+    "id": "13265",
+    "full": "חיים מגרלשוילי",
+    "short": "חיים מגרלשוילי",
+    "foreign": false
+   },
+   {
+    "id": "15402",
+    "full": "דור מלול",
+    "short": "דור מלול",
+    "foreign": false
+   },
+   {
+    "id": "6187",
+    "full": "תום מנשרוב",
+    "short": "תום מנשרוב",
+    "foreign": false
+   },
+   {
+    "id": "1769",
+    "full": "משה משאלוף",
+    "short": "משה משאלוף",
+    "foreign": false
+   },
+   {
+    "id": "64",
+    "full": "גיא סולומון",
+    "short": "גיא סולומון",
+    "foreign": false
+   },
+   {
+    "id": "102972",
+    "full": "סקוט ריאן סילי",
+    "short": "סקוט סילי",
+    "foreign": false
+   },
+   {
+    "id": "15407",
+    "full": "צחי סלוק",
+    "short": "צחי סלוק",
+    "foreign": false
+   },
+   {
+    "id": "4431",
+    "full": "יניב עזרן",
+    "short": "יניב עזרן",
+    "foreign": false
+   },
+   {
+    "id": "724",
+    "full": "יותם פנסו",
+    "short": "יותם פנסו",
+    "foreign": false
+   },
+   {
+    "id": "727",
+    "full": "ניסים קפילוטו",
+    "short": "ניסים קפילוטו",
+    "foreign": false
+   },
+   {
+    "id": "13357",
+    "full": "דן רומן",
+    "short": "דן רומן",
+    "foreign": false
+   },
+   {
+    "id": "13327",
+    "full": "יוסי שבחון",
+    "short": "יוסי שבחון",
+    "foreign": false
+   },
+   {
+    "id": "8496",
+    "full": "אורי שטרית",
+    "short": "אורי שטרית",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2010": [
+   {
+    "id": "22827",
+    "full": "יובל אבידור",
+    "short": "יובל אבידור",
+    "foreign": false
+   },
+   {
+    "id": "10206",
+    "full": "דוראל אדרי",
+    "short": "דוראל אדרי",
+    "foreign": false
+   },
+   {
+    "id": "105356",
+    "full": "אילייב איביצ'ה",
+    "short": "אילייב איביצה",
+    "foreign": false
+   },
+   {
+    "id": "17719",
+    "full": "מאור בוזגלו",
+    "short": "מאור בוזגלו",
+    "foreign": false
+   },
+   {
+    "id": "8481",
+    "full": "ליאור ג'אן",
+    "short": "ליאור גאן",
+    "foreign": false
+   },
+   {
+    "id": "33037",
+    "full": "רוני גפני",
+    "short": "רוני גפני",
+    "foreign": false
+   },
+   {
+    "id": "60665",
+    "full": "מאור חלבי",
+    "short": "מאור חלבי",
+    "foreign": false
+   },
+   {
+    "id": "10219",
+    "full": "מייק חן",
+    "short": "מייק חן",
+    "foreign": false
+   },
+   {
+    "id": "49822",
+    "full": "איגור טומסיץ'",
+    "short": "איגור טומסיץ",
+    "foreign": false
+   },
+   {
+    "id": "55375",
+    "full": "איליה יבוריאן",
+    "short": "איליה יבוריאן",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "34071",
+    "full": "גיז'רמו ישראלביץ'",
+    "short": "גיזרמו ישראלביץ",
+    "foreign": false
+   },
+   {
+    "id": "14073",
+    "full": "תמיר כחלון",
+    "short": "תמיר כחלון",
+    "foreign": false
+   },
+   {
+    "id": "15402",
+    "full": "דור מלול",
+    "short": "דור מלול",
+    "foreign": false
+   },
+   {
+    "id": "6187",
+    "full": "תום מנשרוב",
+    "short": "תום מנשרוב",
+    "foreign": false
+   },
+   {
+    "id": "64",
+    "full": "גיא סולומון",
+    "short": "גיא סולומון",
+    "foreign": false
+   },
+   {
+    "id": "4431",
+    "full": "יניב עזרן",
+    "short": "יניב עזרן",
+    "foreign": false
+   },
+   {
+    "id": "10229",
+    "full": "ציון צמח",
+    "short": "ציון צמח",
+    "foreign": false
+   },
+   {
+    "id": "104487",
+    "full": "אנדריי קומאץ'",
+    "short": "אנדריי קומאץ",
+    "foreign": false
+   },
+   {
+    "id": "727",
+    "full": "ניסים קפילוטו",
+    "short": "ניסים קפילוטו",
+    "foreign": false
+   },
+   {
+    "id": "13327",
+    "full": "יוסי שבחון",
+    "short": "יוסי שבחון",
+    "foreign": false
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   },
+   {
+    "id": "8496",
+    "full": "אורי שטרית",
+    "short": "אורי שטרית",
+    "foreign": false
+   },
+   {
+    "id": "11142",
+    "full": "עמירן שקלים",
+    "short": "עמירן שקלים",
+    "foreign": false
+   }
+  ],
+  "2011": [
+   {
+    "id": "22827",
+    "full": "יובל אבידור",
+    "short": "יובל אבידור",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "17719",
+    "full": "מאור בוזגלו",
+    "short": "מאור בוזגלו",
+    "foreign": false
+   },
+   {
+    "id": "112544",
+    "full": "ניבאלדו בטיסטה סנטנה",
+    "short": "ניבאלדו סנטנה",
+    "foreign": false
+   },
+   {
+    "id": "1359",
+    "full": "יוסי גינזבורג",
+    "short": "יוסי גינזבורג",
+    "foreign": false
+   },
+   {
+    "id": "33037",
+    "full": "רוני גפני",
+    "short": "רוני גפני",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "34071",
+    "full": "גיז'רמו ישראלביץ'",
+    "short": "גיזרמו ישראלביץ",
+    "foreign": false
+   },
+   {
+    "id": "39644",
+    "full": "משה לוגסי",
+    "short": "משה לוגסי",
+    "foreign": false
+   },
+   {
+    "id": "112546",
+    "full": "האריס מדוניאנין",
+    "short": "האריס מדוניאנין",
+    "foreign": false
+   },
+   {
+    "id": "15402",
+    "full": "דור מלול",
+    "short": "דור מלול",
+    "foreign": false
+   },
+   {
+    "id": "1376",
+    "full": "מישל נחמיאס",
+    "short": "מישל נחמיאס",
+    "foreign": false
+   },
+   {
+    "id": "13417",
+    "full": "קלמי סבן",
+    "short": "קלמי סבן",
+    "foreign": false
+   },
+   {
+    "id": "64",
+    "full": "גיא סולומון",
+    "short": "גיא סולומון",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "112568",
+    "full": "ג'יבריל סידיבה",
+    "short": "גיבריל סידיבה",
+    "foreign": false
+   },
+   {
+    "id": "4431",
+    "full": "יניב עזרן",
+    "short": "יניב עזרן",
+    "foreign": false
+   },
+   {
+    "id": "31335",
+    "full": "אלירן עטר",
+    "short": "אלירן עטר",
+    "foreign": false
+   },
+   {
+    "id": "113395",
+    "full": "סאבו פאביצ'ביץ'",
+    "short": "סאבו פאביצביץ",
+    "foreign": false
+   },
+   {
+    "id": "1381",
+    "full": "ריף פרץ",
+    "short": "ריף פרץ",
+    "foreign": false
+   },
+   {
+    "id": "55359",
+    "full": "רוברטו קולאוטי",
+    "short": "רוברטו קולאוטי",
+    "foreign": false
+   },
+   {
+    "id": "1430",
+    "full": "לירן שטראובר",
+    "short": "לירן שטראובר",
+    "foreign": false
+   }
+  ],
+  "2012": [
+   {
+    "id": "20522",
+    "full": "*****",
+    "short": "*****",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "64355",
+    "full": "טקלה אסמלש",
+    "short": "טקלה אסמלש",
+    "foreign": false
+   },
+   {
+    "id": "112544",
+    "full": "ניבאלדו בטיסטה סנטנה",
+    "short": "ניבאלדו סנטנה",
+    "foreign": false
+   },
+   {
+    "id": "45502",
+    "full": "יגיל ביטון",
+    "short": "יגיל ביטון",
+    "foreign": false
+   },
+   {
+    "id": "67565",
+    "full": "בן בן יאיר",
+    "short": "בן בן יאיר",
+    "foreign": false
+   },
+   {
+    "id": "1359",
+    "full": "יוסי גינזבורג",
+    "short": "יוסי גינזבורג",
+    "foreign": false
+   },
+   {
+    "id": "50366",
+    "full": "מואנס דבור",
+    "short": "מואנס דבור",
+    "foreign": false
+   },
+   {
+    "id": "9840",
+    "full": "רפאל דהן",
+    "short": "רפאל דהן",
+    "foreign": false
+   },
+   {
+    "id": "5308",
+    "full": "עומר ורד",
+    "short": "עומר ורד",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "1364",
+    "full": "אליהו אלי זיזוב",
+    "short": "אליהו זיזוב",
+    "foreign": false
+   },
+   {
+    "id": "8485",
+    "full": "גיא חיימוב",
+    "short": "גיא חיימוב",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "34071",
+    "full": "גיז'רמו ישראלביץ'",
+    "short": "גיזרמו ישראלביץ",
+    "foreign": false
+   },
+   {
+    "id": "39644",
+    "full": "משה לוגסי",
+    "short": "משה לוגסי",
+    "foreign": false
+   },
+   {
+    "id": "112546",
+    "full": "האריס מדוניאנין",
+    "short": "האריס מדוניאנין",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "6187",
+    "full": "תום מנשרוב",
+    "short": "תום מנשרוב",
+    "foreign": false
+   },
+   {
+    "id": "13417",
+    "full": "קלמי סבן",
+    "short": "קלמי סבן",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "31335",
+    "full": "אלירן עטר",
+    "short": "אלירן עטר",
+    "foreign": false
+   },
+   {
+    "id": "113395",
+    "full": "סאבו פאביצ'ביץ'",
+    "short": "סאבו פאביצביץ",
+    "foreign": false
+   },
+   {
+    "id": "124705",
+    "full": "רוברטו פונצ'ץ",
+    "short": "רוברטו פונצץ",
+    "foreign": false
+   },
+   {
+    "id": "1381",
+    "full": "ריף פרץ",
+    "short": "ריף פרץ",
+    "foreign": false
+   },
+   {
+    "id": "22000",
+    "full": "רחמים צ'קול",
+    "short": "רחמים צקול",
+    "foreign": false
+   },
+   {
+    "id": "31217",
+    "full": "רועי קהת",
+    "short": "רועי קהת",
+    "foreign": false
+   },
+   {
+    "id": "55359",
+    "full": "רוברטו קולאוטי",
+    "short": "רוברטו קולאוטי",
+    "foreign": false
+   }
+  ],
+  "2013": [
+   {
+    "id": "25624",
+    "full": "אושר אבו",
+    "short": "אושר אבו",
+    "foreign": false
+   },
+   {
+    "id": "77839",
+    "full": "חסן אבו זייד",
+    "short": "חסן אבו זייד",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "63688",
+    "full": "וינסנט אניימה",
+    "short": "וינסנט אניימה",
+    "foreign": false
+   },
+   {
+    "id": "5296",
+    "full": "דין אקפי",
+    "short": "דין אקפי",
+    "foreign": false
+   },
+   {
+    "id": "134894",
+    "full": "גונזלו מנואל גארסיה",
+    "short": "גונזלו גארסיה",
+    "foreign": false
+   },
+   {
+    "id": "134893",
+    "full": "קרלוס גארסיה בדיאס",
+    "short": "קרלוס בדיאס",
+    "foreign": false
+   },
+   {
+    "id": "50366",
+    "full": "מואנס דבור",
+    "short": "מואנס דבור",
+    "foreign": false
+   },
+   {
+    "id": "5308",
+    "full": "עומר ורד",
+    "short": "עומר ורד",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "1364",
+    "full": "אליהו אלי זיזוב",
+    "short": "אליהו זיזוב",
+    "foreign": false
+   },
+   {
+    "id": "34234",
+    "full": "שרון זיסו",
+    "short": "שרון זיסו",
+    "foreign": false
+   },
+   {
+    "id": "144233",
+    "full": "תומר חנצינסקי",
+    "short": "תומר חנצינסקי",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "5298",
+    "full": "גיא כהן",
+    "short": "גיא כהן",
+    "foreign": false
+   },
+   {
+    "id": "39644",
+    "full": "משה לוגסי",
+    "short": "משה לוגסי",
+    "foreign": false
+   },
+   {
+    "id": "25635",
+    "full": "ברק לוי",
+    "short": "ברק לוי",
+    "foreign": false
+   },
+   {
+    "id": "35495",
+    "full": "דניאל לוי",
+    "short": "דניאל לוי",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "1427",
+    "full": "אבי סטרול",
+    "short": "אבי סטרול",
+    "foreign": false
+   },
+   {
+    "id": "31335",
+    "full": "אלירן עטר",
+    "short": "אלירן עטר",
+    "foreign": false
+   },
+   {
+    "id": "144609",
+    "full": "איגנסיו פידלף",
+    "short": "איגנסיו פידלף",
+    "foreign": false
+   },
+   {
+    "id": "144205",
+    "full": "ראדה סטניסלב פריצה",
+    "short": "ראדה פריצה",
+    "foreign": false
+   },
+   {
+    "id": "1381",
+    "full": "ריף פרץ",
+    "short": "ריף פרץ",
+    "foreign": false
+   },
+   {
+    "id": "55359",
+    "full": "רוברטו קולאוטי",
+    "short": "רוברטו קולאוטי",
+    "foreign": false
+   },
+   {
+    "id": "19957",
+    "full": "מהראן ראדי",
+    "short": "מהראן ראדי",
+    "foreign": false
+   }
+  ],
+  "2014": [
+   {
+    "id": "28623",
+    "full": "דן איינבינדר",
+    "short": "דן איינבינדר",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "49729",
+    "full": "עומרי אלטמן",
+    "short": "עומרי אלטמן",
+    "foreign": false
+   },
+   {
+    "id": "13689",
+    "full": "ברק בדש",
+    "short": "ברק בדש",
+    "foreign": false
+   },
+   {
+    "id": "5783",
+    "full": "עומרי בן הרוש",
+    "short": "עומרי בן הרוש",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "49719",
+    "full": "דור ג'אן",
+    "short": "דור גאן",
+    "foreign": false
+   },
+   {
+    "id": "134893",
+    "full": "קרלוס גארסיה בדיאס",
+    "short": "קרלוס בדיאס",
+    "foreign": false
+   },
+   {
+    "id": "35442",
+    "full": "דניאל גרץ",
+    "short": "דניאל גרץ",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "25635",
+    "full": "ברק לוי",
+    "short": "ברק לוי",
+    "foreign": false
+   },
+   {
+    "id": "145434",
+    "full": "ניקולה מיטרוביץ'",
+    "short": "ניקולה מיטרוביץ",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "34117",
+    "full": "גאל מרגוליס",
+    "short": "גאל מרגוליס",
+    "foreign": false
+   },
+   {
+    "id": "154668",
+    "full": "רמי סילבן מרוול",
+    "short": "רמי מרוול",
+    "foreign": false
+   },
+   {
+    "id": "144205",
+    "full": "ראדה סטניסלב פריצה",
+    "short": "ראדה פריצה",
+    "foreign": false
+   },
+   {
+    "id": "145199",
+    "full": "חואן פאבלו קולינאס פרארס",
+    "short": "חואן פרארס",
+    "foreign": false
+   },
+   {
+    "id": "19957",
+    "full": "מהראן ראדי",
+    "short": "מהראן ראדי",
+    "foreign": false
+   }
+  ],
+  "2015": [
+   {
+    "id": "123859",
+    "full": "עמנואל נוסאקרה איגיבור",
+    "short": "עמנואל איגיבור",
+    "foreign": false
+   },
+   {
+    "id": "28623",
+    "full": "דן איינבינדר",
+    "short": "דן איינבינדר",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "13689",
+    "full": "ברק בדש",
+    "short": "ברק בדש",
+    "foreign": false
+   },
+   {
+    "id": "7208",
+    "full": "עדן בן בסט",
+    "short": "עדן בן בסט",
+    "foreign": false
+   },
+   {
+    "id": "5783",
+    "full": "עומרי בן הרוש",
+    "short": "עומרי בן הרוש",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "134893",
+    "full": "קרלוס גארסיה בדיאס",
+    "short": "קרלוס בדיאס",
+    "foreign": false
+   },
+   {
+    "id": "22107",
+    "full": "גיל ורמוט",
+    "short": "גיל ורמוט",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "25635",
+    "full": "ברק לוי",
+    "short": "ברק לוי",
+    "foreign": false
+   },
+   {
+    "id": "145434",
+    "full": "ניקולה מיטרוביץ'",
+    "short": "ניקולה מיטרוביץ",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "34117",
+    "full": "גאל מרגוליס",
+    "short": "גאל מרגוליס",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "144205",
+    "full": "ראדה סטניסלב פריצה",
+    "short": "ראדה פריצה",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "145199",
+    "full": "חואן פאבלו קולינאס פרארס",
+    "short": "חואן פרארס",
+    "foreign": false
+   },
+   {
+    "id": "58666",
+    "full": "סער קלדרון",
+    "short": "סער קלדרון",
+    "foreign": false
+   },
+   {
+    "id": "19957",
+    "full": "מהראן ראדי",
+    "short": "מהראן ראדי",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2016": [
+   {
+    "id": "64630",
+    "full": "גאי אביב",
+    "short": "גאי אביב",
+    "foreign": false
+   },
+   {
+    "id": "15560",
+    "full": "שלומי יוסף אזולאי",
+    "short": "שלומי אזולאי",
+    "foreign": false
+   },
+   {
+    "id": "64759",
+    "full": "שקד אזולאי",
+    "short": "שקד אזולאי",
+    "foreign": false
+   },
+   {
+    "id": "123859",
+    "full": "עמנואל נוסאקרה איגיבור",
+    "short": "עמנואל איגיבור",
+    "foreign": false
+   },
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "7208",
+    "full": "עדן בן בסט",
+    "short": "עדן בן בסט",
+    "foreign": false
+   },
+   {
+    "id": "5783",
+    "full": "עומרי בן הרוש",
+    "short": "עומרי בן הרוש",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "1415",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "176259",
+    "full": "אורלנדו קרלוס בראגה דה סה",
+    "short": "אורלנדו דה סה",
+    "foreign": false
+   },
+   {
+    "id": "134893",
+    "full": "קרלוס גארסיה בדיאס",
+    "short": "קרלוס בדיאס",
+    "foreign": false
+   },
+   {
+    "id": "31209",
+    "full": "אלי דסה",
+    "short": "אלי דסה",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "13261",
+    "full": "יואב זיו",
+    "short": "יואב זיו",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "58436",
+    "full": "עידן יוגב",
+    "short": "עידן יוגב",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "34684",
+    "full": "דניאל ליפשיץ",
+    "short": "דניאל ליפשיץ",
+    "foreign": false
+   },
+   {
+    "id": "112546",
+    "full": "האריס מדוניאנין",
+    "short": "האריס מדוניאנין",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "71542",
+    "full": "אליאל פרץ",
+    "short": "אליאל פרץ",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "166439",
+    "full": "פרדראג ריאקוביץ'",
+    "short": "פרדראג ריאקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2017": [
+   {
+    "id": "3408",
+    "full": "גל אלברמן",
+    "short": "גל אלברמן",
+    "foreign": false
+   },
+   {
+    "id": "5783",
+    "full": "עומרי בן הרוש",
+    "short": "עומרי בן הרוש",
+    "foreign": false
+   },
+   {
+    "id": "1415",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "111",
+    "full": "יוסי בניון",
+    "short": "יוסי בניון",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "65151",
+    "full": "דור גלילי",
+    "short": "דור גלילי",
+    "foreign": false
+   },
+   {
+    "id": "31209",
+    "full": "אלי דסה",
+    "short": "אלי דסה",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "56185",
+    "full": "שגיב יחזקאל",
+    "short": "שגיב יחזקאל",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "25635",
+    "full": "ברק לוי",
+    "short": "ברק לוי",
+    "foreign": false
+   },
+   {
+    "id": "34684",
+    "full": "דניאל ליפשיץ",
+    "short": "דניאל ליפשיץ",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "188677",
+    "full": "ראמון מנזס רומא",
+    "short": "ראמון רומא",
+    "foreign": false
+   },
+   {
+    "id": "188631",
+    "full": "מרסלו מצ'אדו דוס סנטוס",
+    "short": "מרסלו סנטוס",
+    "foreign": false
+   },
+   {
+    "id": "177023",
+    "full": "אזקיאל אוסקר סקריונה",
+    "short": "אזקיאל סקריונה",
+    "foreign": false
+   },
+   {
+    "id": "176954",
+    "full": "ריור פיליפנקה",
+    "short": "ריור פיליפנקה",
+    "foreign": false
+   },
+   {
+    "id": "188738",
+    "full": "רובן מיקאל פרייטס דה רסוריישו",
+    "short": "רובן דה רסוריישו",
+    "foreign": false
+   },
+   {
+    "id": "71542",
+    "full": "אליאל פרץ",
+    "short": "אליאל פרץ",
+    "foreign": false
+   },
+   {
+    "id": "178434",
+    "full": "וידר אורן קיארטנסון",
+    "short": "וידר קיארטנסון",
+    "foreign": false
+   },
+   {
+    "id": "93419",
+    "full": "עמית רוזנבוים",
+    "short": "עמית רוזנבוים",
+    "foreign": false
+   },
+   {
+    "id": "166439",
+    "full": "פרדראג ריאקוביץ'",
+    "short": "פרדראג ריאקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "176219",
+    "full": "אהרן מקסוול שונפלד",
+    "short": "אהרן שונפלד",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2018": [
+   {
+    "id": "87984",
+    "full": "חביב אוחיון",
+    "short": "חביב אוחיון",
+    "foreign": false
+   },
+   {
+    "id": "71644",
+    "full": "תומר אלטמן",
+    "short": "תומר אלטמן",
+    "foreign": false
+   },
+   {
+    "id": "34253",
+    "full": "עומר אצילי",
+    "short": "עומר אצילי",
+    "foreign": false
+   },
+   {
+    "id": "191006",
+    "full": "ז'אן-סילבן באבין",
+    "short": "זאן באבין",
+    "foreign": false
+   },
+   {
+    "id": "189586",
+    "full": "כריסטיאן דמיאן באטוקיו",
+    "short": "כריסטיאן באטוקיו",
+    "foreign": false
+   },
+   {
+    "id": "190447",
+    "full": "ניקולס אלכסנדר בלקמן",
+    "short": "ניקולס בלקמן",
+    "foreign": false
+   },
+   {
+    "id": "1415",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "31209",
+    "full": "אלי דסה",
+    "short": "אלי דסה",
+    "foreign": false
+   },
+   {
+    "id": "99267",
+    "full": "רן ישראל ואתורי",
+    "short": "רן ואתורי",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "17434",
+    "full": "ברק יצחקי",
+    "short": "ברק יצחקי",
+    "foreign": false
+   },
+   {
+    "id": "34684",
+    "full": "דניאל ליפשיץ",
+    "short": "דניאל ליפשיץ",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "191154",
+    "full": "חוזה מרטינז רודריגז",
+    "short": "חוזה רודריגז",
+    "foreign": false
+   },
+   {
+    "id": "108856",
+    "full": "פאדי נג'אר",
+    "short": "פאדי נגאר",
+    "foreign": false
+   },
+   {
+    "id": "31335",
+    "full": "אלירן עטר",
+    "short": "אלירן עטר",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "7128",
+    "full": "גידי קאניוק",
+    "short": "גידי קאניוק",
+    "foreign": false
+   },
+   {
+    "id": "178434",
+    "full": "וידר אורן קיארטנסון",
+    "short": "וידר קיארטנסון",
+    "foreign": false
+   },
+   {
+    "id": "166439",
+    "full": "פרדראג ריאקוביץ'",
+    "short": "פרדראג ריאקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "176219",
+    "full": "אהרן מקסוול שונפלד",
+    "short": "אהרן שונפלד",
+    "foreign": false
+   },
+   {
+    "id": "6194",
+    "full": "יובל שפונגין",
+    "short": "יובל שפונגין",
+    "foreign": false
+   }
+  ],
+  "2019": [
+   {
+    "id": "20522",
+    "full": "*****",
+    "short": "*****",
+    "foreign": false
+   },
+   {
+    "id": "201732",
+    "full": "צ'יקו אופואדו",
+    "short": "ציקו אופואדו",
+    "foreign": false
+   },
+   {
+    "id": "201590",
+    "full": "ז'איר אמאדור",
+    "short": "זאיר אמאדור",
+    "foreign": false
+   },
+   {
+    "id": "34253",
+    "full": "עומר אצילי",
+    "short": "עומר אצילי",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "58445",
+    "full": "דן ליאון גלזר",
+    "short": "דן גלזר",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "31209",
+    "full": "אלי דסה",
+    "short": "אלי דסה",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "64621",
+    "full": "יונתן כהן",
+    "short": "יונתן כהן",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "212424",
+    "full": "אורוש ניקוליץ'",
+    "short": "אורוש ניקוליץ",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "31335",
+    "full": "אלירן עטר",
+    "short": "אלירן עטר",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "39279",
+    "full": "מאור קנדיל",
+    "short": "מאור קנדיל",
+    "foreign": false
+   },
+   {
+    "id": "166439",
+    "full": "פרדראג ריאקוביץ'",
+    "short": "פרדראג ריאקוביץ",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "176219",
+    "full": "אהרן מקסוול שונפלד",
+    "short": "אהרן שונפלד",
+    "foreign": false
+   },
+   {
+    "id": "33841",
+    "full": "איתי שכטר",
+    "short": "איתי שכטר",
+    "foreign": false
+   }
+  ],
+  "2020": [
+   {
+    "id": "20522",
+    "full": "*****",
+    "short": "*****",
+    "foreign": false
+   },
+   {
+    "id": "201732",
+    "full": "צ'יקו אופואדו",
+    "short": "ציקו אופואדו",
+    "foreign": false
+   },
+   {
+    "id": "98244",
+    "full": "אילון אלמוג",
+    "short": "אילון אלמוג",
+    "foreign": false
+   },
+   {
+    "id": "201590",
+    "full": "ז'איר אמאדור",
+    "short": "זאיר אמאדור",
+    "foreign": false
+   },
+   {
+    "id": "34253",
+    "full": "עומר אצילי",
+    "short": "עומר אצילי",
+    "foreign": false
+   },
+   {
+    "id": "190447",
+    "full": "ניקולס אלכסנדר בלקמן",
+    "short": "ניקולס בלקמן",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "58445",
+    "full": "דן ליאון גלזר",
+    "short": "דן גלזר",
+    "foreign": false
+   },
+   {
+    "id": "213253",
+    "full": "אנדרה ג'ראלדש",
+    "short": "אנדרה גראלדש",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "66298",
+    "full": "מתן חוזז",
+    "short": "מתן חוזז",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "213121",
+    "full": "אנדראס יאניוטיס",
+    "short": "אנדראס יאניוטיס",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "64621",
+    "full": "יונתן כהן",
+    "short": "יונתן כהן",
+    "foreign": false
+   },
+   {
+    "id": "86256",
+    "full": "עומר כץ",
+    "short": "עומר כץ",
+    "foreign": false
+   },
+   {
+    "id": "5283",
+    "full": "דור מיכה",
+    "short": "דור מיכה",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "39279",
+    "full": "מאור קנדיל",
+    "short": "מאור קנדיל",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "33841",
+    "full": "איתי שכטר",
+    "short": "איתי שכטר",
+    "foreign": false
+   }
+  ],
+  "2021": [
+   {
+    "id": "98244",
+    "full": "אילון אלמוג",
+    "short": "אילון אלמוג",
+    "foreign": false
+   },
+   {
+    "id": "68917",
+    "full": "דן ביטון",
+    "short": "דן ביטון",
+    "foreign": false
+   },
+   {
+    "id": "57056",
+    "full": "מתן בלטקסה",
+    "short": "מתן בלטקסה",
+    "foreign": false
+   },
+   {
+    "id": "190447",
+    "full": "ניקולס אלכסנדר בלקמן",
+    "short": "ניקולס בלקמן",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "58445",
+    "full": "דן ליאון גלזר",
+    "short": "דן גלזר",
+    "foreign": false
+   },
+   {
+    "id": "213253",
+    "full": "אנדרה ג'ראלדש",
+    "short": "אנדרה גראלדש",
+    "foreign": false
+   },
+   {
+    "id": "202844",
+    "full": "אדוארדו גררו",
+    "short": "אדוארדו גררו",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "229626",
+    "full": "לואיס הרננדז רודריגז",
+    "short": "לואיס רודריגז",
+    "foreign": false
+   },
+   {
+    "id": "66298",
+    "full": "מתן חוזז",
+    "short": "מתן חוזז",
+    "foreign": false
+   },
+   {
+    "id": "650",
+    "full": "איתן טיבי",
+    "short": "איתן טיבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "135349",
+    "full": "אור יצחק",
+    "short": "אור יצחק",
+    "foreign": false
+   },
+   {
+    "id": "64621",
+    "full": "יונתן כהן",
+    "short": "יונתן כהן",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "212424",
+    "full": "אורוש ניקוליץ'",
+    "short": "אורוש ניקוליץ",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "106014",
+    "full": "דניאל פרץ",
+    "short": "דניאל פרץ",
+    "foreign": false
+   },
+   {
+    "id": "229605",
+    "full": "אלכסנדר פשיץ'",
+    "short": "אלכסנדר פשיץ",
+    "foreign": false
+   },
+   {
+    "id": "101453",
+    "full": "עדן קארצב",
+    "short": "עדן קארצב",
+    "foreign": false
+   },
+   {
+    "id": "39279",
+    "full": "מאור קנדיל",
+    "short": "מאור קנדיל",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "33841",
+    "full": "איתי שכטר",
+    "short": "איתי שכטר",
+    "foreign": false
+   }
+  ],
+  "2022": [
+   {
+    "id": "98244",
+    "full": "אילון אלמוג",
+    "short": "אילון אלמוג",
+    "foreign": false
+   },
+   {
+    "id": "68917",
+    "full": "דן ביטון",
+    "short": "דן ביטון",
+    "foreign": false
+   },
+   {
+    "id": "57056",
+    "full": "מתן בלטקסה",
+    "short": "מתן בלטקסה",
+    "foreign": false
+   },
+   {
+    "id": "23662",
+    "full": "טל בן חיים",
+    "short": "טל בן חיים",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "58445",
+    "full": "דן ליאון גלזר",
+    "short": "דן גלזר",
+    "foreign": false
+   },
+   {
+    "id": "213253",
+    "full": "אנדרה ג'ראלדש",
+    "short": "אנדרה גראלדש",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "66298",
+    "full": "מתן חוזז",
+    "short": "מתן חוזז",
+    "foreign": false
+   },
+   {
+    "id": "95026",
+    "full": "אוסאמה ח'לאילה",
+    "short": "אוסאמה חלאילה",
+    "foreign": false
+   },
+   {
+    "id": "247554",
+    "full": "ג'ורג'ה יובאנוביץ'",
+    "short": "גורגה יובאנוביץ",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "135349",
+    "full": "אור יצחק",
+    "short": "אור יצחק",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "114368",
+    "full": "עידן נחמיאס",
+    "short": "עידן נחמיאס",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "247551",
+    "full": "ז'וסוואה סה",
+    "short": "זוסוואה סה",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "236579",
+    "full": "סטיפה פריצה",
+    "short": "סטיפה פריצה",
+    "foreign": false
+   },
+   {
+    "id": "106014",
+    "full": "דניאל פרץ",
+    "short": "דניאל פרץ",
+    "foreign": false
+   },
+   {
+    "id": "238995",
+    "full": "ברנדלי קוואס",
+    "short": "ברנדלי קוואס",
+    "foreign": false
+   },
+   {
+    "id": "39279",
+    "full": "מאור קנדיל",
+    "short": "מאור קנדיל",
+    "foreign": false
+   },
+   {
+    "id": "77673",
+    "full": "גבריאל קניקובסקי",
+    "short": "גבריאל קניקובסקי",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "58646",
+    "full": "עדן שמיר",
+    "short": "עדן שמיר",
+    "foreign": false
+   }
+  ],
+  "2023": [
+   {
+    "id": "264440",
+    "full": "רארש אילייה",
+    "short": "רארש אילייה",
+    "foreign": false
+   },
+   {
+    "id": "132000",
+    "full": "תומר אלון",
+    "short": "תומר אלון",
+    "foreign": false
+   },
+   {
+    "id": "98244",
+    "full": "אילון אלמוג",
+    "short": "אילון אלמוג",
+    "foreign": false
+   },
+   {
+    "id": "68917",
+    "full": "דן ביטון",
+    "short": "דן ביטון",
+    "foreign": false
+   },
+   {
+    "id": "2243",
+    "full": "ניר ביטון",
+    "short": "ניר ביטון",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "58445",
+    "full": "דן ליאון גלזר",
+    "short": "דן גלזר",
+    "foreign": false
+   },
+   {
+    "id": "213253",
+    "full": "אנדרה ג'ראלדש",
+    "short": "אנדרה גראלדש",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "248193",
+    "full": "יוריס ואן אובריים",
+    "short": "יוריס ואן אובריים",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "66298",
+    "full": "מתן חוזז",
+    "short": "מתן חוזז",
+    "foreign": false
+   },
+   {
+    "id": "247554",
+    "full": "ג'ורג'ה יובאנוביץ'",
+    "short": "גורגה יובאנוביץ",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "135349",
+    "full": "אור יצחק",
+    "short": "אור יצחק",
+    "foreign": false
+   },
+   {
+    "id": "64621",
+    "full": "יונתן כהן",
+    "short": "יונתן כהן",
+    "foreign": false
+   },
+   {
+    "id": "254112",
+    "full": "דריק לוקאסן",
+    "short": "דריק לוקאסן",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "114368",
+    "full": "עידן נחמיאס",
+    "short": "עידן נחמיאס",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "213691",
+    "full": "גויאגון פארפה",
+    "short": "גויאגון פארפה",
+    "foreign": false
+   },
+   {
+    "id": "56756",
+    "full": "שחר בכטיאר פיבן",
+    "short": "שחר פיבן",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "106014",
+    "full": "דניאל פרץ",
+    "short": "דניאל פרץ",
+    "foreign": false
+   },
+   {
+    "id": "39279",
+    "full": "מאור קנדיל",
+    "short": "מאור קנדיל",
+    "foreign": false
+   },
+   {
+    "id": "77673",
+    "full": "גבריאל קניקובסקי",
+    "short": "גבריאל קניקובסקי",
+    "foreign": false
+   },
+   {
+    "id": "29570",
+    "full": "אברהם ריקן",
+    "short": "אברהם ריקן",
+    "foreign": false
+   },
+   {
+    "id": "126467",
+    "full": "דור דויד תורגמן",
+    "short": "דור תורגמן",
+    "foreign": false
+   }
+  ],
+  "2024": [
+   {
+    "id": "283380",
+    "full": "הנרי אדו",
+    "short": "הנרי אדו",
+    "foreign": false
+   },
+   {
+    "id": "132000",
+    "full": "תומר אלון",
+    "short": "תומר אלון",
+    "foreign": false
+   },
+   {
+    "id": "269415",
+    "full": "פרנציסקו מיגל בונדוזו",
+    "short": "פרנציסקו בונדוזו",
+    "foreign": false
+   },
+   {
+    "id": "68917",
+    "full": "דן ביטון",
+    "short": "דן ביטון",
+    "foreign": false
+   },
+   {
+    "id": "2243",
+    "full": "ניר ביטון",
+    "short": "ניר ביטון",
+    "foreign": false
+   },
+   {
+    "id": "57056",
+    "full": "מתן בלטקסה",
+    "short": "מתן בלטקסה",
+    "foreign": false
+   },
+   {
+    "id": "5727",
+    "full": "אייל גולסה",
+    "short": "אייל גולסה",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "105732",
+    "full": "אושר דוידה",
+    "short": "אושר דוידה",
+    "foreign": false
+   },
+   {
+    "id": "248193",
+    "full": "יוריס ואן אובריים",
+    "short": "יוריס ואן אובריים",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "8487",
+    "full": "שרן ייני",
+    "short": "שרן ייני",
+    "foreign": false
+   },
+   {
+    "id": "135349",
+    "full": "אור יצחק",
+    "short": "אור יצחק",
+    "foreign": false
+   },
+   {
+    "id": "119009",
+    "full": "אבישי כהן",
+    "short": "אבישי כהן",
+    "foreign": false
+   },
+   {
+    "id": "64621",
+    "full": "יונתן כהן",
+    "short": "יונתן כהן",
+    "foreign": false
+   },
+   {
+    "id": "254112",
+    "full": "דריק לוקאסן",
+    "short": "דריק לוקאסן",
+    "foreign": false
+   },
+   {
+    "id": "269762",
+    "full": "אורלנדו מוסקרה",
+    "short": "אורלנדו מוסקרה",
+    "foreign": false
+   },
+   {
+    "id": "178551",
+    "full": "דניאל מילר טננבאום",
+    "short": "דניאל טננבאום",
+    "foreign": false
+   },
+   {
+    "id": "122367",
+    "full": "יונס מלדה",
+    "short": "יונס מלדה",
+    "foreign": false
+   },
+   {
+    "id": "22546",
+    "full": "רועי משפתי",
+    "short": "רועי משפתי",
+    "foreign": false
+   },
+   {
+    "id": "114368",
+    "full": "עידן נחמיאס",
+    "short": "עידן נחמיאס",
+    "foreign": false
+   },
+   {
+    "id": "201608",
+    "full": "אנריק סבוריט",
+    "short": "אנריק סבוריט",
+    "foreign": false
+   },
+   {
+    "id": "150915",
+    "full": "רועי עמדי",
+    "short": "רועי עמדי",
+    "foreign": false
+   },
+   {
+    "id": "265465",
+    "full": "ז'ואו פילישיו מנדס",
+    "short": "זואו מנדס",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "148013",
+    "full": "עמית צור",
+    "short": "עמית צור",
+    "foreign": false
+   },
+   {
+    "id": "101453",
+    "full": "עדן קארצב",
+    "short": "עדן קארצב",
+    "foreign": false
+   },
+   {
+    "id": "142835",
+    "full": "אדיר קורדובה",
+    "short": "אדיר קורדובה",
+    "foreign": false
+   },
+   {
+    "id": "77673",
+    "full": "גבריאל קניקובסקי",
+    "short": "גבריאל קניקובסקי",
+    "foreign": false
+   },
+   {
+    "id": "132044",
+    "full": "רוי רביבו",
+    "short": "רוי רביבו",
+    "foreign": false
+   },
+   {
+    "id": "123490",
+    "full": "עידו שחר",
+    "short": "עידו שחר",
+    "foreign": false
+   },
+   {
+    "id": "81874",
+    "full": "רז שלמה",
+    "short": "רז שלמה",
+    "foreign": false
+   },
+   {
+    "id": "126467",
+    "full": "דור דויד תורגמן",
+    "short": "דור תורגמן",
+    "foreign": false
+   }
+  ],
+  "2025": [
+   {
+    "id": "283380",
+    "full": "הנרי אדו",
+    "short": "הנרי אדו",
+    "foreign": false
+   },
+   {
+    "id": "284480",
+    "full": "טייריס אסנטה",
+    "short": "טייריס אסנטה",
+    "foreign": false
+   },
+   {
+    "id": "49494",
+    "full": "אופיר דודזאדה",
+    "short": "אופיר דודזאדה",
+    "foreign": false
+   },
+   {
+    "id": "105732",
+    "full": "אושר דוידה",
+    "short": "אושר דוידה",
+    "foreign": false
+   },
+   {
+    "id": "248193",
+    "full": "יוריס ואן אובריים",
+    "short": "יוריס ואן אובריים",
+    "foreign": false
+   },
+   {
+    "id": "14064",
+    "full": "ערן זהבי",
+    "short": "ערן זהבי",
+    "foreign": false
+   },
+   {
+    "id": "56185",
+    "full": "שגיב יחזקאל",
+    "short": "שגיב יחזקאל",
+    "foreign": false
+   },
+   {
+    "id": "119009",
+    "full": "אבישי כהן",
+    "short": "אבישי כהן",
+    "foreign": false
+   },
+   {
+    "id": "98786",
+    "full": "השאם ליוס",
+    "short": "השאם ליוס",
+    "foreign": false
+   },
+   {
+    "id": "132052",
+    "full": "סתיו למקין",
+    "short": "סתיו למקין",
+    "foreign": false
+   },
+   {
+    "id": "124295",
+    "full": "אלעד מדמון",
+    "short": "אלעד מדמון",
+    "foreign": false
+   },
+   {
+    "id": "122367",
+    "full": "יונס מלדה",
+    "short": "יונס מלדה",
+    "foreign": false
+   },
+   {
+    "id": "143447",
+    "full": "אופק מליקה אהרון",
+    "short": "אופק אהרון",
+    "foreign": false
+   },
+   {
+    "id": "22546",
+    "full": "רועי משפתי",
+    "short": "רועי משפתי",
+    "foreign": false
+   },
+   {
+    "id": "114368",
+    "full": "עידן נחמיאס",
+    "short": "עידן נחמיאס",
+    "foreign": false
+   },
+   {
+    "id": "286583",
+    "full": "נמניה סטואיץ'",
+    "short": "נמניה סטואיץ",
+    "foreign": false
+   },
+   {
+    "id": "284963",
+    "full": "איסוף סיסוקו",
+    "short": "איסוף סיסוקו",
+    "foreign": false
+   },
+   {
+    "id": "294672",
+    "full": "סימון סלוגה",
+    "short": "סימון סלוגה",
+    "foreign": false
+   },
+   {
+    "id": "150915",
+    "full": "רועי עמדי",
+    "short": "רועי עמדי",
+    "foreign": false
+   },
+   {
+    "id": "287782",
+    "full": "ווסלי פינטו בטיסטה",
+    "short": "ווסלי בטיסטה",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "77673",
+    "full": "גבריאל קניקובסקי",
+    "short": "גבריאל קניקובסקי",
+    "foreign": false
+   },
+   {
+    "id": "132044",
+    "full": "רוי רביבו",
+    "short": "רוי רביבו",
+    "foreign": false
+   },
+   {
+    "id": "123490",
+    "full": "עידו שחר",
+    "short": "עידו שחר",
+    "foreign": false
+   },
+   {
+    "id": "81874",
+    "full": "רז שלמה",
+    "short": "רז שלמה",
+    "foreign": false
+   },
+   {
+    "id": "126467",
+    "full": "דור דויד תורגמן",
+    "short": "דור תורגמן",
+    "foreign": false
+   }
+  ],
+  "2026": [
+   {
+    "id": "162646",
+    "full": "סייד אבו פרחי",
+    "short": "סייד אבו פרחי",
+    "foreign": false
+   },
+   {
+    "id": "305500",
+    "full": "קרווין אנדרדה",
+    "short": "קרווין אנדרדה",
+    "foreign": false
+   },
+   {
+    "id": "284480",
+    "full": "טייריס אסנטה",
+    "short": "טייריס אסנטה",
+    "foreign": false
+   },
+   {
+    "id": "303163",
+    "full": "קריסטיאן בליץ",
+    "short": "קריסטיאן בליץ",
+    "foreign": false
+   },
+   {
+    "id": "170994",
+    "full": "נועם בן הרוש",
+    "short": "נועם בן הרוש",
+    "foreign": false
+   },
+   {
+    "id": "120784",
+    "full": "איתי בן חמו",
+    "short": "איתי בן חמו",
+    "foreign": false
+   },
+   {
+    "id": "87699",
+    "full": "דני גרופר",
+    "short": "דני גרופר",
+    "foreign": false
+   },
+   {
+    "id": "105732",
+    "full": "אושר דוידה",
+    "short": "אושר דוידה",
+    "foreign": false
+   },
+   {
+    "id": "302836",
+    "full": "היטור דוס סנטוס",
+    "short": "היטור סנטוס",
+    "foreign": false
+   },
+   {
+    "id": "305644",
+    "full": "חליו וארלה",
+    "short": "חליו וארלה",
+    "foreign": false
+   },
+   {
+    "id": "56185",
+    "full": "שגיב יחזקאל",
+    "short": "שגיב יחזקאל",
+    "foreign": false
+   },
+   {
+    "id": "164084",
+    "full": "יובל כפיר",
+    "short": "יובל כפיר",
+    "foreign": false
+   },
+   {
+    "id": "224824",
+    "full": "בן לדרמן",
+    "short": "בן לדרמן",
+    "foreign": false
+   },
+   {
+    "id": "124295",
+    "full": "אלעד מדמון",
+    "short": "אלעד מדמון",
+    "foreign": false
+   },
+   {
+    "id": "122367",
+    "full": "יונס מלדה",
+    "short": "יונס מלדה",
+    "foreign": false
+   },
+   {
+    "id": "143447",
+    "full": "אופק מליקה אהרון",
+    "short": "אופק אהרון",
+    "foreign": false
+   },
+   {
+    "id": "22546",
+    "full": "רועי משפתי",
+    "short": "רועי משפתי",
+    "foreign": false
+   },
+   {
+    "id": "108004",
+    "full": "איתמר נוי",
+    "short": "איתמר נוי",
+    "foreign": false
+   },
+   {
+    "id": "319790",
+    "full": "אמיר סהיטי",
+    "short": "אמיר סהיטי",
+    "foreign": false
+   },
+   {
+    "id": "284963",
+    "full": "איסוף סיסוקו",
+    "short": "איסוף סיסוקו",
+    "foreign": false
+   },
+   {
+    "id": "165018",
+    "full": "שליו סעדיה",
+    "short": "שליו סעדיה",
+    "foreign": false
+   },
+   {
+    "id": "59512",
+    "full": "דור פרץ",
+    "short": "דור פרץ",
+    "foreign": false
+   },
+   {
+    "id": "189610",
+    "full": "מוחמד עלי קאמארה",
+    "short": "מוחמד קאמארה",
+    "foreign": false
+   },
+   {
+    "id": "132044",
+    "full": "רוי רביבו",
+    "short": "רוי רביבו",
+    "foreign": false
+   },
+   {
+    "id": "123490",
+    "full": "עידו שחר",
+    "short": "עידו שחר",
+    "foreign": false
+   },
+   {
+    "id": "81874",
+    "full": "רז שלמה",
+    "short": "רז שלמה",
+    "foreign": false
+   }
+  ]
+ }
+}

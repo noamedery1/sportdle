@@ -1,0 +1,109 @@
+# ============================================================
+# תיקונים מטופס השחקן → PR
+# ------------------------------------------------------------
+# רץ על השרתים של GitHub. המחשב שלך יכול להיות כבוי.
+#
+# הסדר כאן הוא ההגנה, ולא רק נוחות:
+#   1. reports-apply כותב רק ל-config/names-*.json ול-ledger
+#   2. שומר הסף בודק שזה אכן כל מה שנגעו בו — לפני שרצה בנייה
+#   3. רק אז enrich ו-build, שמייצרים את data/clubs ואת הלוח
+#   4. PR. אף שינוי לא מגיע ל-main בלי שאדם לחץ מיזוג.
+#
+# שומר הסף חייב לרוץ לפני enrich: enrich משנה קבצים מיוצרים
+# שאינם ברשימה שלו, ואם הוא ירוץ אחריו הוא ייכשל תמיד.
+#
+# סודות שצריך להגדיר ב-Settings → Secrets and variables → Actions:
+#   REPORTS_URL     כתובת ה-/exec של Apps Script
+#   REPORTS_TOKEN   אותו טוקן שנמצא ב-Script properties
+# ============================================================
+name: תיקונים מהטופס
+
+on:
+  schedule:
+    # פעם בשעה, ב-:17. תיקון איות הוא לא כיבוי שריפה, ושעה עגולה
+    # היא הדקה העמוסה ביותר בכל התור של GitHub.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "הרצה יבשה — בלי כתיבה ובלי PR"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# שתי ריצות במקביל יכתבו לאותו קובץ ויסמנו את אותן שורות
+concurrency:
+  group: reports
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # enrich ו-build משתמשים רק במודולים של node. אין npm install
+      # במכוון: התלות היחידה בפרויקט היא Playwright, והוא נחוץ
+      # לגריפה בלבד — התקנתו כאן היא 150MB לחינם.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: משיכת התור והחלת תיקונים
+        env:
+          REPORTS_URL: ${{ secrets.REPORTS_URL }}
+          REPORTS_TOKEN: ${{ secrets.REPORTS_TOKEN }}
+          SUMMARY_OUT: ${{ runner.temp }}/summary.md
+        run: |
+          node tools/reports-apply.mjs ${{ inputs.dry && '--dry' || '' }}
+
+      - name: יש בכלל שינוי?
+        id: diff
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "אין שינוי — אין מה לפתוח."
+            echo "changed=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=yes" >> "$GITHUB_OUTPUT"
+            git status --porcelain
+          fi
+
+      - name: שומר הסף
+        if: steps.diff.outputs.changed == 'yes'
+        env:
+          GUARD_AUTO: "1"
+        run: node tools/reports-guard.mjs
+
+      - name: בנייה מחדש
+        if: steps.diff.outputs.changed == 'yes'
+        run: |
+          CLUBS=$(git status --porcelain -- config \
+                  | sed -n 's#.*config/names-\(.*\)\.json$#\1#p' \
+                  | paste -sd, -)
+          if [ -n "$CLUBS" ]; then
+            echo "מעשיר: $CLUBS"
+            node scripts/enrich.mjs --club="$CLUBS"
+          fi
+          node scripts/build.mjs
+
+      - name: פתיחת PR
+        if: steps.diff.outputs.changed == 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUMMARY: ${{ runner.temp }}/summary.md
+        run: |
+          set -e
+          BR="reports/$(date -u +%Y%m%d-%H%M)"
+          git config user.name  "sportdle-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BR"
+          git add -A
+          git commit -m "תיקונים מטופס השחקן" -m "$(head -c 3000 "$SUMMARY")"
+          git push -u origin "$BR"
+          gh pr create \
+            --title "תיקוני שחקנים מהטופס · $(date -u +%d/%m)" \
+            --body-file "$SUMMARY" \
+            --base main --head "$BR"

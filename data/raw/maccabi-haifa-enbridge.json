@@ -1,0 +1,313 @@
+{
+ "club": "maccabi-haifa",
+ "source": "enbridge",
+ "links": [
+  {
+   "en": "Nir Davidovitch",
+   "he": "ניר דוידוביץ'",
+   "via": "Nir Davidovich",
+   "born": 1976,
+   "how": "כותרת"
+  },
+  {
+   "en": "Tom Al-Madon",
+   "he": "תום אלמדון",
+   "via": "Tom Almadon",
+   "born": 1984,
+   "how": "כותרת"
+  },
+  {
+   "en": "Lior Asulin",
+   "he": "ליאור אסולין",
+   "via": "Lior Asulin",
+   "born": 1980,
+   "how": "כותרת"
+  },
+  {
+   "en": "Wiyam Amashe",
+   "he": "ויאם עמאשה",
+   "via": "Weaam Amasha",
+   "born": 1985,
+   "how": "כותרת"
+  },
+  {
+   "en": "Amos Sasy",
+   "he": "עמוס סאסי",
+   "via": "Amos Sassi",
+   "born": 1979,
+   "how": "כותרת"
+  },
+  {
+   "en": "Avishay Jano",
+   "he": "אבישי ז'אנו",
+   "via": "Avishai Jano",
+   "born": 1970,
+   "how": "כותרת"
+  },
+  {
+   "en": "Ivan Getsko",
+   "he": "איוואן גצקו",
+   "via": "Ivan Hetsko",
+   "born": 1968,
+   "how": "כותרת"
+  },
+  {
+   "en": "Yakubu Ayegbeni",
+   "he": "יעקובו איגביני",
+   "via": "Yakubu (footballer)",
+   "born": 1982,
+   "how": "כותרת"
+  },
+  {
+   "en": "Vladimer Dvalishvili",
+   "he": "ולדימיר דבאלישווילי",
+   "via": "Vladimir Dvalishvili",
+   "born": 1986,
+   "how": "כותרת"
+  },
+  {
+   "en": "Israel Zaguri",
+   "he": "ישראל זגורי",
+   "via": "Yisrael Zaguri",
+   "born": 1990,
+   "how": "כותרת"
+  },
+  {
+   "en": "Avihay Yadin",
+   "he": "אביחי ידין",
+   "via": "Avihai Yadin",
+   "born": 1986,
+   "how": "כותרת"
+  },
+  {
+   "en": "Shadi Shaaban",
+   "he": "שאדי שעבאן",
+   "via": "Shadi Shaban",
+   "born": 1992,
+   "how": "כותרת"
+  },
+  {
+   "en": "Elad Gabay",
+   "he": "אלעד גבאי",
+   "via": "Elad Gabai",
+   "born": 1985,
+   "how": "כותרת"
+  },
+  {
+   "en": "Ron Shushan",
+   "he": "רון שושן",
+   "via": "Ron Shushan",
+   "born": 1993,
+   "how": "כותרת"
+  },
+  {
+   "en": "Martynas Dapkus",
+   "he": "מרטינס דפקוס",
+   "via": "Martynas Dapkus",
+   "born": 1993,
+   "how": "כותרת"
+  },
+  {
+   "en": "Eli Cohen",
+   "he": "אלי כהן",
+   "via": "Eli Cohen (footballer, born 1961)",
+   "born": 1961,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Zion Marili",
+   "he": "ציון מרילי",
+   "via": "Zion Merili",
+   "born": 1957,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Sun Menachem",
+   "he": "סאן מנחם",
+   "via": "Sun Menahem",
+   "born": 1993,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Guy Melamed",
+   "he": "גיא מלמד",
+   "via": "Guy Melamed (footballer, born 1979)",
+   "born": 1979,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Shon Goldberg",
+   "he": "שון גולדברג",
+   "via": "Sean Goldberg",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ali Mohamed",
+   "he": "עלי מוחמד",
+   "via": "Ali Mohamed (footballer)",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Dani Rom",
+   "he": "דני רום",
+   "via": "Dani Shmulevich-Rom",
+   "born": 1940,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Josh Cohen",
+   "he": "ג'וש כהן",
+   "via": "Josh Cohen (soccer)",
+   "born": 1992,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Nehorai Ifrah",
+   "he": "נהוראי יפרח",
+   "via": "Nehorai Ifrach",
+   "born": 2003,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Abdoulaye Seck",
+   "he": "עבדוליי סק",
+   "via": "Abdoulaye Seck (footballer, born 1992)",
+   "born": 1992,
+   "how": "חיפוש"
+  },
+  {
+   "en": "John Culma",
+   "he": "ג'ון קולמה",
+   "via": "Jhon Culma",
+   "born": 1981,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Roi Kehat",
+   "he": "רועי קהת",
+   "via": "Roi Kahat",
+   "born": 1992,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Avi Perets",
+   "he": "אבי פרץ",
+   "via": "Avi Peretz (footballer)",
+   "born": 1971,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ronny Gafni",
+   "he": "רוני גפני",
+   "via": "Ronnie Gafney",
+   "born": 1980,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Allyson",
+   "he": "אליסון דוס סנטוס",
+   "via": "Allyson (footballer, born 1990)",
+   "born": 1990,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Maxim Plakushchenko",
+   "he": "מקסים פלקושצ'נקו",
+   "via": "Maxim Plakuschenko",
+   "born": 1996,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Stav Nachmani",
+   "he": "סתיו נחמני",
+   "via": "Stav Nahmani",
+   "born": 2002,
+   "how": "חיפוש"
+  },
+  {
+   "en": "José Rodríguez",
+   "he": "חוסה רודריגס מרטינס",
+   "via": "José Rodríguez (footballer, born 1994)",
+   "born": 1994,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ilay Hajaj",
+   "he": "עילאי חג'ג'",
+   "via": "Ilay Hagag",
+   "born": 2001,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Pedrão",
+   "he": "פדראו",
+   "via": "Pedrão (footballer, born 1997)",
+   "born": 1997,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ethane Azoulay",
+   "he": "איתן אזולאי",
+   "via": "Ethan Azoulay",
+   "born": 2002,
+   "how": "חיפוש"
+  }
+ ],
+ "tried": [
+  "Adoram Keisy",
+  "Lior Rosenthal",
+  "Yaron Parselani",
+  "Ofer Mizrahi",
+  "Jeshaayahu Schwager",
+  "Itay Mordechai",
+  "Rafi Cohen",
+  "Ayed Habshi",
+  "Royie Fucs",
+  "Imanuel Schwartz",
+  "Gil Ofek",
+  "Mohammad Awwad",
+  "Golan Deree",
+  "Haim Megrelishveli",
+  "Muhamad Shahbary",
+  "Mohammad Darwish",
+  "Daniel Zabar",
+  "Nadiv Simantov",
+  "Eran Levy",
+  "Dirceu",
+  "Andriy Pilyavsky",
+  "Yuval Yosipovich",
+  "Eran Biton",
+  "Adar Azrual",
+  "Shadi Masarwa",
+  "Yohanan Vollach",
+  "Serhiy Balanchuk",
+  "Beni Hadad",
+  "Ragid Baransi",
+  "Hezi Shirazi",
+  "Vasiliy Ivanov",
+  "Andrey Ostrovski",
+  "Camel Gabarin",
+  "Assaf Abrahami",
+  "Yossi Nagar",
+  "Shlomi Hanuka",
+  "Mor Mamam",
+  "Chen Azriel",
+  "Amir Naser A Din",
+  "Tal Bomshtein",
+  "Rayo",
+  "Or Eiloz",
+  "Ibrahim Goabara",
+  "Roei Mishpati",
+  "Diaa Sabi'a",
+  "Nehurai Yifrach",
+  "Nitai Greis",
+  "Lior Kasa",
+  "Omer Dahan",
+  "Elad Amir",
+  "Itay Ehud",
+  "Liam Hermesh"
+ ],
+ "checked": 88
+}

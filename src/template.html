@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>__SITE_TITLE__</title>
+<meta name="description" content="חמישה מועדונים. שחקן אחד מסתורי בכל יום. שמונה ניסיונות.">
+
+<!-- ===== תצוגה מקדימה בוואטסאפ — החלף את הדומיין ===== -->
+<meta property="og:type"        content="website">
+<meta property="og:title"       content="__SITE_TITLE__">
+<meta property="og:description" content="שחקן אחד. שמונה ניסיונות. כמה ייקח לכם?">
+<meta property="og:url"         content="__SITE_URL__/">
+<meta property="og:image"       content="__OG_IMAGE__">
+<meta property="og:image:width"  content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card"       content="summary_large_image">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="theme-color" content="#0C0C0E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-title" content="__SITE_NAME__">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C0C0E; --ink-2:#141418; --ink-3:#1C1C22; --line:#2E2E36;
+  --brand:#FFC72C; --near:#8A6A1C; --slate:#24242A;
+  --text:#F2F2F0; --dim:#8C8C94; --r:10px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--ink);-webkit-text-size-adjust:100%}
+html,body{margin:0;padding:0}
+body{background:var(--ink);color:var(--text);font-family:'Heebo',system-ui,sans-serif;
+  font-size:16px;line-height:1.5;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);
+  display:flex;flex-direction:column}
+.wrap{max-width:520px;width:100%;margin:0 auto;padding:0 14px 48px;flex:1}
+
+/* ---------- דסקטופ ---------- */
+@media (min-width:640px){
+  body{background:
+    radial-gradient(900px 520px at 50% -8%, #1A1A21 0%, rgba(12,12,14,0) 68%), var(--ink);}
+  .wrap{max-width:580px;padding:0 30px 60px;
+        border-inline:1px solid rgba(46,46,54,.7);
+        background:linear-gradient(180deg, rgba(20,20,24,.5), rgba(20,20,24,0) 420px);}
+  header{padding:30px 0 22px}
+  h1{font-size:52px}
+  .sub{font-size:14px;margin-top:10px}
+  #guess{font-size:18px;padding:16px 18px}
+  .legend{font-size:12.5px;gap:18px;margin:20px 0 6px}
+  #board{gap:14px}
+  .row{padding:11px 13px 13px}
+  .row .who{font-size:16.5px;margin-bottom:10px}
+  .tiles{gap:7px}
+  .tile{min-height:64px;padding:10px 4px 9px}
+  .tile .k{font-size:10.5px}
+  .tile .v{font-size:14.5px}
+  .card{padding:24px 22px}
+  .card h2{font-size:30px}
+  .mini i{width:17px;height:17px}
+  #streak{top:32px;font-size:13px}
+}
+@media (min-width:1024px){ .wrap{max-width:600px} }
+.scarf{height:14px;background:repeating-linear-gradient(115deg,var(--brand) 0 16px,var(--ink) 16px 32px)}
+.scarf.bottom{margin-top:32px}
+
+header{padding:20px 0 16px;text-align:center;position:relative}
+h1{font-family:'Suez One',Georgia,serif;font-size:clamp(34px,10vw,46px);line-height:1;margin:0;
+  color:var(--brand);letter-spacing:-.5px}
+.sub{margin:8px 0 0;font-size:13px;color:var(--dim);font-weight:500}
+.sub b{color:var(--text);font-weight:700}
+#streak{position:absolute;top:22px;inset-inline-start:0;font-size:12px;color:var(--dim);
+  background:var(--ink-2);border:1px solid var(--line);border-radius:20px;padding:4px 11px;display:none}
+#streak.on{display:block}
+#streak b{color:var(--brand);font-weight:900}
+
+.searchbox{position:relative}
+#guess{width:100%;padding:14px 16px;font-family:inherit;font-size:17px;font-weight:500;
+  color:var(--text);background:var(--ink-2);border:1.5px solid var(--line);border-radius:var(--r);outline:none}
+#guess::placeholder{color:#5C5C66}
+#guess:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(var(--brand-rgb),.15)}
+#guess:disabled{opacity:.4}
+#sugg{position:absolute;top:calc(100% + 6px);inset-inline:0;background:var(--ink-3);
+  border:1.5px solid var(--line);border-radius:var(--r);overflow:hidden auto;max-height:240px;
+  z-index:30;display:none;box-shadow:0 12px 32px rgba(0,0,0,.6)}
+#sugg.on{display:block}
+#sugg button{display:block;width:100%;text-align:start;padding:11px 16px;background:none;border:0;
+  border-bottom:1px solid var(--line);color:var(--text);font-family:inherit;font-size:16px;cursor:pointer}
+#sugg button:last-child{border-bottom:0}
+#sugg button:hover,#sugg button.sel{background:var(--brand);color:var(--ink);font-weight:700}
+
+.legend{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:16px 0 4px;
+  font-size:11.5px;color:var(--dim)}
+.legend span{display:flex;align-items:center;gap:5px}
+.dot{width:11px;height:11px;border-radius:3px;display:inline-block}
+.dot.y{background:var(--brand)} .dot.o{background:var(--near)}
+.dot.s{background:var(--slate);border:1px solid var(--line)}
+
+#board{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.row{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:9px 10px 10px}
+.row .who{font-size:15px;font-weight:700;margin:0 0 8px;display:flex;justify-content:space-between;
+  align-items:baseline;gap:8px}
+.row .who i{font-style:normal;font-size:11px;color:var(--dim);font-weight:500}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.tile{border-radius:7px;padding:8px 3px 7px;text-align:center;background:var(--slate);color:var(--text);
+  min-height:54px;display:flex;flex-direction:column;justify-content:center;gap:3px;
+  opacity:0;transform:rotateX(-90deg);animation:flip .42s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes flip{to{opacity:1;transform:rotateX(0)}}
+.tile .k{font-size:9.5px;opacity:.72;font-weight:500}
+.tile .v{font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.15;unicode-bidi:isolate;white-space:nowrap}
+.tile.hit{background:var(--brand);color:var(--ink)}
+.tile.near{background:var(--near);color:#fff}
+.tile .ar{font-size:11px;font-weight:900;opacity:.9}
+@media (prefers-reduced-motion:reduce){.tile{animation:none;opacity:1;transform:none}}
+
+#result{margin-top:22px;display:none}
+#result.on{display:block}
+.card{border:1.5px solid var(--brand);border-radius:14px;padding:18px 16px;text-align:center;
+  background:linear-gradient(180deg,rgba(var(--brand-rgb),.09),transparent)}
+.card h2{font-family:'Suez One',serif;font-size:26px;margin:0;color:var(--brand)}
+.card p{margin:8px 0 0;font-size:14.5px;color:var(--dim)}
+.card p b{color:var(--text)}
+.mini{display:inline-flex;flex-direction:column;gap:3px;margin:16px auto 0;padding:10px;
+  background:var(--ink);border-radius:8px}
+.mini .r{display:flex;gap:3px}
+.mini i{width:14px;height:14px;border-radius:3px;display:block}
+.mini i.hit{background:var(--brand)} .mini i.near{background:var(--near)} .mini i.miss{background:var(--slate)}
+#next{margin-top:16px;font-size:12.5px;color:var(--dim)}
+#next b{color:var(--text);font-variant-numeric:tabular-nums;font-weight:700}
+button.act{margin-top:14px;width:100%;padding:14px;border:0;border-radius:var(--r);
+  background:var(--brand);color:var(--ink);font-family:inherit;font-size:16px;font-weight:900;cursor:pointer}
+button.act:active{transform:translateY(1px)}
+button.ghost{background:none;color:var(--dim);border:1.5px solid var(--line);margin-top:9px;
+  font-weight:700;font-size:14px}
+.note{margin-top:20px;padding:12px 14px;background:var(--ink-2);border:1px solid var(--line);
+  border-radius:var(--r);font-size:11.5px;color:var(--dim);line-height:1.7}
+.note b{color:var(--text)}
+/* כפתור עזרה */
+h1 a{color:inherit;text-decoration:none}
+
+/* חלונית */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(6,6,8,.82);backdrop-filter:blur(4px);
+  display:none;align-items:flex-end;justify-content:center}
+.modal.on{display:flex}
+.sheet{background:var(--ink-2);border:1px solid var(--line);border-bottom:0;
+  border-radius:16px 16px 0 0;width:100%;max-width:520px;max-height:88dvh;overflow:auto;
+  padding:22px 18px calc(26px + env(safe-area-inset-bottom));position:relative}
+@media (min-width:640px){
+  .modal{align-items:center;padding:20px}
+  .sheet{border-radius:16px;border-bottom:1px solid var(--line);max-height:82dvh}
+}
+.sheet h3{font-family:'Suez One',serif;color:var(--brand);font-size:22px;margin:0 0 12px}
+.sheet h4{font-size:13px;margin:20px 0 7px;color:var(--text)}
+.sheet p{font-size:13.5px;color:var(--dim);margin:0 0 10px;line-height:1.65}
+.sheet b{color:var(--text)}
+.sheet .x{position:absolute;top:16px;inset-inline-end:16px;background:none;border:0;
+  color:var(--dim);font-size:20px;cursor:pointer;padding:4px;margin:0;width:auto}
+.ex{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:10px 0 4px}
+.ex div{border-radius:7px;padding:7px 2px;text-align:center;background:var(--slate);
+  min-height:48px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.ex div.hit{background:var(--brand);color:var(--ink)}
+.ex div.near{background:var(--near);color:#fff}
+.ex .k{font-size:9.5px;opacity:.75} .ex .v{font-size:12.5px;font-weight:700;unicode-bidi:isolate}
+
+/* פוטר / קרדיט */
+footer{margin-top:26px;padding-top:14px;border-top:1px solid rgba(46,46,54,.55);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-size:11px;color:#55555E;line-height:1.5}
+.credit{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  color:var(--dim);font-size:11.5px;font-weight:500;white-space:nowrap}
+.credit b{color:#7A7A84;font-weight:700}
+.credit:hover{color:var(--brand)}
+.credit:hover b{color:var(--brand)}
+footer .who{text-align:start}
+footer .who a{color:#55555E;text-decoration:none}
+footer .who a:hover{color:var(--dim)}
+#comm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
+#comm.on{display:block}
+#comm .hd{font-size:12px;color:var(--dim);margin-bottom:10px}
+#comm .hd b{color:var(--text);font-weight:900}
+#comm .rank{font-size:14px;color:var(--brand);font-weight:900;margin-bottom:11px}
+#comm .cb{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--dim);margin-bottom:3px}
+#comm .cb i{font-style:normal;width:9px;text-align:center;font-weight:700;color:var(--text)}
+#comm .cb u{text-decoration:none;background:var(--slate);border-radius:3px;padding:1px 5px;
+  min-width:22px;text-align:center;color:var(--text);font-weight:700;font-size:10px;
+  font-variant-numeric:tabular-nums;display:inline-block}
+#comm .cb.me u{background:var(--brand);color:var(--ink)}
+.stats{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09)}
+.stats .nums{display:flex;justify-content:center;gap:22px;margin-bottom:12px}
+.stats .nums div{font-size:10.5px;color:var(--dim)}
+.stats .nums b{display:block;font-size:21px;color:var(--text);font-weight:900;
+  font-variant-numeric:tabular-nums;line-height:1.2}
+.bars{display:flex;flex-direction:column;gap:3px}
+.bars .b{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--dim)}
+.bars .b i{font-style:normal;width:9px;text-align:center;font-weight:700;color:var(--text)}
+.bars .b span{background:var(--slate);border-radius:3px;padding:1px 5px;min-width:20px;
+  text-align:center;color:var(--text);font-weight:700;font-size:10px;
+  font-variant-numeric:tabular-nums;transition:width .3s}
+.bars .b.now span{background:var(--brand);color:var(--ink)}
+
+button.wa{background:#1FA855;color:#fff}
+textarea.rt{width:100%;min-height:110px;resize:vertical;background:var(--ink);
+  border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;
+  color:var(--text);font-family:inherit;font-size:15px;line-height:1.55;outline:none;margin-top:4px}
+textarea.rt:focus{border-color:var(--brand)}
+input.rc{width:100%;background:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:11px 13px;color:var(--text);font-family:inherit;font-size:15px;outline:none;margin-top:4px}
+input.rc:focus{border-color:var(--brand)}
+.rlab{font-size:12px;color:var(--dim);margin-top:14px;display:block}
+#repStat{margin-top:10px;font-size:13px;min-height:18px}
+#repStat.ok{color:var(--brand)} #repStat.bad{color:#E8B77A}
+
+/* ---------- אתמול ---------- */
+#yday{margin:16px 0 0;padding:9px 12px;border-radius:var(--r);background:var(--ink-2);
+  border:1px solid var(--line);font-size:12.5px;color:var(--dim);display:none;
+  align-items:center;justify-content:space-between;gap:10px;line-height:1.4}
+#yday.on{display:flex}
+#yday b{color:var(--text);font-weight:700}
+#yday button{background:none;border:1px solid var(--line);border-radius:14px;padding:4px 12px;
+  color:var(--dim);font-family:inherit;font-size:11.5px;font-weight:700;cursor:pointer;
+  margin:0;width:auto;white-space:nowrap;flex:0 0 auto}
+#yday button:hover{color:var(--brand);border-color:var(--brand)}
+
+/* ---------- רמז ---------- */
+#hintRow{margin-top:14px;text-align:center;display:none}
+#hintRow.on{display:block}
+#hintBtn{background:none;border:1.5px dashed var(--line);border-radius:var(--r);
+  padding:9px 16px;color:var(--dim);font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;margin:0;width:auto}
+#hintBtn:hover{color:var(--brand);border-color:var(--brand)}
+#hintOut{font-size:13px;color:var(--brand);font-weight:700;line-height:1.5;
+  background:rgba(var(--brand-rgb),.07);border:1px solid rgba(var(--brand-rgb),.28);
+  border-radius:var(--r);padding:9px 12px}
+#hintOut:empty{display:none}
+#hintBtn + #hintOut{margin-top:9px}
+
+/* ---------- ארכיון ---------- */
+/* ---------- בורר מועדון ---------- */
+#clubBtn{display:inline-flex;align-items:center;gap:7px;margin:11px auto 0;width:auto;
+  padding:8px 16px;border-radius:22px;background:none;color:var(--brand);
+  border:1.5px solid var(--brand);font-family:inherit;font-size:13px;
+  font-weight:700;cursor:pointer;line-height:1}
+#clubBtn i{font-style:normal;font-size:15px}
+#clubBtn:hover{background:var(--brand);color:var(--ink)}
+
+#picker{position:fixed;inset:0;z-index:80;background:var(--ink);display:none;
+  overflow:auto;padding:calc(28px + env(safe-area-inset-top)) 16px 40px}
+#picker.on{display:block}
+#picker .inner{max-width:520px;margin:0 auto}
+#picker h2{font-family:'Suez One',Georgia,serif;font-size:clamp(28px,8vw,38px);
+  margin:0 0 6px;text-align:center;color:var(--text)}
+#picker p.lead{text-align:center;color:var(--dim);font-size:13.5px;margin:0 0 22px}
+.clubs{display:flex;flex-direction:column;gap:10px}
+.clubs button{display:flex;align-items:center;gap:13px;width:100%;text-align:start;
+  background:var(--ink-2);border:1.5px solid var(--line);border-radius:12px;
+  padding:14px 15px;color:var(--text);font-family:inherit;cursor:pointer;margin:0}
+.clubs button:hover,.clubs button:focus-visible{border-color:var(--c)}
+.clubs button .swatch{width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+  background:repeating-linear-gradient(115deg,var(--c) 0 8px,var(--c2,var(--ink)) 8px 16px)}
+.clubs button .t{display:flex;flex-direction:column;gap:2px;min-width:0}
+.clubs button .t b{font-family:'Suez One',Georgia,serif;font-size:19px;font-weight:400;color:var(--c)}
+.clubs button .t i{font-style:normal;font-size:11.5px;color:var(--dim)}
+.clubs button.cur{border-color:var(--c)}
+#picker .foot{margin-top:24px;text-align:center;font-size:11.5px;color:#55555E;line-height:1.7}
+#picker .foot a{color:#6A6A74;text-decoration:none}
+
+/* שני כפתורי הכותרת חייבים אותו גודל ואותה מרכוז — בלי flex
+   הגליף יושב על קו הבסיס, וכל אחד יושב אחרת. */
+#helpBtn,#archBtn{position:absolute;top:22px;width:30px;height:30px;border-radius:50%;
+  background:var(--ink-2);border:1px solid var(--line);color:var(--dim);
+  cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
+/* שני האייקונים הם SVG באותה תיבת 24×24, אז הם זהים בפיקסל.
+   הגליפים ☰ ו-? נבדלים ברוחב ב-75% ו-☰ יורד מתחת לקו הבסיס —
+   flex ממרכז את תיבת השורה ולא את הדיו, ולכן הם נראו עקומים. */
+#helpBtn svg,#archBtn svg{width:15px;height:15px;display:block}
+#helpBtn{inset-inline-end:0}
+#archBtn{inset-inline-end:38px}
+#helpBtn:hover,#archBtn:hover{color:var(--brand);border-color:var(--brand)}
+.arch{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.arch button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
+  background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px 13px;
+  color:var(--text);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;margin:0}
+.arch button:hover{border-color:#4A4A56}
+.arch button.done{color:var(--dim)}
+.arch button i{font-style:normal;font-size:12px;font-weight:500;color:#5A5A64}
+.arch button i.win{color:var(--brand)} .arch button i.lose{color:var(--near)}
+.arch button.cur{border-color:var(--brand)}
+/* כל מה שנוגע לגודל שני הכפתורים יושב כאן, אחרי כלל הבסיס.
+   קודם היה כלל נפרד ל-#archBtn שהגיע אחרי כלל משותף — ולכן
+   במסך רחב הארכיון היה 33px והעזרה 30px, בגבהים שונים. */
+@media (min-width:640px){
+  #helpBtn,#archBtn{top:30px;width:33px;height:33px}
+  #helpBtn svg,#archBtn svg{width:16px;height:16px}
+  #archBtn{inset-inline-end:43px}
+}
+
+#report{margin-top:11px;font-size:11.5px}
+#report a{color:#5F5F69;text-decoration:none;border-bottom:1px dotted #3A3A44}
+#report a:hover{color:var(--brand);border-color:var(--brand)}
+.promo{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.09);
+  font-size:12px;color:var(--dim)}
+.promo a{color:var(--brand);text-decoration:none;font-weight:700}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+.tag{margin:7px 0 0;font-size:12.5px;color:var(--dim);font-weight:500;letter-spacing:.01em}
+
+.nav{display:flex;gap:6px;background:var(--ink-2);border:1px solid var(--line);
+  border-radius:24px;padding:4px;max-width:300px;margin:14px auto 0}
+.nav button{flex:1;margin:0;width:auto;padding:8px 10px;border-radius:20px;border:0;cursor:pointer;
+  background:none;color:var(--dim);font-family:inherit;font-size:13.5px;font-weight:700;
+  transition:background .15s,color .15s}
+.nav button.on{background:var(--brand);color:var(--ink);font-weight:900}
+.nav button:not(.on):hover{color:var(--text)}
+
+/* ===== קרב חברים ===== */
+html{scrollbar-gutter:stable}
+#dailyView,#versusView{min-height:44vh}
+.vtop{text-align:center;margin-top:12px}
+.vtop button{width:auto;margin:0;padding:7px 16px;border-radius:18px;background:none;
+  border:1px solid var(--line);color:var(--dim);font-family:inherit;font-size:12.5px;
+  font-weight:700;cursor:pointer;min-height:0}
+.vtop button:hover{color:var(--brand);border-color:var(--brand)}
+.orsep{display:flex;align-items:center;gap:10px;margin:18px 0 4px;color:#55555E;font-size:11.5px}
+.orsep::before,.orsep::after{content:"";flex:1;height:1px;background:var(--line)}
+.joinrow{display:flex;gap:9px;align-items:stretch}
+.joinrow #joinCode{flex:1;font-size:24px;letter-spacing:.2em;padding:12px}
+.joinrow #btnJoin{width:auto;flex:0 0 92px;margin-top:0}
+#versusView .card{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;
+  padding:18px 16px;margin-top:14px}
+#versusView .card h2{font-family:'Suez One',serif;font-size:20px;color:var(--brand);margin-bottom:8px}
+#versusView .card p{font-size:13.5px;color:var(--dim);line-height:1.65}
+#versusView label{display:block;font-size:12px;color:var(--dim);margin:14px 0 5px}
+#versusView input,#versusView select{width:100%;padding:13px 15px;background:var(--ink);
+  border:1.5px solid var(--line);border-radius:var(--r);color:var(--text);
+  font-family:inherit;font-size:16px;outline:none}
+#versusView input:focus,#versusView select:focus{border-color:var(--brand)}
+#versusView input.code{text-align:center;font-size:30px;font-weight:900;letter-spacing:.28em;
+  font-family:'Suez One',serif;text-transform:uppercase;direction:ltr}
+#versusView button{width:100%;padding:14px;margin-top:12px;border:0;border-radius:var(--r);
+  background:var(--brand);color:var(--ink);font-family:inherit;font-size:16px;font-weight:900;cursor:pointer}
+#versusView button:disabled{opacity:.4;cursor:default}
+#versusView button.ghost{background:none;color:var(--dim);border:1.5px solid var(--line);
+  font-weight:700;font-size:14px}
+.hide{display:none!important}
+.err{color:#E8B77A;font-size:13px;margin-top:10px;min-height:18px}
+/* לובי */
+.roomcode{font-family:'Suez One',serif;font-size:46px;color:var(--brand);text-align:center;
+  letter-spacing:.14em;direction:ltr;margin:6px 0}
+.plist{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.plist div{display:flex;justify-content:space-between;align-items:center;background:var(--ink);
+  border:1px solid var(--line);border-radius:9px;padding:10px 13px;font-size:14.5px;font-weight:700}
+.plist div i{font-style:normal;font-size:11px;color:var(--dim);font-weight:500}
+.plist div.me{border-color:var(--brand)}
+
+/* משחק */
+.bar{height:5px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden;
+  display:flex;flex-direction:row-reverse;margin-top:10px}
+.bar i{display:block;height:100%;background:var(--brand);width:100%}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);margin-top:8px}
+.meta b{color:var(--text);font-weight:900}
+.clues{display:flex;flex-direction:column;gap:7px;margin-top:16px}
+.clue{background:var(--slate);border-radius:9px;padding:12px 14px;display:flex;
+  justify-content:space-between;align-items:baseline;opacity:0;transform:translateY(-6px);
+  transition:opacity .3s,transform .3s}
+.clue.on{opacity:1;transform:none}
+.clue span{font-size:11.5px;color:var(--dim)}
+.clue b{font-size:17px;font-weight:900;unicode-bidi:isolate}
+.clue.on.fresh{background:var(--brand);color:var(--ink)}
+.clue.on.fresh span{color:rgba(12,12,14,.7)}
+#vSugg{position:absolute;bottom:calc(100% + 6px);inset-inline:0;background:var(--ink-3);
+  border:1.5px solid var(--line);border-radius:var(--r);max-height:190px;overflow:auto;z-index:20;display:none}
+#vSugg.on{display:block}
+#vSugg button{width:100%;margin:0;text-align:start;padding:11px 15px;background:none;border:0;
+  border-bottom:1px solid var(--line);color:var(--text);font-size:15px;font-weight:500;border-radius:0}
+#vSugg button:hover{background:var(--brand);color:var(--ink);font-weight:700}
+.answerbox{position:relative;margin-top:16px}
+.feed{margin-top:10px;font-size:13.5px;min-height:20px}
+.feed b{font-size:16px;font-weight:900}
+.feed .cd{opacity:.55;font-variant-numeric:tabular-nums}
+.feed.good{color:var(--brand);font-weight:700}.feed.bad{color:var(--near)}
+
+/* טבלה */
+.board{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.board div{display:flex;align-items:center;gap:10px;background:var(--ink);border:1px solid var(--line);
+  border-radius:9px;padding:11px 13px}
+.board div.me{border-color:var(--brand)}
+.board .rk{font-family:'Suez One',serif;font-size:17px;color:var(--dim);width:22px;text-align:center}
+.board div:first-child .rk{color:var(--brand)}
+.board .nm{flex:1;font-weight:700;font-size:15px}
+.board .sc{font-weight:900;font-variant-numeric:tabular-nums;color:var(--brand)}
+.rev{text-align:center;margin-top:14px;font-size:15px}
+.rev b{color:var(--brand);font-size:19px;font-family:'Suez One',serif}
+
+.nav{display:flex;gap:6px;background:var(--ink-2);border:1px solid var(--line);
+  border-radius:24px;padding:4px;max-width:300px;margin:14px auto 0}
+.nav a{flex:1;text-align:center;padding:8px 10px;border-radius:20px;text-decoration:none;
+  color:var(--dim);font-size:13.5px;font-weight:700;transition:background .15s,color .15s}
+.nav a.on{background:var(--brand);color:var(--ink);font-weight:900}
+.nav a:not(.on):hover{color:var(--text)}
+
+/* ===== ליטוש מובייל לקרב ===== */
+#versusView input,#versusView select{font-size:16px}      /* מונע זום באייפון */
+#versusView button{min-height:48px}                        /* יעד נגיעה */
+#versusView .card{padding:16px 14px}
+.roomcode{user-select:all;-webkit-user-select:all}         /* לחיצה ארוכה מסמנת */
+.clue{min-height:48px}
+.clue b{font-size:16px}
+.answerbox{position:sticky;bottom:0;background:var(--ink-2);padding-top:10px;z-index:10;
+  padding-bottom:env(safe-area-inset-bottom)}
+
+/* כשהמקלדת פתוחה: הרמזים מתכווצים לשתי עמודות כדי שכולם יישארו על המסך */
+body.kb .clues{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:10px}
+body.kb .clue{flex-direction:column;align-items:flex-start;justify-content:center;
+  min-height:0;padding:7px 10px;gap:1px}
+body.kb .clue span{font-size:9.5px;line-height:1.2}
+body.kb .clue b{font-size:14px;line-height:1.2}
+
+body.kb #versusView .card{padding:11px 12px;margin-top:8px}
+body.kb .meta{margin-top:4px;font-size:11px}
+body.kb .bar{margin-top:6px}
+body.kb #liveBoard{display:none}          /* הטבלה לא נחוצה בזמן הקלדה */
+body.kb #vSugg{max-height:26vh}
+body.kb .feed{min-height:0}
+#vSugg{max-height:38vh}
+.board div{min-height:46px}
+.plist div{min-height:44px}
+@media (max-width:380px){
+  .roomcode{font-size:38px}
+  #versusView .card h2{font-size:18px}
+  .clue span{font-size:10.5px}
+}
+@media (min-width:640px){
+  #versusView .card{padding:20px 18px}
+  .clue{min-height:52px}
+}
+/* פחות תנועה למי שביקש */
+@media (prefers-reduced-motion:reduce){
+  .clue{transition:none}
+  .nav button{transition:none}
+}
+
+footer{margin-top:26px;padding-top:14px;border-top:1px solid rgba(46,46,54,.55);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-size:11px;color:#55555E;line-height:1.5}
+.credit{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
+  color:var(--dim);font-size:11.5px;font-weight:500;white-space:nowrap}
+.credit b{color:#7A7A84;font-weight:700}
+.credit:hover{color:var(--brand)}
+.credit:hover b{color:var(--brand)}
+footer .who{text-align:start}
+footer .who a{color:#55555E;text-decoration:none}
+footer .who a:hover{color:var(--dim)}
+#comm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
+#comm.on{display:block}
+#comm .hd{font-size:12px;color:var(--dim);margin-bottom:10px}
+#comm .hd b{color:var(--text);font-weight:900}
+#comm .rank{font-size:14px;color:var(--brand);font-weight:900;margin-bottom:11px}
+#comm .cb{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--dim);margin-bottom:3px}
+#comm .cb i{font-style:normal;width:9px;text-align:center;font-weight:700;color:var(--text)}
+#comm .cb u{text-decoration:none;background:var(--slate);border-radius:3px;padding:1px 5px;
+  min-width:22px;text-align:center;color:var(--text);font-weight:700;font-size:10px;
+  font-variant-numeric:tabular-nums;display:inline-block}
+#comm .cb.me u{background:var(--brand);color:var(--ink)}
+.stats{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09)}
+.stats .nums{display:flex;justify-content:center;gap:22px;margin-bottom:12px}
+.stats .nums div{font-size:10.5px;color:var(--dim)}
+.stats .nums b{display:block;font-size:21px;color:var(--text);font-weight:900;
+  font-variant-numeric:tabular-nums;line-height:1.2}
+.bars{display:flex;flex-direction:column;gap:3px}
+.bars .b{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--dim)}
+.bars .b i{font-style:normal;width:9px;text-align:center;font-weight:700;color:var(--text)}
+.bars .b span{background:var(--slate);border-radius:3px;padding:1px 5px;min-width:20px;
+  text-align:center;color:var(--text);font-weight:700;font-size:10px;
+  font-variant-numeric:tabular-nums;transition:width .3s}
+.bars .b.now span{background:var(--brand);color:var(--ink)}
+
+button.wa{background:#1FA855;color:#fff}
+textarea.rt{width:100%;min-height:110px;resize:vertical;background:var(--ink);
+  border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;
+  color:var(--text);font-family:inherit;font-size:15px;line-height:1.55;outline:none;margin-top:4px}
+textarea.rt:focus{border-color:var(--brand)}
+input.rc{width:100%;background:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:11px 13px;color:var(--text);font-family:inherit;font-size:15px;outline:none;margin-top:4px}
+input.rc:focus{border-color:var(--brand)}
+.rlab{font-size:12px;color:var(--dim);margin-top:14px;display:block}
+#repStat{margin-top:10px;font-size:13px;min-height:18px}
+#repStat.ok{color:var(--brand)} #repStat.bad{color:#E8B77A}
+
+/* ---------- אתמול ---------- */
+#yday{margin:16px 0 0;padding:9px 12px;border-radius:var(--r);background:var(--ink-2);
+  border:1px solid var(--line);font-size:12.5px;color:var(--dim);display:none;
+  align-items:center;justify-content:space-between;gap:10px;line-height:1.4}
+#yday.on{display:flex}
+#yday b{color:var(--text);font-weight:700}
+#yday button{background:none;border:1px solid var(--line);border-radius:14px;padding:4px 12px;
+  color:var(--dim);font-family:inherit;font-size:11.5px;font-weight:700;cursor:pointer;
+  margin:0;width:auto;white-space:nowrap;flex:0 0 auto}
+#yday button:hover{color:var(--brand);border-color:var(--brand)}
+
+/* ---------- רמז ---------- */
+#hintRow{margin-top:14px;text-align:center;display:none}
+#hintRow.on{display:block}
+#hintBtn{background:none;border:1.5px dashed var(--line);border-radius:var(--r);
+  padding:9px 16px;color:var(--dim);font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;margin:0;width:auto}
+#hintBtn:hover{color:var(--brand);border-color:var(--brand)}
+#hintOut{font-size:13px;color:var(--brand);font-weight:700;line-height:1.5;
+  background:rgba(var(--brand-rgb),.07);border:1px solid rgba(var(--brand-rgb),.28);
+  border-radius:var(--r);padding:9px 12px}
+#hintOut:empty{display:none}
+#hintBtn + #hintOut{margin-top:9px}
+
+/* ---------- ארכיון ---------- */
+.arch{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.arch button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
+  background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px 13px;
+  color:var(--text);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;margin:0}
+.arch button:hover{border-color:#4A4A56}
+.arch button.done{color:var(--dim)}
+.arch button i{font-style:normal;font-size:12px;font-weight:500;color:#5A5A64}
+.arch button i.win{color:var(--brand)} .arch button i.lose{color:var(--near)}
+.arch button.cur{border-color:var(--brand)}
+
+#report{margin-top:11px;font-size:11.5px}
+#report a{color:#5F5F69;text-decoration:none;border-bottom:1px dotted #3A3A44}
+#report a:hover{color:var(--brand);border-color:var(--brand)}
+.promo{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.09);
+  font-size:12px;color:var(--dim)}
+.promo a{color:var(--brand);text-decoration:none;font-weight:700}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+/* ---------- טופס תיקון פרטי שחקן ----------
+   שדות סגורים בלבד. אין כאן טקסט חופשי במכוון: מה שנכתב כאן נכנס
+   לצינור אוטומטי שכותב למאגר, וטקסט חופשי בצינור כזה הוא משטח התקפה.
+   טקסט חופשי הולך לחלונית הפידבק, שממנה יוצא מייל ולא כתיבה לנתונים. */
+select.rc{width:100%;background:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:11px 13px;color:var(--text);font-family:inherit;font-size:15px;outline:none;margin-top:4px;
+  -webkit-appearance:none;appearance:none}
+select.rc:focus{border-color:var(--brand)}
+#fixStat{margin-top:10px;font-size:13px;min-height:18px}
+#fixStat.ok{color:var(--brand)} #fixStat.bad{color:#E8B77A}
+#fixWas{margin-top:14px;padding:9px 12px;border-radius:var(--r);background:var(--ink-2);
+  border:1px solid var(--line);font-size:12.5px;color:var(--dim);line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="scarf"></div>
+
+<div class="wrap">
+  <header>
+    <div id="streak">רצף <b id="streakn">0</b></div>
+    <button id="helpBtn" aria-label="איך משחקים" title="איך משחקים"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.6 8.8a3.5 3.5 0 1 1 4.8 3.3c-1.1.5-1.9 1.4-1.9 2.6v.5"/><circle cx="11.5" cy="19" r="1.35" fill="currentColor" stroke="none"/></svg></button>
+    <button id="archBtn" aria-label="ארכיון חידות" title="ארכיון"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4.5 7h15M4.5 12h15M4.5 17h15"/></svg></button>
+    <h1><a href="./" id="gameName" aria-label="ספורטדל">ספורטדל</a></h1>
+    <p class="sub">חידה <b id="pnum">#1</b> · <b id="left">8</b> ניסיונות נותרו</p>
+    <button id="clubBtn" type="button"><i>⇄</i>החלפת מועדון</button>
+  </header>
+
+  <nav class="nav">
+    <button type="button" class="on" data-tab="daily">חידה יומית</button>
+    <button type="button" data-tab="versus">קרב חברים</button>
+  </nav>
+
+  <div id="dailyView">
+
+  <div class="searchbox">
+    <input id="guess" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"
+           placeholder="טוען…" aria-label="ניחוש שחקן" disabled>
+    <div id="sugg" role="listbox"></div>
+  </div>
+
+  <div class="legend">
+    <span><i class="dot y"></i> מדויק</span>
+    <span><i class="dot o"></i> קרוב</span>
+    <span><i class="dot s"></i> רחוק</span>
+    <span>↑ מאוחר/גבוה יותר · ↓ מוקדם/נמוך יותר</span>
+  </div>
+
+  <div id="yday">
+    <span id="ydayTxt"></span>
+    <button id="ydayShow">גילוי</button>
+  </div>
+
+  <div id="hintRow">
+    <button id="hintBtn">תקועים? קבלו רמז</button>
+    <div id="hintOut"></div>
+  </div>
+
+  <div id="board"></div>
+
+  <div id="result">
+    <div class="card">
+      <h2 id="rtitle"></h2>
+      <p id="rtext"></p>
+      <div class="mini" id="mini"></div>
+      <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
+      <div id="comm"></div>
+      <div class="stats" id="stats"></div>
+      <button class="act wa" id="wa">שליחה בוואטסאפ</button>
+      <button class="act ghost" id="share">העתקת התוצאה</button>
+      <button class="act ghost" id="again">משחק אימון (שחקן אקראי)</button>
+      <div id="report"><a id="fixLink" href="#">טעות בפרטי השחקן?</a> ·
+        <a id="reportLink" href="#">פידבק ובאגים</a></div>
+      <div class="promo">אהבתם? אני בונה מערכות כאלה —
+        <a href="https://techbynoam.up.railway.app/" target="_blank" rel="noopener">TechByNoam</a></div>
+    </div>
+  </div>
+
+  </div><!-- /dailyView -->
+
+  <div id="versusView" class="hide">
+    <div class="vtop"><button type="button" id="vHelpBtn">איך משחקים?</button></div>
+  <!-- מסך פתיחה -->
+  <section id="scHome">
+    <div class="card">
+      <label for="vName">איך קוראים לך?</label>
+      <input id="vName" maxlength="14" placeholder="השם שיופיע בטבלה" autocomplete="off">
+      <label for="preReveal">כמה זמן בין רמז לרמז</label>
+      <select id="preReveal">
+        <option value="6">6 שניות · מהיר</option>
+        <option value="8" selected>8 שניות · רגיל</option>
+        <option value="12">12 שניות · נינוח</option>
+      </select>
+      <button id="btnCreate">פתיחת חדר חדש</button>
+      <div class="orsep"><span>או שיש לכם קוד</span></div>
+      <div class="joinrow">
+        <input id="joinCode" class="code" maxlength="4" placeholder="XXXX"
+               autocomplete="off" inputmode="latin" aria-label="קוד החדר">
+        <button id="btnJoin">כניסה</button>
+      </div>
+      <div class="err" id="joinErr"></div>
+    </div>
+  </section>
+
+  <!-- לובי -->
+  <section id="scLobby" class="hide">
+    <div class="card">
+      <p style="text-align:center">קוד החדר</p>
+      <div class="roomcode" id="lobbyCode">----</div>
+      <button class="ghost" id="btnShare">שיתוף הקוד</button>
+      <button class="ghost" id="btnLeave">יציאה מהחדר</button>
+    </div>
+    <div class="card">
+      <h2>מי בחדר</h2>
+      <div class="plist" id="lobbyPlayers"></div>
+    </div>
+    <div class="card" id="hostBox">
+      <h2>הגדרות</h2>
+      <label for="setRounds">כמה סיבובים</label>
+      <select id="setRounds"><option>5</option><option selected>10</option><option>15</option></select>
+      <label for="setReveal">כל כמה שניות נחשף רמז</label>
+      <select id="setReveal">
+        <option value="6">6 שניות · מהיר</option>
+        <option value="8" selected>8 שניות · רגיל</option>
+        <option value="12">12 שניות · נינוח</option>
+      </select>
+      <button id="btnStart">התחלה</button>
+      <div class="err" id="startErr"></div>
+    </div>
+    <p id="waitMsg" class="card hide" style="text-align:center;color:var(--dim)">
+      מחכים שמנהל החדר יתחיל…</p>
+  </section>
+
+  <!-- משחק -->
+  <section id="scPlay" class="hide">
+    <div class="card">
+      <div class="meta">
+        <span>סיבוב <b id="rNum">1</b>/<b id="rTot">10</b></span>
+        <span><b id="rTime">30</b> שניות</span>
+      </div>
+      <div class="bar"><i id="rBar"></i></div>
+      <div class="clues" id="clues"></div>
+      <div class="answerbox">
+        <div id="vSugg"></div>
+        <input id="answer" placeholder="מי השחקן?" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="feed" id="feed"></div>
+    </div>
+    <div class="card">
+      <div class="board" id="liveBoard"></div>
+    </div>
+  </section>
+
+  <!-- סיום סיבוב -->
+  <section id="scReveal" class="hide">
+    <div class="card">
+      <div class="rev" id="revText"></div>
+      <div class="board" id="revBoard"></div>
+    </div>
+  </section>
+
+  <!-- סיום -->
+  <section id="scEnd" class="hide">
+    <div class="card">
+      <h2 style="text-align:center">סוף המשחק</h2>
+      <div class="board" id="endBoard"></div>
+      <button id="btnAgain">חדר חדש</button>
+      <button class="ghost" id="btnHome">חזרה למשחק היומי</button>
+    </div>
+  </section>
+  </div><!-- /versusView -->
+
+  <footer>
+    <div class="who">
+      <span id="footName">SportDle</span> · פרויקט אוהדים · לא רשמי <span id="bld" style="opacity:.45"></span><br>
+      <a href="mailto:techbynoam@gmail.com">techbynoam@gmail.com</a>
+    </div>
+    <a class="credit" href="https://techbynoam.up.railway.app/" target="_blank" rel="noopener">
+      <b>TechByNoam</b>
+    </a>
+  </footer>
+</div>
+
+
+<div class="modal" id="help">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים">
+    <button class="x" id="closeHelp" aria-label="סגירה">✕</button>
+    <h3>איך משחקים</h3>
+    <p>יש שחקן <span class="clubShort">—</span> אחד מסתורי, ויש לכם <b>8 ניסיונות</b> לגלות אותו.
+       כל שם שתקלידו מחזיר חמישה רמזים — <b>עמדה, לאום, עונה ראשונה, תארים ושנת לידה</b> —
+       וכל אחד נצבע לפי הקרבה לתשובה.<br>
+       <b>עונה 1</b> היא העונה הראשונה של השחקן במועדון — למשל 13/14 —
+       ולא שנה קלנדרית, כי שחקנים מגיעים גם בחלון החורף.</p>
+
+    <h4>הצבעים</h4>
+    <p><span id="lgnd">● מדויק · ◐ קרוב · ○ רחוק</span><br>
+       ↑ הערך האמיתי גבוה או מאוחר יותר · ↓ נמוך או מוקדם יותר</p>
+
+    <h4>דוגמה</h4>
+    <p>ניחשתם חלוץ ישראלי שעונתו הראשונה 03/04 ויש לו 4 תארים,
+       והתשובה היא קשר שהתחיל ב-96/97 עם 2 תארים:</p>
+    <div class="ex">
+      <div><span class="k">עמדה</span><span class="v">חלוץ</span></div>
+      <div class="hit"><span class="k">לאום</span><span class="v">ישראל</span></div>
+      <div><span class="k">עונה 1</span><span class="v">03/04 ↓</span></div>
+      <div class="near"><span class="k">תארים</span><span class="v">4 ↓</span></div>
+    </div>
+    <p>העמדה שגויה, הלאום נכון, השחקן המבוקש הגיע מוקדם יותר ויש לו פחות תארים.
+       מכאן מצמצמים.</p>
+
+    <h4>איך נספרים תארים</h4>
+    <p>אליפויות וגביעי מדינה ש<span class="clubShort">—</span> זכתה בהם בזמן שהשחקן היה בסגל.
+       גביע הטוטו ואלוף האלופים לא נספרים.<br>
+       <b>אליפויות:</b> <span id="hLeague">—</span><br>
+       <b>גביעי מדינה:</b> <span id="hCups">—</span></p>
+
+    <h4>כמה כללים</h4>
+    <p id="hScope">—</p>
+    <p>אפשר לנחש כל שחקן במאגר, אבל התשובה תמיד שחקן ששיחק שלוש עונות ומעלה.<br>
+       חידה חדשה כל יום בחצות, וכולם מקבלים את אותו שחקן.</p>
+
+    <h4>מצאתם טעות?</h4>
+    <p>המאגר נבנה ממקורות שונים ויש בו טעויות.
+       <a href="#" id="repFromHelp" style="color:var(--brand)">ספרו לי כאן</a> ואני מתקן.
+       שם או עמדה שגויים אפשר לתקן בטופס המהיר שמופיע בסוף המשחק.</p>
+  </div>
+</div>
+
+
+<div class="modal" id="fix">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="תיקון פרטי שחקן">
+    <button class="x" id="closeFix" aria-label="סגירה">✕</button>
+    <h3>טעות בפרטי השחקן?</h3>
+    <p>אפשר לתקן את <b>איות השם</b> או את <b>העמדה</b> של השחקן שהרגע שיחקתם.
+       כל דבר אחר — <a href="#" id="fixToRep" style="color:var(--brand)">כתבו לי</a> ואני מטפל ידנית.</p>
+
+    <div id="fixWas">כרגע במאגר: <b id="fixWho">—</b> · <span id="fixPosNow">—</span></div>
+
+    <label class="rlab" for="fixField">מה לא נכון?</label>
+    <select class="rc" id="fixField">
+      <option value="he">איות השם</option>
+      <option value="pos">העמדה</option>
+    </select>
+
+    <div id="fixHeWrap">
+      <label class="rlab" for="fixName">השם הנכון</label>
+      <input class="rc" id="fixName" maxlength="40" autocomplete="off" placeholder="בעברית בלבד">
+    </div>
+
+    <div id="fixPosWrap" class="hide">
+      <label class="rlab" for="fixPosVal">העמדה הנכונה</label>
+      <select class="rc" id="fixPosVal">
+        <option value="GK">שוער</option>
+        <option value="DF">מגן</option>
+        <option value="MF">קשר</option>
+        <option value="FW">חלוץ</option>
+      </select>
+    </div>
+
+    <div id="fixStat"></div>
+    <button class="act" id="fixSend">שליחה</button>
+  </div>
+</div>
+
+
+<div class="modal" id="rep">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="דיווח על טעות">
+    <button class="x" id="closeRep" aria-label="סגירה">✕</button>
+    <h3>פידבק ובאגים</h3>
+    <p>משהו נראה שבור, חסר שחקן, יש רעיון? כתבו כאן והמייל מגיע ישר אליי.
+       לתיקון של שם או עמדה יש
+       <a href="#" id="repToFix" style="color:var(--brand)">טופס מהיר</a> בסוף המשחק.</p>
+
+    <label class="rlab" for="repMsg">מה קרה?</label>
+    <textarea class="rt" id="repMsg" placeholder="לדוגמה: הכפתור לא נלחץ באייפון, או: חסר שחקן מהעונה של 1998."></textarea>
+
+    <label class="rlab" for="repFrom">איך לחזור אליכם? (לא חובה)</label>
+    <input class="rc" id="repFrom" placeholder="שם או מייל">
+
+    <div id="repStat"></div>
+    <button class="act" id="repSend">שליחה</button>
+  </div>
+</div>
+
+
+<div class="modal" id="arch">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="ארכיון חידות">
+    <button class="x" id="closeArch" aria-label="סגירה">✕</button>
+    <h3>ארכיון החידות</h3>
+    <p>כל החידות שהיו עד היום. אפשר לשחק כל אחת מהן — התוצאה נשמרת בנפרד,
+       אבל רק החידה של היום נספרת ברצף ובסטטיסטיקה.</p>
+    <div class="arch" id="archList"></div>
+  </div>
+</div>
+
+<div class="modal" id="vHelp">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים קרב">
+    <button class="x" id="vHelpClose" aria-label="סגירה">✕</button>
+    <h3>קרב חברים</h3>
+    <p>אחד פותח חדר ומקבל קוד בן ארבע אותיות. כולם מזינים אותו ונכנסים.
+       צריך לפחות שני שחקנים כדי להתחיל.</p>
+
+    <h4>איך סיבוב עובד</h4>
+    <p>יש שחקן <span class="clubShort">—</span> מסתורי, ושישה רמזים נחשפים <b>לכולם יחד</b> — אחד כל כמה שניות:
+       עמדה, לאום, עונה ראשונה, תארים, שנת לידה, ולבסוף <b>האות שהשם מתחיל בה</b>.</p>
+
+    <h4>הניקוד</h4>
+    <p>מי שמזהה מוקדם מקבל יותר. אחרי רמז אחד — <b>6 נקודות</b>, אחרי שניים <b>5</b>,
+       וכך עד <b>1</b> כשכל הרמזים כבר על המסך.<br>
+       הראשון שפוגע סוגר את הסיבוב לכולם.</p>
+
+    <h4>ניחוש שגוי</h4>
+    <p>לא מקבלים כלום סתם — כתוב לכם <b>כמה מתוך שישה רמזים תואמים</b> לשחקן
+       שניחשתם. לא אילו, רק כמה. "4/6 · חם מאוד" אומר שאתם קרובים מאוד.<br>
+       אחרי טעות יש נעילה של שלוש שניות, אז עדיף לחשוב לפני שיורים.</p>
+
+    <h4>כמה כללים</h4>
+    <p>המאגר הוא שחקנים שהיו לפחות שלוש עונות במועדון, ורובם מהוותיקים
+       והמוכרים — כדי שאפשר יהיה באמת לשלוף את השם.<br>
+       מי שמתנתק לרגע נשאר בטבלה עם הניקוד שלו וחוזר לבד.<br>
+       אפשר לרענן את הדף באמצע — חוזרים לאותו חדר.</p>
+  </div>
+</div>
+
+<div class="scarf bottom"></div>
+
+
+<div id="picker">
+  <div class="inner">
+    <h2>SportDle</h2>
+    <p class="lead">חידת שחקן יומית. בחרו מועדון — הבחירה נשמרת,
+       וכל מועדון הוא לוח חידות, רצף וסטטיסטיקה נפרדים.</p>
+    <div class="clubs" id="clubList"></div>
+    <div class="foot">
+      פרויקט אוהדים · לא רשמי<br>
+      <a href="mailto:techbynoam@gmail.com">techbynoam@gmail.com</a> ·
+      <a href="https://techbynoam.up.railway.app/" target="_blank" rel="noopener">TechByNoam</a>
+    </div>
+  </div>
+</div>
+
+<script>
+__ENGINE__
+</script>
+
+<script type="module">
+__VERSUS__
+</script>
+</body>
+</html>

@@ -1,0 +1,7479 @@
+{
+ "slug": "maccabi-haifa",
+ "he": "מכבי חיפה",
+ "short": "מכבי חיפה",
+ "game": "חיפהdle",
+ "colors": {
+  "brand": "#00843D",
+  "near": "#1E5B37",
+  "ink": "#0C0C0E",
+  "second": "#FFFFFF"
+ },
+ "titles": {
+  "league": [
+   1984,
+   1985,
+   1989,
+   1991,
+   1994,
+   2001,
+   2002,
+   2004,
+   2005,
+   2006,
+   2009,
+   2011,
+   2021,
+   2022,
+   2023
+  ],
+  "cup": [
+   1962,
+   1991,
+   1993,
+   1995,
+   1998,
+   2016
+  ]
+ },
+ "coverage": {
+  "from": 1970,
+  "to": 2026,
+  "sources": [
+   "ifa",
+   "enbridge",
+   "worldfootball",
+   "wikilang",
+   "wikiplayers",
+   "wikiextra",
+   "wikilang"
+  ]
+ },
+ "counts": {
+  "players": 399,
+  "targets": 111
+ },
+ "players": [
+  {
+   "he": "דני רום",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1940,
+   "spells": [
+    [
+     1970,
+     1973
+    ]
+   ],
+   "seasons": 4,
+   "titles": 0,
+   "target": true
+  },
+  {
+   "he": "ברוך ממן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1955,
+   "spells": [
+    [
+     1974,
+     1987
+    ]
+   ],
+   "seasons": 14,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "יהושע גל",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1951,
+   "spells": [
+    [
+     1974,
+     1975
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "אברהם אבוקרט",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1960,
+   "spells": [
+    [
+     1978,
+     1995
+    ]
+   ],
+   "seasons": 18,
+   "titles": 8,
+   "target": true
+  },
+  {
+   "he": "איתן אהרוני",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1962,
+   "spells": [
+    [
+     1980,
+     1989
+    ],
+    [
+     1991,
+     1994
+    ]
+   ],
+   "seasons": 14,
+   "titles": 7,
+   "target": true
+  },
+  {
+   "he": "אלי כהן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1961,
+   "spells": [
+    [
+     1980,
+     1987
+    ]
+   ],
+   "seasons": 8,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "משה סלקטר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1961,
+   "spells": [
+    [
+     1980,
+     1987
+    ],
+    [
+     1990,
+     1990
+    ]
+   ],
+   "seasons": 9,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "רפי אוסמו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1963,
+   "spells": [
+    [
+     1980,
+     1988
+    ]
+   ],
+   "seasons": 9,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "רוני רוזנטל",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1963,
+   "spells": [
+    [
+     1981,
+     1986
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "אבי רן",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1963,
+   "spells": [
+    [
+     1982,
+     1987
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "אלישע לוי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1957,
+   "spells": [
+    [
+     1983,
+     1983
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "זאהי ארמלי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1957,
+   "spells": [
+    [
+     1983,
+     1989
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "ציון מרילי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1957,
+   "spells": [
+    [
+     1984,
+     1990
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "ניר קלינגר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1966,
+   "spells": [
+    [
+     1985,
+     1990
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "דניאל בריילובסקי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1958,
+   "spells": [
+    [
+     1987,
+     1988
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "מרקו בלבול",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1967,
+   "spells": [
+    [
+     1987,
+     1998
+    ],
+    [
+     2001,
+     2002
+    ]
+   ],
+   "seasons": 14,
+   "titles": 9,
+   "target": true
+  },
+  {
+   "he": "ראובן עטר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1969,
+   "spells": [
+    [
+     1987,
+     1994
+    ],
+    [
+     1997,
+     1997
+    ],
+    [
+     2000,
+     2003
+    ]
+   ],
+   "seasons": 13,
+   "titles": 7,
+   "target": true,
+   "aliases": [
+    "ראובן עטר",
+    "Reuven Atar"
+   ]
+  },
+  {
+   "he": "בוני גינצבורג",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1964,
+   "spells": [
+    [
+     1988,
+     1988
+    ],
+    [
+     1997,
+     1999
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "גיורא אנטמן",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1962,
+   "spells": [
+    [
+     1989,
+     1989
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "אייל ברקוביץ'",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1972,
+   "spells": [
+    [
+     1990,
+     1996
+    ]
+   ],
+   "seasons": 7,
+   "titles": 5,
+   "target": true
+  },
+  {
+   "he": "טל בנין",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1971,
+   "spells": [
+    [
+     1990,
+     1992
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "אלון חרזי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1971,
+   "spells": [
+    [
+     1991,
+     1997
+    ],
+    [
+     1999,
+     2010
+    ]
+   ],
+   "seasons": 19,
+   "titles": 11,
+   "target": true,
+   "aliases": [
+    "אלון חרזי",
+    "Alon Harazi"
+   ]
+  },
+  {
+   "he": "ויקטור צ'אנוב",
+   "pos": "GK",
+   "nat": "UA",
+   "born": 1959,
+   "spells": [
+    [
+     1991,
+     1991
+    ]
+   ],
+   "seasons": 1,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "אריק בנדו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1973,
+   "spells": [
+    [
+     1992,
+     1994
+    ],
+    [
+     1997,
+     2006
+    ],
+    [
+     2011,
+     2011
+    ]
+   ],
+   "seasons": 14,
+   "titles": 9,
+   "target": true,
+   "aliases": [
+    "אריק בנאדו",
+    "Arik Benado"
+   ]
+  },
+  {
+   "he": "איוואן גצקו",
+   "pos": "FW",
+   "nat": "UA",
+   "born": 1968,
+   "spells": [
+    [
+     1993,
+     1995
+    ]
+   ],
+   "seasons": 3,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "אלון חזן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1967,
+   "spells": [
+    [
+     1993,
+     1996
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "חיים סילבס",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1975,
+   "spells": [
+    [
+     1993,
+     1997
+    ],
+    [
+     1999,
+     1999
+    ]
+   ],
+   "seasons": 6,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "רוני לוי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1966,
+   "spells": [
+    [
+     1993,
+     1998
+    ]
+   ],
+   "seasons": 6,
+   "titles": 4,
+   "target": true
+  },
+  {
+   "he": "אלון מזרחי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1971,
+   "spells": [
+    [
+     1994,
+     1994
+    ],
+    [
+     1998,
+     1998
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "משה גלאם",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1968,
+   "spells": [
+    [
+     1994,
+     1997
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "סרגיי קנדאורוב",
+   "pos": "MF",
+   "nat": "UA",
+   "born": 1971,
+   "spells": [
+    [
+     1994,
+     1997
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "רומן פץ",
+   "pos": "DF",
+   "nat": "UA",
+   "born": 1969,
+   "spells": [
+    [
+     1994,
+     1995
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "שי הולצמן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1974,
+   "spells": [
+    [
+     1994,
+     1994
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "אלירן אלקיים",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     1995,
+     2001
+    ],
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 8,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "אלירן אלקיים",
+    "Eliran Elkayam"
+   ]
+  },
+  {
+   "he": "חיים רביבו",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1972,
+   "spells": [
+    [
+     1995,
+     1996
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "נג'ואן גרייב",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1974,
+   "spells": [
+    [
+     1995,
+     1995
+    ],
+    [
+     2005,
+     2005
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "נג'ואן גרייב",
+    "Najwan Ghrayib",
+    "נגואן גרייב"
+   ]
+  },
+  {
+   "he": "ניר דוידוביץ'",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     1995,
+     2013
+    ]
+   ],
+   "seasons": 19,
+   "titles": 9,
+   "target": true,
+   "aliases": [
+    "ניר דוידוביץ",
+    "Nir Davidovitch"
+   ]
+  },
+  {
+   "he": "עופר שטרית",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1970,
+   "spells": [
+    [
+     1995,
+     1996
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "שגיא שטראוס",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     1995,
+     1995
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "אבישי ז'אנו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1970,
+   "spells": [
+    [
+     1996,
+     2005
+    ]
+   ],
+   "seasons": 10,
+   "titles": 5,
+   "target": true,
+   "aliases": [
+    "אבישי ז'אנו",
+    "Avishay Jano",
+    "אבישי זאנו"
+   ]
+  },
+  {
+   "he": "ירוסלאב קנטוש",
+   "pos": "DF",
+   "nat": "SK",
+   "born": 1974,
+   "spells": [
+    [
+     1996,
+     1996
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "קובי גנון",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     1996,
+     1997
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "אופיר קופל",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1975,
+   "spells": [
+    [
+     1997,
+     1999
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "דודו אוואט",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1977,
+   "spells": [
+    [
+     1997,
+     1997
+    ],
+    [
+     2002,
+     2003
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "עידן שום",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     1997,
+     1997
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "עמיר תורג'מן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1972,
+   "spells": [
+    [
+     1997,
+     1997
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "איברהים דורו",
+   "pos": "MF",
+   "nat": "BA",
+   "born": 1970,
+   "spells": [
+    [
+     1998,
+     1999
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "ולדימיר נידרגאוס",
+   "pos": "FW",
+   "nat": null,
+   "born": 1967,
+   "spells": [
+    [
+     1998,
+     1998
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "ויקטור פאצ'ו",
+   "pos": "FW",
+   "nat": "AL",
+   "born": 1974,
+   "spells": [
+    [
+     1999,
+     1999
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "יוסי בניון",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     1999,
+     2002
+    ],
+    [
+     2015,
+     2016
+    ]
+   ],
+   "seasons": 6,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "יוסי בניון",
+    "Yossi Benayoun"
+   ]
+  },
+  {
+   "he": "יז'י בז'נצ'ק",
+   "pos": "MF",
+   "nat": "PL",
+   "born": 1971,
+   "spells": [
+    [
+     1999,
+     2000
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "יניב קטן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1981,
+   "spells": [
+    [
+     1999,
+     2005
+    ],
+    [
+     2007,
+     2014
+    ]
+   ],
+   "seasons": 15,
+   "titles": 6,
+   "target": true,
+   "aliases": [
+    "יניב קטן",
+    "Yaniv Katan",
+    "John Culma"
+   ]
+  },
+  {
+   "he": "ליאור אסולין",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     1999,
+     2002
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "עמוס סאסי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1979,
+   "spells": [
+    [
+     1999,
+     2000
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "רדובן הרומאדקו",
+   "pos": "MF",
+   "nat": "CZ",
+   "born": 1969,
+   "spells": [
+    [
+     1999,
+     1999
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "רונן חרזי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1970,
+   "spells": [
+    [
+     1999,
+     1999
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "שוקי נגר",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1977,
+   "spells": [
+    [
+     1999,
+     2000
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "שלומי דהאן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1979,
+   "spells": [
+    [
+     1999,
+     1999
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "אבי פרץ",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1971,
+   "spells": [
+    [
+     2000,
+     2001
+    ],
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "אבי פרץ",
+    "Avi Perets"
+   ]
+  },
+  {
+   "he": "סרגיי קלשצ'נקו",
+   "pos": "FW",
+   "nat": "MD",
+   "born": 1972,
+   "spells": [
+    [
+     2000,
+     2001
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "רדוסלב מיכאלסקי",
+   "pos": "MF",
+   "nat": "PL",
+   "born": 1969,
+   "spells": [
+    [
+     2000,
+     2001
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "ריימונדס ז'וטאוטאס",
+   "pos": "MF",
+   "nat": "LT",
+   "born": 1972,
+   "spells": [
+    [
+     2000,
+     2003
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "ואליד באדיר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1974,
+   "spells": [
+    [
+     2001,
+     2006
+    ]
+   ],
+   "seasons": 6,
+   "titles": 5,
+   "target": true,
+   "aliases": [
+    "ואליד באדיר",
+    "Walid Badir"
+   ]
+  },
+  {
+   "he": "יעקובו איגביני",
+   "pos": "FW",
+   "nat": "NG",
+   "born": 1982,
+   "spells": [
+    [
+     2001,
+     2002
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "מנור חסן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1979,
+   "spells": [
+    [
+     2001,
+     2001
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "ננאד פראליה",
+   "pos": "MF",
+   "nat": "HR",
+   "born": 1970,
+   "spells": [
+    [
+     2001,
+     2003
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "אייל אלמושנינו",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     2002,
+     2003
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אייל אלמושנינו",
+    "Eyal Almoshnino"
+   ]
+  },
+  {
+   "he": "אריק אג'יופור",
+   "pos": "DF",
+   "nat": "NG",
+   "born": 1979,
+   "spells": [
+    [
+     2002,
+     2004
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "ג'ובאני רוסו",
+   "pos": "MF",
+   "nat": "HR",
+   "born": 1972,
+   "spells": [
+    [
+     2002,
+     2005
+    ],
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 5,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "ג'ובאני רוסו",
+    "Đovani Roso",
+    "גובאני רוסו"
+   ]
+  },
+  {
+   "he": "ניר סביליה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1975,
+   "spells": [
+    [
+     2002,
+     2002
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "אגאפור אריק",
+   "pos": null,
+   "nat": null,
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2004
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אג'אפור אריק"
+   ]
+  },
+  {
+   "he": "אדורם קייסי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1972,
+   "spells": [
+    [
+     2003,
+     2004
+    ],
+    [
+     2006,
+     2008
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "אדורם קייסי"
+   ]
+  },
+  {
+   "he": "איסלם כנען",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איסלם כנען"
+   ]
+  },
+  {
+   "he": "איציק כהן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1983,
+   "spells": [
+    [
+     2003,
+     2003
+    ],
+    [
+     2012,
+     2012
+    ],
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "יצחק כהן"
+   ]
+  },
+  {
+   "he": "איתי קורן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתי קורן"
+   ]
+  },
+  {
+   "he": "איתן עזריה",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1983,
+   "spells": [
+    [
+     2003,
+     2005
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "איתן רפאל עזריה",
+    "Eitan Azaria"
+   ]
+  },
+  {
+   "he": "אליניב ברדה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1981,
+   "spells": [
+    [
+     2003,
+     2005
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "אליניב ברדה",
+    "Elyaniv Barda"
+   ]
+  },
+  {
+   "he": "אמיר אדרי",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2003,
+     2007
+    ],
+    [
+     2009,
+     2011
+    ],
+    [
+     2013,
+     2016
+    ]
+   ],
+   "seasons": 12,
+   "titles": 6,
+   "target": true,
+   "aliases": [
+    "אמיר אדרי",
+    "Amir Edri",
+    "Eran Levy"
+   ]
+  },
+  {
+   "he": "אסף אברהמי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2004
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אסף אברהמי"
+   ]
+  },
+  {
+   "he": "אסף קלמן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אסף קלמן"
+   ]
+  },
+  {
+   "he": "גולן דרעי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1975,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גולן דרעי"
+   ]
+  },
+  {
+   "he": "גיז'רמו ישראלביץ'",
+   "pos": "MF",
+   "nat": "AR",
+   "born": 1982,
+   "spells": [
+    [
+     2003,
+     2004
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גיז'רמו ישראלביץ'",
+    "Guillermo Israilevich",
+    "גיזרמו ישראלביץ"
+   ]
+  },
+  {
+   "he": "דודו אואט",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דודו אואט"
+   ]
+  },
+  {
+   "he": "זאוטאוטאס ריימונס",
+   "pos": null,
+   "nat": null,
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זאוטאוטאס ריימונס"
+   ]
+  },
+  {
+   "he": "יואב זיו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1981,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יואב זיו"
+   ]
+  },
+  {
+   "he": "יוסי נגר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יוסי נגר"
+   ]
+  },
+  {
+   "he": "כאמל גבארין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "כאמל ג'בארין"
+   ]
+  },
+  {
+   "he": "כליל כנעני",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "כליל כנעני"
+   ]
+  },
+  {
+   "he": "ליעד אמיר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ליעד אמיר"
+   ]
+  },
+  {
+   "he": "מיכאל זנדברג",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     2003,
+     2006
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "מיכאל זנדברג",
+    "Michael Zandberg"
+   ]
+  },
+  {
+   "he": "נדיב טוב",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "נדיב סימן טוב"
+   ]
+  },
+  {
+   "he": "עידן טל",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1975,
+   "spells": [
+    [
+     2003,
+     2006
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "עידן טל",
+    "Idan Tal"
+   ]
+  },
+  {
+   "he": "עמי טיאר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עמי טיאר"
+   ]
+  },
+  {
+   "he": "פרליה נאנד",
+   "pos": null,
+   "nat": null,
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פרליה נאנד"
+   ]
+  },
+  {
+   "he": "רפי כהן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "רפי כהן"
+   ]
+  },
+  {
+   "he": "שוקי נגאר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שוקי נגאר"
+   ]
+  },
+  {
+   "he": "שי בירוק",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2003,
+     2006
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "שי בירוק",
+    "Shai Biruk"
+   ]
+  },
+  {
+   "he": "שי דהן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שי דהן"
+   ]
+  },
+  {
+   "he": "שלומי איטח",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שלומי איטח"
+   ]
+  },
+  {
+   "he": "שמואל חזן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שמואל חזן"
+   ]
+  },
+  {
+   "he": "תום אלמדון",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2003,
+     2007
+    ],
+    [
+     2010,
+     2011
+    ]
+   ],
+   "seasons": 7,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "תום אלמדון",
+    "Tom Al-Madon"
+   ]
+  },
+  {
+   "he": "תום בנדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תום בנדו"
+   ]
+  },
+  {
+   "he": "אושרי גיטא",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2004,
+     2004
+    ],
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אושרי גיטא",
+    "Oshri Gita"
+   ]
+  },
+  {
+   "he": "אלעד צחקו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אלעד צחקו"
+   ]
+  },
+  {
+   "he": "בריטיז חורחה",
+   "pos": null,
+   "nat": null,
+   "born": null,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "בריטיז חורחה"
+   ]
+  },
+  {
+   "he": "דקל קינן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2004,
+     2010
+    ],
+    [
+     2013,
+     2017
+    ]
+   ],
+   "seasons": 12,
+   "titles": 5,
+   "target": true,
+   "aliases": [
+    "דקל קינן",
+    "Dekel Keinan",
+    "Thembinkosi Fanteni"
+   ]
+  },
+  {
+   "he": "יצחק בן חמו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יצחק בן חמו"
+   ]
+  },
+  {
+   "he": "לופז דנטה",
+   "pos": null,
+   "nat": null,
+   "born": null,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "לופז דנטה"
+   ]
+  },
+  {
+   "he": "ליאור רפאלוב",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2004,
+     2011
+    ],
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 10,
+   "titles": 5,
+   "target": true,
+   "aliases": [
+    "ליאור רפאלוב",
+    "Lior Refaelov"
+   ]
+  },
+  {
+   "he": "מאור גנח",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "מאור ג'נח"
+   ]
+  },
+  {
+   "he": "עומר בוקסנבוים",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2004,
+     2004
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "עומר בוקסנבאום"
+   ]
+  },
+  {
+   "he": "אורי אוזן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1978,
+   "spells": [
+    [
+     2005,
+     2006
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "אורי אוזן",
+    "Ori Uzan"
+   ]
+  },
+  {
+   "he": "גוסטבו בוקולי",
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1978,
+   "spells": [
+    [
+     2005,
+     2015
+    ]
+   ],
+   "seasons": 11,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "גוסטבו בוקולי",
+    "Gustavo Boccoli"
+   ]
+  },
+  {
+   "he": "וסקלי גונזלבס",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2005,
+     2005
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "וסקלי זר גונזלבס"
+   ]
+  },
+  {
+   "he": "חבייר דירסאו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2005,
+     2007
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "חבייר פרנצ'יסקו דירסאו"
+   ]
+  },
+  {
+   "he": "חיים מגרלשוילי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2005,
+     2007
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "חיים מגרלשוילי"
+   ]
+  },
+  {
+   "he": "עדן בן בסט",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2005,
+     2006
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "עדן בן בסט",
+    "Eden Ben Basat"
+   ]
+  },
+  {
+   "he": "רביד גזל",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2005,
+     2007
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "רביד גזל",
+    "Ravid Gazal"
+   ]
+  },
+  {
+   "he": "רוברטו קולאוטי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2005,
+     2007
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "רוברטו קולאוטי",
+    "Roberto Colautti"
+   ]
+  },
+  {
+   "he": "שלומי חנוכה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2005,
+     2005
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שלומי חנוכה"
+   ]
+  },
+  {
+   "he": "אדריאן פרננדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2006,
+     2006
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אדריאן לורפיס פרננדו"
+   ]
+  },
+  {
+   "he": "מאור בוזגלו",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2006,
+     2006
+    ],
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "מאור בוזגלו",
+    "Maor Buzaglo"
+   ]
+  },
+  {
+   "he": "נתנאל בנדהאן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2006,
+     2006
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "נתנאל בנדהאן"
+   ]
+  },
+  {
+   "he": "קלמי סבן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     2006,
+     2006
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "קלמי סבן",
+    "Klemi Saban"
+   ]
+  },
+  {
+   "he": "רפאל אולארה",
+   "pos": "DF",
+   "nat": "CL",
+   "born": 1978,
+   "spells": [
+    [
+     2006,
+     2007
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "רפאל אולארה",
+    "Rafael Olarra"
+   ]
+  },
+  {
+   "he": "שי מימון",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2006,
+     2006
+    ],
+    [
+     2008,
+     2008
+    ],
+    [
+     2010,
+     2011
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "שי מימון",
+    "Shai Maimon"
+   ]
+  },
+  {
+   "he": "שלומי ארבייטמן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2006,
+     2010
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "שלומי ארבייטמן",
+    "Shlomi Arbeitman"
+   ]
+  },
+  {
+   "he": "אייל משומר",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1983,
+   "spells": [
+    [
+     2007,
+     2016
+    ]
+   ],
+   "seasons": 10,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "אייל משומר",
+    "Islam Cana'an",
+    "Eyal Meshumar"
+   ]
+  },
+  {
+   "he": "איציק זפרני",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איציק זפרני"
+   ]
+  },
+  {
+   "he": "אלן מסודי",
+   "pos": "MF",
+   "nat": "CD",
+   "born": 1978,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלן מסודי",
+    "Alain Masudi"
+   ]
+  },
+  {
+   "he": "בירם כיאל",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2007,
+     2010
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "בירם כיאל",
+    "Beram Kayal"
+   ]
+  },
+  {
+   "he": "מאור מליקסון",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מאור מליקסון",
+    "Maor Melikson"
+   ]
+  },
+  {
+   "he": "מוחמד שחברי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מוחמד שחברי"
+   ]
+  },
+  {
+   "he": "מור ממן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מור ממן"
+   ]
+  },
+  {
+   "he": "עבאס סואן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1976,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עבאס סואן"
+   ]
+  },
+  {
+   "he": "שאבייר אנדרסון",
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1980,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שאבייר קונססאו אנדרסון",
+    "Xavier"
+   ]
+  },
+  {
+   "he": "תומר חמד",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2007,
+     2007
+    ],
+    [
+     2011,
+     2011
+    ],
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "תומר חמד",
+    "Tomer Hemed"
+   ]
+  },
+  {
+   "he": "אלירן דנין",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלירן דנין",
+    "Eliran Danin"
+   ]
+  },
+  {
+   "he": "גד עמוס",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2008,
+     2009
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גד עמוס",
+    "Gad Amos"
+   ]
+  },
+  {
+   "he": "דה אדוארדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דה אוליברה ריביירו רנאטו אדוארדו"
+   ]
+  },
+  {
+   "he": "דייגו קרוסה",
+   "pos": "DF",
+   "nat": "AR",
+   "born": 1976,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דייגו סבסטיאן קרוסה",
+    "Diego Crosa"
+   ]
+  },
+  {
+   "he": "טימבינוקסי פנטיני",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2008,
+     2009
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "טימבינוקסי פנטיני"
+   ]
+  },
+  {
+   "he": "יהב יולזרי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יהב יולזרי"
+   ]
+  },
+  {
+   "he": "לוהאב כיאל",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "לוהאב כיאל"
+   ]
+  },
+  {
+   "he": "עמרי אפק",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1979,
+   "spells": [
+    [
+     2008,
+     2009
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "עמרי אפק",
+    "Omri Afek"
+   ]
+  },
+  {
+   "he": "פטר מסיללה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2008,
+     2011
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "פטר צפו מסיללה"
+   ]
+  },
+  {
+   "he": "פיטר מסיללה",
+   "pos": "DF",
+   "nat": "ZA",
+   "born": 1985,
+   "spells": [
+    [
+     2008,
+     2011
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "רוני גפני",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     2008,
+     2009
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "רוני גפני",
+    "Ronny Gafni"
+   ]
+  },
+  {
+   "he": "רנה לימה",
+   "pos": "MF",
+   "nat": "AR",
+   "born": 1985,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "רנה מרטין לימה",
+    "René Lima"
+   ]
+  },
+  {
+   "he": "שניר משען",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שניר משען"
+   ]
+  },
+  {
+   "he": "אבימו אנדרסון",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אבימו ווסט אנדרסון"
+   ]
+  },
+  {
+   "he": "אייל גולסה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2009,
+     2014
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "אייל גולסה",
+    "Eyal Golasa"
+   ]
+  },
+  {
+   "he": "אלי ארליך",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אלי ארליך"
+   ]
+  },
+  {
+   "he": "גיא פילוסוף",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גיא פילוסוף"
+   ]
+  },
+  {
+   "he": "גיירו גן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2009,
+     2011
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "ג'יירו קולמה ג'ן"
+   ]
+  },
+  {
+   "he": "ישראל זגורי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1990,
+   "spells": [
+    [
+     2009,
+     2010
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ישראל זגורי",
+    "Israel Zaguri"
+   ]
+  },
+  {
+   "he": "ליאוניד קרופניק",
+   "pos": "DF",
+   "nat": "US",
+   "born": 1979,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ליאוניד קרופניק",
+    "Leonid Krupnik"
+   ]
+  },
+  {
+   "he": "ליעד אלמליח",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2009,
+     2009
+    ],
+    [
+     2011,
+     2011
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "ליעד אלמליח",
+    "Liad Elmaliach"
+   ]
+  },
+  {
+   "he": "מוחמד גדיר",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2009,
+     2012
+    ],
+    [
+     2021,
+     2021
+    ]
+   ],
+   "seasons": 5,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "מוחמד גדיר",
+    "Mohammad Ghadir"
+   ]
+  },
+  {
+   "he": "רנספורד אוסיי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "רנספורד אוסיי"
+   ]
+  },
+  {
+   "he": "אור בן חמו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אור בן חמו"
+   ]
+  },
+  {
+   "he": "ולדימיר דבאלישווילי",
+   "pos": "FW",
+   "nat": "GE",
+   "born": 1986,
+   "spells": [
+    [
+     2010,
+     2011
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "ולדימיר דוואלישוילי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2011
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ולדימיר דוואלישוילי"
+   ]
+  },
+  {
+   "he": "ז'ורז'ה טיישיירה",
+   "pos": "DF",
+   "nat": "PT",
+   "born": 1986,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "זיו אוסון",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זיו אוסון"
+   ]
+  },
+  {
+   "he": "חיים זיסקינד",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "חיים זיסקינד"
+   ]
+  },
+  {
+   "he": "טאלב טוואטחה",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2010,
+     2016
+    ],
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 9,
+   "titles": 4,
+   "target": true
+  },
+  {
+   "he": "טיאגו דוטרה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "טיאגו דה סילבה דוטרה"
+   ]
+  },
+  {
+   "he": "כליבאת מוחמד",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "כליבאת מוחמד"
+   ]
+  },
+  {
+   "he": "מוחמד כליבאת",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1990,
+   "spells": [
+    [
+     2010,
+     2014
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "סאדאת בוקארי",
+   "pos": "FW",
+   "nat": "GH",
+   "born": 1989,
+   "spells": [
+    [
+     2010,
+     2010
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "סאדאת בוקארי",
+    "Sadat Bukari"
+   ]
+  },
+  {
+   "he": "סינטאיהו סלליך",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2010,
+     2011
+    ],
+    [
+     2018,
+     2020
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "סינטאיהו סלליך",
+    "Sintayehu Sallalich",
+    "Seydouba Soumah"
+   ]
+  },
+  {
+   "he": "עלי עות'מאן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2010,
+     2013
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עלי עוסמאן",
+    "עלי עות'מאן"
+   ]
+  },
+  {
+   "he": "שלומי אזולאי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2010,
+     2010
+    ],
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שלומי יוסף אזולאי"
+   ]
+  },
+  {
+   "he": "אנדריי פילבסקי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2011,
+     2011
+    ],
+    [
+     2013,
+     2014
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אנדריי פילבסקי"
+   ]
+  },
+  {
+   "he": "גיא ליפקה",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2011,
+     2011
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גיא ליפקה"
+   ]
+  },
+  {
+   "he": "יא סיידו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2011,
+     2012
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יא יא סיידו"
+   ]
+  },
+  {
+   "he": "סארי פלאח",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2011,
+     2014
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "סארי פלאח",
+    "Sari Falah"
+   ]
+  },
+  {
+   "he": "סיידו יאיא",
+   "pos": "MF",
+   "nat": "GH",
+   "born": 1989,
+   "spells": [
+    [
+     2011,
+     2012
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "עידן ורד",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2011,
+     2015
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עידן ורד",
+    "Idan Vered"
+   ]
+  },
+  {
+   "he": "שאדי שעבאן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2011,
+     2012
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "אדין צוצאליץ'",
+   "pos": "DF",
+   "nat": "BA",
+   "born": 1987,
+   "spells": [
+    [
+     2012,
+     2014
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "אדין צ'וצ'אליץ'",
+    "Edin Cocalić",
+    "אדין צוצאליץ"
+   ]
+  },
+  {
+   "he": "אוראל דגני",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2012,
+     2013
+    ],
+    [
+     2015,
+     2016
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "אוראל דגני",
+    "Orel Dgani"
+   ]
+  },
+  {
+   "he": "אלון תורג'מן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2012,
+     2015
+    ]
+   ],
+   "seasons": 4,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "אלון תורגמן",
+    "Alon Turgeman"
+   ]
+  },
+  {
+   "he": "אסמאעיל ריאן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1994,
+   "spells": [
+    [
+     2012,
+     2014
+    ],
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "איסמעיל ריאן",
+    "Iyad Abu Abaid",
+    "אסמאעיל ריאן"
+   ]
+  },
+  {
+   "he": "אסף מנדס",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אסף מנדס"
+   ]
+  },
+  {
+   "he": "בויאן שראנוב",
+   "pos": "GK",
+   "nat": "RS",
+   "born": 1987,
+   "spells": [
+    [
+     2012,
+     2014
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "בויאן שראנוב",
+    "Bojan Šaranov"
+   ]
+  },
+  {
+   "he": "במידלה ימפולסקי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2013
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "במידלה ימפולסקי"
+   ]
+  },
+  {
+   "he": "גבריאל גרינר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גבריאל גרינר"
+   ]
+  },
+  {
+   "he": "דלה ימפולסקי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2012,
+     2013
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "דניאל ססארץ",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דניאל ססארץ'"
+   ]
+  },
+  {
+   "he": "ויאם עמאשה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2012,
+     2013
+    ],
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "ויאם עמאשה",
+    "Wiyam Amashe"
+   ]
+  },
+  {
+   "he": "חן עזריאל",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "חן עזריאל"
+   ]
+  },
+  {
+   "he": "טאלב טואטחה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2016
+    ],
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": false,
+   "aliases": [
+    "טאלב טואטחה"
+   ]
+  },
+  {
+   "he": "יוריצה בולייאט",
+   "pos": "DF",
+   "nat": "HR",
+   "born": 1986,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "יוריצה בולייט",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יוריצה בולייט"
+   ]
+  },
+  {
+   "he": "עטאא ג'אבר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1994,
+   "spells": [
+    [
+     2012,
+     2014
+    ],
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עטאא גאבר",
+    "Ataa Jaber"
+   ]
+  },
+  {
+   "he": "ערן רוזנבאום",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ערן רוזנבאום"
+   ]
+  },
+  {
+   "he": "שובל גוזלן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1994,
+   "spells": [
+    [
+     2012,
+     2014
+    ],
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "תמיר כהן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1984,
+   "spells": [
+    [
+     2012,
+     2013
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תמיר כהן",
+    "Tamir Cohen"
+   ]
+  },
+  {
+   "he": "אביחי ידין",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2013,
+     2015
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "אביחי ידין",
+    "Avihay Yadin"
+   ]
+  },
+  {
+   "he": "אמיר נסראלדין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אמיר נסראלדין"
+   ]
+  },
+  {
+   "he": "אמרי זייד",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אמרי זייד"
+   ]
+  },
+  {
+   "he": "דור כוכב",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דור כוכב"
+   ]
+  },
+  {
+   "he": "דינו אנדלובו",
+   "pos": "FW",
+   "nat": "ZA",
+   "born": 1990,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "דינו נדלובו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דינו נדלובו"
+   ]
+  },
+  {
+   "he": "דניאל הבר",
+   "pos": "FW",
+   "nat": "CA",
+   "born": 1992,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דניאל ברהם הבר",
+    "Daniel Haber"
+   ]
+  },
+  {
+   "he": "חן עזרא",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2013,
+     2016
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "חן עזרא",
+    "Hen Ezra"
+   ]
+  },
+  {
+   "he": "לירוי צעירי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "לירוי צעירי",
+    "Liroy Zhairi"
+   ]
+  },
+  {
+   "he": "מרטינס דפקוס",
+   "pos": "DF",
+   "nat": "LT",
+   "born": 1993,
+   "spells": [
+    [
+     2013,
+     2014
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "עודד אלקיים",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2013,
+     2013
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עודד אלקיים",
+    "Oded Elkayam"
+   ]
+  },
+  {
+   "he": "רון שושן",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2013,
+     2014
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "רון שושן",
+    "Ron Shushan"
+   ]
+  },
+  {
+   "he": "שמואל שיימן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2013,
+     2015
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "שמואל בנימין אליאס שיימן",
+    "Samuel Scheimann"
+   ]
+  },
+  {
+   "he": "אלעד גבאי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2014,
+     2015
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלעד גבאי",
+    "Elad Gabay"
+   ]
+  },
+  {
+   "he": "דור חוגי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "יובל יוסיפוביץ",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2014,
+     2014
+    ],
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יובל יוסיפוביץ"
+   ]
+  },
+  {
+   "he": "מיכה לאוטה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מיכה לאוטה"
+   ]
+  },
+  {
+   "he": "עדי קונסטנטינוס",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1994,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עדי קונסטנטינוס",
+    "Adi Konstantinos"
+   ]
+  },
+  {
+   "he": "רובן סרנה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2014,
+     2015
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "רובן ראיוס סרנה"
+   ]
+  },
+  {
+   "he": "רן אבוקרט",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2014,
+     2016
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "רן אבוקרט",
+    "Ran Abukarat"
+   ]
+  },
+  {
+   "he": "שובל גוזלאן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2014,
+     2014
+    ],
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שובל גוזלאן"
+   ]
+  },
+  {
+   "he": "שון וייסמן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2014,
+     2016
+    ],
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "שון וייסמן",
+    "Shon Weissman"
+   ]
+  },
+  {
+   "he": "שמעון אבו חצירא",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2014,
+     2014
+    ],
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שמעון אבוחצירה"
+   ]
+  },
+  {
+   "he": "תאמאש פרישקין",
+   "pos": "FW",
+   "nat": "HU",
+   "born": 1986,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "תאמש פריסקין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תאמש פריסקין"
+   ]
+  },
+  {
+   "he": "אברהם פאס",
+   "pos": "DF",
+   "nat": "ES",
+   "born": 1979,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "אברהן קרוז",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אברהן פאס קרוז"
+   ]
+  },
+  {
+   "he": "אוהד לויטה",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2015,
+     2018
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "אוהד לויטה",
+    "Ohad Levita"
+   ]
+  },
+  {
+   "he": "איתי שכטר",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתי שכטר",
+    "Itay Shechter"
+   ]
+  },
+  {
+   "he": "אלירן עטר",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2015,
+     2017
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "אלירן עטר",
+    "Eliran Atar"
+   ]
+  },
+  {
+   "he": "ולדימיר סטויקוביץ'",
+   "pos": "GK",
+   "nat": "RS",
+   "born": 1983,
+   "spells": [
+    [
+     2015,
+     2016
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ולדימיר סטויקוביץ'",
+    "Vladimir Stojković",
+    "ולדימיר סטויקוביץ"
+   ]
+  },
+  {
+   "he": "טל בומשטיין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "טל בומשטיין"
+   ]
+  },
+  {
+   "he": "מוחמד קמארה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מוחמד קמארה"
+   ]
+  },
+  {
+   "he": "מיגל מרקוס מדרה",
+   "pos": "MF",
+   "nat": "ES",
+   "born": 1985,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מיגל מרקוס מדרה",
+    "מיגל מדרה"
+   ]
+  },
+  {
+   "he": "עלא געפר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עלא געפר"
+   ]
+  },
+  {
+   "he": "קובי מויאל",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2015,
+     2016
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "קובי מויאל",
+    "Kobi Moyal"
+   ]
+  },
+  {
+   "he": "אופיר קריאף",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1991,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אופיר קריאף",
+    "Ofir Kriaf"
+   ]
+  },
+  {
+   "he": "גיל אופק",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2016,
+     2020
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גיל אופק"
+   ]
+  },
+  {
+   "he": "גילי ורמוט",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גיל ורמוט",
+    "גילי ורמוט"
+   ]
+  },
+  {
+   "he": "גליינור פלט",
+   "pos": "FW",
+   "nat": "NL",
+   "born": 1987,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "גלינור פליט",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גלינור אורביל פליט"
+   ]
+  },
+  {
+   "he": "דוד טוויזר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "דוד דין טוויזר"
+   ]
+  },
+  {
+   "he": "יונתן לוי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1998,
+   "spells": [
+    [
+     2016,
+     2021
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "יונתן לוי",
+    "Yonatan Levi"
+   ]
+  },
+  {
+   "he": "לודוביק אוברניאק",
+   "pos": "MF",
+   "nat": "PL",
+   "born": 1984,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "לודוביק ג'וזף אוברניאק",
+    "Ludovic Obraniak"
+   ]
+  },
+  {
+   "he": "מארק ואליינטה",
+   "pos": "DF",
+   "nat": "ES",
+   "born": 1987,
+   "spells": [
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "מארק וליינטה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "מארק וליינטה"
+   ]
+  },
+  {
+   "he": "נטע לביא",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2016,
+     2022
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "נטע לביא",
+    "Neta Lavi"
+   ]
+  },
+  {
+   "he": "סאן מנחם",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2016,
+     2017
+    ],
+    [
+     2019,
+     2023
+    ]
+   ],
+   "seasons": 7,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "סאן מנחם",
+    "Sun Menachem",
+    "Kerim Frei"
+   ]
+  },
+  {
+   "he": "עאיד חבשי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2016,
+     2016
+    ],
+    [
+     2019,
+     2021
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "עאיד חבשי"
+   ]
+  },
+  {
+   "he": "עופרי ארד",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1998,
+   "spells": [
+    [
+     2016,
+     2023
+    ]
+   ],
+   "seasons": 8,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "עופרי ארד",
+    "Ofri Arad",
+    "Mohammad Abu Fani"
+   ]
+  },
+  {
+   "he": "ערן ביטון",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ערן ביטון"
+   ]
+  },
+  {
+   "he": "רומאריו פירס",
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1989,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "רומאריו סנטוס פירס"
+   ]
+  },
+  {
+   "he": "רז מאיר",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2016,
+     2016
+    ],
+    [
+     2018,
+     2023
+    ]
+   ],
+   "seasons": 7,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "רז מאיר",
+    "Raz Meir"
+   ]
+  },
+  {
+   "he": "שחר הירש",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2016,
+     2016
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שחר הירש",
+    "Shahar Hirsh"
+   ]
+  },
+  {
+   "he": "שי בן דוד",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שי בן-דוד",
+    "Shay Ben David"
+   ]
+  },
+  {
+   "he": "איתן וולבלום",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתן וולבלום"
+   ]
+  },
+  {
+   "he": "אניס אלושי",
+   "pos": "MF",
+   "nat": "XK",
+   "born": 1985,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אניס אלושי",
+    "Enis Alushi"
+   ]
+  },
+  {
+   "he": "גארי קאגלמכר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גארי כריסטופר קאגלמכר"
+   ]
+  },
+  {
+   "he": "גארי קגלמאכר",
+   "pos": "DF",
+   "nat": "UY",
+   "born": 1988,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "הולמר איולפסון",
+   "pos": "DF",
+   "nat": "IS",
+   "born": 1990,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "הולמר איולפסון",
+    "Hólmar Eyjólfsson"
+   ]
+  },
+  {
+   "he": "יהב גורפינקל",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1998,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "יניב בריק",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יניב בריק"
+   ]
+  },
+  {
+   "he": "מוחמד עואד",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2017,
+     2021
+    ]
+   ],
+   "seasons": 5,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "מוחמד עואד"
+   ]
+  },
+  {
+   "he": "מיכאל בן ברוך",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מיכאל אשר בן ברוך"
+   ]
+  },
+  {
+   "he": "ניקיטה רוקאביציה",
+   "pos": "FW",
+   "nat": "AU",
+   "born": 1987,
+   "spells": [
+    [
+     2017,
+     2021
+    ],
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "ניקיטה רוקאביציה",
+    "Nikita Rukavytsya"
+   ]
+  },
+  {
+   "he": "עומר דמארי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2017,
+     2018
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עומר דמארי",
+    "Omer Damari"
+   ]
+  },
+  {
+   "he": "עומרי גלזר",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2017,
+     2019
+    ],
+    [
+     2021,
+     2021
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עומרי גלזר",
+    "Omri Glazer"
+   ]
+  },
+  {
+   "he": "עמית זנטי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2017,
+     2018
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עמית זנטי",
+    "Amit Zenati"
+   ]
+  },
+  {
+   "he": "פיטים אזמי",
+   "pos": "FW",
+   "nat": "NO",
+   "born": 1992,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פיטים אזמי",
+    "Fitim Azemi"
+   ]
+  },
+  {
+   "he": "קמיל ואצק",
+   "pos": "MF",
+   "nat": "CZ",
+   "born": 1987,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "קמיל וואצק",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קמיל וואצק"
+   ]
+  },
+  {
+   "he": "רועי קהת",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2017,
+     2019
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "רועי קהת",
+    "Roi Kehat"
+   ]
+  },
+  {
+   "he": "אופיר מזרחי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אופיר מזרחי",
+    "Ofir Mizrahi"
+   ]
+  },
+  {
+   "he": "אטיין ריינן",
+   "pos": "DF",
+   "nat": "NL",
+   "born": 1987,
+   "spells": [
+    [
+     2018,
+     2019
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אטיין ריינן",
+    "Etiënne Reijnen"
+   ]
+  },
+  {
+   "he": "אליסון דוס סנטוס",
+   "pos": "DF",
+   "nat": "BR",
+   "born": 1990,
+   "spells": [
+    [
+     2018,
+     2019
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אליסון איירס דוס סנטוס",
+    "Allyson",
+    "אליסון סנטוס"
+   ]
+  },
+  {
+   "he": "ארנסט מאבוקה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2021
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ארנסט מאבוקה"
+   ]
+  },
+  {
+   "he": "ארנסט מבוקה",
+   "pos": "DF",
+   "nat": "CM",
+   "born": 1988,
+   "spells": [
+    [
+     2018,
+     2021
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true
+  },
+  {
+   "he": "גאורגי קוסטדינוב",
+   "pos": "MF",
+   "nat": "BG",
+   "born": 1990,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גאורגי קוסטדינוב"
+   ]
+  },
+  {
+   "he": "גל אלברמן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1983,
+   "spells": [
+    [
+     2018,
+     2019
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גל אלברמן",
+    "Gal Alberman"
+   ]
+  },
+  {
+   "he": "גל קתבי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גל קתבי"
+   ]
+  },
+  {
+   "he": "ים כהן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ים כהן"
+   ]
+  },
+  {
+   "he": "סהר דבח",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "סהר דבח"
+   ]
+  },
+  {
+   "he": "סטפנוס אתנאסיאדיס",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "סטפנוס אתנאסיאדיס"
+   ]
+  },
+  {
+   "he": "סטפנוס אתנסיאדיס",
+   "pos": "FW",
+   "nat": "GR",
+   "born": 1988,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "עומרי בן הרוש",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1990,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עומרי בן הרוש",
+    "Omri Ben Harush"
+   ]
+  },
+  {
+   "he": "קאיו אלבס",
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1986,
+   "spells": [
+    [
+     2018,
+     2018
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קאיו אלבס"
+   ]
+  },
+  {
+   "he": "רועי פוקס",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2018,
+     2018
+    ],
+    [
+     2021,
+     2026
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": false,
+   "aliases": [
+    "רועי פוקס"
+   ]
+  },
+  {
+   "he": "רמי גרשון",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2018,
+     2025
+    ]
+   ],
+   "seasons": 8,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "רמי גרשון",
+    "Rami Gershon"
+   ]
+  },
+  {
+   "he": "גיא חיימוב",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1986,
+   "spells": [
+    [
+     2019,
+     2020
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גיא חיימוב",
+    "Guy Haimov"
+   ]
+  },
+  {
+   "he": "ז'ורז' מנדז'ק",
+   "pos": "MF",
+   "nat": "CM",
+   "born": 1988,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ג'ורג' מנדז'ק",
+    "גורג מנדזק",
+    "ז'ורז' מנדז'ק"
+   ]
+  },
+  {
+   "he": "ירדן שועה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2019,
+     2020
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ירדן שועה",
+    "Yarden Shua",
+    "Ikouwem Utin"
+   ]
+  },
+  {
+   "he": "מוחמד אבו פני",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2019,
+     2019
+    ],
+    [
+     2021,
+     2023
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": false,
+   "aliases": [
+    "מוחמד אבו פני"
+   ]
+  },
+  {
+   "he": "מחמוד ג'אבר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2019,
+     2019
+    ],
+    [
+     2022,
+     2025
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "מחמוד ג'אבר",
+    "Mahmoud Jaber",
+    "מחמוד גאבר"
+   ]
+  },
+  {
+   "he": "מנואל איטורה",
+   "pos": "MF",
+   "nat": "CL",
+   "born": 1984,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מנואל איטורה",
+    "Manuel Iturra"
+   ]
+  },
+  {
+   "he": "מקסים פלקושצ'נקו",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2019,
+     2020
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מקסים פלקושצנקו",
+    "Maxim Plakushchenko"
+   ]
+  },
+  {
+   "he": "קארים פריי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קארים פריי"
+   ]
+  },
+  {
+   "he": "איקוום אוטין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איקוום אוטין"
+   ]
+  },
+  {
+   "he": "ג'וש כהן",
+   "pos": "GK",
+   "nat": "US",
+   "born": 1992,
+   "spells": [
+    [
+     2020,
+     2023
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true
+  },
+  {
+   "he": "גוזף קוזמינצקי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ג'וזף קוזמינצקי"
+   ]
+  },
+  {
+   "he": "גושוע כהן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2023
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": false,
+   "aliases": [
+    "ג'ושוע כהן"
+   ]
+  },
+  {
+   "he": "גיא הרמן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גיא הרמן"
+   ]
+  },
+  {
+   "he": "דולב חזיזה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2020,
+     2026
+    ]
+   ],
+   "seasons": 7,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "דולב חזיזה",
+    "Dolev Haziza"
+   ]
+  },
+  {
+   "he": "דניאל יוסף",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דניאל מור יוסף"
+   ]
+  },
+  {
+   "he": "טרנט סיינסבורי",
+   "pos": "DF",
+   "nat": "AU",
+   "born": 1992,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "טרנט סיינסבורי",
+    "Trent Sainsbury"
+   ]
+  },
+  {
+   "he": "יאניק וילדסחוט",
+   "pos": "FW",
+   "nat": "NL",
+   "born": 1991,
+   "spells": [
+    [
+     2020,
+     2021
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יאניק וילדסחוט",
+    "Yanic Wildschut"
+   ]
+  },
+  {
+   "he": "יובל אשכנזי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2020,
+     2021
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יובל אשכנזי",
+    "Yuval Ashkenazi"
+   ]
+  },
+  {
+   "he": "מאור לוי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2000,
+   "spells": [
+    [
+     2020,
+     2022
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "מאור לוי",
+    "Maor Levi"
+   ]
+  },
+  {
+   "he": "נהוראי יפרח",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2003,
+   "spells": [
+    [
+     2020,
+     2022
+    ],
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "סוף פודגוראנו",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2020,
+     2020
+    ],
+    [
+     2023,
+     2024
+    ],
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "סוף פודגוראנו",
+    "Suf Podgoreanu"
+   ]
+  },
+  {
+   "he": "סתיו נחמני",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2020,
+     2021
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "צ'רון שרי",
+   "pos": "MF",
+   "nat": "NL",
+   "born": 1988,
+   "spells": [
+    [
+     2020,
+     2023
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "צ'ארון שרי",
+    "צארון שרי",
+    "צ'רון שרי"
+   ]
+  },
+  {
+   "he": "תומר אסוס",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תומר חזן אסוס"
+   ]
+  },
+  {
+   "he": "בוגדאן פלאניץ",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "בוגדאן פלאניץ'"
+   ]
+  },
+  {
+   "he": "בוגדן פלאניץ'",
+   "pos": "DF",
+   "nat": "RS",
+   "born": 1992,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "גודסווי דונהיו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "גודסווי דונהיו"
+   ]
+  },
+  {
+   "he": "גודסוויי דוניו",
+   "pos": "FW",
+   "nat": "GH",
+   "born": 1994,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "חוזה רודריגז",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "חוזה מרטינז רודריגז"
+   ]
+  },
+  {
+   "he": "חוסה רודריגס מרטינס",
+   "pos": "MF",
+   "nat": "ES",
+   "born": 1994,
+   "spells": [
+    [
+     2021,
+     2022
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "עומר אצילי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2021,
+     2023
+    ]
+   ],
+   "seasons": 3,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "עומר אצילי",
+    "Omer Atzili"
+   ]
+  },
+  {
+   "he": "עילאי חג'ג'",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2001,
+   "spells": [
+    [
+     2021,
+     2021
+    ],
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עילאי חגג",
+    "Ilay Hajaj"
+   ]
+  },
+  {
+   "he": "רוני לאופר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2021,
+     2021
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "רוני לאופר"
+   ]
+  },
+  {
+   "he": "אורי דהן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2022,
+     2022
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אורי אור דהן"
+   ]
+  },
+  {
+   "he": "איתמר ישראלי",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2022,
+     2022
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "איתמר ישראלי",
+    "Itamar Israeli"
+   ]
+  },
+  {
+   "he": "בן שהר",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2022,
+     2023
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "בן שהר",
+    "Ben Sahar"
+   ]
+  },
+  {
+   "he": "דין דוד",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2022,
+     2025
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "דין דוד",
+    "Dean David",
+    "Matías Nahuel"
+   ]
+  },
+  {
+   "he": "מאוויס צ'יבוטה",
+   "pos": "FW",
+   "nat": "CD",
+   "born": 1996,
+   "spells": [
+    [
+     2022,
+     2023
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false
+  },
+  {
+   "he": "מאויס דפונו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2022,
+     2023
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "מאויס צ'יבוטה דפונו"
+   ]
+  },
+  {
+   "he": "מיקאל אלפונס",
+   "pos": "DF",
+   "nat": "FR",
+   "born": 1989,
+   "spells": [
+    [
+     2022,
+     2022
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "מיקאל אלפונס",
+    "Mickaël Alphonse"
+   ]
+  },
+  {
+   "he": "נבו שדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2022,
+     2022
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "נבו יחזקאל שדו"
+   ]
+  },
+  {
+   "he": "עלי אל פאזז",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2022,
+     2026
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "עלי מוחמד מוחמד אל פאזז"
+   ]
+  },
+  {
+   "he": "עלי מוחמד",
+   "pos": "MF",
+   "nat": null,
+   "born": 1995,
+   "spells": [
+    [
+     2022,
+     2026
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": true
+  },
+  {
+   "he": "ענאן ח'לאילי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2004,
+   "spells": [
+    [
+     2022,
+     2024
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "ענאן חלאילי",
+    "Anan Khalaili"
+   ]
+  },
+  {
+   "he": "ראיין סטריין",
+   "pos": "DF",
+   "nat": "AU",
+   "born": 1997,
+   "spells": [
+    [
+     2022,
+     2022
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "רועי משפתי",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2022,
+     2023
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "רועי משפתי"
+   ]
+  },
+  {
+   "he": "שון גולדברג",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2022,
+     2026
+    ]
+   ],
+   "seasons": 5,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "שון גולדברג",
+    "Shon Goldberg"
+   ]
+  },
+  {
+   "he": "אביאל זרגרי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אביאל זרגרי"
+   ]
+  },
+  {
+   "he": "בסאם זערורה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "בסאם זערורה"
+   ]
+  },
+  {
+   "he": "גוני נאור",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2023,
+     2024
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "גוני נאור",
+    "Goni Naor"
+   ]
+  },
+  {
+   "he": "דיא סבע",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2023,
+     2023
+    ],
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "דיא סבע"
+   ]
+  },
+  {
+   "he": "דילן בטובינסיקה",
+   "pos": "DF",
+   "nat": "CD",
+   "born": 1996,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "דילן בטובינסיקה",
+    "Dylan Batubinsika"
+   ]
+  },
+  {
+   "he": "דניאל סונדגרן",
+   "pos": "DF",
+   "nat": "SE",
+   "born": 1990,
+   "spells": [
+    [
+     2023,
+     2024
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "דניאל סונדגרן",
+    "Daniel Sundgren"
+   ]
+  },
+  {
+   "he": "ינון אליהו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ינון אליהו"
+   ]
+  },
+  {
+   "he": "ליעד לוי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "ליעד לוי"
+   ]
+  },
+  {
+   "he": "עבדוליי סק",
+   "pos": "DF",
+   "nat": "SN",
+   "born": 1992,
+   "spells": [
+    [
+     2023,
+     2026
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "עבדולאיי סק",
+    "עבדוליי סק"
+   ]
+  },
+  {
+   "he": "פייר קורנו",
+   "pos": "DF",
+   "nat": "FR",
+   "born": 1996,
+   "spells": [
+    [
+     2023,
+     2024
+    ],
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "פייר קורנו",
+    "Pierre Cornud"
+   ]
+  },
+  {
+   "he": "פרנזי פיירו",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2023,
+     2024
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "פרנטזדי פיירו",
+    "פרנזי פיירו"
+   ]
+  },
+  {
+   "he": "שריף כיוף",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 2001,
+   "spells": [
+    [
+     2023,
+     2026
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "שריף כיוף",
+    "Shareef Keouf"
+   ]
+  },
+  {
+   "he": "תבור חוטר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2023,
+     2023
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "תבור חוטר"
+   ]
+  },
+  {
+   "he": "אורי בן שושן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אורי בן שושן"
+   ]
+  },
+  {
+   "he": "איתמר ניצן",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתמר ניצן"
+   ]
+  },
+  {
+   "he": "אריק שוראנוב",
+   "pos": "FW",
+   "nat": "DE",
+   "born": 2002,
+   "spells": [
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אריק שוראנוב",
+    "Erik Shuranov"
+   ]
+  },
+  {
+   "he": "גדי קינדה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1994,
+   "spells": [
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גדי קינדה",
+    "Gadi Kinda"
+   ]
+  },
+  {
+   "he": "דניאיל לסובוי",
+   "pos": "FW",
+   "nat": "RU",
+   "born": 1998,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דניל לסובוי",
+    "Daniil Lesovoy"
+   ]
+  },
+  {
+   "he": "זיו בן שימול",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זיו ישראל בן שימול"
+   ]
+  },
+  {
+   "he": "ירין לוי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2005,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "לורנצו סימיץ",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "לורנצו סימיץ"
+   ]
+  },
+  {
+   "he": "לורנצו שימיץ'",
+   "pos": "DF",
+   "nat": "HR",
+   "born": 1996,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "מאור קנדיל",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מאור קנדיל",
+    "Maor Kandil"
+   ]
+  },
+  {
+   "he": "ניתאי גרייס",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 2004,
+   "spells": [
+    [
+     2024,
+     2025
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ניתאי גרייס"
+   ]
+  },
+  {
+   "he": "עילי פיינגולד",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2004,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עילי פיינגולד",
+    "Ilay Feingold"
+   ]
+  },
+  {
+   "he": "קנט סיף",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2024,
+     2026
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קנט חסן סיף"
+   ]
+  },
+  {
+   "he": "קני סייף",
+   "pos": "MF",
+   "nat": "US",
+   "born": 1993,
+   "spells": [
+    [
+     2024,
+     2026
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true
+  },
+  {
+   "he": "שואו",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מנואל קאפומאנה"
+   ]
+  },
+  {
+   "he": "אולכסנדר סירוטה",
+   "pos": "DF",
+   "nat": "UA",
+   "born": 2000,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "איתן אזולאי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2025,
+     2026
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתן אזולאי",
+    "Ethane Azoulay"
+   ]
+  },
+  {
+   "he": "אלכסנדר סירוטה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלכסנדר סירוטה"
+   ]
+  },
+  {
+   "he": "גטאצאו יבלו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גטאצ'או יבלו"
+   ]
+  },
+  {
+   "he": "גיא מלמד",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2026
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גיא מלמד"
+   ]
+  },
+  {
+   "he": "ויטאל אנסימבה",
+   "pos": "DF",
+   "nat": "AO",
+   "born": 1993,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ויטאל אנסימבה"
+   ]
+  },
+  {
+   "he": "ליאם חרמש",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ליאם חרמש"
+   ]
+  },
+  {
+   "he": "מתיאס לייבה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מתיאס נהואל לייבה"
+   ]
+  },
+  {
+   "he": "עומר דהן",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עומר דוד דהן"
+   ]
+  },
+  {
+   "he": "עמית ארזי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עמית ארזי"
+   ]
+  },
+  {
+   "he": "פדראו",
+   "pos": "DF",
+   "nat": "BR",
+   "born": 1997,
+   "spells": [
+    [
+     2025,
+     2026
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "פדרו דה אוליברה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2026
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פדרו הנריקה דה אוליברה"
+   ]
+  },
+  {
+   "he": "קסאנדר סברינה",
+   "pos": "FW",
+   "nat": "NL",
+   "born": 2001,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "קסנדר סברינה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קסנדר סברינה"
+   ]
+  },
+  {
+   "he": "רועי אלימלך",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "רועי אלימלך"
+   ]
+  },
+  {
+   "he": "ריקרדו ויאנה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ריקרדו ויאנה"
+   ]
+  },
+  {
+   "he": "תומאס סולטאני",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תומאס סולטאני"
+   ]
+  },
+  {
+   "he": "איי סוקפה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איי סילבה קאנגני סוקפה"
+   ]
+  },
+  {
+   "he": "אלעד אמיר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלעד אמיר"
+   ]
+  },
+  {
+   "he": "בנסון מנואל",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "בנסון הדילאזיו מנואל"
+   ]
+  },
+  {
+   "he": "ג'ורג'ה יובאנוביץ'",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ג'ורג'ה יובאנוביץ'",
+    "גורגה יובאנוביץ"
+   ]
+  },
+  {
+   "he": "גאורגי ירמקוב",
+   "pos": "GK",
+   "nat": "UA",
+   "born": 2002,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "גאורגי ירמקוב"
+   ]
+  },
+  {
+   "he": "דניאל דרזי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דניאל דרזי"
+   ]
+  },
+  {
+   "he": "זוהר זסנו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2001,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זוהר זסנו"
+   ]
+  },
+  {
+   "he": "טומי ציצואשוילי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "טומי ציצואשוילי"
+   ]
+  },
+  {
+   "he": "טריבאנטה סטיוארט",
+   "pos": "FW",
+   "nat": "JM",
+   "born": 2000,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "טריבנטה סטיוארט",
+    "Trivante Stewart"
+   ]
+  },
+  {
+   "he": "יילה בטאיי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יילה בטאיי"
+   ]
+  },
+  {
+   "he": "ילה בטאי",
+   "pos": "DF",
+   "nat": "BE",
+   "born": 1999,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "ליאור קאסה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ליאור קאסה"
+   ]
+  },
+  {
+   "he": "ליסב עיסאת",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2005,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ליסב עיסאת",
+    "Lisav Eissat"
+   ]
+  },
+  {
+   "he": "מור סעדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מור סעדו"
+   ]
+  },
+  {
+   "he": "מיכאל אוחנה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מיכאל אוחנה",
+    "Michael Ohana"
+   ]
+  },
+  {
+   "he": "מנואל בנסון",
+   "pos": "FW",
+   "nat": "AO",
+   "born": 1997,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "סדריק דון",
+   "pos": "MF",
+   "nat": "CI",
+   "born": 2004,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דון סדריק",
+    "Cédric Don"
+   ]
+  },
+  {
+   "he": "פיטר אגבה",
+   "pos": "MF",
+   "nat": "NG",
+   "born": 2002,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פטר אגבה"
+   ]
+  },
+  {
+   "he": "קנג'י חורה",
+   "pos": "FW",
+   "nat": "NL",
+   "born": 1994,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "קנג'י גורה",
+    "Kenji Gorré",
+    "קנגי גורה"
+   ]
+  }
+ ],
+ "schedule": [
+  "אברהם אבוקרט",
+  "אדורם קייסי",
+  "אביחי ידין",
+  "איתן אהרוני",
+  "אבישי ז'אנו",
+  "יונתן לוי",
+  "ליאור אסולין",
+  "טאלב טוואטחה",
+  "בוני גינצבורג",
+  "ענאן ח'לאילי",
+  "מוחמד כליבאת",
+  "שריף כיוף",
+  "משה גלאם",
+  "עטאא ג'אבר",
+  "ריימונדס ז'וטאוטאס",
+  "אלי כהן",
+  "פייר קורנו",
+  "בירם כיאל",
+  "שון גולדברג",
+  "עידן טל",
+  "מוחמד גדיר",
+  "אריק אג'יופור",
+  "מיכאל זנדברג",
+  "נהוראי יפרח",
+  "קני סייף",
+  "ארנסט מבוקה",
+  "מאור לוי",
+  "דין דוד",
+  "ניר קלינגר",
+  "אלון תורג'מן",
+  "אריק בנדו",
+  "איתן עזריה",
+  "זאהי ארמלי",
+  "סוף פודגוראנו",
+  "עומר אצילי",
+  "אייל משומר",
+  "ברוך ממן",
+  "רוברטו קולאוטי",
+  "אוראל דגני",
+  "ראובן עטר",
+  "תומר חמד",
+  "רפי אוסמו",
+  "עאיד חבשי",
+  "עילאי חג'ג'",
+  "שלומי ארבייטמן",
+  "אייל ברקוביץ'",
+  "דולב חזיזה",
+  "עומרי גלזר",
+  "נטע לביא",
+  "ליאור רפאלוב",
+  "סינטאיהו סלליך",
+  "איוואן גצקו",
+  "חן עזרא",
+  "רוני לוי",
+  "משה סלקטר",
+  "שי מימון",
+  "יניב קטן",
+  "בויאן שראנוב",
+  "עלי מוחמד",
+  "ג'ובאני רוסו",
+  "אבי רן",
+  "אלון חרזי",
+  "ואליד באדיר",
+  "אוהד לויטה",
+  "פיטר מסיללה",
+  "רועי קהת",
+  "אליניב ברדה",
+  "ויאם עמאשה",
+  "תום אלמדון",
+  "גוסטבו בוקולי",
+  "סרגיי קנדאורוב",
+  "עלי עות'מאן",
+  "רוני רוזנטל",
+  "אלירן עטר",
+  "ג'וש כהן",
+  "אלירן אלקיים",
+  "דודו אוואט",
+  "ננאד פראליה",
+  "שון וייסמן",
+  "שובל גוזלן",
+  "ניר דוידוביץ'",
+  "אדין צוצאליץ'",
+  "חיים מגרלשוילי",
+  "אלון חזן",
+  "אופיר קופל",
+  "דני רום",
+  "מחמוד ג'אבר",
+  "רן אבוקרט",
+  "דקל קינן",
+  "ניקיטה רוקאביציה",
+  "חיים סילבס",
+  "עופרי ארד",
+  "עידן ורד",
+  "אמיר אדרי",
+  "אייל גולסה",
+  "עבדוליי סק",
+  "טל בנין",
+  "אבי פרץ",
+  "ציון מרילי",
+  "יוסי בניון",
+  "סארי פלאח",
+  "איציק כהן",
+  "אסמאעיל ריאן",
+  "סאן מנחם",
+  "צ'רון שרי",
+  "שי בירוק",
+  "רז מאיר",
+  "שמואל שיימן",
+  "רמי גרשון",
+  "רביד גזל",
+  "מרקו בלבול"
+ ]
+}

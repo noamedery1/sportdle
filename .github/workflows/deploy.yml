@@ -1,0 +1,83 @@
+# ============================================================
+# פריסה: main → מאגר הפריסה → Railway
+# ------------------------------------------------------------
+# המאגר הזה הוא המקור. מה שרץ באוויר יושב במאגר אחר
+# (noamedery1/beitardle), ו-Railway מגיש אותו. הצעד הזה מעביר
+# את dist/ לתיקיית sportdle/ שם, ומריץ קודם את בדיקת עץ הפריסה.
+#
+# סוד שצריך להגדיר:
+#   DEPLOY_TOKEN — Personal Access Token עם הרשאת contents:write
+#                  למאגר הפריסה בלבד (Fine-grained token).
+#                  ה-GITHUB_TOKEN המובנה תקף רק למאגר הזה.
+#
+# למה בדיקת qa-deploy כאן ולא בבנייה: היא בודקת את **עץ הפריסה**
+# כפי שהוא ייצא לאוויר, כולל index.html הישן של ביתרדל שיושב
+# בשורש שם ולא קיים במאגר הזה בכלל.
+# ============================================================
+name: פריסה
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/**"
+      - "config/**"
+      - "data/clubs/**"
+      - "scripts/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+env:
+  DEPLOY_REPO: noamedery1/beitardle
+  DEPLOY_DIR: sportdle
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: מקור
+        uses: actions/checkout@v4
+        with:
+          path: src-repo
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: בנייה
+        working-directory: src-repo
+        run: node scripts/build.mjs
+
+      - name: מאגר הפריסה
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.DEPLOY_REPO }}
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          path: deploy-repo
+
+      - name: העברת dist
+        run: |
+          mkdir -p "deploy-repo/${{ env.DEPLOY_DIR }}"
+          # בלי --delete: בשורש מאגר הפריסה יושבים קבצים של ביתרדל
+          # הישן, ובתוך sportdle/ יכולים לשבת נכסים שלא נבנים כאן.
+          cp -r src-repo/dist/. "deploy-repo/${{ env.DEPLOY_DIR }}/"
+
+      - name: בדיקת עץ הפריסה
+        run: node src-repo/tools/qa-deploy.mjs deploy-repo
+
+      - name: דחיפה
+        working-directory: deploy-repo
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "עץ הפריסה זהה — אין מה לדחוף."
+            exit 0
+          fi
+          git config user.name  "sportdle-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "ספורטדל: בנייה מ-${GITHUB_SHA::7}"
+          git push

@@ -1,0 +1,2225 @@
+{
+ "club": "hapoel-ta",
+ "noAttributes": [
+  {
+   "he": "יוסף אובה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "זר /",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אבי אזולאי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "איל אחואן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אביב אלחדד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עזרי בבייב",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יניב בן ניסן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "הלמאיי גאבור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "וולטון סילבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אביב וולנרמן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שגיא זינגר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רונן זליג",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בני חדאד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ניר חדד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רועי חזן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רחמים חלייס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אודי כפיר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אוהד צור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "צבי קוטלר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "קלשנקו סרגיי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אבי קנפו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יעקב שאלו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רמי אבולבן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "איבה אוגובונה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יצחק בוחבוט",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שרון בן מוחה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יאיר צדק",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גיא כוואז",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רובן פאבלו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גיא סלם",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "לריה קינגסטון",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פבריציו פאריירה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עימנואל איילה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מבאלה ביסקוט",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "משה והבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עמר מנצור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אילונגו נגאסניה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רומן פאסיליוק",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רוסלו שקורוב",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פליקס אוגבוקה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אדיפימי אוליבאיו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "חנן אלקיים",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יקיר לוסקי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ניל אברבנאל",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דה קטזור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "איבאן יוליץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "חאבייר פאיס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מאיר אסור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אומות גוזלסש",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אליעד דדון",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אשר טובי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דמיטר טלקיסקי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "נסומבו מזואה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עדי סבג",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "טלהון איילה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מהראן אל לאלה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ליאור בקשי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דוגלאס דה סילבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יהודה חוטה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "נמניה וויציצביץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בוגאן ורוצינה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אסף כהן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מור שושן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "איוב אבו סבית",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ארתור אטצזיאנוב",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גל מאיו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פיליפ מנה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מריו פצלקה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בבאן פרנסמן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עומרי אטיה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עמנואל איגיבור",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אדל בטה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אלכס באסוק",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גיל גילקרוב",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אורמוש מירקו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "כפיר אייזנשטיין",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "טל בן חיים",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אלירן ברכה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דור חמו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אריאל טליאס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ניסים ניר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דיויד קאלבו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "טייאגו דה קוסטה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דניאל (עמוס)",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בריאן גרזיציץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מוחמד זידאן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פיליפ חאיכ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אורי כהן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שלמה שון",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ביסארט עבדורחימי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "לוקאס אפיני",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אברהם צקול",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מוחמד אבו אל היגא",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אבונימה איזוגבו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אמידו בלדה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אביחי דהן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מיכאל חמו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מתן לזמי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גל מלכה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "צליל חתוכה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רוי מליקה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "סראג נסאר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פרחאת עבדי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אהרן שונפלד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יאיר שפונגין",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אור אוסטיינד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דוד אלון",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עדן הרשקוביץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דסליי טגניה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אברהים ספורי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עמנואל ציבויקה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "האבטאמו אמבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "טל בניש",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דניאל גרץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אופיר טקיאר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בנימין טרידובסקי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עמית מלכה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מור נעמן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אמיר עגאייב",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מוליק פגסל",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מרווין פרינס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עלי אל עברה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אפק בלס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "נריגוס ולסקיס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מועין חלבי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "קלאודמיר דה סילבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דניאל קוניצקי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שי איזן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פיני גראפי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עלי כנאנה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פיליפ רודריגז",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יגאל בקר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רוי ברנס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ארנסטאס סטקוס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ניב סרדל",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שלומי אזולאי",
+   "why": "3 ערכים באותו שם"
+  },
+  {
+   "he": "טום מרדכי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רז טויזר",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מרקו ינקוביץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יואב ליברוס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אחמד מצרי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "בוגדאן סרנבסקי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אנג פלימיין",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "הרוויה איליץ",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רווה אסייג",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "טל ארצל",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "סבסטיאן לאנוס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אריאל כהן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "השאם ליוס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עידו שרון",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ליאו בנבניסטי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שגיא גניס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מתיו פרנק",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מאויס דפונו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דייויד קופרמן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אליאן רוחנא",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ליעד רמות",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "דור בנימיני",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "הנריקה גוקו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "יובל כהן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "רועי לוי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עמית למקין",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גיא מיכאלי",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אבי תורגמן",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ציקו אלבס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "מורדכי בוסקילה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "עופר גלברד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "פרננד מאיימבו",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "אנאס מחאמיד",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "שגיא פנחס",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "גיאורגי קופרבה",
+   "why": "לא נמצא בוויקיפדיה"
+  },
+  {
+   "he": "ירין שיוביץ",
+   "why": "לא נמצא בוויקיפדיה"
+  }
+ ],
+ "ambiguous": [
+  {
+   "he": "שלומי אזולאי",
+   "why": "3 ערכים באותו שם"
+  }
+ ],
+ "duplicates": [],
+ "forcedTargets": [],
+ "noHebrew": [
+  {
+   "en": "Yaakov Ekhoiz",
+   "pos": "DF",
+   "born": 1957,
+   "seasons": 17,
+   "span": "1976–1992"
+  },
+  {
+   "en": "Eli Cohen",
+   "pos": "MF",
+   "born": 1960,
+   "seasons": 15,
+   "span": "1979–1993"
+  },
+  {
+   "en": "Jehoshua Faygenbaum",
+   "pos": "FW",
+   "born": 1947,
+   "seasons": 10,
+   "span": "1970–1979"
+  },
+  {
+   "en": "Yehezkel Hazum",
+   "pos": "FW",
+   "born": 1946,
+   "seasons": 8,
+   "span": "1970–1977"
+  },
+  {
+   "en": "Shabtai Levi",
+   "pos": "FW",
+   "born": 1960,
+   "seasons": 8,
+   "span": "1982–1989"
+  },
+  {
+   "en": "Ahmed Mussa",
+   "pos": "DF",
+   "born": 1968,
+   "seasons": 7,
+   "span": "1987–1993"
+  },
+  {
+   "en": "Nir Rahamin",
+   "pos": "GK",
+   "born": 1980,
+   "seasons": 6,
+   "span": "2000–2006"
+  },
+  {
+   "en": "Galil Ben Sha'anan",
+   "pos": "GK",
+   "born": 1982,
+   "seasons": 6,
+   "span": "2003–2011"
+  },
+  {
+   "en": "Kobi Shalu",
+   "pos": "GK",
+   "born": 1979,
+   "seasons": 5,
+   "span": "1996–2000"
+  },
+  {
+   "en": "Abdi Farhat",
+   "pos": "DF",
+   "born": 1996,
+   "seasons": 5,
+   "span": "2017–2023"
+  },
+  {
+   "en": "Roy Baranes",
+   "pos": "GK",
+   "born": 2001,
+   "seasons": 5,
+   "span": "2019–2024"
+  },
+  {
+   "en": "Avi Azoulay",
+   "pos": "DF",
+   "born": 1974,
+   "seasons": 4,
+   "span": "1996–1999"
+  },
+  {
+   "en": "Shahar Cohen",
+   "pos": "DF",
+   "born": 1976,
+   "seasons": 4,
+   "span": "1996–1999"
+  },
+  {
+   "en": "Yaniv Yaron",
+   "pos": "FW",
+   "born": 1974,
+   "seasons": 4,
+   "span": "1996–1999"
+  },
+  {
+   "en": "David Alon",
+   "pos": "GK",
+   "born": 1997,
+   "seasons": 4,
+   "span": "2015–2018"
+  },
+  {
+   "en": "Shlomi Azulay",
+   "pos": "MF",
+   "born": 1989,
+   "seasons": 4,
+   "span": "2015–2023"
+  },
+  {
+   "en": "Tal Archel",
+   "pos": "MF",
+   "born": 2003,
+   "seasons": 4,
+   "span": "2022–2026"
+  },
+  {
+   "en": "Liad Ramot",
+   "pos": "FW",
+   "born": 2004,
+   "seasons": 4,
+   "span": "2022–2026"
+  },
+  {
+   "en": "Cobi Zeituni",
+   "pos": "DF",
+   "born": 1948,
+   "seasons": 3,
+   "span": "1979–1981"
+  },
+  {
+   "en": "Hezi Shirazi",
+   "pos": "FW",
+   "born": 1969,
+   "seasons": 3,
+   "span": "1992–1994"
+  },
+  {
+   "en": "Roi Hadad",
+   "pos": "DF",
+   "born": 1970,
+   "seasons": 3,
+   "span": "1993–1995"
+  },
+  {
+   "en": "Aviv Volnerman",
+   "pos": "FW",
+   "born": 1980,
+   "seasons": 3,
+   "span": "1999–2001"
+  },
+  {
+   "en": "Zvi Kotler",
+   "pos": "DF",
+   "born": 1980,
+   "seasons": 3,
+   "span": "2001–2003"
+  },
+  {
+   "en": "Rahamin Halis",
+   "pos": "DF",
+   "born": 1982,
+   "seasons": 3,
+   "span": "2002–2004"
+  },
+  {
+   "en": "Barukh Dego",
+   "pos": "MF",
+   "born": 1981,
+   "seasons": 3,
+   "span": "2006–2008"
+  },
+  {
+   "en": "Yehuda Huta",
+   "pos": "MF",
+   "born": 1989,
+   "seasons": 3,
+   "span": "2009–2011"
+  },
+  {
+   "en": "Mor Shushan",
+   "pos": "DF",
+   "born": 1988,
+   "seasons": 3,
+   "span": "2010–2013"
+  },
+  {
+   "en": "Ilay Musaiof",
+   "pos": "DF",
+   "born": 1998,
+   "seasons": 3,
+   "span": "2017–2019"
+  },
+  {
+   "en": "Afek Blas",
+   "pos": "DF",
+   "born": 1999,
+   "seasons": 3,
+   "span": "2019–2021"
+  },
+  {
+   "en": "Emmanuel Boateng",
+   "pos": "MF",
+   "born": 1997,
+   "seasons": 3,
+   "span": "2019–2021"
+  },
+  {
+   "en": "Sagi Genis",
+   "pos": "FW",
+   "born": 2004,
+   "seasons": 3,
+   "span": "2022–2024"
+  },
+  {
+   "en": "Roy Alkokin",
+   "pos": "MF",
+   "born": 2004,
+   "seasons": 3,
+   "span": "2023–2026"
+  },
+  {
+   "en": "Yuval Cohen",
+   "pos": "MF",
+   "born": 2005,
+   "seasons": 3,
+   "span": "2023–2025"
+  },
+  {
+   "en": "Dor Benyamini",
+   "pos": "GK",
+   "born": 2005,
+   "seasons": 3,
+   "span": "2024–2026"
+  },
+  {
+   "en": "Ofer Gelbard",
+   "pos": "DF",
+   "born": 2006,
+   "seasons": 3,
+   "span": "2024–2026"
+  },
+  {
+   "en": "Amit Lemkin",
+   "pos": "MF",
+   "born": 2005,
+   "seasons": 3,
+   "span": "2024–2026"
+  },
+  {
+   "en": "Yaacov Buzaglo",
+   "pos": "FW",
+   "born": 1957,
+   "seasons": 2,
+   "span": "1980–1981"
+  },
+  {
+   "en": "Shuli Gilardi",
+   "pos": "GK",
+   "born": 1964,
+   "seasons": 2,
+   "span": "1991–1992"
+  },
+  {
+   "en": "Kobi Hadadi",
+   "pos": "DF",
+   "born": 1973,
+   "seasons": 2,
+   "span": "1996–1997"
+  },
+  {
+   "en": "Gili Regev",
+   "pos": "DF",
+   "born": null,
+   "seasons": 2,
+   "span": "1996–1997"
+  },
+  {
+   "en": "Yossi Madar",
+   "pos": "MF",
+   "born": 1969,
+   "seasons": 2,
+   "span": "1996–1997"
+  },
+  {
+   "en": "Sagiv Eliaho",
+   "pos": "FW",
+   "born": 1972,
+   "seasons": 2,
+   "span": "1996–1997"
+  },
+  {
+   "en": "Edi Elkayam",
+   "pos": "DF",
+   "born": 1980,
+   "seasons": 2,
+   "span": "1999–2000"
+  },
+  {
+   "en": "Moti Ohaion",
+   "pos": "DF",
+   "born": 1973,
+   "seasons": 2,
+   "span": "1999–2000"
+  },
+  {
+   "en": "Beni Hadad",
+   "pos": "MF",
+   "born": 1977,
+   "seasons": 2,
+   "span": "2002–2003"
+  },
+  {
+   "en": "Yossi Rozen",
+   "pos": "MF",
+   "born": 1979,
+   "seasons": 2,
+   "span": "2004–2005"
+  },
+  {
+   "en": "Yaniv Mizrahi",
+   "pos": "GK",
+   "born": 1978,
+   "seasons": 2,
+   "span": "2008–2009"
+  },
+  {
+   "en": "Lior Bakshi",
+   "pos": "DF",
+   "born": 1989,
+   "seasons": 2,
+   "span": "2008–2009"
+  },
+  {
+   "en": "Dimityr Telkiyski",
+   "pos": "MF",
+   "born": 1977,
+   "seasons": 2,
+   "span": "2008–2009"
+  },
+  {
+   "en": "Douglas Silva",
+   "pos": "DF",
+   "born": 1984,
+   "seasons": 2,
+   "span": "2009–2010"
+  },
+  {
+   "en": "Neal Abarbanel",
+   "pos": "GK",
+   "born": 1987,
+   "seasons": 2,
+   "span": "2010–2011"
+  },
+  {
+   "en": "Artur Atadjanov",
+   "pos": "FW",
+   "born": 1991,
+   "seasons": 2,
+   "span": "2011–2012"
+  },
+  {
+   "en": "Eyad Khutaba",
+   "pos": "DF",
+   "born": 1987,
+   "seasons": 2,
+   "span": "2012–2013"
+  },
+  {
+   "en": "Elroy Cohen",
+   "pos": "MF",
+   "born": 1989,
+   "seasons": 2,
+   "span": "2012–2013"
+  },
+  {
+   "en": "Philipe Abu-Maneh",
+   "pos": "FW",
+   "born": 1991,
+   "seasons": 2,
+   "span": "2012–2015"
+  },
+  {
+   "en": "Ariel Talias",
+   "pos": "GK",
+   "born": 1989,
+   "seasons": 2,
+   "span": "2013–2014"
+  },
+  {
+   "en": "Philip Hayek",
+   "pos": "DF",
+   "born": 1994,
+   "seasons": 2,
+   "span": "2013–2014"
+  },
+  {
+   "en": "Ze'ev Haymovich",
+   "pos": "DF",
+   "born": 1983,
+   "seasons": 2,
+   "span": "2013–2014"
+  },
+  {
+   "en": "Mohammed El Hija",
+   "pos": "DF",
+   "born": 1995,
+   "seasons": 2,
+   "span": "2015–2016"
+  },
+  {
+   "en": "Tzlil Hatuka",
+   "pos": "GK",
+   "born": 1989,
+   "seasons": 2,
+   "span": "2016–2017"
+  },
+  {
+   "en": "Eden Hershkovitz",
+   "pos": "MF",
+   "born": 1997,
+   "seasons": 2,
+   "span": "2017–2018"
+  },
+  {
+   "en": "Yehonatan Levy",
+   "pos": "FW",
+   "born": 1999,
+   "seasons": 2,
+   "span": "2017–2019"
+  },
+  {
+   "en": "Ali El Ubra",
+   "pos": "DF",
+   "born": 1999,
+   "seasons": 2,
+   "span": "2018–2019"
+  },
+  {
+   "en": "Raz Nahmias",
+   "pos": "DF",
+   "born": 1996,
+   "seasons": 2,
+   "span": "2018–2019"
+  },
+  {
+   "en": "Muayen Halabi",
+   "pos": "GK",
+   "born": 1996,
+   "seasons": 2,
+   "span": "2019–2020"
+  },
+  {
+   "en": "Tom Ahi Mordechai",
+   "pos": "DF",
+   "born": 2001,
+   "seasons": 2,
+   "span": "2020–2022"
+  },
+  {
+   "en": "Yigal Becker",
+   "pos": "GK",
+   "born": 1999,
+   "seasons": 2,
+   "span": "2021–2022"
+  },
+  {
+   "en": "Ilay Krispi",
+   "pos": "DF",
+   "born": 2002,
+   "seasons": 2,
+   "span": "2021–2024"
+  },
+  {
+   "en": "Itamar Efrat",
+   "pos": "MF",
+   "born": 2001,
+   "seasons": 2,
+   "span": "2021–2023"
+  },
+  {
+   "en": "Shlomi Azulay",
+   "pos": "MF",
+   "born": 1990,
+   "seasons": 2,
+   "span": "2022–2023"
+  },
+  {
+   "en": "Sabastian Hernandez",
+   "pos": "MF",
+   "born": 2003,
+   "seasons": 2,
+   "span": "2022–2023"
+  },
+  {
+   "en": "Raz Twizer",
+   "pos": "FW",
+   "born": 1999,
+   "seasons": 2,
+   "span": "2022–2023"
+  },
+  {
+   "en": "Leo Benbenisti",
+   "pos": "DF",
+   "born": 2004,
+   "seasons": 2,
+   "span": "2023–2024"
+  },
+  {
+   "en": "Ariel Cohen",
+   "pos": "MF",
+   "born": 2003,
+   "seasons": 2,
+   "span": "2023–2025"
+  },
+  {
+   "en": "Matthew Frank",
+   "pos": "GK",
+   "born": 2000,
+   "seasons": 2,
+   "span": "2024–2025"
+  },
+  {
+   "en": "Avi Turgeman",
+   "pos": "DF",
+   "born": 2005,
+   "seasons": 2,
+   "span": "2024–2025"
+  },
+  {
+   "en": "Yishay Brosh",
+   "pos": "DF",
+   "born": 2007,
+   "seasons": 2,
+   "span": "2025–2026"
+  },
+  {
+   "en": "Roey Levi",
+   "pos": "DF",
+   "born": 2005,
+   "seasons": 2,
+   "span": "2025–2026"
+  },
+  {
+   "en": "Yazen Nassar",
+   "pos": "DF",
+   "born": 1997,
+   "seasons": 2,
+   "span": "2025–2026"
+  },
+  {
+   "en": "Ron Talmi",
+   "pos": "FW",
+   "born": 2007,
+   "seasons": 2,
+   "span": "2025–2026"
+  },
+  {
+   "en": "Gad Machnes",
+   "pos": "DF",
+   "born": 1956,
+   "seasons": 1,
+   "span": "1984–1984"
+  },
+  {
+   "en": "Mariusz Niewiadomski",
+   "pos": "DF",
+   "born": 1959,
+   "seasons": 1,
+   "span": "1992–1992"
+  },
+  {
+   "en": "Moshe Eisenberg",
+   "pos": "FW",
+   "born": 1967,
+   "seasons": 1,
+   "span": "1992–1992"
+  },
+  {
+   "en": "Khasanbi Bidzhiev",
+   "pos": "GK",
+   "born": 1966,
+   "seasons": 1,
+   "span": "1993–1993"
+  },
+  {
+   "en": "Ioan Marcu",
+   "pos": "MF",
+   "born": 1963,
+   "seasons": 1,
+   "span": "1994–1994"
+  },
+  {
+   "en": "Dănuţ Moisescu",
+   "pos": "MF",
+   "born": 1972,
+   "seasons": 1,
+   "span": "1994–1994"
+  },
+  {
+   "en": "Nelson Mensah",
+   "pos": "FW",
+   "born": 1973,
+   "seasons": 1,
+   "span": "1994–1994"
+  },
+  {
+   "en": "Meir Melika",
+   "pos": "FW",
+   "born": 1969,
+   "seasons": 1,
+   "span": "1995–1995"
+  },
+  {
+   "en": "Jafi Zavaro",
+   "pos": "GK",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Moti Fliter",
+   "pos": "DF",
+   "born": 1972,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "G. Herslikovich",
+   "pos": "DF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Avi Dabah",
+   "pos": "MF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Dmitriy Gurman",
+   "pos": "MF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Yossi Levi",
+   "pos": "MF",
+   "born": 1966,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Hagay Luk",
+   "pos": "MF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Alon Ofir",
+   "pos": "MF",
+   "born": 1973,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "A. Vlmr",
+   "pos": "MF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "O. Yosef",
+   "pos": "MF",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Mishel Dayan",
+   "pos": "FW",
+   "born": 1961,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "N. Tehoro",
+   "pos": "FW",
+   "born": null,
+   "seasons": 1,
+   "span": "1996–1996"
+  },
+  {
+   "en": "Georgi Daraselia",
+   "pos": "MF",
+   "born": 1968,
+   "seasons": 1,
+   "span": "1998–1998"
+  },
+  {
+   "en": "Damjan Gajser",
+   "pos": "MF",
+   "born": 1970,
+   "seasons": 1,
+   "span": "1998–1998"
+  },
+  {
+   "en": "Mario Meštrović",
+   "pos": "MF",
+   "born": 1970,
+   "seasons": 1,
+   "span": "1998–1998"
+  },
+  {
+   "en": "Kobi Shalo",
+   "pos": "GK",
+   "born": null,
+   "seasons": 1,
+   "span": "1999–1999"
+  },
+  {
+   "en": "Primož Gliha",
+   "pos": "FW",
+   "born": 1967,
+   "seasons": 1,
+   "span": "1999–1999"
+  },
+  {
+   "en": "Asi Tubi",
+   "pos": "FW",
+   "born": 1972,
+   "seasons": 1,
+   "span": "1999–1999"
+  },
+  {
+   "en": "Avraham Tikva",
+   "pos": "MF",
+   "born": 1976,
+   "seasons": 1,
+   "span": "2001–2001"
+  },
+  {
+   "en": "Idan Skurchero",
+   "pos": "FW",
+   "born": 1978,
+   "seasons": 1,
+   "span": "2002–2002"
+  },
+  {
+   "en": "Gay Salem",
+   "pos": "GK",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Sharon Ben Muha",
+   "pos": "DF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Gay Koaz",
+   "pos": "DF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Rami Abu-Laban",
+   "pos": "MF",
+   "born": 1977,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Yair Cohen Zedek",
+   "pos": "MF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Ido Eliyaho",
+   "pos": "MF",
+   "born": 1980,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Fabricio",
+   "pos": "MF",
+   "born": 1978,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Ouri Karagola",
+   "pos": "FW",
+   "born": 1978,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Pablo Solchaga",
+   "pos": "FW",
+   "born": 1976,
+   "seasons": 1,
+   "span": "2004–2004"
+  },
+  {
+   "en": "Ngasanya Ilongo",
+   "pos": "MF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2005–2005"
+  },
+  {
+   "en": "Gay Sarfati",
+   "pos": "MF",
+   "born": 1979,
+   "seasons": 1,
+   "span": "2005–2005"
+  },
+  {
+   "en": "Mbala Biscotte",
+   "pos": "FW",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2005–2005"
+  },
+  {
+   "en": "Roman Vasilyuk",
+   "pos": "FW",
+   "born": 1978,
+   "seasons": 1,
+   "span": "2005–2005"
+  },
+  {
+   "en": "Felix Ogbuke",
+   "pos": "FW",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2006–2006"
+  },
+  {
+   "en": "Omer Peretz",
+   "pos": "FW",
+   "born": 1986,
+   "seasons": 1,
+   "span": "2006–2006"
+  },
+  {
+   "en": "Mesay Dego",
+   "pos": "MF",
+   "born": 1986,
+   "seasons": 1,
+   "span": "2007–2007"
+  },
+  {
+   "en": "Amer Manzur",
+   "pos": "DF",
+   "born": null,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Itay Elkaslasi",
+   "pos": "MF",
+   "born": 1988,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Umut Güzelses",
+   "pos": "MF",
+   "born": 1987,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Yakov Lousky",
+   "pos": "MF",
+   "born": 1986,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Fábio Júnior",
+   "pos": "FW",
+   "born": 1977,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Ibe Ogbana",
+   "pos": "FW",
+   "born": 1986,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Adi Sabag",
+   "pos": "FW",
+   "born": null,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Koby Swisa",
+   "pos": "FW",
+   "born": null,
+   "seasons": 1,
+   "span": "2008–2008"
+  },
+  {
+   "en": "Abedi",
+   "pos": "MF",
+   "born": 1979,
+   "seasons": 1,
+   "span": "2009–2009"
+  },
+  {
+   "en": "Maor Lubin",
+   "pos": "FW",
+   "born": 1989,
+   "seasons": 1,
+   "span": "2009–2009"
+  },
+  {
+   "en": "Itamar Nizan",
+   "pos": "GK",
+   "born": 1987,
+   "seasons": 1,
+   "span": "2011–2011"
+  },
+  {
+   "en": "Gal Mayo",
+   "pos": "DF",
+   "born": 1991,
+   "seasons": 1,
+   "span": "2011–2011"
+  },
+  {
+   "en": "Shai Revivo",
+   "pos": "MF",
+   "born": 1986,
+   "seasons": 1,
+   "span": "2011–2011"
+  },
+  {
+   "en": "Omri Atia",
+   "pos": "DF",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2012–2012"
+  },
+  {
+   "en": "Alexander Basok",
+   "pos": "MF",
+   "born": 1992,
+   "seasons": 1,
+   "span": "2012–2012"
+  },
+  {
+   "en": "Gil Gilkarov",
+   "pos": "MF",
+   "born": 1992,
+   "seasons": 1,
+   "span": "2012–2012"
+  },
+  {
+   "en": "Abbas Mahmmoud",
+   "pos": "MF",
+   "born": 1988,
+   "seasons": 1,
+   "span": "2012–2012"
+  },
+  {
+   "en": "Mahmood Abbas",
+   "pos": "FW",
+   "born": 1988,
+   "seasons": 1,
+   "span": "2012–2012"
+  },
+  {
+   "en": "David Rochela",
+   "pos": "DF",
+   "born": 1990,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Amit Amzaleg",
+   "pos": "MF",
+   "born": 1994,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Almog Cohen",
+   "pos": "MF",
+   "born": 1988,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Kfir Izenstein",
+   "pos": "MF",
+   "born": 1993,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Tiago Costa",
+   "pos": "MF",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Tal Ben Haim",
+   "pos": "FW",
+   "born": 1989,
+   "seasons": 1,
+   "span": "2013–2013"
+  },
+  {
+   "en": "Dani Amos",
+   "pos": "GK",
+   "born": 1987,
+   "seasons": 1,
+   "span": "2014–2014"
+  },
+  {
+   "en": "Uri Cohen",
+   "pos": "DF",
+   "born": 1992,
+   "seasons": 1,
+   "span": "2014–2014"
+  },
+  {
+   "en": "Bryan Gerzičić",
+   "pos": "MF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2014–2014"
+  },
+  {
+   "en": "Ran Itzchak",
+   "pos": "FW",
+   "born": 1987,
+   "seasons": 1,
+   "span": "2014–2014"
+  },
+  {
+   "en": "Abonime Izogbu",
+   "pos": "DF",
+   "born": 1994,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Doron Bruck",
+   "pos": "MF",
+   "born": 1994,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Aviv Dado",
+   "pos": "MF",
+   "born": 1991,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Shon Goldberg",
+   "pos": "MF",
+   "born": 1995,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Gal Malca",
+   "pos": "MF",
+   "born": 1995,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Ariel Lazmi",
+   "pos": "FW",
+   "born": 1994,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Omer Peretz",
+   "pos": "FW",
+   "born": 1990,
+   "seasons": 1,
+   "span": "2015–2015"
+  },
+  {
+   "en": "Guy Gomberg",
+   "pos": "DF",
+   "born": 1990,
+   "seasons": 1,
+   "span": "2016–2016"
+  },
+  {
+   "en": "Cauê",
+   "pos": "MF",
+   "born": 1989,
+   "seasons": 1,
+   "span": "2016–2016"
+  },
+  {
+   "en": "Nemanja Nikolić",
+   "pos": "MF",
+   "born": 1988,
+   "seasons": 1,
+   "span": "2016–2016"
+  },
+  {
+   "en": "Omri Shekel",
+   "pos": "MF",
+   "born": 1993,
+   "seasons": 1,
+   "span": "2016–2016"
+  },
+  {
+   "en": "Itzik Sholmyster",
+   "pos": "DF",
+   "born": 1997,
+   "seasons": 1,
+   "span": "2017–2017"
+  },
+  {
+   "en": "Deslay Tagania",
+   "pos": "DF",
+   "born": 1997,
+   "seasons": 1,
+   "span": "2017–2017"
+  },
+  {
+   "en": "Saar Benbenisti",
+   "pos": "MF",
+   "born": 1991,
+   "seasons": 1,
+   "span": "2017–2017"
+  },
+  {
+   "en": "Ibrahim Safuri",
+   "pos": "MF",
+   "born": 1997,
+   "seasons": 1,
+   "span": "2017–2017"
+  },
+  {
+   "en": "Michael Seaton",
+   "pos": "FW",
+   "born": 1996,
+   "seasons": 1,
+   "span": "2017–2017"
+  },
+  {
+   "en": "Joaquín Galván",
+   "pos": "MF",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2018–2018"
+  },
+  {
+   "en": "Daniel Gertz",
+   "pos": "MF",
+   "born": 1994,
+   "seasons": 1,
+   "span": "2018–2018"
+  },
+  {
+   "en": "Ofir Takiyar",
+   "pos": "MF",
+   "born": 1995,
+   "seasons": 1,
+   "span": "2018–2018"
+  },
+  {
+   "en": "Yosef Malka",
+   "pos": "FW",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2018–2018"
+  },
+  {
+   "en": "Roy Ronen",
+   "pos": "FW",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2018–2018"
+  },
+  {
+   "en": "Claudemir",
+   "pos": "MF",
+   "born": 1984,
+   "seasons": 1,
+   "span": "2019–2019"
+  },
+  {
+   "en": "Roger",
+   "pos": "MF",
+   "born": 1985,
+   "seasons": 1,
+   "span": "2019–2019"
+  },
+  {
+   "en": "Ofek Ovadia",
+   "pos": "DF",
+   "born": 2001,
+   "seasons": 1,
+   "span": "2020–2020"
+  },
+  {
+   "en": "Yarin Perez",
+   "pos": "DF",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2020–2020"
+  },
+  {
+   "en": "Felipe Rodríguez",
+   "pos": "MF",
+   "born": 1990,
+   "seasons": 1,
+   "span": "2020–2020"
+  },
+  {
+   "en": "Ali Kna'ana",
+   "pos": "FW",
+   "born": 1996,
+   "seasons": 1,
+   "span": "2020–2020"
+  },
+  {
+   "en": "Shavit Mazal",
+   "pos": "FW",
+   "born": 2001,
+   "seasons": 1,
+   "span": "2020–2020"
+  },
+  {
+   "en": "Niv Sardal",
+   "pos": "DF",
+   "born": 1993,
+   "seasons": 1,
+   "span": "2021–2021"
+  },
+  {
+   "en": "Guy Sivilia",
+   "pos": "MF",
+   "born": 2002,
+   "seasons": 1,
+   "span": "2021–2021"
+  },
+  {
+   "en": "Bogdan Sarnavskiy",
+   "pos": "GK",
+   "born": 1995,
+   "seasons": 1,
+   "span": "2022–2022"
+  },
+  {
+   "en": "Alon Azugi",
+   "pos": "DF",
+   "born": 1999,
+   "seasons": 1,
+   "span": "2022–2022"
+  },
+  {
+   "en": "Benny Tridovski",
+   "pos": "DF",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2022–2022"
+  },
+  {
+   "en": "Marko Janković",
+   "pos": "FW",
+   "born": 1995,
+   "seasons": 1,
+   "span": "2022–2022"
+  },
+  {
+   "en": "Yoav Tomer",
+   "pos": "FW",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2022–2022"
+  },
+  {
+   "en": "Lior Gliklich",
+   "pos": "GK",
+   "born": 2003,
+   "seasons": 1,
+   "span": "2023–2023"
+  },
+  {
+   "en": "Amir Ela",
+   "pos": "DF",
+   "born": null,
+   "seasons": 1,
+   "span": "2023–2023"
+  },
+  {
+   "en": "Hrvoje Ilić",
+   "pos": "MF",
+   "born": 1999,
+   "seasons": 1,
+   "span": "2023–2023"
+  },
+  {
+   "en": "Pablo González",
+   "pos": "MF",
+   "born": 1993,
+   "seasons": 1,
+   "span": "2023–2023"
+  },
+  {
+   "en": "Ravve Assayeg",
+   "pos": "FW",
+   "born": 2001,
+   "seasons": 1,
+   "span": "2023–2023"
+  },
+  {
+   "en": "Milyardo Asrat",
+   "pos": "MF",
+   "born": 2005,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Ihab Ganayem",
+   "pos": "MF",
+   "born": 1996,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Elian Rohana",
+   "pos": "MF",
+   "born": 1997,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Sami Adam",
+   "pos": "FW",
+   "born": 2005,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Guy Michaeli",
+   "pos": "FW",
+   "born": 2005,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Bubacarr Tambedou",
+   "pos": "FW",
+   "born": 2002,
+   "seasons": 1,
+   "span": "2024–2024"
+  },
+  {
+   "en": "Amir Ella",
+   "pos": "DF",
+   "born": 2004,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Roy Herman",
+   "pos": "DF",
+   "born": 2000,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Ori Agayev",
+   "pos": "MF",
+   "born": 2005,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Dudu Sampaio",
+   "pos": "MF",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Henrique Jocú",
+   "pos": "MF",
+   "born": 2001,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Ange Kouamé",
+   "pos": "FW",
+   "born": null,
+   "seasons": 1,
+   "span": "2025–2025"
+  },
+  {
+   "en": "Sagi Pinhas",
+   "pos": "GK",
+   "born": 2001,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Chico",
+   "pos": "DF",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Guy Elgalishvili",
+   "pos": "DF",
+   "born": 2008,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Gyorgei Kopraba",
+   "pos": "DF",
+   "born": 2006,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Ilay Mori",
+   "pos": "DF",
+   "born": 2007,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Ofek Chiproot",
+   "pos": "MF",
+   "born": 2008,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Falcão",
+   "pos": "MF",
+   "born": 1998,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Emmanuel Boateng",
+   "pos": "FW",
+   "born": 1996,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Mor Buskila",
+   "pos": "FW",
+   "born": 2004,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Daniel Dapaah",
+   "pos": "FW",
+   "born": 2007,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Omri Levi",
+   "pos": "FW",
+   "born": 2008,
+   "seasons": 1,
+   "span": "2026–2026"
+  },
+  {
+   "en": "Ravid Ulitsky",
+   "pos": "FW",
+   "born": 2007,
+   "seasons": 1,
+   "span": "2026–2026"
+  }
+ ],
+ "notes": [
+  "אוחדו: \"רועי דיין\" ← \"רועי דיין\" (שניהם 1984)",
+  "אוחדו: \"עמנואל בואטנג\" ← \"עמנואל בואטנג\" (שניהם 1997)",
+  "אוחדו: \"ג'ון פנטסיל\" ← \"ג'ון פנטסיל\" (שניהם 1981)",
+  "אוחדו: \"גילי ורמוט\" ← \"גילי ורמוט\" (שניהם 1985)",
+  "אוחדו: \"רועי זיקרי\" ← \"רועי זיקרי\" (שניהם 1992)",
+  "אוחדו: \"אנטואן קונט\" ← \"אנטואן קונט\" (שניהם 1994)",
+  "אוחדו: \"חוטפריט רומראטו\" ← \"חוטפריט רומראטו\" (שניהם 1999)",
+  "אוחדו: \"לואיזוס לואיזו\" ← \"לואיזוס לואיזו\" (שניהם 2003)"
+ ]
+}

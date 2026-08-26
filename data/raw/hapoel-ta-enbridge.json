@@ -1,0 +1,258 @@
+{
+ "club": "hapoel-ta",
+ "source": "enbridge",
+ "links": [
+  {
+   "en": "Salim Toama",
+   "he": "סלים טועמה",
+   "via": "Salim Tuama",
+   "born": 1979,
+   "how": "כותרת"
+  },
+  {
+   "en": "Dani Bondarv",
+   "he": "דני בונדר",
+   "via": "Dani Bondar",
+   "born": 1987,
+   "how": "כותרת"
+  },
+  {
+   "en": "Ygal Antebi",
+   "he": "יגאל אנטבי",
+   "via": "Yigal Antebi",
+   "born": 1974,
+   "how": "כותרת"
+  },
+  {
+   "en": "Avihay Yadin",
+   "he": "אביחי ידין",
+   "via": "Avihai Yadin",
+   "born": 1986,
+   "how": "כותרת"
+  },
+  {
+   "en": "Sergey Pogodin",
+   "he": "סרגיי פוגודין",
+   "via": "Serhiy Pohodin",
+   "born": 1968,
+   "how": "כותרת"
+  },
+  {
+   "en": "Adi Gotlieb",
+   "he": "אדי גוטליב",
+   "via": "Edi Gotlieb",
+   "born": 1992,
+   "how": "כותרת"
+  },
+  {
+   "en": "Moti Barshazky",
+   "he": "מוטי ברשצקי",
+   "via": "Moti Barshazki",
+   "born": 1996,
+   "how": "כותרת"
+  },
+  {
+   "en": "Roy Dayan",
+   "he": "רועי דיין",
+   "via": "Roei Dayan",
+   "born": 1984,
+   "how": "כותרת"
+  },
+  {
+   "en": "Israel Zaguri",
+   "he": "ישראל זגורי",
+   "via": "Yisrael Zaguri",
+   "born": 1990,
+   "how": "כותרת"
+  },
+  {
+   "en": "Iyad Hutba",
+   "he": "איאד ח'וטבא",
+   "via": "Eyad Hutba",
+   "born": 1987,
+   "how": "כותרת"
+  },
+  {
+   "en": "Yaakov Schwartz",
+   "he": "יעקב שוורץ",
+   "via": "Ya'akov Schwartz",
+   "born": 1964,
+   "how": "כותרת"
+  },
+  {
+   "en": "Yechezkel Chazom",
+   "he": "יחזקאל חזום",
+   "via": "Yehezkel Chazom",
+   "born": 1947,
+   "how": "חיפוש"
+  },
+  {
+   "en": "El Yam Kanzapolsky",
+   "he": "אל ים קנצפולסקי",
+   "via": "El Yam Kancepolsky",
+   "born": 2003,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Maharan Al-Lala",
+   "he": "מהראן לאלא",
+   "via": "Mahran Lala",
+   "born": 1982,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ramzi Safuri",
+   "he": "רמזי ספורי",
+   "via": "Ramzi Safouri",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Kazimierz Moskal",
+   "he": "קז'ימיש מוסקאל",
+   "via": "Kazimierz Moskal (footballer)",
+   "born": 1967,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Boris Kleyman",
+   "he": "בוריס קליימן",
+   "via": "Boris Klaiman",
+   "born": 1990,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Iyad Abu Abaid",
+   "he": "איאד אבו עביד",
+   "via": "Eyad Abu Abaid",
+   "born": 1994,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Joseph Ganda",
+   "he": "ג'וזף גנדה",
+   "via": "Joseph Ganda (footballer)",
+   "born": 1997,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Jacob Cohen",
+   "he": "יעקב כהן",
+   "via": "Jacob Cohen (footballer)",
+   "born": 1956,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Israel Cohen",
+   "he": "ישראל כהן",
+   "via": "Israel Cohen (footballer)",
+   "born": 1971,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Yom-Tov Ofer",
+   "he": "עופר ורטה",
+   "via": "Ofer Verta",
+   "born": 1990,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Idan Cohen",
+   "he": "עידן כהן",
+   "via": "Idan Cohen (footballer)",
+   "born": 1996,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Rubi Levkovich",
+   "he": "רובי לבקוביץ'",
+   "via": "Robi Levkovich",
+   "born": 1988,
+   "how": "חיפוש"
+  }
+ ],
+ "tried": [
+  "Yaakov Ekhoiz",
+  "Eli Cohen",
+  "Jehoshua Faygenbaum",
+  "Yehezkel Hazum",
+  "Shabtai Levi",
+  "Ahmed Mussa",
+  "Nir Rahamin",
+  "Galil Ben Sha'anan",
+  "Kobi Shalu",
+  "Ya'acov Hillel",
+  "Abdi Farhat",
+  "Roy Baranes",
+  "Avi Azoulay",
+  "Shahar Cohen",
+  "Yaniv Yaron",
+  "Denis Onishenko",
+  "David Alon",
+  "Emmanuel Boateng",
+  "Ido Sharon",
+  "Tal Archel",
+  "Liad Ramot",
+  "Cobi Zeituni",
+  "Hezi Shirazi",
+  "Roi Hadad",
+  "Aviv Volnerman",
+  "Zvi Kotler",
+  "Rahamin Halis",
+  "Barukh Dego",
+  "Yehuda Huta",
+  "Mor Shushan",
+  "Ilay Musaiof",
+  "Afek Blas",
+  "Sagi Genis",
+  "Roy Alkokin",
+  "Yuval Cohen",
+  "Dor Benyamini",
+  "Ofer Gelbard",
+  "Amit Lemkin",
+  "Yaacov Buzaglo",
+  "Shuli Gilardi",
+  "Kobi Hadadi",
+  "Yossi Madar",
+  "Sagiv Eliaho",
+  "Edi Elkayam",
+  "Moti Ohaion",
+  "Beni Hadad",
+  "Yossi Rozen",
+  "Yaniv Mizrahi",
+  "Lior Bakshi",
+  "Dimityr Telkiyski",
+  "Douglas Silva",
+  "Neal Abarbanel",
+  "Artur Atadjanov",
+  "Eyad Khutaba",
+  "Elroy Cohen",
+  "Philipe Abu-Maneh",
+  "Ariel Talias",
+  "Philip Hayek",
+  "Ze'ev Haymovich",
+  "Avraham Chekol",
+  "Mohammed El Hija",
+  "Tzlil Hatuka",
+  "Eden Hershkovitz",
+  "Yehonatan Levy",
+  "Ali El Ubra",
+  "Raz Nahmias",
+  "Muayen Halabi",
+  "Tom Ahi Mordechai",
+  "Yigal Becker",
+  "Ilay Krispi",
+  "Itamar Efrat",
+  "Sabastian Hernandez",
+  "Raz Twizer",
+  "Leo Benbenisti",
+  "Ariel Cohen",
+  "Matthew Frank",
+  "Avi Turgeman",
+  "Yishay Brosh",
+  "Roey Levi",
+  "Yazen Nassar",
+  "Ron Talmi"
+ ],
+ "checked": 105
+}

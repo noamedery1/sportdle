@@ -1,0 +1,210 @@
+{
+ "club": "hapoel-bs",
+ "source": "enbridge",
+ "links": [
+  {
+   "en": "Dudu Goresh",
+   "he": "דודו גורש",
+   "via": "David Goresh",
+   "born": 1980,
+   "how": "כותרת"
+  },
+  {
+   "en": "Hatem Elhamed",
+   "he": "חאתם אלחמיד",
+   "via": "Hatem Abd Elhamed",
+   "born": 1991,
+   "how": "כותרת"
+  },
+  {
+   "en": "Ben Turgeman",
+   "he": "בן תורג'מן",
+   "via": "Ben Turjeman",
+   "born": 1989,
+   "how": "כותרת"
+  },
+  {
+   "en": "Or Dadya",
+   "he": "אור דדיה",
+   "via": "Or Dadia",
+   "born": 1997,
+   "how": "כותרת"
+  },
+  {
+   "en": "Alon Turgeman",
+   "he": "אלון תורג'מן",
+   "via": "Alon Turgeman",
+   "born": 1991,
+   "how": "כותרת"
+  },
+  {
+   "en": "Nonoca",
+   "he": "לוקאס ונטורה",
+   "via": "Lucas Ventura",
+   "born": 1998,
+   "how": "כותרת"
+  },
+  {
+   "en": "William Soares",
+   "he": "ויליאם סוארס",
+   "via": "William Soares (footballer, born 1985)",
+   "born": 1985,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Jacob Cohen",
+   "he": "יעקב כהן",
+   "via": "Jacob Cohen (footballer)",
+   "born": 1956,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Hélder Lopes",
+   "he": "הלדר לופש",
+   "via": "Hélder Lopes (footballer)",
+   "born": 1989,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Amir Ganach",
+   "he": "אמיר גנאח",
+   "via": "Amir Ganah",
+   "born": 2004,
+   "how": "חיפוש"
+  },
+  {
+   "en": "James Bissue",
+   "he": "גרשון קופי",
+   "via": "Gershon Koffie",
+   "born": 1991,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Dan Biton",
+   "he": "דן ביטון",
+   "via": "Dan Biton (footballer)",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ramzi Safuri",
+   "he": "רמזי ספורי",
+   "via": "Ramzi Safouri",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Iyad Abu Abaid",
+   "he": "איאד אבו עביד",
+   "via": "Eyad Abu Abaid",
+   "born": 1994,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Yoan Stoyanov",
+   "he": "יוני סטויאנוב",
+   "via": "Yoni Stoyanov",
+   "born": 2001,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Avi Perets",
+   "he": "אבי פרץ",
+   "via": "Avi Peretz (footballer)",
+   "born": 1971,
+   "how": "חיפוש"
+  },
+  {
+   "en": "George Kipiani",
+   "he": "גיאורגי קיפיאני",
+   "via": "Georgi Kipiani",
+   "born": 1978,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Rubi Levkovich",
+   "he": "רובי לבקוביץ'",
+   "via": "Robi Levkovich",
+   "born": 1988,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Shon Goldberg",
+   "he": "שון גולדברג",
+   "via": "Sean Goldberg",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Josué",
+   "he": "ז'וזואה פשקיירה",
+   "via": "Josué Pesqueira",
+   "born": 1990,
+   "how": "חיפוש"
+  },
+  {
+   "en": "André Martins",
+   "he": "אנדרה מרטינש",
+   "via": "André Martins (footballer, born 1990)",
+   "born": 1990,
+   "how": "חיפוש"
+  }
+ ],
+ "tried": [
+  "Rami Eliahu",
+  "Eliyahu Ofer",
+  "Aviatar Iluz",
+  "Ilan Vaknin",
+  "Alon Rif",
+  "Elad Bounfeld",
+  "Netanel Askias",
+  "Sharon Avitan",
+  "Gal Navon",
+  "Itay Hazut",
+  "Baruch David",
+  "Eitan Ankri",
+  "Shimon Biton",
+  "Feras Awad",
+  "Or Havivyan",
+  "Raz Rahamim",
+  "Noam Dey",
+  "Abdallah Abu Abaid",
+  "Sali Ganon",
+  "Liad Abitbul",
+  "Khaled Zaid",
+  "Rom Aligon",
+  "Marian Bîcu",
+  "Avi Haion",
+  "Serhiy Gusev",
+  "Dudu Hefer",
+  "Marco Di Costanzo",
+  "Jean-Claude Mukanya",
+  "Ragid Baransi",
+  "Yaniv Abergil",
+  "Remigiusz Jezierski",
+  "Eyal Shen",
+  "Justine Zulu",
+  "Dor Davidi",
+  "Nadav Kedar",
+  "Moshe Asulin",
+  "Moishe Abuhatzira",
+  "Yossi Turgeman",
+  "Shimon Lugasi",
+  "Dudu Twitto",
+  "Liel Saportas",
+  "Yonatan Elias",
+  "Yagil Ohana",
+  "Amit Keren",
+  "Liran Cohen",
+  "Roei Azzot",
+  "Eitan Ratzon",
+  "Yarin Cohen",
+  "Aviv Solomon",
+  "Ari Merenstein",
+  "Reem Golan",
+  "Jonathan Shani",
+  "Ofek Peretz",
+  "Samir Farhud"
+ ],
+ "checked": 75
+}

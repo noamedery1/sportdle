@@ -1,0 +1,266 @@
+{
+  "_comment": "נבנה על ידי tools/write-clubs-config.mjs. שנת התואר = השנה שבה העונה הסתיימה. גביע הטוטו לא נספר. titles = אליפויות וגביעי מדינה מקום המדינה ואילך; titlesPreState = תקופת המנדט, לא נספר במשחק (המאגר מתחיל ב-1969/70).",
+  "_source": {
+    "titles": "he.wikipedia — ליגת העל בכדורגל · גביע המדינה בכדורגל",
+    "ifaTeamId": "football.org.il — טבלת ליגת WINNER, season_id=27, קבוצה בוגרת",
+    "worldfootball": "worldfootball.net — דפי הקבוצה"
+  },
+  "beitar": {
+    "verified": true,
+    "he": "בית\"ר ירושלים",
+    "short": "בית\"ר",
+    "game": "ביתרdle",
+    "worldfootball": "te214/beitar-jerusalem",
+    "ifaTeamId": 3595,
+    "wikiCategory": "קטגוריה:כדורגלני בית\"ר ירושלים",
+    "colors": {
+      "brand": "#FFC72C",
+      "near": "#8A6A1C",
+      "ink": "#0C0C0E",
+      "second": "#0C0C0E"
+    },
+    "titles": {
+      "league": [
+        1987,
+        1993,
+        1997,
+        1998,
+        2007,
+        2008
+      ],
+      "cup": [
+        1976,
+        1979,
+        1985,
+        1986,
+        1989,
+        2008,
+        2009,
+        2023
+      ]
+    },
+    "titlesPreState": {
+      "league": [],
+      "cup": []
+    },
+    "expect": {
+      "players": 410,
+      "targets": 121
+    }
+  },
+  "hapoel-bs": {
+    "verified": true,
+    "he": "הפועל באר שבע",
+    "short": "הפועל ב\"ש",
+    "game": "באר־שבעdle",
+    "worldfootball": "te17757/hapoel-beer-sheva",
+    "ifaTeamId": 2171,
+    "wikiCategory": "קטגוריה:כדורגלני הפועל באר שבע",
+    "colors": {
+      "brand": "#E4002B",
+      "near": "#8C2233",
+      "ink": "#0C0C0E",
+      "second": "#0C0C0E"
+    },
+    "titles": {
+      "league": [
+        1975,
+        1976,
+        2016,
+        2017,
+        2018,
+        2026
+      ],
+      "cup": [
+        1997,
+        2020,
+        2022,
+        2025
+      ]
+    },
+    "titlesPreState": {
+      "league": [],
+      "cup": []
+    }
+  },
+  "maccabi-ta": {
+    "verified": true,
+    "he": "מכבי תל אביב",
+    "short": "מכבי ת\"א",
+    "game": "מכביdle",
+    "worldfootball": "te1258/maccabi-tel-aviv",
+    "ifaTeamId": 1061,
+    "wikiCategory": "קטגוריה:כדורגלני מכבי תל אביב",
+    "colors": {
+      "brand": "#0033A0",
+      "near": "#1F3A6E",
+      "ink": "#0C0C0E",
+      "second": "#FFD100"
+    },
+    "titles": {
+      "league": [
+        1950,
+        1952,
+        1954,
+        1956,
+        1958,
+        1968,
+        1970,
+        1972,
+        1977,
+        1979,
+        1992,
+        1995,
+        1996,
+        2003,
+        2013,
+        2014,
+        2015,
+        2019,
+        2020,
+        2024,
+        2025
+      ],
+      "cup": [
+        1954,
+        1955,
+        1958,
+        1959,
+        1964,
+        1965,
+        1967,
+        1970,
+        1977,
+        1987,
+        1988,
+        1994,
+        1996,
+        2001,
+        2002,
+        2005,
+        2015,
+        2021,
+        2026
+      ]
+    },
+    "titlesPreState": {
+      "league": [
+        1936,
+        1937,
+        1939,
+        1942,
+        1947
+      ],
+      "cup": [
+        1929,
+        1930,
+        1933,
+        1941,
+        1946,
+        1947
+      ]
+    }
+  },
+  "maccabi-haifa": {
+    "verified": true,
+    "he": "מכבי חיפה",
+    "short": "מכבי חיפה",
+    "game": "חיפהdle",
+    "worldfootball": "te1254/maccabi-haifa",
+    "ifaTeamId": 1005,
+    "wikiCategory": "קטגוריה:כדורגלני מכבי חיפה",
+    "colors": {
+      "brand": "#00843D",
+      "near": "#1E5B37",
+      "ink": "#0C0C0E",
+      "second": "#FFFFFF"
+    },
+    "titles": {
+      "league": [
+        1984,
+        1985,
+        1989,
+        1991,
+        1994,
+        2001,
+        2002,
+        2004,
+        2005,
+        2006,
+        2009,
+        2011,
+        2021,
+        2022,
+        2023
+      ],
+      "cup": [
+        1962,
+        1991,
+        1993,
+        1995,
+        1998,
+        2016
+      ]
+    },
+    "titlesPreState": {
+      "league": [],
+      "cup": []
+    }
+  },
+  "hapoel-ta": {
+    "verified": true,
+    "he": "הפועל תל אביב",
+    "short": "הפועל ת\"א",
+    "game": "הפועלdle",
+    "worldfootball": "te956/hapoel-tel-aviv",
+    "ifaTeamId": 2176,
+    "wikiCategory": "קטגוריה:כדורגלני הפועל תל אביב",
+    "colors": {
+      "brand": "#C8102E",
+      "near": "#8C2233",
+      "ink": "#0C0C0E",
+      "second": "#FFFFFF"
+    },
+    "titles": {
+      "league": [
+        1957,
+        1966,
+        1969,
+        1981,
+        1986,
+        1988,
+        2000,
+        2010
+      ],
+      "cup": [
+        1961,
+        1972,
+        1983,
+        1999,
+        2000,
+        2006,
+        2007,
+        2010,
+        2011,
+        2012
+      ]
+    },
+    "titlesPreState": {
+      "league": [
+        1934,
+        1935,
+        1938,
+        1940,
+        1944
+      ],
+      "cup": [
+        1928,
+        1934,
+        1937,
+        1938,
+        1939,
+        1945
+      ]
+    }
+  }
+}

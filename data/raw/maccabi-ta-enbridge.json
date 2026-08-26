@@ -1,0 +1,271 @@
+{
+ "club": "maccabi-ta",
+ "source": "enbridge",
+ "links": [
+  {
+   "en": "Barak Itzhaki",
+   "he": "ברק יצחקי",
+   "via": "Barak Yitzhaki",
+   "born": 1984,
+   "how": "כותרת"
+  },
+  {
+   "en": "Yuval Shpungin",
+   "he": "יובל שפונגין",
+   "via": "Yuval Spungin",
+   "born": 1987,
+   "how": "כותרת"
+  },
+  {
+   "en": "Roy Dayan",
+   "he": "רועי דיין",
+   "via": "Roei Dayan",
+   "born": 1984,
+   "how": "כותרת"
+  },
+  {
+   "en": "Amir Shelach",
+   "he": "אמיר שלח",
+   "via": "Amir Schelach",
+   "born": 1970,
+   "how": "כותרת"
+  },
+  {
+   "en": "Tamir Cahalon",
+   "he": "תמיר כחלון",
+   "via": "Tamir Kahlon",
+   "born": 1987,
+   "how": "כותרת"
+  },
+  {
+   "en": "Barak Levy",
+   "he": "ברק לוי",
+   "via": "Barak Levi",
+   "born": 1993,
+   "how": "כותרת"
+  },
+  {
+   "en": "Beni Tabak",
+   "he": "בני טבק",
+   "via": "Benny Tabak",
+   "born": 1956,
+   "how": "כותרת"
+  },
+  {
+   "en": "Egor Filipenko",
+   "he": "יגור פיליפנקה",
+   "via": "Yegor Filipenko",
+   "born": 1988,
+   "how": "כותרת"
+  },
+  {
+   "en": "Ilya Yavruyan",
+   "he": "איליה יברויאן",
+   "via": "Yeghia Yavruyan",
+   "born": 1981,
+   "how": "כותרת"
+  },
+  {
+   "en": "Aleksey Kosolapov",
+   "he": "אלכסיי קוסולאפוב",
+   "via": "Aleksei Kosolapov",
+   "born": 1971,
+   "how": "כותרת"
+  },
+  {
+   "en": "Juan Pablo Colinas",
+   "he": "חואן פבלו קולינאס",
+   "via": "Juan Pablo (footballer, born 1978)",
+   "born": 1978,
+   "how": "כותרת"
+  },
+  {
+   "en": "Munas Dabbur",
+   "he": "מואנס דבור",
+   "via": "Mu'nas Dabbur",
+   "born": 1992,
+   "how": "כותרת"
+  },
+  {
+   "en": "Viðar Kjartansson",
+   "he": "וידאר קיארטאנסון",
+   "via": "Viðar Örn Kjartansson",
+   "born": 1990,
+   "how": "כותרת"
+  },
+  {
+   "en": "Eden Karzev",
+   "he": "עדן קארצב",
+   "via": "Eden Kartsev",
+   "born": 2000,
+   "how": "כותרת"
+  },
+  {
+   "en": "Guy Mizrahi",
+   "he": "גיא מזרחי",
+   "via": "Guy Mizrahi",
+   "born": 2001,
+   "how": "כותרת"
+  },
+  {
+   "en": "Aleksandr Uvarov",
+   "he": "אלכסנדר אובארוב",
+   "via": "Aleksandr Uvarov (footballer)",
+   "born": 1960,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Avi Cohen II",
+   "he": "אבי כהן",
+   "via": "Avi Cohen (footballer, born 1962)",
+   "born": 1962,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Meir Melika",
+   "he": "רומן פץ",
+   "via": "Roman Pets",
+   "born": 1969,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Ronny Gafni",
+   "he": "רוני גפני",
+   "via": "Ronnie Gafney",
+   "born": 1980,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Carlos García",
+   "he": "קרלוס גרסיה",
+   "via": "Carlos García (footballer, born 1984)",
+   "born": 1984,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Maksim Grechkin",
+   "he": "מקסים גרצ'קין",
+   "via": "Max Grechkin",
+   "born": 1996,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Dan Biton",
+   "he": "דן ביטון",
+   "via": "Dan Biton (footballer)",
+   "born": 1995,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Bruno Reis",
+   "he": "ברונו רייס",
+   "via": "Bruno Reis (footballer, born 1978)",
+   "born": 1978,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Nadav Niddam",
+   "he": "נדב נידם",
+   "via": "Nadav Nidam",
+   "born": 2001,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Uroš Nikolić",
+   "he": "אורוש ניקוליץ'",
+   "via": "Uroš Nikolić (footballer)",
+   "born": 1993,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Dan Roman",
+   "he": "דן רומן",
+   "via": "Dan Roman (footballer, born 1982)",
+   "born": 1982,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Nivaldo",
+   "he": "ניבאלדו",
+   "via": "Nivaldo (footballer, born 1980)",
+   "born": 1980,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Shlomi Azulay",
+   "he": "שלומי אזולאי",
+   "via": "Shlomi Yosef Azulay",
+   "born": 1990,
+   "how": "חיפוש"
+  },
+  {
+   "en": "Đorđe Jovanović",
+   "he": "ג'ורג'ה יובאנוביץ'",
+   "via": "Đorđe Jovanović (footballer)",
+   "born": 1999,
+   "how": "חיפוש"
+  }
+ ],
+ "tried": [
+  "Avi Nimny",
+  "Menashe Shimonov",
+  "Avi Yerushalmi",
+  "Daniel",
+  "Itzhaq Zohar",
+  "Eli Biton",
+  "Moshe Mishaelov",
+  "Lior Gan",
+  "Koby Moosa",
+  "Yehuda Katsav",
+  "Alon Natan",
+  "Amit Levi",
+  "Gal Fibach",
+  "Barukh Dego",
+  "Salem Abo-Siam",
+  "Guy Solomon",
+  "Yiftach Halevi",
+  "Eyal Shen",
+  "Or Yitzhak",
+  "Rotem Yatzkar",
+  "Zvi Heyman",
+  "Arik Shriki",
+  "Ya'acov Hillel",
+  "Jefri Ishay",
+  "Dudu Avraham",
+  "Yossi Ginzburg",
+  "Yagil Biton",
+  "Haviv Ohayon",
+  "Tomer Alon",
+  "Or Itzhak",
+  "Roei Mishpati",
+  "Roee Magor",
+  "Nassim Bahir",
+  "Imanuel Schwartz",
+  "Dani Neumann",
+  "Guy Nachman",
+  "Haim Hajaj",
+  "Alon Ofir",
+  "Gay Sarfati",
+  "Robert Marušič",
+  "Gal Filyan",
+  "Roman Khaoustov",
+  "Omri Ron",
+  "Tom Mensherov",
+  "Mike Chen",
+  "Eli Zizov",
+  "Guy Aviv",
+  "Sahar Hasson",
+  "Osher Abu",
+  "Fadi Najjar",
+  "Eyal Hen",
+  "Michel Mor",
+  "Niv Berkovitz",
+  "Itay Ben Hamo",
+  "Asaf Hershko",
+  "Sayed Abu Farkhi",
+  "Shalev Saadia",
+  "Idan Trau",
+  "Idan Weinberg"
+ ],
+ "checked": 88
+}

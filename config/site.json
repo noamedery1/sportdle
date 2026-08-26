@@ -1,0 +1,29 @@
+{
+  "_comment": "הגדרות כלליות לאתר. start הוא תאריך חידה #1 — שינוי שלו מזיז את כל מספרי החידות.",
+  "name": "SportDle",
+  "title": "SportDle · חידת השחקן היומית",
+  "siteUrl": "https://sportdle.up.railway.app/sportdle",
+  "start": [2026, 8, 24],
+  "maxGuesses": 8,
+  "build": "s3",
+  "ogImage": "https://sportdle.up.railway.app/sportdle/og.png",
+  "shareStyle": "safe",
+  "shuffleSeed": 20260825,
+  "analyticsUrl": "",
+
+  "_firebase": [
+    "פרויקט אחד לכל המועדונים. ההפרדה היא בנתיב: rooms/<slug>/<code>.",
+    "מפתח ה-API גלוי בקוד — ככה פיירבייס עובד בצד לקוח. ההגנה היא בחוקים,",
+    "לא בסודיות המפתח. גיטהאב ישלח 'Secrets detected' — זו אזעקת שווא.",
+    "החוקים שצריך להדביק בקונסולה נמצאים ב-config/firebase-rules.json."
+  ],
+  "firebase": {
+    "apiKey": "AIzaSyAPslfQe12H5yZYthGbQhEcL433xR2LMQk",
+    "authDomain": "beitardle.firebaseapp.com",
+    "databaseURL": "https://beitardle-default-rtdb.europe-west1.firebasedatabase.app",
+    "projectId": "beitardle",
+    "storageBucket": "beitardle.firebasestorage.app",
+    "messagingSenderId": "53875390040",
+    "appId": "1:53875390040:web:99d92bde86e3c00abf7c2d"
+  }
+}
