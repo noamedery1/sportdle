@@ -52,7 +52,22 @@ jobs:
         working-directory: src-repo
         run: node scripts/build.mjs
 
+      # הבנייה רצה תמיד — היא הבדיקה שהמקור תקין, וזה שווה גם בלי
+      # פריסה. הדחיפה מדלגת בשקט כשאין טוקן, במקום להיכשל בכל קומיט.
+      - name: יש טוקן פריסה?
+        id: secrets
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            echo "::notice::DEPLOY_TOKEN לא מוגדר — נבנה ואומת, לא נפרס."
+            echo "ready=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=yes" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: מאגר הפריסה
+        if: steps.secrets.outputs.ready == 'yes'
         uses: actions/checkout@v4
         with:
           repository: ${{ env.DEPLOY_REPO }}
@@ -60,6 +75,7 @@ jobs:
           path: deploy-repo
 
       - name: העברת dist
+        if: steps.secrets.outputs.ready == 'yes'
         run: |
           mkdir -p "deploy-repo/${{ env.DEPLOY_DIR }}"
           # בלי --delete: בשורש מאגר הפריסה יושבים קבצים של ביתרדל
@@ -67,9 +83,11 @@ jobs:
           cp -r src-repo/dist/. "deploy-repo/${{ env.DEPLOY_DIR }}/"
 
       - name: בדיקת עץ הפריסה
+        if: steps.secrets.outputs.ready == 'yes'
         run: node src-repo/tools/qa-deploy.mjs deploy-repo
 
       - name: דחיפה
+        if: steps.secrets.outputs.ready == 'yes'
         working-directory: deploy-repo
         run: |
           if [ -z "$(git status --porcelain)" ]; then

@@ -52,7 +52,24 @@ jobs:
         with:
           node-version: "20"
 
+      # בלי הסודות אין תור לקרוא. יציאה נקייה ולא כישלון: cron שנכשל
+      # כל שעה שולח 24 מיילים ביום, ואחרי שלושה כאלה מפסיקים להסתכל
+      # עליהם — כולל ביום שבו הכישלון יהיה אמיתי.
+      - name: יש סודות?
+        id: secrets
+        env:
+          REPORTS_URL: ${{ secrets.REPORTS_URL }}
+          REPORTS_TOKEN: ${{ secrets.REPORTS_TOKEN }}
+        run: |
+          if [ -z "$REPORTS_URL" ] || [ -z "$REPORTS_TOKEN" ]; then
+            echo "::notice::REPORTS_URL או REPORTS_TOKEN לא מוגדרים — הצינור מדלג."
+            echo "ready=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=yes" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: משיכת התור והחלת תיקונים
+        if: steps.secrets.outputs.ready == 'yes'
         env:
           REPORTS_URL: ${{ secrets.REPORTS_URL }}
           REPORTS_TOKEN: ${{ secrets.REPORTS_TOKEN }}
@@ -62,6 +79,7 @@ jobs:
 
       - name: יש בכלל שינוי?
         id: diff
+        if: steps.secrets.outputs.ready == 'yes'
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo "אין שינוי — אין מה לפתוח."
