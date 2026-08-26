@@ -150,6 +150,19 @@ Deploy → Manage deployments → Edit → Version: **New** → Deploy.
 | `REPORTS_TOKEN` | אותו טוקן מ-Script properties |
 | `DEPLOY_TOKEN` | Fine-grained PAT, `contents: write`, למאגר הפריסה בלבד |
 
+שני מלכודות שכל אחת מהן מפילה את הצינור בשלב אחר, ואף אחת מהן אינה סוד:
+
+1. **Settings → Actions → General → Workflow permissions** → לסמן
+   **Allow GitHub Actions to create and approve pull requests**. בלי זה
+   הענף נדחף והצינור נופל על `gh pr create` בהודעה
+   `GitHub Actions is not permitted to create or approve pull requests`.
+   ה-`permissions:` שב-workflow לא עוקף את זה — זו חסימה נפרדת.
+2. **Script properties הם המקום שבו הטוקן חי, לא הסוד בגיטהאב לבדו.**
+   `checkToken_` מחזיר false כשהתכונה חסרה, ולכן תור שלא הוגדר לו טוקן
+   נראה בדיוק כמו תור עם טוקן שגוי: `אין הרשאה`. אותו דבר עם
+   `OWNER_MAIL` — בלעדיו אין מייל, ובלי עמודת "מייל" בגיליון גם אין לזה
+   עקבות.
+
 ---
 
 ## הפעלה ובדיקה
