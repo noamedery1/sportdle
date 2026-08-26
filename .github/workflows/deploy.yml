@@ -66,6 +66,23 @@ jobs:
             echo "ready=yes" >> "$GITHUB_OUTPUT"
           fi
 
+      # הטוקן נבדק לפני העבודה ולא אחריה. מאגר הפריסה ציבורי, ולכן
+      # ה-checkout שלו מצליח גם עם טוקן פג-תוקף או בלי הרשאת כתיבה —
+      # קריאה של מאגר ציבורי לא דורשת טוקן בכלל. בלי הבדיקה הזאת
+      # הכישלון מתגלה רק בדחיפה, בסוף הריצה, בהודעת git שלא אומרת
+      # איזה סוד לתקן ואיפה.
+      - name: לטוקן יש הרשאת כתיבה?
+        if: steps.secrets.outputs.ready == 'yes'
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          body=$(mktemp)
+          code=$(curl -sS -o "$body" -w '%{http_code}' \
+                   -H "Authorization: Bearer $DEPLOY_TOKEN" \
+                   -H "Accept: application/vnd.github+json" \
+                   "https://api.github.com/repos/$DEPLOY_REPO")
+          node src-repo/tools/token-check.mjs "$code" "$body" "$DEPLOY_REPO"
+
       - name: מאגר הפריסה
         if: steps.secrets.outputs.ready == 'yes'
         uses: actions/checkout@v7
@@ -90,6 +107,7 @@ jobs:
         if: steps.secrets.outputs.ready == 'yes'
         working-directory: deploy-repo
         run: |
+          set -e
           if [ -z "$(git status --porcelain)" ]; then
             echo "עץ הפריסה זהה — אין מה לדחוף."
             exit 0

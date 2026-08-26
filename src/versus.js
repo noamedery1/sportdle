@@ -494,28 +494,66 @@ ${link}
      ============================================================ */
   const inp = $("#answer"), sg = $("#vSugg");
 
-  /* המקלדת מכסה חצי מסך. במקום לגלול ולהסתיר את הרמזים,
-     מזהים את הכיווץ ומצמצמים את התצוגה כך שהכל נשאר גלוי. */
+  /* ------------------------------------------------------------
+     מקלדת פתוחה
+
+     באייפון המקלדת לא מכווצת את פריסת הדף — היא רק מכסה אותה.
+     פריסת הדף נשארת בגובה המלא, ולכן answerbox ה-sticky נשאר
+     מתחת למקלדת; ספארי גולל כדי לחשוף את השדה; הגלילה משנה את
+     הפריסה, שינוי הפריסה מזיז את הגלילה שוב — וזה הריצוד.
+     באנדרואיד הגלילה הזאת שקטה יותר, ולכן שם זה נראה תקין.
+
+     במקום להיאבק בגלילה: מודדים את החלון הנראה ב-visualViewport,
+     ומסך המשחק יוצא מהגלילה ונועל את עצמו אליו בדיוק (הכלל ב-CSS,
+     תחת body.kb). אין גלילה → אין מה לגלול → אין ריצוד, והשדה
+     יושב תמיד בתחתית האזור הנראה, מעל המקלדת.
+     ------------------------------------------------------------ */
   (function keyboardAware(){
-    const vv = window.visualViewport;
+    const vv   = window.visualViewport;
     if (!vv) return;
-    let raf = 0;
-    const check = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const shrunk = vv.height < window.innerHeight * 0.75;
-        document.body.classList.toggle("kb", shrunk);
-      });
+    const root = document.documentElement;
+    let on = false, raf = 0, lastH = -1, lastTop = -1;
+
+    const apply = () => {
+      raf = 0;
+      /* מה שהמקלדת מכסה מלמטה: גובה הפריסה פחות החלון הנראה
+         והיסט החלון הנראה בתוכו. */
+      const inset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+
+      if (vv.height  !== lastH)   root.style.setProperty("--vvh",   (lastH   = vv.height)    + "px");
+      if (vv.offsetTop !== lastTop) root.style.setProperty("--vvtop", (lastTop = vv.offsetTop) + "px");
+
+      /* שני ספים ולא אחד. סף יחיד מהבהב: הפריסה שמתכווצת מזיזה את
+         הגלילה, המדידה חוזרת לגבול, והמחלקה מתחלפת שוב ושוב. */
+      const was = on;
+      if      (!on && inset > 140) on = true;
+      else if ( on && inset <  80) on = false;
+      if (was === on) return;
+
+      document.body.classList.toggle("kb", on);
+      /* חזרה לגלילה: ספארי השאיר את הדף גלול למקום שבו חשף את
+         השדה, ובלי זה מסך המשחק חוזר לזרימה באמצע העמוד. */
+      if (was && !on) {
+        const sec = $("#scPlay");
+        if (sec && !sec.classList.contains("hide")) sec.scrollIntoView({ block: "start" });
+      }
     };
+
+    const check = () => { if (!raf) raf = requestAnimationFrame(apply); };
     vv.addEventListener("resize", check);
     vv.addEventListener("scroll", check);
+    addEventListener("orientationchange", check);
     inp.addEventListener("blur", () => setTimeout(check, 120));
+    check();
   })();
   
   inp.addEventListener("input", () => {
     const q = vNorm(inp.value);
     if (!q) return closeSugg();
-    const hits = POOL.filter(p => vNorm(p.he).includes(q)).slice(0,6);
+    /* עם מקלדת פתוחה נשארים 350px מסך. שש הצעות מכסות גם את הרמזים,
+       וגם ההגבלה ב-CSS לא מספיקה — פחות שורות זה פחות מה שמוסתר. */
+    const hits = POOL.filter(p => vNorm(p.he).includes(q))
+                     .slice(0, document.body.classList.contains("kb") ? 4 : 6);
     sg.innerHTML = hits.map(p => `<button type="button" data-n="${esc(p.he)}">${esc(p.he)}</button>`).join("");
     sg.classList.toggle("on", hits.length > 0);
   });

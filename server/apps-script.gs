@@ -159,27 +159,47 @@ function handleFeedback_(d) {
   var sh = ss.getSheetByName(SHEET_FEEDBACK);
   if (!sh) {
     sh = ss.insertSheet(SHEET_FEEDBACK);
-    sh.appendRow(['זמן', 'מועדון', 'חידה', 'שחקן', 'טקסט', 'ליצירת קשר']);
+    sh.appendRow(['זמן', 'מועדון', 'חידה', 'שחקן', 'טקסט', 'ליצירת קשר', 'מייל']);
     sh.setFrozenRows(1);
+  } else if (sh.getLastColumn() < 7) {
+    sh.getRange(1, 7).setValue('מייל');       // עמודה בסוף, כדי לא להזיז היסטוריה
   }
-  sh.appendRow([new Date(), club, puzzle, player, text, contact]);
 
+  /* הטקסט נשמר לפני ניסיון השליחה, ולא אחריו: אם השליחה תיתקע,
+     מה שהשחקן כתב כבר בגיליון. גורל המייל נכתב לתא אחר כך. */
+  sh.appendRow([new Date(), club, puzzle, player, text, contact]);
+  var row = sh.getLastRow();
+
+  /* גורל המייל נרשם בגיליון, ולא נבלע.
+     קודם היה כאן catch ריק: כשהמייל לא יצא — מכסה שנגמרה, OWNER_MAIL
+     שלא הוגדר, הרשאת שליחה שלא אושרה — הפידבק נשמר והשקט נראה בדיוק
+     כמו "אף אחד לא כתב כלום". זה בזבז ערב שלם על חיפוש באג שלא היה.
+     תקלה שאין לה עקבות היא תקלה שמאבחנים פעמיים. */
+  var mail = 'ללא כתובת';       // OWNER_MAIL לא מוגדר ב-Script properties
   var to = PropertiesService.getScriptProperties().getProperty('OWNER_MAIL');
   if (to) {
     try {
-      /* plain text בכוונה: מה שנכתב כאן הוא קלט של זר, ואין סיבה
-         להריץ אותו כ-HTML בתיבת הדואר שלי. */
-      MailApp.sendEmail({
-        to: to,
-        subject: 'ספורטדל · פידבק — ' + (puzzle || club || ''),
-        body: text + '\n\n— — —\nמועדון: ' + club + '\nחידה: ' + puzzle +
-              '\nשחקן: ' + player + '\nליצירת קשר: ' + (contact || 'לא נמסר')
-      });
+      if (MailApp.getRemainingDailyQuota() < 1) {
+        mail = 'אין מכסה להיום';
+      } else {
+        /* plain text בכוונה: מה שנכתב כאן הוא קלט של זר, ואין סיבה
+           להריץ אותו כ-HTML בתיבת הדואר שלי. */
+        MailApp.sendEmail({
+          to: to,
+          subject: 'ספורטדל · פידבק — ' + (puzzle || club || ''),
+          body: text + '\n\n— — —\nמועדון: ' + club + '\nחידה: ' + puzzle +
+                '\nשחקן: ' + player + '\nליצירת קשר: ' + (contact || 'לא נמסר')
+        });
+        mail = 'נשלח';
+      }
     } catch (err) {
-      /* מיילים נגמרו למכסה היומית — הטקסט כבר בגיליון, לא אבוד */
+      mail = 'נכשל: ' + String(err).slice(0, 120);
+      console.error('feedback mail failed: ' + err);
     }
   }
-  return json_({ ok: true });
+
+  sh.getRange(row, 7).setValue(mail);
+  return json_({ ok: true, mail: mail });
 }
 
 /* ---------- סימון שורות שהוחלו — רק עם טוקן ---------- */

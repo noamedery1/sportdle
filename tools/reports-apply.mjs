@@ -30,7 +30,7 @@
         tools/reports-guard.mjs, כי הבטחה בתיעוד אינה אכיפה.
      7. שום דבר לא מתמזג בלי אישור אדם — הריצה פותחת PR.
    ============================================================ */
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -48,7 +48,18 @@ const POSES          = ["GK", "DF", "MF", "FW"];
 const HE_NAME        = /^[א-ת][א-ת ׳״'"’־-]{0,38}[א-ת]$/;
 
 const log  = m => console.log(m);
-const die  = m => { console.error("✖ " + m); process.exit(1); };
+
+/* הכישלון נכתב גם לסיכום הריצה, לא רק ללוג. מייל הכישלון של גיטהאב
+   מקשר לעמוד הריצה, והסיכום הוא מה שנראה שם בלי לפתוח לוגים. */
+const die  = m => {
+  console.error("✖ " + m);
+  const sum = process.env.GITHUB_STEP_SUMMARY;
+  if (sum) {
+    try { appendFileSync(sum, ["### ✖ הצינור נעצר", "", "```", m, "```", ""].join("\n")); }
+    catch { /* אין סיכום — הלוג עדיין קיים */ }
+  }
+  process.exit(1);
+};
 
 /* נרמול זהה לזה של המנוע ושל scripts/lib/util.mjs — מקף לרווח,
    בלי גרשיים, רווחים מכווצים. חייב להיות זהה, אחרת "אותו שם"
@@ -73,14 +84,47 @@ const URL_  = process.env.REPORTS_URL;
 const TOKEN = process.env.REPORTS_TOKEN;
 if (!URL_ || !TOKEN) die("חסר REPORTS_URL או REPORTS_TOKEN בסביבה.");
 
-const res = await fetch(`${URL_}?fn=fixes&token=${encodeURIComponent(TOKEN)}`, {
-  redirect: "follow", headers: { "User-Agent": "sportdle-reports/1" }
-});
-if (!res.ok) die(`השרת החזיר ${res.status}`);
-const payload = await res.json().catch(() => null);
-if (!payload || payload.ok !== true) die(`תשובה לא תקינה: ${JSON.stringify(payload)}`);
+/* כשהשליפה נכשלת, ההודעה חייבת להגיד *מה לתקן*. מייל "run failed"
+   בלי זה שולח אותך לחפש בלוגים, ואת מה שאי אפשר לאבחן מהמייל
+   מפסיקים לאבחן. TROUBLE ממופה לפי התשובה שהשרת מחזיר בפועל. */
+const TROUBLE = {
+  "אין הרשאה":
+    "השרת דחה את הטוקן.\n" +
+    "    הסוד REPORTS_TOKEN בגיטהאב (Settings → Secrets → Actions) אינו זהה\n" +
+    "    ל-Script property בשם REPORTS_TOKEN ב-Apps Script, או שהוא קצר מ-16 תווים.\n" +
+    `    אורך הטוקן שנשלח מכאן: ${TOKEN.length} תווים.\n` +
+    "    צריך להיות תו-בתו זהה — רווח מוביל או שורה חדשה בהדבקה נחשבים הבדל."
+};
 
-const rows = Array.isArray(payload.rows) ? payload.rows : [];
+/* גם תקלת רשת היא תשובה. בלי try, כישלון fetch הוא stack trace. */
+let res;
+try {
+  res = await fetch(`${URL_}?fn=fixes&token=${encodeURIComponent(TOKEN)}`, {
+    redirect: "follow", headers: { "User-Agent": "sportdle-reports/1" }
+  });
+} catch (e) {
+  die(`השליפה נכשלה ברשת: ${e.message}\n` +
+      "    בדוק שהסוד REPORTS_URL הוא כתובת ה-/exec המלאה של Apps Script.");
+}
+if (!res.ok) die(`השרת החזיר ${res.status}. כתובת /exec לא תקינה, או שהפריסה של Apps Script לא פעילה.`);
+
+const raw = await res.text();
+let payload = null;
+try { payload = JSON.parse(raw); } catch { /* לא JSON — מטופל מיד */ }
+
+if (!payload)
+  die("השרת לא החזיר JSON. כנראה שהפריסה של Apps Script אינה פתוחה ל-Anyone,\n" +
+      "    ומה שחזר הוא דף התחברות של גוגל.\n" +
+      `    150 התווים הראשונים: ${raw.slice(0, 150).replace(/\s+/g, " ")}`);
+
+if (payload.ok !== true)
+  die((TROUBLE[payload.error] || `השרת השיב: ${JSON.stringify(payload)}`));
+
+if (!Array.isArray(payload.rows))
+  die("התשובה בלי שדה rows. כנראה שהפריסה של Apps Script היא גרסה ישנה —\n" +
+      "    Deploy → Manage deployments → Edit → Version: New.");
+
+const rows = payload.rows;
 log(`התור: ${rows.length} שורות ממתינות`);
 if (!rows.length) { log("אין מה לעשות."); process.exit(0); }
 
