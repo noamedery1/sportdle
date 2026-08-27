@@ -451,9 +451,13 @@ function renderComm(st, myGuesses, iWon){
   const el = $("#comm");
   if (!st || st.done < MIN_PLAYERS){ el.classList.remove("on"); return; }
 
+  /* בלי המספר המוחלט של השחקנים — רק יחסים.
+     מספר קטן נראה עלוב גם כשהוא נכון, וברגע שהכותרת מסתירה אותו
+     גם הגרף חייב: בר שכתוב עליו "2" מדליף בדיוק את מה שהוסתר.
+     MIN_PLAYERS עדיין חוסם את כל הבלוק מתחת למדגם סביר. */
   const pct = Math.round(st.wins / st.done * 100);
-  let html = `<div class="hd">היום שיחקו <b>${st.done}</b> ·
-    <b>${pct}%</b> פיצחו${st.avg ? ` · ממוצע <b>${st.avg}</b>` : ""}</div>`;
+  let html = `<div class="hd"><b>${pct}%</b> פיצחו היום${
+    st.avg ? ` · ממוצע <b>${st.avg}</b> ניחושים` : ""}</div>`;
 
   // כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל
   if (iWon){
@@ -469,15 +473,18 @@ function renderComm(st, myGuesses, iWon){
      ומשאירים את הכותרת — שהיא נכונה בכל מקרה. */
   const total = (st.dist || []).reduce((a, b) => a + (b || 0), 0) + (st.fail || 0);
   if (total > 0){
-    const max = Math.max(1, ...st.dist, st.fail);
+    const max   = Math.max(1, ...st.dist, st.fail);
+    /* אחוז מהמסיימים. תווית ריקה כשאין אף אחד — "0%" בכל בר ריק
+       הוא רעש, והרוחב לבד אומר את זה. */
+    const label = v => v ? Math.round(v / total * 100) + "%" : "";
     for (let i = 1; i <= MAX; i++){
       const v = st.dist[i-1] || 0;
       html += `<div class="cb${iWon && i===myGuesses ? " me" : ""}"><i>${i}</i>
-        <u style="width:${12 + v/max*72}%">${v}</u></div>`;
+        <u style="width:${12 + v/max*72}%">${label(v)}</u></div>`;
     }
     if (st.fail)
       html += `<div class="cb${!iWon ? " me" : ""}"><i>✕</i>
-        <u style="width:${12 + st.fail/max*72}%">${st.fail}</u></div>`;
+        <u style="width:${12 + st.fail/max*72}%">${label(st.fail)}</u></div>`;
   }
 
   el.innerHTML = html;
