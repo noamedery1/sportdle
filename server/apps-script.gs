@@ -49,6 +49,17 @@ const POSES  = ['GK', 'DF', 'MF', 'FW'];
    לא לטינית, לא ספרות, לא סימני פיסוק, לא תווי בקרה. */
 const HE_NAME = /^[א-ת][א-ת ׳״'"’־-]{0,38}[א-ת]$/;
 
+/* מספר הניחושים המותר. חייב להיות זהה ל-maxGuesses ב-config/site.json —
+   ממנו נגזר רוחב הפילוח בגיליון daily, ואם הם נפרדים ניחוש חוקי ייפול
+   מחוץ לדליים ולא ייספר. */
+const MAX_GUESSES = 8;
+
+/* כותרות daily במקום אחד: rollup_ יוצר מהן גיליון חדש, ומשלים
+   בסוף עמודות שנוספו אחרי שכבר היו נתונים. */
+const DAILY_HEAD_ = ['חידה', 'נכנסו', 'סיימו', 'פיצחו', 'אחוז הצלחה',
+                     'ממוצע ניחושים', 'סכום ניחושים', 'מועדון',
+                     '1', '2', '3', '4', '5', '6', '7', '8', 'לא פיצחו'];
+
 /* בלמי הצפה. לא אבטחה — רק שלא ימלא לי את הגיליון בלילה. */
 const MAX_FIX_ROWS   = 20000;   // מעבר לזה הגיליון מסרב לקבל
 const MAX_PER_RID    = 15;      // תיקונים למדווח בחלון של 6 שעות
@@ -265,11 +276,17 @@ function rollup_(ss, d) {
   var sh = ss.getSheetByName(SHEET_DAILY);
   if (!sh) {
     sh = ss.insertSheet(SHEET_DAILY);
-    sh.appendRow(['חידה', 'נכנסו', 'סיימו', 'פיצחו', 'אחוז הצלחה',
-                  'ממוצע ניחושים', 'סכום ניחושים', 'מועדון']);
+    sh.appendRow(DAILY_HEAD_);
     sh.setFrozenRows(1);
   } else if (sh.getLastColumn() < 8) {
     sh.getRange(1, 7, 1, 2).setValues([['סכום ניחושים', 'מועדון']]);
+  }
+  /* פילוח הניחושים נוסף אחרי שכבר היו נתונים, ולכן בעמודות שבסוף.
+     בלי הפילוח אפשר להציג ממוצע, אבל לא "טוב יותר מ-62%" — ממוצע
+     הוא לא התפלגות, ואי אפשר לגזור ממנו דירוג. */
+  if (sh.getLastColumn() < DAILY_HEAD_.length) {
+    sh.getRange(1, 9, 1, DAILY_HEAD_.length - 8)
+      .setValues([DAILY_HEAD_.slice(8)]);
   }
 
   var data = sh.getDataRange().getValues();
@@ -281,6 +298,19 @@ function rollup_(ss, d) {
     row = sh.getLastRow();
   } else if (!data[row - 1][7]) {
     sh.getRange(row, 8).setValue(club);       // השלמה לשורה היסטורית
+  }
+
+  /* דלי הפילוח: ניחוש מוצלח נכנס לעמודה של מספר הניחושים, וכישלון
+     לעמודה האחרונה. ניחוש מחוץ לטווח נזרק — הוא לא יכול לקרות
+     מהקליינט, ומי ששולח POST ידני לא יעקם את הגרף. */
+  if (d.type === 'done') {
+    var g = Number(d.guesses) || 0;
+    var col = (d.won && g >= 1 && g <= MAX_GUESSES) ? 8 + g
+            : (!d.won ? 8 + MAX_GUESSES + 1 : 0);
+    if (col) {
+      var cell = sh.getRange(row, col);
+      cell.setValue((Number(cell.getValue()) || 0) + 1);
+    }
   }
 
   var cur = sh.getRange(row, 1, 1, 6).getValues()[0];
@@ -405,8 +435,26 @@ function installWeeklyPurge() {
    ============================================================ */
 function doGet(e) {
   var p = (e && e.parameter) || {};
-  if (p.fn !== 'fixes') return json_({ ok: true, msg: 'sportdle collector is running' });
-  if (!checkToken_(p.token)) return json_({ ok: false, error: 'אין הרשאה' });
+
+  /* תור התיקונים נבדק ראשון. אחרת בקשה עם fn=fixes וגם puzzle הייתה
+     נענית במסלול הפתוח, ומסלול מוגן לא צריך להיות ניתן להסתרה
+     בעזרת פרמטר נוסף. */
+  if (p.fn === 'fixes') {
+    if (!checkToken_(p.token)) return json_({ ok: false, error: 'אין הרשאה' });
+    return fixesQueue_(p);
+  }
+
+  /* סטטיסטיקת הקהילה לחידה. הקליינט קורא לזה בסוף כל סיבוב, ומציג
+     "היום שיחקו N · X% פיצחו" ואת השורה "טוב יותר מ-62% מהשחקנים".
+     בלי טוקן במכוון: אין כאן שום נתון אישי, רק מצרפים שכבר מוצגים
+     לכל מי שמשחק. p.callback קיים כדי שנפילת ה-CORS בקליינט תוכל
+     ליפול ל-JSONP. */
+  if (p.puzzle) return json_(stats_(p), p.callback);
+
+  return json_({ ok: true, msg: 'sportdle collector is running' }, p.callback);
+}
+
+function fixesQueue_(p) {
 
   var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_FIXES);
   if (!sh || sh.getLastRow() < 2) return json_({ ok: true, rows: [] });
@@ -428,6 +476,51 @@ function doGet(e) {
     });
   }
   return json_({ ok: true, rows: rows });
+}
+
+/* ============================================================
+   סטטיסטיקת הקהילה לחידה אחת
+   ------------------------------------------------------------
+   נקרא בסוף כל סיבוב של כל שחקן, ולכן במטמון: בלעדיו כל סיום משחק
+   היה קריאת גיליון, וזה גם איטי וגם בזבוז מכסה. 90 שניות זה טרי
+   מספיק — הגרף זז בשחקן אחד בכל פעם.
+   ============================================================ */
+function stats_(p) {
+  var club   = clubOf_(p);
+  var puzzle = String(p.puzzle).slice(0, 20);
+
+  var cache = CacheService.getScriptCache();
+  var key   = 'st:' + club + ':' + puzzle;
+  var hit   = cache.get(key);
+  if (hit) { try { return JSON.parse(hit); } catch (err) { /* ממשיכים לקרוא */ } }
+
+  var out = { ok: true, stats: null };
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_DAILY);
+  if (sh && sh.getLastRow() > 1) {
+    var v = sh.getRange(2, 1, sh.getLastRow() - 1, DAILY_HEAD_.length).getValues();
+    for (var i = 0; i < v.length; i++) {
+      if (String(v[i][0]) !== puzzle) continue;
+      if (String(v[i][7] || 'beitar') !== club) continue;
+
+      var done = Number(v[i][2]) || 0, wins = Number(v[i][3]) || 0;
+      var sum  = Number(v[i][6]) || 0;
+      /* dist הוא מערך מאופס-אינדקס: dist[0] = פיצחו בניחוש אחד.
+         הקליינט קורא אותו כ-st.dist[i-1], וזה חייב להתאים. */
+      var dist = [];
+      for (var g = 1; g <= MAX_GUESSES; g++) dist.push(Number(v[i][7 + g]) || 0);
+
+      out.stats = {
+        done: done, wins: wins,
+        avg:  wins ? Number((sum / wins).toFixed(1)) : 0,
+        dist: dist,
+        fail: Number(v[i][8 + MAX_GUESSES]) || 0
+      };
+      break;
+    }
+  }
+
+  try { cache.put(key, JSON.stringify(out), 90); } catch (err) { /* מטמון מלא */ }
+  return out;
 }
 
 /* ============================================================
@@ -458,8 +551,16 @@ function str_(v, max) {
     .slice(0, max);
 }
 
-function json_(obj) {
+/* callback הופך את התשובה ל-JSONP. הקליינט משתמש בזה רק כנפילה
+   מ-fetch שנחסם, ולכן שם הפונקציה מאומת מול תבנית צרה: מה שנכנס
+   לכאן חוזר כקוד שרץ בדף. */
+function json_(obj, callback) {
+  var body = JSON.stringify(obj);
+  if (callback && /^[A-Za-z_$][A-Za-z0-9_$]{0,40}$/.test(callback))
+    return ContentService
+      .createTextOutput(callback + '(' + body + ');')
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
   return ContentService
-    .createTextOutput(JSON.stringify(obj))
+    .createTextOutput(body)
     .setMimeType(ContentService.MimeType.JSON);
 }

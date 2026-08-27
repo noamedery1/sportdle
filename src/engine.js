@@ -464,15 +464,21 @@ function renderComm(st, myGuesses, iWon){
       html += `<div class="rank">פיצחת ב-${myGuesses} — טוב יותר מ-${better}% מהשחקנים היום</div>`;
   }
 
-  const max = Math.max(1, ...st.dist, st.fail);
-  for (let i = 1; i <= MAX; i++){
-    const v = st.dist[i-1] || 0;
-    html += `<div class="cb${iWon && i===myGuesses ? " me" : ""}"><i>${i}</i>
-      <u style="width:${12 + v/max*72}%">${v}</u></div>`;
+  /* חידות מלפני שהשרת התחיל לשמור פילוח מחזירות שורת מצרפים
+     נכונה ודליים ריקים. גרף של אפסים נראה שבור, אז מדלגים עליו
+     ומשאירים את הכותרת — שהיא נכונה בכל מקרה. */
+  const total = (st.dist || []).reduce((a, b) => a + (b || 0), 0) + (st.fail || 0);
+  if (total > 0){
+    const max = Math.max(1, ...st.dist, st.fail);
+    for (let i = 1; i <= MAX; i++){
+      const v = st.dist[i-1] || 0;
+      html += `<div class="cb${iWon && i===myGuesses ? " me" : ""}"><i>${i}</i>
+        <u style="width:${12 + v/max*72}%">${v}</u></div>`;
+    }
+    if (st.fail)
+      html += `<div class="cb${!iWon ? " me" : ""}"><i>✕</i>
+        <u style="width:${12 + st.fail/max*72}%">${st.fail}</u></div>`;
   }
-  if (st.fail)
-    html += `<div class="cb${!iWon ? " me" : ""}"><i>✕</i>
-      <u style="width:${12 + st.fail/max*72}%">${st.fail}</u></div>`;
 
   el.innerHTML = html;
   el.classList.add("on");

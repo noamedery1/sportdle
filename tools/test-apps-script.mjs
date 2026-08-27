@@ -104,7 +104,8 @@ function makeEnv(seed = {}, opts = {}) {
   vm.createContext(sandbox);
   new vm.Script(readFileSync("server/apps-script.gs", "utf8")).runInContext(sandbox);
   return { sandbox, sheets, mails, triggers,
-           post: body => JSON.parse(sandbox.doPost({ postData: { contents: JSON.stringify(body) } })._s) };
+           post: body => JSON.parse(sandbox.doPost({ postData: { contents: JSON.stringify(body) } })._s),
+           get:  param => sandbox.doGet({ parameter: param })._s };
 }
 
 let pass = 0, fail = 0;
@@ -179,6 +180,53 @@ console.log("\n=== טקסט חופשי: כשהמייל לא יוצא ===");
   const rowC = fb(boom);
   check("שליחה שנופלת: השגיאה נרשמת והטקסט נשמר",
         String(rowC[6]).startsWith("נכשל:") && String(rowC[4]).includes("אלירן אטר"), rowC);
+}
+
+/* ============================================================
+   1ב. פילוח הניחושים וסטטיסטיקת הקהילה
+   ------------------------------------------------------------
+   הקליינט (renderComm) כבר בנוי סביב dist ו-fail. הבדיקות כאן הן
+   על החוזה בין שני הצדדים: מערך מאופס-אינדקס באורך MAX_GUESSES,
+   ודלי נפרד למי שלא פיצח.
+   ============================================================ */
+console.log("\n=== פילוח ניחושים ===");
+{
+  const env = makeEnv();
+  const { post, get, sheets } = env;
+  const done = (guesses, won) => post({ type: "done", club: "beitar", puzzle: 7, guesses, won });
+
+  done(3, true); done(3, true); done(5, true); done(8, true);
+  done(4, false);                          // לא פיצח — guesses לא נספר
+  post({ type: "view", club: "beitar", puzzle: 7 });
+
+  const head = sheets.get("daily").rows[0];
+  check("daily קיבל עמודות פילוח", head.length === 17 && head[8] === "1" && head[16] === "לא פיצחו", head);
+
+  const st = JSON.parse(get({ puzzle: "7", club: "beitar" })).stats;
+  check("סיימו 5, פיצחו 4", st.done === 5 && st.wins === 4, st);
+  check("dist מאופס-אינדקס: שניים ב-3 ניחושים", st.dist[2] === 2, st.dist);
+  check("dist באורך 8", st.dist.length === 8, st.dist.length);
+  check("אחד ב-5 ואחד ב-8", st.dist[4] === 1 && st.dist[7] === 1, st.dist);
+  check("מי שלא פיצח בדלי הנפרד", st.fail === 1, st.fail);
+  check("ממוצע רק על מי שפיצח", st.avg === 4.8, st.avg);   // (3+3+5+8)/4
+  check("סכום dist + fail = סיימו",
+        st.dist.reduce((a, b) => a + b, 0) + st.fail === st.done);
+
+  /* אותה חידה במועדון אחר היא שורה אחרת — וגם מטמון אחר */
+  const st2 = JSON.parse(get({ puzzle: "7", club: "maccabi-ta" })).stats;
+  check("חידה 7 של מכבי אינה של בית\"ר", st2 === null, st2);
+
+  const missing = JSON.parse(get({ puzzle: "999", club: "beitar" }));
+  check("חידה שאין עליה נתונים מחזירה stats null", missing.ok === true && missing.stats === null, missing);
+}
+
+console.log("\n=== JSONP ===");
+{
+  const { get } = makeEnv();
+  const ok = get({ puzzle: "1", club: "beitar", callback: "__bs123" });
+  check("שם פונקציה תקין נעטף", ok.startsWith("__bs123(") && ok.endsWith(");"), ok);
+  const bad = get({ puzzle: "1", club: "beitar", callback: "alert(1)//" });
+  check("שם פסול לא נעטף — חוזר JSON", bad.startsWith("{"), bad);
 }
 
 /* ============================================================
