@@ -183,6 +183,39 @@ console.log("\n=== טקסט חופשי: כשהמייל לא יוצא ===");
 }
 
 /* ============================================================
+   1א2. בלמי ההצפה של הפידבק
+   ------------------------------------------------------------
+   הנקודת קצה פתוחה, ולכן זה מה שמגן על מכסת 100 המיילים ליום.
+   ============================================================ */
+console.log("\n=== פידבק: בלמי הצפה ===");
+{
+  const { post, mails } = makeEnv();
+  const send = (text, rid) => post({ type: "feedback", text, rid });
+
+  const r1 = send("השם של אלירן אטר כתוב לא נכון", "aaaaaa01");
+  check("הודעה ראשונה עוברת", r1.ok === true && !r1.dup, r1);
+
+  const dup = send("השם של אלירן אטר כתוב לא נכון", "aaaaaa01");
+  check("אותו טקסט מאותו שולח מזוהה ככפילות", dup.dup === true, dup);
+  check("ולא נשלח מייל שני", mails.length === 1, mails.length);
+
+  /* חמש הודעות שונות מותרות, השישית לא */
+  const res = [];
+  for (let i = 2; i <= 7; i++) res.push(send("הודעה שונה מספר " + i, "aaaaaa01"));
+  const blocked = res.filter(r => r.ok === false);
+  check("השולח נחסם אחרי 5 הודעות", blocked.length >= 1, res.map(r => r.ok));
+  check("וההודעה מוסברת בעברית", /יותר מדי/.test(blocked[0].error), blocked[0]);
+
+  /* rid נשלט בידי הקליינט — התקרה השעתית היא ההגנה האמיתית */
+  const many = [];
+  for (let i = 0; i < 30; i++)
+    many.push(post({ type: "feedback", text: "הודעה ייחודית " + i, rid: "bb" + String(i).padStart(6, "0") }));
+  const globallyBlocked = many.filter(r => r.ok === false && /עומס/.test(r.error || ""));
+  check("תקרה שעתית עוצרת גם כשכל בקשה עם rid אחר", globallyBlocked.length >= 1,
+        many.filter(r => !r.ok).length + " נחסמו מ-30");
+}
+
+/* ============================================================
    1ב. פילוח הניחושים וסטטיסטיקת הקהילה
    ------------------------------------------------------------
    הקליינט (renderComm) כבר בנוי סביב dist ו-fail. הבדיקות כאן הן

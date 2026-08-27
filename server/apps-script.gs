@@ -64,6 +64,11 @@ const DAILY_HEAD_ = ['חידה', 'נכנסו', 'סיימו', 'פיצחו', 'אח
 const MAX_FIX_ROWS   = 20000;   // מעבר לזה הגיליון מסרב לקבל
 const MAX_PER_RID    = 15;      // תיקונים למדווח בחלון של 6 שעות
 const MAX_TEXT       = 1500;    // אורך פידבק חופשי
+const MAX_FEEDBACK      = 5;    // הודעות פידבק לשולח בחלון של 6 שעות
+/* התקרה השעתית היא זו שמגנה על מכסת המיילים (100 ליום בחשבון רגיל).
+   rid נשלט בידי הקליינט ואפשר להמציא אותו, ולכן תקרה לפי rid לבדה
+   אינה הגנה — היא רק מונעת לחיצה כפולה תמימה. */
+const MAX_FEEDBACK_HOUR = 20;
 
 /* ============================================================
    נתיב הכתיבה
@@ -166,6 +171,34 @@ function handleFeedback_(d) {
   var player  = str_(d.player, 40);
   var contact = str_(d.contact, 80);
 
+  /* בלמי הצפה, כמו שיש לטופס התיקון.
+     עד כאן לא היה כאן שום דבר: הנקודת קצה פתוחה, ולכן כל אחד היה
+     יכול למלא את הגיליון ולשרוף את מכסת 100 המיילים ליום. אחרי זה
+     פידבק אמיתי מפסיק להגיע לתיבה — הוא נשמר בגיליון עם "אין מכסה",
+     וזה לא מצב שכדאי להגיע אליו.
+
+     המזהה הוא rid מהקליינט אם נשלח, ואחרת חתימה של התוכן. אין כאן
+     זהות ולא ניסיון לזהות — רק שלא יגיעו אלף שורות בדקה. */
+  var cache = CacheService.getScriptCache();
+  var who   = /^[a-z0-9]{6,24}$/.test(String(d.rid || '')) ? String(d.rid) : 'anon';
+  var fp    = 'fb:' + who + ':' + text.length + ':' + text.slice(0, 24);
+
+  if (cache.get(fp)) return json_({ ok: true, dup: true });        // אותו טקסט פעמיים
+
+  var cKey = 'fbc:' + who;
+  var cnt  = Number(cache.get(cKey) || 0);
+  if (cnt >= MAX_FEEDBACK) return json_({ ok: false, error: 'יותר מדי הודעות. נסו מאוחר יותר.' });
+
+  /* תקרה גלובלית לשעה, כי rid נשלט בידי הקליינט ואפשר להמציא אותו
+     בכל בקשה. זו התקרה שבאמת מגנה על המכסה. */
+  var gKey = 'fbg:' + Math.floor(new Date().getTime() / 3600000);
+  var gCnt = Number(cache.get(gKey) || 0);
+  if (gCnt >= MAX_FEEDBACK_HOUR) return json_({ ok: false, error: 'עומס. נסו מאוחר יותר.' });
+
+  cache.put(fp, '1', 21600);
+  cache.put(cKey, String(cnt + 1), 21600);
+  cache.put(gKey, String(gCnt + 1), 3600);
+
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(SHEET_FEEDBACK);
   if (!sh) {
@@ -257,7 +290,18 @@ function handleEvent_(d) {
     d.won === true ? 'כן' : (d.won === false ? 'לא' : ''),
     clubOf_(d)
   ]);
-  rollup_(ss, d);
+
+  /* rollup_ הוא קרא-שנה-כתוב על תאים, ובלי נעילה שתי בקשות במקביל
+     דורסות זו את זו וספירות נעלמות. appendRow לעיל אטומי ולא צריך
+     נעילה, ולכן הנעילה עוטפת רק את הסיכום.
+
+     tryLock ולא waitLock: אם התור עמוס, עדיף לאבד ספירה אחת מלהחזיק
+     בקשה עד לפסק הזמן — הדף של השחקן מחכה לתשובה הזאת. */
+  var lock = LockService.getScriptLock();
+  if (lock.tryLock(10000)) {
+    try { rollup_(ss, d); }
+    finally { lock.releaseLock(); }
+  }
   return json_({ ok: true });
 }
 

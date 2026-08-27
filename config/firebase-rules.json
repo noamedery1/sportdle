@@ -1,18 +1,69 @@
 {
+  "_comment": [
+    "חוקי Realtime Database. להדביק בקונסולה: Firebase → Realtime Database → Rules.",
+    "",
+    "שינוי מהגרסה הקודמת, ולמה:",
+    "קודם הנתיב היה rooms/$slug/$code עם $slug כתבנית פראית ו-.write:true.",
+    "כלומר כל אחד בעולם היה יכול לכתוב ל-rooms/<כל מחרוזת>/<4 תווים> תוכן בכל",
+    "גודל — בתוכנית החינמית יש 1GB אחסון ו-10GB תעבורה לחודש. עכשיו יש נתיב",
+    "אחד מפורש, rooms/v2/<code>, וכל שדה בו מאומת. כתיבה לכל נתיב אחר נדחית.",
+    "",
+    "$other: false דוחה כל מפתח שלא מופיע כאן. זו ההגנה האמיתית מפני מילוי",
+    "המסד: בלעדיה אימות שדות בודדים לא מונע מאף אחד להוסיף שדה משלו.",
+    "המשמעות: **שדה חדש בקוד מחייב שורה כאן**, אחרת הכתיבה תידחה בשקט.",
+    "",
+    "החדר עצמו נשאר קריא וכתיב לכל מי שיודע את הקוד. זה בכוונה — אין",
+    "התחברות במשחק, והקוד בן ארבעה תווים הוא כל הסוד. מה שהוגן: ניקוד הוא",
+    "משחק חברים, לא דירוג עולמי."
+  ],
   "rules": {
     "rooms": {
-      "$slug": {
+      "v2": {
         "$code": {
           ".read": true,
           ".write": true,
-          ".validate": "$code.length === 4",
-          "settings": {
-            "rounds":   { ".validate": "newData.isNumber() && newData.val() <= 20" },
-            "revealMs": { ".validate": "newData.isNumber() && newData.val() >= 4000" }
+          ".validate": "$code.length === 4 && newData.hasChildren(['host'])",
+
+          "host":      { ".validate": "newData.isString() && newData.val().length <= 40" },
+          "status":    { ".validate": "newData.isString() && newData.val().length <= 12" },
+          "round":     { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 40" },
+          "game":      { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 1000" },
+          "createdAt": { ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000" },
+          "roundStartedAt": { ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000" },
+
+          "clubs": {
+            "$i": { ".validate": "newData.isString() && newData.val().length <= 20" }
           },
+
+          "settings": {
+            "rounds":   { ".validate": "newData.isNumber() && newData.val() >= 1    && newData.val() <= 20" },
+            "revealMs": { ".validate": "newData.isNumber() && newData.val() >= 4000 && newData.val() <= 60000" },
+            "roundMs":  { ".validate": "newData.isNumber() && newData.val() >= 4000 && newData.val() <= 600000" },
+            "$other":   { ".validate": false }
+          },
+
+          "results": {
+            "$idx": {
+              ".validate": "$idx.matches(/^[0-9]{1,2}$/)",
+              "winner": { ".validate": "newData.isString() && newData.val().length <= 40" },
+              "pts":    { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 20" },
+              "at":     { ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000" },
+              "$other": { ".validate": false }
+            }
+          },
+
           "players": {
-            "$uid": { ".validate": "newData.hasChildren(['name'])" }
-          }
+            "$uid": {
+              ".validate": "$uid.length <= 40 && newData.hasChildren(['name'])",
+              "name":  { ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 24" },
+              "score": { ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 500" },
+              "at":    { ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000" },
+              "gone":  { ".validate": "newData.isBoolean()" },
+              "$other": { ".validate": false }
+            }
+          },
+
+          "$other": { ".validate": false }
         }
       }
     }

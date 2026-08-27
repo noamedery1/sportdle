@@ -25,8 +25,9 @@ let SLUGS = [SLUG];
    וקיבל "קוד לא נמצא", בלי שום רמז למה. עכשיו יש מרחב שמות אחד,
    והמועדונים של החדר נשמרים ברשומה עצמה. מי שמצטרף מאמץ אותם.
 
-   חוקי הפיירבייס משתמשים ב-$slug כתבנית פראית, ולכן "v2" עובר בהם
-   בלי שינוי — כולל אימות `$code.length === 4`.
+   חוקי הפיירבייס מגדירים במפורש את `rooms/v2/$code` בלבד, וכל שדה
+   בתוכו מאומת. **שדה חדש כאן מחייב שורה ב-config/firebase-rules.json**,
+   אחרת הכתיבה תידחה בשקט: החוקים דוחים כל מפתח שאינו ברשימה.
    ------------------------------------------------------------ */
 const RNS = "v2";
 const roomPath = code => `rooms/${RNS}/${code}`;
@@ -532,13 +533,40 @@ ${link}
     }catch(e){ /* ביטול שיתוף הוא לא שגיאה */ }
   });
 
-  $("#btnAgain").addEventListener("click", () => { mem.clear(); location.reload(); });
-  $("#btnHome").addEventListener("click", () => { mem.clear(); location.href = "./"; });
+  /* גם היציאה ממסך הסיום מנקה. זה המסלול השכיח: המשחק נגמר, כולם
+     לוחצים "חדר חדש", והחדר הישן נשאר במסד לנצח. */
+  async function markGoneAndDrop(){
+    if (!room) return;
+    try{ await update(ref(db, roomPath(room) + `/players/${uid}`), { gone: true }); }catch(e){}
+    await dropRoomIfEmpty();
+  }
+  $("#btnAgain").addEventListener("click", async () => {
+    await markGoneAndDrop(); mem.clear(); location.reload();
+  });
+  $("#btnHome").addEventListener("click", async () => {
+    await markGoneAndDrop(); mem.clear(); location.href = "./";
+  });
   
   /* יציאה מרצון */
+  /* חדר שכולם יצאו ממנו נמחק.
+
+     עד כאן שום חדר לא נמחק לעולם: רק דגל הנוכחות התעדכן. כל חדר
+     שנפתח מאז ההשקה עוד יושב במסד, ובתוכנית החינמית יש 1GB. אין כאן
+     שרת שיכול לנקות, ולכן היוצא האחרון מכבה את האור — הפעולה חוקית
+     לפי החוקים בדיוק כמו כל כתיבה אחרת לחדר. */
+  async function dropRoomIfEmpty(){
+    if (!room) return;
+    try {
+      const others = allPlayers().filter(p => p.id !== uid && !p.gone);
+      if (others.length) return;
+      await set(ref(db, roomPath(room)), null);
+    } catch (e) { /* מישהו הצטרף בדיוק עכשיו — שיישאר */ }
+  }
+
   async function leaveRoom(){
     if (room){
       try{ await update(ref(db, roomPath(room) + `/players/${uid}`), { gone: true }); }catch(e){}
+      await dropRoomIfEmpty();
     }
     if (presenceOff) presenceOff();
     mem.clear();

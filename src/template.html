@@ -392,12 +392,8 @@ html{scrollbar-gutter:stable}
 .rev{text-align:center;margin-top:14px;font-size:15px}
 .rev b{color:var(--brand);font-size:19px;font-family:'Suez One',serif}
 
-.nav{display:flex;gap:6px;background:var(--ink-2);border:1px solid var(--line);
-  border-radius:24px;padding:4px;max-width:300px;margin:14px auto 0}
-.nav a{flex:1;text-align:center;padding:8px 10px;border-radius:20px;text-decoration:none;
-  color:var(--dim);font-size:13.5px;font-weight:700;transition:background .15s,color .15s}
-.nav a.on{background:var(--brand);color:var(--ink);font-weight:900}
-.nav a:not(.on):hover{color:var(--text)}
+/* .nav מעוצב למעלה, על <button>. כאן היה העתק שני שמעצב <a> —
+   והמבנה לא מכיל <a> בתוך .nav מעולם. הוסר. */
 
 /* בחירת מועדונים לחדר. הסלקטור כולל #versusView כי הכלל הכללי
    `#versusView button` קובע width:100% ו-min-height, ובלי מזהה
@@ -472,87 +468,9 @@ body.kb .feed{min-height:0}
   .nav button{transition:none}
 }
 
-footer{margin-top:26px;padding-top:14px;border-top:1px solid rgba(46,46,54,.55);
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  font-size:11px;color:#55555E;line-height:1.5}
-.credit{display:inline-flex;align-items:center;gap:6px;text-decoration:none;
-  color:var(--dim);font-size:11.5px;font-weight:500;white-space:nowrap}
-.credit b{color:#7A7A84;font-weight:700}
-.credit:hover{color:var(--brand)}
-.credit:hover b{color:var(--brand)}
-footer .who{text-align:start}
-footer .who a{color:#55555E;text-decoration:none}
-footer .who a:hover{color:var(--dim)}
-#comm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
-#comm.on{display:block}
-#comm .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
-#comm .hd b{color:var(--text);font-weight:900}
-.stats{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09)}
-.stats .nums{display:flex;justify-content:center;gap:22px;margin-bottom:12px}
-.stats .nums div{font-size:10.5px;color:var(--dim)}
-.stats .nums b{display:block;font-size:21px;color:var(--text);font-weight:900;
-  font-variant-numeric:tabular-nums;line-height:1.2}
-.bars{display:flex;flex-direction:column;gap:3px}
-.bars .b{display:flex;align-items:center;gap:6px;font-size:10.5px;color:var(--dim)}
-.bars .b i{font-style:normal;width:9px;text-align:center;font-weight:700;color:var(--text)}
-.bars .b span{background:var(--slate);border-radius:3px;padding:1px 5px;min-width:20px;
-  text-align:center;color:var(--text);font-weight:700;font-size:10px;
-  font-variant-numeric:tabular-nums;transition:width .3s}
-.bars .b.now span{background:var(--brand);color:var(--ink)}
-
-button.wa{background:#1FA855;color:#fff}
-textarea.rt{width:100%;min-height:110px;resize:vertical;background:var(--ink);
-  border:1.5px solid var(--line);border-radius:var(--r);padding:11px 13px;
-  color:var(--text);font-family:inherit;font-size:15px;line-height:1.55;outline:none;margin-top:4px}
-textarea.rt:focus{border-color:var(--brand)}
-input.rc{width:100%;background:var(--ink);border:1.5px solid var(--line);border-radius:var(--r);
-  padding:11px 13px;color:var(--text);font-family:inherit;font-size:15px;outline:none;margin-top:4px}
-input.rc:focus{border-color:var(--brand)}
-.rlab{font-size:12px;color:var(--dim);margin-top:14px;display:block}
-#repStat{margin-top:10px;font-size:13px;min-height:18px}
-#repStat.ok{color:var(--brand)} #repStat.bad{color:#E8B77A}
-
-/* ---------- אתמול ---------- */
-#yday{margin:16px 0 0;padding:9px 12px;border-radius:var(--r);background:var(--ink-2);
-  border:1px solid var(--line);font-size:12.5px;color:var(--dim);display:none;
-  align-items:center;justify-content:space-between;gap:10px;line-height:1.4}
-#yday.on{display:flex}
-#yday b{color:var(--text);font-weight:700}
-#yday button{background:none;border:1px solid var(--line);border-radius:14px;padding:4px 12px;
-  color:var(--dim);font-family:inherit;font-size:11.5px;font-weight:700;cursor:pointer;
-  margin:0;width:auto;white-space:nowrap;flex:0 0 auto}
-#yday button:hover{color:var(--brand);border-color:var(--brand)}
-
-/* ---------- רמז ---------- */
-#hintRow{margin-top:14px;text-align:center;display:none}
-#hintRow.on{display:block}
-#hintBtn{background:none;border:1.5px dashed var(--line);border-radius:var(--r);
-  padding:9px 16px;color:var(--dim);font-family:inherit;font-size:13px;font-weight:700;
-  cursor:pointer;margin:0;width:auto}
-#hintBtn:hover{color:var(--brand);border-color:var(--brand)}
-#hintOut{font-size:13px;color:var(--brand);font-weight:700;line-height:1.5;
-  background:rgba(var(--brand-rgb),.07);border:1px solid rgba(var(--brand-rgb),.28);
-  border-radius:var(--r);padding:9px 12px}
-#hintOut:empty{display:none}
-#hintBtn + #hintOut{margin-top:9px}
-
-/* ---------- ארכיון ---------- */
-.arch{display:flex;flex-direction:column;gap:6px;margin-top:8px}
-.arch button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
-  background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px 13px;
-  color:var(--text);font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;margin:0}
-.arch button:hover{border-color:#4A4A56}
-.arch button.done{color:var(--dim)}
-.arch button i{font-style:normal;font-size:12px;font-weight:500;color:#5A5A64}
-.arch button i.win{color:var(--brand)} .arch button i.lose{color:var(--near)}
-.arch button.cur{border-color:var(--brand)}
-
-#report{margin-top:11px;font-size:11.5px}
-#report a{color:#5F5F69;text-decoration:none;border-bottom:1px dotted #3A3A44}
-#report a:hover{color:var(--brand);border-color:var(--brand)}
-.promo{margin-top:14px;padding-top:13px;border-top:1px solid rgba(255,255,255,.09);
-  font-size:12px;color:var(--dim)}
-.promo a{color:var(--brand);text-decoration:none;font-weight:700}
+/* ההעתק הכפול של הבלוק הזה הוסר. הוא היה מוכל במלואו בבלוק
+   שלמעלה (footer … .promo), ושכפול CSS מזמין דריפט: עדכון של
+   מופע אחד בלבד משאיר את התוצאה תלויה בסדר הכללים. */
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 
 /* ---------- טופס תיקון פרטי שחקן ----------
