@@ -610,10 +610,15 @@ const MIN_RANK = 20;   // "טוב מ-X%" דורש מדגם אמיתי, אחרת 
 /* הבקשה יוצאת בטעינת הדף ולא בסיום המשחק, כדי שהשורה תופיע מיד.
    ראה את ההסבר ב-finish. */
 let statsReq = null;
-function primeStats(){
+/* מקבל את מספר החידה במפורש, ולא קורא את puzzleNo.
+   הקריאה חייבת לצאת **לפני** loadPuzzle, כי loadPuzzle קורא ל-restore
+   שקורא ל-finish על חידה שכבר שוחקה — וכשזה קרה אחריו, statsReq היה
+   עדיין null ומי שנכנס לחידה שכבר פתר לא ראה שורה בכלל.
+   באותו רגע puzzleNo עוד שייך לחידה הקודמת, ולכן הפרמטר. */
+function primeStats(n){
   statsReq = null;
-  if (!ANALYTICS_URL || practice || puzzleNo !== todayNo) return;
-  statsReq = fetchStats(puzzleNo).catch(() => null);
+  if (!ANALYTICS_URL || n !== todayNo) return;
+  statsReq = fetchStats(n).catch(() => null);
 }
 
 function fetchStats(puzzle){
@@ -647,15 +652,29 @@ function renderComm(st, myGuesses, iWon){
   const pct = Math.round(st.wins / st.done * 100);
   let line = `<b>${pct}%</b> פיצחו היום`;
 
-  /* כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל */
+  /* המכנה הוא סכום הפילוח עצמו, ולא st.done.
+
+     done ו-wins נצברים מתחילת הדרך; dist ו-fail נצברים רק מהיום שבו
+     עמודות הפילוח נוספו לגיליון. חלוקה של מונה חדש במכנה היסטורי
+     נותנת מספר שגוי בלי להיראות שגוי — "59% פיצחו · גם 9% לא פיצחו"
+     על נתונים שבהם 41% לא פיצחו. שני הצדדים חייבים לבוא מאותה ספירה.
+
+     המשמעות: שורת ההשוואה תופיע רק כשייצטברו MIN_RANK מסיימים
+     **מאז ההוספה**. זה נכון וזה עדיף על מספר מהיר ולא נכון. */
+  const tot = (st.dist || []).reduce((a, b) => a + (b || 0), 0) + (st.fail || 0);
   let ranked = false;
-  if (iWon && st.done >= MIN_RANK){
-    let worse = st.fail || 0;
-    for (let i = myGuesses; i < MAX; i++) worse += (st.dist || [])[i] || 0;
-    const better = Math.round(worse / st.done * 100);
-    if (better >= 5){
-      line += ` · אתה טוב מ-<b>${better}%</b> מהם`;
-      ranked = true;
+  if (tot >= MIN_RANK){
+    if (iWon){
+      /* כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל */
+      let worse = st.fail || 0;
+      for (let i = myGuesses; i < MAX; i++) worse += (st.dist || [])[i] || 0;
+      const better = Math.round(worse / tot * 100);
+      if (better >= 5){ line += ` · אתה טוב מ-<b>${better}%</b> מהם`; ranked = true; }
+    } else {
+      /* מי שלא פיצח קיבל קודם רק את שיעור ההצלחה של האחרים, וזה
+         נקרא כמו נזיפה. אותו נתון מהצד השני אומר שהוא בחברה. */
+      const same = Math.round((st.fail || 0) / tot * 100);
+      if (same >= 5){ line += ` · גם <b>${same}%</b> לא פיצחו`; ranked = true; }
     }
   }
   /* הממוצע רק כשאין דירוג — שניהם יחד עושים את השורה עמוסה */
@@ -1073,9 +1092,9 @@ function bootClub(slug){
     }
   }
 
+  primeStats(todayNo);     // לפני loadPuzzle — ראה את ההסבר שם
   loadPuzzle(todayNo);
   track("view");
-  primeStats();
 }
 
 /* ============================================================
