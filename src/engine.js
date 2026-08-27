@@ -242,11 +242,14 @@ function finish(won){
     addStat(won, guesses.length);
     renderStats(won ? guesses.length : 0);
     track("done", {guesses: guesses.length, won, hint: hinted});
-    // המתנה קצרה כדי שהדיווח שלנו כבר ייספר
-    if (ANALYTICS_URL) setTimeout(() => {
-      const n = guesses.length, w = won;
-      fetchStats(puzzleNo).then(r => renderComm(r && r.stats, n, w));
-    }, 1200);
+    /* השורה מגיעה מבקשה שיצאה **בטעינת הדף**, לא כאן. Apps Script
+       מגיב באיטיות — הפניה, התנעה קרה, קריאת גיליון — וכשהבקשה יצאה
+       ברגע הסיום היא הופיעה 20 שניות אחרי שהשחקן קרא את התוצאה, ואז
+       הוא כבר סגר את המסך. עכשיו התשובה כבר בכיס.
+
+       המחיר הוא שהמספר בן כמה דקות. ל"59% פיצחו היום" זה לא משנה
+       דבר, ולעדכניות של שנייה אין שום ערך מול הופעה מיידית. */
+    if (statsReq) statsReq.then(r => renderComm(r && r.stats, guesses.length, won));
     $("#next").style.display = "";
   } else {
     if (!practice) saveState();
@@ -602,7 +605,16 @@ $("#hintBtn").addEventListener("click", ()=>{
    10 אנשים הוא מספר סביר. הפילוח ושורת הדירוג לא — עם 9 מסיימים
    אדם אחד הוא 11%, והגרף נראה מקרי. לכן הם ממתינים ל-20. */
 const MIN_HEAD = 10;   // מתחת לזה אין בכלל מה להראות
-const MIN_DIST = 20;   // הגרף ושורת "טוב יותר מ-" דורשים מדגם אמיתי
+const MIN_RANK = 20;   // "טוב מ-X%" דורש מדגם אמיתי, אחרת אדם אחד הוא 11%
+
+/* הבקשה יוצאת בטעינת הדף ולא בסיום המשחק, כדי שהשורה תופיע מיד.
+   ראה את ההסבר ב-finish. */
+let statsReq = null;
+function primeStats(){
+  statsReq = null;
+  if (!ANALYTICS_URL || practice || puzzleNo !== todayNo) return;
+  statsReq = fetchStats(puzzleNo).catch(() => null);
+}
 
 function fetchStats(puzzle){
   // GET רגיל, ואם CORS חוסם — נפילה ל-JSONP
@@ -626,43 +638,30 @@ function renderComm(st, myGuesses, iWon){
   const el = $("#comm");
   if (!st || st.done < MIN_HEAD){ el.classList.remove("on"); return; }
 
-  /* בלי המספר המוחלט של השחקנים — רק יחסים.
-     מספר קטן נראה עלוב גם כשהוא נכון, וברגע שהכותרת מסתירה אותו
-     גם הגרף חייב: בר שכתוב עליו "2" מדליף בדיוק את מה שהוסתר.
-     MIN_HEAD חוסם את הבלוק כולו מתחת ל-10 מסיימים. */
+  /* שורה אחת, בלי גרף.
+     הגרף היה שמונה ברים ועוד שורת כישלון — הוא האריך את מסך התוצאה
+     פי שניים והתחרה בגרף האישי שממילא מוצג מתחתיו. מה שהשחקן רוצה
+     לדעת הוא מספר אחד: איך הוא מול האחרים. הוא נשאר.
+
+     בלי המספר המוחלט של השחקנים: מדגם קטן נראה עלוב גם כשהוא נכון. */
   const pct = Math.round(st.wins / st.done * 100);
-  let html = `<div class="hd"><b>${pct}%</b> פיצחו היום${
-    st.avg ? ` · ממוצע <b>${st.avg}</b> ניחושים` : ""}</div>`;
+  let line = `<b>${pct}%</b> פיצחו היום`;
 
-  // כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל
-  if (iWon && st.done >= MIN_DIST){
-    let worse = st.fail;
-    for (let i = myGuesses; i < MAX; i++) worse += st.dist[i] || 0;
+  /* כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל */
+  let ranked = false;
+  if (iWon && st.done >= MIN_RANK){
+    let worse = st.fail || 0;
+    for (let i = myGuesses; i < MAX; i++) worse += (st.dist || [])[i] || 0;
     const better = Math.round(worse / st.done * 100);
-    if (better >= 5)
-      html += `<div class="rank">פיצחת ב-${myGuesses} — טוב יותר מ-${better}% מהשחקנים היום</div>`;
-  }
-
-  /* חידות מלפני שהשרת התחיל לשמור פילוח מחזירות שורת מצרפים
-     נכונה ודליים ריקים. גרף של אפסים נראה שבור, אז מדלגים עליו
-     ומשאירים את הכותרת — שהיא נכונה בכל מקרה. */
-  const total = (st.dist || []).reduce((a, b) => a + (b || 0), 0) + (st.fail || 0);
-  if (total > 0 && st.done >= MIN_DIST){
-    const max   = Math.max(1, ...st.dist, st.fail);
-    /* אחוז מהמסיימים. תווית ריקה כשאין אף אחד — "0%" בכל בר ריק
-       הוא רעש, והרוחב לבד אומר את זה. */
-    const label = v => v ? Math.round(v / total * 100) + "%" : "";
-    for (let i = 1; i <= MAX; i++){
-      const v = st.dist[i-1] || 0;
-      html += `<div class="cb${iWon && i===myGuesses ? " me" : ""}"><i>${i}</i>
-        <u style="width:${12 + v/max*72}%">${label(v)}</u></div>`;
+    if (better >= 5){
+      line += ` · אתה טוב מ-<b>${better}%</b> מהם`;
+      ranked = true;
     }
-    if (st.fail)
-      html += `<div class="cb${!iWon ? " me" : ""}"><i>✕</i>
-        <u style="width:${12 + st.fail/max*72}%">${label(st.fail)}</u></div>`;
   }
+  /* הממוצע רק כשאין דירוג — שניהם יחד עושים את השורה עמוסה */
+  if (!ranked && st.avg) line += ` · ממוצע <b>${st.avg}</b> ניחושים`;
 
-  el.innerHTML = html;
+  el.innerHTML = `<div class="hd">${line}</div>`;
   el.classList.add("on");
 }
 
@@ -1076,6 +1075,7 @@ function bootClub(slug){
 
   loadPuzzle(todayNo);
   track("view");
+  primeStats();
 }
 
 /* ============================================================
