@@ -254,6 +254,7 @@ function finish(won){
   tickCountdown();
   $("#share").style.display = practice ? "none" : "";
   $("#wa").style.display = practice ? "none" : "";
+  $("#story").style.display = practice ? "none" : "";
   $("#result").classList.add("on");
   $("#result").scrollIntoView({behavior:"smooth", block:"nearest"});
 }
@@ -320,9 +321,165 @@ $("#wa").addEventListener("click", ()=>{
   window.open("https://wa.me/?text=" + encodeURIComponent(shareText()), "_blank", "noopener");
 });
 
+/* ============================================================
+   תמונה לסטורי — 1080×1920
+   ------------------------------------------------------------
+   הטקסט לוואטסאפ מעולה, ובאינסטגרם סטורי הוא פשוט לא עובד: אין
+   לאן להדביק אותו. דפי האוהדים הישראליים חיים בסטוריז, ולכן
+   התוצאה צריכה להיות תמונה.
+
+   הרשת מצוירת כריבועים בצבעי המועדון ולא כאמוג'י. אמוג'י בקנבס
+   מתרנדר לפי הפונט של המערכת — הוא נראה שונה בכל מכשיר, ובווינדוס
+   הוא שובר את הרשת. ריבוע הוא ריבוע בכל מקום.
+
+   השיתוף עובר דרך navigator.share עם קובץ, כי זה מה שפותח את
+   בורר האפליקציות באייפון ובאנדרואיד ומאפשר "שיתוף לסטורי".
+   הורדה היא הגיבוי לדסקטופ.
+   ============================================================ */
+const STORY_W = 1080, STORY_H = 1920;
+
+function roundRect(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  if (ctx.roundRect) ctx.roundRect(x, y, w, h, r);
+  else {
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y,     x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x,     y + h, r);
+    ctx.arcTo(x,     y + h, x,     y,     r);
+    ctx.arcTo(x,     y,     x + w, y,     r);
+  }
+  ctx.closePath();
+}
+
+async function storyCanvas(){
+  /* בלי זה השורה הראשונה מצוירת בפונט ברירת המחדל: הפונטים של
+     גוגל נטענים אסינכרונית, וקנבס לא ממתין להם כמו DOM. */
+  try { await document.fonts.ready; } catch(e){}
+
+  const cv = document.createElement("canvas");
+  cv.width = STORY_W; cv.height = STORY_H;
+  const ctx = cv.getContext("2d");
+  const C = club.colors || {};
+  const ink = C.ink || "#0C0C0E", brand = C.brand || "#FFC72C", near = C.near || "#8A6A1C";
+
+  ctx.fillStyle = ink;
+  ctx.fillRect(0, 0, STORY_W, STORY_H);
+
+  /* מסגרת שטוחה בצבע המועדון, ולא הילה מדורגת.
+     גרדיאנט על 1080×1920 יוצר מיליון גוונים ייחודיים, ו-PNG לא
+     דוחס אותם: הכרטיס שקל 510KB במקום 60. צבעים שטוחים נדחסים
+     כמעט לאפס, והמסגרת גם ממסגרת טוב יותר מהילה שכמעט לא נראית. */
+  ctx.strokeStyle = brand;
+  ctx.lineWidth = 6;
+  roundRect(ctx, 40, 40, STORY_W - 80, STORY_H - 80, 44);
+  ctx.stroke();
+
+  ctx.textAlign = "center";
+  try { ctx.direction = "rtl"; } catch(e){}
+
+  ctx.fillStyle = brand;
+  ctx.font = `900 132px "Suez One", serif`;
+  ctx.fillText(club.game, STORY_W/2, 300);
+
+  /* "חידה" לפני המספר — אותו כלל bidi כמו בטקסט השיתוף: בלי מילה
+     עברית ביניהם המספר נכנס לאמצע שם המשחק ושובר אותו. */
+  ctx.fillStyle = "#8C8C94";
+  ctx.font = `500 54px Heebo, sans-serif`;
+  ctx.fillText(`חידה #${puzzleNo}`, STORY_W/2, 386);
+
+  const won = guesses.length && guesses[guesses.length-1].name === answer.name;
+  ctx.fillStyle = won ? "#F2F2F0" : near;
+  ctx.font = `700 66px Heebo, sans-serif`;
+  ctx.fillText(won
+    ? `פיצחתי ב-${guesses.length} ${guesses.length === 1 ? "ניחוש" : "ניחושים"}`
+    : "לא פיצחתי הפעם", STORY_W/2, 510);
+
+  const streak = loadStreak().n;
+  if (streak > 1){
+    ctx.fillStyle = brand;
+    ctx.font = `900 48px Heebo, sans-serif`;
+    ctx.fillText(`רצף ${streak} ימים`, STORY_W/2, 586);
+  }
+
+  /* הרשת */
+  const rows = guesses.map(gs => compare(gs, answer).map(c => c.s));
+  const cols = rows.length ? rows[0].length : 5;
+  const cell = 96, gap = 18;
+  const gw = cols * cell + (cols - 1) * gap;
+  const x0 = (STORY_W - gw) / 2;
+  let y = 680;
+  const paint = { hit: brand, near: near, miss: "#24242A" };
+  for (const r of rows){
+    /* RTL: הרמז הראשון בימין, כמו על המסך */
+    r.forEach((s, i) => {
+      ctx.fillStyle = paint[s] || paint.miss;
+      roundRect(ctx, x0 + (cols - 1 - i) * (cell + gap), y, cell, cell, 20);
+      ctx.fill();
+    });
+    y += cell + gap;
+  }
+
+  /* מקרא */
+  y += 44;
+  const keys = [["מדויק", brand], ["קרוב", near], ["רחוק", "#24242A"]];
+  const kw = 300;
+  ctx.font = `500 42px Heebo, sans-serif`;
+  keys.forEach(([label, col], i) => {
+    const cx = STORY_W/2 + (1 - i) * kw;
+    ctx.fillStyle = col;
+    roundRect(ctx, cx - 26, y - 34, 52, 52, 12); ctx.fill();
+    ctx.fillStyle = "#8C8C94";
+    ctx.fillText(label, cx, y + 74);
+  });
+
+  ctx.fillStyle = "#F2F2F0";
+  ctx.font = `700 46px Heebo, sans-serif`;
+  ctx.fillText(String(SITE_URL).replace(/^https?:\/\//, ""), STORY_W/2, STORY_H - 130);
+
+  return cv;
+}
+
+async function shareStory(){
+  const cv = await storyCanvas();
+  const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+  if (!blob) throw new Error("הדפדפן לא הצליח לייצר את התמונה");
+  const name = `${club.slug}-${puzzleNo}.png`;
+  const file = new File([blob], name, { type: "image/png" });
+
+  /* canShare עם files הוא הבדיקה הנכונה: יש דפדפנים עם share
+     שמסרב לקבצים, ואז השיתוף נכשל בשקט אחרי שהמשתמש לחץ. */
+  if (navigator.canShare && navigator.canShare({ files: [file] })){
+    await navigator.share({ files: [file], text: `${club.game} · חידה #${puzzleNo}` });
+    return "shared";
+  }
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 4000);
+  return "downloaded";
+}
+
+$("#story").addEventListener("click", async () => {
+  const btn = $("#story"), was = btn.textContent;
+  btn.disabled = true; btn.textContent = "מכין…";
+  try {
+    const how = await shareStory();
+    btn.textContent = how === "shared" ? "נשלח ✓" : "ירד למחשב ✓";
+  } catch (e) {
+    /* ביטול של בורר השיתוף מגיע כ-AbortError וזו לא שגיאה */
+    btn.textContent = e && e.name === "AbortError" ? was : "לא הצלחנו לייצר תמונה";
+    if (!(e && e.name === "AbortError")) console.error("story:", e);
+  } finally {
+    btn.disabled = false;
+    setTimeout(() => btn.textContent = was, 2400);
+  }
+});
+
 $("#again").addEventListener("click", ()=>{
   practice = true; over = false; guesses = []; hinted = false;
   $("#share").style.display = "none";
+  $("#story").style.display = "none";
   $("#yday").classList.remove("on");
   $("#hintRow").classList.remove("on"); $("#hintOut").textContent = "";
   $("#hintBtn").style.display = "";
