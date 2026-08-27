@@ -67,9 +67,14 @@ async function startVersus(){
     = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
 
   /* המודול נטען לפני שנבחר מועדון, אז SLUG מקבל ערך התחלתי בלבד.
-     כאן — כשנכנסים ללשונית — כבר יש בחירה, ומסנכרנים. */
-  SLUG = (window.SPORTDEL && window.SPORTDEL.slug) || SLUG;
-  VKEY = `sportdel:${SLUG}:versus`;
+     כאן — כשנכנסים ללשונית — כבר יש בחירה, ומסנכרנים.
+
+     SLUGS חייב להסתנכרן כאן גם הוא. בלי זה הוא נשאר עם ברירת המחדל
+     של זמן הטעינה, ומי שנכנס לקרב מעמוד של חיפה קיבל את בית"ר
+     מסומנת — מועדון שאינו המועדון של העמוד. */
+  SLUG  = (window.SPORTDEL && window.SPORTDEL.slug) || SLUG;
+  SLUGS = [SLUG];
+  VKEY  = `sportdel:${SLUG}:versus`;
 
   const app = initializeApp(FIREBASE_CONFIG);
   const db  = getDatabase(app);
@@ -172,10 +177,19 @@ async function startVersus(){
   const vNorm = t => (t||"").replace(/[-־]/g," ").replace(/['"״׳]/g,"")
                            .replace(/\s+/g," ").trim();
   
-  const clubShort = slug => {
-    const c = (window.SPORTDEL && window.SPORTDEL.clubs || {})[slug];
-    return (c && c.short) || slug;
-  };
+  const clubOf = slug => (window.SPORTDEL && window.SPORTDEL.clubs || {})[slug];
+  const clubShort = slug => (clubOf(slug) || {}).short || slug;
+  const clubBrand = slug => ((clubOf(slug) || {}).colors || {}).brand || "#FFC72C";
+
+  /* טקסט שחור או לבן לפי בהירות הרקע. לא לוקחים את colors.ink של
+     המועדון — הוא כהה בכל החמישה, והצהוב של בית"ר דורש טקסט כהה
+     בעוד הכחול של מכבי דורש לבן. */
+  function inkOn(hex){
+    const h = String(hex).replace("#", "");
+    const n = parseInt(h.length === 3 ? h.replace(/./g, c => c + c) : h, 16);
+    const lum = 0.299 * ((n >> 16) & 255) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255);
+    return lum > 150 ? "#0C0C0E" : "#FFFFFF";
+  }
   const sameClubs = (a, b) =>
     a.length === b.length && a.every((s, i) => s === b[i]);   // שתיהן ממויינות
 
@@ -257,8 +271,14 @@ async function startVersus(){
       let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t;
       return ((t^t>>>14)>>>0)/4294967296; };
   }
-  /** בחירת סיבובים דטרמיניסטית מהקוד — כל המשתתפים מקבלים אותם שחקנים.
-      ~70% מהמוכרים, ~30% מהרחב, כדי לשמור על רעננות בלי סיבובים מתים. */
+  /* הזרע לבחירת הסיבובים: קוד החדר **ומספר המשחק**.
+     בלי מספר המשחק, "סיבוב חדש באותו חדר" היה מגריל בדיוק את אותם
+     שחקנים — הבחירה דטרמיניסטית מהקוד, וזה כל העניין שלה. */
+  const seedOf = () => `${room}#${(state && state.game) || 0}`;
+
+  /** בחירת סיבובים דטרמיניסטית מהזרע — כל המשתתפים מקבלים אותם
+      שחקנים. ~70% מהמוכרים, ~30% מהרחב, כדי לשמור על רעננות בלי
+      סיבובים מתים. */
   function pickRounds(code, n){
     let seed = 0; for (const c of code) seed = (seed*31 + c.charCodeAt(0))|0;
     const r = mulberry32(seed);
@@ -306,35 +326,46 @@ async function startVersus(){
 
   /* נבנה פעם אחת, ואחר כך מסונכרן בלבד.
      בנייה מחדש של ה-HTML בכל לחיצה מחליפה את הכפתורים בחדשים,
-     והפוקוס נופל — מי שמנווט במקלדת נזרק אחרי כל בחירה. */
+     והפוקוס נופל — מי שמנווט במקלדת נזרק אחרי כל בחירה.
+
+     המועדון של העמוד **אינו** בבורר: הוא בחדר תמיד ואי אפשר לבטל
+     אותו, וכפתור שלא ניתן לכיבוי הוא כפתור מטעה. הבורר הוא "מה
+     להוסיף", והכותרת אומרת את זה. */
   function paintClubPick(){
     if (!clubPick) return;
-    if (!clubPick.children.length) {
-      const all   = (window.SPORTDEL && window.SPORTDEL.clubs) || {};
-      const order = (window.SPORTDEL && window.SPORTDEL.order) || Object.keys(all);
-      clubPick.innerHTML = order
+    if (clubPick.dataset.base !== SLUG) {
+      const order = (window.SPORTDEL && window.SPORTDEL.order)
+                 || Object.keys((window.SPORTDEL && window.SPORTDEL.clubs) || {});
+      clubPick.dataset.base = SLUG;
+      clubPick.innerHTML = order.filter(s => s !== SLUG)
         .map(s => `<button type="button" data-club="${s}">${clubShort(s)}</button>`)
         .join("");
     }
     for (const b of clubPick.children) {
-      const on = SLUGS.includes(b.dataset.club);
+      const s  = b.dataset.club;
+      const on = SLUGS.includes(s);
       b.classList.toggle("on", on);
       b.setAttribute("aria-pressed", String(on));
+      /* צבע המועדון עצמו, לא צבע העמוד — כך הבחירה קריאה במבט */
+      const brand = clubBrand(s);
+      b.style.background  = on ? brand : "";
+      b.style.borderColor = on ? brand : "";
+      b.style.color       = on ? inkOn(brand) : "";
     }
     if (clubHint)
       clubHint.textContent = SLUGS.length === 1
-        ? `${POOL.length} שחקנים בבריכה · 6 רמזים`
-        : `${POOL.length} שחקנים מ-${SLUGS.length} מועדונים · 7 רמזים, כולל באילו מועדונים שיחק`;
+        ? `${clubShort(SLUG)} בלבד · ${POOL.length} שחקנים · 6 רמזים`
+        : `${SLUGS.length} מועדונים · ${POOL.length} שחקנים · 7 רמזים, כולל באילו מועדונים שיחק`;
   }
 
   if (clubPick) clubPick.addEventListener("click", e => {
     const b = e.target.closest("button");
     if (!b) return;
     const s = b.dataset.club;
-    /* חייב להישאר לפחות אחד — בריכה ריקה היא מסך מת */
-    const next = SLUGS.includes(s) ? SLUGS.filter(x => x !== s) : SLUGS.concat(s);
-    if (!next.length) return;
-    SLUGS = next.sort();
+    /* המועדון של העמוד לא בבורר, ולכן הוא לא יכול לצאת מהרשימה
+       והבריכה לא יכולה להתרוקן. */
+    if (s === SLUG) return;
+    SLUGS = (SLUGS.includes(s) ? SLUGS.filter(x => x !== s) : SLUGS.concat(s)).sort();
     refreshPools();
     paintClubPick();
   });
@@ -371,6 +402,7 @@ async function startVersus(){
         /* המועדונים הם חלק מהחדר ולא מהלקוח: מי שמצטרף מאמץ אותם,
            ולכן קוד עובד גם כשהמצטרף יושב על מועדון אחר. */
         clubs: SLUGS.slice().sort(),
+        game: 0,                       // מקדם בכל "סיבוב חדש", ומזריע את ההגרלה
         settings: { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 * (CLUES - 1) + 12000 },
         players: { [uid]: { name, score: 0, at: serverTimestamp() } }
       });
@@ -453,6 +485,53 @@ ${link}
     });
   });
   
+  /* ------------------------------------------------------------
+     סיבוב חדש באותו חדר
+
+     קודם מסך הסיום היה מבוי סתום: "חדר חדש" מרענן את הדף, כלומר כל
+     מי שהיה בחדר מתפזר וצריך לשלוח קוד מחדש. זו הנקודה שבה משחק
+     מוצלח נגמר בכלום, והיא גם הנקודה שבה קבוצה כן רוצה עוד סיבוב.
+
+     המארח מקדם את מספר המשחק, מאפס ניקוד ותוצאות, ומחזיר את החדר
+     ללובי. כל מי שנשאר בחדר נגרר איתו דרך onValue, בלי לשלוח כלום.
+     ------------------------------------------------------------ */
+  $("#btnRematch").addEventListener("click", async () => {
+    const hint = $("#endHint");
+    if (!isHost) { hint.textContent = "רק מי שפתח את החדר יכול להתחיל סיבוב חדש."; return; }
+    const btn = $("#btnRematch");
+    btn.disabled = true; hint.textContent = "";
+    try {
+      const scores = {};
+      for (const [id, p] of Object.entries(state.players || {}))
+        scores[id] = { ...p, score: 0 };
+      await update(roomRef, {
+        status: "lobby", round: 0, results: null, roundStartedAt: null,
+        game: ((state && state.game) || 0) + 1,
+        players: scores
+      });
+      /* בלי איפוס מקומי כאן: buildClues מאפס לכולם, ומפתח הרמזים
+         כולל את מספר המשחק. מנגנון אחד, מארח ואורחים אותו דבר. */
+    } catch (e) {
+      hint.textContent = "לא הצלחנו לפתוח סיבוב חדש: " + (e.message || e);
+    } finally { btn.disabled = false; }
+  });
+
+  /* שיתוף הטבלה הסופית. הלינק הוא לחדר עצמו, כדי שמי שמקבל את
+     ההודעה יוכל להיכנס לסיבוב הבא ולא רק לקרוא מי ניצח. */
+  $("#btnEndShare").addEventListener("click", async () => {
+    const rows = allPlayers()
+      .map((p, i) => `${i + 1}. ${p.name} — ${p.score || 0}`)
+      .join("\n");
+    const link = `${location.origin}${location.pathname}?room=${room}`;
+    const txt = `🏆 ${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"} · קרב חברים\n\n` +
+                `${rows}\n\nעוד סיבוב באותו חדר:\n${link}`;
+    try{
+      if (navigator.share) return void await navigator.share({ text: txt });
+      await navigator.clipboard.writeText(txt);
+      $("#endHint").textContent = "הועתק ✓";
+    }catch(e){ /* ביטול שיתוף הוא לא שגיאה */ }
+  });
+
   $("#btnAgain").addEventListener("click", () => { mem.clear(); location.reload(); });
   $("#btnHome").addEventListener("click", () => { mem.clear(); location.href = "./"; });
   
@@ -556,7 +635,7 @@ ${link}
   function stopTick(){ if (tick){ clearInterval(tick); tick = null; } }
   
   function runRound(){
-    const st = state.settings, rounds = pickRounds(room, st.rounds);
+    const st = state.settings, rounds = pickRounds(seedOf(), st.rounds);
     const idx = state.round;
     if (idx >= rounds.length){ finishGame(); return; }
   
@@ -568,7 +647,11 @@ ${link}
     show("scPlay");
     $("#rNum").textContent = idx + 1;
     $("#rTot").textContent = st.rounds;
-    if (lastStage === -1 || $("#clues").dataset.round != idx) buildClues(idx);
+    /* המפתח כולל את מספר המשחק, לא רק את הסיבוב. בסיבוב חדש באותו
+       חדר חוזרים ל-round 0, ובלי המשחק במפתח הרמזים לא נבנים מחדש —
+       ומי שכבר ענה בסיבוב 0 הקודם נשאר עם שדה חסום. */
+    const key = seedOf() + ":" + idx;
+    if (lastStage === -1 || $("#clues").dataset.round !== key) buildClues(idx, key);
     drawBoard("#liveBoard");
   
     stopTick();
@@ -585,13 +668,13 @@ ${link}
     }, 200);
   }
   
-  function buildClues(idx){
+  function buildClues(idx, key){
     const c = $("#clues");
-    c.dataset.round = idx; c.innerHTML = ""; lastStage = -1;
+    c.dataset.round = key || (seedOf() + ":" + idx); c.innerHTML = ""; lastStage = -1;
     answered = false; locked = 0;
     $("#answer").value = ""; $("#answer").disabled = false;
     $("#feed").textContent = ""; $("#feed").className = "feed";
-    const rounds = pickRounds(room, state.settings.rounds);
+    const rounds = pickRounds(seedOf(), state.settings.rounds);
     cluesOf(POOL[rounds[idx]]).forEach(([k,v]) => {
       const d = document.createElement("div");
       d.className = "clue";
@@ -732,7 +815,7 @@ ${link}
     const idx = state.round;
     if ((state.results || {})[idx]) return;
   
-    const rounds = pickRounds(room, state.settings.rounds);
+    const rounds = pickRounds(seedOf(), state.settings.rounds);
     const answer = POOL[rounds[idx]];
     const guess  = vNorm(inp.value);
     if (!guess) return;

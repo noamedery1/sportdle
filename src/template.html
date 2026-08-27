@@ -656,7 +656,7 @@ select.rc:focus{border-color:var(--brand)}
     <div class="card">
       <label for="vName">איך קוראים לך?</label>
       <input id="vName" maxlength="14" placeholder="השם שיופיע בטבלה" autocomplete="off">
-      <label>על אילו קבוצות?</label>
+      <label>להוסיף עוד קבוצות לחדר?</label>
       <div class="clubpick" id="clubPick"></div>
       <div class="pickhint" id="clubHint"></div>
       <label for="preReveal">כמה זמן בין רמז לרמז</label>
@@ -738,7 +738,10 @@ select.rc:focus{border-color:var(--brand)}
     <div class="card">
       <h2 style="text-align:center">סוף המשחק</h2>
       <div class="board" id="endBoard"></div>
-      <button id="btnAgain">חדר חדש</button>
+      <button id="btnRematch">אותו חדר, סיבוב חדש</button>
+      <button class="ghost" id="btnEndShare">שיתוף התוצאות</button>
+      <div class="pickhint" id="endHint" aria-live="polite"></div>
+      <button class="ghost" id="btnAgain">חדר חדש</button>
       <button class="ghost" id="btnHome">חזרה למשחק היומי</button>
     </div>
   </section>
