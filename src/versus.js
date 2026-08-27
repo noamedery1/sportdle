@@ -9,10 +9,27 @@ const FIREBASE_CONFIG = __FIREBASE__;
    פיירבייס לא יורד בכלל למי שמשחק רק את החידה היומית.
    ============================================================ */
 
-/* המועדון הנוכחי. משתנה כשמחליפים מועדון, וכל הנתיבים
-   `rooms/${SLUG}/${code}` מתעדכנים איתו אוטומטית. */
+/* המועדון הנוכחי — קובע את ברירת המחדל של החדר ואת מפתח האחסון. */
 let SLUG = (window.SPORTDEL && window.SPORTDEL.slug) || "beitar";
 let VKEY = `sportdel:${SLUG}:versus`;
+
+/* המועדונים שהחדר משחק עליהם. אחד = ההתנהגות המקורית.
+   יותר מאחד = בריכה מאוחדת, ורמז "מועדונים" נוסף. */
+let SLUGS = [SLUG];
+
+/* ------------------------------------------------------------
+   כל החדרים יושבים תחת מפתח אחד, ולא תחת המועדון.
+
+   קודם הנתיב היה `rooms/<slug>/<code>`, וזה שבר הצטרפות: מי שפתח
+   חדר על מכבי ושלח קוד לחבר שיושב על בית"ר — החבר חיפש בנתיב אחר
+   וקיבל "קוד לא נמצא", בלי שום רמז למה. עכשיו יש מרחב שמות אחד,
+   והמועדונים של החדר נשמרים ברשומה עצמה. מי שמצטרף מאמץ אותם.
+
+   חוקי הפיירבייס משתמשים ב-$slug כתבנית פראית, ולכן "v2" עובר בהם
+   בלי שינוי — כולל אימות `$code.length === 4`.
+   ------------------------------------------------------------ */
+const RNS = "v2";
+const roomPath = code => `rooms/${RNS}/${code}`;
 
 const $ = s => document.querySelector(s);
 let vReady = false, initVersus = null;
@@ -74,19 +91,70 @@ async function startVersus(){
      הסף מסתגל: מתחילים ב-5 עונות, ויורדים כל עוד יש פחות מ-40
      ב-CORE. לא יורדים מתחת ל-3 — נבדק בשטח, וזה שובר את המשחק. */
   let CORE = [], WIDE = [], POOL = [], CORE_MIN = 5;
+
+  /* ------------------------------------------------------------
+     איחוד בריכות של כמה מועדונים
+
+     אותו אדם הוא **רשומה נפרדת בכל מועדון** שבו שיחק, עם titles
+     ו-spells משלו לכל מועדון. בחמישייה יש 245 כאלה: 178 בשניים,
+     56 בשלושה, 9 בארבעה, ושניים בכל החמישה.
+
+     אריק בנדו נמצא בבריכת התשובות של בית"ר **וגם** של חיפה. איחוד
+     נאיבי היה מציג אותו כשתי תשובות שונות באותו חדר, וניחוש נכון
+     היה נחשב שגוי בחצי מהמקרים.
+
+     הזהות היא שם מנורמל + שנת לידה — אותו כלל מבני שבו enrich ממזג
+     רשומות. דמיון שמות לבד לא מספיק; שנת לידה זהה כן.
+
+     מה שנצבר על פני מועדונים:
+       clubs   — הרשימה עצמה, וזו גם הרמז החדש
+       titles  — סכום. שחקן שזכה בשני מועדונים אכן זכה כך
+       spells  — איחוד, ומהם עונה ראשונה = המוקדמת מכולן
+       seasons — סכום, כלומר עונות בליגה ולא במועדון
+     ------------------------------------------------------------ */
+  function mergePools(slugs){
+    const all = (window.SPORTDEL && window.SPORTDEL.clubs) || {};
+    const by = new Map();
+    for (const slug of slugs) {
+      const c = all[slug];
+      if (!c) continue;
+      for (const p of c.players) {
+        if (!p.born || !p.pos || !p.spells || !p.spells.length) continue;
+        const k = vNorm(p.he) + "|" + p.born;
+        let m = by.get(k);
+        if (!m) by.set(k, m = { he: p.he, pos: p.pos, nat: p.nat, born: p.born,
+                                clubs: [], spells: [], titles: 0, seasons: 0 });
+        m.clubs.push(slug);
+        m.titles  += p.titles || 0;
+        m.seasons += p.spells.reduce((n,[a,b]) => n + (b-a+1), 0);
+        for (const sp of p.spells) m.spells.push(sp);
+      }
+    }
+    /* סדר קבוע ולא סדר הקבצים. pickRounds נגזר מקוד החדר בלבד,
+       ולכן כל לקוח חייב לבנות את אותה בריכה בדיוק באותו סדר —
+       אחרת שני שחקנים באותו חדר יראו שחקנים שונים באותו סיבוב. */
+    for (const m of by.values()) {
+      m.clubs.sort();
+      m.spells.sort((a, b) => a[0] - b[0]);
+    }
+    return [...by.values()].sort((a, b) =>
+      (a.born - b.born) || (a.he < b.he ? -1 : a.he > b.he ? 1 : 0));
+  }
+
   function refreshPools(){
-    const raw = (window.SPORTDEL && window.SPORTDEL.players) || [];
-    /* seasons לא נשמר בקובץ הבנוי — הוא נגזר מ-spells, וזה חוסך
-       שדה כפול על פני חמישה מאגרים */
-    const ok  = raw.filter(p => p.born && p.pos)
-      .map(p => p.seasons ? p : { ...p, seasons: p.spells.reduce((n,[a,b]) => n + (b-a+1), 0) });
+    /* מסלול אחד לכל המצבים. במועדון בודד המיזוג הוא ללא-מעש —
+       הבנייה כבר אוכפת שאין שם עברי כפול באותו מועדון — וכך אין
+       שני מסלולים שיכולים להיפרד זה מזה בשקט. */
+    const ok = mergePools(SLUGS);
     CORE_MIN = 5;
     while (CORE_MIN > 3 && ok.filter(p => p.seasons >= CORE_MIN).length < 40) CORE_MIN--;
     CORE = ok.filter(p => p.seasons >= CORE_MIN);
     WIDE = ok.filter(p => p.seasons >= 3 && p.seasons < CORE_MIN);
     POOL = CORE.concat(WIDE);
+    /* מספר הרמזים תלוי במצב, ולכן גם הניקוד */
+    CLUES  = SLUGS.length > 1 ? 7 : 6;
+    POINTS = Array.from({ length: CLUES }, (_, i) => CLUES - i);
   }
-  refreshPools();
   
   const V_POS={GK:"שוער",DF:"מגן",MF:"קשר",FW:"חלוץ"};
   const V_NAT={IL:"ישראל",UA:"אוקראינה",HU:"הונגריה",GH:"גאנה",MK:"מקדוניה",PT:"פורטוגל",
@@ -104,9 +172,26 @@ async function startVersus(){
   const vNorm = t => (t||"").replace(/[-־]/g," ").replace(/['"״׳]/g,"")
                            .replace(/\s+/g," ").trim();
   
-  /* חמשת הרמזים, לפי סדר חשיפה */
+  const clubShort = slug => {
+    const c = (window.SPORTDEL && window.SPORTDEL.clubs || {})[slug];
+    return (c && c.short) || slug;
+  };
+  const sameClubs = (a, b) =>
+    a.length === b.length && a.every((s, i) => s === b[i]);   // שתיהן ממויינות
+
+  /* הרמזים, לפי סדר חשיפה.
+
+     בחדר מרובה־מועדונים נוסף "מועדונים" בראש, וזה הרמז השימושי
+     ביותר שם: הוא מצמצם את הבריכה יותר מכל אחד מהאחרים, והוא גם מה
+     שהופך "שיחק בכל החמישה" מטריוויה לרמז. שני שחקנים בלבד עשו את
+     זה, ומי שרואה חמישה מועדונים כבר יודע כמעט הכול.
+
+     שני הרמזים שמשמעותם משתנה בחדר מעורב מטופלים ב-mergePools:
+     "תארים" הוא סכום על פני המועדונים, ו"עונה ראשונה" היא המוקדמת
+     מכולן — כלומר בליגה, לא במועדון. בלי זה 3 תארים של שחקן חיפה
+     ו-3 של שחקן בית"ר היו נראים כמו אותו מספר ואינם אותו דבר. */
   function cluesOf(p){
-    return [
+    const c = [
       ["עמדה",  V_POS[p.pos] || p.pos],
       ["לאום",  V_NAT[p.nat] || p.nat],
       ["עונה ראשונה", vSeason(p.spells[0][0])],
@@ -114,9 +199,16 @@ async function startVersus(){
       ["נולד",  String(p.born)],
       ["השם מתחיל ב",  p.he.trim()[0]]
     ];
+    if (SLUGS.length > 1)
+      c.unshift(["מועדונים", p.clubs.map(clubShort).join(" · ")]);
+    return c;
   }
-  const CLUES = 6;
-  const POINTS = [6,5,4,3,2,1];
+  let CLUES  = 6;
+  let POINTS = [6,5,4,3,2,1];
+
+  /* עכשיו, ולא למעלה: mergePools משתמש ב-vNorm, ו-refreshPools כותב
+     ל-CLUES ול-POINTS. קריאה לפני ההצהרות שלהם היא ReferenceError. */
+  refreshPools();
 
   /* "חם או קר": כמה מהרמזים של הניחוש תואמים לתשובה.
      מחזיר מספר בלבד — בלי לגלות אילו, כדי שאי אפשר יהיה
@@ -129,9 +221,14 @@ async function startVersus(){
     if (g.titles === a.titles) n++;
     if (Math.abs(g.born - a.born) <= 2) n++;          // דור, לא שנה מדויקת
     if (g.he.trim()[0] === a.he.trim()[0]) n++;
+    /* התאמה מלאה של קבוצת המועדונים בלבד. חפיפה חלקית לא נספרת:
+       matchCount מחזיר מספר בלי לגלות אילו רמזים, ו"חצי נקודה"
+       היה הופך אותו לדו-משמעי. */
+    if (SLUGS.length > 1 && sameClubs(g.clubs, a.clubs)) n++;
     return n;
   }
-  const HEAT = ["קר לגמרי","קר","פושר","חם","חם מאוד","בוער","כמעט"];        // לפי כמה רמזים היו חשופים
+  /* אינדקס = מספר הרמזים שהתאימו, ולכן צריך מקום ל-0..CLUES */
+  const HEAT = ["קר לגמרי","קר","פושר","חם","חם מאוד","בוער","כמעט","בדיוק כמעט"];
   
   /* ============================================================
      3. עזרים
@@ -193,7 +290,7 @@ async function startVersus(){
      בלי זה, נתק של חצי שנייה מוחק שחקן מהחדר לתמיד. */
   function keepPresence(code){
     if (presenceOff) presenceOff();
-    const gRef = ref(db, `rooms/${SLUG}/${code}/players/${uid}/gone`);
+    const gRef = ref(db, roomPath(code) + `/players/${uid}/gone`);
     const un = onValue(ref(db, ".info/connected"), snap => {
       if (snap.val() !== true) return;
       onDisconnect(gRef).set(true);
@@ -203,7 +300,61 @@ async function startVersus(){
   }
   
   /* ============================================================
-     5. פתיחה והצטרפות
+     5. בחירת מועדונים לחדר
+     ============================================================ */
+  const clubPick = $("#clubPick"), clubHint = $("#clubHint");
+
+  /* נבנה פעם אחת, ואחר כך מסונכרן בלבד.
+     בנייה מחדש של ה-HTML בכל לחיצה מחליפה את הכפתורים בחדשים,
+     והפוקוס נופל — מי שמנווט במקלדת נזרק אחרי כל בחירה. */
+  function paintClubPick(){
+    if (!clubPick) return;
+    if (!clubPick.children.length) {
+      const all   = (window.SPORTDEL && window.SPORTDEL.clubs) || {};
+      const order = (window.SPORTDEL && window.SPORTDEL.order) || Object.keys(all);
+      clubPick.innerHTML = order
+        .map(s => `<button type="button" data-club="${s}">${clubShort(s)}</button>`)
+        .join("");
+    }
+    for (const b of clubPick.children) {
+      const on = SLUGS.includes(b.dataset.club);
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", String(on));
+    }
+    if (clubHint)
+      clubHint.textContent = SLUGS.length === 1
+        ? `${POOL.length} שחקנים בבריכה · 6 רמזים`
+        : `${POOL.length} שחקנים מ-${SLUGS.length} מועדונים · 7 רמזים, כולל באילו מועדונים שיחק`;
+  }
+
+  if (clubPick) clubPick.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    const s = b.dataset.club;
+    /* חייב להישאר לפחות אחד — בריכה ריקה היא מסך מת */
+    const next = SLUGS.includes(s) ? SLUGS.filter(x => x !== s) : SLUGS.concat(s);
+    if (!next.length) return;
+    SLUGS = next.sort();
+    refreshPools();
+    paintClubPick();
+  });
+
+  /* מי שמצטרף מאמץ את המועדונים של החדר, ולא כופה את שלו. חדר בלי
+     השדה הוא חדר מגרסה קודמת — מועדון אחד, זה שהמצטרף יושב עליו. */
+  function adoptClubs(val){
+    const known = (window.SPORTDEL && window.SPORTDEL.clubs) || {};
+    const want  = Array.isArray(val && val.clubs) ? val.clubs.filter(s => known[s]) : [];
+    const next  = (want.length ? want : [SLUG]).slice().sort();
+    if (sameClubs(next, SLUGS)) return;
+    SLUGS = next;
+    refreshPools();
+    paintClubPick();
+  }
+
+  paintClubPick();
+
+  /* ============================================================
+     5ב. פתיחה והצטרפות
      ============================================================ */
   $("#btnCreate").addEventListener("click", async () => {
     const name = $("#vName").value.trim();
@@ -214,9 +365,12 @@ async function startVersus(){
     const btn = $("#btnCreate"), err = $("#joinErr");
     btn.disabled = true; err.textContent = "";
     try {
-      isHost = true; room = code; roomRef = ref(db, `rooms/${SLUG}/${code}`);
+      isHost = true; room = code; roomRef = ref(db, roomPath(code));
       await set(roomRef, {
         createdAt: serverTimestamp(), host: uid, status: "lobby",
+        /* המועדונים הם חלק מהחדר ולא מהלקוח: מי שמצטרף מאמץ אותם,
+           ולכן קוד עובד גם כשהמצטרף יושב על מועדון אחר. */
+        clubs: SLUGS.slice().sort(),
         settings: { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 * (CLUES - 1) + 12000 },
         players: { [uid]: { name, score: 0, at: serverTimestamp() } }
       });
@@ -248,14 +402,16 @@ async function startVersus(){
     if (code.length !== 4) return err.textContent = "קוד בן ארבע אותיות";
     if (!name) return err.textContent = "צריך שם";
   
-    const snap = await get(ref(db, `rooms/${SLUG}/${code}`));
+    const snap = await get(ref(db, roomPath(code)));
     if (!snap.exists()) return err.textContent = "אין חדר עם הקוד הזה";
     if (snap.val().status === "done") return err.textContent = "המשחק בחדר הזה כבר נגמר";
     if (snap.val().status === "playing" && !(snap.val().players||{})[uid])
       return err.textContent = "המשחק כבר התחיל — בקשו לפתוח חדר חדש";
-  
-    room = code; isHost = snap.val().host === uid; roomRef = ref(db, `rooms/${SLUG}/${code}`);
-    await update(ref(db, `rooms/${SLUG}/${code}/players/${uid}`),
+
+    /* לפני watch(): הבריכה חייבת להיות זו של החדר כבר בסיבוב הראשון */
+    adoptClubs(snap.val());
+    room = code; isHost = snap.val().host === uid; roomRef = ref(db, roomPath(code));
+    await update(ref(db, roomPath(code) + `/players/${uid}`),
                  { name, score: 0, at: serverTimestamp(), gone: null });
     mem.set({ room: code, name });
     keepPresence(code);
@@ -303,7 +459,7 @@ ${link}
   /* יציאה מרצון */
   async function leaveRoom(){
     if (room){
-      try{ await update(ref(db, `rooms/${SLUG}/${room}/players/${uid}`), { gone: true }); }catch(e){}
+      try{ await update(ref(db, roomPath(room) + `/players/${uid}`), { gone: true }); }catch(e){}
     }
     if (presenceOff) presenceOff();
     mem.clear();
@@ -335,11 +491,12 @@ ${link}
     const m = mem.get();
     if (!m || !m.room) return;
     try{
-      const snap = await get(ref(db, `rooms/${SLUG}/${m.room}`));
+      const snap = await get(ref(db, roomPath(m.room)));
       if (!snap.exists() || snap.val().status === "done"){ mem.clear(); return; }
-      room = m.room; roomRef = ref(db, `rooms/${SLUG}/${room}`);
+      adoptClubs(snap.val());
+      room = m.room; roomRef = ref(db, roomPath(room));
       isHost = snap.val().host === uid;
-      await update(ref(db, `rooms/${SLUG}/${room}/players/${uid}`),
+      await update(ref(db, roomPath(room) + `/players/${uid}`),
                    { name: m.name, at: snap.val().players?.[uid]?.at || serverTimestamp(), gone: null });
       keepPresence(room);
       watch();
@@ -452,7 +609,7 @@ ${link}
   
   /** סוגר סיבוב — טרנזקציה כדי שרק ניחוש אחד ייקלט כמנצח */
   async function closeRound(idx, winnerId, pts){
-    const r = ref(db, `rooms/${SLUG}/${room}/results/${idx}`);
+    const r = ref(db, roomPath(room) + `/results/${idx}`);
     const out = await runTransaction(r, cur => {
       if (cur) return;                                  // כבר נסגר
       return { winner: winnerId || null, pts, at: serverTimestamp() };
@@ -460,12 +617,12 @@ ${link}
     if (!out.committed) return;
   
     if (winnerId){
-      await runTransaction(ref(db, `rooms/${SLUG}/${room}/players/${winnerId}/score`),
+      await runTransaction(ref(db, roomPath(room) + `/players/${winnerId}/score`),
                            s => (s || 0) + pts);
     }
     // כל לקוח שמגיע לכאן ראשון מקדם — הטרנזקציה מונעת קפיצה כפולה
     setTimeout(() => {
-      runTransaction(ref(db, `rooms/${SLUG}/${room}/round`), r2 => (r2 === idx ? idx + 1 : undefined))
+      runTransaction(ref(db, roomPath(room) + `/round`), r2 => (r2 === idx ? idx + 1 : undefined))
         .then(() => update(roomRef, { roundStartedAt: serverTimestamp() }));
     }, 4200);
   }
@@ -608,13 +765,16 @@ ${link}
       }, 1000);
     }
   }
-  /* החלפת מועדון: יוצאים מהחדר ומרעננים את הבריכה.
-     חדר שייך למועדון אחד — אי אפשר לגרור אותו הלאה. */
+  /* החלפת מועדון בכותרת: יוצאים מהחדר ומאפסים את הבחירה למועדון
+     החדש בלבד. חדר קיים לא נגרר הלאה — הוא נשאר עם המועדונים שלו,
+     ומי שבתוכו ממשיך לשחק. */
   window.SPORTDEL.versusClubChanged = async (slug) => {
     if (room) { try { await leaveRoom(); } catch(e){} }
-    SLUG = slug;
-    VKEY = `sportdel:${slug}:versus`;
+    SLUG  = slug;
+    SLUGS = [slug];
+    VKEY  = `sportdel:${slug}:versus`;
     refreshPools();
+    paintClubPick();
     show("scHome");
   };
 }

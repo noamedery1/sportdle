@@ -814,6 +814,16 @@ function chooseClub(slug){
    זה הפיל את המשחק בייצור פעם אחת — לא לגעת.
    ============================================================ */
 window.SPORTDEL = window.SPORTDEL || {};
+
+/* כל המועדונים, פעם אחת — לא רק הנבחר. חדר קרב על כמה קבוצות בונה
+   מהם בריכה מאוחדת, וכל הנתונים כבר בדף, אז זו חשיפה ולא העתקה.
+
+   אזהרה: אל תזכיר שם של מציין מקום בהערה כאן. הבנייה עושה
+   split/join על כל מציין מקום בקובץ הזה, כולל בתוך הערות —
+   הערה שהזכירה את שם המשתנה הזה תפחה את הדף ב-268KB. */
+window.SPORTDEL.clubs = CLUBS;
+window.SPORTDEL.order = CLUB_ORDER;
+
 function publishClub(c){
   window.SPORTDEL.slug         = c.slug;
   window.SPORTDEL.game         = c.game;
