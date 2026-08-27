@@ -39,7 +39,7 @@
   ]
  },
  "counts": {
-  "players": 413,
+  "players": 404,
   "targets": 75
  },
  "players": [
@@ -2705,7 +2705,10 @@
    ],
    "seasons": 8,
    "titles": 2,
-   "target": true
+   "target": true,
+   "aliases": [
+    "אופיר דודזאדה"
+   ]
   },
   {
    "he": "ארז מסיקה",
@@ -3025,23 +3028,9 @@
    ],
    "seasons": 3,
    "titles": 0,
-   "target": true
-  },
-  {
-   "he": "ראין אדליי",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2010,
-     2012
-    ]
-   ],
-   "seasons": 3,
-   "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
+    "ראין אדליי",
     "ראין אלכסנדר אדליי"
    ]
   },
@@ -3122,28 +3111,6 @@
    "aliases": [
     "אוהד כהן",
     "Ohad Cohen"
-   ]
-  },
-  {
-   "he": "אופיר דודזאדה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2011,
-     2016
-    ],
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 7,
-   "titles": 2,
-   "target": false,
-   "aliases": [
-    "אופיר דודזאדה"
    ]
   },
   {
@@ -4168,23 +4135,9 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "גלינור פליט",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2014,
-     2014
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "גלינור פליט",
     "גלינור אורביל פליט"
    ]
   },
@@ -4274,23 +4227,9 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "טומיסלב פיוביץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2014,
-     2015
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "טומיסלב פיוביץ",
     "טומיסלב פיוביץ'"
    ]
   },
@@ -5393,21 +5332,6 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "אריק סבו",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2019,
-     2019
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
     "אריק סבו"
@@ -5463,23 +5387,9 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "נייגל האסלבנק",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2019,
-     2019
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "נייגל האסלבנק",
     "נייג'ל האסלבנק"
    ]
   },
@@ -5551,23 +5461,9 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "קווין טפוקו",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2019,
-     2019
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "קווין טפוקו",
     "קווין גיא-נואל פייר טפוקו"
    ]
   },
@@ -5714,7 +5610,11 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "גטן וורן",
+    "גטן אנתוני וורן"
+   ]
   },
   {
    "he": "גוזואה פסקאוורה",
@@ -5732,24 +5632,6 @@
    "target": false,
    "aliases": [
     "ג'וז'ואה פליפה סוארס פסקאוורה"
-   ]
-  },
-  {
-   "he": "גטן וורן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2020,
-     2021
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "גטן אנתוני וורן"
    ]
   },
   {
@@ -7423,24 +7305,6 @@
    ]
   },
   {
-   "he": "איגור זלאטנוביץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "איגור זלאטנוביץ"
-   ]
-  },
-  {
    "he": "איגור זלטנוביץ'",
    "pos": "FW",
    "nat": "RS",
@@ -7453,7 +7317,10 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "איגור זלאטנוביץ"
+   ]
   },
   {
    "he": "איתי חזות",

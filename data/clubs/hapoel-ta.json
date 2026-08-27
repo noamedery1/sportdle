@@ -47,7 +47,7 @@
   ]
  },
  "counts": {
-  "players": 442,
+  "players": 431,
   "targets": 95
  },
  "players": [
@@ -1703,21 +1703,6 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "לריה קינגסטון",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2004,
-     2004
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
     "לריה קינגסטון"
@@ -2273,24 +2258,6 @@
    ]
   },
   {
-   "he": "חאבייר פאיס",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2007,
-     2007
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "חאבייר מארסלו פאיס"
-   ]
-  },
-  {
    "he": "חאבייר פאס",
    "pos": "DF",
    "nat": "AR",
@@ -2303,7 +2270,11 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "חאבייר פאיס",
+    "חאבייר מארסלו פאיס"
+   ]
   },
   {
    "he": "לוסיאנו דה ברונו",
@@ -3139,24 +3110,6 @@
    "target": false
   },
   {
-   "he": "נמניה וויציצביץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2010,
-     2010
-    ]
-   ],
-   "seasons": 1,
-   "titles": 2,
-   "target": false,
-   "aliases": [
-    "נמניה וויצ'יצ'ביץ"
-   ]
-  },
-  {
    "he": "נמניה ווצ'יצ'ביץ'",
    "pos": "FW",
    "nat": "RS",
@@ -3169,7 +3122,11 @@
    ],
    "seasons": 1,
    "titles": 2,
-   "target": false
+   "target": false,
+   "aliases": [
+    "נמניה וויציצביץ",
+    "נמניה וויצ'יצ'ביץ"
+   ]
   },
   {
    "he": "רועי גורדנה",
@@ -3395,23 +3352,9 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
-  },
-  {
-   "he": "מריו פצלקה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2011,
-     2011
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
    "target": false,
    "aliases": [
+    "מריו פצלקה",
     "מריו פצ'לקה"
    ]
   },
@@ -4483,21 +4426,6 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "אמידו בלדה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2015,
-     2015
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
     "אמידו בלדה"
@@ -4770,24 +4698,6 @@
    ]
   },
   {
-   "he": "אהרן שונפלד",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2016,
-     2016
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אהרן מקסוול שונפלד"
-   ]
-  },
-  {
    "he": "איאד אבו עביד",
    "pos": "DF",
    "nat": "IL",
@@ -4838,7 +4748,11 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "אהרן שונפלד",
+    "אהרן מקסוול שונפלד"
+   ]
   },
   {
    "he": "אריאל הרוש",
@@ -5195,21 +5109,6 @@
    "pos": "MF",
    "nat": "IL",
    "born": 1987,
-   "spells": [
-    [
-     2017,
-     2018
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "אור אוסטיינד",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2017,
@@ -6120,7 +6019,11 @@
    ],
    "seasons": 4,
    "titles": 0,
-   "target": true
+   "target": true,
+   "aliases": [
+    "שי איזן",
+    "שי לי איזן"
+   ]
   },
   {
    "he": "איליי טמם",
@@ -6350,24 +6253,6 @@
     "רוי קורין",
     "Ido Sharon",
     "Roy Korine"
-   ]
-  },
-  {
-   "he": "שי איזן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2020,
-     2022
-    ]
-   ],
-   "seasons": 3,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "שי לי איזן"
    ]
   },
   {
@@ -7076,7 +6961,10 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "השאם ליוס"
+   ]
   },
   {
    "he": "הרוויה איליץ",
@@ -7094,24 +6982,6 @@
    "target": false,
    "aliases": [
     "הרוויה איליץ'"
-   ]
-  },
-  {
-   "he": "השאם ליוס",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2023,
-     2024
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "השאם ליוס"
    ]
   },
   {
@@ -7404,21 +7274,6 @@
    "pos": "DF",
    "nat": "CO",
    "born": 1996,
-   "spells": [
-    [
-     2024,
-     2025
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "דייויד קופרמן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2024,
@@ -7923,24 +7778,6 @@
    ]
   },
   {
-   "he": "אנאס מחאמיד",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אנאס מחאמיד"
-   ]
-  },
-  {
    "he": "אנדריאן קרייב",
    "pos": "MF",
    "nat": "BG",
@@ -7972,7 +7809,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "אנאס מחאמיד"
+   ]
   },
   {
    "he": "אסף צור",

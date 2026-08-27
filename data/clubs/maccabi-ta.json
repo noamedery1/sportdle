@@ -69,7 +69,7 @@
   ]
  },
  "counts": {
-  "players": 367,
+  "players": 354,
   "targets": 120
  },
  "players": [
@@ -1935,24 +1935,6 @@
    ]
   },
   {
-   "he": "שוקי נגאר",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2005,
-     2005
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "שוקי נגאר"
-   ]
-  },
-  {
    "he": "שוקי נגר",
    "pos": "DF",
    "nat": "IL",
@@ -1965,7 +1947,10 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "שוקי נגאר"
+   ]
   },
   {
    "he": "שרן ייני",
@@ -2575,24 +2560,6 @@
    ]
   },
   {
-   "he": "דראגוסלב יבריץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2008,
-     2009
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "דראגוסלב יבריץ'"
-   ]
-  },
-  {
    "he": "דרגוסלאב יבריץ'",
    "pos": "GK",
    "nat": "RS",
@@ -2605,28 +2572,17 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "דראגוסלב יבריץ",
+    "דראגוסלב יבריץ'"
+   ]
   },
   {
    "he": "יאניק קאמנן",
    "pos": "FW",
    "nat": "FR",
    "born": 1981,
-   "spells": [
-    [
-     2008,
-     2008
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "יאניק קמנאן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2008,
@@ -2770,23 +2726,9 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "איגור טומסיץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2009,
-     2010
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "איגור טומסיץ",
     "איגור טומסיץ'"
    ]
   },
@@ -4615,23 +4557,9 @@
    ],
    "seasons": 4,
    "titles": 1,
-   "target": true
-  },
-  {
-   "he": "פרדראג ריאקוביץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2016,
-     2019
-    ]
-   ],
-   "seasons": 4,
-   "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
+    "פרדראג ריאקוביץ",
     "פרדראג ריאקוביץ'"
    ]
   },
@@ -4673,24 +4601,6 @@
    ]
   },
   {
-   "he": "אהרן שונפלד",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2017,
-     2019
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "אהרן מקסוול שונפלד"
-   ]
-  },
-  {
    "he": "אוסקר סקאריונה",
    "pos": "MF",
    "nat": "AR",
@@ -4718,7 +4628,10 @@
    ],
    "seasons": 9,
    "titles": 5,
-   "target": true
+   "target": true,
+   "aliases": [
+    "אופיר דודזאדה"
+   ]
   },
   {
    "he": "אזקיאל סקריונה",
@@ -4770,7 +4683,11 @@
    ],
    "seasons": 3,
    "titles": 1,
-   "target": true
+   "target": true,
+   "aliases": [
+    "אהרן שונפלד",
+    "אהרן מקסוול שונפלד"
+   ]
   },
   {
    "he": "דור גלילי",
@@ -4821,23 +4738,9 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "וידר קיארטנסון",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2017,
-     2018
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
    "target": false,
    "aliases": [
+    "וידר קיארטנסון",
     "וידר אורן קיארטנסון"
    ]
   },
@@ -5004,24 +4907,6 @@
    "aliases": [
     "שגיב יחזקאל",
     "Sagiv Yehezkel"
-   ]
-  },
-  {
-   "he": "אופיר דודזאדה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2018,
-     2025
-    ]
-   ],
-   "seasons": 8,
-   "titles": 5,
-   "target": false,
-   "aliases": [
-    "אופיר דודזאדה"
    ]
   },
   {
@@ -5265,28 +5150,13 @@
    ],
    "seasons": 6,
    "titles": 4,
-   "target": true
-  },
-  {
-   "he": "אנריק סבוריט",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2019,
-     2024
-    ]
-   ],
-   "seasons": 6,
-   "titles": 4,
-   "target": false,
+   "target": true,
    "aliases": [
     "אנריק סבוריט"
    ]
   },
   {
-   "he": "דניאל פרץ (18/19)",
+   "he": "דניאל פרץ",
    "pos": "GK",
    "nat": "IL",
    "born": 2000,
@@ -5613,24 +5483,6 @@
    ]
   },
   {
-   "he": "דניאל פרץ (20/21)",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2021,
-     2023
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "דניאל פרץ"
-   ]
-  },
-  {
    "he": "לואיס רודריגז",
    "pos": null,
    "nat": "IL",
@@ -5695,24 +5547,6 @@
    ]
   },
   {
-   "he": "אוסאמה חלאילה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2022,
-     2022
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אוסאמה ח'לאילה"
-   ]
-  },
-  {
    "he": "אוסמה ח'לאילה",
    "pos": "FW",
    "nat": "IL",
@@ -5725,7 +5559,11 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "אוסאמה חלאילה",
+    "אוסאמה ח'לאילה"
+   ]
   },
   {
    "he": "אוסקר גלוך",
@@ -6357,21 +6195,6 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
-  },
-  {
-   "he": "השאם ליוס",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2025,
-     2025
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
    "target": false,
    "aliases": [
     "השאם ליוס"
@@ -6415,21 +6238,6 @@
    "pos": "DF",
    "nat": "NL",
    "born": 2002,
-   "spells": [
-    [
-     2025,
-     2026
-    ]
-   ],
-   "seasons": 2,
-   "titles": 2,
-   "target": false
-  },
-  {
-   "he": "טייריס אסנטה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2025,
@@ -6834,7 +6642,7 @@
   "עומר אצילי",
   "אלון ברומר",
   "עידו שחר",
-  "דניאל פרץ (18/19)",
+  "דניאל פרץ",
   "מאור קנדיל",
   "יובל שפונגין",
   "אייל גולסה",

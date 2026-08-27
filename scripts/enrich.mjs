@@ -469,6 +469,58 @@ for (const club of clubs) {
     }
   }
 
+  /* --- מחיקת רשומה חשופה שהיא תעתיק אחר של שחקן מזוהה ---
+     "דראגוסלב יבריץ" ו"דרגוסלאב יבריץ'" הם אותו שוער, ובמשחק הם
+     הופיעו כשני שחקנים: אחד עם עמדה, לאום ושנת לידה — והשני עם
+     חמישה סימני שאלה. הרשומה של ההתאחדות לא תפסה אף גשר לעברית,
+     כי הכתיב שלה שונה, והמיזוג שמעל לא נגע בה: הוא דורש שנת לידה
+     בשני הצדדים, ולחשופה אין.
+
+     שלושה תנאים מבניים, כולם יחד:
+     1. אין בחשופה עמדה ואין שנת לידה — אין מה לאבד ממחיקתה
+     2. שלד עיצורים זהה, אחרי הסרת אמות הקריאה (א, ו, י, ה) —
+        "דראגוסלב" ו"דרגוסלאב" נותנים "דרגסלב"
+     3. העונות שלה **מוכלות** בעונות של המזוהה
+     ומועמד אחד בדיוק. שניים — לא ממזגים.
+
+     ההכלה היא מה שמונע את הטעות: "אביחי דהן" ו"אביחי ידין" חולקים
+     שלד, אבל שיחקו בעונות שונות ולכן לא ייגעו זה בזה. היא גם מה
+     שמשאיר את המזוהה בלי שינוי — לא נוספת לו עונה, ולכן מספר
+     העונות והתארים שלו זהה, וחידות שפורסמו לא נוגעו.
+
+     השם החשוף עובר ל-aliases, כך שמי שמקליד אותו עוד מוצא. */
+  {
+    const skel = s => normName(s).replace(/[אוהי]/g, "").replace(/\s+/g, " ").trim();
+    const yearsOf = p => new Set((p.spells || []).flatMap(([a, b]) =>
+      Array.from({ length: b - a + 1 }, (_, i) => a + i)));
+    /* שם שכבר פורסם כחידה לא נמחק גם כשהוא חשוף */
+    const published = new Set(
+      (readJSON(`config/schedule-${club.slug}.json`, null)?.order || []).map(normName));
+    const known = players.filter(p => p.pos != null || p.born != null);
+    let absorbed = 0;
+    for (const p of players) {
+      if (p.pos != null || p.born != null) continue;
+      if (published.has(normName(p.he))) continue;
+      const k = skel(p.he), ys = yearsOf(p);
+      if (!k || !ys.size) continue;
+      const cands = known.filter(q => !q._gone && skel(q.he) === k &&
+        [...ys].every(y => yearsOf(q).has(y)));
+      if (cands.length !== 1) continue;
+      const hit = cands[0];
+      for (const a of [p.he, p.official, ...(p.aliases || [])])
+        if (a && !hit.aliases.includes(a)) hit.aliases.push(a);
+      if (hit.ifaId == null && p.ifaId != null) hit.ifaId = p.ifaId;
+      hit.src.push("absorbed");
+      p._gone = true;
+      absorbed++;
+      review.notes.push(`נמחקה רשומה חשופה: "${p.he}" ← "${hit.he}" (תעתיק אחר, עונות מוכלות)`);
+    }
+    if (absorbed) {
+      players = players.filter(p => !p._gone);
+      log(`  נמחקו ${absorbed} רשומות חשופות שהן תעתיק אחר של שחקן מזוהה`);
+    }
+  }
+
   /* --- כפילויות בשם העברי (חובה — שובר השלמה אוטומטית וניצחון) --- */
   const byHe = new Map();
   for (const p of players) {
@@ -532,6 +584,32 @@ for (const club of clubs) {
       return n;
     });
     if (moved) log(`  שמות שעודכנו בלוח: ${moved}`);
+  }
+
+  /* הבהרה בסוגריים היא תוצר של המאגר, לא חלק מהשם. כשכפילות
+     מתגלה כרשומה אחת — ההבהרה מתייתרת, והשם בלוח נשאר מצביע על
+     צורה שאיננה. זו אותה חידה ואותו שחקן, ולכן הלוח עוקב, אבל רק
+     כשהזיהוי חד־ערכי: בדיוק שחקן אחד נושא את השם בלי ההבהרה,
+     בשמו או באחד מכינוייו. שניים — נופלים, כמו קודם. */
+  {
+    const byAny = new Map();
+    for (const p of players)
+      for (const n of [p.he, ...(p.aliases || [])].filter(Boolean)) {
+        const k = normName(n);
+        if (!byAny.has(k)) byAny.set(k, new Set());
+        byAny.get(k).add(p);
+      }
+    const live = new Set(players.map(p => normName(p.he)));
+    let followed = 0;
+    schedule = schedule.map(n => {
+      if (live.has(normName(n))) return n;
+      for (const k of [normName(n), normName(stripParen(n))]) {
+        const c = byAny.get(k);
+        if (c?.size === 1) { followed++; return [...c][0].he; }
+      }
+      return n;
+    });
+    if (followed) log(`  שמות בלוח שעקבו אחרי הבהרה שהשתנתה: ${followed}`);
   }
 
   const byName = new Map(players.map(p => [normName(p.he), p]));

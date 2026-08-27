@@ -50,7 +50,7 @@
   ]
  },
  "counts": {
-  "players": 399,
+  "players": 381,
   "targets": 111
  },
  "players": [
@@ -798,7 +798,10 @@
    ],
    "seasons": 3,
    "titles": 1,
-   "target": true
+   "target": true,
+   "aliases": [
+    "דודו אואט"
+   ]
   },
   {
    "he": "עידן שום",
@@ -1472,24 +1475,6 @@
     "גיז'רמו ישראלביץ'",
     "Guillermo Israilevich",
     "גיזרמו ישראלביץ"
-   ]
-  },
-  {
-   "he": "דודו אואט",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "דודו אואט"
    ]
   },
   {
@@ -2674,24 +2659,6 @@
    ]
   },
   {
-   "he": "פטר מסיללה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2008,
-     2011
-    ]
-   ],
-   "seasons": 4,
-   "titles": 2,
-   "target": false,
-   "aliases": [
-    "פטר צפו מסיללה"
-   ]
-  },
-  {
    "he": "פיטר מסיללה",
    "pos": "DF",
    "nat": "ZA",
@@ -2704,7 +2671,11 @@
    ],
    "seasons": 4,
    "titles": 2,
-   "target": true
+   "target": true,
+   "aliases": [
+    "פטר מסיללה",
+    "פטר צפו מסיללה"
+   ]
   },
   {
    "he": "רוני גפני",
@@ -3074,7 +3045,10 @@
    ],
    "seasons": 9,
    "titles": 4,
-   "target": true
+   "target": true,
+   "aliases": [
+    "טאלב טואטחה"
+   ]
   },
   {
    "he": "טיאגו דוטרה",
@@ -3252,24 +3226,6 @@
    ]
   },
   {
-   "he": "יא סיידו",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2011,
-     2012
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "יא יא סיידו"
-   ]
-  },
-  {
    "he": "סארי פלאח",
    "pos": "DF",
    "nat": "IL",
@@ -3301,7 +3257,11 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "יא סיידו",
+    "יא יא סיידו"
+   ]
   },
   {
    "he": "עידן ורד",
@@ -3571,47 +3531,10 @@
    ]
   },
   {
-   "he": "טאלב טואטחה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2012,
-     2016
-    ],
-    [
-     2021,
-     2022
-    ]
-   ],
-   "seasons": 7,
-   "titles": 3,
-   "target": false,
-   "aliases": [
-    "טאלב טואטחה"
-   ]
-  },
-  {
    "he": "יוריצה בולייאט",
    "pos": "DF",
    "nat": "HR",
    "born": 1986,
-   "spells": [
-    [
-     2012,
-     2012
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "יוריצה בולייט",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2012,
@@ -3683,7 +3606,10 @@
    ],
    "seasons": 4,
    "titles": 1,
-   "target": true
+   "target": true,
+   "aliases": [
+    "שובל גוזלאן"
+   ]
   },
   {
    "he": "תמיר כהן",
@@ -3782,21 +3708,6 @@
    "pos": "FW",
    "nat": "ZA",
    "born": 1990,
-   "spells": [
-    [
-     2013,
-     2013
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "דינו נדלובו",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2013,
@@ -4067,28 +3978,6 @@
    "aliases": [
     "רן אבוקרט",
     "Ran Abukarat"
-   ]
-  },
-  {
-   "he": "שובל גוזלאן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2014,
-     2014
-    ],
-    [
-     2016,
-     2016
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "שובל גוזלאן"
    ]
   },
   {
@@ -4440,23 +4329,9 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
-  },
-  {
-   "he": "גלינור פליט",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2016,
-     2016
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
    "target": false,
    "aliases": [
+    "גלינור פליט",
     "גלינור אורביל פליט"
    ]
   },
@@ -4521,21 +4396,6 @@
    "pos": "DF",
    "nat": "ES",
    "born": 1987,
-   "spells": [
-    [
-     2016,
-     2017
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": false
-  },
-  {
-   "he": "מארק וליינטה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2016,
@@ -4769,24 +4629,6 @@
    ]
   },
   {
-   "he": "גארי קאגלמכר",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2017,
-     2017
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "גארי כריסטופר קאגלמכר"
-   ]
-  },
-  {
    "he": "גארי קגלמאכר",
    "pos": "DF",
    "nat": "UY",
@@ -4799,7 +4641,11 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "גארי קאגלמכר",
+    "גארי כריסטופר קאגלמכר"
+   ]
   },
   {
    "he": "הולמר איולפסון",
@@ -5005,21 +4851,6 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
-  },
-  {
-   "he": "קמיל וואצק",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2017,
-     2017
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
    "target": false,
    "aliases": [
     "קמיל וואצק"
@@ -5103,24 +4934,6 @@
    ]
   },
   {
-   "he": "ארנסט מאבוקה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2018,
-     2021
-    ]
-   ],
-   "seasons": 4,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "ארנסט מאבוקה"
-   ]
-  },
-  {
    "he": "ארנסט מבוקה",
    "pos": "DF",
    "nat": "CM",
@@ -5133,7 +4946,10 @@
    ],
    "seasons": 4,
    "titles": 1,
-   "target": true
+   "target": true,
+   "aliases": [
+    "ארנסט מאבוקה"
+   ]
   },
   {
    "he": "גאורגי קוסטדינוב",
@@ -5227,24 +5043,6 @@
    ]
   },
   {
-   "he": "סטפנוס אתנאסיאדיס",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2018,
-     2018
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "סטפנוס אתנאסיאדיס"
-   ]
-  },
-  {
    "he": "סטפנוס אתנסיאדיס",
    "pos": "FW",
    "nat": "GR",
@@ -5257,7 +5055,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "סטפנוס אתנאסיאדיס"
+   ]
   },
   {
    "he": "עומרי בן הרוש",
@@ -5798,24 +5599,6 @@
    ]
   },
   {
-   "he": "בוגדאן פלאניץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2021,
-     2022
-    ]
-   ],
-   "seasons": 2,
-   "titles": 2,
-   "target": false,
-   "aliases": [
-    "בוגדאן פלאניץ'"
-   ]
-  },
-  {
    "he": "בוגדן פלאניץ'",
    "pos": "DF",
    "nat": "RS",
@@ -5828,24 +5611,10 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
-  },
-  {
-   "he": "גודסווי דונהיו",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2021,
-     2022
-    ]
-   ],
-   "seasons": 2,
-   "titles": 2,
    "target": false,
    "aliases": [
-    "גודסווי דונהיו"
+    "בוגדאן פלאניץ",
+    "בוגדאן פלאניץ'"
    ]
   },
   {
@@ -5861,7 +5630,10 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": false,
+   "aliases": [
+    "גודסווי דונהיו"
+   ]
   },
   {
    "he": "חוזה רודריגז",
@@ -6734,7 +6506,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "אלכסנדר סירוטה"
+   ]
   },
   {
    "he": "איתן אזולאי",
@@ -6753,24 +6528,6 @@
    "aliases": [
     "איתן אזולאי",
     "Ethane Azoulay"
-   ]
-  },
-  {
-   "he": "אלכסנדר סירוטה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2025,
-     2025
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אלכסנדר סירוטה"
    ]
   },
   {
@@ -6937,21 +6694,6 @@
    "pos": "FW",
    "nat": "NL",
    "born": 2001,
-   "spells": [
-    [
-     2025,
-     2025
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "קסנדר סברינה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
    "spells": [
     [
      2025,
@@ -7184,24 +6926,6 @@
    ]
   },
   {
-   "he": "יילה בטאיי",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "יילה בטאיי"
-   ]
-  },
-  {
    "he": "ילה בטאי",
    "pos": "DF",
    "nat": "BE",
@@ -7214,7 +6938,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "יילה בטאיי"
+   ]
   },
   {
    "he": "ליאור קאסה",
