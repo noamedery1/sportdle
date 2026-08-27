@@ -219,9 +219,12 @@ setInterval(tickCountdown, 1000);
 function finish(won){
   over = true; input.disabled = true;
   $("#rtitle").textContent = won ? "פיצחתם!" : "נגמרו הניסיונות";
+  /* בלי טווח העונות. הוא היה ארוך ("79/80–88/89 / 90/91–93/94"),
+     הוא נשבר כיוונית בין ה-LTR של המספרים לעברית סביבם, והוא לא
+     מוסיף כלום אחרי שהשם נחשף. השם מספיק. */
   $("#rtext").innerHTML = won
-    ? `<b>${answer.name}</b> · <span dir="ltr">${eraLabel(answer)}</span> · ${guesses.length} מתוך ${MAX}`
-    : `השחקן היה <b>${answer.name}</b> · <span dir="ltr">${eraLabel(answer)}</span> · ${answer.titles} תארים`;
+    ? `<b>${answer.name}</b> · ${guesses.length} מתוך ${MAX}`
+    : `השחקן היה <b>${answer.name}</b>`;
 
   const mini = $("#mini"); mini.innerHTML = "";
   guesses.forEach(g=>{
@@ -449,7 +452,14 @@ async function shareStory(){
   /* canShare עם files הוא הבדיקה הנכונה: יש דפדפנים עם share
      שמסרב לקבצים, ואז השיתוף נכשל בשקט אחרי שהמשתמש לחץ. */
   if (navigator.canShare && navigator.canShare({ files: [file] })){
-    await navigator.share({ files: [file], text: `${club.game} · חידה #${puzzleNo}` });
+    /* הכתובת נכנסת גם ל-text, לא רק לתמונה. טקסט בתוך PNG אינו
+       לחיץ בשום מקום — באינסטגרם סטורי אין דרך להפוך אותו לכזה,
+       וצריך מדבקת לינק שהמשתמש מוסיף. אבל בוואטסאפ, טלגרם ומסנג'ר
+       הטקסט נשלח לצד התמונה **והלינק שם כן לחיץ**, וזה חינם. */
+    await navigator.share({
+      files: [file],
+      text: `${club.game} · חידה #${puzzleNo}\n${SITE_URL}`
+    });
     return "shared";
   }
   const url = URL.createObjectURL(blob);
@@ -583,8 +593,16 @@ $("#hintBtn").addEventListener("click", ()=>{
   saveState();
 });
 
-/* ---------- סטטיסטיקה קהילתית ---------- */
-const MIN_PLAYERS = 20;      // מתחת לזה לא מציגים — מדגם קטן נראה עלוב
+/* ---------- סטטיסטיקה קהילתית ----------
+   שני ספים ולא אחד. סף יחיד של 20 הסתיר את הבלוק **כולו** במועדונים
+   הקטנים — חיפה עם 9 מסיימים קיבלה חלון ריק בלי שום הסבר, וזה בדיוק
+   מה שנראה כמו באג.
+
+   הכותרת ("62% פיצחו · ממוצע 4.6") שרידה למדגם קטן: אחוז הצלחה על
+   10 אנשים הוא מספר סביר. הפילוח ושורת הדירוג לא — עם 9 מסיימים
+   אדם אחד הוא 11%, והגרף נראה מקרי. לכן הם ממתינים ל-20. */
+const MIN_HEAD = 10;   // מתחת לזה אין בכלל מה להראות
+const MIN_DIST = 20;   // הגרף ושורת "טוב יותר מ-" דורשים מדגם אמיתי
 
 function fetchStats(puzzle){
   // GET רגיל, ואם CORS חוסם — נפילה ל-JSONP
@@ -606,18 +624,18 @@ function fetchStats(puzzle){
 
 function renderComm(st, myGuesses, iWon){
   const el = $("#comm");
-  if (!st || st.done < MIN_PLAYERS){ el.classList.remove("on"); return; }
+  if (!st || st.done < MIN_HEAD){ el.classList.remove("on"); return; }
 
   /* בלי המספר המוחלט של השחקנים — רק יחסים.
      מספר קטן נראה עלוב גם כשהוא נכון, וברגע שהכותרת מסתירה אותו
      גם הגרף חייב: בר שכתוב עליו "2" מדליף בדיוק את מה שהוסתר.
-     MIN_PLAYERS עדיין חוסם את כל הבלוק מתחת למדגם סביר. */
+     MIN_HEAD חוסם את הבלוק כולו מתחת ל-10 מסיימים. */
   const pct = Math.round(st.wins / st.done * 100);
   let html = `<div class="hd"><b>${pct}%</b> פיצחו היום${
     st.avg ? ` · ממוצע <b>${st.avg}</b> ניחושים` : ""}</div>`;
 
   // כמה סיימו גרוע ממני: יותר ניחושים, או לא פיצחו בכלל
-  if (iWon){
+  if (iWon && st.done >= MIN_DIST){
     let worse = st.fail;
     for (let i = myGuesses; i < MAX; i++) worse += st.dist[i] || 0;
     const better = Math.round(worse / st.done * 100);
@@ -629,7 +647,7 @@ function renderComm(st, myGuesses, iWon){
      נכונה ודליים ריקים. גרף של אפסים נראה שבור, אז מדלגים עליו
      ומשאירים את הכותרת — שהיא נכונה בכל מקרה. */
   const total = (st.dist || []).reduce((a, b) => a + (b || 0), 0) + (st.fail || 0);
-  if (total > 0){
+  if (total > 0 && st.done >= MIN_DIST){
     const max   = Math.max(1, ...st.dist, st.fail);
     /* אחוז מהמסיימים. תווית ריקה כשאין אף אחד — "0%" בכל בר ריק
        הוא רעש, והרוחב לבד אומר את זה. */
