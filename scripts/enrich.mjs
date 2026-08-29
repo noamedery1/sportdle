@@ -79,31 +79,10 @@ function fromIfa(raw) {
 
 /* worldfootball: שלד המאגר. שם באנגלית, עמדה, לאום, שנת לידה, עונות.
    זה המקור היחיד שמכסה 1969 ואילך. */
-const NAT_FROM_EN = {
-  "Israel":"IL","Ukraine":"UA","Hungary":"HU","Ghana":"GH","North Macedonia":"MK",
-  "Macedonia":"MK","Portugal":"PT","Brazil":"BR","Argentina":"AR","Spain":"ES",
-  "France":"FR","Nigeria":"NG","Georgia":"GE","Colombia":"CO","Russia":"RU",
-  "Soviet Union":"RU","Cameroon":"CM","Romania":"RO","Uruguay":"UY","Chile":"CL",
-  "Serbia":"RS","Serbia and Montenegro":"RS","Yugoslavia":"RS","Croatia":"HR",
-  "Bosnia-Herzegovina":"BA","Bosnia and Herzegovina":"BA","Slovenia":"SI",
-  "Montenegro":"ME","Bulgaria":"BG","Poland":"PL","Czech Republic":"CZ",
-  "Czechoslovakia":"CZ","Slovakia":"SK","Netherlands":"NL","Belgium":"BE",
-  "Germany":"DE","East Germany":"DE","Italy":"IT","England":"EN","Scotland":"SC",
-  "Wales":"EN","Northern Ireland":"IE","Ireland":"IE","Republic of Ireland":"IE",
-  "Sweden":"SE","Norway":"NO","Denmark":"DK","Finland":"FI","Greece":"GR",
-  "Turkey":"TR","USA":"US","United States":"US","Canada":"CA","Mexico":"MX",
-  "Paraguay":"PY","Venezuela":"VE","Peru":"PE","Ecuador":"EC","Bolivia":"BO",
-  "Ivory Coast":"CI","Cote d'Ivoire":"CI","Senegal":"SN","Morocco":"MA",
-  "Tunisia":"TN","Algeria":"DZ","Egypt":"EG","South Africa":"ZA",
-  "DR Congo":"CD","Congo DR":"CD","Congo":"CD","Angola":"AO","Mali":"ML",
-  "Guinea":"GN","Togo":"TG","Benin":"BJ","Zimbabwe":"ZW","Kenya":"KE",
-  "Australia":"AU","Japan":"JP","South Korea":"KR","Korea Republic":"KR",
-  "Uzbekistan":"UZ","Armenia":"AM","Azerbaijan":"AZ","Moldova":"MD",
-  "Belarus":"BY","Lithuania":"LT","Latvia":"LV","Estonia":"EE","Albania":"AL",
-  "Kosovo":"XK","Switzerland":"CH","Austria":"AT","Iceland":"IS","Jamaica":"JM",
-  "Cyprus":"CY","Gambia":"GM","Liberia":"LR","Zambia":"ZM","Uganda":"UG",
-  "Burkina Faso":"BF","Sierra Leone":"SL","Guinea-Bissau":"GW","Cape Verde":"CV"
-};
+/* שם המדינה כפי ש-worldfootball כותב אותו → קוד ISO.
+   יושב ב-config כי גם tools/unhide.mjs צריך אותו, ושתי טבלאות
+   נפרדות היו נפרדות עוד יותר אחרי התיקון הראשון. */
+const NAT_FROM_EN = readJSON("config/nat-en.json");
 
 function fromWf(raw) {
   const byName = new Map();

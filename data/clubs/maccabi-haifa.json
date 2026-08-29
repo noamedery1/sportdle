@@ -51,7 +51,7 @@
  },
  "counts": {
   "players": 381,
-  "targets": 111
+  "targets": 112
  },
  "players": [
   {
@@ -2050,9 +2050,9 @@
   },
   {
    "he": "וסקלי גונזלבס",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1984,
    "spells": [
     [
      2005,
@@ -2068,9 +2068,9 @@
   },
   {
    "he": "חבייר דירסאו",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1977,
    "spells": [
     [
      2005,
@@ -2079,7 +2079,7 @@
    ],
    "seasons": 3,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "חבייר פרנצ'יסקו דירסאו"
    ]
@@ -2594,9 +2594,9 @@
   },
   {
    "he": "טימבינוקסי פנטיני",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1984,
    "spells": [
     [
      2008,
@@ -2918,9 +2918,9 @@
   },
   {
    "he": "רנספורד אוסיי",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2009,
@@ -5302,9 +5302,9 @@
   },
   {
    "he": "קארים פריי",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1993,
    "spells": [
     [
      2019,
@@ -5320,9 +5320,9 @@
   },
   {
    "he": "איקוום אוטין",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1999,
    "spells": [
     [
      2020,
@@ -5353,9 +5353,9 @@
   },
   {
    "he": "גוזף קוזמינצקי",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2020,
@@ -6750,9 +6750,9 @@
   },
   {
    "he": "ריקרדו ויאנה",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 2001,
    "spells": [
     [
      2025,
@@ -7227,6 +7227,7 @@
   "שמואל שיימן",
   "רמי גרשון",
   "רביד גזל",
-  "מרקו בלבול"
+  "מרקו בלבול",
+  "חבייר דירסאו"
  ]
 }

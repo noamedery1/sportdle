@@ -787,9 +787,9 @@
   },
   {
    "he": "טרחולסקי ברטוש",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "FW",
+   "nat": "PL",
+   "born": 1975,
    "spells": [
     [
      2003,
@@ -823,9 +823,9 @@
   },
   {
    "he": "יזרסקי רמיגיוס",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "FW",
+   "nat": "PL",
+   "born": 1976,
    "spells": [
     [
      2003,
@@ -1071,9 +1071,9 @@
   },
   {
    "he": "קאקו בלסינג",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1978,
    "spells": [
     [
      2003,
@@ -1992,9 +1992,9 @@
   },
   {
    "he": "גורג דאטורו",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1977,
    "spells": [
     [
      2007,
@@ -2470,9 +2470,9 @@
   },
   {
    "he": "איגור קוסטרוב",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1987,
    "spells": [
     [
      2009,
@@ -2524,9 +2524,9 @@
   },
   {
    "he": "גוסטין זולו",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1989,
    "spells": [
     [
      2009,
@@ -2804,9 +2804,9 @@
   },
   {
    "he": "דנילו מורירה",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1980,
    "spells": [
     [
      2010,
@@ -3650,9 +3650,9 @@
   },
   {
    "he": "ננאד קיסו",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1989,
    "spells": [
     [
      2012,
@@ -3745,9 +3745,9 @@
   },
   {
    "he": "בוגאן מרקוביץ",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1985,
    "spells": [
     [
      2013,
@@ -4281,9 +4281,9 @@
   },
   {
    "he": "שלומי בן חמו",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1978,
    "spells": [
     [
      2014,
@@ -5044,9 +5044,9 @@
   },
   {
    "he": "גיא מלמד",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2018,
@@ -6623,9 +6623,9 @@
   },
   {
    "he": "מאגומד סוליימאנוב",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1999,
    "spells": [
     [
      2023,
@@ -7420,9 +7420,9 @@
   },
   {
    "he": "גבון איסט",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1995,
    "spells": [
     [
      2026,

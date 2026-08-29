@@ -70,7 +70,7 @@
  },
  "counts": {
   "players": 354,
-  "targets": 120
+  "targets": 121
  },
  "players": [
   {
@@ -2234,9 +2234,9 @@
   },
   {
    "he": "גיא סולומון",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1977,
    "spells": [
     [
      2007,
@@ -2245,7 +2245,7 @@
    ],
    "seasons": 5,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "גיא סולומון"
    ]
@@ -2327,9 +2327,9 @@
   },
   {
    "he": "מילאן מרדאקוביץ",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1982,
    "spells": [
     [
      2007,
@@ -3722,9 +3722,9 @@
   },
   {
    "he": "גונזלו גארסיה",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2013,
@@ -4987,9 +4987,9 @@
   },
   {
    "he": "חוזה רודריגז",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2018,
@@ -5823,9 +5823,9 @@
   },
   {
    "he": "רארש אילייה",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2003,
    "spells": [
     [
      2023,
@@ -6526,9 +6526,9 @@
   },
   {
    "he": "מוחמד קאמארה",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1997,
    "spells": [
     [
      2026,
@@ -6755,6 +6755,7 @@
   "רחמים טלבי",
   "אופיר דוידזאדה",
   "אלכסנדר פולוקארוב",
-  "רועי דיין"
+  "רועי דיין",
+  "גיא סולומון"
  ]
 }
