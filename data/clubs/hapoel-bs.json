@@ -903,7 +903,8 @@
    "target": true,
    "aliases": [
     "יניב אלול",
-    "Blessing Kaku"
+    "Blessing Kaku",
+    "בלסינג קאקו"
    ]
   },
   {
@@ -1728,7 +1729,8 @@
    "target": false,
    "aliases": [
     "גבריאל ווחין",
-    "Gabriel Vochin"
+    "Gabriel Vochin",
+    "גבריאל ווקין"
    ]
   },
   {
@@ -2243,7 +2245,8 @@
    "target": false,
    "aliases": [
     "אורן ניסים",
-    "Oren Nissim"
+    "Oren Nissim",
+    "אורן נסים"
    ]
   },
   {
@@ -2870,7 +2873,8 @@
    "target": false,
    "aliases": [
     "קאלה דרשלר",
-    "Tvrtko Kale"
+    "Tvrtko Kale",
+    "טברטקו קאלה"
    ]
   },
   {
@@ -3513,6 +3517,7 @@
    "aliases": [
     "דראשקו בוזוביץ'",
     "Draško Božović",
+    "דראשקו בוז'וביץ'",
     "דראשקו בוזוביץ"
    ]
   },
@@ -3734,6 +3739,7 @@
    "aliases": [
     "אוסטין אמאמצ'וקו אג'ידה",
     "Austin Ejide",
+    "אוסטין אג'ידה",
     "אוסטין אגידה"
    ]
   },
@@ -4250,7 +4256,8 @@
    "aliases": [
     "מאור בוזגלו",
     "Maor Buzaglo",
-    "Mihály Korhut"
+    "Mihály Korhut",
+    "מיהאי קורהוט"
    ]
   },
   {
@@ -4324,7 +4331,8 @@
    "target": true,
    "aliases": [
     "אובידיו סטפן הובאן",
-    "Ovidiu Hoban"
+    "Ovidiu Hoban",
+    "אובידיו הובאן"
    ]
   },
   {
@@ -4592,7 +4600,8 @@
    "target": true,
    "aliases": [
     "דוד גורש",
-    "Dudu Goresh"
+    "Dudu Goresh",
+    "דודו גורש"
    ]
   },
   {
@@ -4903,7 +4912,8 @@
    "target": true,
    "aliases": [
     "מיגל אנג'לו לאונרדו ויטור",
-    "Miguel Vítor"
+    "Miguel Vítor",
+    "מיגל ויטור"
    ]
   },
   {
@@ -5124,7 +5134,8 @@
    "aliases": [
     "חאתם אלחמיד",
     "Hatem Elhamed",
-    "Davide Petrucci"
+    "Davide Petrucci",
+    "דוידה פטרוצ'י"
    ]
   },
   {
@@ -5561,7 +5572,8 @@
    "target": false,
    "aliases": [
     "אלטון אופיי אקולטסה",
-    "Elton Acolatse"
+    "Elton Acolatse",
+    "אלטון אקולטסה"
    ]
   },
   {
@@ -5650,7 +5662,8 @@
    "target": true,
    "aliases": [
     "דוד יאיר קלטינס",
-    "David Keltjens"
+    "David Keltjens",
+    "דוד קלטינס"
    ]
   },
   {
@@ -5669,7 +5682,8 @@
    "target": false,
    "aliases": [
     "דויד מרטינס סימאו",
-    "David Simão"
+    "David Simão",
+    "דויד סימאו"
    ]
   },
   {
@@ -6300,7 +6314,8 @@
    "target": false,
    "aliases": [
     "דנילו מורנו אספרייה",
-    "Danilo Asprilla"
+    "Danilo Asprilla",
+    "דנילו אספרייה"
    ]
   },
   {
@@ -6543,7 +6558,8 @@
    "target": true,
    "aliases": [
     "אמיר חיים גנאח",
-    "Amir Ganach"
+    "Amir Ganach",
+    "אמיר גנאח"
    ]
   },
   {
@@ -6808,7 +6824,8 @@
    "target": false,
    "aliases": [
     "אלון תורגמן",
-    "Alon Turgeman"
+    "Alon Turgeman",
+    "אלון תורג'מן"
    ]
   },
   {
@@ -6846,7 +6863,8 @@
    "target": false,
    "aliases": [
     "אנטוניו ולנטין ספר",
-    "Antonio Şefer"
+    "Antonio Şefer",
+    "אנטוניו ספר"
    ]
   },
   {
@@ -6883,7 +6901,8 @@
    "target": false,
    "aliases": [
     "ארתור שושנאצב",
-    "Artur Shushenachev"
+    "Artur Shushenachev",
+    "ארתור שושנאצ'ב"
    ]
   },
   {
@@ -6921,7 +6940,8 @@
    "target": false,
    "aliases": [
     "דיינר אלכסנדר קיניונס",
-    "Déinner Quiñones"
+    "Déinner Quiñones",
+    "דיינר קיניונס"
    ]
   },
   {
@@ -7156,7 +7176,8 @@
    "target": false,
    "aliases": [
     "יורי חוסה פיקנצ'ו מדיירוש",
-    "Iuri Medeiros"
+    "Iuri Medeiros",
+    "יורי מדיירוש"
    ]
   },
   {
@@ -7175,7 +7196,8 @@
    "target": false,
    "aliases": [
     "לוקאס דה סוזה ונטורה",
-    "Nonoca"
+    "Nonoca",
+    "לוקאס ונטורה"
    ]
   },
   {
@@ -7231,7 +7253,8 @@
    "target": false,
    "aliases": [
     "פול ארנולד גריטה",
-    "Arnold Garita"
+    "Arnold Garita",
+    "פול גריטה"
    ]
   },
   {

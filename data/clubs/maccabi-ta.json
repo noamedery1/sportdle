@@ -228,7 +228,8 @@
    "titles": 7,
    "target": true,
    "aliases": [
-    "Avi Cohen II"
+    "Avi Cohen II",
+    "אבי כהן"
    ]
   },
   {
@@ -737,7 +738,8 @@
    "aliases": [
     "דדי בן דיין",
     "Dedi Ben Dayan",
-    "Bruno Reis"
+    "Bruno Reis",
+    "ברונו רייס"
    ]
   },
   {
@@ -1974,7 +1976,8 @@
    "aliases": [
     "שרן ייני",
     "Sheran Yeini",
-    "Rúben Micael"
+    "Rúben Micael",
+    "רובן מיקאל"
    ]
   },
   {
@@ -2031,7 +2034,8 @@
    "target": false,
    "aliases": [
     "אייל ברקוביץ",
-    "Eyal Berkovic"
+    "Eyal Berkovic",
+    "אייל ברקוביץ'"
    ]
   },
   {
@@ -2298,7 +2302,8 @@
    "target": false,
    "aliases": [
     "קאלה דרשלר",
-    "Tvrtko Kale"
+    "Tvrtko Kale",
+    "טברטקו קאלה"
    ]
   },
   {
@@ -2482,6 +2487,7 @@
    "aliases": [
     "ג'ונתן ויקטור ג'רארד אסוס",
     "Jonathan Assous",
+    "ג'ונתן אסוס",
     "גונתן אסוס"
    ]
   },
@@ -2632,7 +2638,8 @@
    "target": true,
    "aliases": [
     "ניסים קפילוטו",
-    "Nisso Kapiloto"
+    "Nisso Kapiloto",
+    "ניסו קפילוטו"
    ]
   },
   {
@@ -2985,7 +2992,8 @@
    "target": false,
    "aliases": [
     "אנדריי קומאץ'",
-    "Andrej Komac"
+    "Andrej Komac",
+    "אנדריי קומאץ"
    ]
   },
   {
@@ -3652,7 +3660,8 @@
    "target": false,
    "aliases": [
     "רפאל דהן",
-    "Rafi Dahan"
+    "Rafi Dahan",
+    "רפי דהן"
    ]
   },
   {
@@ -3912,7 +3921,8 @@
    "target": true,
    "aliases": [
     "ראדה סטניסלב פריצה",
-    "Rade Prica"
+    "Rade Prica",
+    "ראדה פריצה"
    ]
   },
   {
@@ -3949,7 +3959,8 @@
    "target": false,
    "aliases": [
     "תומר חנצינסקי",
-    "Tomer Chencinski"
+    "Tomer Chencinski",
+    "תומר חנצ'ינסקי"
    ]
   },
   {
@@ -4190,7 +4201,8 @@
    "target": false,
    "aliases": [
     "גיל ורמוט",
-    "Gil Vermouth"
+    "Gil Vermouth",
+    "גילי ורמוט"
    ]
   },
   {
@@ -4306,7 +4318,8 @@
    "target": true,
    "aliases": [
     "שחר בכטיאר פיבן",
-    "Shahar Piven"
+    "Shahar Piven",
+    "שחר פיבן"
    ]
   },
   {
@@ -4325,7 +4338,8 @@
    "target": true,
    "aliases": [
     "אברהם ריקן",
-    "Avi Rikan"
+    "Avi Rikan",
+    "אבי ריקן"
    ]
   },
   {
@@ -4437,7 +4451,8 @@
    "target": true,
    "aliases": [
     "גבריאל קניקובסקי",
-    "Gabi Kanichowsky"
+    "Gabi Kanichowsky",
+    "גבי קניקובסקי"
    ]
   },
   {
@@ -4456,7 +4471,8 @@
    "target": true,
    "aliases": [
     "דן ליאון גלזר",
-    "Dan Glazer"
+    "Dan Glazer",
+    "דן גלזר"
    ]
   },
   {
@@ -4580,7 +4596,8 @@
    "target": false,
    "aliases": [
     "שלומי יוסף אזולאי",
-    "Shlomi Azulay"
+    "Shlomi Azulay",
+    "שלומי אזולאי"
    ]
   },
   {
@@ -4946,6 +4963,7 @@
    "aliases": [
     "ז'אן-סילבן באבין",
     "Jean-Sylvain Babin",
+    "ז'אן סילבן באבין",
     "זאן באבין"
    ]
   },
@@ -5001,7 +5019,8 @@
    "target": false,
    "aliases": [
     "כריסטיאן דמיאן באטוקיו",
-    "Cristian Battocchio"
+    "Cristian Battocchio",
+    "כריסטיאן באטוקיו"
    ]
   },
   {
@@ -5460,7 +5479,9 @@
    "aliases": [
     "דור דויד תורגמן",
     "Dor Turgeman",
+    "דור תורג'מן",
     "Rareş Ilie",
+    "רארש איליה",
     "דור תורגמן"
    ]
   },

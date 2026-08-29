@@ -235,18 +235,27 @@ for (const club of clubs) {
      את שתי התכונות.
      המקור: data/raw/ifa-players.json, מ-`--source=ifaplayers`. */
   {
-    const ifaP = readJSON("data/raw/ifa-players.json", null);
+    /* מאחורי דגל, בכוונה. שנות הלידה משנות את המאגר עמוקות: הן
+       מזיזות 244 זיווגים בגשר המבני, מפצלות שחקנים שהיו רשומה
+       אחת (שני "מוחמד גדיר", שני "עמנואל בואטנג"), ומשנות רמזים
+       של תשע חידות שכבר פורסמו. השינוי הזה נכון, אבל הוא דורש
+       שלוש הכרעות אנושיות על שמות שכבר היו באוויר — ולכן הוא
+       לא נכנס מאליו. להרצה: node scripts/enrich.mjs --ifaborn */
+    const ifaP = args.ifaborn ? readJSON("data/raw/ifa-players.json", null) : null;
     let nBorn = 0, nNat = 0;
     for (const p of ifaP ? players : []) {
       const rec = p.ifaId ? ifaP.players[p.ifaId] : null;
       if (!rec) continue;
       if (p.born == null && rec.born) { p.born = rec.born; p.src.push("ifa:born"); nBorn++; }
-      /* נשמר גם בנפרד: זה המקור היחיד ללאום שאפשר לסמוך עליו כשומר
-         בגשר המבני, כי הוא אזרחות רשומה ולא נגזרת משום דבר. */
-      if (rec.natIso) p.natIfa = rec.natIso;
-      if (p.nat  == null && rec.natIso) { p.nat = rec.natIso; p.src.push("ifa:nat"); nNat++; }
+      /* האזרחות נשמרת, אבל **לא** הופכת ללאום שמוצג במשחק. ההתאחדות
+         רושמת אזרחות משפטית: ג'ובאני רוסו הקרואטי, גוסטבו בוקולי
+         הברזילאי וניקיטה רוקאביציה כולם "ישראל" אצלה אחרי שהתאזרחו.
+         הרמז במשחק הוא לאום כדורגלני, וזה מה שוויקיפדיה ו-worldfootball
+         נותנים. מאותה סיבה בדיוק היא גם לא משמשת שומר בגשר המבני —
+         "ישראל" מול "Croatia" אינה סתירה אלא שני דברים שונים. */
+      if (rec.natIso) { p.natIfa = rec.natIso; nNat++; }
     }
-    if (nBorn || nNat) log(`  דפי שחקן בהתאחדות: ${nBorn} שנות לידה · ${nNat} אזרחויות`);
+    if (nBorn || nNat) log(`  דפי שחקן בהתאחדות: ${nBorn} שנות לידה · ${nNat} אזרחויות (לתיעוד, לא לתצוגה)`);
   }
 
   /* --- worldfootball כשכבה נוספת ---
@@ -300,18 +309,23 @@ for (const club of clubs) {
            לפי ההתאחדות, זווג ל-"Akaki Mikuchadze" הגאורגי: אותה שנת
            לידה, אותה עונה, ובאותו רגע הוא היה היחיד בבריכה עם שנת
            לידה. לאום סותר פוסל את הזיווג. */
-        /* שנת לידה וחפיפת עונות לא מספיקות. "אלון אברמוביץ", ישראלי
-           לפי ההתאחדות, זווג ל-"Akaki Mikuchadze" הגאורגי — אותה שנת
-           לידה, אותה עונה, ובאותו רגע היחיד בבריכה עם שנת לידה.
-
-           השומר היחיד כאן הוא אזרחות רשומה מדף השחקן של ההתאחדות.
-           לא ויקיפדיה (שנכנסת מאוחר יותר בצינור), ולא היעדר תגית
-           /זר/ — הלדר לופש פורטוגלי ולא מתויג. כל שומר רחב יותר
-           שניסיתי הזיז עשרות זיווגים בבת אחת, ובתוכם "דיא סבע"
-           יליד 1992 שקיבל עונות 97/98. נתון שאין עליו ראיה לא
-           משמש להכרעה. */
+        /* בלי שומר לאום. ניסיתי ארבע גרסאות — אזרחות ההתאחדות,
+           לאום ויקיפדיה, תגית /זר/, ודרישת הסכמה מלאה — וכל אחת
+           פסלה זיווגים נכונים בדיוק כמו שגויים: ההתאחדות רושמת
+           אזרחות משפטית, וויקיפדיה נכנסת מאוחר יותר בצינור.
+           מה שכן השתפר: שנות הלידה מדפי השחקן. כשלכל רשומה יש
+           שנת לידה, מבחן היחידאות באמת בודק — קודם הוא עבר בקלות
+           רק כי מעטים היו מועמדים בכלל. */
         const hits = (byBorn.get(w.born) || []).filter(p => {
           if (!p.years.some(y => ws.has(y))) return false;
+          /* אזרחות רשומה בהתאחדות שסותרת את הלאום ב-worldfootball
+             פוסלת את הזיווג. זה מה שהפריד את "אלעד בונפלד" מ-"Aminu
+             Sani" הניגרי — אותה שנת לידה, אותה עונה, שני אנשים.
+
+             המחיר ידוע ומכוון: שחקן זר שהתאזרח רשום "ישראל" אצל
+             ההתאחדות, ולכן מאבד את הקישור לרשומה הלועזית שלו. הוא
+             נשאר עם מה שוויקיפדיה נתנה, בלי העונות מ-worldfootball.
+             נתון חסר עדיף על נתון שגוי: הרמז במשחק חייב להיות נכון. */
           if (p.natIfa && w.nat && p.natIfa !== w.nat) return false;
           return true;
         });
@@ -370,6 +384,12 @@ for (const club of clubs) {
         if (!hit.nat && w.nat)        { hit.nat = w.nat;   hit.src.push("wf:nat"); }
         hit.years.push(...w.years);              // worldfootball מפספס עונות, וגם ההתאחדות
         if (w.en && !hit.aliases.includes(w.en)) hit.aliases.push(w.en);
+        /* גם השם העברי שהגשר הבין־לשוני נתן, גם כשההתאחדות כבר
+           נתנה שם. ההתאחדות כותבת "הלדר לופז" וויקיפדיה "הלדר
+           לופש", והשני הוא זה שהאוהדים מקלידים — ושבו נכתבה החידה.
+           בלי הכינוי הזה שלב התכונות לא מוצא את הערך בוויקיפדיה,
+           השם נשאר הרשמי, וכל חידה שפורסמה בשם השני מתנתקת. */
+        if (heName && !hit.aliases.includes(heName)) hit.aliases.push(heName);
         hit.src.push("wf");
         filled++;
       } else if (heName) {
@@ -542,19 +562,26 @@ for (const club of clubs) {
        יכולה להיות התשובה של אף חידה — הבריכה דורשת עמדה ושנת
        לידה. כששמה זהה לשם שבלוח, החידה שייכת לרשומה השנייה,
        וההגנה הייתה מונעת דווקא את המחיקה הנכונה. */
-    const known = players.filter(p => p.pos != null || p.born != null);
+    /* התנאי הוא **בלי עמדה**, ולא "בלי שום תכונה". מאז ששנות
+       הלידה מגיעות מדפי השחקן, לרשומת התעתיק הכפולה כבר יש שנת
+       לידה — ובניסוח הישן היא חמקה מהמחיקה וחזרה להיות שחקן שני.
+       שנת הלידה לא מפריעה, היא מאשרת: כשהיא קיימת בשני הצדדים
+       היא חייבת להיות זהה. */
+    const known = players.filter(p => p.pos != null);
     let absorbed = 0;
     for (const p of players) {
-      if (p.pos != null || p.born != null) continue;
+      if (p.pos != null) continue;
       const k = skel(p.he), ys = yearsOf(p);
       if (!k || !ys.size) continue;
       const cands = known.filter(q => !q._gone && skel(q.he) === k &&
+        (p.born == null || q.born == null || p.born === q.born) &&
         [...ys].every(y => yearsOf(q).has(y)));
       if (cands.length !== 1) continue;
       const hit = cands[0];
       for (const a of [p.he, p.official, ...(p.aliases || [])])
         if (a && !hit.aliases.includes(a)) hit.aliases.push(a);
       if (hit.ifaId == null && p.ifaId != null) hit.ifaId = p.ifaId;
+      if (hit.born == null && p.born != null) hit.born = p.born;
       hit.src.push("absorbed");
       p._gone = true;
       absorbed++;
