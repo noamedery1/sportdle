@@ -237,6 +237,7 @@ const subst = {
   __ANALYTICS_URL__: site.analyticsUrl || "",
   __CLUBS__:         JSON.stringify(data),
   __CLUB_ORDER__:    JSON.stringify(order),
+  __RESET__:         JSON.stringify(site.reset || {}),
   __NAT_HE__:        JSON.stringify(NAT_HE),
   __REGION__:        JSON.stringify(REGION)
 };

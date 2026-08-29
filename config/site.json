@@ -3,14 +3,17 @@
   "name": "SportDle",
   "title": "SportDle · חידת השחקן היומית",
   "siteUrl": "https://sportdle.up.railway.app/sportdle",
-  "start": [2026, 8, 24],
+  "start": [
+    2026,
+    8,
+    24
+  ],
   "maxGuesses": 8,
   "build": "s3",
   "ogImage": "https://sportdle.up.railway.app/sportdle/og.png",
   "shareStyle": "safe",
   "shuffleSeed": 20260825,
   "analyticsUrl": "https://script.google.com/macros/s/AKfycbzE5Zr3VV92MPq_xQ9uU4N1uWdBxnP28be4MIFuhF_-qtAyIsDERHfmAb7gHuEuehUV/exec",
-
   "_firebase": [
     "פרויקט אחד לכל המועדונים. ההפרדה היא בנתיב: rooms/<slug>/<code>.",
     "מפתח ה-API גלוי בקוד — ככה פיירבייס עובד בצד לקוח. ההגנה היא בחוקים,",
@@ -25,5 +28,17 @@
     "storageBucket": "beitardle.firebasestorage.app",
     "messagingSenderId": "53875390040",
     "appId": "1:53875390040:web:99d92bde86e3c00abf7c2d"
+  },
+  "_reset": [
+    "חידות שהתשובה שלהן הוחלפה אחרי שכבר היו באוויר. הדפדפן של מי",
+    "ששיחק אותן מחזיק את הלוח הישן, ובלי המחיקה הוא רואה מסך גמור",
+    "על תשובה שכבר לא קיימת. המפתח הוא slug של מועדון, והערך הוא",
+    "מספרי החידה כפי שהם מוצגים במשחק. השורות נשארות כאן לתמיד —",
+    "כל דפדפן מבצע את המחיקה פעם אחת ומסמן לעצמו."
+  ],
+  "reset": {
+    "maccabi-haifa": [
+      7
+    ]
   }
 }

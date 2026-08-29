@@ -47,6 +47,9 @@ const store = {
    תבנית המפתח: sportdel:<slug>:<key> */
 const GKEY = k => `sportdel:${k}`;
 const K    = k => `sportdel:${club.slug}:${k}`;
+/* חידות שהתשובה שלהן הוחלפה אחרי שכבר היו באוויר.
+   { "<מועדון>": [מספרי חידה] } מתוך config/site.json. */
+const RESET = __RESET__;
 
 /* ערבוב דטרמיניסטי — אותו seed, אותו סדר, בכל מכשיר */
 function mulberry32(a){
@@ -1040,6 +1043,27 @@ function publishClub(c){
   window.SPORTDEL.siteUrl      = SITE_URL;
 }
 
+/* איפוס ממוקד של חידה שהתשובה שלה הוחלפה באמצע היום.
+   מי שכבר שיחק אותה שמור בלוקאלסטורג' עם הלוח הישן, ובלי
+   מחיקה הוא היה רואה מסך גמור על תשובה שכבר לא קיימת.
+
+   נמחק רק המפתח של אותה חידה, פעם אחת, ועם סימון כדי שמשחק
+   חוזר לא יימחק גם הוא. הרצף מוחזר צעד אחורה כדי שהמשחק
+   החוזר ייספר — רצף שנמחק בהפסד על החידה השגויה אי אפשר
+   לשחזר, כי הערך הקודם לא נשמר. */
+function applyResets(){
+  for (const n of (RESET[club.slug] || [])){
+    const flag = K("reset" + n);
+    if (store.get(flag)) continue;
+    store.del(K("p" + n));
+    try{
+      const st = JSON.parse(store.get(K("streak")) || "null");
+      if (st && st.last === n){ st.last = n - 1; store.set(K("streak"), JSON.stringify(st)); }
+    }catch(e){}
+    store.set(flag, "1");
+  }
+}
+
 function bootClub(slug){
   const switching = club && club.slug !== slug;
   club = CLUBS[slug];
@@ -1056,6 +1080,7 @@ function bootClub(slug){
   POOL = club.schedule.map(n => byName.get(n)).filter(Boolean);
   PLAYERS.filter(p => p.target && !club.schedule.includes(p.name)).forEach(p => POOL.push(p));
   todayNo = dayIndex() + 1;
+  applyResets();
 
   document.title = `${club.game} · חידת השחקן היומית`;
   $("#gameName").textContent = club.game;
