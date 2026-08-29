@@ -493,14 +493,14 @@ for (const club of clubs) {
     const skel = s => normName(s).replace(/[אוהי]/g, "").replace(/\s+/g, " ").trim();
     const yearsOf = p => new Set((p.spells || []).flatMap(([a, b]) =>
       Array.from({ length: b - a + 1 }, (_, i) => a + i)));
-    /* שם שכבר פורסם כחידה לא נמחק גם כשהוא חשוף */
-    const published = new Set(
-      (readJSON(`config/schedule-${club.slug}.json`, null)?.order || []).map(normName));
+    /* אין כאן הגנה על שמות שכבר פורסמו, בכוונה: רשומה חשופה לא
+       יכולה להיות התשובה של אף חידה — הבריכה דורשת עמדה ושנת
+       לידה. כששמה זהה לשם שבלוח, החידה שייכת לרשומה השנייה,
+       וההגנה הייתה מונעת דווקא את המחיקה הנכונה. */
     const known = players.filter(p => p.pos != null || p.born != null);
     let absorbed = 0;
     for (const p of players) {
       if (p.pos != null || p.born != null) continue;
-      if (published.has(normName(p.he))) continue;
       const k = skel(p.he), ys = yearsOf(p);
       if (!k || !ys.size) continue;
       const cands = known.filter(q => !q._gone && skel(q.he) === k &&

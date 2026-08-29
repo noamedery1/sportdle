@@ -56,7 +56,7 @@
   ]
  },
  "coverage": {
-  "from": 1970,
+  "from": 1969,
   "to": 2026,
   "sources": [
    "ifa",
@@ -73,6 +73,21 @@
   "targets": 120
  },
  "players": [
+  {
+   "he": "מאיר נמני",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1948,
+   "spells": [
+    [
+     1969,
+     1981
+    ]
+   ],
+   "seasons": 13,
+   "titles": 6,
+   "target": true
+  },
   {
    "he": "גיורא שפיגל",
    "pos": "MF",
@@ -232,21 +247,6 @@
    "target": true
   },
   {
-   "he": "מאיר נמני",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1948,
-   "spells": [
-    [
-     1975,
-     1977
-    ]
-   ],
-   "seasons": 3,
-   "titles": 2,
-   "target": true
-  },
-  {
    "he": "יוסף סורינוב",
    "pos": "GK",
    "nat": "IL",
@@ -381,6 +381,29 @@
    "seasons": 4,
    "titles": 1,
    "target": true
+  },
+  {
+   "he": "אבי נמני",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1972,
+   "spells": [
+    [
+     1990,
+     2003
+    ],
+    [
+     2006,
+     2008
+    ]
+   ],
+   "seasons": 17,
+   "titles": 8,
+   "target": true,
+   "aliases": [
+    "אבי נמני",
+    "Avi Nimny"
+   ]
   },
   {
    "he": "גדי ברומר",
@@ -1118,28 +1141,6 @@
    "seasons": 3,
    "titles": 2,
    "target": true
-  },
-  {
-   "he": "אבי נמני",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1972,
-   "spells": [
-    [
-     2003,
-     2003
-    ],
-    [
-     2006,
-     2007
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "אבי נמני"
-   ]
   },
   {
    "he": "אביעד אברהם",
