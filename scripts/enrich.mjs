@@ -228,6 +228,24 @@ for (const club of clubs) {
     players = fromIfa(ifa); sources.push("ifa");
   } else { warn(`${club.slug}: אין מקור בסיס — מדלגים`); continue; }
 
+  /* --- דף השחקן של ההתאחדות: שנת לידה ואזרחות ---
+     נכנס כאן, לפני שכבת worldfootball, ולא אחריה. הגשר המבני שם
+     נשען על שנת לידה, ובלעדיה שחקן שאין לו ערך ויקיפדיה לא מתחבר
+     לשום רשומה לועזית — ולכן גם לא מקבל עמדה. שנת לידה אחת פותחת
+     את שתי התכונות.
+     המקור: data/raw/ifa-players.json, מ-`--source=ifaplayers`. */
+  {
+    const ifaP = readJSON("data/raw/ifa-players.json", null);
+    let nBorn = 0, nNat = 0;
+    for (const p of ifaP ? players : []) {
+      const rec = p.ifaId ? ifaP.players[p.ifaId] : null;
+      if (!rec) continue;
+      if (p.born == null && rec.born) { p.born = rec.born; p.src.push("ifa:born"); nBorn++; }
+      if (p.nat  == null && rec.natIso) { p.nat = rec.natIso; p.src.push("ifa:nat"); nNat++; }
+    }
+    if (nBorn || nNat) log(`  דפי שחקן בהתאחדות: ${nBorn} שנות לידה · ${nNat} אזרחויות`);
+  }
+
   /* --- worldfootball כשכבה נוספת ---
      שני תפקידים:
      1. להשלים עמדה / שנת לידה / לאום למי שכבר במאגר

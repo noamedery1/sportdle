@@ -25,14 +25,14 @@
 import { existsSync } from "node:fs";
 import {
   parseArgs, pickClubs, readJSON, writeJSON, readText, writeText,
-  log, warn, die, sleep, cleanIfaName, isForeignIfa, shortName, stripParen, normName, normLatin, nameVariants
+  log, warn, die, sleep, cleanIfaName, isForeignIfa, shortName, stripParen, normName, normLatin, nameVariants, toSpells
 } from "./lib/util.mjs";
 import { openBrowser, gotoStable, makeThrottle } from "./lib/browser.mjs";
 
 const args   = parseArgs();
 const clubs  = pickClubs(args);
 const only   = args.source ? String(args.source).split(",")
-             : ["reference", "wf", "ifa", "wiki", "wikiplayers", "wikiextra", "wikilang", "enbridge"];
+             : ["reference", "wf", "ifa", "wiki", "wikiplayers", "wikiextra", "wikilang", "wikicareer", "enbridge"];
 const FROM   = +(args.from || 1969);
 const TO     = +(args.to   || 2025);
 const FORCE  = !!args.force;
@@ -704,12 +704,217 @@ function scrapeReference(club) {
 }
 
 /* ============================================================
+   מקור 2ב — דף השחקן של ההתאחדות.
+
+   דף הסגל נותן שם ועונה ותו לא. דף השחקן עצמו נותן **שנת לידה
+   ואזרחות**, וזה בדיוק מה שחסר ל-562 השחקנים שיורדים מהמשחק.
+   אין בו עמדה — אבל שנת הלידה לבדה מפעילה את הגשר המבני מול
+   worldfootball (לידה + חפיפת עונות), ומשם מגיעה גם העמדה.
+
+   אימות: 1426 מחזיר 04/1972, וויקיפדיה כותבת 26 באפריל 1972.
+
+   הקובץ משותף לכל המועדונים ולא מפוצל לפיהם, כי המפתח הוא
+   השחקן ולא הקבוצה: מי ששיחק בשתיים מהן לא נשאב פעמיים.
+   הריצה המשכית — נשמרת כל 20 שחקנים, ומדלגת על מי שכבר נבדק.
+   ============================================================ */
+const IFA_PLAYERS_FILE = "data/raw/ifa-players.json";
+
+function extractIfaPlayerInPage() {
+  const t = document.body.innerText;
+  const flat = t.replace(/\s+/g, " ");
+  const born = (flat.match(/תאריך לידה:\s*(\d{1,2})\/(\d{4})/) || []).slice(1);
+  /* על טקסט שטוח אי אפשר לדעת איפה נגמרת האזרחות ומתחיל השם.
+     שורה שלמה מה-innerText היא הגבול הנכון. */
+  const nat  = (t.match(/אזרחות:[ \t]*([^\n]+)/) || [])[1] || null;
+  /* השם יושב בשורה שמעל "תאריך לידה" */
+  const name = (t.match(/([^\n]+)\n\s*תאריך לידה/) || [])[1] || null;
+  const seasons = [...document.querySelectorAll("select option")]
+    .map(o => o.textContent.trim())
+    .filter(s => /^\d{4}\/\d{4}$/.test(s))
+    .map(s => +s.split("/")[1]);
+  return {
+    name: name ? name.trim() : null,
+    born: born.length ? +born[1] : null,
+    bornMonth: born.length ? +born[0] : null,
+    nat: nat ? nat.trim() : null,
+    seasons: [...new Set(seasons)].sort((a, b) => a - b)
+  };
+}
+
+async function scrapeIfaPlayers(clubList, page, thr) {
+  const store = readJSON(IFA_PLAYERS_FILE, { players: {} });
+  const want = new Map();                       // id → מאיזה מועדון ראינו אותו
+  for (const club of clubList) {
+    const ifa = readJSON(`data/raw/${club.slug}-ifa.json`, null);
+    for (const list of Object.values(ifa?.seasons || {}))
+      for (const p of list) if (p.id && !want.has(p.id)) want.set(p.id, club.slug);
+  }
+  /* ברירת מחדל: רק מי שאין לו עדיין שנת לידה במאגר. --all סורק הכול. */
+  const onlyMissing = !args.all;
+  const need = [...want.keys()].filter(id => {
+    const have = store.players[id];
+    if (!have) return true;
+    return onlyMissing ? have.born == null : false;
+  });
+  const limit = args.limit ? +args.limit : need.length;
+  const todo = need.slice(0, limit);
+  log(`  התאחדות — דפי שחקן: ${want.size} מזהים · ${todo.length} לסריקה עכשיו`);
+
+  let done = 0, blocked = 0, gotBorn = 0;
+  for (const id of todo) {
+    const url = `https://www.football.org.il/players/player/?player_id=${id}`;
+    const ok = await gotoStable(page, url, { waitChallenge: 25, settle: 800 });
+    if (!ok) {
+      blocked++;
+      if (!(await thr.fail())) { warn(`ההתאחדות חוסמת ברצף — עוצרים על ${id}`); break; }
+      continue;
+    }
+    thr.ok();
+    const d = await page.evaluate(extractIfaPlayerInPage);
+    /* האזרחות מגיעה בעברית. הטבלה כבר קיימת כאן בשביל ויקיפדיה,
+       וההמרה בשלב השאיבה חוסכת טבלה שנייה ב-enrich. */
+    const natHe = d.nat ? d.nat.split(/[,/]/)[0].trim() : null;
+    const natIso = natHe ? (NAT_HE_TO_ISO[natHe] ?? null) : null;
+    store.players[id] = { ...d, natHe, natIso,
+                          club: want.get(id), at: new Date().toISOString().slice(0, 10) };
+    if (d.born) gotBorn++;
+    done++;
+    if (done % 20 === 0) {
+      writeJSON(IFA_PLAYERS_FILE, store);
+      log(`  ${done}/${todo.length} · ${gotBorn} עם שנת לידה`);
+    }
+    await thr.pace();
+  }
+  writeJSON(IFA_PLAYERS_FILE, store);
+  log(`  התאחדות — דפי שחקן: ${done} נסרקו · ${gotBorn} עם שנת לידה · ${blocked} חסימות`);
+  return { done, gotBorn, blocked, total: Object.keys(store.players).length };
+}
+
+/* ============================================================
+   מקור 3ה — טבלת הקריירה מתיבת המידע.
+
+   זה המקור היחיד שיודע מתי שחקן **התחיל** במועדון. ההתאחדות
+   מתחילה ב-2002/03, וסגלי worldfootball של שנות השבעים והתשעים
+   חלקיים — אצל מאיר נמני הוא הכיר שלוש עונות מתוך שלוש-עשרה.
+   התיבה של ויקיפדיה העברית רושמת את השורה במלואה:
+
+     | שנים כשחקן    = 1989–1998 {{ש}} 1998 {{ש}} 1998–2003
+     | מועדונים כשחקן = מכבי תל אביב {{ש}} אתלטיקו מדריד {{ש}} מכבי תל אביב
+
+   שתי הרשימות מקבילות, ולכן מפצלים את שתיהן על {{ש}} ומרכיבים
+   זוגות. שומרים רק שורות של המועדון שלנו.
+
+   המרה לעונות: "1989–1998" הוא 89/90 עד 97/98, כלומר שנות סיום
+   1990 עד 1998. שנה בודדת ("1998") היא עונה אחת שמסתיימת ב-1999,
+   אבל היא גם הצורה שבה נרשמת השאלה של חצי עונה — ולכן היא
+   מסומנת `ambiguous` ולא נכנסת לתיקון אוטומטי.
+
+   חץ ← לפני שם מועדון הוא השאלה. השאלה **אל** המועדון שלנו היא
+   עונה לכל דבר; השאלה ממנו החוצה רשומה על המועדון האחר ולכן
+   נופלת מעצמה בסינון.
+   ============================================================ */
+const SPLIT_ROWS = /\{\{\s*ש\s*\}\}|<\s*br\s*\/?\s*>/i;
+
+function careerRows(wt) {
+  const split = s => String(s).split(SPLIT_ROWS).map(x => plain(x).trim());
+  const ys = infoboxField(wt, ["שנים כשחקן", "שנים"]);
+  const cs = infoboxField(wt, ["מועדונים כשחקן", "מועדונים"]);
+  if (ys && cs) {
+    const a = split(ys), b = split(cs), out = [];
+    for (let i = 0; i < Math.min(a.length, b.length); i++)
+      if (a[i] && b[i]) out.push({ years: a[i], club: b[i] });
+    return out;
+  }
+  /* התבנית הממוספרת: | שנים1 = ... | מועדון1 = ... */
+  const out = [];
+  for (let i = 1; i <= 25; i++) {
+    const y = infoboxField(wt, [`שנים${i}`]);
+    const c = infoboxField(wt, [`מועדון${i}`, `מועדונים${i}`]);
+    if (!y || !c) continue;
+    out.push({ years: plain(y).trim(), club: plain(c).trim() });
+  }
+  return out;
+}
+
+/* מחרוזת שנים → [שנת סיום ראשונה, שנת סיום אחרונה] */
+function rowSpell(s, openEnd) {
+  const t = String(s).replace(/\s+/g, "");
+  let m = t.match(/^(\d{4})[–—−-](\d{4})$/);
+  if (m) {
+    const a = +m[1] + 1, b = +m[2];
+    return a <= b ? { spell: [a, b], ambiguous: false } : null;
+  }
+  m = t.match(/^(\d{4})[–—−-]$/);                    // "2019–" — עדיין בקבוצה
+  if (m) {
+    const a = +m[1] + 1;
+    return a <= openEnd ? { spell: [a, openEnd], ambiguous: false } : null;
+  }
+  m = t.match(/^(\d{4})$/);                          // שנה בודדת — עונה או חצי
+  if (m) return { spell: [+m[1] + 1, +m[1] + 1], ambiguous: true };
+  return null;
+}
+
+async function scrapeWikiCareer(club) {
+  const titles = new Set();
+  for (const f of ["wikipedia", "wikiextra", "wikiplayers"]) {
+    const j = readJSON(`data/raw/${club.slug}-${f}.json`, null);
+    for (const e of j?.entries  || []) titles.add(e.title);
+    for (const d of j?.details  || []) titles.add(d.title);
+  }
+  const list = [...titles];
+  if (!list.length) { warn(`${club.slug}: אין כותרות ויקיפדיה — הרץ קודם --source=wiki`); return null; }
+
+  const clubKey = normName(stripParen(club.he));
+  const isOurs = name => {
+    const n = normName(stripParen(String(name).replace(/^\s*[←→]\s*/, "")));
+    return n === clubKey || n.includes(clubKey);
+  };
+  const openEnd = TO + 1;
+
+  const details = [];
+  let withRows = 0, noBox = 0;
+  for (let i = 0; i < list.length; i += 50) {
+    const j = await wikiBatch(list.slice(i, i + 50));
+    if (!j) break;
+    for (const p of j.query?.pages || []) {
+      if (p.missing) continue;
+      const wt = p.revisions?.[0]?.slots?.main?.content;
+      if (!wt || !/\{\{\s*אישיות כדורגל/.test(wt)) { noBox++; continue; }
+      const rows = careerRows(wt).filter(r => isOurs(r.club));
+      if (!rows.length) continue;
+      const spells = [], raw = [];
+      let ambiguous = false;
+      for (const r of rows) {
+        const got = rowSpell(r.years, openEnd);
+        raw.push({ years: r.years, club: r.club, ok: !!got });
+        if (!got) { ambiguous = true; continue; }
+        if (got.ambiguous) ambiguous = true;
+        spells.push(got.spell);
+      }
+      if (!spells.length) continue;
+      const years = new Set();
+      for (const [a, b] of spells) for (let y = a; y <= b; y++) years.add(y);
+      details.push({
+        title: p.title, name: stripParen(p.title),
+        spells: toSpells([...years]), years: [...years].sort((a, b) => a - b),
+        ambiguous, rows: raw
+      });
+      withRows++;
+    }
+    await sleep(1200);
+  }
+  log(`  ${club.slug} wikicareer: ${list.length} ערכים · ${withRows} עם טבלת קריירה · ${noBox} בלי תיבה`);
+  return { details, checked: list.length };
+}
+
+/* ============================================================
    ראשי
    ============================================================ */
 const wantWf   = only.includes("wf");
 const wantIfa  = only.includes("ifa");
+const wantIfaP = only.includes("ifaplayers");
 /* גם פרסור מ-cache צריך DOM, אז שני המקורות האלה תמיד פותחים דפדפן */
-const needsBrowser = wantWf || wantIfa;
+const needsBrowser = wantWf || wantIfa || wantIfaP;
 
 let br = null;
 if (needsBrowser) {
@@ -718,6 +923,13 @@ if (needsBrowser) {
 }
 
 try {
+  /* דפי השחקן של ההתאחדות רצים פעם אחת לכל המועדונים יחד — המפתח
+     הוא השחקן, ומי ששיחק בשתיים מהן לא נשאב פעמיים. */
+  if (wantIfaP) {
+    const thr = makeThrottle({ base: 800, maxStreak: 5 });
+    await scrapeIfaPlayers(clubs, br.page, thr);
+  }
+
   for (const club of clubs) {
     log(`── ${club.slug} (${club.he}) ──`);
 
@@ -784,6 +996,12 @@ try {
       const r = await scrapeWikiLang(club);
       if (r) writeJSON(`data/raw/${club.slug}-wikilang.json`,
         { club: club.slug, source: "wikilang", ...r });
+    }
+
+    if (only.includes("wikicareer")) {
+      const r = await scrapeWikiCareer(club);
+      if (r) writeJSON(`data/raw/${club.slug}-wikicareer.json`,
+        { club: club.slug, source: "wikicareer", ...r });
     }
 
     if (only.includes("enbridge")) {
