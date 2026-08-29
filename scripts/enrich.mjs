@@ -450,6 +450,25 @@ for (const club of clubs) {
     log(`  תיקונים ידניים: ${n}`);
   }
 
+  /* --- הסרת רשומה שאינה שייכת למועדון ---
+     "ליאור אסולין" הופיע במכבי חיפה על סמך worldfootball בלבד,
+     והוא מעולם לא שיחק שם. במקרה כזה לא מספיק להוציא אותו
+     מבריכת התשובות: כל עוד הרשומה במאגר היא מופיעה בהשלמה
+     האוטומטית, ואוהד שמקליד את השם מקבל אישור שהוא שיחק כאן.
+     { "drop": true } בקובץ השמות מוציא אותה לגמרי.
+
+     זה תמיד ידני. הצינור לא מוחק שחקן מעצמו — הוא רק מסמן
+     ב-review מי נשען על מקור יחיד. */
+  {
+    const dropped = players.filter(p => p.drop);
+    if (dropped.length) {
+      players = players.filter(p => !p.drop);
+      for (const p of dropped)
+        review.notes.push(`הוסר ידנית מהמאגר: "${p.he}"`);
+      log(`  הוסרו ${dropped.length} רשומות שסומנו drop`);
+    }
+  }
+
   /* --- תקופות, עונות, תארים --- */
   const titleYears = [...club.titles.league, ...club.titles.cup];
   for (const p of players) {
