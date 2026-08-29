@@ -241,6 +241,9 @@ for (const club of clubs) {
       const rec = p.ifaId ? ifaP.players[p.ifaId] : null;
       if (!rec) continue;
       if (p.born == null && rec.born) { p.born = rec.born; p.src.push("ifa:born"); nBorn++; }
+      /* נשמר גם בנפרד: זה המקור היחיד ללאום שאפשר לסמוך עליו כשומר
+         בגשר המבני, כי הוא אזרחות רשומה ולא נגזרת משום דבר. */
+      if (rec.natIso) p.natIfa = rec.natIso;
       if (p.nat  == null && rec.natIso) { p.nat = rec.natIso; p.src.push("ifa:nat"); nNat++; }
     }
     if (nBorn || nNat) log(`  דפי שחקן בהתאחדות: ${nBorn} שנות לידה · ${nNat} אזרחויות`);
@@ -293,7 +296,25 @@ for (const club of clubs) {
       for (const w of wfList) {
         if (w.born == null || !w.years.length) continue;
         const ws = new Set(w.years);
-        const hits = (byBorn.get(w.born) || []).filter(p => p.years.some(y => ws.has(y)));
+        /* שנת לידה וחפיפת עונות לא מספיקות. "אלון אברמוביץ", ישראלי
+           לפי ההתאחדות, זווג ל-"Akaki Mikuchadze" הגאורגי: אותה שנת
+           לידה, אותה עונה, ובאותו רגע הוא היה היחיד בבריכה עם שנת
+           לידה. לאום סותר פוסל את הזיווג. */
+        /* שנת לידה וחפיפת עונות לא מספיקות. "אלון אברמוביץ", ישראלי
+           לפי ההתאחדות, זווג ל-"Akaki Mikuchadze" הגאורגי — אותה שנת
+           לידה, אותה עונה, ובאותו רגע היחיד בבריכה עם שנת לידה.
+
+           השומר היחיד כאן הוא אזרחות רשומה מדף השחקן של ההתאחדות.
+           לא ויקיפדיה (שנכנסת מאוחר יותר בצינור), ולא היעדר תגית
+           /זר/ — הלדר לופש פורטוגלי ולא מתויג. כל שומר רחב יותר
+           שניסיתי הזיז עשרות זיווגים בבת אחת, ובתוכם "דיא סבע"
+           יליד 1992 שקיבל עונות 97/98. נתון שאין עליו ראיה לא
+           משמש להכרעה. */
+        const hits = (byBorn.get(w.born) || []).filter(p => {
+          if (!p.years.some(y => ws.has(y))) return false;
+          if (p.natIfa && w.nat && p.natIfa !== w.nat) return false;
+          return true;
+        });
         if (hits.length !== 1) continue;
         link.set(w.en, hits[0]);
         claims.set(hits[0], (claims.get(hits[0]) || 0) + 1);
@@ -305,6 +326,12 @@ for (const club of clubs) {
     /* השחקנים שכבר יש להם שנת לידה מוויקיפדיה — הם הצד העברי */
     const wfAll = fromWf(wf);
     const wikiIdxForBorn = wpA || wpB ? wikiIndex(wikiP.details) : null;
+    /* רק שנת לידה, ובכוונה לא הלאום. שאיבת הלאום לכאן הכפילה את
+       מספר הזיווגים המבניים — ובתוכם "דיא סבע" יליד 1992 שקיבל
+       עונות 97/98, ו"ואליד באדיר" שהפך לשוער. יותר נתונים לפני
+       הגשר פירושם יותר מועמדים שנפסלים, ופתאום מישהו נשאר "יחיד"
+       בלי שהוא נכון. הלאום שכן משמש שומר הוא זה שמדף השחקן של
+       ההתאחדות, שנכנס למעלה, והוא אזרחות רשומה ולא נגזרת. */
     if (wikiIdxForBorn)
       for (const p of players)
         if (p.born == null) { const m = matchWiki(wikiIdxForBorn, p); if (m.hit?.born) p.born = m.hit.born; }

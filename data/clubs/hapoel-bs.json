@@ -1460,9 +1460,9 @@
   },
   {
    "he": "אלון אברמוביץ",
-   "pos": "FW",
-   "nat": "GE",
-   "born": 1980,
+   "pos": null,
+   "nat": "IL",
+   "born": null,
    "spells": [
     [
      2005,
@@ -1473,8 +1473,7 @@
    "titles": 0,
    "target": false,
    "aliases": [
-    "אלון אברמוביץ",
-    "Akaki Mikuchadze"
+    "אלון אברמוביץ"
    ]
   },
   {

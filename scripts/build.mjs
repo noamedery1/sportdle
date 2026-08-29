@@ -190,14 +190,22 @@ for (const c of clubs) {
   if (!existsSync(path)) { warn(`${c.slug}: אין ${path} — מדלגים`); continue; }
   const d = readJSON(path);
   checkClub(d);
-  /* שחקן בלי עמדה **וגם** בלי שנת לידה לא נכנס למשחק. ניחוש עליו
-     מחזיר שורה של סימני שאלה: זה לא רמז, זה נראה כמו תקלה — והוא
-     לא יכול להיות תשובה בשום מצב, כי הבריכה דורשת את שני השדות.
-     הוא נשאר במאגר במלואו: `node tools/hidden.mjs` מוציא את הרשימה
-     לתיקון, וברגע שיש לו עמדה או שנת לידה הוא חוזר למשחק מעצמו.
-     המספרים שמוצגים לשחקן נספרים מכאן, אחרי הסינון — אחרת הכותרת
-     מבטיחה שחקנים שאי אפשר להקליד. */
-  const playable = d.players.filter(p => p.pos != null || p.born != null);
+  /* שחקן בלי עמדה לא נכנס למשחק. העמדה היא הרמז הראשון בשורה,
+     וסימן שאלה במקומה לא מלמד כלום — הוא נראה כמו תקלה. שחקן כזה
+     גם לא יכול להיות תשובה, כי הבריכה דורשת עמדה ושנת לידה.
+
+     שנת לידה חסרה לבדה היא סיפור אחר: נשארים ארבעה רמזים מתוך
+     חמישה, וזה עדיין ניחוש שימושי. בית"ר מריצה 17 כאלה בייצור.
+
+     הגבול כאן, ולא ב"חסרים שני השדות", כי שאיבת דפי השחקן של
+     ההתאחדות ממלאת שנת לידה בלי עמדה — ובלי הכלל הזה היא הייתה
+     מחזירה למשחק מאות שחקנים עם "?" בעמדה.
+
+     המאגר נשאר שלם: `node tools/hidden.mjs` מוציא את הרשימה
+     לתיקון, וברגע שיש עמדה השחקן חוזר מעצמו. המספרים שמוצגים
+     לשחקן נספרים אחרי הסינון — אחרת הכותרת מבטיחה שחקנים שאי
+     אפשר להקליד. */
+  const playable = d.players.filter(p => p.pos != null);
   const hidden = d.players.length - playable.length;
   const spanYears = playable.flatMap(p => p.spells.flat());
   data[c.slug] = {
@@ -305,5 +313,5 @@ for (const s of order)
   log(`  ${data[s].game.padEnd(8)} ${String(data[s].counts.players).padStart(4)} שחקנים · ` +
       `${String(data[s].counts.targets).padStart(3)} בבריכה · ` +
       `${season(data[s].coverage.from)}–${season(data[s].coverage.to)}` +
-      (data[s].counts.hidden ? ` · ${data[s].counts.hidden} מוסתרים (בלי עמדה ובלי שנת לידה)` : ""));
+      (data[s].counts.hidden ? ` · ${data[s].counts.hidden} מוסתרים (בלי עמדה)` : ""));
 log("כל הבדיקות עברו.");

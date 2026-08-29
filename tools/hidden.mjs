@@ -1,6 +1,6 @@
 /* מי לא מוצג במשחק, ולמה.
    שחקן בלי עמדה וגם בלי שנת לידה יורד מהמשחק ב-build.mjs: ניחוש
-   עליו מחזיר שורה של סימני שאלה, והוא לא יכול להיות תשובה. הוא
+   עליו לא נותן את הרמז הראשון, והוא לא יכול להיות תשובה. הוא
    נשאר במאגר, וכאן הרשימה שצריך למלא כדי להחזיר אותו.
 
    node tools/hidden.mjs             סיכום + כתיבת data/review/hidden.md
@@ -44,11 +44,11 @@ for (const c of loadClubs()) {
   });
   rows.push({
     slug: c.slug, game: d.game, total: d.players.length,
-    /* מוסתר לגמרי — שני השדות חסרים */
-    out: d.players.filter(p => p.pos == null && p.born == null)
+    /* מוסתר — אין עמדה */
+    out: d.players.filter(p => p.pos == null)
       .sort((a, b) => b.seasons - a.seasons || a.he.localeCompare(b.he, "he")).map(tag),
-    /* מוצג, אבל עם סימן שאלה אחד */
-    partial: d.players.filter(p => (p.pos == null) !== (p.born == null))
+    /* מוצג, אבל שנת הלידה עדיין "?" */
+    partial: d.players.filter(p => p.pos != null && p.born == null)
       .sort((a, b) => b.seasons - a.seasons || a.he.localeCompare(b.he, "he")).map(tag)
   });
 }
@@ -61,8 +61,8 @@ console.log("─".repeat(50));
 for (const r of rows)
   console.log(`${pad(r.game, 14)} ${num(r.total, 6)} ${num(r.out.length, 9)} ` +
               `${num(r.total - r.out.length, 7)} ${num(r.partial.length, 8)}`);
-console.log(`\n"מוסתרים" = בלי עמדה וגם בלי שנת לידה — לא מוצגים במשחק.` +
-            `\n"חלקיים"  = מוצגים, אבל שדה אחד עדיין "?".`);
+console.log(`\n"מוסתרים" = בלי עמדה — לא מוצגים במשחק.` +
+            `\n"חלקיים"  = מוצגים, אבל שנת הלידה עדיין "?".`);
 
 if (only && rows[0]) {
   console.log(`\n── ${rows[0].game}: מוסתרים ──`);
@@ -78,8 +78,8 @@ const POS_HE = { GK: "שוער", DF: "מגן", MF: "קשר", FW: "חלוץ" };
 const out = [];
 out.push("# מי לא מוצג במשחק");
 out.push("");
-out.push("שחקן בלי עמדה **וגם** בלי שנת לידה יורד מהמשחק: ניחוש עליו מחזיר");
-out.push("שורה של סימני שאלה, והוא לא יכול להיות תשובה בשום מצב. הוא נשאר");
+out.push("שחקן בלי עמדה יורד מהמשחק: העמדה היא הרמז הראשון, וסימן");
+out.push("שאלה במקומה לא מלמד כלום. הוא גם לא יכול להיות תשובה. הוא נשאר");
 out.push("במאגר — הרשימה כאן היא מה שצריך למלא כדי להחזיר אותו.");
 out.push("");
 out.push("התיקון: `config/names-<slug>.json`, מפתח לפי `player_id` של ההתאחדות");
