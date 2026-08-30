@@ -48,7 +48,7 @@
  },
  "counts": {
   "players": 431,
-  "targets": 101
+  "targets": 99
  },
  "players": [
   {
@@ -1011,9 +1011,9 @@
   },
   {
    "he": "אבי קנפו",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1982,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1069,9 +1069,9 @@
   },
   {
    "he": "אודי כפיר",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1979,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1190,9 +1190,9 @@
   },
   {
    "he": "הלמאיי גאבור",
-   "pos": "MF",
-   "nat": "HU",
-   "born": 1972,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1405,9 +1405,9 @@
   },
   {
    "he": "קלשנקו סרגיי",
-   "pos": "FW",
-   "nat": "MD",
-   "born": 1972,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2003,
@@ -2540,9 +2540,9 @@
   },
   {
    "he": "נסומבו מזואה",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1982,
+   "born": null,
    "spells": [
     [
      2008,
@@ -2860,9 +2860,9 @@
   },
   {
    "he": "מהראן אל לאלה",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1982,
+   "born": null,
    "spells": [
     [
      2009,
@@ -2871,7 +2871,7 @@
    ],
    "seasons": 4,
    "titles": 4,
-   "target": true,
+   "target": false,
    "aliases": [
     "מהראן אל לאלה"
    ]
@@ -2987,9 +2987,9 @@
   },
   {
    "he": "בוגאן ורוצינה",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1984,
+   "born": null,
    "spells": [
     [
      2010,
@@ -3229,9 +3229,9 @@
   },
   {
    "he": "בבאן פרנסמן",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1983,
+   "born": null,
    "spells": [
     [
      2011,
@@ -3445,9 +3445,9 @@
   },
   {
    "he": "אורמוש מירקו",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1988,
+   "born": null,
    "spells": [
     [
      2012,
@@ -4912,9 +4912,9 @@
   },
   {
    "he": "סראג נסאר",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1990,
+   "born": null,
    "spells": [
     [
      2016,
@@ -5587,9 +5587,9 @@
   },
   {
    "he": "מוליק פגסל",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1994,
+   "born": null,
    "spells": [
     [
      2018,
@@ -5638,9 +5638,9 @@
   },
   {
    "he": "מרווין פרינס",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1991,
+   "born": null,
    "spells": [
     [
      2018,
@@ -5649,7 +5649,7 @@
    ],
    "seasons": 3,
    "titles": 0,
-   "target": true,
+   "target": false,
    "aliases": [
     "מרווין פירסמן וירג'יני פרינס"
    ]
@@ -5826,9 +5826,9 @@
   },
   {
    "he": "נריגוס ולסקיס",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1987,
+   "born": null,
    "spells": [
     [
      2019,
@@ -6309,9 +6309,9 @@
   },
   {
    "he": "ארנסטאס סטקוס",
-   "pos": "GK",
+   "pos": null,
    "nat": "IL",
-   "born": 1985,
+   "born": null,
    "spells": [
     [
      2021,
@@ -8017,9 +8017,9 @@
   },
   {
    "he": "פרננד מאיימבו",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1996,
+   "born": null,
    "spells": [
     [
      2026,
@@ -8035,9 +8035,9 @@
   },
   {
    "he": "ציקו אלבס",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1998,
+   "born": null,
    "spells": [
     [
      2026,
@@ -8186,8 +8186,6 @@
   "ניר רחמין",
   "קז'ימיש מוסקאל",
   "טל ארצל",
-  "מרווין פרינס",
-  "מהראן אל לאלה",
   "רוי ברנס",
   "פרחאת עבדי",
   "גיא סלם"

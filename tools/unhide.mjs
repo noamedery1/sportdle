@@ -121,8 +121,24 @@ for (const club of loadClubs()) {
     if (!byBorn.has(e.born)) byBorn.set(e.born, []);
     byBorn.get(e.born).push(e);
   }
+  /* רשומה לועזית שכבר "תפוסה" על ידי שחקן מוצג היא סימן שהשחקן
+     המוסתר הוא אותו אדם בכתיב אחר, ולא אדם נוסף. ההתאחדות כותבת
+     "וייס מירוסלב" וויקיפדיה "מירוסלב וייס"; שניהם מצביעים על
+     Miroslav Vajs, ולתת עמדה לשני היה מייצר שני שחקנים במשחק
+     במקום אחד. זו בדיוק התלונה שפתחה את כל העבודה הזאת. */
+  const claimed = new Set();
+  for (const e of enriched) {
+    if (e.p.pos == null) continue;
+    const mine = new Set(yearsOf(e.p.spells));
+    if (!mine.size) continue;
+    const w = best(e.p.he, e.born, mine, wf, true);
+    const m = best(e.p.he, e.born, mine, tm, false);
+    if (w) claimed.add("wf|" + normLatin(w.name));
+    if (m) claimed.add("tm|" + normLatin(m.name));
+  }
+
   const fixes = {}, rows = [];
-  let skipped = 0;
+  let skipped = 0, dup = 0;
   for (const e of enriched) {
     const { p, id, page } = e;
     if (p.pos != null) continue;                  // כבר מוצג
@@ -136,6 +152,8 @@ for (const club of loadClubs()) {
     const m = best(p.he, born, mine, tm, false);
     if (!w || !m) { skipped++; continue; }         // צריך את שניהם
     if (!w.pos) { skipped++; continue; }            // בלי עמדה אין מה להחזיר
+    if (claimed.has("wf|" + normLatin(w.name)) ||
+        claimed.has("tm|" + normLatin(m.name))) { dup++; continue; }
 
     const nat = NAT?.[w.nat] ?? null;
     fixes[id] = { pos: w.pos, born, ...(nat && p.nat == null ? { nat } : {}) };
@@ -146,7 +164,8 @@ for (const club of loadClubs()) {
   rows.sort((a, b) => b.seasons - a.seasons || a.he.localeCompare(b.he, "he"));
   const hidden = db.players.filter(p => p.pos == null).length;
   log(`${db.game.padEnd(12)} ${String(hidden).padStart(4)} מוסתרים · ` +
-      `${String(rows.length).padStart(4)} חוזרים למשחק · ${skipped} בלי מספיק נתונים`);
+      `${String(rows.length).padStart(4)} חוזרים למשחק · ${skipped} בלי מספיק נתונים · ` +
+      `${dup} כפילות של שחקן מוצג`);
   for (const r of rows.slice(0, 8))
     log(`   ${r.he} → ${r.pos} · ${r.born} · wf:${r.en} · tm:${r.tm} · ` +
         `${r.seasons} עונות · ${r.span}`);

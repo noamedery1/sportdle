@@ -1,6 +1,6 @@
 {
  "_comment": "שחקנים בלי אישור משני. build.mjs מסנן אותם מהמשחק. נוצר על ידי `node tools/trust.mjs`.",
- "generated": 1979,
+ "generated": 1978,
  "clubs": {
   "beitar": [
    "א. ואזנה",

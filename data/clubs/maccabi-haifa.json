@@ -51,7 +51,7 @@
  },
  "counts": {
   "players": 380,
-  "targets": 114
+  "targets": 113
  },
  "players": [
   {
@@ -1225,9 +1225,9 @@
   },
   {
    "he": "אגאפור אריק",
-   "pos": "DF",
-   "nat": "NG",
-   "born": 1979,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1394,9 +1394,9 @@
   },
   {
    "he": "אסף אברהמי",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1983,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1468,9 +1468,9 @@
   },
   {
    "he": "זאוטאוטאס ריימונס",
-   "pos": "MF",
-   "nat": "LT",
-   "born": 1972,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2003,
@@ -1650,9 +1650,9 @@
   },
   {
    "he": "פרליה נאנד",
-   "pos": "MF",
-   "nat": "HR",
-   "born": 1970,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2003,
@@ -2954,9 +2954,9 @@
   },
   {
    "he": "ולדימיר דוואלישוילי",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1986,
+   "born": null,
    "spells": [
     [
      2010,
@@ -3063,9 +3063,9 @@
   },
   {
    "he": "כליבאת מוחמד",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1990,
+   "born": null,
    "spells": [
     [
      2010,
@@ -3418,9 +3418,9 @@
   },
   {
    "he": "במידלה ימפולסקי",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1988,
+   "born": null,
    "spells": [
     [
      2012,
@@ -5356,9 +5356,9 @@
   },
   {
    "he": "גושוע כהן",
-   "pos": "GK",
+   "pos": null,
    "nat": "IL",
-   "born": 1992,
+   "born": null,
    "spells": [
     [
      2020,
@@ -5367,7 +5367,7 @@
    ],
    "seasons": 4,
    "titles": 3,
-   "target": true,
+   "target": false,
    "aliases": [
     "ג'ושוע כהן"
    ]
@@ -6363,9 +6363,9 @@
   },
   {
    "he": "לורנצו סימיץ",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1996,
+   "born": null,
    "spells": [
     [
      2024,
@@ -6681,9 +6681,9 @@
   },
   {
    "he": "פדרו דה אוליברה",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1997,
+   "born": null,
    "spells": [
     [
      2025,
@@ -6807,9 +6807,9 @@
   },
   {
    "he": "בנסון מנואל",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1997,
+   "born": null,
    "spells": [
     [
      2026,
@@ -7214,7 +7214,6 @@
   "רביד גזל",
   "חבייר דירסאו",
   "רועי פוקס",
-  "גושוע כהן",
   "מוחמד עואד"
  ]
 }

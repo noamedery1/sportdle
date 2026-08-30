@@ -39,8 +39,8 @@
   ]
  },
  "counts": {
-  "players": 404,
-  "targets": 81
+  "players": 403,
+  "targets": 79
  },
  "players": [
   {
@@ -1262,9 +1262,9 @@
   },
   {
    "he": "וייס מירוסלב",
-   "pos": "DF",
-   "nat": "MK",
-   "born": 1979,
+   "pos": null,
+   "nat": null,
+   "born": null,
    "spells": [
     [
      2004,
@@ -3003,9 +3003,9 @@
   },
   {
    "he": "סראג נסאר",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1990,
+   "born": null,
    "spells": [
     [
      2010,
@@ -3014,7 +3014,7 @@
    ],
    "seasons": 6,
    "titles": 0,
-   "target": true,
+   "target": false,
    "aliases": [
     "סראג' נסאר"
    ]
@@ -3152,9 +3152,9 @@
   },
   {
    "he": "בסיט אברהם",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1990,
+   "born": null,
    "spells": [
     [
      2011,
@@ -3888,9 +3888,9 @@
   },
   {
    "he": "ניקולאס פלזוק",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1986,
+   "born": null,
    "spells": [
     [
      2013,
@@ -4182,24 +4182,6 @@
    "target": true,
    "aliases": [
     "דודו טויטו"
-   ]
-  },
-  {
-   "he": "דיויד הוברט",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1988,
-   "spells": [
-    [
-     2014,
-     2014
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "דיויד הוברט"
    ]
   },
   {
@@ -5195,9 +5177,9 @@
   },
   {
    "he": "מנזון ואדים",
-   "pos": "FW",
+   "pos": null,
    "nat": "IL",
-   "born": 1994,
+   "born": null,
    "spells": [
     [
      2018,
@@ -5578,9 +5560,9 @@
   },
   {
    "he": "ארנסטאס סטקוס",
-   "pos": "GK",
+   "pos": null,
    "nat": "IL",
-   "born": 1985,
+   "born": null,
    "spells": [
     [
      2020,
@@ -5781,9 +5763,9 @@
   },
   {
    "he": "רואי אביטן",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 2000,
+   "born": null,
    "spells": [
     [
      2020,
@@ -6320,9 +6302,9 @@
   },
   {
    "he": "הלדר לופז",
-   "pos": "DF",
+   "pos": null,
    "nat": "IL",
-   "born": 1989,
+   "born": null,
    "spells": [
     [
      2022,
@@ -6331,7 +6313,7 @@
    ],
    "seasons": 5,
    "titles": 3,
-   "target": true,
+   "target": false,
    "aliases": [
     "הלדר פיליפ אוליביירה לופז"
    ]
@@ -7259,9 +7241,9 @@
   },
   {
    "he": "קינגס קאוגנה",
-   "pos": "MF",
+   "pos": null,
    "nat": "IL",
-   "born": 1999,
+   "born": null,
    "spells": [
     [
      2025,
@@ -7603,11 +7585,9 @@
   "אריאל הרוש",
   "ינון ברדה",
   "זאהי אחמד",
-  "אורי מכלוף",
-  "עמית קרן",
-  "סראג נסאר",
   "גל נבון",
   "דור דוידי",
-  "הלדר לופז"
+  "אורי מכלוף",
+  "עמית קרן"
  ]
 }
