@@ -295,7 +295,10 @@ function shareText(){
     ? `${club.game} · חידה #${puzzleNo} · פיצחתי ב-${guesses.length} ${guesses.length===1?"ניחוש":"ניחושים"} מתוך ${MAX}${hs}`
     : `${club.game} · חידה #${puzzleNo} · לא פיצחתי (${MAX}/${MAX})${hs}`;
   const key = `${M.hit} מדויק  ${M.near} קרוב  ${M.miss} רחוק`;
-  return `${head}\n\n${grid}\n\n${key}\n${SITE_URL}`;
+  /* הקישור נושא את המועדון. בלעדיו מי שמקבל "מכביdle · חידה #7"
+     נוחת בבורר המועדונים, או גרוע מזה — במועדון האחרון שהוא בחר
+     בעצמו, ומסתכל על חידה אחרת לגמרי מזו ששותפה איתו. */
+  return `${head}\n\n${grid}\n\n${key}\n${SITE_URL}/?club=${club.slug}`;
 }
 async function copyText(txt){
   // הדרך המודרנית — דורשת HTTPS
@@ -1166,6 +1169,19 @@ function migrateFromBeitardle(){
 (function init(){
   $("#bld").textContent = BUILD;
   migrateFromBeitardle();
+  /* ?club=<slug> — מה שהופך שיתוף לקישור שנוחת במקום הנכון.
+     הוא **לא** נשמר כברירת המחדל: מי שנכנס דרך קישור של חבר
+     למועדון אחר לא אמור לאבד את המועדון שלו בביקור הבא. */
+  let fromLink = null;
+  try{
+    const q = new URLSearchParams(location.search).get("club");
+    if (q && CLUBS[q]) fromLink = q;
+  }catch(e){}
+  if (fromLink){
+    bootClub(fromLink);
+    if (!store.get(GKEY("seen"))) openHelp();
+    return;
+  }
   const saved = store.get(GKEY("club"));
   if (saved && CLUBS[saved]){
     bootClub(saved);
