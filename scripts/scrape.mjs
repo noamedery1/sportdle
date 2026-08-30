@@ -28,6 +28,7 @@ import {
   log, warn, die, sleep, cleanIfaName, isForeignIfa, shortName, stripParen, normName, normLatin, nameVariants, toSpells
 } from "./lib/util.mjs";
 import { openBrowser, gotoStable, makeThrottle } from "./lib/browser.mjs";
+import { enClubKey, isSameClub } from "./lib/enclub.mjs";
 
 const args   = parseArgs();
 const clubs  = pickClubs(args);
@@ -908,6 +909,112 @@ async function scrapeWikiCareer(club) {
 }
 
 /* ============================================================
+   מקור 3ו — טבלת הקריירה מוויקיפדיה האנגלית.
+
+   המקור הרביעי, והוא נועד לשאלה אחת: האם השחקן באמת שיחק
+   במועדון הזה. ליאור אסולין נכנס למכבי חיפה על סמך worldfootball
+   בלבד, ובערך האנגלי שלו כתוב מכבי הרצליה 1997–2007 — אותן שנים
+   בדיוק. מקור אחד יכול לטעות; שניים שמסכימים כבר קשה יותר.
+
+   הוא גם מכסה בדיוק את מי שחסר בעברית: לזרים יש כמעט תמיד ערך
+   אנגלי, וכמעט אף פעם לא ערך עברי.
+
+   התבנית האנגלית ממוספרת ולא מקבילה: years1/clubs1, years2/clubs2.
+   youthyears נזרק — נוער אינו סגל בוגרים. חץ ← לפני שם מועדון
+   הוא השאלה, ומי שהושאל **אלינו** שיחק כאן לכל דבר.
+   ============================================================ */
+/* נרמול שם המועדון האנגלי יושב במודול נפרד — הוא צריך ביטויים
+   רגולריים עם לוכסנים, וכתיבתם דרך סקריפט תיקון שברה אותם פעם. */
+
+function enCareerRows(wt) {
+  const out = [];
+  for (let i = 1; i <= 30; i++) {
+    const y = infoboxField(wt, [`years${i}`]);
+    const c = infoboxField(wt, [`clubs${i}`]);
+    if (!y || !c) continue;
+    out.push({ years: plain(y).trim(), club: plain(c).trim() });
+  }
+  return out;
+}
+
+async function enWikiBatch(titles) {
+  const u = new URL("https://en.wikipedia.org/w/api.php");
+  u.searchParams.set("action", "query");
+  u.searchParams.set("prop", "revisions");
+  u.searchParams.set("rvprop", "content");
+  u.searchParams.set("rvslots", "main");
+  u.searchParams.set("titles", titles.join("|"));
+  u.searchParams.set("redirects", "1");
+  u.searchParams.set("format", "json");
+  u.searchParams.set("formatversion", "2");
+  for (let attempt = 0, wait = 2000; attempt < 6; attempt++, wait *= 2) {
+    const r = await fetch(u, { headers: { "User-Agent": "sportdel/1.0 (fan project)" } });
+    if (r.ok) return r.json();
+    if (r.status !== 429 && r.status < 500) { warn(`ויקיפדיה האנגלית ${r.status}`); return null; }
+    warn(`ויקיפדיה האנגלית ${r.status} — ממתינים ${wait / 1000} שניות`);
+    await sleep(wait);
+  }
+  return null;
+}
+
+async function scrapeEnWikiCareer(club) {
+  if (!club.wikiEn) { warn(`${club.slug}: אין wikiEn ב-clubs.json — מדלגים`); return null; }
+
+  /* כותרות אנגליות מכל מקור שיש: הקישור הבין־לשוני, הגשר שחיפש
+     באנגלית, והשמות הלטיניים של worldfootball למי שאין לו ערך
+     עברי בכלל — הם הסיבה העיקרית שהמקור הזה קיים. */
+  const titles = new Set();
+  const lang = readJSON(`data/raw/${club.slug}-wikilang.json`, null);
+  for (const l of lang?.links || []) if (l.en) titles.add(l.en);
+  const bridge = readJSON(`data/raw/${club.slug}-enbridge.json`, null);
+  for (const l of bridge?.links || []) if (l.en) titles.add(l.en);
+  const wf = readJSON(`data/raw/${club.slug}-worldfootball.json`, null);
+  for (const list of Object.values(wf?.seasons || {}))
+    for (const p of list) if (p.name) titles.add(p.name);
+
+  const list = [...titles];
+  const want = enClubKey(club.wikiEn);
+  const details = [];
+  let checked = 0, missing = 0, noBox = 0, hit = 0;
+
+  for (let i = 0; i < list.length; i += 50) {
+    const j = await enWikiBatch(list.slice(i, i + 50));
+    if (!j) break;
+    const back = new Map();
+    for (const n of j.query?.normalized || []) back.set(n.to, n.from);
+    for (const r of j.query?.redirects  || []) back.set(r.to, back.get(r.from) || r.from);
+
+    for (const p of j.query?.pages || []) {
+      if (p.missing) { missing++; continue; }
+      const wt = p.revisions?.[0]?.slots?.main?.content;
+      if (!wt) continue;
+      checked++;
+      if (!/{{s*Infobox football biography/i.test(wt)) { noBox++; continue; }
+      const rows = enCareerRows(wt);
+      const mine = rows.filter(r => isSameClub(r.club, want));
+      const years = new Set();
+      for (const r of mine) {
+        const got = rowSpell(r.years, TO + 1);
+        if (got) for (let y = got.spell[0]; y <= got.spell[1]; y++) years.add(y);
+      }
+      details.push({
+        title: p.title,
+        askedAs: back.get(p.title) || null,
+        atClub: mine.length > 0,
+        rows: mine.map(r => r.years),
+        allClubs: rows.map(r => enClubKey(r.club)).filter(Boolean),
+        years: [...years].sort((a, b) => a - b)
+      });
+      if (mine.length) hit++;
+    }
+    await sleep(1200);
+  }
+  log(`  ${club.slug} enwikicareer: ${list.length} כותרות · ${checked} ערכים · ` +
+      `${hit} מאשרים את המועדון · ${missing} לא קיימים · ${noBox} בלי תיבת כדורגלן`);
+  return { details, checked, missing, noBox };
+}
+
+/* ============================================================
    ראשי
    ============================================================ */
 const wantWf   = only.includes("wf");
@@ -1002,6 +1109,12 @@ try {
       const r = await scrapeWikiCareer(club);
       if (r) writeJSON(`data/raw/${club.slug}-wikicareer.json`,
         { club: club.slug, source: "wikicareer", ...r });
+    }
+
+    if (only.includes("enwikicareer")) {
+      const r = await scrapeEnWikiCareer(club);
+      if (r) writeJSON(`data/raw/${club.slug}-enwikicareer.json`,
+        { club: club.slug, source: "enwikicareer", wikiEn: club.wikiEn, ...r });
     }
 
     if (only.includes("enbridge")) {
