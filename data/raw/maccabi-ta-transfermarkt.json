@@ -1,0 +1,5927 @@
+{
+ "club": "maccabi-ta",
+ "source": "transfermarkt",
+ "teamId": 119,
+ "seasons": {
+  "1971": [
+   {
+    "id": "1313246",
+    "name": "Shimshon Levkovich"
+   },
+   {
+    "id": "765742",
+    "name": "Miki Michaeli"
+   },
+   {
+    "id": "285781",
+    "name": "Meir Nimni"
+   },
+   {
+    "id": "1079502",
+    "name": "Yehuda Linker"
+   },
+   {
+    "id": "1313244",
+    "name": "Michael Gershovich"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "234695",
+    "name": "Zvi Rosen"
+   },
+   {
+    "id": "625476",
+    "name": "David Karako"
+   },
+   {
+    "id": "1313242",
+    "name": "Ezra Ozeri"
+   },
+   {
+    "id": "1313243",
+    "name": "Yaakov Yeshvinsky"
+   },
+   {
+    "id": "1313245",
+    "name": "Avraham Shtemberg"
+   },
+   {
+    "id": "234702",
+    "name": "Giora Spiegel"
+   },
+   {
+    "id": "285782",
+    "name": "Yaron Oz‏"
+   },
+   {
+    "id": "302329",
+    "name": "Zvi Heyman"
+   },
+   {
+    "id": "311607",
+    "name": "Nissim Bakhar"
+   },
+   {
+    "id": "625478",
+    "name": "Moshe Asis"
+   },
+   {
+    "id": "876365",
+    "name": "Shlomo Jerbi"
+   },
+   {
+    "id": "877796",
+    "name": "Yehuda Gargir"
+   },
+   {
+    "id": "234704",
+    "name": "Rachamim Talbi"
+   },
+   {
+    "id": "711265",
+    "name": "Dror Bar Nur"
+   }
+  ],
+  "1978": [
+   {
+    "id": "1307157",
+    "name": "Ronny Baumann"
+   },
+   {
+    "id": "285797",
+    "name": "Yosef Sorinov"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "1079502",
+    "name": "Yehuda Linker"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "1306960",
+    "name": "Arie Mizrahi"
+   },
+   {
+    "id": "285782",
+    "name": "Yaron Oz‏"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "437058",
+    "name": "Eli Leventhal"
+   },
+   {
+    "id": "920423",
+    "name": "Alon Kaplan"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "877796",
+    "name": "Yehuda Gargir"
+   },
+   {
+    "id": "282516",
+    "name": "Gideon Damti"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1979": [
+   {
+    "id": "876398",
+    "name": "Avi Sasson"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "285781",
+    "name": "Meir Nimni"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "1076919",
+    "name": "Ronny Simanovich"
+   },
+   {
+    "id": "1306960",
+    "name": "Arie Mizrahi"
+   },
+   {
+    "id": "282522",
+    "name": "Yehuda Katzav"
+   },
+   {
+    "id": "285782",
+    "name": "Yaron Oz‏"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "877796",
+    "name": "Yehuda Gargir"
+   },
+   {
+    "id": "893319",
+    "name": "Moshe Goldenberg"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1980": [
+   {
+    "id": "282531",
+    "name": "Emanuel Schwartz"
+   },
+   {
+    "id": "285781",
+    "name": "Meir Nimni"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "896606",
+    "name": "Rami Marciano"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "282522",
+    "name": "Yehuda Katzav"
+   },
+   {
+    "id": "285782",
+    "name": "Yaron Oz‏"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "920423",
+    "name": "Alon Kaplan"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "893319",
+    "name": "Moshe Goldenberg"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1981": [
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "285781",
+    "name": "Meir Nimni"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "896606",
+    "name": "Rami Marciano"
+   },
+   {
+    "id": "1307291",
+    "name": "Yigal Dauel"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "1307249",
+    "name": "Ronny Tzemah"
+   },
+   {
+    "id": "282522",
+    "name": "Yehuda Katzav"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "920423",
+    "name": "Alon Kaplan"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "877796",
+    "name": "Yehuda Gargir"
+   },
+   {
+    "id": "893319",
+    "name": "Moshe Goldenberg"
+   },
+   {
+    "id": "896608",
+    "name": "Pini Drori"
+   },
+   {
+    "id": "896905",
+    "name": "Ofer Nimni"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1982": [
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "426749",
+    "name": "Shlomo Kirat"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "208525",
+    "name": "Yiftah Halevi"
+   },
+   {
+    "id": "1154707",
+    "name": "Meir Hanuka"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "896606",
+    "name": "Rami Marciano"
+   },
+   {
+    "id": "1545431",
+    "name": "Ofer Mizrahi"
+   },
+   {
+    "id": "282522",
+    "name": "Yehuda Katzav"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "1307249",
+    "name": "Ronny Tzemah"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "353226",
+    "name": "Danny Neuman"
+   },
+   {
+    "id": "1591500",
+    "name": "Jacques Bicard"
+   },
+   {
+    "id": "893319",
+    "name": "Moshe Goldenberg"
+   },
+   {
+    "id": "876381",
+    "name": "Eli Miali"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   },
+   {
+    "id": "1529306",
+    "name": "Avi Eisenberg"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   }
+  ],
+  "1983": [
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "208525",
+    "name": "Yiftah Halevi"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "294692",
+    "name": "Yaakov Cohen"
+   },
+   {
+    "id": "679159",
+    "name": "Gabi Lasri"
+   },
+   {
+    "id": "877795",
+    "name": "Avraham Levi"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "1154707",
+    "name": "Meir Hanuka"
+   },
+   {
+    "id": "282522",
+    "name": "Yehuda Katzav"
+   },
+   {
+    "id": "285793",
+    "name": "Moshe Schweitzer"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "353226",
+    "name": "Danny Neuman"
+   },
+   {
+    "id": "879884",
+    "name": "Haim Levy"
+   },
+   {
+    "id": "1307249",
+    "name": "Ronny Tzemah"
+   },
+   {
+    "id": "1529286",
+    "name": "Bezalel Rosenberger"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   },
+   {
+    "id": "893319",
+    "name": "Moshe Goldenberg"
+   },
+   {
+    "id": "1320207",
+    "name": "David Amiga"
+   },
+   {
+    "id": "1320208",
+    "name": "Yaakov Nomder"
+   }
+  ],
+  "1984": [
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "1323636",
+    "name": "Tamir Gilat"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "208525",
+    "name": "Yiftah Halevi"
+   },
+   {
+    "id": "234659",
+    "name": "Miko Bello"
+   },
+   {
+    "id": "679159",
+    "name": "Gabi Lasri"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "952687",
+    "name": "Haim Goldberg"
+   },
+   {
+    "id": "1274042",
+    "name": "Efraim Shimonov"
+   },
+   {
+    "id": "1154707",
+    "name": "Meir Hanuka"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "1323638",
+    "name": "Rafi Ben Hemo"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1307249",
+    "name": "Ronny Tzemah"
+   },
+   {
+    "id": "1340936",
+    "name": "Yossi Yael"
+   },
+   {
+    "id": "1426180",
+    "name": "Haim Tzabari"
+   },
+   {
+    "id": "1489712",
+    "name": "Yaron Gozali"
+   },
+   {
+    "id": "1543631",
+    "name": "Itzik Rokban"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "1529306",
+    "name": "Avi Eisenberg"
+   },
+   {
+    "id": "896905",
+    "name": "Ofer Nimni"
+   },
+   {
+    "id": "1320207",
+    "name": "David Amiga"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1985": [
+   {
+    "id": "1323636",
+    "name": "Tamir Gilat"
+   },
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "1311366",
+    "name": "Yehiel Even Tzur"
+   },
+   {
+    "id": "1529341",
+    "name": "Danny Shalom"
+   },
+   {
+    "id": "1154707",
+    "name": "Meir Hanuka"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "282533",
+    "name": "Avi Yerushalmi"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "208525",
+    "name": "Yiftah Halevi"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "1340936",
+    "name": "Yossi Yael"
+   },
+   {
+    "id": "1426180",
+    "name": "Haim Tzabari"
+   },
+   {
+    "id": "1489712",
+    "name": "Yaron Gozali"
+   },
+   {
+    "id": "1509469",
+    "name": "Itzhak Moseri"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "1312401",
+    "name": "Itzhak Balahsan"
+   },
+   {
+    "id": "282530",
+    "name": "Vicky Peretz"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "791016",
+    "name": "Rafi Cohen"
+   },
+   {
+    "id": "1306926",
+    "name": "Zvi Gordon"
+   },
+   {
+    "id": "1309017",
+    "name": "Miki Ben Shitrit"
+   },
+   {
+    "id": "721016",
+    "name": "Shahar Barel"
+   }
+  ],
+  "1986": [
+   {
+    "id": "1323636",
+    "name": "Tamir Gilat"
+   },
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "1518483",
+    "name": "Ofer Elkabetz"
+   },
+   {
+    "id": "877794",
+    "name": "Ori Sliman"
+   },
+   {
+    "id": "886109",
+    "name": "Yossi Kremer"
+   },
+   {
+    "id": "1154707",
+    "name": "Meir Hanuka"
+   },
+   {
+    "id": "1274042",
+    "name": "Efraim Shimonov"
+   },
+   {
+    "id": "1489711",
+    "name": "Yanko Gubi"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "952687",
+    "name": "Haim Goldberg"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "426691",
+    "name": "Moshe Gariani"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "1517841",
+    "name": "Shay Segev"
+   },
+   {
+    "id": "1489713",
+    "name": "Yaakov Peretz"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1312401",
+    "name": "Itzhak Balahsan"
+   },
+   {
+    "id": "1489712",
+    "name": "Yaron Gozali"
+   },
+   {
+    "id": "721016",
+    "name": "Shahar Barel"
+   },
+   {
+    "id": "1306926",
+    "name": "Zvi Gordon"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   },
+   {
+    "id": "988159",
+    "name": "Yair Sandori"
+   }
+  ],
+  "1987": [
+   {
+    "id": "1489714",
+    "name": "Asher Simantov"
+   },
+   {
+    "id": "174232",
+    "name": "Bonni Ginzburg"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "1489715",
+    "name": "Eli Asher"
+   },
+   {
+    "id": "886109",
+    "name": "Yossi Kremer"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "952687",
+    "name": "Haim Goldberg"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "1489711",
+    "name": "Yanko Gubi"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "426691",
+    "name": "Moshe Gariani"
+   },
+   {
+    "id": "1489713",
+    "name": "Yaakov Peretz"
+   },
+   {
+    "id": "1489712",
+    "name": "Yaron Gozali"
+   },
+   {
+    "id": "1340936",
+    "name": "Yossi Yael"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "988159",
+    "name": "Yair Sandori"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "426690",
+    "name": "Oded Machnes"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1988": [
+   {
+    "id": "1426865",
+    "name": "Itay Arikha"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "1154197",
+    "name": "Shaul Cohen"
+   },
+   {
+    "id": "1489715",
+    "name": "Eli Asher"
+   },
+   {
+    "id": "1229293",
+    "name": "Inbar Mosafi"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "952687",
+    "name": "Haim Goldberg"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "426691",
+    "name": "Moshe Gariani"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "988153",
+    "name": "Yoel Swissa"
+   },
+   {
+    "id": "1312401",
+    "name": "Itzhak Balahsan"
+   },
+   {
+    "id": "1426180",
+    "name": "Haim Tzabari"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1229294",
+    "name": "Jackie Tzarfati"
+   },
+   {
+    "id": "921364",
+    "name": "Itzik Swissa"
+   },
+   {
+    "id": "988159",
+    "name": "Yair Sandori"
+   },
+   {
+    "id": "721016",
+    "name": "Shahar Barel"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "1306926",
+    "name": "Zvi Gordon"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1989": [
+   {
+    "id": "894536",
+    "name": "Gabi Elbaz"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "954214",
+    "name": "Gonen Butel"
+   },
+   {
+    "id": "1421659",
+    "name": "Guy Barak"
+   },
+   {
+    "id": "885929",
+    "name": "David Azulay"
+   },
+   {
+    "id": "1154197",
+    "name": "Shaul Cohen"
+   },
+   {
+    "id": "1229293",
+    "name": "Inbar Mosafi"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "952687",
+    "name": "Haim Goldberg"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "1154708",
+    "name": "Reuven Elkabetz"
+   },
+   {
+    "id": "988153",
+    "name": "Yoel Swissa"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1421705",
+    "name": "Nir Sheratzky"
+   },
+   {
+    "id": "626944",
+    "name": "Avi Pitusi"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "1229294",
+    "name": "Jackie Tzarfati"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "1306926",
+    "name": "Zvi Gordon"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   },
+   {
+    "id": "721016",
+    "name": "Shahar Barel"
+   },
+   {
+    "id": "285799",
+    "name": "Beni Tabak"
+   }
+  ],
+  "1990": [
+   {
+    "id": "44877",
+    "name": "Shavit Elimelech"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "176107",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "1330075",
+    "name": "Avi El Hay"
+   },
+   {
+    "id": "1229293",
+    "name": "Inbar Mosafi"
+   },
+   {
+    "id": "1258350",
+    "name": "Shimi Nasri"
+   },
+   {
+    "id": "1306927",
+    "name": "Eitan Levy"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "721025",
+    "name": "Lior Rosenthal"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "837522",
+    "name": "Motzi Cohen"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1229294",
+    "name": "Jackie Tzarfati"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "230636",
+    "name": "Uri Malmilian"
+   },
+   {
+    "id": "532820",
+    "name": "Alon Natan"
+   },
+   {
+    "id": "808501",
+    "name": "Alejandro Kenig"
+   },
+   {
+    "id": "988159",
+    "name": "Yair Sandori"
+   },
+   {
+    "id": "209052",
+    "name": "Amir Turgeman"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   },
+   {
+    "id": "726970",
+    "name": "Walkir Silva"
+   }
+  ],
+  "1991": [
+   {
+    "id": "44877",
+    "name": "Shavit Elimelech"
+   },
+   {
+    "id": "896605",
+    "name": "Moshe Marcus"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "1258350",
+    "name": "Shimi Nasri"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "788457",
+    "name": "Nini Asor"
+   },
+   {
+    "id": "1154417",
+    "name": "Hay Kreis"
+   },
+   {
+    "id": "1229293",
+    "name": "Inbar Mosafi"
+   },
+   {
+    "id": "117370",
+    "name": "Andriy Bal"
+   },
+   {
+    "id": "1244068",
+    "name": "Erez Lulu"
+   },
+   {
+    "id": "1245232",
+    "name": "Ilan Ben Yehonatan"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "230636",
+    "name": "Uri Malmilian"
+   },
+   {
+    "id": "350403",
+    "name": "Motti Ivanir"
+   },
+   {
+    "id": "1229292",
+    "name": "Miki Cohen"
+   },
+   {
+    "id": "1229294",
+    "name": "Jackie Tzarfati"
+   },
+   {
+    "id": "1258362",
+    "name": "Dani Hayman"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   },
+   {
+    "id": "209052",
+    "name": "Amir Turgeman"
+   },
+   {
+    "id": "921364",
+    "name": "Itzik Swissa"
+   }
+  ],
+  "1992": [
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "586603",
+    "name": "Yaron Melika"
+   },
+   {
+    "id": "887501",
+    "name": "Israel Haim"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "182837",
+    "name": "Aleksandr Polukarov"
+   },
+   {
+    "id": "190288",
+    "name": "Yaacov Hillel"
+   },
+   {
+    "id": "208557",
+    "name": "Menashe Shimonov"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "230636",
+    "name": "Uri Malmilian"
+   },
+   {
+    "id": "586768",
+    "name": "Arik Shriki"
+   },
+   {
+    "id": "1154715",
+    "name": "Moshe Ben Nun"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   },
+   {
+    "id": "209052",
+    "name": "Amir Turgeman"
+   },
+   {
+    "id": "890907",
+    "name": "Hisham Zuabi"
+   }
+  ],
+  "1993": [
+   {
+    "id": "586603",
+    "name": "Yaron Melika"
+   },
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "788456",
+    "name": "Moshe Konstantin"
+   },
+   {
+    "id": "780333",
+    "name": "Eliezer Speyer"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "182837",
+    "name": "Aleksandr Polukarov"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "586604",
+    "name": "Sharon Marciano"
+   },
+   {
+    "id": "788459",
+    "name": "Rafi For"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "182831",
+    "name": "Yaron Drori"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "586768",
+    "name": "Arik Shriki"
+   },
+   {
+    "id": "171985",
+    "name": "Nir Sivilia"
+   },
+   {
+    "id": "177737",
+    "name": "Netsach Masuby"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   }
+  ],
+  "1994": [
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "586603",
+    "name": "Yaron Melika"
+   },
+   {
+    "id": "788456",
+    "name": "Moshe Konstantin"
+   },
+   {
+    "id": "223010",
+    "name": "Najwan Ghrayib"
+   },
+   {
+    "id": "780333",
+    "name": "Eliezer Speyer"
+   },
+   {
+    "id": "601270",
+    "name": "Gal Fibach"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "788457",
+    "name": "Nini Asor"
+   },
+   {
+    "id": "788459",
+    "name": "Rafi For"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "182837",
+    "name": "Aleksandr Polukarov"
+   },
+   {
+    "id": "190288",
+    "name": "Yaacov Hillel"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "601268",
+    "name": "Guy Nachman"
+   },
+   {
+    "id": "788455",
+    "name": "Ofer Vilenchik"
+   },
+   {
+    "id": "788458",
+    "name": "Yossi Shoshani"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "150854",
+    "name": "Danny Muller"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "250990",
+    "name": "Cyrille Makanaky"
+   },
+   {
+    "id": "767567",
+    "name": "Shlomi Ben Hemo"
+   },
+   {
+    "id": "1024451",
+    "name": "Meir Cohen"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "24095",
+    "name": "Kobi Refua"
+   },
+   {
+    "id": "492861",
+    "name": "Stanislav Bondarev"
+   },
+   {
+    "id": "788454",
+    "name": "Kobi Avramov"
+   },
+   {
+    "id": "171985",
+    "name": "Nir Sivilia"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   }
+  ],
+  "1995": [
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "601269",
+    "name": "Elen Masraki"
+   },
+   {
+    "id": "856146",
+    "name": "Ron Nachman"
+   },
+   {
+    "id": "788455",
+    "name": "Ofer Vilenchik"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182829",
+    "name": "Avi Cohen"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "190288",
+    "name": "Yaacov Hillel"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "601268",
+    "name": "Guy Nachman"
+   },
+   {
+    "id": "601270",
+    "name": "Gal Fibach"
+   },
+   {
+    "id": "26355",
+    "name": "Yuriy Shukanov"
+   },
+   {
+    "id": "1024451",
+    "name": "Meir Cohen"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "557179",
+    "name": "Viktor Belkin"
+   },
+   {
+    "id": "366618",
+    "name": "Meni Basson"
+   },
+   {
+    "id": "788454",
+    "name": "Kobi Avramov"
+   },
+   {
+    "id": "168243",
+    "name": "Alon Mizrahi"
+   },
+   {
+    "id": "171985",
+    "name": "Nir Sivilia"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   }
+  ],
+  "1996": [
+   {
+    "id": "601269",
+    "name": "Elen Masraki"
+   },
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "874455",
+    "name": "Kfir Haim"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "190288",
+    "name": "Yaacov Hillel"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "601268",
+    "name": "Guy Nachman"
+   },
+   {
+    "id": "601270",
+    "name": "Gal Fibach"
+   },
+   {
+    "id": "856146",
+    "name": "Ron Nachman"
+   },
+   {
+    "id": "921332",
+    "name": "Yehiel Hiawi"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "173072",
+    "name": "Evgeniy Kashentsev"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "209547",
+    "name": "Viktor Moroz"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "848593",
+    "name": "Ran Dejilovski"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "182835",
+    "name": "Meir Melika"
+   },
+   {
+    "id": "788454",
+    "name": "Kobi Avramov"
+   }
+  ],
+  "1997": [
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "601269",
+    "name": "Elen Masraki"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "856146",
+    "name": "Ron Nachman"
+   },
+   {
+    "id": "601268",
+    "name": "Guy Nachman"
+   },
+   {
+    "id": "601270",
+    "name": "Gal Fibach"
+   },
+   {
+    "id": "780199",
+    "name": "Oren Rotem"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "182834",
+    "name": "Amit Levi"
+   },
+   {
+    "id": "190288",
+    "name": "Yaacov Hillel"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "874455",
+    "name": "Kfir Haim"
+   },
+   {
+    "id": "888356",
+    "name": "Guy Primor"
+   },
+   {
+    "id": "921332",
+    "name": "Yehiel Hiawi"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "112004",
+    "name": "David Revivo"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "173072",
+    "name": "Evgeniy Kashentsev"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "780504",
+    "name": "Arik Hangali"
+   },
+   {
+    "id": "414962",
+    "name": "Domagoj Kosic"
+   },
+   {
+    "id": "509962",
+    "name": "Vyacheslav Melnikov"
+   },
+   {
+    "id": "1524759",
+    "name": "Klaudio Vukovic"
+   },
+   {
+    "id": "154849",
+    "name": "Miroslaw Trzeciak"
+   },
+   {
+    "id": "171985",
+    "name": "Nir Sivilia"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "252631",
+    "name": "Ofer Mizrahi"
+   },
+   {
+    "id": "485807",
+    "name": "Boris Matveev"
+   }
+  ],
+  "1998": [
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "601269",
+    "name": "Elen Masraki"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "780199",
+    "name": "Oren Rotem"
+   },
+   {
+    "id": "174233",
+    "name": "Moshe Glam"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "601268",
+    "name": "Guy Nachman"
+   },
+   {
+    "id": "794158",
+    "name": "Jeffrey Yishai"
+   },
+   {
+    "id": "848408",
+    "name": "Ofer Levi"
+   },
+   {
+    "id": "874455",
+    "name": "Kfir Haim"
+   },
+   {
+    "id": "25088",
+    "name": "Mikhail Osinov"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "112004",
+    "name": "David Revivo"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "141858",
+    "name": "Nir Klinger"
+   },
+   {
+    "id": "173883",
+    "name": "Elek Nyilas"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "182843",
+    "name": "Noam Shoham"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "619997",
+    "name": "Alon Ofir"
+   },
+   {
+    "id": "903065",
+    "name": "Gabi Dabush"
+   },
+   {
+    "id": "93356",
+    "name": "Aleksey Gerasimov"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "228632",
+    "name": "Rodrigo Goldberg"
+   },
+   {
+    "id": "414962",
+    "name": "Domagoj Kosic"
+   },
+   {
+    "id": "818345",
+    "name": "Efi Tzafrir"
+   }
+  ],
+  "1999": [
+   {
+    "id": "129900",
+    "name": "Rafi Cohen"
+   },
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "34651",
+    "name": "Kfir Edri"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "47888",
+    "name": "Alin Rus"
+   },
+   {
+    "id": "329819",
+    "name": "Marco Balbul"
+   },
+   {
+    "id": "102316",
+    "name": "Michael Emenalo"
+   },
+   {
+    "id": "174233",
+    "name": "Moshe Glam"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "780199",
+    "name": "Oren Rotem"
+   },
+   {
+    "id": "794158",
+    "name": "Jeffrey Yishai"
+   },
+   {
+    "id": "848408",
+    "name": "Ofer Levi"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "112004",
+    "name": "David Revivo"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "67113",
+    "name": "Aleksey Kosolapov"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "145634",
+    "name": "Itzik Zohar"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "485808",
+    "name": "Haim Hajaj"
+   },
+   {
+    "id": "619997",
+    "name": "Alon Ofir"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "29807",
+    "name": "Andrzej Kubica"
+   },
+   {
+    "id": "182830",
+    "name": "Eli Driks"
+   },
+   {
+    "id": "818345",
+    "name": "Efi Tzafrir"
+   }
+  ],
+  "2000": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "182845",
+    "name": "Aleksandr Uvarov"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "34651",
+    "name": "Kfir Edri"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "43987",
+    "name": "Ronny Gafney"
+   },
+   {
+    "id": "67134",
+    "name": "Dmitriy Popov"
+   },
+   {
+    "id": "102316",
+    "name": "Michael Emenalo"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "174240",
+    "name": "Felix Halfon"
+   },
+   {
+    "id": "201617",
+    "name": "Meni Levi"
+   },
+   {
+    "id": "329819",
+    "name": "Marco Balbul"
+   },
+   {
+    "id": "794158",
+    "name": "Jeffrey Yishai"
+   },
+   {
+    "id": "29831",
+    "name": "Grzegorz Wędzyński"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "112004",
+    "name": "David Revivo"
+   },
+   {
+    "id": "113495",
+    "name": "Eyal Shen"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "67113",
+    "name": "Aleksey Kosolapov"
+   },
+   {
+    "id": "85059",
+    "name": "Ben Luz"
+   },
+   {
+    "id": "200353",
+    "name": "Dudu Avraham"
+   },
+   {
+    "id": "619997",
+    "name": "Alon Ofir"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "29807",
+    "name": "Andrzej Kubica"
+   },
+   {
+    "id": "34771",
+    "name": "Oleksandr Kosyrin"
+   },
+   {
+    "id": "372329",
+    "name": "Liron Basis"
+   }
+  ],
+  "2001": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "27243",
+    "name": "Ádám Vezér"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "129833",
+    "name": "Itay Tuef"
+   },
+   {
+    "id": "16703",
+    "name": "Givi Didava"
+   },
+   {
+    "id": "21364",
+    "name": "Jozef Valachovic"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "34651",
+    "name": "Kfir Edri"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "43987",
+    "name": "Ronny Gafney"
+   },
+   {
+    "id": "874455",
+    "name": "Kfir Haim"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "201617",
+    "name": "Meni Levi"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "723765",
+    "name": "Dani Mishan"
+   },
+   {
+    "id": "780199",
+    "name": "Oren Rotem"
+   },
+   {
+    "id": "24211",
+    "name": "Baruch Dego"
+   },
+   {
+    "id": "24219",
+    "name": "Reuven Oved"
+   },
+   {
+    "id": "25044",
+    "name": "Andrey Tikhonov"
+   },
+   {
+    "id": "29831",
+    "name": "Grzegorz Wędzyński"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "113495",
+    "name": "Eyal Shen"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "107437",
+    "name": "Tal Banin"
+   },
+   {
+    "id": "170844",
+    "name": "Daniel Haydman"
+   },
+   {
+    "id": "182828",
+    "name": "Alon Brumer"
+   },
+   {
+    "id": "200353",
+    "name": "Dudu Avraham"
+   },
+   {
+    "id": "167",
+    "name": "Ferenc Horváth"
+   },
+   {
+    "id": "24095",
+    "name": "Kobi Refua"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "830651",
+    "name": "Bryan Man"
+   },
+   {
+    "id": "8012",
+    "name": "Meho Kodro"
+   },
+   {
+    "id": "228632",
+    "name": "Rodrigo Goldberg"
+   },
+   {
+    "id": "793954",
+    "name": "Kobi Avdayev"
+   }
+  ],
+  "2002": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "725632",
+    "name": "Oshri Levi"
+   },
+   {
+    "id": "24206",
+    "name": "Salem Abu Siam"
+   },
+   {
+    "id": "129833",
+    "name": "Itay Tuef"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "201617",
+    "name": "Meni Levi"
+   },
+   {
+    "id": "209049",
+    "name": "Amir Shelach"
+   },
+   {
+    "id": "723765",
+    "name": "Dani Mishan"
+   },
+   {
+    "id": "24219",
+    "name": "Reuven Oved"
+   },
+   {
+    "id": "24211",
+    "name": "Baruch Dego"
+   },
+   {
+    "id": "24225",
+    "name": "Oren Zeitouni"
+   },
+   {
+    "id": "29831",
+    "name": "Grzegorz Wędzyński"
+   },
+   {
+    "id": "95714",
+    "name": "Guy Tzarfati"
+   },
+   {
+    "id": "113495",
+    "name": "Eyal Shen"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "107437",
+    "name": "Tal Banin"
+   },
+   {
+    "id": "170844",
+    "name": "Daniel Haydman"
+   },
+   {
+    "id": "200353",
+    "name": "Dudu Avraham"
+   },
+   {
+    "id": "338281",
+    "name": "Gal Filyan"
+   },
+   {
+    "id": "167",
+    "name": "Ferenc Horváth"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "793954",
+    "name": "Kobi Avdayev"
+   },
+   {
+    "id": "209052",
+    "name": "Amir Turgeman"
+   },
+   {
+    "id": "228632",
+    "name": "Rodrigo Goldberg"
+   }
+  ],
+  "2003": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "345572",
+    "name": "Ami Rosenberg"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "35235",
+    "name": "John Paintsil"
+   },
+   {
+    "id": "24206",
+    "name": "Salem Abu Siam"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "90629",
+    "name": "Mauricio Aros"
+   },
+   {
+    "id": "38837",
+    "name": "Dedi Ben Dayan"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "24209",
+    "name": "Tamir Cohen"
+   },
+   {
+    "id": "24211",
+    "name": "Baruch Dego"
+   },
+   {
+    "id": "24210",
+    "name": "Liran Cohen"
+   },
+   {
+    "id": "24225",
+    "name": "Oren Zeitouni"
+   },
+   {
+    "id": "24219",
+    "name": "Reuven Oved"
+   },
+   {
+    "id": "113495",
+    "name": "Eyal Shen"
+   },
+   {
+    "id": "15410",
+    "name": "Andrejs Prohorenkovs"
+   },
+   {
+    "id": "22581",
+    "name": "Bruno Reis"
+   },
+   {
+    "id": "200353",
+    "name": "Dudu Avraham"
+   },
+   {
+    "id": "107437",
+    "name": "Tal Banin"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "338281",
+    "name": "Gal Filyan"
+   },
+   {
+    "id": "22571",
+    "name": "Assaf Crispis"
+   },
+   {
+    "id": "129870",
+    "name": "Roei Dayan"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "209052",
+    "name": "Amir Turgeman"
+   },
+   {
+    "id": "793954",
+    "name": "Kobi Avdayev"
+   },
+   {
+    "id": "228632",
+    "name": "Rodrigo Goldberg"
+   }
+  ],
+  "2004": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "22574",
+    "name": "Gal Nir"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "24206",
+    "name": "Salem Abu Siam"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "16027",
+    "name": "Kobi Nachtailer"
+   },
+   {
+    "id": "35235",
+    "name": "John Paintsil"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "174236",
+    "name": "Gadi Brumer"
+   },
+   {
+    "id": "24215",
+    "name": "Erez Mesika"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "24225",
+    "name": "Oren Zeitouni"
+   },
+   {
+    "id": "24211",
+    "name": "Baruch Dego"
+   },
+   {
+    "id": "24210",
+    "name": "Liran Cohen"
+   },
+   {
+    "id": "24209",
+    "name": "Tamir Cohen"
+   },
+   {
+    "id": "24219",
+    "name": "Reuven Oved"
+   },
+   {
+    "id": "15410",
+    "name": "Andrejs Prohorenkovs"
+   },
+   {
+    "id": "22581",
+    "name": "Bruno Reis"
+   },
+   {
+    "id": "338281",
+    "name": "Gal Filyan"
+   },
+   {
+    "id": "107437",
+    "name": "Tal Banin"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "29807",
+    "name": "Andrzej Kubica"
+   },
+   {
+    "id": "112640",
+    "name": "Aldo Adorno"
+   },
+   {
+    "id": "22571",
+    "name": "Assaf Crispis"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "129870",
+    "name": "Roei Dayan"
+   },
+   {
+    "id": "228632",
+    "name": "Rodrigo Goldberg"
+   }
+  ],
+  "2005": [
+   {
+    "id": "112712",
+    "name": "Guy Haimov"
+   },
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "22574",
+    "name": "Gal Nir"
+   },
+   {
+    "id": "24214",
+    "name": "Andella Ndala Ibrahim"
+   },
+   {
+    "id": "24221",
+    "name": "Yakir Shina"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "24206",
+    "name": "Salem Abu Siam"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "35235",
+    "name": "John Paintsil"
+   },
+   {
+    "id": "24223",
+    "name": "Barak Vered"
+   },
+   {
+    "id": "1399",
+    "name": "Márcio Giovanini"
+   },
+   {
+    "id": "148405",
+    "name": "Shuki Nagar"
+   },
+   {
+    "id": "24219",
+    "name": "Reuven Oved"
+   },
+   {
+    "id": "22581",
+    "name": "Bruno Reis"
+   },
+   {
+    "id": "24211",
+    "name": "Baruch Dego"
+   },
+   {
+    "id": "24215",
+    "name": "Erez Mesika"
+   },
+   {
+    "id": "24225",
+    "name": "Oren Zeitouni"
+   },
+   {
+    "id": "24210",
+    "name": "Liran Cohen"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "129945",
+    "name": "Eran Levi"
+   },
+   {
+    "id": "24209",
+    "name": "Tamir Cohen"
+   },
+   {
+    "id": "15410",
+    "name": "Andrejs Prohorenkovs"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "1428791",
+    "name": "Ori Biton"
+   },
+   {
+    "id": "120109",
+    "name": "Elad Bounfeld"
+   },
+   {
+    "id": "759540",
+    "name": "Idan Biton"
+   },
+   {
+    "id": "130690",
+    "name": "Eduardo Marques"
+   },
+   {
+    "id": "22562",
+    "name": "Ishmael Addo"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "129870",
+    "name": "Roei Dayan"
+   },
+   {
+    "id": "22571",
+    "name": "Assaf Crispis"
+   },
+   {
+    "id": "24207",
+    "name": "Eli Biton"
+   },
+   {
+    "id": "34695",
+    "name": "Émile Mbamba"
+   },
+   {
+    "id": "786297",
+    "name": "Fernando Fligman"
+   }
+  ],
+  "2006": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "112712",
+    "name": "Guy Haimov"
+   },
+   {
+    "id": "24206",
+    "name": "Salem Abu Siam"
+   },
+   {
+    "id": "44748",
+    "name": "Avi Yehiel"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "35347",
+    "name": "Cristian González"
+   },
+   {
+    "id": "23994",
+    "name": "Elvin Beqiri"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "58340",
+    "name": "Ori Shitrit"
+   },
+   {
+    "id": "24221",
+    "name": "Yakir Shina"
+   },
+   {
+    "id": "725691",
+    "name": "Erez Eliav"
+   },
+   {
+    "id": "3231",
+    "name": "Eyal Berkovic"
+   },
+   {
+    "id": "15326",
+    "name": "Dovani Roso"
+   },
+   {
+    "id": "24215",
+    "name": "Erez Mesika"
+   },
+   {
+    "id": "22544",
+    "name": "Blessing Kaku"
+   },
+   {
+    "id": "24210",
+    "name": "Liran Cohen"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "24209",
+    "name": "Tamir Cohen"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "26299",
+    "name": "Eugen Trică"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "777246",
+    "name": "Itzik Shemesh"
+   },
+   {
+    "id": "18564",
+    "name": "Henry Makinwa"
+   },
+   {
+    "id": "131835",
+    "name": "José Duarte"
+   },
+   {
+    "id": "25474",
+    "name": "Ofir Haim"
+   },
+   {
+    "id": "129870",
+    "name": "Roei Dayan"
+   },
+   {
+    "id": "24002",
+    "name": "Giorgi Demetradze"
+   },
+   {
+    "id": "1326659",
+    "name": "Elior Vaknin"
+   }
+  ],
+  "2007": [
+   {
+    "id": "25757",
+    "name": "Tvrtko Kale"
+   },
+   {
+    "id": "112760",
+    "name": "Guy Solomon"
+   },
+   {
+    "id": "112737",
+    "name": "Dor Malul"
+   },
+   {
+    "id": "58340",
+    "name": "Ori Shitrit"
+   },
+   {
+    "id": "112724",
+    "name": "Nisso Kapiloto"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "44748",
+    "name": "Avi Yehiel"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "13770",
+    "name": "Milan Martinovic"
+   },
+   {
+    "id": "24215",
+    "name": "Erez Mesika"
+   },
+   {
+    "id": "15325",
+    "name": "Ivan Rezic"
+   },
+   {
+    "id": "19707",
+    "name": "Dejan Ilic"
+   },
+   {
+    "id": "15326",
+    "name": "Dovani Roso"
+   },
+   {
+    "id": "43988",
+    "name": "Yossi Shivhon"
+   },
+   {
+    "id": "24210",
+    "name": "Liran Cohen"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "24209",
+    "name": "Tamir Cohen"
+   },
+   {
+    "id": "138318",
+    "name": "Hay Atias"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "601261",
+    "name": "Guy Shamir"
+   },
+   {
+    "id": "112670",
+    "name": "Tamir Kahlon"
+   },
+   {
+    "id": "129762",
+    "name": "Omri Ron"
+   },
+   {
+    "id": "24208",
+    "name": "Moshe Biton"
+   },
+   {
+    "id": "129870",
+    "name": "Roei Dayan"
+   },
+   {
+    "id": "13748",
+    "name": "Miljan Mrdakovic"
+   },
+   {
+    "id": "58336",
+    "name": "Omer Peretz"
+   }
+  ],
+  "2008": [
+   {
+    "id": "112760",
+    "name": "Guy Solomon"
+   },
+   {
+    "id": "121861",
+    "name": "Mike Hen"
+   },
+   {
+    "id": "4414",
+    "name": "Dragoslav Jevric"
+   },
+   {
+    "id": "112737",
+    "name": "Dor Malul"
+   },
+   {
+    "id": "35715",
+    "name": "Joe Bizera"
+   },
+   {
+    "id": "112724",
+    "name": "Nisso Kapiloto"
+   },
+   {
+    "id": "129754",
+    "name": "Amiran Shkalim"
+   },
+   {
+    "id": "129912",
+    "name": "Kobi Musa"
+   },
+   {
+    "id": "13770",
+    "name": "Milan Martinovic"
+   },
+   {
+    "id": "58333",
+    "name": "Aviv Hadad"
+   },
+   {
+    "id": "58343",
+    "name": "Oz Ifrah"
+   },
+   {
+    "id": "24218",
+    "name": "Uri Buhbut"
+   },
+   {
+    "id": "44748",
+    "name": "Avi Yehiel"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "58340",
+    "name": "Ori Shitrit"
+   },
+   {
+    "id": "1299619",
+    "name": "Adar Cohen"
+   },
+   {
+    "id": "68038",
+    "name": "Ramalho"
+   },
+   {
+    "id": "195234",
+    "name": "Dan Roman"
+   },
+   {
+    "id": "32198",
+    "name": "Rudy Haddad"
+   },
+   {
+    "id": "24215",
+    "name": "Erez Mesika"
+   },
+   {
+    "id": "43988",
+    "name": "Yossi Shivhon"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "3063",
+    "name": "Alain Masudi"
+   },
+   {
+    "id": "29276",
+    "name": "Jonathan Assous"
+   },
+   {
+    "id": "24469",
+    "name": "Ravid Gazal"
+   },
+   {
+    "id": "201162",
+    "name": "Orel Edri"
+   },
+   {
+    "id": "58335",
+    "name": "Avi Nimni"
+   },
+   {
+    "id": "129762",
+    "name": "Omri Ron"
+   },
+   {
+    "id": "163758",
+    "name": "Liron Diamant"
+   },
+   {
+    "id": "58327",
+    "name": "Dudu Biton"
+   },
+   {
+    "id": "58325",
+    "name": "Yaniv Azran"
+   },
+   {
+    "id": "5628",
+    "name": "Yannick Kamanan"
+   },
+   {
+    "id": "58336",
+    "name": "Omer Peretz"
+   }
+  ],
+  "2009": [
+   {
+    "id": "4414",
+    "name": "Dragoslav Jevric"
+   },
+   {
+    "id": "112760",
+    "name": "Guy Solomon"
+   },
+   {
+    "id": "112712",
+    "name": "Guy Haimov"
+   },
+   {
+    "id": "112737",
+    "name": "Dor Malul"
+   },
+   {
+    "id": "44748",
+    "name": "Avi Yehiel"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "24216",
+    "name": "Moshe Mishaelof"
+   },
+   {
+    "id": "4701",
+    "name": "Igor Tomasic"
+   },
+   {
+    "id": "24478",
+    "name": "Haim Megrelashvili"
+   },
+   {
+    "id": "112724",
+    "name": "Nisso Kapiloto"
+   },
+   {
+    "id": "58340",
+    "name": "Ori Shitrit"
+   },
+   {
+    "id": "112717",
+    "name": "Erik Hort"
+   },
+   {
+    "id": "32198",
+    "name": "Rudy Haddad"
+   },
+   {
+    "id": "129751",
+    "name": "Tom Mansharov"
+   },
+   {
+    "id": "29276",
+    "name": "Jonathan Assous"
+   },
+   {
+    "id": "43988",
+    "name": "Yossi Shivhon"
+   },
+   {
+    "id": "195234",
+    "name": "Dan Roman"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "121863",
+    "name": "Yotam Penso"
+   },
+   {
+    "id": "121866",
+    "name": "Zion Zemah"
+   },
+   {
+    "id": "27288",
+    "name": "Dulee Johnson"
+   },
+   {
+    "id": "5628",
+    "name": "Yannick Kamanan"
+   },
+   {
+    "id": "55709",
+    "name": "Emmanuel Mayuka"
+   },
+   {
+    "id": "37438",
+    "name": "Scott Sealy"
+   },
+   {
+    "id": "112766",
+    "name": "Yeghia Yavruyan"
+   },
+   {
+    "id": "56657",
+    "name": "Maor Buzaglo"
+   },
+   {
+    "id": "58325",
+    "name": "Yaniv Azran"
+   },
+   {
+    "id": "112718",
+    "name": "Guillermo Israilevich"
+   },
+   {
+    "id": "121862",
+    "name": "Matan Lotati"
+   }
+  ],
+  "2010": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "112760",
+    "name": "Guy Solomon"
+   },
+   {
+    "id": "112737",
+    "name": "Dor Malul"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "112724",
+    "name": "Nisso Kapiloto"
+   },
+   {
+    "id": "4701",
+    "name": "Igor Tomasic"
+   },
+   {
+    "id": "43987",
+    "name": "Ronny Gafney"
+   },
+   {
+    "id": "30822",
+    "name": "Ronald Raldes"
+   },
+   {
+    "id": "129761",
+    "name": "Reef Peretz"
+   },
+   {
+    "id": "58340",
+    "name": "Ori Shitrit"
+   },
+   {
+    "id": "26113",
+    "name": "Andrej Komac"
+   },
+   {
+    "id": "43988",
+    "name": "Yossi Shivhon"
+   },
+   {
+    "id": "24224",
+    "name": "Lior Jan"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "121866",
+    "name": "Zion Zemah"
+   },
+   {
+    "id": "129751",
+    "name": "Tom Mansharov"
+   },
+   {
+    "id": "151201",
+    "name": "Maor Halabi"
+   },
+   {
+    "id": "112718",
+    "name": "Guillermo Israilevich"
+   },
+   {
+    "id": "112766",
+    "name": "Yeghia Yavruyan"
+   },
+   {
+    "id": "96142",
+    "name": "Yuval Avidor"
+   },
+   {
+    "id": "56657",
+    "name": "Maor Buzaglo"
+   },
+   {
+    "id": "55709",
+    "name": "Emmanuel Mayuka"
+   },
+   {
+    "id": "129762",
+    "name": "Omri Ron"
+   },
+   {
+    "id": "10300",
+    "name": "Ivica Iliev"
+   },
+   {
+    "id": "112670",
+    "name": "Tamir Kahlon"
+   }
+  ],
+  "2011": [
+   {
+    "id": "22584",
+    "name": "Liran Strauber"
+   },
+   {
+    "id": "112760",
+    "name": "Guy Solomon"
+   },
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "112737",
+    "name": "Dor Malul"
+   },
+   {
+    "id": "43764",
+    "name": "Klemi Saban"
+   },
+   {
+    "id": "181468",
+    "name": "Uri Cohen"
+   },
+   {
+    "id": "43076",
+    "name": "Nivaldo"
+   },
+   {
+    "id": "112724",
+    "name": "Nisso Kapiloto"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "35932",
+    "name": "Savo Pavicevic"
+   },
+   {
+    "id": "43987",
+    "name": "Ronny Gafney"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "129761",
+    "name": "Reef Peretz"
+   },
+   {
+    "id": "1289576",
+    "name": "Mishel Nahmias"
+   },
+   {
+    "id": "200377",
+    "name": "Eliran George"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "32928",
+    "name": "Roi Kehat"
+   },
+   {
+    "id": "121866",
+    "name": "Zion Zemah"
+   },
+   {
+    "id": "37846",
+    "name": "Albert Baning"
+   },
+   {
+    "id": "30666",
+    "name": "Haris Medunjanin"
+   },
+   {
+    "id": "5301",
+    "name": "Djibril Sidibé"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "151201",
+    "name": "Maor Halabi"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "192880",
+    "name": "Moshe Lugasi"
+   },
+   {
+    "id": "664165",
+    "name": "Takle Asmalesh"
+   },
+   {
+    "id": "145866",
+    "name": "Munas Dabbur"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "58325",
+    "name": "Yaniv Azran"
+   },
+   {
+    "id": "282801",
+    "name": "Gael Margolis"
+   },
+   {
+    "id": "112718",
+    "name": "Guillermo Israilevich"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "96142",
+    "name": "Yuval Avidor"
+   },
+   {
+    "id": "56657",
+    "name": "Maor Buzaglo"
+   },
+   {
+    "id": "39912",
+    "name": "Dimitar Rangelov"
+   },
+   {
+    "id": "24463",
+    "name": "Roberto Colautti"
+   },
+   {
+    "id": "112670",
+    "name": "Tamir Kahlon"
+   }
+  ],
+  "2012": [
+   {
+    "id": "211828",
+    "name": "Yossi Ginzburg"
+   },
+   {
+    "id": "121861",
+    "name": "Mike Hen"
+   },
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "112712",
+    "name": "Guy Haimov"
+   },
+   {
+    "id": "92120",
+    "name": "Roberto Puncec"
+   },
+   {
+    "id": "35932",
+    "name": "Savo Pavicevic"
+   },
+   {
+    "id": "112007",
+    "name": "Rahamim Checkol"
+   },
+   {
+    "id": "181468",
+    "name": "Uri Cohen"
+   },
+   {
+    "id": "226222",
+    "name": "Yagil Biton"
+   },
+   {
+    "id": "43764",
+    "name": "Klemi Saban"
+   },
+   {
+    "id": "43076",
+    "name": "Nivaldo"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "121865",
+    "name": "Omer Vered"
+   },
+   {
+    "id": "129761",
+    "name": "Reef Peretz"
+   },
+   {
+    "id": "193928",
+    "name": "Dia Saba"
+   },
+   {
+    "id": "32928",
+    "name": "Roi Kehat"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "202919",
+    "name": "Giovanni"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "30666",
+    "name": "Haris Medunjanin"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "192880",
+    "name": "Moshe Lugasi"
+   },
+   {
+    "id": "129936",
+    "name": "Rafi Dahan"
+   },
+   {
+    "id": "129751",
+    "name": "Tom Mansharov"
+   },
+   {
+    "id": "145866",
+    "name": "Munas Dabbur"
+   },
+   {
+    "id": "226230",
+    "name": "Dor Jan"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "112718",
+    "name": "Guillermo Israilevich"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "73796",
+    "name": "Eli Zizov"
+   },
+   {
+    "id": "192774",
+    "name": "Moussa Konaté"
+   },
+   {
+    "id": "24463",
+    "name": "Roberto Colautti"
+   }
+  ],
+  "2013": [
+   {
+    "id": "37760",
+    "name": "Vincent Enyeama"
+   },
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "51439",
+    "name": "Tomer Chencinski"
+   },
+   {
+    "id": "311463",
+    "name": "Gal Tuvali"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "19857",
+    "name": "Steve Gohouri"
+   },
+   {
+    "id": "121865",
+    "name": "Omer Vered"
+   },
+   {
+    "id": "129761",
+    "name": "Reef Peretz"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "226222",
+    "name": "Yagil Biton"
+   },
+   {
+    "id": "24222",
+    "name": "Avi Strool"
+   },
+   {
+    "id": "15762",
+    "name": "Carlos García"
+   },
+   {
+    "id": "66960",
+    "name": "Ignacio Fideleff"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "112680",
+    "name": "Maharan Radi"
+   },
+   {
+    "id": "118551",
+    "name": "Hassan Abu Zaid"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "129936",
+    "name": "Rafi Dahan"
+   },
+   {
+    "id": "192880",
+    "name": "Moshe Lugasi"
+   },
+   {
+    "id": "469244",
+    "name": "Daniel Levy"
+   },
+   {
+    "id": "145866",
+    "name": "Munas Dabbur"
+   },
+   {
+    "id": "374279",
+    "name": "Lanre Kehinde"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   },
+   {
+    "id": "33108",
+    "name": "Gonzalo García"
+   },
+   {
+    "id": "12707",
+    "name": "Robert Earnshaw"
+   },
+   {
+    "id": "1610",
+    "name": "Rade Prica"
+   },
+   {
+    "id": "24463",
+    "name": "Roberto Colautti"
+   },
+   {
+    "id": "167864",
+    "name": "Ben Ben Yair"
+   },
+   {
+    "id": "282801",
+    "name": "Gael Margolis"
+   }
+  ],
+  "2014": [
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "27685",
+    "name": "Juan Pablo Colinas"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "51547",
+    "name": "Mané"
+   },
+   {
+    "id": "129761",
+    "name": "Reef Peretz"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "129835",
+    "name": "Omri Ben Harush"
+   },
+   {
+    "id": "49656",
+    "name": "Rémi Maréval"
+   },
+   {
+    "id": "15762",
+    "name": "Carlos García"
+   },
+   {
+    "id": "185191",
+    "name": "Omri Altman"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "118551",
+    "name": "Hassan Abu Zaid"
+   },
+   {
+    "id": "192880",
+    "name": "Moshe Lugasi"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "112680",
+    "name": "Maharan Radi"
+   },
+   {
+    "id": "113406",
+    "name": "Dan Einbinder"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "46962",
+    "name": "Nikola Mitrovic"
+   },
+   {
+    "id": "145866",
+    "name": "Munas Dabbur"
+   },
+   {
+    "id": "226230",
+    "name": "Dor Jan"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "1610",
+    "name": "Rade Prica"
+   },
+   {
+    "id": "129787",
+    "name": "Barak Badash"
+   },
+   {
+    "id": "282801",
+    "name": "Gael Margolis"
+   }
+  ],
+  "2015": [
+   {
+    "id": "247619",
+    "name": "Sahar Hasson"
+   },
+   {
+    "id": "312385",
+    "name": "Haviv Ohayon"
+   },
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "27685",
+    "name": "Juan Pablo Colinas"
+   },
+   {
+    "id": "204982",
+    "name": "Shon Goldberg"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "129835",
+    "name": "Omri Ben Harush"
+   },
+   {
+    "id": "15762",
+    "name": "Carlos García"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "185191",
+    "name": "Omri Altman"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "44894",
+    "name": "Gil Vermouth"
+   },
+   {
+    "id": "192880",
+    "name": "Moshe Lugasi"
+   },
+   {
+    "id": "271227",
+    "name": "Ben Reichert"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "112680",
+    "name": "Maharan Radi"
+   },
+   {
+    "id": "113406",
+    "name": "Dan Einbinder"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "46962",
+    "name": "Nikola Mitrovic"
+   },
+   {
+    "id": "108636",
+    "name": "Nosa Igiebor"
+   },
+   {
+    "id": "189553",
+    "name": "Mavis Tchibota"
+   },
+   {
+    "id": "24459",
+    "name": "Eden Ben Basat"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "1610",
+    "name": "Rade Prica"
+   },
+   {
+    "id": "129787",
+    "name": "Barak Badash"
+   },
+   {
+    "id": "282801",
+    "name": "Gael Margolis"
+   }
+  ],
+  "2016": [
+   {
+    "id": "190263",
+    "name": "Predrag Rajković"
+   },
+   {
+    "id": "27685",
+    "name": "Juan Pablo Colinas"
+   },
+   {
+    "id": "312385",
+    "name": "Haviv Ohayon"
+   },
+   {
+    "id": "96391",
+    "name": "Daniel Lifshitz"
+   },
+   {
+    "id": "163847",
+    "name": "Eli Dasa"
+   },
+   {
+    "id": "204982",
+    "name": "Shon Goldberg"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "112681",
+    "name": "Oz Raly"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "43991",
+    "name": "Yoav Ziv"
+   },
+   {
+    "id": "129835",
+    "name": "Omri Ben Harush"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "15762",
+    "name": "Carlos García"
+   },
+   {
+    "id": "444018",
+    "name": "Eliel Peretz"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "44894",
+    "name": "Gil Vermouth"
+   },
+   {
+    "id": "46962",
+    "name": "Nikola Mitrovic"
+   },
+   {
+    "id": "30666",
+    "name": "Haris Medunjanin"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "169684",
+    "name": "Shlomi Azulay"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "108636",
+    "name": "Nosa Igiebor"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "67856",
+    "name": "Dejan Radonjic"
+   },
+   {
+    "id": "129787",
+    "name": "Barak Badash"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   },
+   {
+    "id": "24459",
+    "name": "Eden Ben Basat"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "64535",
+    "name": "Orlando Sá"
+   }
+  ],
+  "2017": [
+   {
+    "id": "190263",
+    "name": "Predrag Rajković"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "312385",
+    "name": "Haviv Ohayon"
+   },
+   {
+    "id": "96391",
+    "name": "Daniel Lifshitz"
+   },
+   {
+    "id": "222031",
+    "name": "Barak Levi"
+   },
+   {
+    "id": "163847",
+    "name": "Eli Dasa"
+   },
+   {
+    "id": "371025",
+    "name": "Ramon Menezes"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "15762",
+    "name": "Carlos García"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "129835",
+    "name": "Omri Ben Harush"
+   },
+   {
+    "id": "53350",
+    "name": "Egor Filipenko"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "444018",
+    "name": "Eliel Peretz"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "30666",
+    "name": "Haris Medunjanin"
+   },
+   {
+    "id": "108636",
+    "name": "Nosa Igiebor"
+   },
+   {
+    "id": "47011",
+    "name": "Oscar Scarione"
+   },
+   {
+    "id": "24068",
+    "name": "Gal Alberman"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "84491",
+    "name": "Rúben Micael"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "292160",
+    "name": "Marcelo Santos"
+   },
+   {
+    "id": "293603",
+    "name": "Sagiv Jehezkel"
+   },
+   {
+    "id": "24459",
+    "name": "Eden Ben Basat"
+   },
+   {
+    "id": "64535",
+    "name": "Orlando Sá"
+   },
+   {
+    "id": "115607",
+    "name": "Vidar Örn Kjartansson"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "218314",
+    "name": "Aaron Schoenfeld"
+   },
+   {
+    "id": "7858",
+    "name": "Yossi Benayoun"
+   }
+  ],
+  "2018": [
+   {
+    "id": "190263",
+    "name": "Predrag Rajković"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "96391",
+    "name": "Daniel Lifshitz"
+   },
+   {
+    "id": "312385",
+    "name": "Haviv Ohayon"
+   },
+   {
+    "id": "163847",
+    "name": "Eli Dasa"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "45256",
+    "name": "Jean-Sylvain Babin"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "48536",
+    "name": "Yuval Shpungin"
+   },
+   {
+    "id": "53350",
+    "name": "Egor Filipenko"
+   },
+   {
+    "id": "20714",
+    "name": "Tal Ben Haim"
+   },
+   {
+    "id": "444018",
+    "name": "Eliel Peretz"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "344206",
+    "name": "Tomer Altman"
+   },
+   {
+    "id": "129868",
+    "name": "Cristian Battocchio"
+   },
+   {
+    "id": "165012",
+    "name": "José Rodríguez"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "398252",
+    "name": "Or Dasa"
+   },
+   {
+    "id": "200557",
+    "name": "Gidi Kanyuk"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "169684",
+    "name": "Shlomi Azulay"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "140790",
+    "name": "Tino-Sven Susic"
+   },
+   {
+    "id": "398259",
+    "name": "Prince Tomas"
+   },
+   {
+    "id": "294568",
+    "name": "Omer Atzili"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "293603",
+    "name": "Sagiv Jehezkel"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "115607",
+    "name": "Vidar Örn Kjartansson"
+   },
+   {
+    "id": "50811",
+    "name": "Barak Itzhaki"
+   },
+   {
+    "id": "67369",
+    "name": "Nick Blackman"
+   },
+   {
+    "id": "218314",
+    "name": "Aaron Schoenfeld"
+   }
+  ],
+  "2019": [
+   {
+    "id": "190263",
+    "name": "Predrag Rajković"
+   },
+   {
+    "id": "468539",
+    "name": "Daniel Peretz"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "312385",
+    "name": "Haviv Ohayon"
+   },
+   {
+    "id": "163847",
+    "name": "Eli Dasa"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "128479",
+    "name": "Jair Amador"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "390713",
+    "name": "Maor Kandil"
+   },
+   {
+    "id": "396640",
+    "name": "Eden Karzev"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "530313",
+    "name": "Nadav Niddam"
+   },
+   {
+    "id": "621379",
+    "name": "Bar Cohen"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "190522",
+    "name": "Ruslan Barsky"
+   },
+   {
+    "id": "294568",
+    "name": "Omer Atzili"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "293603",
+    "name": "Sagiv Jehezkel"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "470938",
+    "name": "Eyal Hen"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "115607",
+    "name": "Vidar Örn Kjartansson"
+   },
+   {
+    "id": "241693",
+    "name": "Chico Ofoedu"
+   },
+   {
+    "id": "44760",
+    "name": "Itay Shechter"
+   },
+   {
+    "id": "218314",
+    "name": "Aaron Schoenfeld"
+   }
+  ],
+  "2020": [
+   {
+    "id": "226802",
+    "name": "Andreas Gianniotis"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "531628",
+    "name": "Omer Katz"
+   },
+   {
+    "id": "625036",
+    "name": "Or Itzhak"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "154319",
+    "name": "André Geraldes"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "128479",
+    "name": "Jair Amador"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "390713",
+    "name": "Maor Kandil"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "530313",
+    "name": "Nadav Niddam"
+   },
+   {
+    "id": "178195",
+    "name": "Dor Micha"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "215038",
+    "name": "Uros Nikolic"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "190522",
+    "name": "Ruslan Barsky"
+   },
+   {
+    "id": "624913",
+    "name": "Parfait Guiagon"
+   },
+   {
+    "id": "294568",
+    "name": "Omer Atzili"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "112663",
+    "name": "Eliran Atar"
+   },
+   {
+    "id": "67369",
+    "name": "Nick Blackman"
+   },
+   {
+    "id": "241693",
+    "name": "Chico Ofoedu"
+   },
+   {
+    "id": "44760",
+    "name": "Itay Shechter"
+   },
+   {
+    "id": "218314",
+    "name": "Aaron Schoenfeld"
+   },
+   {
+    "id": "520832",
+    "name": "Ronen Hanzis"
+   }
+  ],
+  "2021": [
+   {
+    "id": "468539",
+    "name": "Daniel Peretz"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "668588",
+    "name": "Ben David Musayof"
+   },
+   {
+    "id": "919538",
+    "name": "Roy Revivo"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "668590",
+    "name": "Itay Ben Hemo"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "472032",
+    "name": "Amit Glazer"
+   },
+   {
+    "id": "154319",
+    "name": "André Geraldes"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "129771",
+    "name": "Eitan Tibi"
+   },
+   {
+    "id": "292828",
+    "name": "Ben Bitton"
+   },
+   {
+    "id": "390713",
+    "name": "Maor Kandil"
+   },
+   {
+    "id": "62945",
+    "name": "Luis Hernández"
+   },
+   {
+    "id": "396640",
+    "name": "Eden Karzev"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "621379",
+    "name": "Bar Cohen"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "819411",
+    "name": "Rotem Yatzkar"
+   },
+   {
+    "id": "190522",
+    "name": "Ruslan Barsky"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "668602",
+    "name": "Niv Berkovic"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "502842",
+    "name": "Eduardo Guerrero"
+   },
+   {
+    "id": "399361",
+    "name": "Dan Biton"
+   },
+   {
+    "id": "73457",
+    "name": "Aleksandar Pešić"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "669267",
+    "name": "Or Roizman"
+   },
+   {
+    "id": "520832",
+    "name": "Ronen Hanzis"
+   },
+   {
+    "id": "67369",
+    "name": "Nick Blackman"
+   },
+   {
+    "id": "44760",
+    "name": "Itay Shechter"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   }
+  ],
+  "2022": [
+   {
+    "id": "468539",
+    "name": "Daniel Peretz"
+   },
+   {
+    "id": "226802",
+    "name": "Andreas Gianniotis"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "625036",
+    "name": "Or Itzhak"
+   },
+   {
+    "id": "704071",
+    "name": "Guy Mizrahi"
+   },
+   {
+    "id": "408422",
+    "name": "Idan Nachmias"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "668600",
+    "name": "Shahar Rosen"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "919537",
+    "name": "Shon Edri"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "154319",
+    "name": "André Geraldes"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "139341",
+    "name": "Josué Sá"
+   },
+   {
+    "id": "62945",
+    "name": "Luis Hernández"
+   },
+   {
+    "id": "390713",
+    "name": "Maor Kandil"
+   },
+   {
+    "id": "1061541",
+    "name": "Ofek Sasson"
+   },
+   {
+    "id": "930571",
+    "name": "Oscar Gloukh"
+   },
+   {
+    "id": "833315",
+    "name": "Novatus Miroshi"
+   },
+   {
+    "id": "398258",
+    "name": "Gabi Kanichowsky"
+   },
+   {
+    "id": "396640",
+    "name": "Eden Karzev"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "530313",
+    "name": "Nadav Niddam"
+   },
+   {
+    "id": "204111",
+    "name": "Eden Shamir"
+   },
+   {
+    "id": "621379",
+    "name": "Bar Cohen"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "502842",
+    "name": "Eduardo Guerrero"
+   },
+   {
+    "id": "399361",
+    "name": "Dan Biton"
+   },
+   {
+    "id": "966009",
+    "name": "Bar Lin"
+   },
+   {
+    "id": "376460",
+    "name": "Djordje Jovanovic"
+   },
+   {
+    "id": "245072",
+    "name": "Stipe Perica"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "470495",
+    "name": "Osama Khalaila"
+   },
+   {
+    "id": "232219",
+    "name": "Brandley Kuwas"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "930549",
+    "name": "Orel Baye"
+   },
+   {
+    "id": "520832",
+    "name": "Ronen Hanzis"
+   },
+   {
+    "id": "129806",
+    "name": "Tal Ben Haim"
+   }
+  ],
+  "2023": [
+   {
+    "id": "468539",
+    "name": "Daniel Peretz"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "625036",
+    "name": "Or Itzhak"
+   },
+   {
+    "id": "930572",
+    "name": "Tomer Alon"
+   },
+   {
+    "id": "919538",
+    "name": "Roy Revivo"
+   },
+   {
+    "id": "241457",
+    "name": "Derrick Luckassen"
+   },
+   {
+    "id": "408422",
+    "name": "Idan Nachmias"
+   },
+   {
+    "id": "668600",
+    "name": "Shahar Rosen"
+   },
+   {
+    "id": "668590",
+    "name": "Itay Ben Hemo"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "154319",
+    "name": "André Geraldes"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "930550",
+    "name": "Ilay Tomer"
+   },
+   {
+    "id": "390713",
+    "name": "Maor Kandil"
+   },
+   {
+    "id": "129788",
+    "name": "Nir Bitton"
+   },
+   {
+    "id": "930571",
+    "name": "Oscar Gloukh"
+   },
+   {
+    "id": "398258",
+    "name": "Gabi Kanichowsky"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "812654",
+    "name": "Rareș Ilie"
+   },
+   {
+    "id": "182582",
+    "name": "Joris van Overeem"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "530313",
+    "name": "Nadav Niddam"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "113486",
+    "name": "Avi Rikan"
+   },
+   {
+    "id": "624913",
+    "name": "Parfait Guiagon"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "399361",
+    "name": "Dan Biton"
+   },
+   {
+    "id": "966009",
+    "name": "Bar Lin"
+   },
+   {
+    "id": "376460",
+    "name": "Djordje Jovanovic"
+   },
+   {
+    "id": "245072",
+    "name": "Stipe Perica"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "232219",
+    "name": "Brandley Kuwas"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   }
+  ],
+  "2024": [
+   {
+    "id": "468539",
+    "name": "Daniel Peretz"
+   },
+   {
+    "id": "402979",
+    "name": "Orlando Mosquera"
+   },
+   {
+    "id": "345085",
+    "name": "Daniel Tenenbaum"
+   },
+   {
+    "id": "200575",
+    "name": "Roi Mishpati"
+   },
+   {
+    "id": "625036",
+    "name": "Or Itzhak"
+   },
+   {
+    "id": "930572",
+    "name": "Tomer Alon"
+   },
+   {
+    "id": "919538",
+    "name": "Roy Revivo"
+   },
+   {
+    "id": "241457",
+    "name": "Derrick Luckassen"
+   },
+   {
+    "id": "396635",
+    "name": "Raz Shlomo"
+   },
+   {
+    "id": "580747",
+    "name": "Yvann Maçon"
+   },
+   {
+    "id": "408422",
+    "name": "Idan Nachmias"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "204988",
+    "name": "Shahar Piven"
+   },
+   {
+    "id": "85372",
+    "name": "Enric Saborit"
+   },
+   {
+    "id": "967559",
+    "name": "Adir Córdoba"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "323451",
+    "name": "Avishay Cohen"
+   },
+   {
+    "id": "129788",
+    "name": "Nir Bitton"
+   },
+   {
+    "id": "398258",
+    "name": "Gabi Kanichowsky"
+   },
+   {
+    "id": "396640",
+    "name": "Eden Karzev"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "182582",
+    "name": "Joris van Overeem"
+   },
+   {
+    "id": "247589",
+    "name": "Dan Glazer"
+   },
+   {
+    "id": "111965",
+    "name": "Eyal Golasa"
+   },
+   {
+    "id": "721515",
+    "name": "Jonathan Portogez Paz"
+   },
+   {
+    "id": "58342",
+    "name": "Sheran Yeini"
+   },
+   {
+    "id": "703415",
+    "name": "Anar Ushmandi"
+   },
+   {
+    "id": "624913",
+    "name": "Parfait Guiagon"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "589374",
+    "name": "Milson"
+   },
+   {
+    "id": "399361",
+    "name": "Dan Biton"
+   },
+   {
+    "id": "1002520",
+    "name": "Sayed Abu Farkhi"
+   },
+   {
+    "id": "211847",
+    "name": "Osher Davida"
+   },
+   {
+    "id": "926481",
+    "name": "Ori Azo"
+   },
+   {
+    "id": "590302",
+    "name": "Kiko Bondoso"
+   },
+   {
+    "id": "376460",
+    "name": "Djordje Jovanovic"
+   },
+   {
+    "id": "947166",
+    "name": "Henry Addo"
+   },
+   {
+    "id": "408026",
+    "name": "Yonatan Cohen"
+   },
+   {
+    "id": "396641",
+    "name": "Eylon Almog"
+   },
+   {
+    "id": "211845",
+    "name": "Yonas Malede"
+   },
+   {
+    "id": "1002499",
+    "name": "Yehuda Balay"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   }
+  ],
+  "2025": [
+   {
+    "id": "930521",
+    "name": "Ofek Melika"
+   },
+   {
+    "id": "188201",
+    "name": "Simon Sluga"
+   },
+   {
+    "id": "200575",
+    "name": "Roi Mishpati"
+   },
+   {
+    "id": "1364962",
+    "name": "Shalev Saadya"
+   },
+   {
+    "id": "1164754",
+    "name": "Idan Trau"
+   },
+   {
+    "id": "804067",
+    "name": "Roei Amedi"
+   },
+   {
+    "id": "761326",
+    "name": "Stav Lemkin"
+   },
+   {
+    "id": "919538",
+    "name": "Roy Revivo"
+   },
+   {
+    "id": "811805",
+    "name": "Tyrese Asante"
+   },
+   {
+    "id": "585055",
+    "name": "Nemanja Stojic"
+   },
+   {
+    "id": "396635",
+    "name": "Raz Shlomo"
+   },
+   {
+    "id": "408422",
+    "name": "Idan Nachmias"
+   },
+   {
+    "id": "355395",
+    "name": "Matan Baltaxa"
+   },
+   {
+    "id": "668600",
+    "name": "Shahar Rosen"
+   },
+   {
+    "id": "967559",
+    "name": "Adir Córdoba"
+   },
+   {
+    "id": "1103827",
+    "name": "Daniel Tishler"
+   },
+   {
+    "id": "140570",
+    "name": "Ofir Davidzada"
+   },
+   {
+    "id": "323451",
+    "name": "Avishay Cohen"
+   },
+   {
+    "id": "129788",
+    "name": "Nir Bitton"
+   },
+   {
+    "id": "1178431",
+    "name": "Idan Weinberg"
+   },
+   {
+    "id": "398258",
+    "name": "Gabi Kanichowsky"
+   },
+   {
+    "id": "740674",
+    "name": "Issouf Sissokho"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "182582",
+    "name": "Joris van Overeem"
+   },
+   {
+    "id": "530313",
+    "name": "Nadav Niddam"
+   },
+   {
+    "id": "966006",
+    "name": "Roy Nawi"
+   },
+   {
+    "id": "1002515",
+    "name": "Ido Oli"
+   },
+   {
+    "id": "1181939",
+    "name": "Roei Magor"
+   },
+   {
+    "id": "703415",
+    "name": "Anar Ushmandi"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "959106",
+    "name": "Weslley Patati"
+   },
+   {
+    "id": "1002520",
+    "name": "Sayed Abu Farkhi"
+   },
+   {
+    "id": "399361",
+    "name": "Dan Biton"
+   },
+   {
+    "id": "211847",
+    "name": "Osher Davida"
+   },
+   {
+    "id": "1079637",
+    "name": "Elad Madmon"
+   },
+   {
+    "id": "966009",
+    "name": "Bar Lin"
+   },
+   {
+    "id": "926481",
+    "name": "Ori Azo"
+   },
+   {
+    "id": "694512",
+    "name": "Hisham Layous"
+   },
+   {
+    "id": "947166",
+    "name": "Henry Addo"
+   },
+   {
+    "id": "293603",
+    "name": "Sagiv Jehezkel"
+   },
+   {
+    "id": "347272",
+    "name": "Matan Hozez"
+   },
+   {
+    "id": "211845",
+    "name": "Yonas Malede"
+   },
+   {
+    "id": "1174940",
+    "name": "Anis Porat Ayash"
+   },
+   {
+    "id": "85093",
+    "name": "Eran Zahavi"
+   }
+  ],
+  "2026": [
+   {
+    "id": "930521",
+    "name": "Ofek Melika"
+   },
+   {
+    "id": "359975",
+    "name": "Yoav Gerafi"
+   },
+   {
+    "id": "200575",
+    "name": "Roi Mishpati"
+   },
+   {
+    "id": "1164754",
+    "name": "Idan Trau"
+   },
+   {
+    "id": "1364962",
+    "name": "Shalev Saadya"
+   },
+   {
+    "id": "919538",
+    "name": "Roy Revivo"
+   },
+   {
+    "id": "811805",
+    "name": "Tyrese Asante"
+   },
+   {
+    "id": "585055",
+    "name": "Nemanja Stojic"
+   },
+   {
+    "id": "426723",
+    "name": "Mohamed Camara"
+   },
+   {
+    "id": "982568",
+    "name": "Noam Ben Harush"
+   },
+   {
+    "id": "396635",
+    "name": "Raz Shlomo"
+   },
+   {
+    "id": "815672",
+    "name": "Heitor"
+   },
+   {
+    "id": "668600",
+    "name": "Shahar Rosen"
+   },
+   {
+    "id": "668590",
+    "name": "Itay Ben Hemo"
+   },
+   {
+    "id": "624717",
+    "name": "Denny Gropper"
+   },
+   {
+    "id": "323451",
+    "name": "Avishay Cohen"
+   },
+   {
+    "id": "1098925",
+    "name": "Itay Malma"
+   },
+   {
+    "id": "1178431",
+    "name": "Idan Weinberg"
+   },
+   {
+    "id": "507223",
+    "name": "Kristijan Belic"
+   },
+   {
+    "id": "740674",
+    "name": "Issouf Sissokho"
+   },
+   {
+    "id": "204987",
+    "name": "Dor Peretz"
+   },
+   {
+    "id": "519506",
+    "name": "Ido Shahar"
+   },
+   {
+    "id": "896338",
+    "name": "Kervin Andrade"
+   },
+   {
+    "id": "648091",
+    "name": "Itamar Noy"
+   },
+   {
+    "id": "366929",
+    "name": "Ben Lederman"
+   },
+   {
+    "id": "1261451",
+    "name": "Ilay Ben Simon"
+   },
+   {
+    "id": "1181939",
+    "name": "Roei Magor"
+   },
+   {
+    "id": "1121990",
+    "name": "Lotem Asras"
+   },
+   {
+    "id": "959106",
+    "name": "Weslley Patati"
+   },
+   {
+    "id": "703460",
+    "name": "Dor Turgeman"
+   },
+   {
+    "id": "840836",
+    "name": "Hélio Varela"
+   },
+   {
+    "id": "1002520",
+    "name": "Sayed Abu Farkhi"
+   },
+   {
+    "id": "403177",
+    "name": "Emir Sahiti"
+   },
+   {
+    "id": "211847",
+    "name": "Osher Davida"
+   },
+   {
+    "id": "1079637",
+    "name": "Elad Madmon"
+   },
+   {
+    "id": "438310",
+    "name": "Ion Nicolaescu"
+   },
+   {
+    "id": "926481",
+    "name": "Ori Azo"
+   },
+   {
+    "id": "947166",
+    "name": "Henry Addo"
+   },
+   {
+    "id": "293603",
+    "name": "Sagiv Jehezkel"
+   },
+   {
+    "id": "211845",
+    "name": "Yonas Malede"
+   },
+   {
+    "id": "1164740",
+    "name": "Itay Zafrani"
+   }
+  ]
+ }
+}

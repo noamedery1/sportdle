@@ -47,7 +47,8 @@
    "players": 410,
    "targets": 121
   },
-  "wikiEn": "Beitar Jerusalem"
+  "wikiEn": "Beitar Jerusalem",
+  "transfermarkt": 3793
  },
  "hapoel-bs": {
   "verified": true,
@@ -83,7 +84,8 @@
    "league": [],
    "cup": []
   },
-  "wikiEn": "Hapoel Be'er Sheva"
+  "wikiEn": "Hapoel Be'er Sheva",
+  "transfermarkt": 2976
  },
  "maccabi-ta": {
   "verified": true,
@@ -162,7 +164,8 @@
     1947
    ]
   },
-  "wikiEn": "Maccabi Tel Aviv"
+  "wikiEn": "Maccabi Tel Aviv",
+  "transfermarkt": 119
  },
  "maccabi-haifa": {
   "verified": true,
@@ -209,7 +212,8 @@
    "league": [],
    "cup": []
   },
-  "wikiEn": "Maccabi Haifa"
+  "wikiEn": "Maccabi Haifa",
+  "transfermarkt": 1064
  },
  "hapoel-ta": {
   "verified": true,
@@ -266,6 +270,7 @@
     1945
    ]
   },
-  "wikiEn": "Hapoel Tel Aviv"
+  "wikiEn": "Hapoel Tel Aviv",
+  "transfermarkt": 1017
  }
 }

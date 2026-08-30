@@ -27,6 +27,7 @@
    ולכן הן נספרות בנפרד ומסומנות ככאלה בדוח.
    ============================================================ */
 import { readJSON, writeText, loadClubs, normName, normLatin, shortName, season, parseArgs } from "../scripts/lib/util.mjs";
+import { plausible, score } from "../scripts/lib/translit.mjs";
 
 const args = parseArgs();
 const only = process.argv.slice(2).find(a => !a.startsWith("--")) || null;
@@ -87,17 +88,77 @@ for (const club of loadClubs()) {
   };
 
   /* ---------- 2. worldfootball ---------- */
-  const wfByName = new Map();
+  const wfByName = new Map(), wfRecs = new Map();
   const wfRaw = readJSON(`data/raw/${club.slug}-worldfootball.json`, null);
   for (const [y, list] of Object.entries(wfRaw?.seasons || {}))
     for (const p of list) {
       if (!p.name) continue;
       const k = normLatin(p.name);
-      if (!wfByName.has(k)) wfByName.set(k, []);
+      if (!wfByName.has(k)) { wfByName.set(k, []); wfRecs.set(k, { name: p.name, born: p.born ?? null, years: [] }); }
       wfByName.get(k).push(+y);
+      wfRecs.get(k).years.push(+y);
+      if (wfRecs.get(k).born == null && p.born) wfRecs.get(k).born = p.born;
     }
 
-  /* ---------- 3. קטגוריית ויקיפדיה ---------- */
+  /* אישור מ-worldfootball גם בלי גשר בין־לשוני.
+     "אפרים דוידי" מופיע שם כ-"Efraim Davidi" בשתים־עשרה עונות
+     רצופות, ובכל זאת נספר כ"מקור יחיד" — כי לרשומה העברית אין
+     שם לטיני ולא נמצא קישור בוויקיפדיה. זה לא חוסר במקור, זה
+     חוסר בגשר.
+
+     שלושה תנאים, ורק לספירה — שום נתון לא נכנס מכאן למאגר:
+     שנת לידה זהה (או חסרה בצד אחד), חפיפת עונות, ושם שעובר את
+     מסנן הדחייה של scripts/lib/translit.mjs. מועמד יחיד בלבד. */
+  const wfLoose = (he, born, mySeasons) => {
+    const hits = [];
+    for (const [k, r] of wfRecs) {
+      if (born != null && r.born != null && born !== r.born) continue;
+      if (!r.years.some(y => mySeasons.has(y))) continue;
+      if (!plausible(he, r.name).ok) continue;
+      hits.push({ r, s: score(he, r.name) });
+    }
+    if (!hits.length) return null;
+    /* כשיותר מאחד עובר את המסנן, מכריע הציון הסימטרי — ורק אם
+       הוא מוביל בבירור. "דוד דגו" מול David Dego (0.92) ומול
+       David Houja (0.83), שניהם ילידי 2001 באותן עונות. בלי
+       הדירוג שניהם היו נפסלים כדו-משמעיים, והשחקן היה נשאר
+       "מקור יחיד" בזמן ש-worldfootball מכיר אותו בשלוש עונות. */
+    hits.sort((x, y) => y.s - x.s);
+    if (hits.length > 1 && hits[0].s - hits[1].s < 0.08) return null;
+    return hits[0].s >= 0.8 ? hits[0].r : null;
+  };
+
+  /* ---------- 3. Transfermarkt: סגל לפי עונה ----------
+     אין בו שנת לידה בדף הסגל, ולכן ההתאמה נשענת על שם וחפיפת
+     עונות בלבד — ובגלל זה היא נשענת גם על מסנן התעתיק ועל
+     דירוג, בדיוק כמו מול worldfootball. */
+  const tmRecs = new Map();
+  const tmRaw = readJSON(`data/raw/${club.slug}-transfermarkt.json`, null);
+  for (const [y, list] of Object.entries(tmRaw?.seasons || {}))
+    for (const p of list) {
+      if (!p.name) continue;
+      const k = normLatin(p.name);
+      if (!tmRecs.has(k)) tmRecs.set(k, { name: p.name, years: [] });
+      tmRecs.get(k).years.push(+y);
+    }
+  const tmFind = (he, latinKeys, mySeasons) => {
+    for (const k of latinKeys) {
+      const r = tmRecs.get(k);
+      if (r && r.years.some(y => mySeasons.has(y))) return r;
+    }
+    const hits = [];
+    for (const [, r] of tmRecs) {
+      if (!r.years.some(y => mySeasons.has(y))) continue;
+      if (!plausible(he, r.name).ok) continue;
+      hits.push({ r, s: score(he, r.name) });
+    }
+    if (!hits.length) return null;
+    hits.sort((x, y) => y.s - x.s);
+    if (hits.length > 1 && hits[0].s - hits[1].s < 0.08) return null;
+    return hits[0].s >= 0.8 ? hits[0].r : null;
+  };
+
+  /* ---------- 4. קטגוריית ויקיפדיה ---------- */
   const cat = new Set();
   const catRaw = readJSON(`data/raw/${club.slug}-wikipedia.json`, null);
   for (const e of catRaw?.entries || [])
@@ -159,7 +220,13 @@ for (const club of loadClubs()) {
     let ifaYears = id ? (ifaByKey.get(id) || [])
                       : (heKeys.map(k => ifaByKey.get(k)).find(Boolean) || []);
     if (!ifaYears.length) ifaYears = ifaByPrefix(p.he, mySeasons) || [];
-    const wfYears  = latin.map(k => wfByName.get(k)).find(Boolean) || [];
+    let wfYears  = latin.map(k => wfByName.get(k)).find(Boolean) || [];
+    let wfVia = wfYears.length ? "שם" : null;
+    if (!wfYears.length) {
+      const loose = wfLoose(p.he, p.born, new Set(yearsOf(p.spells)));
+      if (loose) { wfYears = loose.years; wfVia = "תעתיק+לידה+עונות"; }
+    }
+    const tm       = tmFind(p.he, latin, new Set(yearsOf(p.spells)));
     const inCat    = heKeys.some(k => cat.has(k));
     const wc       = heKeys.map(k => wcByName.get(k)).find(Boolean) || null;
     const en       = latin.map(k => enByName.get(k)).find(Boolean) || null;
@@ -170,12 +237,13 @@ for (const club of loadClubs()) {
       cat:  inCat,
       wiki: !!wc,
       en:   !!en && en.atClub,
-      ref:  heKeys.some(k => refNames.has(k))
+      ref:  heKeys.some(k => refNames.has(k)),
+      tm:   !!tm
     };
     /* ויקיפדיה נספרת פעם אחת: קטגוריה וטבלה הן אותו ערך */
     const heWiki = src.cat || src.wiki;
     const n = (src.ifa ? 1 : 0) + (src.wf ? 1 : 0) + (heWiki ? 1 : 0) +
-              (src.en ? 1 : 0) + (src.ref ? 1 : 0);
+              (src.en ? 1 : 0) + (src.ref ? 1 : 0) + (src.tm ? 1 : 0);
 
     /* סתירה מפורשת: הערך האנגלי קיים, מפרט קריירה, ואין בו
        המועדון שלנו. זה מה שהיה קורה עם אסולין. */
@@ -197,7 +265,7 @@ for (const club of loadClubs()) {
       level === "סותר"      ? "גבוה" :
       level === "בלי מקור"  ? "גבוה" :
       src.wf                ? "גבוה" :
-      src.ifa || src.ref    ? "נמוך" : "בינוני";
+      src.ifa || src.ref || src.tm ? "נמוך" : "בינוני";
 
     found.push({
       slug: club.slug, game: db.game, he: p.he, id,
@@ -205,10 +273,11 @@ for (const club of loadClubs()) {
       span: span(p.spells), target: p.target,
       inSchedule: db.schedule.indexOf(p.he) + 1,
       n, level, denied, risk,
-      src: [src.ifa && "התאחדות", src.wf && "worldfootball",
+      src: [src.ifa && "התאחדות", src.wf && ("worldfootball" + (wfVia === "שם" ? "" : " (גשר תעתיק)")),
             src.cat && "קטגוריה", src.wiki && "קריירה-עברית",
             src.en && "קריירה-אנגלית",
-            src.ref && "הגרסה שבייצור"].filter(Boolean).join(" · "),
+            src.ref && "הגרסה שבייצור",
+            src.tm && "Transfermarkt"].filter(Boolean).join(" · "),
       enClubs: en && !en.atClub ? (en.allClubs || []).slice(0, 6).join(" / ") : ""
     });
   }

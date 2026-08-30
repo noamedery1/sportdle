@@ -29,6 +29,7 @@ import {
 } from "./lib/util.mjs";
 import { openBrowser, gotoStable, makeThrottle } from "./lib/browser.mjs";
 import { enClubKey, isSameClub } from "./lib/enclub.mjs";
+import { fetchSquad } from "./lib/transfermarkt.mjs";
 
 const args   = parseArgs();
 const clubs  = pickClubs(args);
@@ -1015,6 +1016,47 @@ async function scrapeEnWikiCareer(club) {
 }
 
 /* ============================================================
+   מקור 4 — Transfermarkt, סגל לפי עונה.
+
+   המקור החמישי, והיחיד מלבד ההתאחדות שעונה ישירות על "מי היה
+   בסגל בעונה הזאת" — ובניגוד להתאחדות הוא מכסה גם את מה שלפני
+   2002/03. הוא אישר את חבייר דירסאו במכבי חיפה 04/05, השחקן
+   האחרון בבריכת התשובות שנשען על מקור יחיד.
+
+   ההרצה משכית: כל עונה שכבר נשאבה מדולגת, אלא אם --force.
+   ============================================================ */
+async function scrapeTransfermarkt(club) {
+  if (!club.transfermarkt) { warn(`${club.slug}: אין מזהה Transfermarkt — מדלגים`); return null; }
+  const file = `data/raw/${club.slug}-transfermarkt.json`;
+  const prev = readJSON(file, null);
+  const seasons = prev?.seasons || {};
+  let fetched = 0, cached = 0, failed = 0;
+
+  for (let y = FROM + 1; y <= TO + 1; y++) {
+    if (seasons[y] && !FORCE) { cached++; continue; }
+    const r = await fetchSquad(club.transfermarkt, y);
+    if (!r.ok) {
+      failed++;
+      warn(`${club.slug} ${y - 1}/${y}: ${r.why}`);
+      if (failed >= 5) { warn(`${club.slug}: חמישה כשלונות ברצף — עוצרים`); break; }
+      await sleep(5000);
+      continue;
+    }
+    failed = 0;
+    if (r.players.length) {
+      seasons[y] = r.players;
+      fetched++;
+      if (fetched % 10 === 0) log(`  ${club.slug} tm: ${fetched} עונות נשאבו`);
+    }
+    await sleep(1500);
+  }
+  const total = Object.values(seasons).reduce((n, l) => n + l.length, 0);
+  log(`  ${club.slug} transfermarkt: ${Object.keys(seasons).length} עונות · ` +
+      `${total} שורות סגל (חדשות ${fetched}, מה-cache ${cached})`);
+  return { teamId: club.transfermarkt, seasons };
+}
+
+/* ============================================================
    ראשי
    ============================================================ */
 const wantWf   = only.includes("wf");
@@ -1109,6 +1151,12 @@ try {
       const r = await scrapeWikiCareer(club);
       if (r) writeJSON(`data/raw/${club.slug}-wikicareer.json`,
         { club: club.slug, source: "wikicareer", ...r });
+    }
+
+    if (only.includes("transfermarkt")) {
+      const r = await scrapeTransfermarkt(club);
+      if (r) writeJSON(`data/raw/${club.slug}-transfermarkt.json`,
+        { club: club.slug, source: "transfermarkt", ...r });
     }
 
     if (only.includes("enwikicareer")) {
