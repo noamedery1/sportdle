@@ -1,0 +1,88 @@
+# ============================================================
+# הפוסט היומי לעמוד פייסבוק ולערוץ טלגרם
+# ------------------------------------------------------------
+# רץ על השרתים של GitHub. המחשב שלך יכול להיות כבוי.
+#
+# מה מתפרסם: התשובות של אתמול + קישור לחידה של היום. **לא** רמז
+# על החידה הנוכחית — פוסט שמקלקל חידה עובד פעם אחת.
+#
+# פעם בשבוע (ראשון) הפוסט הוא סרטון: משחק אמיתי של חידת ארכיון
+# מלפני שבוע, מוקלט מהאתר החי. הוא נשמר גם כ-artifact כדי
+# להוריד ולהעלות לטיקטוק — שם אין API פרסום פתוח.
+#
+# סודות ב-Settings → Secrets and variables → Actions:
+#   FB_PAGE_ID     מזהה העמוד (מספר)
+#   FB_PAGE_TOKEN  Page Access Token ארוך-טווח
+#   TG_BOT_TOKEN   אופציונלי — בוט טלגרם
+#   TG_CHAT_ID     אופציונלי — מזהה הערוץ
+# חסר סוד? הערוץ מדולג בשקט והריצה מסתיימת בהצלחה. cron שנכשל
+# כל יום מפסיקים להסתכל עליו, וזה גרוע יותר מלא לפרסם.
+# ============================================================
+name: פוסט יומי
+
+on:
+  schedule:
+    # 05:10 UTC — 08:10 בקיץ, 07:10 בחורף. בוקר, אחרי שהחידה התחלפה.
+    - cron: "10 5 * * *"
+  workflow_dispatch:
+    inputs:
+      video:
+        description: "לצרף סרטון (איטי יותר)"
+        type: boolean
+        default: false
+      dry:
+        description: "הרצה יבשה — מדפיס ולא מפרסם"
+        type: boolean
+        default: false
+
+concurrency:
+  group: social
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+
+      # יום ראשון, או כשמבקשים ידנית
+      - name: סרטון היום?
+        id: mode
+        run: |
+          want="${{ inputs.video }}"
+          if [ "$(date -u +%u)" = "7" ]; then want=true; fi
+          echo "video=$want" >> "$GITHUB_OUTPUT"
+
+      # Playwright נדרש רק לסרטון, והוא 300MB. לא מתקינים אותו סתם.
+      - name: התקנת דפדפן
+        if: steps.mode.outputs.video == 'true'
+        run: |
+          npm i --no-save playwright@^1.49.0
+          npx playwright install --with-deps chromium
+
+      - name: יצירת הסרטון
+        if: steps.mode.outputs.video == 'true'
+        run: node tools/clip.mjs --out=clip.mp4
+
+      - name: שמירת הסרטון
+        if: steps.mode.outputs.video == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: sportdle-clip
+          path: clip.mp4
+          retention-days: 30
+
+      - name: פרסום
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+        run: |
+          FLAGS=""
+          [ "${{ inputs.dry }}" = "true" ] || FLAGS="--post"
+          [ "${{ steps.mode.outputs.video }}" = "true" ] && FLAGS="$FLAGS --video=clip.mp4"
+          node tools/social.mjs $FLAGS
