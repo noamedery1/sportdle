@@ -51,7 +51,7 @@
  },
  "counts": {
   "players": 380,
-  "targets": 111
+  "targets": 114
  },
  "players": [
   {
@@ -1225,9 +1225,9 @@
   },
   {
    "he": "אגאפור אריק",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "DF",
+   "nat": "NG",
+   "born": 1979,
    "spells": [
     [
      2003,
@@ -1394,9 +1394,9 @@
   },
   {
    "he": "אסף אברהמי",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2003,
@@ -1468,9 +1468,9 @@
   },
   {
    "he": "זאוטאוטאס ריימונס",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "MF",
+   "nat": "LT",
+   "born": 1972,
    "spells": [
     [
      2003,
@@ -1522,9 +1522,9 @@
   },
   {
    "he": "כאמל גבארין",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1981,
    "spells": [
     [
      2003,
@@ -1558,9 +1558,9 @@
   },
   {
    "he": "ליעד אמיר",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2003,
@@ -1650,9 +1650,9 @@
   },
   {
    "he": "פרליה נאנד",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "MF",
+   "nat": "HR",
+   "born": 1970,
    "spells": [
     [
      2003,
@@ -2954,9 +2954,9 @@
   },
   {
    "he": "ולדימיר דוואלישוילי",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1986,
    "spells": [
     [
      2010,
@@ -2987,9 +2987,9 @@
   },
   {
    "he": "זיו אוסון",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -3005,9 +3005,9 @@
   },
   {
    "he": "חיים זיסקינד",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -3045,9 +3045,9 @@
   },
   {
    "he": "טיאגו דוטרה",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -3063,9 +3063,9 @@
   },
   {
    "he": "כליבאת מוחמד",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -3159,9 +3159,9 @@
   },
   {
    "he": "שלומי אזולאי",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -3418,9 +3418,9 @@
   },
   {
    "he": "במידלה ימפולסקי",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1988,
    "spells": [
     [
      2012,
@@ -3436,9 +3436,9 @@
   },
   {
    "he": "גבריאל גרינר",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2012,
@@ -3570,9 +3570,9 @@
   },
   {
    "he": "ערן רוזנבאום",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2012,
@@ -3884,9 +3884,9 @@
   },
   {
    "he": "יובל יוסיפוביץ",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2014,
@@ -4497,9 +4497,9 @@
   },
   {
    "he": "ערן ביטון",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1996,
    "spells": [
     [
      2016,
@@ -4595,9 +4595,9 @@
   },
   {
    "he": "איתן וולבלום",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1997,
    "spells": [
     [
      2017,
@@ -4703,9 +4703,9 @@
   },
   {
    "he": "מוחמד עואד",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1997,
    "spells": [
     [
      2017,
@@ -4714,7 +4714,7 @@
    ],
    "seasons": 5,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "מוחמד עואד"
    ]
@@ -5102,9 +5102,9 @@
   },
   {
    "he": "רועי פוקס",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2018,
@@ -5117,7 +5117,7 @@
    ],
    "seasons": 7,
    "titles": 3,
-   "target": false,
+   "target": true,
    "aliases": [
     "רועי פוקס"
    ]
@@ -5356,9 +5356,9 @@
   },
   {
    "he": "גושוע כהן",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2020,
@@ -5367,7 +5367,7 @@
    ],
    "seasons": 4,
    "titles": 3,
-   "target": false,
+   "target": true,
    "aliases": [
     "ג'ושוע כהן"
    ]
@@ -6330,9 +6330,9 @@
   },
   {
    "he": "זיו בן שימול",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2004,
    "spells": [
     [
      2024,
@@ -6363,9 +6363,9 @@
   },
   {
    "he": "לורנצו סימיץ",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1996,
    "spells": [
     [
      2024,
@@ -6540,9 +6540,9 @@
   },
   {
    "he": "גטאצאו יבלו",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 2005,
    "spells": [
     [
      2025,
@@ -6594,9 +6594,9 @@
   },
   {
    "he": "ליאם חרמש",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2004,
    "spells": [
     [
      2025,
@@ -6648,9 +6648,9 @@
   },
   {
    "he": "עמית ארזי",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2005,
    "spells": [
     [
      2025,
@@ -6681,9 +6681,9 @@
   },
   {
    "he": "פדרו דה אוליברה",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1997,
    "spells": [
     [
      2025,
@@ -6753,9 +6753,9 @@
   },
   {
    "he": "תומאס סולטאני",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2025,
@@ -6789,9 +6789,9 @@
   },
   {
    "he": "אלעד אמיר",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 2006,
    "spells": [
     [
      2026,
@@ -6807,9 +6807,9 @@
   },
   {
    "he": "בנסון מנואל",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1997,
    "spells": [
     [
      2026,
@@ -6862,9 +6862,9 @@
   },
   {
    "he": "דניאל דרזי",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2006,
    "spells": [
     [
      2026,
@@ -7212,6 +7212,9 @@
   "שמואל שיימן",
   "רמי גרשון",
   "רביד גזל",
-  "חבייר דירסאו"
+  "חבייר דירסאו",
+  "רועי פוקס",
+  "גושוע כהן",
+  "מוחמד עואד"
  ]
 }

@@ -26,7 +26,7 @@
    מוצג לא משתנה, שם לא מתמזג עם שם, ואף חידה שפורסמה לא זזה.
    ============================================================ */
 import { readJSON, writeJSON, loadClubs, normName, normLatin, log, parseArgs, season } from "../scripts/lib/util.mjs";
-import { plausible } from "../scripts/lib/translit.mjs";
+import { plausible, score } from "../scripts/lib/translit.mjs";
 
 const args = parseArgs();
 const WRITE = !!args.write;
@@ -86,6 +86,34 @@ for (const club of loadClubs()) {
     return { p, id, page, born: p.born ?? page?.born ?? null };
   });
 
+  /* ---- Transfermarkt: סגל לפי עונה, בלי שנת לידה ---- */
+  const tm = new Map();
+  const tmRaw = readJSON(`data/raw/${club.slug}-transfermarkt.json`, null);
+  for (const [y, list] of Object.entries(tmRaw?.seasons || {}))
+    for (const p of list) {
+      if (!p.name) continue;
+      const k = normLatin(p.name);
+      if (!tm.has(k)) tm.set(k, { name: p.name, born: null, years: [] });
+      tm.get(k).years.push(+y);
+    }
+
+  /* המועמד הטוב ביותר במקור אחד, או null כשאין הכרעה.
+     הפער הנדרש בין הראשון לשני הוא מה שמונע הכרעה בין שני
+     שמות שנשמעים דומה באותה מידה. */
+  const best = (he, born, mine, recs, useBorn) => {
+    const hits = [];
+    for (const r of recs.values()) {
+      if (useBorn && born != null && r.born != null && born !== r.born) continue;
+      if (!r.years.some(y => mine.has(y))) continue;
+      if (!plausible(he, r.name).ok) continue;
+      hits.push({ r, s: score(he, r.name) });
+    }
+    if (!hits.length) return null;
+    hits.sort((a, b) => b.s - a.s);
+    if (hits.length > 1 && hits[0].s - hits[1].s < 0.08) return null;
+    return hits[0].s >= 0.8 ? hits[0].r : null;
+  };
+
   /* ---- הגשר, על המאגר הבנוי ---- */
   const byBorn = new Map();
   for (const e of enriched) {
@@ -93,40 +121,25 @@ for (const club of loadClubs()) {
     if (!byBorn.has(e.born)) byBorn.set(e.born, []);
     byBorn.get(e.born).push(e);
   }
-  const link = new Map(), claims = new Map();
-  for (const [k, w] of wf) {
-    if (w.born == null || !w.years.length) continue;
-    const ws = new Set(w.years);
-    const hits = (byBorn.get(w.born) || []).filter(e => {
-      if (!yearsOf(e.p.spells).some(y => ws.has(y))) return false;
-      /* אזרחות רשומה שסותרת את הלאום ב-worldfootball פוסלת */
-      const cit = e.page?.natIso, wfNat = NAT?.[w.nat] ?? null;
-      if (cit && wfNat && cit !== wfNat) return false;
-      return true;
-    });
-    if (hits.length !== 1) continue;
-    /* שנת לידה וחפיפת עונות מזהות; השם רק פוסל. "יקיר לוסקי" ו-"Mesay
-       Dego" חלקו שנה ועונה, והם שני אנשים. */
-    if (!plausible(hits[0].p.he, w.name).ok) continue;
-    link.set(k, hits[0]);
-    claims.set(hits[0], (claims.get(hits[0]) || 0) + 1);
-  }
-  for (const [k, e] of [...link]) if (claims.get(e) > 1) link.delete(k);
-
-  /* ---- מי מוסתר היום ומקבל עמדה ---- */
   const fixes = {}, rows = [];
   let skipped = 0;
-  for (const [k, e] of link) {
+  for (const e of enriched) {
     const { p, id, page } = e;
-    if (p.pos != null) continue;                 // כבר מוצג
-    if (!id) { skipped++; continue; }             // בלי מפתח יציב אין תיקון
-    const w = wf.get(k);
-    if (!w.pos) { skipped++; continue; }           // בלי עמדה אין מה להחזיר
-    const born = p.born ?? page?.born ?? w.born ?? null;
+    if (p.pos != null) continue;                  // כבר מוצג
+    if (!id) { skipped++; continue; }              // בלי מפתח יציב אין תיקון
+    const born = e.born;
     if (born == null) { skipped++; continue; }
+    const mine = new Set(yearsOf(p.spells));
+    if (!mine.size) { skipped++; continue; }
+
+    const w = best(p.he, born, mine, wf, true);
+    const m = best(p.he, born, mine, tm, false);
+    if (!w || !m) { skipped++; continue; }         // צריך את שניהם
+    if (!w.pos) { skipped++; continue; }            // בלי עמדה אין מה להחזיר
+
     const nat = NAT?.[w.nat] ?? null;
     fixes[id] = { pos: w.pos, born, ...(nat && p.nat == null ? { nat } : {}) };
-    rows.push({ he: p.he, id, pos: w.pos, born, nat, en: w.name,
+    rows.push({ he: p.he, id, pos: w.pos, born, nat, en: w.name, tm: m.name,
                 seasons: p.seasons, span: span(p.spells) });
   }
 
@@ -135,8 +148,8 @@ for (const club of loadClubs()) {
   log(`${db.game.padEnd(12)} ${String(hidden).padStart(4)} מוסתרים · ` +
       `${String(rows.length).padStart(4)} חוזרים למשחק · ${skipped} בלי מספיק נתונים`);
   for (const r of rows.slice(0, 8))
-    log(`   ${r.he} → ${r.pos} · ${r.born}${r.nat ? " · " + r.nat : ""} ` +
-        `(worldfootball: ${r.en}) · ${r.seasons} עונות · ${r.span}`);
+    log(`   ${r.he} → ${r.pos} · ${r.born} · wf:${r.en} · tm:${r.tm} · ` +
+        `${r.seasons} עונות · ${r.span}`);
   if (rows.length > 8) log(`   ... ועוד ${rows.length - 8}`);
 
   totalFound += rows.length;
@@ -154,8 +167,8 @@ for (const club of loadClubs()) {
     cfg._note_unhide = [
       "השורות עם pos ו-born שנוספו כאן אוטומטית הן שחזור של שחקנים",
       "שהוסתרו מהמשחק בגלל עמדה חסרה. המקור: שנת הלידה מדף השחקן",
-      "של ההתאחדות + רשומת worldfootball יחידה שתואמת לה בשנת לידה",
-      "ובחפיפת עונות. `node tools/unhide.mjs` מייצר אותן מחדש.",
+      "של ההתאחדות, ושני מקורות בלתי תלויים — worldfootball ו-Transfermarkt —",
+      "שמזהים את אותו אדם באותן עונות. `node tools/unhide.mjs` מייצר אותן מחדש.",
       "העונות של אף שחקן לא שונו כאן, ואף שם לא אוחד."
     ];
     writeJSON(file, cfg, 2);

@@ -70,7 +70,7 @@
  },
  "counts": {
   "players": 354,
-  "targets": 121
+  "targets": 124
  },
  "players": [
   {
@@ -1307,9 +1307,9 @@
   },
   {
    "he": "גולדברג רודריגו",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "FW",
+   "nat": "CL",
+   "born": 1971,
    "spells": [
     [
      2003,
@@ -1325,9 +1325,9 @@
   },
   {
    "he": "גל פליאן",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1982,
    "spells": [
     [
      2003,
@@ -1543,9 +1543,9 @@
   },
   {
    "he": "קובי מוסה",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1982,
    "spells": [
     [
      2003,
@@ -1558,16 +1558,16 @@
    ],
    "seasons": 5,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "קובי מוסה"
    ]
   },
   {
    "he": "רייס ברונו",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1978,
    "spells": [
     [
      2003,
@@ -1576,7 +1576,7 @@
    ],
    "seasons": 3,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "רייס לינו ברונו"
    ]
@@ -1885,9 +1885,9 @@
   },
   {
    "he": "עידן ביטון",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1985,
    "spells": [
     [
      2005,
@@ -2403,9 +2403,9 @@
   },
   {
    "he": "אדר כהן",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1988,
    "spells": [
     [
      2008,
@@ -3398,9 +3398,9 @@
   },
   {
    "he": "אליהו זיזוב",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1991,
    "spells": [
     [
      2012,
@@ -3513,9 +3513,9 @@
   },
   {
    "he": "יגיל ביטון",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2012,
@@ -4023,9 +4023,9 @@
   },
   {
    "he": "דניאל גרץ",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2014,
@@ -4169,9 +4169,9 @@
   },
   {
    "he": "רמי מרוול",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2014,
@@ -5044,9 +5044,9 @@
   },
   {
    "he": "ניקולס בלקמן",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1989,
    "spells": [
     [
      2018,
@@ -5059,7 +5059,7 @@
    ],
    "seasons": 3,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "ניקולס אלכסנדר בלקמן"
    ]
@@ -5748,9 +5748,9 @@
   },
   {
    "he": "גויאגון פארפה",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2001,
    "spells": [
     [
      2023,
@@ -5878,9 +5878,9 @@
   },
   {
    "he": "אדיר קורדובה",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 2004,
    "spells": [
     [
      2024,
@@ -6098,9 +6098,9 @@
   },
   {
    "he": "רועי עמדי",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 2004,
    "spells": [
     [
      2024,
@@ -6224,9 +6224,9 @@
   },
   {
    "he": "ווסלי בטיסטה",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 2003,
    "spells": [
     [
      2025,
@@ -6460,9 +6460,9 @@
   },
   {
    "he": "חליו וארלה",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 2002,
    "spells": [
     [
      2026,
@@ -6600,9 +6600,9 @@
   },
   {
    "he": "קריסטיאן בליץ",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2001,
    "spells": [
     [
      2026,
@@ -6618,9 +6618,9 @@
   },
   {
    "he": "שליו סעדיה",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 2006,
    "spells": [
     [
      2026,
@@ -6756,6 +6756,9 @@
   "אופיר דוידזאדה",
   "אלכסנדר פולוקארוב",
   "רועי דיין",
-  "גיא סולומון"
+  "גיא סולומון",
+  "ניקולס בלקמן",
+  "קובי מוסה",
+  "רייס ברונו"
  ]
 }
