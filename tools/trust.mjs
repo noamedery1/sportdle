@@ -26,7 +26,7 @@
    מהשני — אבל טבלת קריירה נכתבת בכל שפה בנפרד ולעיתים סותרת,
    ולכן הן נספרות בנפרד ומסומנות ככאלה בדוח.
    ============================================================ */
-import { readJSON, writeText, loadClubs, normName, normLatin, shortName, season, parseArgs } from "../scripts/lib/util.mjs";
+import { readJSON, writeText, writeJSON, loadClubs, normName, normLatin, shortName, season, parseArgs } from "../scripts/lib/util.mjs";
 import { plausible, score } from "../scripts/lib/translit.mjs";
 
 const args = parseArgs();
@@ -302,6 +302,20 @@ for (const club of loadClubs()) {
                   (f.enClubs ? `\n${" ".repeat(14)}באנגלית רשום: ${f.enClubs}` : ""));
   }
 }
+
+/* ---------- רשימת הלא-מאושרים, למי שבונה ----------
+   מה שאין עליו שני מקורות לא מוצג במשחק: לא כתשובה ולא
+   כניחוש. שורת השוואה על נתון שאיש לא מאשר גרועה מהיעדר
+   השחקן — היא נראית סמכותית והיא עלולה להיות שגויה.
+   הרשומה נשארת במאגר; רק המשחק לא מציג אותה. */
+writeJSON("data/review/unconfirmed.json", {
+  _comment: "שחקנים בלי אישור משני. build.mjs מסנן אותם מהמשחק. " +
+            "נוצר על ידי `node tools/trust.mjs`.",
+  generated: rows.length,
+  clubs: Object.fromEntries([...new Set(rows.map(r => r.slug))].map(slug =>
+    [slug, rows.filter(r => r.slug === slug && r.level !== "מאושר")
+             .map(r => r.he).sort((a, b) => a.localeCompare(b, "he"))]))
+});
 
 /* ---------- קבצים ---------- */
 const esc = v => '"' + String(v ?? "").replace(/"/g, '""') + '"';

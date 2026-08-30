@@ -205,8 +205,20 @@ for (const c of clubs) {
      לתיקון, וברגע שיש עמדה השחקן חוזר מעצמו. המספרים שמוצגים
      לשחקן נספרים אחרי הסינון — אחרת הכותרת מבטיחה שחקנים שאי
      אפשר להקליד. */
-  const playable = d.players.filter(p => p.pos != null);
+  /* ומי שאין עליו שני מקורות בלתי תלויים גם הוא לא נכנס.
+     ליאור אסולין הופיע ארבע עונות במכבי חיפה, היה חידה יומית,
+     ומעולם לא שיחק שם — הוא נשען על מקור אחד. שורת השוואה על
+     נתון שאיש לא מאשר גרועה מהיעדר השחקן: היא נראית סמכותית.
+     הרשימה מ-`node tools/trust.mjs`, והרשומות נשארות במאגר. */
+  const unconfirmed = new Set(
+    (readJSON("data/review/unconfirmed.json", { clubs: {} }).clubs[c.slug] || []));
+  const playable = d.players.filter(p => p.pos != null && !unconfirmed.has(p.he));
+  const blocked = d.schedule.filter(n => unconfirmed.has(n));
+  if (blocked.length)
+    fail(c.slug, `${blocked.length} שמות בלוח החידות בלי אישור משני: ` +
+                 `${blocked.slice(0, 5).join(", ")}`);
   const hidden = d.players.length - playable.length;
+  const unconf = d.players.filter(p => p.pos != null && unconfirmed.has(p.he)).length;
   const spanYears = playable.flatMap(p => p.spells.flat());
   data[c.slug] = {
     slug: d.slug, he: d.he, short: d.short, game: d.game,
@@ -214,7 +226,7 @@ for (const c of clubs) {
     coverage: { ...d.coverage, from: Math.min(...spanYears), to: Math.max(...spanYears) },
     counts: { players: playable.length,
               targets: playable.filter(p => p.target).length,
-              hidden },
+              hidden, unconfirmed: unconf },
     players: playable.map(p => ({
       he: p.he, pos: p.pos, nat: p.nat, born: p.born,
       spells: p.spells, titles: p.titles, target: p.target,
@@ -314,5 +326,8 @@ for (const s of order)
   log(`  ${data[s].game.padEnd(8)} ${String(data[s].counts.players).padStart(4)} שחקנים · ` +
       `${String(data[s].counts.targets).padStart(3)} בבריכה · ` +
       `${season(data[s].coverage.from)}–${season(data[s].coverage.to)}` +
-      (data[s].counts.hidden ? ` · ${data[s].counts.hidden} מוסתרים (בלי עמדה)` : ""));
+      (data[s].counts.hidden
+        ? ` · ${data[s].counts.hidden} מוסתרים` +
+          ` (${data[s].counts.unconfirmed} בלי אישור משני)`
+        : ""));
 log("כל הבדיקות עברו.");
