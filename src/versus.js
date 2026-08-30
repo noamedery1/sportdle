@@ -97,6 +97,14 @@ async function startVersus(){
      הסף מסתגל: מתחילים ב-5 עונות, ויורדים כל עוד יש פחות מ-40
      ב-CORE. לא יורדים מתחת ל-3 — נבדק בשטח, וזה שובר את המשחק. */
   let CORE = [], WIDE = [], POOL = [], CORE_MIN = 5;
+  /* מי שאפשר **להקליד**, להבדיל ממי שיכול להיות התשובה.
+     POOL הוא בריכת התשובות ודורש 3 עונות ומעלה — אחרת הקרב
+     מתמלא בשחקן־עונה שאיש לא זוכר. אבל להקליד צריך לאפשר את
+     כולם: זר ששיחק עונה אחת הוא ניחוש סביר לגמרי, ובלי זה
+     מי שמקליד אותו מקבל שדה שלא מגיב, כאילו המשחק לא מכיר
+     אותו. בחידה היומית הרשימה הזאת פתוחה לכולם, וכאן היא
+     הייתה מצומצמת לבריכה — זה היה הבאג. */
+  let GUESS = [];
 
   /* ------------------------------------------------------------
      איחוד בריכות של כמה מועדונים
@@ -157,6 +165,7 @@ async function startVersus(){
     CORE = ok.filter(p => p.seasons >= CORE_MIN);
     WIDE = ok.filter(p => p.seasons >= 3 && p.seasons < CORE_MIN);
     POOL = CORE.concat(WIDE);
+    GUESS = ok;
     /* מספר הרמזים תלוי במצב, ולכן גם הניקוד */
     CLUES  = SLUGS.length > 1 ? 7 : 6;
     POINTS = Array.from({ length: CLUES }, (_, i) => CLUES - i);
@@ -820,7 +829,7 @@ ${link}
     if (!q) return closeSugg();
     /* עם מקלדת פתוחה נשארים 350px מסך. שש הצעות מכסות גם את הרמזים,
        וגם ההגבלה ב-CSS לא מספיקה — פחות שורות זה פחות מה שמוסתר. */
-    const hits = POOL.filter(p => vNorm(p.he).includes(q))
+    const hits = GUESS.filter(p => vNorm(p.he).includes(q))
                      .slice(0, document.body.classList.contains("kb") ? 4 : 6);
     sg.innerHTML = hits.map(p => `<button type="button" data-n="${esc(p.he)}">${esc(p.he)}</button>`).join("");
     sg.classList.toggle("on", hits.length > 0);
@@ -847,7 +856,7 @@ ${link}
     const answer = POOL[rounds[idx]];
     const guess  = vNorm(inp.value);
     if (!guess) return;
-    const p = POOL.find(x => vNorm(x.he) === guess);
+    const p = GUESS.find(x => vNorm(x.he) === guess);
     inp.value = ""; closeSugg();
     if (!p) return;
   
