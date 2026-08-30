@@ -1177,6 +1177,11 @@ function migrateFromBeitardle(){
     const q = new URLSearchParams(location.search).get("club");
     if (q && CLUBS[q]) fromLink = q;
   }catch(e){}
+  /* עמוד ייעודי למועדון (dist/<slug>/) מגדיר את המשתנה הזה.
+     הוא קיים בשביל התצוגה המקדימה בוואטסאפ ובשביל גוגל — לכל
+     מועדון כותרת ותמונה משלו — והמשחק צריך להיפתח בו ישירות. */
+  if (!fromLink && typeof window.SPORTDLE_CLUB === "string" && CLUBS[window.SPORTDLE_CLUB])
+    fromLink = window.SPORTDLE_CLUB;
   if (fromLink){
     bootClub(fromLink);
     if (!store.get(GKEY("seen"))) openHelp();

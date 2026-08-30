@@ -9,6 +9,7 @@ import {
   parseArgs, pickClubs, readJSON, readText, writeText, writeJSON,
   log, warn, die, normName, season
 } from "./lib/util.mjs";
+import { writeClubPages } from "./lib/clubpages.mjs";
 
 const args  = parseArgs();
 const clubs = pickClubs(args);
@@ -310,6 +311,9 @@ if (!existsSync("dist/manifest.json"))
       { src: "icon-512.png", sizes: "512x512", type: "image/png" }
     ]
   }, 2);
+
+const pages = writeClubPages({ html, data, order, siteUrl: site.siteUrl });
+log(`  נכתבו ${pages} עמודי מועדון — dist/<slug>/index.html`);
 
 /* מזהירים על נכסים שהדף מבקש ולא קיימים — 404 בפרודקשן זה שקט מדי */
 const wanted = ["favicon.ico", "icon-32.png", "icon-180.png"];
