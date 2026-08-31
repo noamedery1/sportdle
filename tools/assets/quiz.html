@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   קלטת האתגר. כל התזמון ב-CSS ובשניות, כדי שההקלטה תהיה
+   בדיוק אותו דבר בכל ריצה — בלי jitter של setTimeout.
+   הזמנים מוזרקים כמשתני CSS על ידי tools/clip-quiz.mjs.
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0C0C0E; --ink2:#15151A; --ink3:#1E1E25; --line:#32323C;
+  --text:#F4F4F2; --dim:#8E8E98; --brand:#FFC72C;
+}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);
+  color:var(--text);font-family:Heebo,Arial,sans-serif}
+body{position:relative}
+
+/* רצועות אלכסוניות — אותה שפה של המשחק */
+.bar{position:absolute;left:0;right:0;height:34px;z-index:5;
+  background:repeating-linear-gradient(115deg,var(--brand) 0 34px,#111 34px 68px)}
+.bar.t{top:0} .bar.b{bottom:0}
+
+.wrap{position:absolute;inset:34px 0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:120px 60px 90px}
+
+/* --- מד התקדמות --- */
+.prog{position:absolute;top:80px;left:60px;right:60px;height:12px;
+  background:var(--ink3);border-radius:6px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--brand);
+  animation:fill var(--tReveal) linear forwards}
+@keyframes fill{to{width:100%}}
+
+/* --- כותרת האתגר --- */
+h1{font-family:'Suez One',Georgia,serif;font-size:104px;line-height:1.02;
+  text-align:center;letter-spacing:-2px}
+h1 b{color:var(--brand)}
+.sub{margin-top:26px;font-size:40px;font-weight:700;color:var(--dim);text-align:center}
+
+/* --- רמזים --- */
+.clues{margin-top:56px;width:100%;display:flex;flex-direction:column;gap:22px}
+.clue{min-height:96px;background:var(--ink2);border:2px solid var(--line);border-radius:22px;
+  padding:26px 34px;display:flex;align-items:center;justify-content:space-between;
+  opacity:0;transform:translateY(26px) scale(.97);
+  animation:pop .5s cubic-bezier(.2,.9,.3,1.2) forwards}
+@keyframes pop{to{opacity:1;transform:none}}
+.clue .k{font-size:32px;color:var(--dim);font-weight:500}
+.clue .v{font-size:46px;font-weight:900}
+.clue.hi{border-color:var(--brand)}
+.clue.hi .v{color:var(--brand)}
+
+/* שבבי מועדון */
+.chips{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end;max-width:62%}
+.chip{font-size:29px;font-weight:900;padding:8px 16px;border-radius:12px;white-space:nowrap;
+  background:#000;border:2px solid currentColor}
+
+/* --- שאלה מהדהדת --- */
+.beat{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(12,12,14,.78);
+  font-family:'Suez One',Georgia,serif;font-size:300px;color:var(--brand);
+  opacity:0;animation:beat 2.1s ease forwards;animation-delay:var(--tBeat);z-index:8}
+@keyframes beat{0%{opacity:0;transform:scale(.8)}30%{opacity:1;transform:scale(1)}
+  70%{opacity:1}100%{opacity:0;transform:scale(1.06)}}
+
+/* --- החשיפה --- */
+.reveal{position:absolute;inset:0;background:var(--ink);z-index:9;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:40px;padding:0 60px;opacity:0;
+  animation:show .5s ease forwards;animation-delay:var(--tReveal)}
+@keyframes show{to{opacity:1}}
+.reveal .lbl{font-size:42px;font-weight:700;color:var(--dim)}
+.reveal .name{font-family:'Suez One',Georgia,serif;font-size:142px;line-height:1.05;
+  text-align:center;color:var(--brand);letter-spacing:-2px}
+.reveal .meta{font-size:38px;color:var(--text);font-weight:700;text-align:center}
+
+/* --- קריאה לפעולה --- */
+.cta{position:absolute;inset:0;background:var(--ink);z-index:10;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:34px;padding:0 60px;opacity:0;
+  animation:show .5s ease forwards;animation-delay:var(--tCta)}
+.cta .logo{font-family:'Suez One',Georgia,serif;font-size:118px;letter-spacing:-2px}
+.cta .logo span{color:var(--brand)}
+.cta .line{font-size:44px;font-weight:700;text-align:center;line-height:1.35}
+.cta .clubs{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.cta .url{margin-top:22px;font-size:46px;font-weight:900;color:var(--brand);
+  background:#000;border:3px solid var(--brand);border-radius:20px;padding:20px 40px}
+</style></head>
+<body>
+  <div class="bar t"></div><div class="bar b"></div>
+
+  <div class="wrap">
+    <div class="prog"><i></i></div>
+    <h1 id="hook"></h1>
+    <div class="sub" id="sub"></div>
+    <div class="clues" id="clues"></div>
+  </div>
+
+  <div class="beat">?</div>
+
+  <div class="reveal">
+    <div class="lbl">התשובה</div>
+    <div class="name" id="rname"></div>
+    <div class="meta" id="rmeta"></div>
+    <div class="chips" id="rchips"></div>
+  </div>
+
+  <div class="cta">
+    <div class="logo">Sport<span>Dle</span></div>
+    <div class="line">חידת שחקן חדשה<br>כל יום, בחמישה מועדונים</div>
+    <div class="clubs" id="ctaclubs"></div>
+    <div class="url" id="ctaurl"></div>
+  </div>
+
+<script>
+/* הנתונים מוזרקים על ידי הכלי דרך window.QUIZ */
+const Q = window.QUIZ;
+document.getElementById("hook").innerHTML = Q.hook;
+document.getElementById("sub").textContent = Q.sub;
+const cl = document.getElementById("clues");
+Q.clues.forEach((c, i) => {
+  const d = document.createElement("div");
+  d.className = "clue" + (c.hi ? " hi" : "");
+  d.style.animationDelay = c.at + "s";
+  d.innerHTML = `<span class="k">${c.k}</span>` +
+    (c.chips
+      ? `<span class="chips">${c.chips.map(x =>
+          `<span class="chip" style="color:${x.color}">${x.name}</span>`).join("")}</span>`
+      : `<span class="v">${c.v}</span>`);
+  cl.appendChild(d);
+});
+document.getElementById("rname").textContent = Q.answer;
+document.getElementById("rmeta").innerHTML = Q.meta;
+document.getElementById("rchips").innerHTML = Q.chips.map(x =>
+  `<span class="chip" style="color:${x.color}">${x.name}</span>`).join("");
+document.getElementById("ctaclubs").innerHTML = Q.allClubs.map(x =>
+  `<span class="chip" style="color:${x.color};font-size:28px">${x.name}</span>`).join("");
+document.getElementById("ctaurl").textContent = Q.url;
+</script>
+</body></html>
