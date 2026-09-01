@@ -81,8 +81,7 @@ jobs:
         run: |
           out=$(npx cap sync android 2>&1) || {
             echo "$out" | tail -30
-            echo "::error::cap sync נכשל · $(echo "$out" | tail -2 | tr '
-' ' ')"
+            echo "::error::cap sync נכשל · $(echo "$out" | tail -1 | cut -c1-300)"
             exit 1
           }
           echo "$out" | tail -6
