@@ -1,0 +1,70 @@
+# ============================================================
+# בניית iOS
+# ------------------------------------------------------------
+# **מה זה כן עושה:** מקמפל את האפליקציה לסימולטור על ראנר macOS.
+# זה תופס בעיות קומפילציה, תוסף שבור וקונפיגורציה שגויה — הרבה
+# לפני שיש חשבון מפתח.
+#
+# **מה זה לא עושה:** לא מייצר .ipa להתקנה על אייפון. לזה נדרשת
+# חתימה — חשבון מפתח אפל בתשלום, תעודת הפצה ופרופיל, שנכנסים
+# כסודות המאגר. בלי חתימה אפל לא מתקינה כלום על מכשיר אמיתי.
+#
+# הרצה ידנית בלבד (workflow_dispatch). ראנרים של macOS יקרים
+# בדקות, ואין סיבה להריץ אותם בכל דחיפה כשהיעד הראשון הוא APK.
+#
+# Capacitor 8 משתמש ב-Package.swift (SPM) ולא ב-CocoaPods, ולכן
+# אין כאן pod install ואין תלות ב-Ruby.
+# ============================================================
+name: iOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"          # Capacitor 8 דורש >= 22
+          cache: npm
+
+      - name: התקנה
+        run: npm ci
+
+      - name: בנייה
+        run: node scripts/build.mjs
+
+      - name: קישורים פנימיים
+        run: node tools/links.mjs dist
+
+      - name: הכנת עותק האפליקציה
+        run: node tools/app-prepare.mjs
+
+      - name: העברת dist לאפליקציה
+        run: |
+          out=$(npx cap sync ios 2>&1) || {
+            echo "$out" | tail -30
+            echo "::error::cap sync ios נכשל · $(echo "$out" | tail -1 | cut -c1-300)"
+            exit 1
+          }
+          echo "$out" | tail -6
+
+      # ללא חתימה. CODE_SIGNING_ALLOWED=NO הוא מה שמאפשר לקמפל
+      # בלי תעודה — הפלט מתאים לסימולטור ולא למכשיר.
+      - name: xcodebuild — סימולטור
+        working-directory: ios/App
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -scheme App \
+            -destination 'generic/platform=iOS Simulator' \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            build 2>&1 | tail -40
+
+      - name: סיכום
+        run: echo "::notice::iOS קומפל לסימולטור. .ipa להתקנה דורש חשבון מפתח אפל וחתימה."

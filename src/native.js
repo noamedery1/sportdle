@@ -100,6 +100,27 @@
     }, true);
   });
 
+  /* ---------- 3ב. כפתור וואטסאפ ----------
+     המנוע קורא ל-window.open(url, "_blank"). ב-WebView של אנדרואיד
+     זה תלוי ב-setSupportMultipleWindows, ש-Capacitor **אינו**
+     מגדיר, וגם אין onCreateWindow — כלומר בגרסאות WebView מסוימות
+     הקריאה היא no-op שקט והכפתור פשוט לא עושה כלום.
+
+     location.href הוא ניווט באותו פריים, ולכן הוא תמיד מפעיל את
+     shouldOverrideUrlLoading. משם Bridge.launchIntent רואה מפתח
+     שאינו ה-origin של האפליקציה ופותח Intent.ACTION_VIEW — כלומר
+     וואטסאפ. הדף עצמו לא מנווט לשום מקום, כי launchIntent מחזיר
+     true ומבטל את הניווט. */
+  safe(() => {
+    const wa = document.getElementById("wa");
+    if (!wa || typeof window.shareText !== "function") return;
+    wa.addEventListener("click", (ev) => {
+      ev.stopImmediatePropagation();
+      ev.preventDefault();
+      location.href = "https://wa.me/?text=" + encodeURIComponent(window.shareText());
+    }, true);
+  });
+
   /* ---------- 4. כפתור "חזור" של אנדרואיד ----------
      בלי זה לחיצה אחת על "חזור" סוגרת את האפליקציה מתוך חלונית
      פתוחה. זו אחת התלונות הנפוצות בביקורות, ובדיקת איכות של

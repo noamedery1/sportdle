@@ -98,6 +98,12 @@ jobs:
 
       - name: Gradle — APK
         working-directory: android
+        env:
+          # run_number עולה מונוטונית, וזה מה שגוגל פליי דורש.
+          # שינוי שם ה-workflow יאפס אותו — אם זה יקרה, להוסיף
+          # היסט קבוע כאן ולא לחזור אחורה.
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: 1.0.${{ github.run_number }}
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: שם וגודל
