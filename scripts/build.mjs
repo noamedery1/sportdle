@@ -285,7 +285,7 @@ html = html
     logo: site.siteUrl.replace(/\/$/, "") + "/icon-512.png",
     email: "techbynoam@gmail.com",
     description: "משחק ניחוש יומי על כדורגלנים ישראלים, בחמישה מועדונים.",
-    founder: { "@type": "Person", name: "נעם עדרי" },
+    founder: { "@type": "Person", name: "נועם אדרי" },
     sameAs: ["https://techbynoam.com/"]
   }))
   .split("__ENGINE__").join(engine);

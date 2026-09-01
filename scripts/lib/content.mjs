@@ -26,7 +26,7 @@ import { writeText, season, seasonsIn } from "./util.mjs";
 const POS_HE = { GK: "שוער", DF: "מגן", MF: "קשר", FW: "חלוץ" };
 const DAY_HE = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
 const MAIL = "techbynoam@gmail.com";
-const AUTHOR = "נעם עדרי";
+const AUTHOR = "נועם אדרי";
 
 /* הפוטר שמופיע בכל דף, כולל מסך המשחק. הסדר הוא סדר החשיבות
    לקורא: קודם איך משחקים, אחר כך מה היה, ואז מי אנחנו. */
