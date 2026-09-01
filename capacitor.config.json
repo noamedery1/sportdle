@@ -1,0 +1,38 @@
+{
+  "_comment": [
+    "Capacitor — האפליקציה המקומית. webDir הוא dist, כלומר בדיוק",
+    "מה שהאתר מגיש: אותו מנוע, אותו CSS, אותם 561 דפים. אין גרסה",
+    "שנייה לתחזק.",
+    "",
+    "androidScheme ו-hostname כתובים במפורש ולא בהשמטה. הם קובעים",
+    "את ה-origin שממנו ה-WebView מגיש, ו-localStorage שייך ל-origin:",
+    "שינוי שלהם בעדכון עתידי היה מוחק לכל שחקן את הרצף והסטטיסטיקה",
+    "בלי שום הודעה. לא לגעת.",
+    "",
+    "appId הוא לנצח. אי אפשר לשנות אותו בחנות אחרי הפרסום הראשון."
+  ],
+  "appId": "com.techbynoam.sportdle",
+  "appName": "SportDle",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https",
+    "hostname": "localhost"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "backgroundColor": "#0C0C0EFF",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false
+    },
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_sportdle",
+      "iconColor": "#FFC72C"
+    }
+  }
+}

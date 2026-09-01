@@ -303,7 +303,10 @@ html = html
     founder: { "@type": "Person", name: "נועם אדרי" },
     sameAs: ["https://techbynoam.com/"]
   }))
-  .split("__ENGINE__").join(engine);
+  .split("__ENGINE__").join(engine)
+  /* הדבק המקומי של Capacitor. נכנס לאותו קובץ ולא כסקריפט חיצוני,
+     כדי שהאפליקציה תעבוד אופליין בלי בקשה נוספת. */
+  .split("__NATIVE__").join(readText("src/native.js", ""));
 
 const leftovers = [...html.matchAll(/__[A-Z_]+__/g)].map(m => m[0]);
 if (leftovers.length) fail("html", `נותרו מצייני מקום שלא הוחלפו: ${[...new Set(leftovers)].join(", ")}`);

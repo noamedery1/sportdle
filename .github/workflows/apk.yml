@@ -1,0 +1,93 @@
+# ============================================================
+# בניית APK לאנדרואיד
+# ------------------------------------------------------------
+# למה ב-CI ולא מקומית: במחשב הפיתוח אין Java, אין Android SDK
+# ואין Gradle. ubuntu-latest מגיע עם שלושתם מותקנים, וכך גם לא
+# צריך להתקין עשרה גיגה על מחשב העבודה.
+#
+# הפלט הוא artifact להורדה: Actions → הריצה → sportdle-apk.
+# זה APK debug, חתום במפתח הפיתוח של אנדרואיד. **הוא מתאים
+# להתקנה ידנית בטלפון שלך בלבד** — לחנות צריך AAB חתום במפתח
+# release, וזה שלב נפרד עם סודות.
+#
+# הבנייה כאן היא גם בדיקה: היא מריצה build.mjs ואת בדיקת
+# הקישורים לפני cap sync, ולכן שבירה של האתר מפילה גם את ה-APK.
+# ============================================================
+name: APK
+
+on:
+  push:
+    branches: [app-capacitor, main]
+    paths:
+      - "src/**"
+      - "config/**"
+      - "data/clubs/**"
+      - "scripts/**"
+      - "android/**"
+      - "capacitor.config.json"
+      - "package.json"
+      - ".github/workflows/apk.yml"
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: התקנה
+        run: npm ci
+
+      # הגופנים אינם במאגר בגלל גודלם? לא — הם כן. הבדיקה כאן היא
+      # שהם לא נעלמו, כי בלעדיהם האפליקציה נראית שבורה אופליין
+      # והבנייה לא תצעק מעצמה.
+      - name: יש גופנים מקומיים?
+        run: |
+          n=$(ls src/static/fonts/*.woff2 2>/dev/null | wc -l)
+          echo "  $n קובצי גופן"
+          if [ "$n" -lt 10 ]; then
+            echo "::error::חסרים גופנים מקומיים — הרץ node tools/fonts.mjs ודחוף"
+            exit 1
+          fi
+
+      - name: בנייה
+        run: node scripts/build.mjs
+
+      - name: קישורים פנימיים
+        run: node tools/links.mjs dist
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: העברת dist לאפליקציה
+        run: npx cap sync android
+
+      - name: Gradle — APK
+        working-directory: android
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: שם וגודל
+        id: out
+        run: |
+          apk=$(find android -name "*-debug.apk" | head -1)
+          if [ -z "$apk" ]; then echo "::error::לא נוצר APK"; exit 1; fi
+          size=$(du -h "$apk" | cut -f1)
+          echo "  $apk · $size"
+          echo "path=$apk" >> "$GITHUB_OUTPUT"
+          echo "::notice::APK נבנה · $size · הורד מ-artifacts בשם sportdle-apk"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sportdle-apk
+          path: ${{ steps.out.outputs.path }}
+          if-no-files-found: error
+          retention-days: 30
