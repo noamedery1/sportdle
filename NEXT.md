@@ -92,6 +92,36 @@ Capacitor 8 עובד עם **Package.swift (SPM) ולא CocoaPods**, ולכן
 
 ---
 
+## ב2. App Links — קישור הזמנה שנפתח באפליקציה
+
+הצד של הקוד **גמור**: `intent-filter` עם `autoVerify` במניפסט על
+הנתיב `/join`, דף מעבר `dist/join/index.html` לגולשי הרשת, וטיפול
+ב-`appUrlOpen` וב-`getLaunchUrl` ב-`src/native.js`.
+
+**מה שחסר הוא טביעת אצבע אחת**, ובלעדיה הקישור ייפתח בדפדפן:
+
+1. `keytool -list -v -keystore sportdle.keystore -alias sportdle`
+2. מעתיקים את `SHA256` (עם הנקודתיים)
+3. מדביקים ל-`androidAppLinks.sha256` ב-`config/site.json`
+4. `node scripts/build.mjs` יוצר `/.well-known/assetlinks.json`
+
+**המלכודת, וזו הטעות הנפוצה ביותר:** אם Play App Signing מופעל
+(ברירת המחדל), גוגל חותמת מחדש במפתח **שלה**, והטביעה שצריכה
+להיות בקובץ היא זו שמופיעה ב-Play Console תחת
+**App integrity → App signing key certificate**. הטביעה של
+ה-keystore שלך היא ה-upload key ואינה מה שמותקן על המכשיר.
+`sha256` הוא מערך — כדאי לרשום את שתיהן.
+
+**ל-APK של debug זה לא יחזיק:** ב-CI מפתח ה-debug נוצר מחדש בכל
+ריצה, ולכן הטביעה משתנה. לבדיקה במכשיר אפשר לאשר ידנית —
+הגדרות → אפליקציות → SportDle → פתיחה כברירת מחדל → הוספת קישור.
+
+**למה `/join` ולא השורש:** `intent-filter` אינו יכול להתאים לפי
+query string. התאמה על `/` הייתה חוטפת גם את העמוד הראשי וגם כל
+קישור לדף תוכן — מי שמשתף דף שחקן היה פותח את המשחק במקום את הדף.
+
+---
+
 ## ג. על בעל הפרויקט, ואי אפשר להאציל
 
 - [ ] **לקרוא את `/privacy/` ואת `/terms/`.** סימון הטיוטה הוסר

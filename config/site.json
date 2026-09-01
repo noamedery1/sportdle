@@ -9,6 +9,31 @@
     "בלי / בסוף. אם המשחק יוגש תחת נתיב ולא בשורש, מוסיפים אותו כאן",
     "(למשל https://sportsdel.techbynoam.com/sportdle) וזה הכל."
   ],
+  "_androidAppLinks": [
+    "App Links — קישור הזמנה לחדר נפתח באפליקציה ולא בדפדפן.",
+    "",
+    "sha256 ריק = הקובץ /.well-known/assetlinks.json לא נוצר, והקישור",
+    "ייפתח בדפדפן. זה מכוון: קובץ עם טביעה שגויה גרוע מקובץ חסר, כי",
+    "אנדרואיד מאמת פעם אחת בהתקנה ונכשל בשקט.",
+    "",
+    "מאיפה לוקחים את הטביעה:",
+    "  keytool -list -v -keystore sportdle.keystore -alias sportdle",
+    "ומעתיקים את SHA256 (עם הנקודתיים).",
+    "",
+    "**המלכודת:** אם Play App Signing מופעל (ברירת המחדל), גוגל חותמת",
+    "מחדש במפתח שלה, והטביעה הנכונה היא זו שמופיעה ב-Play Console תחת",
+    "App integrity → App signing key certificate. הטביעה של ה-keystore",
+    "שלך היא upload key ואינה מה שמותקן על המכשיר. אפשר לרשום כמה",
+    "טביעות במערך, וזה גם מה שכדאי: שתיהן.",
+    "",
+    "ל-APK של debug: keytool -list -v -keystore ~/.android/debug.keystore",
+    "-alias androiddebugkey -storepass android. אבל ב-CI המפתח נוצר מחדש",
+    "בכל ריצה, ולכן הטביעה משתנה ואימות של APK מ-CI לא יחזיק."
+  ],
+  "androidAppLinks": {
+    "package": "com.techbynoam.sportdle",
+    "sha256": []
+  },
   "siteUrl": "https://sportsdel.techbynoam.com",
   "start": [
     2026,

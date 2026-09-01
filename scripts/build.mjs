@@ -358,6 +358,75 @@ if (!existsSync("dist/manifest.json"))
     ]
   }, 2);
 
+/* ---------- /join/ ו-assetlinks — פתיחת הזמנה באפליקציה ----------
+   קישור הזמנה לחדר צריך לפתוח את האפליקציה למי שהתקין אותה,
+   ואת האתר לכל השאר.
+
+   שני צדדים חייבים להסכים: intent-filter במניפסט (ראה
+   android/app/src/main/AndroidManifest.xml) והקובץ
+   /.well-known/assetlinks.json כאן. אנדרואיד מאמת פעם אחת
+   בהתקנה, ואם אחד מהם חסר או שגוי — הקישור נפתח בדפדפן, בשקט.
+
+   הנתיב הוא /join/ ולא השורש כי intent-filter אינו יכול להתאים
+   לפי query string. התאמה על "/" הייתה חוטפת גם את העמוד הראשי
+   ואת כל דפי התוכן. */
+{
+  const al = site.androidAppLinks || {};
+  const fps = (al.sha256 || []).filter(Boolean);
+  if (fps.length) {
+    writeJSON("dist/.well-known/assetlinks.json", [{
+      relation: ["delegate_permission/common.handle_all_urls"],
+      target: {
+        namespace: "android_app",
+        package_name: al.package,
+        sha256_cert_fingerprints: fps
+      }
+    }], 2);
+    log(`  נכתב .well-known/assetlinks.json · ${fps.length} טביעות`);
+  } else {
+    warn("androidAppLinks.sha256 ריק — קישור הזמנה ייפתח בדפדפן ולא באפליקציה. " +
+         "ראה את ההסבר ב-config/site.json.");
+  }
+
+  /* דף המעבר, לגולשי הרשת. באפליקציה הוא לא נטען בכלל:
+     intent-filter קולט את הכתובת ו-src/native.js מנווט ישירות. */
+  writeText("dist/join/index.html", `<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>הצטרפות לחדר · ${site.name}</title>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+  html,body{margin:0;height:100%;background:#0C0C0E;color:#8C8C94;
+    font-family:'Heebo',system-ui,sans-serif;display:flex;
+    align-items:center;justify-content:center;text-align:center}
+  a{color:#FFC72C}
+</style>
+</head>
+<body>
+  <div>
+    <p>פותח את החדר…</p>
+    <p><a id="go" href="../">להמשך</a></p>
+  </div>
+<script>
+/* מעבירים את הקוד לעמוד המשחק, ששם הטיפול בהצטרפות כבר קיים
+   ונבדק. עומדים על אותם כללים כמו fromLink ב-versus.js. */
+(function(){
+  var c = (new URLSearchParams(location.search).get("room") || "")
+    .toUpperCase().replace(/[^A-Z2-9]/g, "").slice(0, 4);
+  var to = c.length === 4 ? "../?room=" + c : "../";
+  document.getElementById("go").setAttribute("href", to);
+  location.replace(to);
+})();
+</script>
+</body>
+</html>
+`);
+  log("  נכתב join/index.html");
+}
+
 /* ---------- דפי התוכן ----------
    אודות, צור קשר, פרטיות, תנאים, איך משחקים, הארכיון ודף לכל
    שחקן בבריכת התשובות. לפני ה-sitemap, כי הוא נגזר מהכתובות

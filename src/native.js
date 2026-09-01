@@ -228,6 +228,35 @@
     else addEventListener("load", () => setTimeout(stamp, 300));
   });
 
+  /* ---------- 8. קישור הזמנה שנפתח באפליקציה ----------
+     intent-filter במניפסט קולט https://<הדומיין>/join/... ומעביר
+     את הכתובת לכאן. **בלי הקוד הזה האפליקציה הייתה נפתחת בעמוד
+     הראשי ומתעלמת מהחדר** — כלומר הקישור עובד, ההזמנה לא.
+
+     שתי דרכים להגיע: appUrlOpen כשהאפליקציה כבר פתוחה,
+     ו-getLaunchUrl כשהיא נפתחת מאפס. שתיהן נדרשות.
+
+     הניווט הוא ל-"/?room=CODE" ולא קריאה ישירה למנוע הקרב:
+     המסלול הזה כבר קיים ונבדק (fromLink ב-versus.js פותח את
+     הלשונית וממלא את הקוד), ומסלול הצטרפות שני היה מקום נוסף
+     שיכול להישבר. */
+  safe(async () => {
+    if (!P.App) return;
+    const roomOf = (url) => {
+      try { return new URL(url).searchParams.get("room"); } catch (e) { return null; }
+    };
+    const go = (raw) => {
+      const c = String(raw || "").toUpperCase().replace(/[^A-Z2-9]/g, "").slice(0, 4);
+      if (c.length !== 4) return;
+      /* כבר באותו חדר — בלי זה לחיצה חוזרת על הקישור טוענת מחדש */
+      if (new URLSearchParams(location.search).get("room") === c) return;
+      location.replace(`/?room=${c}`);
+    };
+    P.App.addListener("appUrlOpen", (ev) => go(roomOf(ev && ev.url)));
+    const launch = await P.App.getLaunchUrl();
+    if (launch && launch.url) go(roomOf(launch.url));
+  });
+
   /* פתיחה מתוך ההתראה — לא צריך לעשות כלום מלבד לא להיתקע */
   safe(() => P.LocalNotifications &&
     P.LocalNotifications.addListener("localNotificationActionPerformed", () => {}));

@@ -467,7 +467,10 @@ async function startVersus(){
      שמקבל אותו. זה מה שהפך את "שיתוף הקוד" למשהו שרק מעתיק מספר. */
   const roomLink = () => {
     const base = (window.SPORTDEL && window.SPORTDEL.siteUrl) || location.origin;
-    return `${String(base).replace(/\/+$/, "")}/?room=${room}`;
+    /* /join/ ולא השורש: intent-filter של אנדרואיד אינו יכול
+       להתאים לפי query string, ולכן נתיב נפרד הוא הדרך היחידה
+       לפתוח את האפליקציה על הזמנה בלי לחטוף כל קישור לאתר. */
+    return `${String(base).replace(/\/+$/, "")}/join/?room=${room}`;
   };
 
   /* פתיחת יעד חיצוני. עוגן סינתטי ולא window.open: ב-WebView של

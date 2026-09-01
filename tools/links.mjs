@@ -38,7 +38,12 @@ function walk(dir, out = []) {
   }
   return out;
 }
-const pages = walk(ROOT).map(p => relative(ROOT, p).split("\\").join("/"));
+/* join/index.html הוא נקודת קצה טכנית: אף אחד לא מקשר אליו והוא
+   לא מקשר הביתה — הוא מפנה מיד. בדיקות "יתום" ו"קישור הביתה"
+   מניחות דף תוכן, ולכן הוא מוחרג. */
+const SKIP = new Set(["join/index.html"]);
+const pages = walk(ROOT).map(p => relative(ROOT, p).split("\\").join("/"))
+  .filter(p => !SKIP.has(p));
 
 /* ---------- הקישורים ---------- */
 const graph = new Map();          // דף → קבוצת דפים שהוא מקשר אליהם

@@ -18,6 +18,24 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- App Links: קישור הזמנה לחדר נפתח באפליקציה ולא בדפדפן.
+                 autoVerify מחייב את /.well-known/assetlinks.json באתר,
+                 עם טביעת האצבע של התעודה שחתמה על האפליקציה המותקנת.
+                 בלי הקובץ הזה האימות נכשל והקישור ייפתח בדפדפן.
+
+                 **pathPrefix="/join" בכוונה, ולא כל האתר.** intent-filter
+                 אינו יכול להתאים לפי query string, ולכן התאמה על "/"
+                 הייתה חוטפת גם את העמוד הראשי וכל קישור לדף תוכן —
+                 מי שמשתף דף שחקן היה פותח את המשחק במקום את הדף. -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                      android:host="sportsdel.techbynoam.com"
+                      android:pathPrefix="/join" />
+            </intent-filter>
         </activity>
 
         <provider
