@@ -9,3 +9,12 @@ data/raw/html/
 
 # עותק האפליקציה — נוצר ב-tools/app-prepare.mjs
 app-dist/
+
+# חתימת האפליקציה — לעולם לא במאגר.
+# keystore הוא אישור חתימה: מי שמחזיק בו יכול לפרסם עדכונים בשם
+# האפליקציה, ואיבוד שלו אומר שאי אפשר לעדכן אותה לנצח. הוא נשמר
+# כסוד ב-GitHub Actions (KEYSTORE_BASE64), לא כקובץ.
+*.keystore
+*.jks
+*.b64
+keystore.properties

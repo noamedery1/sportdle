@@ -1,0 +1,138 @@
+# ============================================================
+# AAB חתום לגוגל פליי
+# ------------------------------------------------------------
+# מה שגוגל פליי מקבלת הוא **AAB** (Android App Bundle), לא APK,
+# והוא חייב להיות חתום במפתח release. ה-APK מ-apk.yml חתום במפתח
+# הפיתוח ומתאים להתקנה ידנית בלבד.
+#
+# הרצה ידנית בלבד. **בלי סודות הריצה מסתיימת בהצלחה ומדלגת**,
+# במקום להיכשל בכל דחיפה — כישלון שחוזר כל יום הופך לרעש
+# שמפסיקים להסתכל עליו.
+#
+# ============================================================
+# הסודות, וכיצד להכין אותם — פעם אחת
+# ============================================================
+# 1. יוצרים keystore. **בעל הפרויקט בלבד.** זה אישור החתימה של
+#    האפליקציה: מי שמחזיק בו יכול לפרסם עדכונים בשמה, ואיבוד שלו
+#    אומר שאי אפשר לעדכן את האפליקציה לנצח.
+#
+#      keytool -genkey -v -keystore sportdle.keystore \
+#        -alias sportdle -keyalg RSA -keysize 2048 -validity 10000
+#
+#    לגבות במקום שאינו המאגר. **לא לצרף אותו לגיט.**
+#
+# 2. ממירים ל-base64, כי סוד ב-GitHub הוא טקסט:
+#      Windows:  certutil -encode sportdle.keystore ks.b64
+#      אחר:      base64 -w0 sportdle.keystore > ks.b64
+#
+# 3. Settings → Secrets and variables → Actions:
+#      KEYSTORE_BASE64      תוכן ks.b64
+#      KEYSTORE_PASSWORD    סיסמת ה-keystore
+#      KEY_ALIAS            sportdle
+#      KEY_PASSWORD         סיסמת המפתח (לרוב זהה)
+# ============================================================
+name: AAB
+
+on:
+  workflow_dispatch:
+
+jobs:
+  aab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: יש סודות חתימה?
+        id: secrets
+        env:
+          KS: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$KS" ]; then
+            echo "::notice::KEYSTORE_BASE64 לא מוגדר — מדלגים. ראה את ההוראות בראש הקובץ."
+            echo "ready=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v7
+        if: steps.secrets.outputs.ready == 'yes'
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: התקנה
+        if: steps.secrets.outputs.ready == 'yes'
+        run: npm ci
+
+      - name: בנייה
+        if: steps.secrets.outputs.ready == 'yes'
+        run: |
+          node scripts/build.mjs
+          node tools/links.mjs dist
+          node tools/app-prepare.mjs
+
+      - uses: actions/setup-java@v5
+        if: steps.secrets.outputs.ready == 'yes'
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: העברה לאפליקציה
+        if: steps.secrets.outputs.ready == 'yes'
+        run: |
+          chmod +x android/gradlew
+          npx cap sync android
+
+      # ה-keystore נכתב לתיקייה זמנית שמחוץ לעץ העבודה, כדי שלא
+      # ייתפס בטעות על ידי git או על ידי upload-artifact.
+      - name: שחזור ה-keystore
+        if: steps.secrets.outputs.ready == 'yes'
+        id: ks
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          path="$RUNNER_TEMP/sportdle.keystore"
+          echo "$KEYSTORE_BASE64" | tr -d '\n\r' | base64 -d > "$path"
+          if [ ! -s "$path" ]; then
+            echo "::error::פענוח ה-keystore נכשל — בדוק שה-base64 שלם"
+            exit 1
+          fi
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+
+      - name: Gradle — AAB
+        if: steps.secrets.outputs.ready == 'yes'
+        working-directory: android
+        env:
+          KEYSTORE_PATH: ${{ steps.ks.outputs.path }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          VERSION_CODE: ${{ github.run_number }}
+          VERSION_NAME: 1.0.${{ github.run_number }}
+        run: ./gradlew bundleRelease --no-daemon --stacktrace
+
+      - name: אימות שהוא חתום
+        if: steps.secrets.outputs.ready == 'yes'
+        id: out
+        run: |
+          aab=$(find android -name "*-release.aab" | head -1)
+          if [ -z "$aab" ]; then echo "::error::לא נוצר AAB"; exit 1; fi
+          # AAB לא חתום עובר את bundleRelease בשקט ונדחה רק בהעלאה
+          if ! unzip -l "$aab" | grep -q "META-INF/.*\.RSA\|META-INF/.*\.EC"; then
+            echo "::error::ה-AAB אינו חתום — בדוק את סודות החתימה"
+            exit 1
+          fi
+          echo "path=$aab" >> "$GITHUB_OUTPUT"
+          echo "::notice::AAB חתום · $(du -h "$aab" | cut -f1) · versionCode ${{ github.run_number }}"
+
+      - uses: actions/upload-artifact@v4
+        if: steps.secrets.outputs.ready == 'yes'
+        with:
+          name: sportdle-aab
+          path: ${{ steps.out.outputs.path }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: מחיקת ה-keystore
+        if: always()
+        run: rm -f "$RUNNER_TEMP/sportdle.keystore"

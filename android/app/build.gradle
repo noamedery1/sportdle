@@ -19,10 +19,31 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    /* חתימת release. הקובץ והסיסמאות מגיעים מהסביבה בלבד ואינם
+       במאגר: keystore הוא אישור חתימה, ומי שמחזיק בו יכול לפרסם
+       עדכונים בשם האפליקציה. **אין לצרף אותו לגיט בשום צורה.**
+
+       בלי KEYSTORE_PATH הבלוק נשאר ריק והבנייה ממשיכה — כך
+       assembleDebug עובד גם בלי סודות, וזה מה שמאפשר לבנות APK
+       לבדיקה בלי שום אישור. */
+    signingConfigs {
+        release {
+            def ks = System.getenv("KEYSTORE_PATH")
+            if (ks) {
+                storeFile file(ks)
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (System.getenv("KEYSTORE_PATH")) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
