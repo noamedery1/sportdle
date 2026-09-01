@@ -301,19 +301,27 @@ if (existsSync("src/static"))
 /* manifest.json — התבנית מקשרת אליו, אז אנחנו מייצרים אותו.
    האייקונים עצמם הם קבצי מקור שצריך להניח ב-src/static/.
 
-   start_url ו-scope הם "/" ולא "./" — הדומיין מגיש את המשחק
-   בשורש ואין בו שום דבר אחר. הצורה היחסית נפתרה לאותו מקום, אבל
-   מוחלט הוא חד-משמעי: עמודי המועדונים תחת /<slug>/ נמצאים בתוך
-   ה-scope בוודאות, ו"הוסף למסך הבית" מכל אחד מהם פותח את השורש. */
+   start_url ו-scope נשארים יחסיים, ולא "/" — וזה נגד האינטואיציה,
+   כי הדומיין הקנוני אכן מגיש את המשחק בשורש.
+
+   הסיבה: הפריסה מעתיקה את dist/ ל-beitardle/sportdle/ (ראה
+   .github/workflows/deploy.yml), ולכן אותם קבצים מוגשים גם מתחת
+   ל-/sportdle/ בכתובת הישנה. "/" היה שולח את מי שהתקין את המשחק
+   למסך הבית משם אל שורש beitardle — עמוד אחר לגמרי.
+
+   ביחסי אין הכרעה כזאת: המניפסט יושב לצד index.html, ולכן "./"
+   נפתר לשורש בדומיין החדש ול-/sportdle/ בישן. אותה התנהגות
+   בשניהם, ובדומיין הקנוני זה בדיוק "/". tools/qa-deploy.mjs
+   מפיל את הפריסה אם זה יהפוך למוחלט. */
 if (!existsSync("dist/manifest.json"))
   writeJSON("dist/manifest.json", {
     name: site.title, short_name: site.name,
-    start_url: "/", scope: "/", display: "standalone", dir: "rtl", lang: "he",
+    start_url: "./", scope: "./", display: "standalone", dir: "rtl", lang: "he",
     background_color: "#0C0C0E", theme_color: "#0C0C0E",
     icons: [
-      { src: "/icon-32.png",  sizes: "32x32",   type: "image/png" },
-      { src: "/icon-180.png", sizes: "180x180", type: "image/png" },
-      { src: "/icon-512.png", sizes: "512x512", type: "image/png" }
+      { src: "icon-32.png",  sizes: "32x32",   type: "image/png" },
+      { src: "icon-180.png", sizes: "180x180", type: "image/png" },
+      { src: "icon-512.png", sizes: "512x512", type: "image/png" }
     ]
   }, 2);
 

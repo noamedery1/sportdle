@@ -83,8 +83,14 @@ if (neu) {
   const mf = join(ROOT, "sportdle/manifest.json");
   if (existsSync(mf)) {
     const m = JSON.parse(readFileSync(mf, "utf8"));
-    if (m.start_url !== "./") fail(`sportdle/manifest · start_url=${m.start_url} (צריך ./)`);
-    else pass("sportdle/manifest · start_url יחסי");
+    /* הכל יחסי. "/" כאן היה שולח מי שהתקין דרך הכתובת הישנה
+       (…/sportdle/) לשורש beitardle — עמוד אחר. ראה scripts/build.mjs. */
+    for (const k of ["start_url", "scope"])
+      if (m[k] && !m[k].startsWith("."))
+        fail(`sportdle/manifest · ${k}=${m[k]} (צריך יחסי)`);
+    const abs = (m.icons || []).map(i => i.src).filter(s => /^([a-z]+:)?\//.test(s));
+    if (abs.length) fail(`sportdle/manifest · אייקון מוחלט: ${abs.join(", ")}`);
+    if (!fails.some(f => f.includes("manifest"))) pass("sportdle/manifest · יחסי לגמרי");
     for (const i of m.icons || [])
       if (!existsSync(join(ROOT, "sportdle", i.src))) fail(`sportdle/manifest · אייקון חסר ${i.src}`);
   } else fail("sportdle · אין manifest.json");
