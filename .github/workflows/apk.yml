@@ -35,9 +35,12 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # Capacitor 8 דורש node >= 22 ("engines" ב-@capacitor/cli).
+      # עם 20 הוא נופל ב-cap sync בהודעה "install the latest LTS
+      # version" — וזה לא משתחזר מקומית, כי כאן רץ node 24.
       - uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
 
       - name: התקנה

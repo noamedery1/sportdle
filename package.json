@@ -5,7 +5,7 @@
   "type": "module",
   "description": "ספורטדל — חידת שחקן יומית לחמישה מועדוני כדורגל ישראליים",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "scripts": {
     "postinstall": "playwright install chromium",
