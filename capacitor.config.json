@@ -9,18 +9,27 @@
     "שינוי שלהם בעדכון עתידי היה מוחק לכל שחקן את הרצף והסטטיסטיקה",
     "בלי שום הודעה. לא לגעת.",
     "",
-    "appId הוא לנצח. אי אפשר לשנות אותו בחנות אחרי הפרסום הראשון."
+    "appId הוא לנצח. אי אפשר לשנות אותו בחנות אחרי הפרסום הראשון.",
+    "",
+    "webDir הוא app-dist ולא dist: tools/app-prepare.mjs מוסיף",
+    "index.html מפורש לכל קישור פנימי, אחרת כל 561 הדפים טוענים",
+    "את המשחק מחדש ב-WebView. ההסבר המלא שם.",
+    "",
+    "**אין להוסיף android.captureInput.** הוא מחליף את חיבור הקלט",
+    "של ה-WebView ב-BaseInputConnection גולמי, וכל אצווה של תווים",
+    "עוברת דרך evaluateJavascript שכותב .value ישירות — הקלדה",
+    "איטית, ומחיקה שלא מגיבה כי לא נורה אף input. הודלק פעם אחת",
+    "בטעות וזה מה שקרה."
   ],
   "appId": "com.techbynoam.sportdle",
   "appName": "SportDle",
-  "webDir": "dist",
+  "webDir": "app-dist",
   "server": {
     "androidScheme": "https",
     "hostname": "localhost"
   },
   "android": {
     "allowMixedContent": false,
-    "captureInput": true,
     "webContentsDebuggingEnabled": false
   },
   "plugins": {

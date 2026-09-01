@@ -80,6 +80,13 @@ jobs:
           chmod +x android/gradlew
           ls -l android/gradlew
 
+      # dist → app-dist עם index.html מפורש בכל קישור פנימי.
+      # בלי זה כל 561 הדפים טוענים את המשחק מחדש ב-WebView —
+      # ההסבר המלא ב-tools/app-prepare.mjs. הסקריפט מפיל את
+      # הבנייה אם נשאר קישור שמסתיים בלוכסן.
+      - name: הכנת עותק האפליקציה
+        run: node tools/app-prepare.mjs
+
       - name: העברת dist לאפליקציה
         run: |
           out=$(npx cap sync android 2>&1) || {

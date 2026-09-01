@@ -6,3 +6,6 @@ data/raw/html/
 # קליפים — נוצרים מהמאגר ומשקלם מגבטים. tools/clip*.mjs מייצר מחדש.
 *.mp4
 *.webm
+
+# עותק האפליקציה — נוצר ב-tools/app-prepare.mjs
+app-dist/
