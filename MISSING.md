@@ -179,7 +179,7 @@ node tools/gaps.mjs maccabi-ta
 
 | שדה ב-`config/site.json` | נוכחי | מה צריך |
 |---|---|---|
-| `siteUrl` | `sportdel.up.railway.app` | הדומיין האמיתי |
+| `siteUrl` | `sportsdel.techbynoam.com` | הדומיין הקנוני |
 | `analyticsUrl` | ריק (איסוף כבוי) | ה-Web App מ-Apps Script |
 | `start` | `[2026, 8, 24]` | **לאמת מול ביתרדל שבאוויר** — זה תאריך חידה #1, וטעות בו מזיזה את כל הארכיון |
 

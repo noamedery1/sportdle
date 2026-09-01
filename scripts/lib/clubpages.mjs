@@ -32,6 +32,12 @@ export function writeClubPages({ html, data, order, siteUrl }) {
       .replace(/(<meta property="og:url"\s+content=")[^"]*/, `$1${base}/${slug}/`)
       .replace(/(<meta property="og:image"\s+content=")[^"]*/, `$1${base}/og-${slug}.png`)
       .replace(/(<meta name="theme-color" content=")[^"]*/, `$1${c.colors.ink}`)
+      /* קנוני לכל עמוד בנתיב שלו. בלי זה חמישה עמודים מצהירים
+         שהעמוד הראשי הוא הקנוני שלהם, וגוגל מוריד את כולם. */
+      .replace(/(<link rel="canonical" href=")[^"]*/, `$1${base}/${slug}/`)
+      .replace(/(<meta name="twitter:title"\s+content=")[^"]*/, `$1${title}`)
+      .replace(/(<meta name="twitter:description" content=")[^"]*/, `$1${desc}`)
+      .replace(/(<meta name="twitter:image"\s+content=")[^"]*/, `$1${base}/og-${slug}.png`)
       .replace(/(href|content)="(favicon\.ico|icon-\d+\.png|manifest\.json|og\.png)"/g,
                '$1="../$2"')
       /* לפני הסקריפט הראשון, כדי שהמנוע יראה את המשתנה */

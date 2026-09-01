@@ -17,6 +17,11 @@ import { loadClubs, readJSON, log } from "../scripts/lib/util.mjs";
 const OUT = "src/static";
 mkdirSync(OUT, { recursive: true });
 
+/* הכתובת שמודפסת על הכרטיס מגיעה מ-config/site.json ולא מקודדת
+   כאן. אחרת החלפת דומיין משאירה חמש תמונות עם הכתובת הישנה. */
+const SITE = String(readJSON("config/site.json").siteUrl)
+  .replace(/^https?:\/\//, "").replace(/\/$/, "");
+
 const card = (c, db) => `<!doctype html><html lang="he" dir="rtl"><head>
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
@@ -53,7 +58,7 @@ const card = (c, db) => `<!doctype html><html lang="he" dir="rtl"><head>
       <div class="pill">שנת לידה</div>
     </div>
   </div>
-  <div class="url">sportdle.up.railway.app</div>
+  <div class="url">${SITE}</div>
 </body></html>`;
 
 const browser = await chromium.launch({ headless: true });

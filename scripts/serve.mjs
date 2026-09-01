@@ -12,6 +12,47 @@ import { gunzipSync } from "node:zlib";
 
 const PORT = +(process.env.PORT || 4173);
 const ROOT = "dist";
+
+/* ---------- הדומיין הקנוני ----------
+   הכתובת הישנה ב-Railway עוד מגישה תנועה, ושני דומיינים עם אותו
+   תוכן מפצלים דירוג בגוגל ומבלבלים תצוגות מקדימה. 301 מאחד אותם.
+
+   מקור האמת הוא CANONICAL_HOST, ואם הוא לא מוגדר — הדומיין
+   שב-config/site.json. אין דומיין מקודד כאן.
+
+   **הערה חשובה:** השרת הזה מאזין על 127.0.0.1 בלבד והוא שרת
+   פיתוח. הייצור הוא קבצים סטטיים במאגר אחר (ראה README), ולכן
+   ההפניה שם צריכה לשבת ב-Cloudflare ולא בקוד. מה שכאן קיים כדי
+   שההתנהגות תהיה זהה אם השרת הזה יוגש אי פעם. */
+const CANONICAL_HOST = process.env.CANONICAL_HOST ||
+  new URL(JSON.parse(readFileSync("config/site.json", "utf8")).siteUrl).host;
+
+/* localhost נשאר בחוץ, אחרת פיתוח מקומי מקבל 301 לאתר החי */
+const LOCAL = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)(:\d+)?$/i;
+
+/* Cloudflare מסיים את ה-TLS ומעביר את המקור בכותרות. Host מגיע
+   כ-x-forwarded-host, ולכן הוא נבדק ראשון — בדיוק מה ש-trust
+   proxy עושה במסגרות אחרות.
+
+   **אין כאן הפניית http→https.** מול Cloudflare במצב Full הבקשה
+   מגיעה לאפליקציה ב-HTTP תמיד, ובדיקה על req.protocol הייתה
+   יוצרת לופ אינסופי. אם צריך לאכוף https — x-forwarded-proto,
+   וגם זה מיותר כשהאכיפה נעשית ב-Cloudflare. */
+function canonicalRedirect(req, res) {
+  const host = String(req.headers["x-forwarded-host"] || req.headers.host || "");
+  if (!host || LOCAL.test(host)) return false;
+  if (host.toLowerCase() === CANONICAL_HOST.toLowerCase()) return false;
+
+  const target = `https://${CANONICAL_HOST}${req.url}`;   // req.url כולל query
+  /* כתובת האמת של הלקוח מגיעה מ-Cloudflare, לא מהחיבור */
+  const ip = req.headers["cf-connecting-ip"] ||
+             String(req.headers["x-forwarded-for"] || "").split(",")[0].trim() ||
+             req.socket.remoteAddress;
+  console.log(`301 ${host}${req.url} → ${target}  (${ip})`);
+  res.writeHead(301, { Location: target, "Cache-Control": "no-store" });
+  res.end();
+  return true;
+}
 const TYPES = {
   ".html": "text/html; charset=utf-8", ".json": "application/json; charset=utf-8",
   ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8",
@@ -19,6 +60,9 @@ const TYPES = {
 };
 
 createServer((req, res) => {
+  /* לפני הכל — לפני הקליטה, לפני ההגשה הסטטית, לפני כל השאר */
+  if (canonicalRedirect(req, res)) return;
+
   const url = decodeURIComponent(req.url.split("?")[0]);
 
   /* --- קליטה מהדפדפן --- */

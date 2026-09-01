@@ -104,6 +104,21 @@ worldfootball מחזיר שם באנגלית, כל השאר בעברית. שלו
 | `beitardle.up.railway.app/sportdle/` | SportDle — הנתונים מביתרדל **עוברים** | אותו origin |
 | `sportdle.up.railway.app/` | מפנה ל-`./sportdle/` — **התחלה מאפס** | origin נפרד |
 
+**הדומיין הקנוני הוא `sportsdel.techbynoam.com`**, והוא כתוב במקום
+אחד בלבד — `siteUrl` ב-`config/site.json`. ממנו נגזרים `og:url`,
+`og:image`, `rel=canonical`, קישורי השיתוף, הפוסט היומי והקליפים.
+
+הכתובות של Railway בטבלה למעלה עוד מגישות תנועה, ולכן צריך **301
+מהן לקנוני**. המקום לזה הוא Cloudflare ולא הקוד: הייצור הוא קבצים
+סטטיים, ואין בו אפליקציה שתריץ middleware. חוק אחד ב-Cloudflare —
+Redirect Rule על `http.host ne "sportsdel.techbynoam.com"` →
+`concat("https://sportsdel.techbynoam.com", http.request.uri)`,
+301 — מכסה את כל הדומיינים בלי לגעת בקוד ובלי סיכון ללופ.
+
+`scripts/serve.mjs` מכיל את אותה הפניה בשביל שרת הפיתוח ובשביל
+המקרה שהוא יוגש אי פעם, עם `CANONICAL_HOST` לדריסה. localhost
+נשאר בחוץ.
+
 זו החלטה מודעת: מי שנכנס מהכתובת החדשה מתחיל נקי, ומי שממשיך
 בכתובת הישנה ממשיך כרגיל. `localStorage` הוא לפי origin ואין דרך
 לגיטימית להעביר אותו בין דומיינים.

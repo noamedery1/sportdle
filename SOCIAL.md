@@ -39,7 +39,7 @@ SportDle · חידה #34
 החידה של היום כבר באוויר. שמונה ניסיונות.
 חמישה מועדונים, לכל אחד מאגר ולוח משלו.
 
-https://sportdle.up.railway.app/sportdle/
+https://sportsdel.techbynoam.com/
 ```
 
 לבדיקה בלי לפרסם:

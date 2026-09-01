@@ -2,7 +2,14 @@
   "_comment": "הגדרות כלליות לאתר. start הוא תאריך חידה #1 — שינוי שלו מזיז את כל מספרי החידות.",
   "name": "SportDle",
   "title": "SportDle · חידת השחקן היומית",
-  "siteUrl": "https://sportdle.up.railway.app/sportdle",
+  "_siteUrl": [
+    "הדומיין הקנוני, והמקום היחיד שבו הוא כתוב. ממנו נגזרים og:url,",
+    "og:image, rel=canonical, קישורי השיתוף, הפוסט היומי והקליפים.",
+    "שינוי כאן משנה את כולם — אין דומיין מקודד בשום מקום אחר.",
+    "בלי / בסוף. אם המשחק יוגש תחת נתיב ולא בשורש, מוסיפים אותו כאן",
+    "(למשל https://sportsdel.techbynoam.com/sportdle) וזה הכל."
+  ],
+  "siteUrl": "https://sportsdel.techbynoam.com",
   "start": [
     2026,
     8,
@@ -10,7 +17,7 @@
   ],
   "maxGuesses": 8,
   "build": "s3",
-  "ogImage": "https://sportdle.up.railway.app/sportdle/og.png",
+  "ogImage": "https://sportsdel.techbynoam.com/og.png",
   "shareStyle": "safe",
   "shuffleSeed": 20260825,
   "analyticsUrl": "https://script.google.com/macros/s/AKfycbzE5Zr3VV92MPq_xQ9uU4N1uWdBxnP28be4MIFuhF_-qtAyIsDERHfmAb7gHuEuehUV/exec",

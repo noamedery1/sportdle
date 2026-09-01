@@ -299,18 +299,49 @@ if (existsSync("src/static"))
     filter: src => !/README.md$/.test(src) });   // התיעוד נשאר במקור
 
 /* manifest.json — התבנית מקשרת אליו, אז אנחנו מייצרים אותו.
-   האייקונים עצמם הם קבצי מקור שצריך להניח ב-src/static/. */
+   האייקונים עצמם הם קבצי מקור שצריך להניח ב-src/static/.
+
+   start_url ו-scope הם "/" ולא "./" — הדומיין מגיש את המשחק
+   בשורש ואין בו שום דבר אחר. הצורה היחסית נפתרה לאותו מקום, אבל
+   מוחלט הוא חד-משמעי: עמודי המועדונים תחת /<slug>/ נמצאים בתוך
+   ה-scope בוודאות, ו"הוסף למסך הבית" מכל אחד מהם פותח את השורש. */
 if (!existsSync("dist/manifest.json"))
   writeJSON("dist/manifest.json", {
     name: site.title, short_name: site.name,
-    start_url: "./", scope: "./", display: "standalone", dir: "rtl", lang: "he",
+    start_url: "/", scope: "/", display: "standalone", dir: "rtl", lang: "he",
     background_color: "#0C0C0E", theme_color: "#0C0C0E",
     icons: [
-      { src: "icon-32.png",  sizes: "32x32",   type: "image/png" },
-      { src: "icon-180.png", sizes: "180x180", type: "image/png" },
-      { src: "icon-512.png", sizes: "512x512", type: "image/png" }
+      { src: "/icon-32.png",  sizes: "32x32",   type: "image/png" },
+      { src: "/icon-180.png", sizes: "180x180", type: "image/png" },
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png" }
     ]
   }, 2);
+
+/* ---------- sitemap.xml ו-robots.txt ----------
+   שניהם נגזרים מ-siteUrl ומרשימת המועדונים, ולא נכתבים ביד: קובץ
+   שמצביע לדומיין הישן גרוע מקובץ שלא קיים, כי גוגל מאמין לו.
+
+   שש כתובות — השורש וחמשת המועדונים. אין יותר מזה באתר. */
+{
+  const base = site.siteUrl.replace(/\/$/, "");
+  const paths = ["/", ...order.map(s => `/${s}/`)];
+  writeText("dist/sitemap.xml",
+    '<?xml version="1.0" encoding="UTF-8"?>\n' +
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+    paths.map(p =>
+      "  <url>\n" +
+      `    <loc>${base}${p}</loc>\n` +
+      `    <changefreq>daily</changefreq>\n` +
+      `    <priority>${p === "/" ? "1.0" : "0.8"}</priority>\n` +
+      "  </url>").join("\n") +
+    "\n</urlset>\n");
+
+  writeText("dist/robots.txt",
+    "User-agent: *\n" +
+    "Allow: /\n" +
+    `Sitemap: ${base}/sitemap.xml\n`);
+  log(`  נכתבו sitemap.xml (${paths.length} כתובות) ו-robots.txt`);
+}
 
 const pages = writeClubPages({ html, data, order, siteUrl: site.siteUrl });
 log(`  נכתבו ${pages} עמודי מועדון — dist/<slug>/index.html`);
