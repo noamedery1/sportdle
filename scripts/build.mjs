@@ -118,6 +118,21 @@ function checkTags(html) {
   }
 }
 
+/* אין תלות ריצה בצד שלישי לגופנים.
+   הגופנים מקומיים (tools/fonts.mjs). קישור לגוגל שיחזור לכאן
+   ישבור את האפליקציה אופליין בשקט — הטקסט ייפול לגופן מערכת,
+   הכל ייראה "כמעט נכון", ואף בדיקה לא תצעק. */
+function checkFonts(html) {
+  const ext = [...html.matchAll(/https?:\/\/fonts\.(?:googleapis|gstatic)\.com[^"')\s]*/g)]
+    .map(m => m[0]);
+  if (ext.length)
+    fail("html", `גופן מקישור חיצוני — שובר אופליין: ${[...new Set(ext)].join(", ")}`);
+  if (!/href="fonts\.css"/.test(html))
+    fail("html", 'אין קישור ל-fonts.css — הרץ node tools/fonts.mjs');
+  if (!existsSync("src/static/fonts.css"))
+    fail("html", "חסר src/static/fonts.css — הרץ node tools/fonts.mjs");
+}
+
 /* 2. אין id כפול ב-HTML */
 function checkIds(html) {
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
@@ -295,6 +310,7 @@ if (leftovers.length) fail("html", `נותרו מצייני מקום שלא הו
 
 checkTags(html);
 checkIds(html);
+checkFonts(html);
 checkShareChars(html);
 checkShareDir(html);
 checkHeaderButtons(html);

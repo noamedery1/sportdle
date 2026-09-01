@@ -38,7 +38,7 @@ export function writeClubPages({ html, data, order, siteUrl }) {
       .replace(/(<meta name="twitter:title"\s+content=")[^"]*/, `$1${title}`)
       .replace(/(<meta name="twitter:description" content=")[^"]*/, `$1${desc}`)
       .replace(/(<meta name="twitter:image"\s+content=")[^"]*/, `$1${base}/og-${slug}.png`)
-      .replace(/(href|content)="(favicon\.ico|icon-\d+\.png|manifest\.json|og\.png)"/g,
+      .replace(/(href|content)="(favicon\.ico|icon-\d+\.png|manifest\.json|og\.png|fonts\.css)"/g,
                '$1="../$2"')
       /* גם ניווט דפי התוכן שבפוטר עולה תיקייה אחת. בלי זה
          /beitar/about/ הוא 404, והניווט שבור בחמישה עמודים. */

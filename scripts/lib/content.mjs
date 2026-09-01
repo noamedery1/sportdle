@@ -204,9 +204,7 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
 <link rel="icon" href="${u}favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="${u}icon-32.png">
 <link rel="apple-touch-icon" href="${u}icon-180.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Suez+One&family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="${u}fonts.css">
 <style>${CSS}</style>
 ${ld.map(o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n")}
 </head>
