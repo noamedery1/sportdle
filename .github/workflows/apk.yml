@@ -66,14 +66,30 @@ jobs:
           distribution: temurin
           java-version: "21"
 
+      # gradlew נדחף ממכונת חלונות. ביט ההרצה נשמר ב-git עצמו
+      # (update-index --chmod=+x), וזה כאן כרשת ביטחון בלבד:
+      # ברגע ש-Java קיימת, `cap sync` מריץ את gradlew בעצמו כדי
+      # לפתור את תלויות התוספים — וקובץ בלי הרשאת הרצה מפיל
+      # אותו בשלב הזה, לא בשלב הבנייה. זו בדיוק הנפילה שקרתה,
+      # והיא לא משתחזרת מקומית כי במחשב הפיתוח אין Java בכלל.
+      - name: הרשאת הרצה ל-gradlew
+        run: |
+          chmod +x android/gradlew
+          ls -l android/gradlew
+
       - name: העברת dist לאפליקציה
-        run: npx cap sync android
+        run: |
+          out=$(npx cap sync android 2>&1) || {
+            echo "$out" | tail -30
+            echo "::error::cap sync נכשל · $(echo "$out" | tail -2 | tr '
+' ' ')"
+            exit 1
+          }
+          echo "$out" | tail -6
 
       - name: Gradle — APK
         working-directory: android
-        run: |
-          chmod +x ./gradlew
-          ./gradlew assembleDebug --no-daemon --stacktrace
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: שם וגודל
         id: out
