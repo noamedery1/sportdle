@@ -10,6 +10,7 @@ import {
   log, warn, die, normName, season
 } from "./lib/util.mjs";
 import { writeClubPages } from "./lib/clubpages.mjs";
+import { writeContentPages } from "./lib/content.mjs";
 
 const args  = parseArgs();
 const clubs = pickClubs(args);
@@ -274,6 +275,19 @@ html = html
   /* תמונת התצוגה המקדימה נפרדת מ-SITE_URL: האתר יושב בתת-תיקייה,
      והתמונה יכולה לשבת בשורש */
   .split("__OG_IMAGE__").join(site.ogImage || site.siteUrl.replace(/\/$/, "") + "/og.png")
+  /* Organization בעמוד הראשי. עמודי המועדון מחליפים אותו
+     ב-BreadcrumbList — scripts/lib/clubpages.mjs */
+  .split("__JSONLD__").join(JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.name,
+    url: site.siteUrl.replace(/\/$/, "") + "/",
+    logo: site.siteUrl.replace(/\/$/, "") + "/icon-512.png",
+    email: "techbynoam@gmail.com",
+    description: "משחק ניחוש יומי על כדורגלנים ישראלים, בחמישה מועדונים.",
+    founder: { "@type": "Person", name: "נעם עדרי" },
+    sameAs: ["https://techbynoam.com/"]
+  }))
   .split("__ENGINE__").join(engine);
 
 const leftovers = [...html.matchAll(/__[A-Z_]+__/g)].map(m => m[0]);
@@ -325,23 +339,42 @@ if (!existsSync("dist/manifest.json"))
     ]
   }, 2);
 
-/* ---------- sitemap.xml ו-robots.txt ----------
-   שניהם נגזרים מ-siteUrl ומרשימת המועדונים, ולא נכתבים ביד: קובץ
-   שמצביע לדומיין הישן גרוע מקובץ שלא קיים, כי גוגל מאמין לו.
+/* ---------- דפי התוכן ----------
+   אודות, צור קשר, פרטיות, תנאים, איך משחקים, הארכיון ודף לכל
+   שחקן בבריכת התשובות. לפני ה-sitemap, כי הוא נגזר מהכתובות
+   שנכתבו כאן ולא מרשימה שנכתבת ביד. */
+const content = writeContentPages({
+  data, order, site, NAT_HE, REGION, maxGuesses: site.maxGuesses
+});
+log(`  נכתבו ${content.routes.length} דפי תוכן · ` +
+    `${content.players} דפי שחקן · ${content.pastCount} חידות בארכיון`);
 
-   שש כתובות — השורש וחמשת המועדונים. אין יותר מזה באתר. */
+/* ---------- sitemap.xml ו-robots.txt ----------
+   שניהם נגזרים מ-siteUrl ומהכתובות שנבנו, ולא נכתבים ביד: קובץ
+   שמצביע לדומיין הישן גרוע מקובץ שלא קיים, כי גוגל מאמין לו. */
 {
   const base = site.siteUrl.replace(/\/$/, "");
-  const paths = ["/", ...order.map(s => `/${s}/`)];
+  const paths = ["/", ...order.map(s => `/${s}/`), ...content.routes];
   writeText("dist/sitemap.xml",
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    paths.map(p =>
-      "  <url>\n" +
-      `    <loc>${base}${p}</loc>\n` +
-      `    <changefreq>daily</changefreq>\n` +
-      `    <priority>${p === "/" ? "1.0" : "0.8"}</priority>\n` +
-      "  </url>").join("\n") +
+    /* קצב ועדיפות לפי סוג הדף. "daily" על 500 דפי שחקן שלא
+       משתנים הוא אות רועש, וגוזל מהזחלן את התקציב שהיה אמור
+       ללכת לדפים שכן מתחלפים. */
+    paths.map(p => {
+      const g = p === "/" || /^\/[a-z-]+\/$/.test(p) && order.includes(p.slice(1, -1));
+      const arc = /^\/archive\/\d+\/$/.test(p);
+      const ply = p.startsWith("/players/");
+      const freq = g ? "daily" : p === "/archive/" ? "daily" : arc ? "yearly" : "monthly";
+      const pri  = p === "/" ? "1.0" : g ? "0.9"
+                 : p === "/archive/" || p === "/how-to-play/" ? "0.7"
+                 : ply ? "0.4" : arc ? "0.5" : "0.3";
+      return "  <url>\n" +
+      `    <loc>${base}${encodeURI(p)}</loc>\n` +
+      `    <changefreq>${freq}</changefreq>\n` +
+      `    <priority>${pri}</priority>\n` +
+      "  </url>";
+    }).join("\n") +
     "\n</urlset>\n");
 
   writeText("dist/robots.txt",

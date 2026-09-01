@@ -31,7 +31,19 @@ on:
       - "config/**"
       - "data/clubs/**"
       - "scripts/**"
+      - "tools/qa-deploy.mjs"
+      - "tools/archive-legacy.mjs"
+      - "tools/links.mjs"
       - ".github/workflows/deploy.yml"
+
+  # פריסה יומית, ולא רק בדחיפה. הארכיון נבנה בזמן הבנייה: כל בוקר
+  # החידה של אתמול מפסיקה להיות של היום ומקבלת דף. בלי הריצה הזאת
+  # הארכיון היה קופא על מה שהיה בדחיפה האחרונה.
+  # 04:40 UTC — לפני הפוסט היומי (05:10), כדי שהקישור בפוסט
+  # יוביל לארכיון שכבר מעודכן.
+  schedule:
+    - cron: "40 4 * * *"
+
   workflow_dispatch:
 
 concurrency:
@@ -58,6 +70,13 @@ jobs:
       - name: בנייה
         working-directory: src-repo
         run: node scripts/build.mjs
+
+      # 561 דפים בשלוש רמות עומק, וכל הקישורים יחסיים כי אותו
+      # dist מוגש גם מהשורש וגם מ-/sportdle/. קישור יחסי שגוי
+      # בעומק אחד עובד מושלם בעומק אחר — לא בדיקה לעין אנושית.
+      - name: קישורים פנימיים
+        working-directory: src-repo
+        run: node tools/links.mjs dist
 
       # הבנייה רצה תמיד — היא הבדיקה שהמקור תקין, וזה שווה גם בלי
       # פריסה. הדחיפה מדלגת בשקט כשאין טוקן, במקום להיכשל בכל קומיט.

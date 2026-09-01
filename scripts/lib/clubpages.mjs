@@ -40,6 +40,24 @@ export function writeClubPages({ html, data, order, siteUrl }) {
       .replace(/(<meta name="twitter:image"\s+content=")[^"]*/, `$1${base}/og-${slug}.png`)
       .replace(/(href|content)="(favicon\.ico|icon-\d+\.png|manifest\.json|og\.png)"/g,
                '$1="../$2"')
+      /* גם ניווט דפי התוכן שבפוטר עולה תיקייה אחת. בלי זה
+         /beitar/about/ הוא 404, והניווט שבור בחמישה עמודים. */
+      .replace(/href="(how-to-play|archive|players|about|contact|privacy|terms)\/"/g,
+               'href="../$1/"')
+      /* "חידה יומית" בניווט מצביע על עצמו בשורש, ועל השורש
+         מעמוד מועדון. בלי זה אין מכאן דרך חזרה הביתה, וזחלן
+         שנכנס דרך /beitar/ לא מגיע לעמוד הראשי. */
+      .replace('class="navhome" href="./"', 'class="navhome" href="../"')
+      /* עמוד מועדון הוא עמוד מקונן, ולכן BreadcrumbList במקום
+         ה-Organization של השורש. */
+      .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/,
+        '<script type="application/ld+json">' + JSON.stringify({
+          "@context": "https://schema.org", "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "חידה יומית", item: `${base}/` },
+            { "@type": "ListItem", position: 2, name: c.he, item: `${base}/${slug}/` }
+          ]
+        }) + "</script>")
       /* לפני הסקריפט הראשון, כדי שהמנוע יראה את המשתנה */
       .replace("<script>", `<script>window.SPORTDLE_CLUB=${JSON.stringify(slug)};</script>\n<script>`);
 

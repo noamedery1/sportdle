@@ -23,6 +23,15 @@
      התג הזה גוגל רואה שני אתרים עם אותו תוכן ומפצל ביניהם דירוג.
      עמודי המועדונים דורסים אותו בנתיב שלהם — scripts/lib/clubpages.mjs -->
 <link rel="canonical" href="__SITE_URL__/">
+
+<!-- נתונים מובנים. הבנייה מזריקה כאן Organization בעמוד הראשי,
+     ו-scripts/lib/clubpages.mjs מחליף אותו ב-BreadcrumbList בעמודי
+     המועדון. הבלוק הזה אינו JavaScript, ולכן checkSyntax ב-build.mjs
+     מדלג עליו; תוקפו נבדק כ-JSON ב-tools/qa-deploy.mjs.
+     ואגב — אין לכתוב בהערה כאן תגית סקריפט מלאה בתוך סוגריים
+     זוויתיים. הרגקס שסורק בלוקים אינו מדלג על הערות, והוא יתפוס
+     אותה כתחילת בלוק. זה בדיוק מה שקרה כאן פעם אחת. -->
+<script type="application/ld+json">__JSONLD__</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -190,6 +199,13 @@ footer{margin-top:26px;padding-top:14px;border-top:1px solid rgba(46,46,54,.55);
 footer .who{text-align:start}
 footer .who a{color:#55555E;text-decoration:none}
 footer .who a:hover{color:var(--dim)}
+/* ניווט דפי התוכן — נגלל לשורה שנייה במסכים צרים במקום לדחוס */
+.sitenav{display:flex;flex-wrap:wrap;gap:0 6px;margin-top:24px;padding-top:14px;
+  border-top:1px solid rgba(46,46,54,.55);font-size:12.5px;line-height:2}
+.sitenav a{color:#8C8C94;text-decoration:none}
+.sitenav a:hover{color:var(--brand)}
+.sitenav span{color:#3A3A42}
+.sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on{display:block}
 #comm .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
@@ -659,6 +675,20 @@ select.rc:focus{border-color:var(--brand)}
     </div>
   </section>
   </div><!-- /versusView -->
+
+  <!-- ניווט קבוע לדפי התוכן. יחסי ולא מוחלט, כי אותו dist מוגש
+       גם משורש הדומיין הקנוני וגם מ-/sportdle/ בכתובת הישנה.
+       scripts/lib/clubpages.mjs מוסיף ../ בעמודי המועדונים. -->
+  <nav class="sitenav" aria-label="ניווט באתר">
+    <a class="navhome" href="./">חידה יומית</a><span>·</span><a
+       href="how-to-play/">איך משחקים</a><span>·</span><a
+       href="archive/">ארכיון</a><span>·</span><a
+       href="players/">שחקנים</a><span>·</span><a
+       href="about/">אודות</a><span>·</span><a
+       href="contact/">צור קשר</a><span>·</span><a
+       href="privacy/">פרטיות</a><span>·</span><a
+       href="terms/">תנאי שימוש</a>
+  </nav>
 
   <footer>
     <div class="who">

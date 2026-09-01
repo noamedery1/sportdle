@@ -18,8 +18,16 @@ const fail = m => fails.push(m);
 const pass = m => ok.push(m);
 
 function scripts(html) {
-  return [...html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)]
-    .map(m => m[1]).filter(s => s.trim());
+  /* ld+json אינו JavaScript — new Function עליו נכשל תמיד.
+     תוקפו נבדק בנפרד, כ-JSON. */
+  return [...html.matchAll(/<script(\s[^>]*)?>([\s\S]*?)<\/script>/g)]
+    .filter(m => !/application\/ld\+json/.test(m[1] || ""))
+    .map(m => m[2]).filter(s => s.trim());
+}
+
+function jsonLd(html) {
+  return [...html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/g)]
+    .map(m => m[1]);
 }
 
 function checkHtml(rel) {
@@ -31,6 +39,13 @@ function checkHtml(rel) {
   scripts(html).forEach((s, i) => {
     try { new Function(s); pass(`${rel} · בלוק סקריפט ${i + 1}`); }
     catch (e) { fail(`${rel} · בלוק סקריפט ${i + 1}: ${e.message}`); }
+  });
+
+  /* הנתונים המובנים חייבים להיות JSON תקין. גוגל מתעלם בשקט
+     מ-ld+json שבור, ואז אין תגובה ואין הודעה. */
+  jsonLd(html).forEach((s, i) => {
+    try { JSON.parse(s); pass(`${rel} · ld+json ${i + 1}`); }
+    catch (e) { fail(`${rel} · ld+json ${i + 1}: ${e.message}`); }
   });
 
   /* תגיות מאוזנות */
