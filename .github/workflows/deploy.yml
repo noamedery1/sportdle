@@ -2,8 +2,15 @@
 # פריסה: main → מאגר הפריסה → Railway
 # ------------------------------------------------------------
 # המאגר הזה הוא המקור. מה שרץ באוויר יושב במאגר אחר
-# (noamedery1/beitardle), ו-Railway מגיש אותו. הצעד הזה מעביר
-# את dist/ לתיקיית sportdle/ שם, ומריץ קודם את בדיקת עץ הפריסה.
+# (noamedery1/beitardle), ו-Railway מגיש את **השורש** שלו. הצעד
+# הזה מעתיק את dist/ לשורש וגם ל-sportdle/, ומריץ את בדיקת העץ.
+#
+# למה פעמיים: הדומיין הקנוני מגיש את השורש, ולכן שם המשחק חייב
+# לשבת. sportdle/ נשאר כי קישורים שפורסמו מצביעים לשם.
+#
+# ביתרדל, העמוד שממנו הכל התחיל, יושב עד הפריסה הזאת בשורש.
+# tools/archive-legacy.mjs מעביר אותו ל-beitardle/ ב-git mv לפני
+# ההעתקה — הוא נשאר חי בכתובת משלו, עם ההיסטוריה שלו.
 #
 # סוד שצריך להגדיר:
 #   DEPLOY_TOKEN — Personal Access Token עם הרשאת contents:write
@@ -91,12 +98,19 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
           path: deploy-repo
 
+      # ריצה ראשונה בלבד, ואחר כך no-op: מעביר את ביתרדל ההיסטורי
+      # מהשורש ל-beitardle/ ב-git mv, לפני שההעתקה דורסת אותו.
+      - name: ארכוב ביתרדל ההיסטורי
+        if: steps.secrets.outputs.ready == 'yes'
+        run: node src-repo/tools/archive-legacy.mjs deploy-repo
+
       - name: העברת dist
         if: steps.secrets.outputs.ready == 'yes'
         run: |
+          # פעמיים. השורש הוא הדומיין הקנוני, ו-sportdle/ נשאר כדי
+          # שקישורים ותיקים לכתובת הישנה לא יישברו.
+          cp -r src-repo/dist/. "deploy-repo/"
           mkdir -p "deploy-repo/${{ env.DEPLOY_DIR }}"
-          # בלי --delete: בשורש מאגר הפריסה יושבים קבצים של ביתרדל
-          # הישן, ובתוך sportdle/ יכולים לשבת נכסים שלא נבנים כאן.
           cp -r src-repo/dist/. "deploy-repo/${{ env.DEPLOY_DIR }}/"
 
       - name: בדיקת עץ הפריסה

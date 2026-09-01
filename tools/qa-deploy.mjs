@@ -24,7 +24,7 @@ function scripts(html) {
 
 function checkHtml(rel) {
   const p = join(ROOT, rel);
-  if (!existsSync(p)) return fail(`חסר ${rel}`);
+  if (!existsSync(p)) { fail(`חסר ${rel}`); return null; }
   const html = readFileSync(p, "utf8");
 
   /* כל בלוק סקריפט חייב להתקמפל */
@@ -58,63 +58,87 @@ function checkHtml(rel) {
   return html;
 }
 
-/* ---------- הדף הישן ---------- */
+/* ---------- שני העתקים, תוכן אחד ----------
+   הפריסה מעתיקה את dist/ פעמיים: לשורש, שהוא מה שהדומיין הקנוני
+   מגיש, וגם ל-sportdle/, כדי שקישורים ותיקים לכתובת הישנה לא
+   יישברו. אם שני ההעתקים ייפרדו — למשל העתקה שנפלה באמצע — אנשים
+   ישחקו שתי גרסאות שונות של אותו משחק ולא תהיה שום הודעת שגיאה. */
 const old = checkHtml("index.html");
-if (old) {
-  if (!/id="toSportdle"/.test(old)) fail("index.html · אין קישור מעבר ל-SportDle");
-  else pass("index.html · קישור מעבר קיים");
-  if (!/sportdle\./.test(old)) fail("index.html · אין הפניה לפי דומיין");
-  else pass("index.html · הפניה לפי דומיין");
-  /* ההפניה חייבת להיות יחסית. הפניה לדומיין אחר חוצה origin,
-     ואז ה-localStorage של השחקן נשאר מאחור. */
-  if (/location\.replace\("https?:/.test(old))
-    fail("index.html · ההפניה מוחלטת — חוצה origin ומאבדת אחסון");
-  else if (!/location\.replace\("\.\/sportdle\//.test(old))
-    fail("index.html · לא נמצאה הפניה יחסית ל-./sportdle/");
-  else pass("index.html · הפניה יחסית, אותו origin");
+const neu = checkHtml("sportdle/index.html");
+if (old && neu) {
+  if (old === neu) pass("שורש ו-sportdle/ — אותו תוכן בדיוק");
+  else fail("index.html בשורש שונה מזה שב-sportdle/ — ההעתקה חלקית");
 }
 
-/* ---------- הדף החדש ---------- */
-const neu = checkHtml("sportdle/index.html");
 if (neu) {
   for (const s of ["ביתרdle", "באר־שבעdle", "מכביdle", "חיפהdle", "הפועלdle"])
     if (!neu.includes(s)) fail(`sportdle · חסר המועדון ${s}`);
   pass("sportdle · חמשת המועדונים");
-  const mf = join(ROOT, "sportdle/manifest.json");
-  if (existsSync(mf)) {
-    const m = JSON.parse(readFileSync(mf, "utf8"));
-    /* הכל יחסי. "/" כאן היה שולח מי שהתקין דרך הכתובת הישנה
-       (…/sportdle/) לשורש beitardle — עמוד אחר. ראה scripts/build.mjs. */
-    for (const k of ["start_url", "scope"])
-      if (m[k] && !m[k].startsWith("."))
-        fail(`sportdle/manifest · ${k}=${m[k]} (צריך יחסי)`);
-    const abs = (m.icons || []).map(i => i.src).filter(s => /^([a-z]+:)?\//.test(s));
-    if (abs.length) fail(`sportdle/manifest · אייקון מוחלט: ${abs.join(", ")}`);
-    if (!fails.some(f => f.includes("manifest"))) pass("sportdle/manifest · יחסי לגמרי");
-    for (const i of m.icons || [])
-      if (!existsSync(join(ROOT, "sportdle", i.src))) fail(`sportdle/manifest · אייקון חסר ${i.src}`);
-  } else fail("sportdle · אין manifest.json");
 }
 
-/* ---------- הנתונים של בית"ר זהים בשני הדפים ---------- */
-function grab(h, n) {
-  const s = h.indexOf(`const ${n} = [`); if (s < 0) return null;
-  const o = h.indexOf("[", s); let d = 0, i = o;
-  for (; i < h.length; i++) { if (h[i] === "[") d++; else if (h[i] === "]" && !--d) break; }
-  return new Function(`return ${h.slice(o, i + 1)}`)();
+/* ---------- המניפסטים ----------
+   אחד בשורש ואחד ב-sportdle/, ושניהם חייבים להישאר יחסיים: אותו
+   קובץ מוגש משני נתיבים, ו-"/" היה שולח מי שהתקין דרך …/sportdle/
+   לשורש — משחק אחר. ראה scripts/build.mjs. */
+for (const dir of ["", "sportdle"]) {
+  const label = dir ? `${dir}/manifest` : "manifest";
+  const mf = join(ROOT, dir, "manifest.json");
+  if (!existsSync(mf)) { fail(`${label} · חסר`); continue; }
+  const m = JSON.parse(readFileSync(mf, "utf8"));
+  const bad = [];
+  for (const k of ["start_url", "scope"])
+    if (m[k] && !m[k].startsWith(".")) bad.push(`${k}=${m[k]}`);
+  const abs = (m.icons || []).map(i => i.src).filter(s => /^([a-z]+:)?\//.test(s));
+  if (abs.length) bad.push(`אייקון מוחלט ${abs.join(", ")}`);
+  for (const i of m.icons || [])
+    if (!existsSync(join(ROOT, dir, i.src))) bad.push(`אייקון חסר ${i.src}`);
+  if (bad.length) fail(`${label} · ${bad.join(" · ")}`);
+  else pass(`${label} · יחסי, האייקונים קיימים`);
 }
-if (old && neu) {
-  const S = grab(old, "SCHEDULE");
+
+/* ---------- ביתרדל ההיסטורי ----------
+   המשחק עבר לשורש, והעמוד שממנו הכל התחיל עבר ל-beitardle/.
+   הבדיקה כאן היא שהמעבר לא השאיר אותו שבור: הקישור למשחק חייב
+   להיות מוחלט (מתוך /beitardle/ הצורה היחסית מובילה ל-404), ואסור
+   שתישאר בו ההפניה האוטומטית שהייתה זורקת מבקרים לאותו 404. */
+const arc = join(ROOT, "beitardle/index.html");
+if (existsSync(arc)) {
+  const a = readFileSync(arc, "utf8");
+  if (/href="\.\/sportdle\/"/.test(a))
+    fail("beitardle · הקישור למשחק נשאר יחסי — מוביל ל-404");
+  else if (!/href="https:\/\/[^"]+"/.test(a))
+    fail("beitardle · אין קישור למשחק");
+  else if (/host\.indexOf\("sportdle\."\)\s*===\s*0/.test(a))
+    fail("beitardle · ההפניה האוטומטית עוד פעילה — תזרוק ל-404");
+  else pass("beitardle · הארכיון שלם, בלי הפניה");
+}
+
+/* ---------- החידות שכבר פורסמו ----------
+   עד שהמשחק עבר לשורש, ההשוואה נעשתה מול לוח החידות שהיה מוטבע
+   בעמוד ביתרדל שיושב שם. זה היה שומר על 119 החידות שפורסמו מפני
+   שינוי שקט של זהות: מי שפתר חידה #40 וחזר לראות אותה, חייב לראות
+   את אותו שחקן.
+
+   העמוד ההיסטורי עבר ל-beitardle/ ואינו עוד מקור לשוות אליו, ולכן
+   הלוח הוקפא ל-config/published-beitar.json. השוואה מול קובץ קפוא
+   חזקה יותר מהקודמת — היא לא נשענת על עמוד שיכול לזוז או להיעלם.
+
+   הנתיב נגזר ממקום הסקריפט ולא מ-cwd: ב-CI הפקודה היא
+   `node src-repo/tools/qa-deploy.mjs deploy-repo`, ואז cwd הוא
+   התיקייה שמעל שני המאגרים. */
+const PUBLISHED = new URL("../config/published-beitar.json", import.meta.url);
+if (neu) {
   const m = neu.match(/const CLUBS\s*=\s*(\{[\s\S]*?\});\nconst CLUB_ORDER/);
   const C = m ? new Function(`return ${m[1]}`)() : null;
-  if (!S || !C) fail("לא הצלחתי להשוות את הלוחות");
-  else {
-    const b = C.beitar.schedule;
-    const same = S.every((n, i) => b[i] === n);
-    if (!same) {
-      const i = S.findIndex((n, i) => b[i] !== n);
-      fail(`הלוח נבדל בחידה #${i + 1}: "${S[i]}" ≠ "${b[i]}"`);
-    } else pass(`${S.length} החידות של הייצור זהות בשני הדפים`);
+  let S = null;
+  try { S = JSON.parse(readFileSync(PUBLISHED, "utf8")); }
+  catch (e) { fail(`לא נקרא config/published-beitar.json: ${e.message}`); }
+  if (!C) fail("לא נמצא CLUBS בעמוד — אין מה להשוות");
+  else if (S) {
+    const b = C.beitar.schedule || [];
+    const i = S.findIndex((n, k) => b[k] !== n);
+    if (i !== -1) fail(`חידה #${i + 1} שפורסמה השתנתה: "${S[i]}" ← "${b[i]}"`);
+    else pass(`${S.length} החידות שפורסמו לא זזו`);
   }
 }
 

@@ -96,13 +96,28 @@ worldfootball מחזיר שם באנגלית, כל השאר בעברית. שלו
 
 ### איך זה פרוס
 
-הכול בריפו `noamedery1/beitardle`. שני דומיינים על אותו שירות:
+הכול בריפו `noamedery1/beitardle`, ו-Railway מגיש את **השורש** שלו.
+הפריסה מעתיקה את `dist/` לשני מקומות שם:
+
+| נתיב במאגר הפריסה | למה |
+|---|---|
+| השורש | זה מה שהדומיין הקנוני מגיש. כאן המשחק. |
+| `sportdle/` | קישורים שפורסמו מצביעים לשם ולא יישברו. |
+| `beitardle/` | ביתרדל, העמוד שממנו הכל התחיל. ארכיון חי. |
+
+**הטעות שקל ליפול בה:** עד ספטמבר 2026 הפריסה העתיקה **רק**
+ל-`sportdle/`, והשורש היה ביתרדל. מי שמניח את זה יכתוב תגי canonical
+שמצביעים לעמוד הלא נכון — זה קרה. `tools/qa-deploy.mjs` בודק עכשיו
+שהשורש ו-`sportdle/` מכילים אותו תוכן בדיוק.
+
+מה שמגישות הכתובות בפועל:
 
 | כתובת | מה קורה | אחסון |
 |---|---|---|
-| `beitardle.up.railway.app/` | ביתרdle כרגיל, עם רצועה ל-SportDle | הרצפים הקיימים |
-| `beitardle.up.railway.app/sportdle/` | SportDle — הנתונים מביתרדל **עוברים** | אותו origin |
-| `sportdle.up.railway.app/` | מפנה ל-`./sportdle/` — **התחלה מאפס** | origin נפרד |
+| `sportsdel.techbynoam.com/` | SportDle. הקנוני. | `sportdel:*` |
+| `sportsdel.techbynoam.com/beitardle/` | ביתרדל ההיסטורי, `noindex` | `beitardle:*` |
+| `beitardle.up.railway.app/` | SportDle — **היה** ביתרדל עד ספט׳ 2026 | `sportdel:*` |
+| `beitardle.up.railway.app/sportdle/` | SportDle, אותו תוכן | אותו origin |
 
 **הדומיין הקנוני הוא `sportsdel.techbynoam.com`**, והוא כתוב במקום
 אחד בלבד — `siteUrl` ב-`config/site.json`. ממנו נגזרים `og:url`,
