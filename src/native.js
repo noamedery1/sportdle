@@ -209,6 +209,25 @@
     obs.observe(result, { attributes: true, attributeFilter: ["class"] });
   });
 
+  /* ---------- 7. חתימת גרסה גלויה ----------
+     שלוש גרסאות APK הגיעו למכשיר באותו יום, ואי אפשר היה להבדיל
+     ביניהן במסך — מה שהפך "יש עוד באג" לשאלה על איזה קובץ מדובר.
+     versionName הוא 1.0.<run_number>, כלומר המספר בפוטר מצביע
+     ישירות על הריצה ב-Actions שממנה הקובץ הגיע. */
+  safe(() => {
+    if (!P.App) return;
+    const stamp = async () => {
+      const info = await P.App.getInfo();
+      const el = document.getElementById("bld");
+      if (!el || !info || !info.version) return;
+      if (el.dataset.appv) return;                 // לא להוסיף פעמיים
+      el.dataset.appv = info.version;
+      el.textContent = `${el.textContent} · app ${info.version}`;
+    };
+    if (document.readyState === "complete") setTimeout(stamp, 300);
+    else addEventListener("load", () => setTimeout(stamp, 300));
+  });
+
   /* פתיחה מתוך ההתראה — לא צריך לעשות כלום מלבד לא להיתקע */
   safe(() => P.LocalNotifications &&
     P.LocalNotifications.addListener("localNotificationActionPerformed", () => {}));
