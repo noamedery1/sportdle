@@ -2,3 +2,7 @@ node_modules/
 .cache/
 dist/
 data/raw/html/
+
+# קליפים — נוצרים מהמאגר ומשקלם מגבטים. tools/clip*.mjs מייצר מחדש.
+*.mp4
+*.webm
