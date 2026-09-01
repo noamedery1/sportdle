@@ -59,7 +59,10 @@
 html{background:var(--ink);-webkit-text-size-adjust:100%}
 html,body{margin:0;padding:0}
 body{background:var(--ink);color:var(--text);font-family:'Heebo',system-ui,sans-serif;
-  font-size:16px;line-height:1.5;min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);
+  font-size:16px;line-height:1.5;min-height:100dvh;
+  /* למעלה גם כן: אנדרואיד 15 עם targetSdk 35+ כופה edge-to-edge,
+     והכותרת יושבת מתחת לשעון. בדפדפן הערך 0, ולכן זה בטוח לאתר. */
+  padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);
   display:flex;flex-direction:column}
 .wrap{max-width:520px;width:100%;margin:0 auto;padding:0 14px 48px;flex:1}
 

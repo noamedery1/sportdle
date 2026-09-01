@@ -77,7 +77,7 @@ html{background:var(--ink);-webkit-text-size-adjust:100%}
 html,body{margin:0;padding:0}
 body{background:var(--ink);color:var(--text);font-family:'Heebo',system-ui,sans-serif;
   font-size:16px;line-height:1.7;min-height:100dvh;display:flex;flex-direction:column;
-  padding-bottom:env(safe-area-inset-bottom)}
+  padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .wrap{max-width:640px;width:100%;margin:0 auto;padding:0 16px 40px;flex:1}
 @media (min-width:640px){
   body{background:radial-gradient(900px 520px at 50% -8%, #1A1A21 0%, rgba(12,12,14,0) 68%), var(--ink)}
