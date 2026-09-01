@@ -104,7 +104,19 @@ jobs:
           # היסט קבוע כאן ולא לחזור אחורה.
           VERSION_CODE: ${{ github.run_number }}
           VERSION_NAME: 1.0.${{ github.run_number }}
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        # הפלט נלכד ומוגש כ-annotation: לוגים של Actions דורשים
+        # אימות, ובלי זה כל כישלון של Gradle נראה מכאן כ-"exit 1".
+        run: |
+          set -o pipefail
+          if ! ./gradlew assembleDebug --no-daemon 2>&1 | tee /tmp/gradle.log; then
+            echo "----- 60 השורות האחרונות -----"
+            tail -60 /tmp/gradle.log
+            # שורה אחת, בלי tr ובלי תווי בריחה: תו שורה חדשה
+            # בתוך מרכאות ב-YAML שובר את הקובץ, וזה קרה כאן פעמיים.
+            msg=$(grep -m1 -E "What went wrong|error:|Caused by" /tmp/gradle.log | cut -c1-300)
+            echo "::error::Gradle נכשל · ${msg:-ראה את הפלט למעלה}"
+            exit 1
+          fi
 
       - name: שם וגודל
         id: out

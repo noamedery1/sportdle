@@ -10,8 +10,11 @@ android {
         /* גוגל פליי דוחה העלאה שנייה עם אותו versionCode, וזו
            תקלה שמתגלה רק ברגע ההעלאה. VERSION_CODE מגיע מ-CI
            (github.run_number), ומקומית נשאר 1. */
-        versionCode (System.getenv("VERSION_CODE") ?: "1").toInteger()
-        versionName System.getenv("VERSION_NAME") ?: "1.0"
+        /* הסוגריים חובה, לא סגנון. ב-Groovy `versionName X ?: Y`
+           נפרש כ-`(versionName(X)) ?: Y` — כלומר null נכנס
+           לפונקציה וה-?: מופעל על מה שהיא החזירה. */
+        versionCode(((System.getenv("VERSION_CODE") ?: "1") as String).toInteger())
+        versionName((System.getenv("VERSION_NAME") ?: "1.0") as String)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
