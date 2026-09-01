@@ -460,20 +460,50 @@ async function startVersus(){
     watch();
   });
   
-  $("#btnLeave").addEventListener("click", leaveRoom);
-  
-  $("#btnShare").addEventListener("click", async () => {
-    const link = `${location.origin}${location.pathname}?room=${room}`;
-    const txt =
-`⚫🟡 בואו לדו־קרב בביתרdle
+  /* ---------- קישור ההזמנה ----------
+     נבנה מהכתובת הקנונית ולא מ-location. באפליקציה location.origin
+     הוא https://localhost, ולכן הקישור היה יוצא
+     https://localhost/index.html?room=XXXX — חסר תועלת לכל מי
+     שמקבל אותו. זה מה שהפך את "שיתוף הקוד" למשהו שרק מעתיק מספר. */
+  const roomLink = () => {
+    const base = (window.SPORTDEL && window.SPORTDEL.siteUrl) || location.origin;
+    return `${String(base).replace(/\/+$/, "")}/?room=${room}`;
+  };
 
-מי מזהה את שחקן בית"ר הכי מהר?
+  /* פתיחת יעד חיצוני. עוגן סינתטי ולא window.open: ב-WebView של
+     Capacitor לא מוגדר setSupportMultipleWindows ואין onCreateWindow,
+     ולכן window.open עלול להיות no-op שקט. לחיצה על עוגן היא ניווט
+     אמיתי מתוך מחוות משתמש — בדפדפן זו לשונית חדשה, ובאפליקציה
+     shouldOverrideUrlLoading פותח את האפליקציה החיצונית. */
+  const openExternal = (url) => {
+    const a = document.createElement("a");
+    a.href = url; a.target = "_blank"; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+
+  const inviteText = () =>
+`⚫🟡 בואו לדו־קרב ב${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"}
+
+מי מזהה את השחקן הכי מהר?
 הרמזים נחשפים לכולם יחד — והראשון שפוגע לוקח את הסיבוב.
 
 פתחתי חדר. תלחצו וזה נכנס לבד 👇
-${link}
+${roomLink()}
 
 (אם צריך ידנית — קוד החדר: ${room})`;
+
+  $("#btnLeave").addEventListener("click", leaveRoom);
+  
+  /* וואטסאפ ישירות. זה המסלול שבו הזמנה באמת נשלחת, ובלעדיו
+     נשאר רק "הועתק" — והמזמין צריך לפתוח וואטסאפ ולהדביק לבד. */
+  $("#btnShareWa").addEventListener("click", () => {
+    if (!room) return;
+    openExternal("https://wa.me/?text=" + encodeURIComponent(inviteText()));
+  });
+
+  $("#btnShare").addEventListener("click", async () => {
+    if (!room) return;
+    const txt = inviteText();
     try{
       if (navigator.share) return void await navigator.share({ text: txt });
       await navigator.clipboard.writeText(txt);
@@ -532,7 +562,7 @@ ${link}
     const rows = allPlayers()
       .map((p, i) => `${i + 1}. ${p.name} — ${p.score || 0}`)
       .join("\n");
-    const link = `${location.origin}${location.pathname}?room=${room}`;
+    const link = roomLink();
     const txt = `🏆 ${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"} · קרב חברים\n\n` +
                 `${rows}\n\nעוד סיבוב באותו חדר:\n${link}`;
     try{
