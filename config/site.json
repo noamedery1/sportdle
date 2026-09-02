@@ -39,7 +39,9 @@
   ],
   "androidAppLinks": {
     "package": "com.techbynoam.sportdle",
-    "sha256": []
+    "sha256": [
+      "DD:32:BA:19:5F:41:CE:B2:3F:8B:4D:B4:A7:E5:37:16:30:C9:89:B3:EA:1C:24:6B:AC:67:7D:44:76:41:5A:8C"
+    ]
   },
   "siteUrl": "https://sportdle.techbynoam.com",
   "start": [
