@@ -5,7 +5,10 @@
    node tools/screenshots.mjs
 
    הפלט: store/play/*.png (1080×1920), store/ios/*.png
-   (1290×2796), ו-store/feature-1024x500.png.
+   (1290×2796), store/tablet7/*.png (1152×2048),
+   store/tablet10/*.png (1440×2560), ו-store/feature-1024x500.png.
+
+   --base=https://sportdle.techbynoam.com עובד גם בלי שרת מקומי.
 
    **הצילומים הם מהמשחק האמיתי, מחידת ארכיון.** לא מוקאפים ולא
    הרכבות: מה שנראה בתמונה הוא מה שהשחקן יקבל. חנויות דוחות
@@ -25,10 +28,27 @@ const args = parseArgs();
 const BASE = (args.base || "http://localhost:4173").replace(/\/$/, "");
 const site = readJSON("config/site.json");
 
+/* גוגל דורשת יחס 16:9 או 9:16 **גם לטאבלטים**, ולא את היחס
+   האמיתי של טאבלט (4:3). לכן כל המידות כאן הן כפולות מדויקות של
+   (9,16) — יחס לא מדויק נדחה בהעלאה. הטווחים: 7 אינץ' 320–3840
+   בכל צד, 10 אינץ' 1080–7680 בכל צד.
+
+   ה-viewport (w/scale) הוא מה שקובע איזה פריסה תיראה בצילום,
+   ולכן לטאבלטים הוא רחב יותר — 576 ו-720 CSS פיקסלים מול 360
+   בטלפון. אותה פריסה, שטח נשימה אחר. */
 const SIZES = [
-  { dir: "store/play", w: 1080, h: 1920, scale: 3 },   // גוגל פליי, טלפון
-  { dir: "store/ios",  w: 1290, h: 2796, scale: 3 }    // אפל, 6.7 אינץ'
+  { dir: "store/play",    w: 1080, h: 1920, scale: 3, guesses: 3 },  // פליי, טלפון
+  { dir: "store/ios",     w: 1290, h: 2796, scale: 3, guesses: 3 },  // אפל, 6.7"
+  { dir: "store/tablet7", w: 1152, h: 2048, scale: 2, guesses: 5 },  // 7" · 9:16
+  { dir: "store/tablet10",w: 1440, h: 2560, scale: 2, guesses: 5 }   // 10" · 9:16
 ];
+
+/* guesses: כמה ניחושים שגויים לפני הצילום של הלוח.
+
+   ברוחב טאבלט התוכן מילא כ-55% מפריים 9:16, והשליש התחתון יצא
+   שחור וריק — בחנות זה נראה כמו אפליקציה לא גמורה. שלוש שורות
+   ניחוש נוספות ממלאות אותו בתוכן אמיתי, ולא בריווח מלאכותי.
+   שמונה ניסיונות מותרים, כך שחמישה שגויים ועוד התשובה חוקיים. */
 
 function dayIndex() {
   const [y, m, d] = site.start;
@@ -47,8 +67,8 @@ const answer = db.schedule[puzzleNo - 1] || die(`אין חידה #${puzzleNo}`);
 const wrong = db.players
   .filter(p => p.target && p.he !== answer && p.seasons >= 8)
   .sort((a, b) => b.seasons - a.seasons || a.he.localeCompare(b.he, "he"))
-  .slice(0, 3).map(p => p.he);
-if (wrong.length < 3) die("אין מספיק שחקנים לניחושים");
+  .slice(0, 5).map(p => p.he);
+if (wrong.length < 5) die("אין מספיק שחקנים לניחושים");
 
 log(`  ${club.game} · חידה #${puzzleNo} · ${wrong.join(" → ")} → ${answer}`);
 
@@ -94,7 +114,7 @@ for (const S of SIZES) {
   await page.waitForTimeout(400);
 
   /* 1. הלוח באמצע משחק — התמונה שמסבירה את המשחק בשנייה */
-  for (const w of wrong) await typeGuess(page, w);
+  for (const w of wrong.slice(0, S.guesses)) await typeGuess(page, w);
   await page.waitForTimeout(300);
   await shot(page, S.dir, "1-board");
 
