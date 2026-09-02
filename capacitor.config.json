@@ -21,7 +21,7 @@
     "איטית, ומחיקה שלא מגיבה כי לא נורה אף input. הודלק פעם אחת",
     "בטעות וזה מה שקרה."
   ],
-  "appId": "com.techbynoam.sportdle",
+  "appId": "sportdle.techbynoam.com",
   "appName": "SportDle",
   "webDir": "app-dist",
   "server": {

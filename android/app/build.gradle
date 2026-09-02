@@ -4,7 +4,13 @@ android {
     namespace = "com.techbynoam.sportdle"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.techbynoam.sportdle"
+        /* applicationId שונה מ-namespace בכוונה. שם החבילה
+           שנרשם ב-Play ובאימות המפתחים של Android הוא
+           "sportdle.techbynoam.com", והוא **קבוע**. ה-namespace נשאר
+           "com.techbynoam.sportdle" כי הוא חבילת ה-Java של
+           MainActivity, ו-".MainActivity" במניפסט נפתר מולו.
+           AGP תומך בכך ששניהם יהיו שונים. */
+        applicationId "sportdle.techbynoam.com"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         /* גוגל פליי דוחה העלאה שנייה עם אותו versionCode, וזו

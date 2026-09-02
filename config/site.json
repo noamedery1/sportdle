@@ -47,7 +47,7 @@
     "בכל ריצה, ולכן הטביעה משתנה ואימות של APK מ-CI לא יחזיק."
   ],
   "androidAppLinks": {
-    "package": "com.techbynoam.sportdle",
+    "package": "sportdle.techbynoam.com",
     "sha256": [
       "C2:2F:FD:47:03:66:1E:74:56:FA:8A:4E:05:17:A9:27:67:BE:D8:9E:86:CB:2C:ED:3A:48:5B:A6:AA:85:D0:65",
       "BA:AE:E7:77:17:F8:B9:50:6D:01:01:EC:D5:24:7E:F0:CE:68:54:C5:63:6D:60:31:14:BA:21:62:79:3E:5B:65",
