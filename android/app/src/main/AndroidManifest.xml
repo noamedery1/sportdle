@@ -24,17 +24,36 @@
                  עם טביעת האצבע של התעודה שחתמה על האפליקציה המותקנת.
                  בלי הקובץ הזה האימות נכשל והקישור ייפתח בדפדפן.
 
-                 **pathPrefix="/join" בכוונה, ולא כל האתר.** intent-filter
-                 אינו יכול להתאים לפי query string, ולכן התאמה על "/"
-                 הייתה חוטפת גם את העמוד הראשי וכל קישור לדף תוכן —
-                 מי שמשתף דף שחקן היה פותח את המשחק במקום את הדף. -->
+                 **נתיבים מפורשים, ולא כל האתר.** intent-filter אינו יכול
+                 להתאים לפי query string, ולכן התאמה על "/" הייתה חוטפת
+                 גם את העמוד הראשי וגם כל קישור לדף תוכן — מי שמשתף דף
+                 שחקן היה פותח את המשחק במקום את הדף.
+
+                 /join     — הזמנה לחדר קרב
+                 /<slug>/  — שיתוף הפתרון היומי. חמשת המועדונים, וזה
+                             גם הדף שהאתר מגיש ממילא.
+
+                 **מפתח אחד בלבד, ולא גם הדומיין הישן.** אנדרואיד מאמת
+                 כל מפתח שמוצהר, ואם אחד נכשל — **כל** ה-App Links של
+                 האפליקציה נכשלים. הדומיין הישן מופנה ב-301 ולכן לא
+                 יוכל להגיש assetlinks.json, ולהצהיר עליו היה מפיל את
+                 האימות כולו. קישורים ישנים ימשיכו לעבוד בדפדפן. -->
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https"
-                      android:host="sportsdel.techbynoam.com"
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
                       android:pathPrefix="/join" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/beitar" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/hapoel-bs" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/hapoel-ta" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/maccabi-haifa" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/maccabi-ta" />
             </intent-filter>
         </activity>
 

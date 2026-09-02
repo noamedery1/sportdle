@@ -39,7 +39,7 @@ SportDle · חידה #34
 החידה של היום כבר באוויר. שמונה ניסיונות.
 חמישה מועדונים, לכל אחד מאגר ולוח משלו.
 
-https://sportsdel.techbynoam.com/
+https://sportdle.techbynoam.com/
 ```
 
 לבדיקה בלי לפרסם:
@@ -171,7 +171,7 @@ cron שנכשל כל יום הופך לרעש שמפסיקים להסתכל על
 ```bash
 node tools/clip-hook.mjs
 node tools/clip-hook.mjs --club=beitar --puzzle=2 --out=hook.mp4
-node tools/clip-hook.mjs --base=https://sportsdel.techbynoam.com   # מול החי
+node tools/clip-hook.mjs --base=https://sportdle.techbynoam.com   # מול החי
 ```
 
 15.000 שניות בדיוק, 1080×1920. שונה מ-`clip.mjs`: שם המטרה להסביר

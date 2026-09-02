@@ -7,7 +7,7 @@
     "og:image, rel=canonical, קישורי השיתוף, הפוסט היומי והקליפים.",
     "שינוי כאן משנה את כולם — אין דומיין מקודד בשום מקום אחר.",
     "בלי / בסוף. אם המשחק יוגש תחת נתיב ולא בשורש, מוסיפים אותו כאן",
-    "(למשל https://sportsdel.techbynoam.com/sportdle) וזה הכל."
+    "(למשל https://sportdle.techbynoam.com/sportdle) וזה הכל."
   ],
   "_androidAppLinks": [
     "App Links — קישור הזמנה לחדר נפתח באפליקציה ולא בדפדפן.",
@@ -34,7 +34,7 @@
     "package": "com.techbynoam.sportdle",
     "sha256": []
   },
-  "siteUrl": "https://sportsdel.techbynoam.com",
+  "siteUrl": "https://sportdle.techbynoam.com",
   "start": [
     2026,
     8,
@@ -42,7 +42,7 @@
   ],
   "maxGuesses": 8,
   "build": "s3",
-  "ogImage": "https://sportsdel.techbynoam.com/og.png",
+  "ogImage": "https://sportdle.techbynoam.com/og.png",
   "shareStyle": "safe",
   "shuffleSeed": 20260825,
   "analyticsUrl": "https://script.google.com/macros/s/AKfycbzE5Zr3VV92MPq_xQ9uU4N1uWdBxnP28be4MIFuhF_-qtAyIsDERHfmAb7gHuEuehUV/exec",

@@ -123,20 +123,20 @@ worldfootball מחזיר שם באנגלית, כל השאר בעברית. שלו
 
 | כתובת | מה קורה | אחסון |
 |---|---|---|
-| `sportsdel.techbynoam.com/` | SportDle. הקנוני. | `sportdel:*` |
-| `sportsdel.techbynoam.com/beitardle/` | ביתרדל ההיסטורי, `noindex` | `beitardle:*` |
+| `sportdle.techbynoam.com/` | SportDle. הקנוני. | `sportdel:*` |
+| `sportdle.techbynoam.com/beitardle/` | ביתרדל ההיסטורי, `noindex` | `beitardle:*` |
 | `beitardle.up.railway.app/` | SportDle — **היה** ביתרדל עד ספט׳ 2026 | `sportdel:*` |
 | `beitardle.up.railway.app/sportdle/` | SportDle, אותו תוכן | אותו origin |
 
-**הדומיין הקנוני הוא `sportsdel.techbynoam.com`**, והוא כתוב במקום
+**הדומיין הקנוני הוא `sportdle.techbynoam.com`**, והוא כתוב במקום
 אחד בלבד — `siteUrl` ב-`config/site.json`. ממנו נגזרים `og:url`,
 `og:image`, `rel=canonical`, קישורי השיתוף, הפוסט היומי והקליפים.
 
 הכתובות של Railway בטבלה למעלה עוד מגישות תנועה, ולכן צריך **301
 מהן לקנוני**. המקום לזה הוא Cloudflare ולא הקוד: הייצור הוא קבצים
 סטטיים, ואין בו אפליקציה שתריץ middleware. חוק אחד ב-Cloudflare —
-Redirect Rule על `http.host ne "sportsdel.techbynoam.com"` →
-`concat("https://sportsdel.techbynoam.com", http.request.uri)`,
+Redirect Rule על `http.host ne "sportdle.techbynoam.com"` →
+`concat("https://sportdle.techbynoam.com", http.request.uri)`,
 301 — מכסה את כל הדומיינים בלי לגעת בקוד ובלי סיכון ללופ.
 
 `scripts/serve.mjs` מכיל את אותה הפניה בשביל שרת הפיתוח ובשביל

@@ -245,16 +245,37 @@
     const roomOf = (url) => {
       try { return new URL(url).searchParams.get("room"); } catch (e) { return null; }
     };
-    const go = (raw) => {
+    const goRoom = (raw) => {
       const c = String(raw || "").toUpperCase().replace(/[^A-Z2-9]/g, "").slice(0, 4);
-      if (c.length !== 4) return;
+      if (c.length !== 4) return false;
       /* כבר באותו חדר — בלי זה לחיצה חוזרת על הקישור טוענת מחדש */
-      if (new URLSearchParams(location.search).get("room") === c) return;
+      if (new URLSearchParams(location.search).get("room") === c) return true;
       location.replace(`/?room=${c}`);
+      return true;
     };
-    P.App.addListener("appUrlOpen", (ev) => go(roomOf(ev && ev.url)));
+
+    /* שיתוף הפתרון היומי מקשר ל-/<slug>/ — דף המועדון. באפליקציה
+       פותחים את אותו מועדון דרך ?club=, שהמנוע כבר יודע לקרוא. */
+    const goClub = (url) => {
+      let seg;
+      try { seg = new URL(url).pathname.split("/").filter(Boolean)[0]; }
+      catch (e) { return false; }
+      const known = (window.SPORTDEL && window.SPORTDEL.order) || [];
+      if (!seg || !known.includes(seg)) return false;
+      if (new URLSearchParams(location.search).get("club") === seg) return true;
+      location.replace(`/?club=${encodeURIComponent(seg)}`);
+      return true;
+    };
+
+    const route = (url) => {
+      if (!url) return;
+      if (goRoom(roomOf(url))) return;
+      goClub(url);
+    };
+
+    P.App.addListener("appUrlOpen", (ev) => route(ev && ev.url));
     const launch = await P.App.getLaunchUrl();
-    if (launch && launch.url) go(roomOf(launch.url));
+    if (launch && launch.url) route(launch.url);
   });
 
   /* פתיחה מתוך ההתראה — לא צריך לעשות כלום מלבד לא להיתקע */

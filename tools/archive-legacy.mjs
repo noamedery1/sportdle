@@ -19,6 +19,7 @@
    ============================================================ */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
+import { readJSON } from "../scripts/lib/util.mjs";
 import { join } from "node:path";
 
 const ROOT = process.argv[2];
@@ -82,7 +83,8 @@ console.log(`הועברו ל-${DIR}/: ${moved.join(", ")}`);
    הגרסה שלא נגעו בה נשארת ב-git log. */
 const target = join(ROOT, DIR, "index.html");
 let a = readFileSync(target, "utf8");
-const CANON = "https://sportsdel.techbynoam.com/";
+/* נגזר ולא מקודד — החלפת דומיין לא צריכה לגעת בקובץ הזה */
+const CANON = String(readJSON("config/site.json").siteUrl).replace(/\/*$/, "") + "/";
 const edits = [];
 
 /* 1. הקישור למשחק — מוחלט, כדי שיעבוד מכל נתיב ולתמיד */
