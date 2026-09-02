@@ -95,6 +95,58 @@ GitHub Actions מריץ ראנרים של macOS, ולכן הוא **יכול** ל
 
 ---
 
+## iOS בלי מק
+
+**אין שום שלב שדורש מק.** הנקודה שנראית חוסמת — יצירת תעודת
+החתימה — נפתרת ב-OpenSSL, ואת הבנייה עושה ראנר macOS ב-Actions.
+
+| שלב | איפה | מק? |
+|---|---|---|
+| הרשמה ל-Apple Developer Program (99$/שנה) | דפדפן | לא |
+| יצירת CSR | `openssl` על Windows | לא |
+| Distribution certificate | developer.apple.com | לא |
+| Provisioning profile | developer.apple.com | לא |
+| המרה ל-`.p12` | `openssl` | לא |
+| בנייה וחתימה של `.ipa` | ראנר `macos-latest` | לא |
+| העלאה ל-App Store Connect | `xcrun altool` על הראנר | לא |
+| דף החנות, פרטיות, דירוג גיל, הגשה | דפדפן | לא |
+| **בדיקה על מכשיר** | **צריך אייפון** | — |
+
+**ה-CSR בלי מק** (זה מה שנראה כמו מחסום ואינו):
+```
+openssl genrsa -out ios_dist.key 2048
+openssl req -new -key ios_dist.key -out ios_dist.csr   -subj "/emailAddress=techbynoam@gmail.com/CN=TechByNoam/C=IL"
+```
+מעלים את ה-`.csr` ל-developer.apple.com, מורידים `ios_distribution.cer`,
+וממירים:
+```
+openssl x509 -in ios_distribution.cer -inform DER -out dist.pem -outform PEM
+openssl pkcs12 -export -inkey ios_dist.key -in dist.pem -out ios_dist.p12
+```
+ה-`.p12` והסיסמה הם שני הסודות שנכנסים ל-GitHub, בדיוק כמו
+ה-keystore של אנדרואיד.
+
+**להעלאה מה-CI עדיף App Store Connect API key** (Issuer ID,
+Key ID וקובץ `.p8`) ולא Apple ID עם סיסמה: הוא לא נשבר על
+אימות דו-שלבי ולא פג בכל שינוי סיסמה.
+
+**מה שכן דורש מכשיר iOS:** בדיקה אמיתית. שלוש דרכים בלי לקנות
+אייפון —
+1. **TestFlight אצל חבר** — מעלים ל-TestFlight מה-CI, החבר
+   מתקין ובודק. חינם, וזו הדרך הטובה ביותר.
+2. **חוות מכשירים בענן** (BrowserStack App Live וכדומה) —
+   מתקינים `.ipa` על מכשיר אמיתי מהדפדפן. בתשלום, זול ליום.
+3. **הסימולטור ב-CI** — `ios.yml` מאתחל סימולטור, מתקין,
+   מריץ ומצלם ל-artifact `sportdle-ios-sim`. **תופס** פריסה
+   שנשברה, נכס חסר ושגיאת JS. **לא תופס** מקלדת, רטט, גיליון
+   שיתוף או התראות — כלומר לא את מה שכלל 4.2 בודק.
+
+**⚠ חסר ל-Universal Links:** אנדרואיד עובד דרך
+`/.well-known/assetlinks.json`, שקיים. **לאפל צריך
+`/.well-known/apple-app-site-association`**, והוא **לא נוצר
+עדיין** — הוא דורש את ה-Team ID מהחשבון בתשלום. בלעדיו קישורי
+הזמנה ושיתוף ייפתחו בדפדפן ולא באפליקציה ב-iOS.
+
 ## לפני הגשה לחנויות
 
 - [ ] **גוגל:** חשבון אישי חדש נדרש בדיקה סגורה עם 12 בודקים
