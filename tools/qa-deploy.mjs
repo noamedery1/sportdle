@@ -142,19 +142,59 @@ if (existsSync(arc)) {
    `node src-repo/tools/qa-deploy.mjs deploy-repo`, ואז cwd הוא
    התיקייה שמעל שני המאגרים. */
 const PUBLISHED = new URL("../config/published-beitar.json", import.meta.url);
+
+/* המאגר עבר מ-`const CLUBS = {…}` שבמנוע ל-window.SD ש-boot.js
+   מציב, ולכן ה-regex הקודם הפסיק להתאים והבדיקה הזאת נכשלה —
+   **וזה היה נכון.** בדיקה שאיבדה את מקור האמת שלה חייבת להיכשל
+   ולא לעבור בשקט: אחרת החידות שפורסמו היו חשופות בלי שאף אחד
+   יידע. הפריסה נחסמה עד שהיא הוסבה, וכך צריך להיות.
+
+   עכשיו יש **שני** מקורות לאמת אותם, ולכן הבדיקה חזקה מקודם:
+   המוטבע בעמוד הוא מה שמריץ את המשחק, ו-players.json הוא מה
+   שהאפליקציה מושכת. הם חייבים להיות זהים — אחרת מי שמשחק
+   באתר ומי שמשחק באפליקציה יראו לוחות שונים. */
+let S = null;
+try { S = JSON.parse(readFileSync(PUBLISHED, "utf8")); }
+catch (e) { fail(`לא נקרא config/published-beitar.json: ${e.message}`); }
+
+/* 1. הלוח שמוטבע בעמוד — מה שמריץ את המשחק */
+let pageSched = null;
 if (neu) {
-  const m = neu.match(/const CLUBS\s*=\s*(\{[\s\S]*?\});\nconst CLUB_ORDER/);
-  const C = m ? new Function(`return ${m[1]}`)() : null;
-  let S = null;
-  try { S = JSON.parse(readFileSync(PUBLISHED, "utf8")); }
-  catch (e) { fail(`לא נקרא config/published-beitar.json: ${e.message}`); }
-  if (!C) fail("לא נמצא CLUBS בעמוד — אין מה להשוות");
-  else if (S) {
-    const b = C.beitar.schedule || [];
-    const i = S.findIndex((n, k) => b[k] !== n);
-    if (i !== -1) fail(`חידה #${i + 1} שפורסמה השתנתה: "${S[i]}" ← "${b[i]}"`);
-    else pass(`${S.length} החידות שפורסמו לא זזו`);
+  const m = neu.match(/var BUNDLED\s*=\s*(\{[\s\S]*?\});/);
+  let C = null;
+  if (m) { try { C = new Function(`return ${m[1]}`)(); } catch (e) {} }
+  if (!C || !C.clubs || !C.clubs.beitar)
+    fail("לא נמצא המאגר המוטבע (var BUNDLED) בעמוד — אין מה להשוות");
+  else {
+    pageSched = C.clubs.beitar.schedule || [];
+    if (S) {
+      const i = S.findIndex((n, k) => pageSched[k] !== n);
+      if (i !== -1) fail(`חידה #${i + 1} שפורסמה השתנתה: "${S[i]}" ← "${pageSched[i]}"`);
+      else pass(`${S.length} החידות שפורסמו לא זזו (המוטבע בעמוד)`);
+    }
   }
+}
+
+/* 2. players.json — מה שהאפליקציה מושכת. חייב להיות בשני
+      ההעתקים, ולהיות זהה למוטבע. */
+for (const dir of ["", "sportdle"]) {
+  const label = dir ? `${dir}/players.json` : "players.json";
+  const p = join(ROOT, dir, "players.json");
+  if (!existsSync(p)) { fail(`${label} · חסר — האפליקציה לא תמצא עדכוני נתונים`); continue; }
+  let J = null;
+  try { J = JSON.parse(readFileSync(p, "utf8")); }
+  catch (e) { fail(`${label} · JSON שבור: ${e.message}`); continue; }
+  if (!J.v || !J.order || !J.clubs || !J.clubs.beitar) { fail(`${label} · מבנה חסר`); continue; }
+  const b = J.clubs.beitar.schedule || [];
+  if (S) {
+    const i = S.findIndex((n, k) => b[k] !== n);
+    if (i !== -1) { fail(`${label} · חידה #${i + 1} שפורסמה השתנתה: "${S[i]}" ← "${b[i]}"`); continue; }
+  }
+  if (pageSched && JSON.stringify(b) !== JSON.stringify(pageSched)) {
+    fail(`${label} · הלוח שונה מזה שמוטבע בעמוד — אתר ואפליקציה יראו משחקים שונים`);
+    continue;
+  }
+  pass(`${label} · v=${J.v} · זהה למוטבע`);
 }
 
 /* ---------- דוח ---------- */
