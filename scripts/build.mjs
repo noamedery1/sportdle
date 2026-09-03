@@ -280,13 +280,35 @@ const subst = {
   __BUILD__:         site.build,
   __SHARE_STYLE__:   site.shareStyle,
   __ANALYTICS_URL__: site.analyticsUrl || "",
-  __CLUBS__:         JSON.stringify(data),
-  __CLUB_ORDER__:    JSON.stringify(order),
+  /* __CLUBS__ ו-__CLUB_ORDER__ אינם כאן יותר: engine.js קורא
+     מ-window.SD, ש-boot.js מציב. ראה DATA למטה. */
   __RESET__:         JSON.stringify(site.reset || {}),
   __NAT_HE__:        JSON.stringify(NAT_HE),
   __REGION__:        JSON.stringify(REGION)
 };
 for (const [k, v] of Object.entries(subst)) engine = engine.split(k).join(v);
+
+/* ---------- מאגר השחקנים ----------
+   נכתב **גם** כקובץ נפרד ל-dist וגם מוטבע ב-boot.js:
+
+   · המוטבע הוא מה שמריץ את המשחק. הוא מבטיח שהאפליקציה עובדת
+     אופליין ובלי בקשת רשת, וזה גם הטיעון מול כלל 4.2 של אפל.
+   · הנפרד הוא מה שהאפליקציה מושכת ברקע. הוא מה שמאפשר לתקן
+     שם של שחקן או להוסיף שחקן **בלי גרסה חדשה בחנות** —
+     התיקון נכנס לתוקף בפתיחה הבאה של האפליקציה.
+
+   v הוא מזהה הבנייה מ-config/site.json. boot.js משתמש בו כדי
+   לדעת אם יש חדש, וכדי לזרוק מחסן שנגזר מגרסה ארוזה אחרת. */
+const DATA = { v: site.build, order, clubs: data };
+
+/* הקובץ עצמו נכתב רק אחרי rmSync("dist") שבהמשך — כתיבה כאן
+   הייתה נמחקת בשקט, וזה לא מפיל שום בדיקה. */
+
+let boot = readText("src/boot.js");
+boot = boot
+  .split("__BUNDLED__").join(JSON.stringify(DATA))
+  .split("__DATA_URL__").join(JSON.stringify(
+    (site.siteUrl.endsWith("/") ? site.siteUrl : site.siteUrl + "/") + "players.json"));
 
 /* לשונית הקרב. נטענת כ-<script type="module"> — ה-SDK של פיירבייס
    יורד רק כשנכנסים ללשונית, אז מי שמשחק רק את החידה לא משלם עליו. */
@@ -319,6 +341,7 @@ html = html
     founder: { "@type": "Person", name: "נועם אדרי" },
     sameAs: ["https://techbynoam.com/"]
   }))
+  .split("__BOOT__").join(boot)
   .split("__ENGINE__").join(engine)
   /* הדבק המקומי של Capacitor. נכנס לאותו קובץ ולא כסקריפט חיצוני,
      כדי שהאפליקציה תעבוד אופליין בלי בקשה נוספת. */
@@ -343,6 +366,12 @@ if (problems.length) {
 /* ---------- כתיבה ---------- */
 rmSync("dist", { recursive: true, force: true });
 writeText("dist/index.html", html);
+
+/* מאגר השחקנים כקובץ נפרד. **חייב להיות אחרי rmSync** — הוא
+   הקובץ שהאפליקציה מושכת ברקע, וזה מה שמאפשר תיקון נתונים
+   בלי גרסה חדשה בחנות. השם אינו clubs.json: הוא תפוס על ידי
+   מניפסט הסטטיסטיקות שנכתב בהמשך. */
+writeJSON("dist/players.json", DATA);
 if (existsSync("src/static"))
   cpSync("src/static", "dist", { recursive: true,
     filter: src => !/README.md$/.test(src) });   // התיעוד נשאר במקור
