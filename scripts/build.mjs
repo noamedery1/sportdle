@@ -5,6 +5,7 @@
    אזהרה — קובץ שגוי לא נכתב, כי אחרי שהוא באוויר כבר מאוחר.
    ============================================================ */
 import { rmSync, existsSync, cpSync } from "node:fs";
+import { createHash } from "node:crypto";
 import {
   parseArgs, pickClubs, readJSON, readText, writeText, writeJSON,
   log, warn, die, normName, season, nameVariants
@@ -297,9 +298,19 @@ for (const [k, v] of Object.entries(subst)) engine = engine.split(k).join(v);
      שם של שחקן או להוסיף שחקן **בלי גרסה חדשה בחנות** —
      התיקון נכנס לתוקף בפתיחה הבאה של האפליקציה.
 
-   v הוא מזהה הבנייה מ-config/site.json. boot.js משתמש בו כדי
-   לדעת אם יש חדש, וכדי לזרוק מחסן שנגזר מגרסה ארוזה אחרת. */
-const DATA = { v: site.build, order, clubs: data };
+   ---------- v נגזר מהנתונים, ולא מ-site.build ----------
+   boot.js משתמש ב-v לשתי הכרעות: "האם יש חדש", ו"האם המחסן
+   נגזר מאותה גרסה ארוזה". לכן הוא **חייב להשתנות בכל שינוי
+   נתונים** — ו-site.build הוא תווית ידנית שאינה משתנה כשמתקנים
+   שם של שחקן. עם התווית לבדה boot.js היה אומר "אין חדש" ומדלג
+   על כל תיקון עתידי, כלומר המכניזם היה מנוטרל בשקט אחרי
+   הפריסה הראשונה.
+
+   גיבוב של המאגר עצמו משתנה בדיוק כשהמאגר משתנה, ונשאר זהה
+   בין בניות של אותם נתונים — כך שאין רענון מדומה בכל פריסה. */
+const body = JSON.stringify({ order, clubs: data });
+const hash = createHash("sha1").update(body).digest("hex").slice(0, 10);
+const DATA = { v: `${site.build}-${hash}`, order, clubs: data };
 
 /* הקובץ עצמו נכתב רק אחרי rmSync("dist") שבהמשך — כתיבה כאן
    הייתה נמחקת בשקט, וזה לא מפיל שום בדיקה. */
