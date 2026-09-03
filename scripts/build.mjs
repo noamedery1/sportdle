@@ -7,7 +7,7 @@
 import { rmSync, existsSync, cpSync } from "node:fs";
 import {
   parseArgs, pickClubs, readJSON, readText, writeText, writeJSON,
-  log, warn, die, normName, season
+  log, warn, die, normName, season, nameVariants
 } from "./lib/util.mjs";
 import { writeClubPages } from "./lib/clubpages.mjs";
 import { writeContentPages } from "./lib/content.mjs";
@@ -244,11 +244,27 @@ for (const c of clubs) {
     counts: { players: playable.length,
               targets: playable.filter(p => p.target).length,
               hidden, unconfirmed: unconf },
-    players: playable.map(p => ({
-      he: p.he, pos: p.pos, nat: p.nat, born: p.born,
-      spells: p.spells, titles: p.titles, target: p.target,
-      ...(p.aliases?.length ? { aliases: p.aliases } : {})
-    })),
+    /* aliases הם מה שהחיפוש במשחק בודק מלבד השם עצמו
+       (engine.js: `p.aliases.some(a => norm(a).includes(nq))`).
+
+       **צורות הכינוי חייבות להיכנס לכאן.** טבלת nicknames.json
+       שימשה עד כה רק לאיחוד מקורות בזמן enrich, ולכן שחקן
+       שנרשם בשמו החוקי לא נמצא כשאוהד הקליד את הכינוי:
+       "יצחק כהן" במאגר מול "איציק כהן" שהוקלד. 127 שחקנים
+       בבריכת התשובות היו במצב הזה — בהם אלי אוחנה, דוד אמסלם
+       ושמואל לוי. בודק דיווח על זה כ"חסר שחקן", וזה היה
+       הדיווח הנכון: השחקן היה שם ולא היה ניתן למצוא אותו.
+
+       nameVariants מחליף **רק את השם הפרטי** ולפי טבלה סגורה,
+       ולכן הוא אינו יכול לזווג "אריאל עוז" ל"אריאל הרוש". */
+    players: playable.map(p => {
+      const al = [...new Set([...(p.aliases || []), ...nameVariants(p.he)])];
+      return {
+        he: p.he, pos: p.pos, nat: p.nat, born: p.born,
+        spells: p.spells, titles: p.titles, target: p.target,
+        ...(al.length ? { aliases: al } : {})
+      };
+    }),
     schedule: d.schedule
   };
 }
