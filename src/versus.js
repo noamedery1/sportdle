@@ -860,7 +860,14 @@ ${roomLink()}
       qt.classList.remove("hide");
       c.classList.add("hide");
       $("#answer").placeholder = "המספר שלך";
+      /* שלושתם, ולא inputmode לבד. באנדרואיד inputmode מספיק,
+         אבל **באייפון הוא לבדו נותן מקלדת מלאה עם שורת מספרים**
+         ולא לוח מקשים — ספארי מסתכל על pattern כדי להחליט.
+         enterkeyhint הופך את מקש האישור ל"שליחה" במקום "מעבר",
+         וזה מה שמפעיל את ההגשה. */
       $("#answer").setAttribute("inputmode", "numeric");
+      $("#answer").setAttribute("pattern", "[0-9]*");
+      $("#answer").setAttribute("enterkeyhint", "send");
       closeSugg();
       return;
     }
@@ -868,6 +875,8 @@ ${roomLink()}
     c.classList.remove("hide");
     $("#answer").placeholder = "מי השחקן?";
     $("#answer").setAttribute("inputmode", "text");
+    $("#answer").removeAttribute("pattern");
+    $("#answer").removeAttribute("enterkeyhint");
 
     cluesOf(POOL[rounds[idx]]).forEach(([k,v]) => {
       const d = document.createElement("div");
