@@ -434,6 +434,9 @@ html{scrollbar-gutter:stable}
 #versusView .clubpick button.on{background:var(--brand);color:var(--ink);
   border-color:var(--brand);font-weight:900}
 #versusView .pickhint{font-size:12px;color:var(--dim);margin-top:7px}
+#versusView .playexit{display:flex;gap:8px;margin-top:12px}
+#versusView .playexit button{flex:1;margin:0;font-size:13.5px;padding:10px}
+#versusView .playexit button[hidden]{display:none}
 #versusView .modepick button{flex:1;justify-content:center;text-align:center}
 /* השאלה עצמה — היא כל מה שיש בסיבוב הזה, ולכן היא גדולה */
 #versusView .qtext{background:var(--ink-3);border:1px solid var(--line);
@@ -690,6 +693,15 @@ __APP_BANNER_CSS__
     </div>
     <div class="card">
       <div class="board" id="liveBoard"></div>
+      <!-- מוצא ההצלה. עד כאן היה כפתור יציאה רק בלובי, וברגע
+           שהמשחק התחיל לא הייתה שום דרך לצאת ממנו — לא לשחקן
+           ולא למנהל. חדר שנתקע השאיר את כולם לכודים, וסגירת
+           האפליקציה לא עזרה כי resume מחזיר לאותו חדר.
+           הכפתורים האלה זמינים תמיד, גם באמצע סיבוב. -->
+      <div class="playexit">
+        <button class="ghost" id="btnEndGame" hidden>סיום המשחק</button>
+        <button class="ghost" id="btnLeavePlay">יציאה מהחדר</button>
+      </div>
     </div>
   </section>
 

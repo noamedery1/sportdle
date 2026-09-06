@@ -569,11 +569,16 @@ async function startVersus(){
     document.body.appendChild(a); a.click(); a.remove();
   };
 
+  /* ההזמנה חייבת לתאר את המשחק שבאמת ייפתח. הנוסח היה קבוע —
+     "מי מזהה את השחקן הכי מהר" — ונשלח גם למי שהוזמן למשחק
+     מספרים, שבו אין שחקן לזהות ואין מרוץ. מי שנכנס קיבל משהו
+     אחר לגמרי ממה שהובטח לו. */
   const inviteText = () =>
 `⚫🟡 בואו לדו־קרב ב${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"}
 
-מי מזהה את השחקן הכי מהר?
-הרמזים נחשפים לכולם יחד — והראשון שפוגע לוקח את הסיבוב.
+${isQuiz()
+  ? `שאלה שאף אחד לא באמת יודע, וכל אחד עונה מספר.\nהכי קרוב לתשובה לוקח את הסיבוב.`
+  : `מי מזהה את השחקן הכי מהר?\nהרמזים נחשפים לכולם יחד — והראשון שפוגע לוקח את הסיבוב.`}
 
 פתחתי חדר. תלחצו וזה נכנס לבד 👇
 ${roomLink()}
@@ -581,6 +586,17 @@ ${roomLink()}
 (אם צריך ידנית — קוד החדר: ${room})`;
 
   $("#btnLeave").addEventListener("click", leaveRoom);
+  $("#btnLeavePlay").addEventListener("click", leaveRoom);
+
+  /* מנהל החדר יכול לסגור משחק תקוע בלי שכולם ייצאו: status=done
+     מעביר את כולם למסך הסיום, ושם כבר יש "סיבוב חדש". */
+  $("#btnEndGame").addEventListener("click", async () => {
+    if (!room || !isHost) return;
+    const b = $("#btnEndGame");
+    b.disabled = true;
+    try { await update(roomRef, { status: "done" }); }
+    catch (e) { b.disabled = false; }
+  });
   
   /* וואטסאפ ישירות. זה המסלול שבו הזמנה באמת נשלחת, ובלעדיו
      נשאר רק "הועתק" — והמזמין צריך לפתוח וואטסאפ ולהדביק לבד. */
@@ -785,7 +801,13 @@ ${roomLink()}
       return;
     }
     if (state.status === "done"){ show("scEnd"); drawBoard("#endBoard"); stopTick(); return; }
-    if (state.status === "playing") runRound();
+    if (state.status === "playing"){
+      /* "סיום המשחק" למנהל בלבד — הוא היחיד שיכול לפתוח סיבוב
+         חדש אחר כך, ולשחקן רגיל הכפתור היה נראה כמו יציאה. */
+      const eg = $("#btnEndGame");
+      if (eg){ eg.hidden = !isHost; eg.disabled = false; }
+      runRound();
+    }
   }
   
   const esc = s => String(s).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
@@ -813,7 +835,15 @@ ${roomLink()}
     const res    = (state.results || {})[idx] || null;
     if (!answer){ finishGame(); return; }
   
-    if (res){ showReveal(answer, res); return; }
+    /* סיבוב שכבר נסגר — מציגים את החשיפה **ומתזמנים קידום**.
+       זו נקודת ההצלה: גם אם מי שסגר אותו נעלם, כל מי שנמצא כאן
+       יקדם. מי שנכנס לחדר תקוע מקדם כמעט מיד. */
+    if (res){
+      showReveal(answer, res);
+      const age = now() - (res.at || 0);
+      scheduleAdvance(idx, age > 12000 ? 600 : 4200);
+      return;
+    }
   
     show("scPlay");
     $("#rNum").textContent = idx + 1;
@@ -901,16 +931,38 @@ ${roomLink()}
       return { winner: winnerId || null, pts, at: serverTimestamp() };
     });
     if (!out.committed) return;
-  
+
     if (winnerId){
       await runTransaction(ref(db, roomPath(room) + `/players/${winnerId}/score`),
                            s => (s || 0) + pts);
     }
-    // כל לקוח שמגיע לכאן ראשון מקדם — הטרנזקציה מונעת קפיצה כפולה
-    setTimeout(() => {
+    scheduleAdvance(idx);
+  }
+
+  /* ---------- קידום הסיבוב, ובלי נקודת כשל יחידה ----------
+     **הבאג שזה מתקן, והוא נעל משחק לגמרי:** הקידום היה setTimeout
+     של 4.2 שניות **בתוך הדפדפן שסגר את הסיבוב**. מי שסגר את
+     האפליקציה או העביר אותה לרקע בדיוק בחלון הזה השאיר את החדר
+     עם results/<n> קיים ו-round תקוע על n — לנצח. פתיחה מחדש לא
+     עזרה: כל לקוח ראה שהסיבוב נסגר, הציג את החשיפה, ואיש לא קידם.
+     במשחק המספרים זה קרה יותר, כי שם הסגירה היא על טיימר ולא על
+     מעשה של משתמש, ואז סביר שהמכשיר כבר לא בחזית.
+
+     עכשיו **כל לקוח שרואה סיבוב סגור מתזמן קידום**, והטרנזקציה
+     מונעת קפיצה כפולה. די בלקוח אחד ששרד. ואם כולם יצאו — הראשון
+     שנכנס בחזרה מקדם מיד, כי הטיימר שלו מתחיל באפס.
+
+     המפה שומרת שלא נערום עשרה טיימרים על אותו סיבוב. */
+  const advTimers = new Map();
+  function scheduleAdvance(idx, delay){
+    if (advTimers.has(idx)) return;
+    advTimers.set(idx, setTimeout(() => {
+      advTimers.delete(idx);
+      if (!room) return;
       runTransaction(ref(db, roomPath(room) + `/round`), r2 => (r2 === idx ? idx + 1 : undefined))
-        .then(() => update(roomRef, { roundStartedAt: serverTimestamp() }));
-    }, 4200);
+        .then(res => { if (res && res.committed) update(roomRef, { roundStartedAt: serverTimestamp() }); })
+        .catch(() => {});
+    }, delay == null ? 4200 : delay));
   }
   
   /* ============================================================
@@ -943,9 +995,16 @@ ${roomLink()}
   }
 
   async function settleQuiz(idx){
-    const rounds = pickRounds(seedOf(), state.settings.rounds);
-    const q = quizOf(rounds[idx]);
-    if (!q) return;
+    let rounds, q;
+    try {
+      rounds = pickRounds(seedOf(), state.settings.rounds);
+      q = quizOf(rounds[idx]);
+    } catch (e) { q = null; }
+    /* **בלי סגירה בלי מנצח כאן המשחק היה ננעל.** קודם הייתה כאן
+       יציאה שקטה כששאלה לא נמצאה — הטיימר כבר עצר, אף אחד לא
+       סגר את הסיבוב, ואף אחד לא קידם. סיבוב בלי שאלה הוא באג,
+       אבל הוא לא סיבה לתקוע את כל החדר. */
+    if (!q) { closeRound(idx, null, 0); return; }
     let answers = {};
     try { answers = (await get(ref(db, roomPath(room) + `/answers/${idx}`))).val() || {}; }
     catch (e) { /* בלי תשובות הסיבוב פשוט נסגר בלי מנצח */ }
