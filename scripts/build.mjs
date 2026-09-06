@@ -266,13 +266,21 @@ for (const c of clubs) {
        ולכן הוא אינו יכול לזווג "אריאל עוז" ל"אריאל הרוש". */
     players: playable.map(p => {
       const al = [...new Set([...(p.aliases || []), ...nameVariants(p.he)])];
-      /* אזרחות נוספת מ-config/nat-extra.json. nats נכתב רק כשיש
-         באמת יותר מאחת — אחרת זו כפילות של nat בכל שורה במאגר,
-         והמטען נשלח לכל שחקן בכל פתיחה של המשחק. */
-      const extra = (NAT_EXTRA[p.he] || []).filter(c => /^[A-Z]{2}$/.test(c));
-      const nats = [...new Set([p.nat, ...extra].filter(Boolean))];
+      /* ---------- לאום מ-config/nat-extra.json ----------
+         הקובץ **דורס** ואינו מוסיף. זה נדרש כי חלק מהרשומות שם
+         אינן אזרחות כפולה אלא תיקון: יניב אלול, בן לוז וניר
+         רחמין נולדו בישראל ונשאבו כניגרים ואוקראיני. "הוספה"
+         הייתה משאירה את הלאום השגוי צהוב לצד הנכון, כלומר רמז
+         שקרי — וזה גרוע מהמצב הקודם.
+
+         nats נכתב רק כשיש באמת יותר מאחד; אחרת זו כפילות של nat
+         בכל שורה, והמטען נשלח לכל שחקן בכל פתיחה של המשחק. */
+      const ov = (NAT_EXTRA[p.he] || []).filter(c => /^[A-Z]{2}$/.test(c));
+      const nats = ov.length ? [...new Set(ov)]
+                             : (p.nat ? [p.nat] : []);
+      const nat = nats[0] || p.nat;
       return {
-        he: p.he, pos: p.pos, nat: p.nat, born: p.born,
+        he: p.he, pos: p.pos, nat, born: p.born,
         spells: p.spells, titles: p.titles, target: p.target,
         ...(nats.length > 1 ? { nats } : {}),
         ...(al.length ? { aliases: al } : {})
