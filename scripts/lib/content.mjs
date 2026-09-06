@@ -264,8 +264,15 @@ function compareRow(g, a, NAT_HE, REGION) {
   const out = [];
   out.push({ v: POS_HE[g.pos] || "?",
     s: g.pos === a.pos ? "hit" : (Math.abs(gi - ai) === 1 ? "near" : "miss") });
-  out.push({ v: NAT_HE[g.nat] || g.nat,
-    s: g.nat === a.nat ? "hit" : (REGION[g.nat] && REGION[g.nat] === REGION[a.nat] ? "near" : "miss") });
+  /* חפיפת אזרחויות, כמו במנוע. ראה config/nat-extra.json. */
+  const gn = (g.nats && g.nats.length) ? g.nats : [g.nat].filter(Boolean);
+  const an = (a.nats && a.nats.length) ? a.nats : [a.nat].filter(Boolean);
+  const shared = gn.find(n => an.includes(n));
+  const nearNat = !shared &&
+    gn.some(x => REGION[x] && an.some(y => REGION[x] === REGION[y]));
+  const shownNat = shared || gn[0];
+  out.push({ v: NAT_HE[shownNat] || shownNat,
+    s: shared ? "hit" : (nearNat ? "near" : "miss") });
   const gd = af - gf;
   out.push({ v: season(gf) + (gd === 0 ? "" : gd > 0 ? " ↑" : " ↓"),
     s: gd === 0 ? "hit" : (Math.abs(gd) <= 3 ? "near" : "miss") });

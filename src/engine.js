@@ -105,6 +105,9 @@ function normalize(p){
     name: p.he || p.name,
     pos:  p.pos,
     nat:  p.nat,
+    /* nats קיים רק למי שיש לו יותר מאזרחות אחת — ראה
+       config/nat-extra.json ואת ההצלבה ב-compare. */
+    nats: (p.nats && p.nats.length) ? p.nats : (p.nat ? [p.nat] : []),
     spells,
     aliases: p.aliases || [],
     born: p.born || null,
@@ -143,8 +146,21 @@ function compare(g, a){
   out.push({k:"עמדה", v:POS_HE[g.pos]||g.pos||"?",
             s: g.pos && g.pos===a.pos ? "hit" : (g.pos && Math.abs(gi-ai)===1 ? "near" : "miss")});
 
-  out.push({k:"לאום", v:NAT_HE[g.nat]||g.nat||"?",
-            s: g.nat===a.nat ? "hit" : (REGION[g.nat]&&REGION[g.nat]===REGION[a.nat] ? "near" : "miss")});
+  /* ---------- לאום, כשיש יותר מאחד ----------
+     לשחקן יכולות להיות כמה אזרחויות, ובחירה באחת מהן תמיד
+     שגויה למישהו: סטיבן כהן נולד בצרפת ושיחק בישראל כמקומי,
+     ו"צרפת" בלבד קרא לו זר. לכן הלאום הוא **רשימה**, וההצלבה
+     היא חפיפה: די באזרחות משותפת אחת כדי שהתא ייצבע.
+
+     והתא מציג את הלאום ש**התאים**, לא את הראשון ברשימה. תא
+     צהוב שכתוב בו "צרפת" מול תשובה ישראלית נראה כמו באג. */
+  const gn = g.nats, an = a.nats;
+  const shared = gn.find(n => an.includes(n));
+  const nearNat = !shared &&
+    gn.some(x => REGION[x] && an.some(y => REGION[x] === REGION[y]));
+  const shown = shared || gn[0];
+  out.push({k:"לאום", v:NAT_HE[shown]||shown||"?",
+            s: shared ? "hit" : (nearNat ? "near" : "miss")});
 
   const gd = a.from - g.from;
   out.push({k:"עונה 1", v:season(g.from), ar: gd===0 ? "" : (gd>0?"↑":"↓"),

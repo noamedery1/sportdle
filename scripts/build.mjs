@@ -17,6 +17,12 @@ const args  = parseArgs();
 const clubs = pickClubs(args);
 const site  = readJSON("config/site.json");
 
+/* אזרחות נוספת לשחקנים עם יותר מדרכון אחד. המפתחות שמתחילים
+   ב-"_" הם תיעוד בתוך הקובץ עצמו ואינם שחקנים. */
+const NAT_EXTRA = Object.fromEntries(
+  Object.entries(readJSON("config/nat-extra.json"))
+    .filter(([k, v]) => !k.startsWith("_") && Array.isArray(v)));
+
 /* ============================================================
    טבלאות תרגום שמשותפות לכל המועדונים
    ============================================================ */
@@ -260,9 +266,15 @@ for (const c of clubs) {
        ולכן הוא אינו יכול לזווג "אריאל עוז" ל"אריאל הרוש". */
     players: playable.map(p => {
       const al = [...new Set([...(p.aliases || []), ...nameVariants(p.he)])];
+      /* אזרחות נוספת מ-config/nat-extra.json. nats נכתב רק כשיש
+         באמת יותר מאחת — אחרת זו כפילות של nat בכל שורה במאגר,
+         והמטען נשלח לכל שחקן בכל פתיחה של המשחק. */
+      const extra = (NAT_EXTRA[p.he] || []).filter(c => /^[A-Z]{2}$/.test(c));
+      const nats = [...new Set([p.nat, ...extra].filter(Boolean))];
       return {
         he: p.he, pos: p.pos, nat: p.nat, born: p.born,
         spells: p.spells, titles: p.titles, target: p.target,
+        ...(nats.length > 1 ? { nats } : {}),
         ...(al.length ? { aliases: al } : {})
       };
     }),
