@@ -247,6 +247,9 @@ for (const c of clubs) {
   data[c.slug] = {
     slug: d.slug, he: d.he, short: d.short, game: d.game,
     colors: d.colors, titles: d.titles,
+    /* טרום-מדינה — ארבע שאלות בסבב המספרים (src/quiz.js) נגזרות
+       ממנו, והוא ~200 בייט לכל המועדונים יחד. */
+    titlesPreState: d.titlesPreState || { league: [], cup: [] },
     coverage: { ...d.coverage, from: Math.min(...spanYears), to: Math.max(...spanYears) },
     counts: { players: playable.length,
               targets: playable.filter(p => p.target).length,
@@ -353,6 +356,9 @@ if (versus) {
 let html = readText("src/template.html");
 html = html
   .split("__VERSUS__").join(versus)
+  /* מחולל שאלות המספרים. נשלח המחולל ולא ~6,000 השאלות — ראה
+     את ההסבר בראש src/quiz.js. */
+  .split("__QUIZ__").join(readText("src/quiz.js", ""))
   /* באנר האפליקציה — מקור אחד עם דפי התוכן. ראה content.mjs. */
   .split("__APP_BANNER__").join(appBannerHtml(site))
   .split("__APP_BANNER_CSS__").join(APP_BANNER_CSS)
