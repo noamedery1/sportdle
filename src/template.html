@@ -514,6 +514,11 @@ select.rc:focus{border-color:var(--brand)}
 #fixStat.ok{color:var(--brand)} #fixStat.bad{color:#E8B77A}
 #fixWas{margin-top:14px;padding:9px 12px;border-radius:var(--r);background:var(--ink-2);
   border:1px solid var(--line);font-size:12.5px;color:var(--dim);line-height:1.5}
+
+/* באנר האפליקציה — אותו CSS בדיוק כמו בדפי התוכן.
+   מקורו ב-scripts/lib/content.mjs, ולא כתוב כאן, כדי שהמשחק
+   והדפים לא ייפרדו. */
+__APP_BANNER_CSS__
 </style>
 </head>
 <body>
@@ -685,6 +690,12 @@ select.rc:focus{border-color:var(--brand)}
   <!-- ניווט קבוע לדפי התוכן. יחסי ולא מוחלט, כי אותו dist מוגש
        גם משורש הדומיין הקנוני וגם מ-/sportdle/ בכתובת הישנה.
        scripts/lib/clubpages.mjs מוסיף ../ בעמודי המועדונים. -->
+  <!-- באנר האפליקציה. הסימון והעיצוב מגיעים מ-scripts/lib/content.mjs,
+       כדי שהמשחק ודפי התוכן יציגו בדיוק את אותו דבר, והמצב נשלט
+       מ-`androidApp` ב-config/site.json. נמחק מעותק האפליקציה
+       ב-tools/app-prepare.mjs. -->
+  __APP_BANNER__
+
   <nav class="sitenav" aria-label="ניווט באתר">
     <a class="navhome" href="./">חידה יומית</a><span>·</span><a
        href="how-to-play/">איך משחקים</a><span>·</span><a

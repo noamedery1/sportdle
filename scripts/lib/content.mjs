@@ -154,12 +154,55 @@ footer .who a{color:#55555E;text-decoration:none}
 footer .who a:hover{color:var(--dim)}
 `;
 
+/* ---------- באנר האפליקציה ----------
+   מקור אחד גם לדפי התוכן וגם למסך המשחק: build.mjs מזריק את
+   שניהם ל-src/template.html דרך __APP_BANNER_CSS__ ו-__APP_BANNER__.
+
+   המצב נשלט מ-`androidApp` ב-config/site.json, ולכן המעבר
+   מ"בקרוב" לקישור הורדה הוא **שינוי קונפיג ופריסה, בלי קוד**.
+
+   var(--brand) עם נפילה: גם דפי התוכן וגם המשחק מגדירים אותו,
+   ובמשחק הוא צבע המועדון — כך הכפתור מתלבש על המועדון שנבחר.
+
+   **הבאנר נמחק מעותק האפליקציה** (tools/app-prepare.mjs). באנר
+   "בקרוב תהיה אפליקציה" בתוך האפליקציה עצמה הוא שטות. */
+export const APP_BANNER_CSS = `
+.appban{margin:26px auto 0;max-width:430px;padding:14px 16px;border-radius:10px;
+  background:var(--ink-2,#141418);border:1px solid var(--line,#2E2E36);
+  text-align:center;line-height:1.6}
+.appban b{display:block;color:var(--text,#F2F2F0);font-size:14.5px;font-weight:700}
+.appban span{display:block;font-size:12.5px;color:var(--dim,#8C8C94);margin-top:3px}
+.appban a{display:inline-block;margin-top:9px;background:var(--brand,#FFC72C);
+  color:#0C0C0E;text-decoration:none;font-weight:700;font-size:13.5px;
+  padding:9px 20px;border-radius:8px}
+`;
+
+export function appBannerHtml(site) {
+  const a = (site && site.androidApp) || {};
+  if (a.state === "off") return "";
+  if (a.state === "live" && a.url)
+    return `<div class="appban" id="appban">
+    <b>אפליקציית אנדרואיד</b>
+    <span>אותו משחק, גם בלי חיבור לאינטרנט.</span>
+    <a href="${a.url}" target="_blank" rel="noopener">להורדה מ-Google Play</a>
+  </div>`;
+  return `<div class="appban" id="appban">
+    <b>אפליקציית אנדרואיד — בקרוב</b>
+    <span>הגרסה בבדיקות. כשהיא תאושר, קישור ההורדה יופיע כאן.</span>
+  </div>`;
+}
+
 /* ---------- הפוטר המשותף ----------
    אותו סימן בדיוק גם במסך המשחק (src/template.html), כדי שדף
    התוכן והמשחק ייראו כמו אתר אחד ולא כמו שני אתרים. */
+/* נקבע פעם אחת ב-writeContentPages. shell() אינו מקבל את site,
+   ויש לו עשרות קריאות — השחלה דרך כולן הייתה שינוי רחב בלי תמורה. */
+let SITE = null;
+
 export function navHtml(depth) {
   const u = up(depth);
-  return `<nav class="sitenav" aria-label="ניווט באתר">` +
+  return appBannerHtml(SITE) +
+    `<nav class="sitenav" aria-label="ניווט באתר">` +
     `<a href="${u}">חידה יומית</a>` +
     NAV.map(n => `<span>·</span><a href="${u}${n.path}/">${n.he}</a>`).join("") +
     `</nav>`;
@@ -208,7 +251,7 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
 <link rel="icon" type="image/png" sizes="32x32" href="${u}icon-32.png">
 <link rel="apple-touch-icon" href="${u}icon-180.png">
 <link rel="stylesheet" href="${u}fonts.css">
-<style>${CSS}</style>
+<style>${CSS}${APP_BANNER_CSS}</style>
 ${ld.map(o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n")}
 </head>
 <body>
@@ -289,6 +332,7 @@ function compareRow(g, a, NAT_HE, REGION) {
    הכתיבה
    ============================================================ */
 export function writeContentPages({ data, order, site, NAT_HE, REGION, maxGuesses }) {
+  SITE = site;                       // navHtml קורא ממנו את מצב הבאנר
   const base = String(site.siteUrl).replace(/\/$/, "");
   const routes = [];
   const add = (path, page) => {

@@ -30,7 +30,7 @@
    ============================================================ */
 import { cpSync, rmSync, readFileSync, writeFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { log, die } from "../scripts/lib/util.mjs";
+import { log, die, readJSON } from "../scripts/lib/util.mjs";
 
 const SRC = "dist";
 const OUT = "app-dist";
@@ -53,6 +53,56 @@ function walk(dir, out = []) {
   }
   return out;
 }
+
+/* ---------- דפי השחקן יוצאים מהאפליקציה ----------
+   853 דפי שחקן הם **10.8MB מתוך 15** של העותק הזה, והם הסיבה
+   היחידה שה-AAB עבר 10MB כשהוכפלה בריכת התשובות. הם קיימים כדי
+   שגוגל תאנדקס אותם באתר; בתוך האפליקציה אף אחד לא מגיע אליהם
+   דרך חיפוש, והם רק מנפחים את ההורדה לכל בודק.
+
+   **אבל מחיקה לבדה הייתה שוברת ניווט אמיתי:** הפוטר של המשחק
+   מקשר ל-players/, ודפי הארכיון מקשרים לדף השחקן של כל תשובה.
+   לכן כל קישור כזה הופך **מוחלט אל האתר** לפני המחיקה.
+
+   ולמה זה עובד באפליקציה: כתובת שאינה ה-origin של האפליקציה
+   מגיעה ל-shouldOverrideUrlLoading, ומשם Bridge.launchIntent
+   פותח דפדפן חיצוני — אותו מסלול בדיוק של כפתור וואטסאפ
+   (ראה src/native.js). המשתמש אינו נתקע בתוך האפליקציה על אתר.
+
+   ו-/players/ אינו ב-intent-filter (רק /join ו-<slug>/), ולכן
+   הקישור לא יקפוץ חזרה לאפליקציה בלולאה.
+
+   **האתר לא נוגע.** שם הדפים נשארים, מקושרים יחסית, ומאונדקסים. */
+const SITE = String(readJSON("config/site.json").siteUrl).replace(/\/+$/, "");
+const PLAYERS = /href="((?:\.\.\/)*players\/[^"]*)"/g;
+
+/* המחיקה קודמת לכתיבה מחדש: אחרת מתקנים 13,500 קישורים בתוך
+   דפים שנמחקים בשורה הבאה. */
+rmSync(join(OUT, "players"), { recursive: true, force: true });
+
+let pf = 0, pl = 0;
+for (const f of walk(OUT)) {
+  const html = readFileSync(f, "utf8");
+  let n = 0;
+  const fixed = html.replace(PLAYERS, (m, href) => {
+    n++;
+    return `href="${SITE}/${href.replace(/^(?:\.\.\/)+/, "")}" target="_blank" rel="noopener"`;
+  });
+  if (n) { writeFileSync(f, fixed, "utf8"); pf++; pl += n; }
+}
+log(`  תיקיית players הוסרה · ${pl} קישורי שחקן הופנו לאתר ב-${pf} דפים`);
+
+/* ---------- הבאנר יוצא מהאפליקציה ----------
+   "בקרוב אפליקציית אנדרואיד" בתוך אפליקציית אנדרואיד. */
+let bn = 0;
+const BANNER = /\s*<div class="appban"[\s\S]*?<\/div>/g;
+for (const f of walk(OUT)) {
+  const html = readFileSync(f, "utf8");
+  if (!html.includes('class="appban"')) continue;
+  writeFileSync(f, html.replace(BANNER, ""), "utf8");
+  bn++;
+}
+log(`  באנר האפליקציה הוסר מ-${bn} דפים`);
 
 let files = 0, links = 0;
 for (const f of walk(OUT)) {

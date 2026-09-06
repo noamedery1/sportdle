@@ -63,6 +63,24 @@
   "maxGuesses": 8,
   "build": "s3",
   "ogImage": "https://sportdle.techbynoam.com/og.png",
+  "_androidApp": [
+    "הבאנר בתחתית כל דף באתר. שלושה מצבים:",
+    "  soon  — 'בקרוב', בלי קישור. זה המצב עד שגוגל מאשרת פרסום פתוח.",
+    "  live  — כפתור הורדה. חייב url.",
+    "  off   — בלי באנר בכלל.",
+    "",
+    "המעבר מ-soon ל-live הוא **שינוי כאן ופריסה, בלי קוד ובלי גרסה**.",
+    "ה-url הוא דף החנות: https://play.google.com/store/apps/details?id=sportdle.techbynoam.com",
+    "",
+    "**לא להפעיל live לפני אישור לייצור.** כל עוד האפליקציה בבדיקות",
+    "סגורות, הקישור מוביל לדף שרק 12 הבודקים רואים — לכל השאר זה",
+    "נראה כמו קישור שבור."
+  ],
+  "androidApp": {
+    "state": "soon",
+    "url": ""
+  },
+
   "shareStyle": "safe",
   "shuffleSeed": 20260825,
   "analyticsUrl": "https://script.google.com/macros/s/AKfycbzE5Zr3VV92MPq_xQ9uU4N1uWdBxnP28be4MIFuhF_-qtAyIsDERHfmAb7gHuEuehUV/exec",
