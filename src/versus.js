@@ -727,7 +727,7 @@ ${roomLink()}
     try{
       const snap = await get(ref(db, roomPath(m.room)));
       if (!snap.exists() || snap.val().status === "done"){ mem.clear(); return; }
-      adoptClubs(snap.val());
+      adoptClubs(snap.val()); adoptMode(snap.val());
       room = m.room; roomRef = ref(db, roomPath(room));
       isHost = snap.val().host === uid;
       await update(ref(db, roomPath(room) + `/players/${uid}`),
@@ -746,6 +746,11 @@ ${roomLink()}
       state = snap.val();
       if (!state) return;
       isHost = state.host === uid;
+      /* המצב נגזר מהחדר בכל עדכון ולא רק בהצטרפות. אימוץ פעם
+         אחת נשבר בשקט: האורח הצטרף למשחק מספרים, ואחרי טעינה
+         מחדש חזר לברירת המחדל וקיבל רמזי שחקן בזמן שהמארח ראה
+         שאלה — שני משחקים שונים באותו חדר, בלי שום שגיאה. */
+      adoptMode(state);
       render();
     });
   }
@@ -937,7 +942,10 @@ ${roomLink()}
     const idx = state.round;
     if ((state.results || {})[idx]) return;
     const raw = String(inp.value).replace(/[^0-9-]/g, "");
-    if (!raw || !/^-?d{1,4}$/.test(raw)) {
+    /* מחלקת תווים ולא \d: הקובץ הזה עובר דרך החלפת מחרוזות
+       בבנייה, ובקסלש בודד נאכל שם בשקט. הביטוי נראה תקין ופשוט
+       לא תופס — "1940" נדחה כ"לא מספר". */
+    if (!raw || !/^-?[0-9]{1,4}$/.test(raw)) {
       $("#feed").className = "feed bad";
       $("#feed").textContent = "צריך מספר";
       return;
