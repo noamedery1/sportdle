@@ -603,13 +603,23 @@ ${roomLink()}
   $("#btnStart").addEventListener("click", async () => {
     const ps = Object.values(state?.players || {}).filter(p => !p.gone);
     if (ps.length < 2) return $("#startErr").textContent = "צריך לפחות שני שחקנים";
+    /* ---------- ההגדרות תלויות במצב ----------
+       הבלוק הזה דרס את ההגדרות בנוסחת משחק השחקנים בלי לבדוק
+       במה משחקים, ולכן סיבוב מספרים קיבל 52 שניות במקום 25:
+       הנוסחה מכפילה את הזמן שבין רמז לרמז במספר הרמזים, ובמשחק
+       המספרים אין רמזים בכלל.
+
+       התסמין היה חצי דקה של מסך שאינו זז אחרי שכולם כבר ענו,
+       וזה נראה כמו משחק תקוע. נתפס בצילומי הקליפ. */
     await update(roomRef, {
       status: "playing", round: 0, roundStartedAt: serverTimestamp(),
-      settings: {
-        rounds:   +$("#setRounds").value,
-        revealMs: +$("#setReveal").value * 1000,
-        roundMs:  +$("#setReveal").value * 1000 * (CLUES - 1) + 12000
-      }
+      settings: isQuiz()
+        ? { rounds:   +$("#setRounds").value,
+            revealMs: QUIZ_ROUND_MS,
+            roundMs:  QUIZ_ROUND_MS }
+        : { rounds:   +$("#setRounds").value,
+            revealMs: +$("#setReveal").value * 1000,
+            roundMs:  +$("#setReveal").value * 1000 * (CLUES - 1) + 12000 }
     });
   });
   
