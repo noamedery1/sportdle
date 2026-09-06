@@ -718,15 +718,21 @@ select.rc:focus{border-color:var(--brand)}
        <b>עונה 1</b> היא העונה הראשונה של השחקן במועדון — למשל 13/14 —
        ולא שנה קלנדרית, כי שחקנים מגיעים גם בחלון החורף.</p>
 
+    <h4>העמדה — קו, לא תפקיד</h4>
+    <p>יש ארבע עמדות בלבד: <b>שוער · הגנה · קישור · התקפה</b>.
+       בלם ומגן הם שניהם <b>הגנה</b>, וכנף וחלוץ מרכזי הם שניהם
+       <b>התקפה</b> — המאגר יודע באיזה קו שיחק, לא את התפקיד המדויק.
+       זה נכון במיוחד לשחקני העבר, שבתקופתם החלוקה הייתה אחרת לגמרי.</p>
+
     <h4>הצבעים</h4>
     <p><span id="lgnd">● מדויק · ◐ קרוב · ○ רחוק</span><br>
        ↑ הערך האמיתי גבוה או מאוחר יותר · ↓ נמוך או מוקדם יותר</p>
 
     <h4>דוגמה</h4>
-    <p>ניחשתם חלוץ ישראלי שעונתו הראשונה 03/04 ויש לו 4 תארים,
-       והתשובה היא קשר שהתחיל ב-96/97 עם 2 תארים:</p>
+    <p>ניחשתם שחקן התקפה ישראלי שעונתו הראשונה 03/04 ויש לו 4 תארים,
+       והתשובה היא שחקן קישור שהתחיל ב-96/97 עם 2 תארים:</p>
     <div class="ex">
-      <div><span class="k">עמדה</span><span class="v">חלוץ</span></div>
+      <div><span class="k">עמדה</span><span class="v">התקפה</span></div>
       <div class="hit"><span class="k">לאום</span><span class="v">ישראל</span></div>
       <div><span class="k">עונה 1</span><span class="v">03/04 ↓</span></div>
       <div class="near"><span class="k">תארים</span><span class="v">4 ↓</span></div>
@@ -775,12 +781,9 @@ select.rc:focus{border-color:var(--brand)}
 
     <div id="fixPosWrap" class="hide">
       <label class="rlab" for="fixPosVal">העמדה הנכונה</label>
-      <select class="rc" id="fixPosVal">
-        <option value="GK">שוער</option>
-        <option value="DF">מגן</option>
-        <option value="MF">קשר</option>
-        <option value="FW">חלוץ</option>
-      </select>
+      <!-- ריק בכוונה: האפשרויות נבנות מ-POS_HE ב-engine.js. רשימה
+           כתובה כאן נפרדה מהמשחק והציעה שמות עמדה אחרים. -->
+      <select class="rc" id="fixPosVal"></select>
     </div>
 
     <div id="fixStat"></div>

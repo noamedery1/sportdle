@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "sportdel",
-      "runtimeExecutable": "node",
-      "runtimeArgs": ["scripts/serve.mjs"],
+      "name": "sportdle",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "serve"],
       "port": 4173
     }
   ]

@@ -444,8 +444,21 @@ if (!existsSync("dist/manifest.json"))
          "ראה את ההסבר ב-config/site.json.");
   }
 
-  /* דף המעבר, לגולשי הרשת. באפליקציה הוא לא נטען בכלל:
-     intent-filter קולט את הכתובת ו-src/native.js מנווט ישירות. */
+  /* ---------- דף המעבר של ההזמנה ----------
+     כאן היה location.replace אל "../?room=CODE" מיד עם הטעינה,
+     והוא **הרס את הסיכוי היחיד לפתוח את האפליקציה**: /join הוא
+     הנתיב שה-intent-filter קולט, ו-"/" אינו ברשימה בכוונה. ברגע
+     שהדף קפץ לשורש, הכתובת כבר לא יכלה להימסר לאפליקציה.
+
+     ומעל זה — **וואטסאפ פותח קישורים בדפדפן פנימי משלו**, שאינו
+     מפעיל App Links של אנדרואיד בכלל. זה מסביר "לוחצים ולא נפתח
+     באפליקציה" גם כשהצד שלנו תקין לחלוטין: assetlinks.json מוגש
+     200 עם טביעת מפתח החתימה של גוגל, ו-autoVerify מוגדר.
+
+     לכן באנדרואיד מציגים כפתור שפותח את האפליקציה בכתובת
+     intent://, שעובדת גם מדפדפן פנימי, ומשאירים "המשך בדפדפן"
+     למי שלא התקין. בתוך האפליקציה (window.Capacitor קיים)
+     ובכל מקום אחר — ממשיכים ישר, כמו קודם. */
   writeText("dist/join/index.html", `<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -459,12 +472,16 @@ if (!existsSync("dist/manifest.json"))
     font-family:'Heebo',system-ui,sans-serif;display:flex;
     align-items:center;justify-content:center;text-align:center}
   a{color:#FFC72C}
+  .btn{display:inline-block;background:#FFC72C;color:#0C0C0E;text-decoration:none;
+    font-weight:700;padding:13px 26px;border-radius:10px;font-size:17px}
+  #msg{color:#F2F2F0;font-size:19px;font-weight:700}
 </style>
 </head>
 <body>
   <div>
-    <p>פותח את החדר…</p>
-    <p><a id="go" href="../">להמשך</a></p>
+    <p id="msg">פותח את החדר…</p>
+    <p id="app" hidden><a class="btn" id="openApp" href="#">פתיחה באפליקציה</a></p>
+    <p><a id="go" href="../">המשך בדפדפן</a></p>
   </div>
 <script>
 /* מעבירים את הקוד לעמוד המשחק, ששם הטיפול בהצטרפות כבר קיים
@@ -474,7 +491,25 @@ if (!existsSync("dist/manifest.json"))
     .toUpperCase().replace(/[^A-Z2-9]/g, "").slice(0, 4);
   var to = c.length === 4 ? "../?room=" + c : "../";
   document.getElementById("go").setAttribute("href", to);
-  location.replace(to);
+
+  var pkg = ${JSON.stringify(al.package || "")};
+  var inApp = !!window.Capacitor;
+  var android = navigator.userAgent.toLowerCase().indexOf("android") !== -1;
+
+  /* בתוך האפליקציה היא כבר פתוחה, ובלי חבילה אין לאן לפתוח. */
+  if (inApp || !android || !pkg || c.length !== 4){ location.replace(to); return; }
+
+  /* intent:// — עובד גם מדפדפן פנימי של וואטסאפ, ואם האפליקציה
+     אינה מותקנת אנדרואיד נופל ל-browser_fallback_url בשקט. */
+  var https = ${JSON.stringify(String(site.siteUrl).replace(/\/+$/, ""))} +
+              "/join/?room=" + c;
+  var host = https.split("://")[1];
+  var intent = "intent://" + host + "#Intent;scheme=https;package=" + pkg +
+               ";S.browser_fallback_url=" + encodeURIComponent(https) + ";end";
+
+  document.getElementById("msg").textContent = "הוזמנת לחדר " + c;
+  document.getElementById("openApp").setAttribute("href", intent);
+  document.getElementById("app").hidden = false;
 })();
 </script>
 </body>

@@ -33,7 +33,19 @@ const CLUB_ORDER = window.SD.order;
 /* ============================================================
    3. טבלאות תרגום
    ============================================================ */
-const POS_HE = {GK:"שוער", DF:"מגן", MF:"קשר", FW:"חלוץ"};
+/* ---------- העמדות ----------
+   שמות של **קווים**, לא של תפקידים. המאגר מחזיק ארבע קטגוריות
+   בלבד (GK/DF/MF/FW), ואין בו הבחנה בין בלם למגן או בין קשר
+   אחורי לכנף.
+
+   התוויות הקודמות היו "מגן" ו"קשר", והן שיקרו לגבי הדיוק שיש
+   בנתונים: בלם קלאסי נראה כ"מגן" ונקרא שגוי, ובעשורים המוקדמים
+   כמעט כל שחקני ההגנה היו בלמים. הבודקים דיווחו על זה, ובצדק —
+   התלונה הייתה על התווית, לא על הנתון.
+
+   "הגנה / קישור / התקפה" אומר בדיוק את מה שהמאגר יודע: באיזה
+   קו שיחק. אין כאן שינוי נתונים ואף חידה לא זזה. */
+const POS_HE = {GK:"שוער", DF:"הגנה", MF:"קישור", FW:"התקפה"};
 const POS_ORDER = ["GK","DF","MF","FW"];
 const NAT_HE = __NAT_HE__;
 const REGION = __REGION__;
@@ -535,8 +547,28 @@ input.addEventListener("input", ()=>{
      גם כשמקלידים "עדן יונה" */
   const hits = PLAYERS.filter(p =>
       (norm(p.name).includes(nq) || p.aliases.some(a => norm(a).includes(nq)))
-      && !guesses.some(g=>g.name===p.name)).slice(0,7);
-  hits.length ? openSugg(hits) : closeSugg();
+      && !guesses.some(g=>g.name===p.name));
+
+  /* ---------- התאמה מדויקת קודמת לכל היתר ----------
+     בלי הדירוג הזה שם מלא ונכון יכול להיבלע בתוך שם ארוך יותר
+     שמכיל אותו. במכבי ת"א זה קרה בפועל: "דן ביטון" הוא מחרוזת
+     בתוך "עידן ביטון", וההצעה הראשונה הייתה עידן. במובייל
+     מקלידים ולוחצים Enter, ו-Enter שולח את ההצעה הראשונה —
+     כלומר מי שהקליד את התשובה **הנכונה במדויק** קיבל ניחוש
+     של שחקן אחר, והמשחק המשיך. זה בדיוק "ניחשתי נכון והוא לא
+     סיים".
+
+     שלוש מדרגות: התאמה מדויקת, ואז שם שמתחיל במה שהוקלד, ואז
+     הכלה באמצע. בתוך כל מדרגה נשמר סדר המאגר. */
+  const rank = p => {
+    const n = norm(p.name);
+    if (n === nq || p.aliases.some(a => norm(a) === nq)) return 0;
+    if (n.startsWith(nq) || p.aliases.some(a => norm(a).startsWith(nq))) return 1;
+    return 2;
+  };
+  hits.sort((a, b) => rank(a) - rank(b));
+  const top = hits.slice(0, 7);
+  top.length ? openSugg(top) : closeSugg();
 });
 sugg.addEventListener("click", e=>{
   const b = e.target.closest("button"); if (b) submit(b.dataset.name);
@@ -835,6 +867,16 @@ function fixField(){
   $("#fixHeWrap").classList.toggle("hide", !he);
   $("#fixPosWrap").classList.toggle("hide", he);
 }
+/* רשימת העמדות בטופס התיקון נבנית מ-POS_HE ולא נכתבת בתבנית.
+   כשהיא הייתה כתובה בשני מקומות הם נפרדו: המשחק הציג עמדה אחת
+   והטופס הציע שם אחר, ומי שרצה לדווח על טעות לא מצא את העמדה
+   שראה. מקור אחד — ואין מה להיפרד. */
+(function buildPosOptions(){
+  const sel = $("#fixPosVal");
+  if (sel) sel.innerHTML = POS_ORDER
+    .map(k => `<option value="${k}">${POS_HE[k]}</option>`).join("");
+})();
+
 function openFix(){
   if (!over || !answer) return;          // אין שחקן חשוף — אין מה לתקן
   closeRep(); closeHelp();
