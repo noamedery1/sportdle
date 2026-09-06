@@ -305,7 +305,35 @@ async function startVersus(){
 
   /* חלון סיבוב במשחק המספרים. אין כאן מרוץ, ולכן הזמן צריך
      להספיק לחשוב — אבל לא כל כך הרבה שמי שכבר ענה יושב ומחכה. */
-  const QUIZ_ROUND_MS = 25000;
+  /* ---------- הזמן לסיבוב ----------
+     היה קבוע 25 שניות, והבחירה של המשתמש נבלעה: הוא סימן משהו
+     וזה לא השפיע. עכשיו אותו בורר משמש את שני המשחקים, רק
+     שהמשמעות שונה — ברמזים זה הזמן **בין רמז לרמז**, ובמספרים
+     זה הזמן **לשאלה**, ולכן גם הערכים והכיתוב מתחלפים. */
+  const TIME_OPTS = {
+    players: [[6, "6 שניות · מהיר"], [8, "8 שניות · רגיל"], [12, "12 שניות · נינוח"]],
+    quiz:    [[15, "15 שניות · מהיר"], [25, "25 שניות · רגיל"], [40, "40 שניות · נינוח"]]
+  };
+  const DEFAULT_SEC = { players: 8, quiz: 25 };
+
+  function paintTimeOpts(){
+    const mode = isQuiz() ? "quiz" : "players";
+    for (const id of ["preReveal", "setReveal"]) {
+      const sel = $("#" + id);
+      if (!sel || sel.dataset.mode === mode) continue;
+      const keep = +sel.value;
+      sel.dataset.mode = mode;
+      sel.innerHTML = TIME_OPTS[mode]
+        .map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+      /* שומרים בחירה אם היא קיימת גם במצב החדש, אחרת ברירת מחדל */
+      sel.value = TIME_OPTS[mode].some(([v]) => v === keep)
+        ? String(keep) : String(DEFAULT_SEC[mode]);
+    }
+    const lab = $("#preRevealLabel");
+    if (lab) lab.textContent = isQuiz() ? "כמה זמן לכל שאלה" : "כמה זמן בין רמז לרמז";
+    const lab2 = $("#setRevealLabel");
+    if (lab2) lab2.textContent = isQuiz() ? "כמה זמן לכל שאלה" : "כל כמה שניות נחשף רמז";
+  }
 
   /** בחירת סיבובים דטרמיניסטית מהזרע — כל המשתתפים מקבלים אותם
       שחקנים. ~70% מהמוכרים, ~30% מהרחב, כדי לשמור על רעננות בלי
@@ -423,7 +451,7 @@ async function startVersus(){
     const b = e.target.closest("button");
     if (!b) return;
     MODE = b.dataset.mode === "quiz" ? "quiz" : "players";
-    paintModePick(); paintClubPick();
+    paintModePick(); paintClubPick(); paintTimeOpts();
   });
 
   /* מי שמצטרף מאמץ את המצב של החדר. ברירת המחדל "players" היא
@@ -432,7 +460,7 @@ async function startVersus(){
     const want = (val && val.mode) === "quiz" ? "quiz" : "players";
     if (want === MODE) return;
     MODE = want;
-    paintModePick();
+    paintModePick(); paintTimeOpts();
   }
 
   if (clubPick) clubPick.addEventListener("click", e => {
@@ -460,6 +488,7 @@ async function startVersus(){
   }
 
   paintClubPick();
+  paintTimeOpts();   // הבורר ריק בתבנית ונבנה כאן לפי המצב
 
   /* ============================================================
      5ב. פתיחה והצטרפות
@@ -495,7 +524,7 @@ async function startVersus(){
            לרמז": סיבוב הוא חלון אחד קבוע. revealMs נשאר שווה לו
            כדי ששלב הרמז יישאר 1 ולא ישפיע על שום חישוב. */
         settings: isQuiz()
-          ? { rounds: 10, revealMs: QUIZ_ROUND_MS, roundMs: QUIZ_ROUND_MS }
+          ? { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 }
           : { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 * (CLUES - 1) + 12000 },
         players: { [uid]: { name, score: 0, at: serverTimestamp() } }
       });
@@ -631,8 +660,8 @@ ${roomLink()}
       status: "playing", round: 0, roundStartedAt: serverTimestamp(),
       settings: isQuiz()
         ? { rounds:   +$("#setRounds").value,
-            revealMs: QUIZ_ROUND_MS,
-            roundMs:  QUIZ_ROUND_MS }
+            revealMs: +$("#setReveal").value * 1000,
+            roundMs:  +$("#setReveal").value * 1000 }
         : { rounds:   +$("#setRounds").value,
             revealMs: +$("#setReveal").value * 1000,
             roundMs:  +$("#setReveal").value * 1000 * (CLUES - 1) + 12000 }
@@ -735,6 +764,12 @@ ${roomLink()}
     const f = $("#joinCode");
     f.value = c; f.readOnly = true; f.style.opacity = ".75";
     $("#joinErr").textContent = "";
+    /* מי שהגיע מהזמנה בא להצטרף, לא לפתוח. המסך הציג לו את כל
+       בורר המשחק, המועדונים והזמן ואת "פתיחת חדר חדש" — כאילו
+       הוא צריך להחליט משהו, בזמן שהחדר כבר קיים והמצב שלו נקבע
+       על ידי מי שפתח אותו. */
+    const vv = document.getElementById("versusView");
+    if (vv) vv.classList.add("invited");
     const saved = (mem.get() || {}).name;
     if (saved) $("#vName").value = saved;
     setTimeout(() => $("#vName").focus(), 200);
@@ -835,6 +870,16 @@ ${roomLink()}
     const res    = (state.results || {})[idx] || null;
     if (!answer){ finishGame(); return; }
   
+    /* ---------- כולם ענו? אין על מה לחכות ----------
+       הסיבוב נסגר על טיימר, אבל אם כל מי שנוכח כבר ענה, ההמתנה
+       היא זמן מת מול מסך שאינו זז. כל לקוח בודק את זה מתוך מצב
+       החדר, והטרנזקציה ב-closeRound מונעת סגירה כפולה. */
+    if (isQuiz() && !res && state.status === "playing"){
+      const live = allPlayers().filter(p => !p.gone).length;
+      const got  = Object.keys((state.answers || {})[idx] || {}).length;
+      if (live > 0 && got >= live){ stopTick(); settleQuiz(idx); return; }
+    }
+
     /* סיבוב שכבר נסגר — מציגים את החשיפה **ומתזמנים קידום**.
        זו נקודת ההצלה: גם אם מי שסגר אותו נעלם, כל מי שנמצא כאן
        יקדם. מי שנכנס לחדר תקוע מקדם כמעט מיד. */
@@ -890,6 +935,12 @@ ${roomLink()}
       qt.classList.remove("hide");
       c.classList.add("hide");
       $("#answer").placeholder = "המספר שלך";
+      /* readonly ולא disabled: disabled מאפיר את השדה ונראה כמו
+         "אי אפשר לענות". readonly משאיר אותו קריא ומונע את מקלדת
+         המכשיר — וזו כל המטרה, כי הלוח שלנו מחליף אותה. */
+      $("#answer").readOnly = true;
+      $("#answer").value = "";
+      padShow(true);
       /* שלושתם, ולא inputmode לבד. באנדרואיד inputmode מספיק,
          אבל **באייפון הוא לבדו נותן מקלדת מלאה עם שורת מספרים**
          ולא לוח מקשים — ספארי מסתכל על pattern כדי להחליט.
@@ -904,6 +955,8 @@ ${roomLink()}
     qt.classList.add("hide");
     c.classList.remove("hide");
     $("#answer").placeholder = "מי השחקן?";
+    $("#answer").readOnly = false;
+    padShow(false);
     $("#answer").setAttribute("inputmode", "text");
     $("#answer").removeAttribute("pattern");
     $("#answer").removeAttribute("enterkeyhint");
@@ -1013,6 +1066,32 @@ ${roomLink()}
     closeRound(idx, win ? win.id : null, win ? 1 : 0);
   }
 
+  /* ---------- לוח המקשים שלנו ----------
+     מקלדת המכשיר יצרה שלוש בעיות במשחק המספרים, וכולן נצפו
+     בשטח: **באייפון אין בה מקש שליחה בכלל**, ולכן פשוט לא הייתה
+     דרך לאשר תשובה; היא כיסתה חצי מסך; והפריסה קפצה בכל פתיחה
+     וסגירה. לוח על המסך פותר את שלושתן, ויש בו כפתור שליחה
+     מפורש שאינו תלוי במקלדת של אף מערכת. */
+  const pad = $("#pad");
+  function padShow(on){
+    if (!pad) return;
+    pad.classList.toggle("hide", !on);
+    padSync();
+  }
+  function padSync(){
+    const ok = $("#padOk");
+    if (ok) ok.disabled = answered || !String(inp.value).length;
+  }
+  if (pad) pad.addEventListener("click", (e) => {
+    const b = e.target.closest("button");
+    if (!b || answered) return;
+    const k = b.dataset.k;
+    if (k === "ok") { submitNumber(); return; }
+    if (k === "del") inp.value = String(inp.value).slice(0, -1);
+    else if (String(inp.value).length < 4) inp.value = String(inp.value) + k;
+    padSync();
+  });
+
   /* הגשה במשחק המספרים: כותבים ומחכים. אין משוב "קרוב/רחוק" —
      הוא היה מסגיר את התשובה לשאר. */
   async function submitNumber(){
@@ -1030,7 +1109,7 @@ ${roomLink()}
     }
     const v = parseInt(raw, 10);
     answered = true;
-    inp.disabled = true; inp.value = ""; closeSugg();
+    inp.disabled = true; inp.value = ""; closeSugg(); padSync();
     $("#feed").className = "feed good";
     $("#feed").textContent = `נקלט: ${v} · מחכים לשאר`;
     try { await set(myAnswerRef(idx), { v: v, at: serverTimestamp() }); }

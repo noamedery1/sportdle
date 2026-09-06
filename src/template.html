@@ -434,6 +434,18 @@ html{scrollbar-gutter:stable}
 #versusView .clubpick button.on{background:var(--brand);color:var(--ink);
   border-color:var(--brand);font-weight:900}
 #versusView .pickhint{font-size:12px;color:var(--dim);margin-top:7px}
+#versusView .pad{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+#versusView .pad.hide{display:none}
+#versusView .pad button{margin:0;padding:16px 0;font-size:23px;font-weight:800;
+  background:var(--ink-3);color:var(--text);border:1px solid var(--line);
+  border-radius:12px;font-variant-numeric:tabular-nums}
+#versusView .pad button:active{background:var(--slate)}
+#versusView .pad button.del{font-size:20px;color:var(--dim)}
+#versusView .pad button.ok{background:var(--brand);color:var(--ink);font-size:17px}
+#versusView .pad button.ok:disabled{opacity:.45}
+/* מי שהגיע מהזמנה לא רואה את פתיחת החדר */
+#versusView.invited #createBox,
+#versusView.invited #orSep{display:none}
 #versusView .playexit{display:flex;gap:8px;margin-top:12px}
 #versusView .playexit button{flex:1;margin:0;font-size:13.5px;padding:10px}
 #versusView .playexit button[hidden]{display:none}
@@ -615,6 +627,9 @@ __APP_BANNER_CSS__
            הוא מרוץ שבו הראשון שצודק זוכה, ו"מספרים" הוא הערכה
            שבה כולם עונים והכי קרוב זוכה. ערבוב שלהם באותו סיבוב
            היה שני משחקים שנלחמים על אותו טיימר. -->
+      <!-- כל מה שקשור לפתיחת חדר חדש יושב בקופסה אחת, כדי שמי
+           שהגיע מקישור הזמנה לא יראה אותו בכלל. -->
+      <div id="createBox">
       <label>איזה משחק?</label>
       <div class="clubpick modepick" id="modePick">
         <button type="button" data-mode="players">מי השחקן?</button>
@@ -625,14 +640,14 @@ __APP_BANNER_CSS__
       <label>להוסיף עוד קבוצות לחדר?</label>
       <div class="clubpick" id="clubPick"></div>
       <div class="pickhint" id="clubHint"></div>
-      <label for="preReveal">כמה זמן בין רמז לרמז</label>
-      <select id="preReveal">
-        <option value="6">6 שניות · מהיר</option>
-        <option value="8" selected>8 שניות · רגיל</option>
-        <option value="12">12 שניות · נינוח</option>
-      </select>
+      <!-- הכיתוב והערכים מתחלפים לפי המשחק: ברמזים זה הזמן בין
+           רמז לרמז, ובמספרים זה הזמן לשאלה. הבחירה **נשמרת**
+           בשני המצבים — קודם היא נבלעה במספרים, שם הזמן היה קבוע. -->
+      <label for="preReveal" id="preRevealLabel">כמה זמן בין רמז לרמז</label>
+      <select id="preReveal"></select>
       <button id="btnCreate">פתיחת חדר חדש</button>
-      <div class="orsep"><span>או שיש לכם קוד</span></div>
+      </div>
+      <div class="orsep" id="orSep"><span>או שיש לכם קוד</span></div>
       <div class="joinrow">
         <input id="joinCode" class="code" maxlength="4" placeholder="XXXX"
                autocomplete="off" inputmode="latin" aria-label="קוד החדר">
@@ -659,7 +674,7 @@ __APP_BANNER_CSS__
       <h2>הגדרות</h2>
       <label for="setRounds">כמה סיבובים</label>
       <select id="setRounds"><option>5</option><option selected>10</option><option>15</option></select>
-      <label for="setReveal">כל כמה שניות נחשף רמז</label>
+      <label for="setReveal" id="setRevealLabel">כל כמה שניות נחשף רמז</label>
       <select id="setReveal">
         <option value="6">6 שניות · מהיר</option>
         <option value="8" selected>8 שניות · רגיל</option>
@@ -688,6 +703,27 @@ __APP_BANNER_CSS__
       <div class="answerbox">
         <div id="vSugg"></div>
         <input id="answer" placeholder="מי השחקן?" autocomplete="off" spellcheck="false">
+      </div>
+      <!-- ---------- לוח מקשים משלנו ----------
+           במשחק המספרים מקלדת המכשיר יצרה שלוש בעיות: באייפון אין
+           בה מקש שליחה בכלל ולא הייתה שום דרך לאשר תשובה, היא
+           כיסתה חצי מסך, והפריסה קפצה בכל פתיחה וסגירה.
+           לוח מקשים על המסך פותר את שלושתן — ויש בו כפתור שליחה
+           מפורש. השדה עצמו readonly במצב הזה, ולכן המקלדת של
+           המכשיר לא נפתחת בכלל. -->
+      <div class="pad hide" id="pad">
+        <button type="button" data-k="1">1</button>
+        <button type="button" data-k="2">2</button>
+        <button type="button" data-k="3">3</button>
+        <button type="button" data-k="4">4</button>
+        <button type="button" data-k="5">5</button>
+        <button type="button" data-k="6">6</button>
+        <button type="button" data-k="7">7</button>
+        <button type="button" data-k="8">8</button>
+        <button type="button" data-k="9">9</button>
+        <button type="button" class="del" data-k="del" aria-label="מחיקה">⌫</button>
+        <button type="button" data-k="0">0</button>
+        <button type="button" class="ok" data-k="ok" id="padOk">שליחה</button>
       </div>
       <div class="feed" id="feed"></div>
     </div>
