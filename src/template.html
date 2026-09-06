@@ -434,6 +434,19 @@ html{scrollbar-gutter:stable}
 #versusView .clubpick button.on{background:var(--brand);color:var(--ink);
   border-color:var(--brand);font-weight:900}
 #versusView .pickhint{font-size:12px;color:var(--dim);margin-top:7px}
+#versusView .modepick button{flex:1;justify-content:center;text-align:center}
+/* השאלה עצמה — היא כל מה שיש בסיבוב הזה, ולכן היא גדולה */
+#versusView .qtext{background:var(--ink-3);border:1px solid var(--line);
+  border-radius:var(--r);padding:16px 14px;margin-bottom:12px;text-align:center;
+  font-size:17px;font-weight:700;line-height:1.5;color:var(--text)}
+#versusView .qtext.hide{display:none}
+/* טבלת התשובות בחשיפה: מי ענה מה, ובכמה פספס */
+#versusView .ansrow{display:flex;justify-content:space-between;align-items:baseline;
+  gap:10px;padding:7px 10px;border-radius:8px;background:var(--ink-2);margin-top:5px;
+  font-size:13.5px}
+#versusView .ansrow.win{background:var(--brand);color:var(--ink);font-weight:700}
+#versusView .ansrow b{font-variant-numeric:tabular-nums}
+#versusView .ansrow i{font-style:normal;font-size:12px;opacity:.75}
 
 /* ===== ליטוש מובייל לקרב ===== */
 #versusView input,#versusView select{font-size:16px}      /* מונע זום באייפון */
@@ -595,6 +608,17 @@ __APP_BANNER_CSS__
     <div class="card">
       <label for="vName">איך קוראים לך?</label>
       <input id="vName" maxlength="14" placeholder="השם שיופיע בטבלה" autocomplete="off">
+      <!-- שני משחקים נפרדים באותו חדר, ולא תערובת: "מי השחקן"
+           הוא מרוץ שבו הראשון שצודק זוכה, ו"מספרים" הוא הערכה
+           שבה כולם עונים והכי קרוב זוכה. ערבוב שלהם באותו סיבוב
+           היה שני משחקים שנלחמים על אותו טיימר. -->
+      <label>איזה משחק?</label>
+      <div class="clubpick modepick" id="modePick">
+        <button type="button" data-mode="players">מי השחקן?</button>
+        <button type="button" data-mode="quiz">מספרים</button>
+      </div>
+      <div class="pickhint" id="modeHint"></div>
+
       <label>להוסיף עוד קבוצות לחדר?</label>
       <div class="clubpick" id="clubPick"></div>
       <div class="pickhint" id="clubHint"></div>
@@ -653,6 +677,10 @@ __APP_BANNER_CSS__
         <span><b id="rTime">30</b> שניות</span>
       </div>
       <div class="bar"><i id="rBar"></i></div>
+      <!-- במשחק המספרים אין רמזים מתגלים אלא שאלה אחת. שני
+           הבלוקים חיים באותו מסך, ו-versus.js מסתיר את מה שלא
+           רלוונטי למצב. -->
+      <div class="qtext hide" id="qText"></div>
       <div class="clues" id="clues"></div>
       <div class="answerbox">
         <div id="vSugg"></div>

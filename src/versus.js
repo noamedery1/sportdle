@@ -155,6 +155,19 @@ async function startVersus(){
       (a.born - b.born) || (a.he < b.he ? -1 : a.he > b.he ? 1 : 0));
   }
 
+  /* ---------- שני משחקים, לא תערובת ----------
+     "players" — מרוץ: הראשון שמזהה זוכה, והניקוד יורד עם הרמזים.
+     "quiz"    — הערכה: כולם עונים מספר, והכי קרוב זוכה נקודה.
+
+     המצב הוא **תכונה של החדר** ולא של הלקוח, בדיוק כמו המועדונים:
+     מי שמצטרף מאמץ אותו. חדר בלי השדה הוא חדר מגרסה קודמת, ואז
+     "players" — כך קוד שנשלח לפני העדכון עדיין עובד.
+
+     בחירת המועדונים משותפת לשני המשחקים: QUIZ נבנה מאותם SLUGS. */
+  let MODE = "players";
+  let QUIZ = [];
+  const isQuiz = () => MODE === "quiz";
+
   function refreshPools(){
     /* מסלול אחד לכל המצבים. במועדון בודד המיזוג הוא ללא-מעש —
        הבנייה כבר אוכפת שאין שם עברי כפול באותו מועדון — וכך אין
@@ -166,6 +179,10 @@ async function startVersus(){
     WIDE = ok.filter(p => p.seasons >= 3 && p.seasons < CORE_MIN);
     POOL = CORE.concat(WIDE);
     GUESS = ok;
+    /* בנק השאלות נגזר מאותם מועדונים. ~2,400 שאלות לחמישה
+       מועדונים, ולכן הבנייה מיידית ואין טעם לשמור אותה. */
+    QUIZ = (window.SPORTDEL && typeof window.SPORTDEL.buildQuiz === "function")
+      ? window.SPORTDEL.buildQuiz(SLUGS) : [];
     /* מספר הרמזים תלוי במצב, ולכן גם הניקוד */
     CLUES  = SLUGS.length > 1 ? 7 : 6;
     POINTS = Array.from({ length: CLUES }, (_, i) => CLUES - i);
@@ -286,9 +303,17 @@ async function startVersus(){
      שחקנים — הבחירה דטרמיניסטית מהקוד, וזה כל העניין שלה. */
   const seedOf = () => `${room}#${(state && state.game) || 0}`;
 
+  /* חלון סיבוב במשחק המספרים. אין כאן מרוץ, ולכן הזמן צריך
+     להספיק לחשוב — אבל לא כל כך הרבה שמי שכבר ענה יושב ומחכה. */
+  const QUIZ_ROUND_MS = 25000;
+
   /** בחירת סיבובים דטרמיניסטית מהזרע — כל המשתתפים מקבלים אותם
       שחקנים. ~70% מהמוכרים, ~30% מהרחב, כדי לשמור על רעננות בלי
-      סיבובים מתים. */
+      סיבובים מתים.
+
+      במשחק המספרים אין "מוכר" ו"רחב": השאלות **נשלפות אקראי לגמרי**
+      מכל הבנק של המועדונים שנבחרו. הבנק כבר מסונן לשחקנים מוכרים
+      (ראה MIN_SEASONS ב-src/quiz.js), ולכן אין מה לשקלל שוב. */
   function pickRounds(code, n){
     let seed = 0; for (const c of code) seed = (seed*31 + c.charCodeAt(0))|0;
     const r = mulberry32(seed);
@@ -296,11 +321,18 @@ async function startVersus(){
       for (let i=a.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
       return a; };
 
+    if (isQuiz()){
+      const idx = QUIZ.map((_, i) => i);
+      return shuffle(idx).slice(0, Math.min(n, idx.length));
+    }
     const nWide = WIDE.length ? Math.min(WIDE.length, Math.round(n * 0.3)) : 0;
     const nCore = n - nWide;
     const picks = shuffle(CORE).slice(0, nCore).concat(shuffle(WIDE).slice(0, nWide));
     return shuffle(picks).map(p => POOL.indexOf(p));
   }
+
+  /* השאלה של הסיבוב, או null אם הבנק התרוקן */
+  const quizOf = i => QUIZ[i] || null;
   
   /* ============================================================
      4. מצב מקומי
@@ -363,9 +395,44 @@ async function startVersus(){
       b.style.color       = on ? inkOn(brand) : "";
     }
     if (clubHint)
-      clubHint.textContent = SLUGS.length === 1
-        ? `${clubShort(SLUG)} בלבד · ${POOL.length} שחקנים · 6 רמזים`
-        : `${SLUGS.length} מועדונים · ${POOL.length} שחקנים · 7 רמזים, כולל באילו מועדונים שיחק`;
+      clubHint.textContent = isQuiz()
+        ? (SLUGS.length === 1
+            ? `${clubShort(SLUG)} בלבד · ${QUIZ.length} שאלות`
+            : `${SLUGS.length} מועדונים · ${QUIZ.length} שאלות`)
+        : (SLUGS.length === 1
+            ? `${clubShort(SLUG)} בלבד · ${POOL.length} שחקנים · 6 רמזים`
+            : `${SLUGS.length} מועדונים · ${POOL.length} שחקנים · 7 רמזים, כולל באילו מועדונים שיחק`);
+    paintModePick();
+  }
+
+  /* ---------- בורר סוג המשחק ---------- */
+  const modePick = $("#modePick"), modeHint = $("#modeHint");
+  function paintModePick(){
+    if (!modePick) return;
+    for (const b of modePick.children) {
+      const on = b.dataset.mode === MODE;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-pressed", String(on));
+    }
+    if (modeHint)
+      modeHint.textContent = isQuiz()
+        ? `${QUIZ.length} שאלות · כל אחד עונה במספר, והכי קרוב זוכה`
+        : `${POOL.length} שחקנים · הראשון שמזהה זוכה`;
+  }
+  if (modePick) modePick.addEventListener("click", e => {
+    const b = e.target.closest("button");
+    if (!b) return;
+    MODE = b.dataset.mode === "quiz" ? "quiz" : "players";
+    paintModePick(); paintClubPick();
+  });
+
+  /* מי שמצטרף מאמץ את המצב של החדר. ברירת המחדל "players" היא
+     גם מה שחדר ישן, בלי השדה, אמור לשחק. */
+  function adoptMode(val){
+    const want = (val && val.mode) === "quiz" ? "quiz" : "players";
+    if (want === MODE) return;
+    MODE = want;
+    paintModePick();
   }
 
   if (clubPick) clubPick.addEventListener("click", e => {
@@ -412,8 +479,24 @@ async function startVersus(){
         /* המועדונים הם חלק מהחדר ולא מהלקוח: מי שמצטרף מאמץ אותם,
            ולכן קוד עובד גם כשהמצטרף יושב על מועדון אחר. */
         clubs: SLUGS.slice().sort(),
+        /* ---------- למה רק כשזה quiz ----------
+           חוקי הפיירבייס דוחים כל שדה שאינו מוצהר ($other: false),
+           והם מתעדכנים ידנית בקונסולה — לא נפרסים עם הקוד. כתיבת
+           mode תמיד הייתה מפילה **גם את משחק השחקנים** בכל התקנה
+           שהחוקים שלה עוד ישנים. נבדק בפועל: PERMISSION_DENIED
+           על פתיחת חדר רגילה.
+
+           כך המשחק הישן ממשיך לעבוד בדיוק כמו קודם בכל מצב, ורק
+           המשחק החדש דורש את החוקים המעודכנים — ואומר את זה
+           במפורש כשהוא נכשל. */
+        ...(isQuiz() ? { mode: "quiz" } : {}),
         game: 0,                       // מקדם בכל "סיבוב חדש", ומזריע את ההגרלה
-        settings: { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 * (CLUES - 1) + 12000 },
+        /* במשחק המספרים אין רמזים מתגלים, ולכן אין "זמן בין רמז
+           לרמז": סיבוב הוא חלון אחד קבוע. revealMs נשאר שווה לו
+           כדי ששלב הרמז יישאר 1 ולא ישפיע על שום חישוב. */
+        settings: isQuiz()
+          ? { rounds: 10, revealMs: QUIZ_ROUND_MS, roundMs: QUIZ_ROUND_MS }
+          : { rounds: 10, revealMs: pre * 1000, roundMs: pre * 1000 * (CLUES - 1) + 12000 },
         players: { [uid]: { name, score: 0, at: serverTimestamp() } }
       });
       mem.set({ room: code, name });
@@ -426,7 +509,9 @@ async function startVersus(){
          עדיין מתירים רק rooms/<code> ולא rooms/<slug>/<code>. */
       isHost = false; room = null; roomRef = null;
       err.textContent = /PERMISSION_DENIED/i.test(e.message || "")
-        ? "אין הרשאה לפתוח חדר. צריך לעדכן את חוקי הפיירבייס (config/firebase-rules.json)."
+        ? (isQuiz()
+            ? "משחק המספרים דורש עדכון של חוקי הפיירבייס (config/firebase-rules.json). משחק השחקנים עובד."
+            : "אין הרשאה לפתוח חדר. צריך לעדכן את חוקי הפיירבייס (config/firebase-rules.json).")
         : "לא הצלחנו לפתוח חדר: " + (e.message || e);
       console.error("createRoom:", e);
     } finally { btn.disabled = false; }
@@ -451,7 +536,7 @@ async function startVersus(){
       return err.textContent = "המשחק כבר התחיל — בקשו לפתוח חדר חדש";
 
     /* לפני watch(): הבריכה חייבת להיות זו של החדר כבר בסיבוב הראשון */
-    adoptClubs(snap.val());
+    adoptClubs(snap.val()); adoptMode(snap.val());
     room = code; isHost = snap.val().host === uid; roomRef = ref(db, roomPath(code));
     await update(ref(db, roomPath(code) + `/players/${uid}`),
                  { name, score: 0, at: serverTimestamp(), gone: null });
@@ -548,7 +633,7 @@ ${roomLink()}
       for (const [id, p] of Object.entries(state.players || {}))
         scores[id] = { ...p, score: 0 };
       await update(roomRef, {
-        status: "lobby", round: 0, results: null, roundStartedAt: null,
+        status: "lobby", round: 0, results: null, answers: null, roundStartedAt: null,
         game: ((state && state.game) || 0) + 1,
         players: scores
       });
@@ -709,8 +794,9 @@ ${roomLink()}
     const idx = state.round;
     if (idx >= rounds.length){ finishGame(); return; }
   
-    const answer = POOL[rounds[idx]];
+    const answer = isQuiz() ? quizOf(rounds[idx]) : POOL[rounds[idx]];
     const res    = (state.results || {})[idx] || null;
+    if (!answer){ finishGame(); return; }
   
     if (res){ showReveal(answer, res); return; }
   
@@ -734,7 +820,7 @@ ${roomLink()}
       const stage = Math.min(CLUES, Math.floor(el / st.revealMs) + 1);
       if (stage !== lastStage){ revealTo(stage); lastStage = stage; }
   
-      if (left <= 0){ stopTick(); closeRound(idx, null, 0); }
+      if (left <= 0){ stopTick(); isQuiz() ? settleQuiz(idx) : closeRound(idx, null, 0); }
     }, 200);
   }
   
@@ -745,6 +831,29 @@ ${roomLink()}
     $("#answer").value = ""; $("#answer").disabled = false;
     $("#feed").textContent = ""; $("#feed").className = "feed";
     const rounds = pickRounds(seedOf(), state.settings.rounds);
+
+    /* ---------- משחק המספרים ----------
+       שאלה אחת במקום רמזים מתגלים, ומקלדת מספרים במקום השלמת
+       שמות. inputmode ולא type="number": type="number" מביא
+       חיצי הגדלה, מקבל "e" ו-"+", ובאייפון עדיין פותח מקלדת
+       מלאה. inputmode="numeric" נותן את המקלדת הנכונה והשדה
+       נשאר טקסט שאנחנו מאמתים בעצמנו. */
+    const qt = $("#qText");
+    if (isQuiz()){
+      const q = quizOf(rounds[idx]);
+      qt.textContent = q ? q.q : "";
+      qt.classList.remove("hide");
+      c.classList.add("hide");
+      $("#answer").placeholder = "המספר שלך";
+      $("#answer").setAttribute("inputmode", "numeric");
+      closeSugg();
+      return;
+    }
+    qt.classList.add("hide");
+    c.classList.remove("hide");
+    $("#answer").placeholder = "מי השחקן?";
+    $("#answer").setAttribute("inputmode", "text");
+
     cluesOf(POOL[rounds[idx]]).forEach(([k,v]) => {
       const d = document.createElement("div");
       d.className = "clue";
@@ -780,14 +889,99 @@ ${roomLink()}
     }, 4200);
   }
   
+  /* ============================================================
+     7ב. משחק המספרים — איסוף והכרעה
+     ============================================================
+     ההבדל המבני מ"מי השחקן": שם הסיבוב נסגר ברגע שמישהו צודק,
+     וכאן **אי אפשר להכריע לפני שהזמן נגמר** — התשובה הכי קרובה
+     ידועה רק אחרי שכולם ענו.
+
+     לכן התשובות נאספות ב-answers/<סיבוב>/<משתמש>, וזה נתיב אחי
+     ל-results ולא בתוכו. אילו ישבו בתוכו, הטרנזקציה של closeRound
+     ("אם כבר יש משהו — לא נוגעים") הייתה רואה את התשובות כסגירה
+     קיימת והסיבוב לא היה נסגר לעולם.
+
+     מי שהטיימר נגמר אצלו ראשון מחשב ומגיש; הטרנזקציה מבטיחה
+     שרק ההגשה הראשונה נקלטת, ולכן כל הלקוחות מגיעים לאותה תוצאה
+     גם אם חישבו במקביל. */
+  function myAnswerRef(idx){
+    return ref(db, roomPath(room) + `/answers/${idx}/${uid}`);
+  }
+
+  /* דירוג: קרוב יותר עדיף, ובתיקו — מי שענה קודם.
+     תיקו הוא מצב רגיל כאן ולא קצה נדיר: על "כמה אליפויות" שניים
+     יענו 6 באותו סיבוב. */
+  function rankQuiz(answers, truth){
+    return Object.entries(answers || {})
+      .filter(([, a]) => a && typeof a.v === "number")
+      .map(([id, a]) => ({ id, v: a.v, at: a.at || 0, d: Math.abs(a.v - truth) }))
+      .sort((x, y) => (x.d - y.d) || (x.at - y.at));
+  }
+
+  async function settleQuiz(idx){
+    const rounds = pickRounds(seedOf(), state.settings.rounds);
+    const q = quizOf(rounds[idx]);
+    if (!q) return;
+    let answers = {};
+    try { answers = (await get(ref(db, roomPath(room) + `/answers/${idx}`))).val() || {}; }
+    catch (e) { /* בלי תשובות הסיבוב פשוט נסגר בלי מנצח */ }
+    const rank = rankQuiz(answers, q.a);
+    const win  = rank[0] || null;
+    closeRound(idx, win ? win.id : null, win ? 1 : 0);
+  }
+
+  /* הגשה במשחק המספרים: כותבים ומחכים. אין משוב "קרוב/רחוק" —
+     הוא היה מסגיר את התשובה לשאר. */
+  async function submitNumber(){
+    if (answered || !state || state.status !== "playing") return;
+    const idx = state.round;
+    if ((state.results || {})[idx]) return;
+    const raw = String(inp.value).replace(/[^0-9-]/g, "");
+    if (!raw || !/^-?d{1,4}$/.test(raw)) {
+      $("#feed").className = "feed bad";
+      $("#feed").textContent = "צריך מספר";
+      return;
+    }
+    const v = parseInt(raw, 10);
+    answered = true;
+    inp.disabled = true; inp.value = ""; closeSugg();
+    $("#feed").className = "feed good";
+    $("#feed").textContent = `נקלט: ${v} · מחכים לשאר`;
+    try { await set(myAnswerRef(idx), { v: v, at: serverTimestamp() }); }
+    catch (e) {
+      answered = false; inp.disabled = false;
+      $("#feed").className = "feed bad";
+      $("#feed").textContent = /PERMISSION_DENIED/i.test(e.message || "")
+        ? "אין הרשאה לשמור תשובה. צריך לעדכן את חוקי הפיירבייס (config/firebase-rules.json)."
+        : "לא נשמר: " + (e.message || e);
+    }
+  }
+
   function showReveal(answer, res){
     show("scReveal");
     stopTick();
+    if (isQuiz()){ showQuizReveal(answer, res); drawBoard("#revBoard"); return; }
     const who = res.winner ? (state.players[res.winner]?.name || "מישהו") : null;
     $("#revText").innerHTML = who
       ? `<b>${esc(answer.he)}</b><br>${esc(who)} זיהה ראשון · ${res.pts} נקודות`
       : `<b>${esc(answer.he)}</b><br>אף אחד לא זיהה`;
     drawBoard("#revBoard");
+  }
+
+  /* מציגים את התשובה הנכונה ואת מה שכל אחד ענה, ממוין לפי קרבה.
+     זה החלק שהופך "פספסתי" ל"פספסתי בשתיים" — וזה מה שגורם
+     לרצות עוד סיבוב. */
+  function showQuizReveal(q, res){
+    const rank = rankQuiz((state.answers || {})[state.round] || {}, q.a);
+    let html = `<div style="font-size:14px;opacity:.8;line-height:1.5">${esc(q.q)}</div>` +
+               `<b style="font-size:30px">${q.a}</b>`;
+    if (!rank.length) html += `<br><span style="font-size:14px">אף אחד לא ענה</span>`;
+    $("#revText").innerHTML = html + rank.map((r, i) => {
+      const nm = (state.players[r.id] || {}).name || "מישהו";
+      const w  = i === 0 && r.id === res.winner;
+      return `<div class="ansrow${w ? " win" : ""}"><span>${esc(nm)}</span>` +
+             `<span><b>${r.v}</b> ${r.d === 0 ? "<i>בול</i>" : `<i>הפרש ${r.d}</i>`}</span></div>`;
+    }).join("");
   }
   
   async function finishGame(){
@@ -858,6 +1052,7 @@ ${roomLink()}
   })();
   
   inp.addEventListener("input", () => {
+    if (isQuiz()) return closeSugg();     // אין השלמת שמות למספר
     const q = vNorm(inp.value);
     if (!q) return closeSugg();
     /* עם מקלדת פתוחה נשארים 350px מסך. שש הצעות מכסות גם את הרמזים,
@@ -873,6 +1068,7 @@ ${roomLink()}
     if (b){ inp.value = b.dataset.n; closeSugg(); submit(); }
   });
   inp.addEventListener("keydown", e => {
+    if (e.key === "Enter" && isQuiz()){ e.preventDefault(); submitNumber(); return; }
     if (e.key === "Enter"){ e.preventDefault();
       const first = sg.querySelector("button");
       if (first && vNorm(inp.value) !== vNorm(first.dataset.n)) inp.value = first.dataset.n;
