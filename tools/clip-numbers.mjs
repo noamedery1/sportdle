@@ -78,12 +78,18 @@ html{zoom:2}
   background:radial-gradient(circle,${BR}55 0%,transparent 62%);
   animation:fxRing .85s ease-out both}
 @keyframes fxRing{0%{opacity:1;transform:scale(.05)}100%{opacity:0;transform:scale(1)}}
+/* המותג הוא **SportDle** ולא שם המועדון. הקליפ מוכר את המשחק
+   לכל חמשת המועדונים, וכותרת "ביתרdle" הייתה מצמצמת אותו
+   לאוהדי מועדון אחד — וזה בדיוק מה שהוא לא. */
+#tknew .t0{font-family:'Segoe UI',Arial,sans-serif;font-weight:900;font-size:34px;
+  color:#fff;letter-spacing:1px;opacity:.92;
+  animation:fxSlam .45s cubic-bezier(.2,1.7,.35,1) both}
 #tknew .t1{font-family:'Segoe UI',Arial,sans-serif;font-weight:900;font-size:74px;
   color:${BR};text-shadow:0 6px 34px rgba(0,0,0,.8);letter-spacing:-2px;
-  animation:fxSlam .5s cubic-bezier(.2,1.7,.35,1) both}
-#tknew .t2{font-family:'Segoe UI',Arial,sans-serif;font-weight:800;font-size:30px;
-  color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.9);
-  animation:fxSlam .5s .16s cubic-bezier(.2,1.7,.35,1) both}
+  animation:fxSlam .5s .1s cubic-bezier(.2,1.7,.35,1) both}
+#tknew .t2{font-family:'Segoe UI',Arial,sans-serif;font-weight:800;font-size:28px;
+  color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.9);text-align:center;
+  animation:fxSlam .5s .22s cubic-bezier(.2,1.7,.35,1) both}
 @keyframes fxSlam{0%{transform:scale(2.4) rotate(-7deg);opacity:0}
                   100%{transform:scale(1) rotate(0);opacity:1}}
 
@@ -120,14 +126,62 @@ html{zoom:2}
   46%{transform:translate(8px,-4px)} 70%{transform:translate(-5px,2px)}
   100%{transform:translate(0,0)}}
 
-/* ---------- קרדיט סוגר ---------- */
+/* ---------- מיתוג ----------
+   הכותרת בעמוד היא שם המועדון ("ביתרdle"), כי זה עמוד המועדון.
+   אבל הקליפ מוכר את הקרב, שרץ כאן על שלושה מועדונים ומיועד
+   לכל החמישה — וכותרת של מועדון אחד מצמצמת אותו לאוהדיו.
+
+   לכן שם המוצר מונח מעל אזור הכותרת לכל אורך הקליפ. זו שכבת
+   וידאו כמו הכיתובים ותג ה-VS, ואינה משנה דבר במשחק. */
+#tkbrand{position:fixed;left:0;right:0;top:0;height:118px;z-index:99994;
+  display:flex;align-items:center;justify-content:center;pointer-events:none;
+  background:linear-gradient(180deg,#0C0C0E 62%,rgba(12,12,14,.94) 84%,transparent)}
+#tkbrand span{font-family:'Segoe UI',Arial,sans-serif;font-weight:900;
+  font-size:46px;letter-spacing:-1px;color:#F2F2F0}
+#tkbrand span b{color:${BR}}
+
+/* ---------- שני השחקנים ----------
+   תג שמופיע ברגע שהסיבוב מתחיל. הוא אומר בלי מילים שיש כאן
+   שני אנשים אמיתיים, וזה מה שמחליף את קטע השיתוף שהוסר. */
+#tkvs{position:fixed;left:0;right:0;top:9%;z-index:99999;display:flex;
+  align-items:center;justify-content:center;gap:14px;pointer-events:none;
+  font-family:'Segoe UI',Arial,sans-serif;animation:fxPop .4s ease-out both}
+#tkvs .p{background:rgba(0,0,0,.9);border:2px solid ${BR};color:#fff;
+  font-weight:900;font-size:26px;padding:8px 18px;border-radius:24px}
+#tkvs .v{color:${BR};font-weight:900;font-size:34px;
+  animation:fxPunch .8s ease-in-out infinite}
+
+/* ---------- קונפטי בחשיפה ---------- */
+#tkconf{position:fixed;inset:0;z-index:99996;pointer-events:none;overflow:hidden}
+#tkconf i{position:absolute;top:-8%;width:12px;height:20px;border-radius:2px;
+  animation:fxFall 1.9s linear both}
+@keyframes fxFall{0%{transform:translateY(0) rotate(0);opacity:1}
+                  100%{transform:translateY(125vh) rotate(760deg);opacity:.15}}
+
+/* ---------- סוויפ אור ---------- */
+#tksw{position:fixed;inset:0;z-index:99995;pointer-events:none;overflow:hidden}
+#tksw i{position:absolute;top:-30%;bottom:-30%;width:38%;
+  background:linear-gradient(90deg,transparent,${BR}3a,transparent);
+  transform:rotate(12deg) translateX(-160%);animation:fxSw 1s ease-out both}
+@keyframes fxSw{to{transform:rotate(12deg) translateX(300%)}}
+
+/* ---------- קרדיט סוגר ----------
+   הכתובת נחתכה משני הצדדים: 44px על 22 תווים רחבים מהפריים.
+   nowrap עם גודל שנגזר מרוחב הפריים, ועוד ריפוד — כדי שגם
+   דומיין ארוך יותר לא ייצא החוצה. */
 #tkend{position:fixed;inset:0;z-index:99999;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:16px;pointer-events:none;
-  background:rgba(8,8,10,.9);font-family:'Segoe UI',Arial,sans-serif;
-  animation:fxPop .4s ease-out both}
-#tkend .a{font-weight:900;font-size:38px;color:#fff}
-#tkend .b{font-weight:900;font-size:44px;color:${BR};letter-spacing:-1px}
-#tkend .c{font-weight:700;font-size:24px;color:#cfcfd6}
+  align-items:center;justify-content:center;gap:18px;pointer-events:none;
+  padding:0 26px;background:rgba(8,8,10,.985);
+  font-family:'Segoe UI',Arial,sans-serif;animation:fxPop .4s ease-out both}
+#tkend .a{font-weight:900;font-size:32px;color:#fff;text-align:center}
+/* 23 תווים ב-32px הם 414px על מסך של 450 פחות ריפוד — האות
+   האחרונה נחתכה. הגודל נגזר מרוחב הפריים ולא ממספר קבוע, כדי
+   שגם דומיין ארוך יותר יישאר בפנים. */
+#tkend .b{font-weight:900;font-size:min(5.4vw,25px);color:${BR};
+  letter-spacing:0;white-space:nowrap;direction:ltr;
+  border-top:2px solid ${BR}55;border-bottom:2px solid ${BR}55;padding:10px 0}
+#tkend .c{font-weight:700;font-size:21px;color:#cfcfd6;text-align:center;
+  line-height:1.5}
 `;
 
 /* ============================================================
@@ -221,50 +275,58 @@ await openVersus(A, "נועם");
    כשצריך — הטעינה מתרחשת מאחורי הקלעים בזמן שהמארח על המסך. */
 const mateReady = openVersus(B, "דני").catch(e => { warn("החבר לא נטען: " + e.message); });
 
-/* 0–2 — הוו */
+/* המיתוג עולה **לפני** נקודת החיתוך, אחרת חצי השנייה הראשונה
+   של הקליפ מראה את שם המועדון — וזה בדיוק מה שהוא בא להחליף. */
+await fx("tkbrand", `<span>Sport<b>Dle</b></span>`);
+await A.waitForTimeout(250);
+
+/* ---------- ההקמה כולה מתחת לכיסוי ----------
+   פתיחת חדר, קוד, שיתוף והצטרפות — כל זה מנגנון ולא משחק. הוא
+   לא משכנע אף אחד לשחק, והוא עלה עשר שניות בפריים. לכן הוו
+   נשאר על המסך לכל אורך ההקמה, והוא יורד רק כשכבר יש שני
+   שחקנים וסיבוב שרץ.
+
+   זו עריכה ולא זיוף: החדר נפתח באמת, החבר מצטרף באמת, ומה
+   שרואים אחרי שהכיסוי יורד הוא המצב האמיתי של המשחק. */
 const HOOK_AT = (Date.now() - REC0) / 1000;
 log(`  הוו בשנייה ${HOOK_AT.toFixed(1)} של ההקלטה`);
 await fx("tknew",
-  `<div class="burst"></div><div class="t1">משחק חדש</div>` +
-  `<div class="t2">בקרב חברים של ${club.game}</div>`);
-await A.waitForTimeout(2200);
-await fx("tknew", "");
+  `<div class="burst"></div>` +
+  `<div class="t0">SportDle</div>` +
+  `<div class="t1">משחק חדש</div>` +
+  `<div class="t2">דו-קרב מספרים · לכל חמשת המועדונים</div>`);
 
-/* 2.4–6 — בוחרים "מספרים" */
-await cap("בפתיחת חדר בוחרים <b>איזה משחק</b>");
-await spot("#modePick", true);
-await A.waitForTimeout(1500);
+/* חדר על כמה מועדונים: כך השאלות אינן של מועדון אחד, וזה גם
+   מה שהכיתוב מבטיח. */
+for (const s of ["maccabi-ta", "maccabi-haifa"]) {
+  await jsClick(A, `#clubPick [data-club="${s}"]`).catch(() => {});
+  await A.waitForTimeout(120);
+}
 await jsClick(A, '#modePick [data-mode="quiz"]');
-await shake();
-await A.waitForTimeout(1600);
-await spot("#modePick", false);
-
+await A.waitForTimeout(400);
 const hint = (await A.textContent("#modeHint").catch(() => "")) || "";
 log(`  ${hint.trim()}`);
-await cap(`<b>${(hint.match(/[\d,]+/) || ["2,400"])[0]} שאלות</b> · הכי קרוב זוכה`);
-await A.waitForTimeout(1900);
 
-/* 6–9 — חדר וקוד */
-await cap("");
 if (!await clickUntil(A, "#btnCreate", "#scLobby")) die("החדר לא נפתח");
 const code = (await A.textContent("#lobbyCode")).trim();
 log(`  חדר ${code}`);
-await cap("פותחים חדר ומקבלים <b>קוד</b>");
-await A.waitForTimeout(2100);
 
-/* החבר מצטרף — מחוץ לפריים. הדף שלו כבר נטען במקביל. */
 await mateReady;
-await jsClick(B, '#modePick [data-mode="quiz"]').catch(() => {});
 await B.fill("#joinCode", code);
 if (!await clickUntil(B, "#btnJoin", "#scLobby")) die("החבר לא הצטרף");
-await cap("שולחים אותו לחברים — והם בפנים");
-await A.waitForTimeout(2300);
 
-/* 9 — מתחילים */
-await cap("");
 await A.selectOption("#setRounds", "5").catch(() => {});
 if (!await clickUntil(A, "#btnStart", "#scPlay")) die("המשחק לא התחיל");
-await A.waitForTimeout(900);
+await A.waitForTimeout(700);
+
+/* הכיסוי יורד — ומהשנייה הראשונה רואים דו-קרב עם שני שחקנים */
+await fx("tknew", "");
+await fx("tksw", "<i></i>");
+await fx("tkvs", `<span class="p">נועם</span><span class="v">VS</span><span class="p">דני</span>`);
+await cap(`<b>${(hint.match(/[\d,]+/) || ["2,400"])[0]} שאלות</b> · הכי קרוב זוכה`);
+await A.waitForTimeout(2100);
+await fx("tksw", "");
+await fx("tkvs", "");
 
 const q = (await A.textContent("#qText").catch(() => "")) || "";
 log(`  השאלה: ${q.trim()}`);
@@ -300,8 +362,12 @@ const truth = await A.evaluate(() => {
 const isYear = truth != null && Math.abs(truth) >= 1900;
 const near = isYear ? 2 : 1;
 const far  = isYear ? 6 : 4;
+/* בספירה נמוכה החיסור ירד ל-0 — "דני ענה 0 עונות" נראה כמו
+   מישהו שלא ניסה, לא כמו הערכה. רצפה של 1, וכשאין מקום למטה
+   הסטייה עולה כלפי מעלה. */
 const mine  = truth == null ? 6  : truth + near;
-const yours = truth == null ? 11 : truth - far;
+const yours = truth == null ? 11
+            : (isYear || truth - far >= 1) ? truth - far : truth + far;
 log(`  התשובה ${truth} · נועם ${mine} · דני ${yours}`);
 
 await cap("כל אחד עונה <b>מספר</b>");
@@ -344,18 +410,28 @@ await fx("tkcd", "");
 await A.waitForSelector("#scReveal", { state: "visible", timeout: 30000 }).catch(() => {});
 await fx("tkflash", " ");
 await shake();
+/* קונפטי בצבעי המועדון — הרגע היחיד בקליפ שבו מישהו ניצח,
+   וזה מה שהופך אותו לרגע ולא לשקופית. */
+await fx("tkconf", Array.from({ length: 34 }, (_, i) => {
+  const x = (i * 2.9 + (i % 5) * 3) % 100;
+  const c = i % 3 === 0 ? "#fff" : BR;
+  return `<i style="left:${x}%;background:${c};animation-delay:${(i % 9) * 55}ms"></i>`;
+}).join(""));
 await A.waitForTimeout(500);
 await fx("tkflash", "");
 await cap("<b>הכי קרוב לוקח את הנקודה</b>");
-await A.waitForTimeout(3600);
+await A.waitForTimeout(2400);
+await fx("tkconf", "");
+await A.waitForTimeout(1000);
 
-/* 26–30 — סוגרים */
+/* סוגרים */
 await cap("");
+await fx("tksw", "<i></i>");
 await fx("tkend",
   `<div class="a">משחק חדש בקרב חברים</div>` +
   `<div class="b">${base.replace(/^https?:\/\//, "")}</div>` +
-  `<div class="c">פותחים חדר · שולחים קוד · משחקים</div>`);
-await A.waitForTimeout(3000);
+  `<div class="c">חמישה מועדונים · פותחים חדר · משחקים</div>`);
+await A.waitForTimeout(2800);
 
 await A.close();
 await host.close();
@@ -373,7 +449,7 @@ await browser.close();
    קטן מדי חתך את הוו עצמו. */
 const raw = readdirSync(dir).find(f => f.endsWith(".webm"));
 if (!raw) die("ההקלטה לא נוצרה");
-const SS = Math.max(0, HOOK_AT - 0.95).toFixed(2);
+const SS = Math.max(0, HOOK_AT - 0.5).toFixed(2);
 log(`  חיתוך מ-${SS} שניות`);
 const ff = spawnSync("ffmpeg", [
   "-y", "-v", "error",
