@@ -43,9 +43,15 @@
    "league": [],
    "cup": []
   },
+  "_expect": [
+   "בדיקת שפיות: אם המספרים זזים בלי שהתכוונו, הבנייה נופלת.",
+   "targets עלה מ-121 ל-196 ב-06/09/2026 כשסף הבריכה ירד מ-3 עונות",
+   "ל-2 (ראה MIN_SEASONS ב-scripts/enrich.mjs). זו הייתה כוונה,",
+   "והבדיקה עשתה בדיוק את תפקידה כשעצרה את הבנייה."
+  ],
   "expect": {
    "players": 410,
-   "targets": 121
+   "targets": 196
   },
   "wikiEn": "Beitar Jerusalem",
   "transfermarkt": 3793

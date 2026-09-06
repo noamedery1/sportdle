@@ -70,7 +70,7 @@
  },
  "counts": {
   "players": 354,
-  "targets": 123
+  "targets": 179
  },
  "players": [
   {
@@ -260,7 +260,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": true
   },
   {
    "he": "משה שווייצר",
@@ -481,7 +481,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "אמיר שלח",
@@ -666,7 +666,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "קובי רפואה",
     "Kobi Refua"
@@ -785,7 +785,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אבי סטרול",
@@ -847,7 +847,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אנדז'יי קוביקה",
@@ -881,7 +881,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "מייקל אמנלו",
@@ -896,7 +896,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "מרקו בלבול",
@@ -911,7 +911,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "גז'גוז' ונדזינסקי",
@@ -1055,7 +1055,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": true
   },
   {
    "he": "ראובן עובד",
@@ -1336,7 +1336,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "גל פליאן"
    ]
@@ -1664,7 +1664,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "גל ניר",
     "Gal Nir"
@@ -1876,7 +1876,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "יקיר שינה",
     "Yakir Shina",
@@ -2087,7 +2087,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "ג'ובאני רוסו",
     "Đovani Roso",
@@ -2395,7 +2395,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "עומר פרץ",
     "Omer Peretz"
@@ -2483,7 +2483,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "ג'ונתן ויקטור ג'רארד אסוס",
     "Jonathan Assous",
@@ -2560,7 +2560,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "דן רומן",
     "Dan Roman"
@@ -2579,7 +2579,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "דראגוסלב יבריץ",
     "דראגוסלב יבריץ'"
@@ -2659,7 +2659,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "עמירן שקלים",
     "Amiran Shkalim"
@@ -2734,7 +2734,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "איגור טומסיץ",
     "איגור טומסיץ'"
@@ -2753,7 +2753,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "איליה יבוריאן",
     "איליה יברויאן"
@@ -2901,7 +2901,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "צחי סלוק",
@@ -3027,7 +3027,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "יובל אבידור",
     "Yuval Avidor"
@@ -3276,7 +3276,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "יוסי גינזבורג"
    ]
@@ -3331,7 +3331,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "ניבאלדו בטיסטה סנטנה",
     "ניבאלדו סנטנה",
@@ -3351,7 +3351,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "סאבו פאביצ'ביץ'",
     "Savo Pavičević",
@@ -3371,7 +3371,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "קלמי סבן",
     "Klemi Saban"
@@ -3409,7 +3409,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "אליהו אלי זיזוב"
    ]
@@ -3542,7 +3542,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "מואנס דבור",
     "Munas Dabbur"
@@ -3561,7 +3561,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "עומר ורד",
     "Omer Vered"
@@ -3657,7 +3657,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "רפאל דהן",
     "Rafi Dahan",
@@ -3976,7 +3976,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false,
+   "target": true,
    "aliases": [
     "ברק בדש",
     "Barak Badash"
@@ -4015,7 +4015,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false,
+   "target": true,
    "aliases": [
     "דן איינבינדר",
     "Dan Einbinder"
@@ -4052,7 +4052,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false
+   "target": true
   },
   {
    "he": "חואן פרארס",
@@ -4107,7 +4107,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false,
+   "target": true,
    "aliases": [
     "ניקולה מיטרוביץ'",
     "Nikola Mitrović",
@@ -4241,7 +4241,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": true
   },
   {
    "he": "סער קלדרון",
@@ -4274,7 +4274,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "עדן בן בסט",
     "Eden Ben Basat"
@@ -4407,7 +4407,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "אליאל פרץ",
     "Eliel Peretz"
@@ -4507,7 +4507,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יוסי בניון",
@@ -4522,7 +4522,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "יוסי בניון",
     "Yossi Benayoun"
@@ -4593,7 +4593,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "שלומי יוסף אזולאי",
     "Shlomi Azulay",
@@ -4756,7 +4756,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "וידר קיארטנסון",
     "וידר אורן קיארטנסון"
@@ -5211,7 +5211,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "ז'איר אמאדור",
     "Jair Amador",
@@ -5265,7 +5265,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "צ'יקו אופואדו",
     "Chikeluba Ofoedu",
@@ -5385,7 +5385,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "אדוארדו גררו",
@@ -5456,7 +5456,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "דור תורג'מן",
@@ -5562,7 +5562,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "עדן קארצב",
     "Eden Karzev"
@@ -5649,7 +5649,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false,
+   "target": true,
    "aliases": [
     "ג'ורג'ה יובאנוביץ'",
     "Đorđe Jovanović",
@@ -5777,7 +5777,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "דריק לוקאסן",
     "Derrick Luckassen"
@@ -5815,7 +5815,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false,
+   "target": true,
    "aliases": [
     "ניר ביטון",
     "Nir Bitton"
@@ -5870,7 +5870,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "אבישי כהן",
     "Avishay Cohen"
@@ -5945,7 +5945,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "הנרי אדו",
     "Henry Addo"
@@ -6109,7 +6109,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "רועי עמדי"
    ]
@@ -6164,7 +6164,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": true
   },
   {
    "he": "איסוף סיסוקו",
@@ -6179,7 +6179,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "איסוף סיסוקו",
     "Issouf Sissokho"
@@ -6198,7 +6198,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "אלעד מדמון",
     "Elad Madmon"
@@ -6268,7 +6268,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false,
+   "target": true,
    "aliases": [
     "טייריס אסנטה"
    ]
@@ -6758,6 +6758,62 @@
   "רועי דיין",
   "גיא סולומון",
   "רייס ברונו",
-  "קובי מוסה"
+  "קובי מוסה",
+  "עדן בן בסט",
+  "ז'איר אמאדור",
+  "גיא מזרחי",
+  "כפיר אדרי",
+  "פרנץ הורבאט",
+  "רפי דהן",
+  "פארפה גיאגון",
+  "יוסי בניון",
+  "וידאר קיארטאנסון",
+  "אליאל פרץ",
+  "עמירן שקלים",
+  "שלומי אזולאי",
+  "עדן קארצב",
+  "קלמי סבן",
+  "חואן פבלו קולינאס",
+  "יובל אבידור",
+  "ג'ורג'ה יובאנוביץ'",
+  "אלעד מדמון",
+  "דרגוסלאב יבריץ'",
+  "דן איינבינדר",
+  "אליהו זיזוב",
+  "משה גלאם",
+  "ג'ובאני רוסו",
+  "ג'ונתן אסוס",
+  "עומר פרץ",
+  "נוסא איגיבור",
+  "טייריס אסאנטה",
+  "אלכסיי קוסולאפוב",
+  "יקיר שינה",
+  "קובי רפואה",
+  "עמנואל מאיוקה",
+  "ניבאלדו",
+  "דריק לוקאסן",
+  "מרקו בלבול",
+  "מייקל אמנלו",
+  "יוסף סורינוב",
+  "גל ניר",
+  "מואנס דבור",
+  "עומר ורד",
+  "רועי עמדי",
+  "ניקולה מיטרוביץ'",
+  "איליה יברויאן",
+  "הנרי אדו",
+  "ניר ביטון",
+  "דן רומן",
+  "איגור טומאסיץ'",
+  "איסוף סיסוקו",
+  "אופק מליקה",
+  "אבישי כהן",
+  "ברק בדש",
+  "סאבו פאביצ'ביץ'",
+  "יגור פיליפנקה",
+  "אורי מלמיליאן",
+  "צ'יקו אופואדו",
+  "גל פליאן",
+  "יוסי גינזבורג"
  ]
 }

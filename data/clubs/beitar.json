@@ -41,7 +41,7 @@
  },
  "counts": {
   "players": 410,
-  "targets": 121
+  "targets": 196
  },
  "players": [
   {
@@ -57,7 +57,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ארצי בן יעקב",
@@ -429,7 +429,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "יעקב אסייג",
@@ -444,7 +444,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "סרגיי טרטיאק",
@@ -602,7 +602,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "רענן דרעי",
@@ -1241,7 +1241,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "גולן דרעי",
@@ -1286,7 +1286,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אוהד כהן",
@@ -1316,7 +1316,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אלון סגיר",
@@ -1391,7 +1391,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ולדימיר פטרוביץ'",
@@ -1489,7 +1489,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "דמיטרו מיכאילנקו",
@@ -1669,7 +1669,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אבי פרץ",
@@ -1718,7 +1718,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ברק יצחקי",
@@ -1752,7 +1752,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "חנן פדידה",
@@ -1842,7 +1842,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אופיר עזו",
@@ -1857,7 +1857,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אייל אלג",
@@ -1872,7 +1872,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אלי ששון",
@@ -1906,7 +1906,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אלירן דנין",
@@ -1955,7 +1955,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "דניאל שמשיאלשווילי",
@@ -1970,7 +1970,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "טל בנין",
@@ -2000,7 +2000,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ליאור אסולין",
@@ -2015,7 +2015,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "מור אפרים",
@@ -2030,7 +2030,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ניסים נאור",
@@ -2045,7 +2045,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "עמית בן שושן",
@@ -2090,7 +2090,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שחר מתן",
@@ -2410,7 +2410,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false
+   "target": true
   },
   {
    "he": "טוטו",
@@ -2602,7 +2602,7 @@
    ],
    "seasons": 2,
    "titles": 2,
-   "target": false
+   "target": true
   },
   {
    "he": "דן אביאנדר",
@@ -2632,7 +2632,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false
+   "target": true
   },
   {
    "he": "יהונתן זדה",
@@ -2677,7 +2677,7 @@
    ],
    "seasons": 2,
    "titles": 3,
-   "target": false
+   "target": true
   },
   {
    "he": "מתן בראשי",
@@ -3136,7 +3136,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "צחי אליחן",
@@ -3166,7 +3166,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אופיר עמרם",
@@ -3181,7 +3181,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אנדריי פילאבסקי",
@@ -3226,7 +3226,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "הרמוני איקנדה",
@@ -3256,7 +3256,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "טל כחילה",
@@ -3286,7 +3286,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "מותי שי",
@@ -3331,7 +3331,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שי נסים",
@@ -3384,7 +3384,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ג'בראיל קדייב",
@@ -3587,7 +3587,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "סינטאיהו סלליך",
@@ -3655,7 +3655,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שלומי אזולאי",
@@ -3674,7 +3674,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אור ואקנין",
@@ -3772,7 +3772,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ליביו אנטל",
@@ -3802,7 +3802,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ססאר ארסו",
@@ -4001,7 +4001,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "חסוס רואדה",
@@ -4016,7 +4016,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יואכים אסקלינג",
@@ -4080,7 +4080,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ניקיטה רוקאביציה",
@@ -4230,7 +4230,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ג'ורג' פאולינו",
@@ -4290,7 +4290,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "חן עזרא",
@@ -4305,7 +4305,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יוסי בניון",
@@ -4365,7 +4365,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "עדן עזורי",
@@ -4384,7 +4384,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "עוז ראלי",
@@ -4403,7 +4403,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שלומי אביסידריס",
@@ -4512,7 +4512,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יום טוב עופר",
@@ -4546,7 +4546,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "עוז סיטון",
@@ -4625,7 +4625,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אור אינברום",
@@ -4689,7 +4689,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אנתוני אנאן",
@@ -4881,7 +4881,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שמואל שיימן",
@@ -4926,7 +4926,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "דוד דגו",
@@ -4956,7 +4956,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יקיר ארצי",
@@ -4971,7 +4971,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "לוי גארסיה",
@@ -5024,7 +5024,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "מיכאל אוחנה",
@@ -5073,7 +5073,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "רוי דוגה",
@@ -5118,7 +5118,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "שלום אדרי",
@@ -5178,7 +5178,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "דוד חוג'ה",
@@ -5193,7 +5193,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "חלאופילו פלייטר",
@@ -5321,7 +5321,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "רז ברוכיאן",
@@ -5396,7 +5396,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "ליאל דרעי",
@@ -5490,7 +5490,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "קמסו מארה",
@@ -5700,7 +5700,7 @@
    ],
    "seasons": 2,
    "titles": 1,
-   "target": false
+   "target": true
   },
   {
    "he": "אדי גוטליב",
@@ -5745,7 +5745,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "אלון בן עמי",
@@ -5760,7 +5760,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "בן ביטון",
@@ -5805,7 +5805,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "טימוטי מוזי",
@@ -5835,7 +5835,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "יובל אשכנזי",
@@ -5880,7 +5880,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ניקה חורחלי",
@@ -5970,7 +5970,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ז'אן מרסלן",
@@ -6015,7 +6015,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "ירין לוי",
@@ -6030,7 +6030,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "סילבה קאני",
@@ -6075,7 +6075,7 @@
    ],
    "seasons": 2,
    "titles": 0,
-   "target": false
+   "target": true
   },
   {
    "he": "פטריק טוומאסי",
@@ -6544,6 +6544,81 @@
   "שמואל קוז'וקין",
   "עוזיאל פרדו",
   "אילן אלהרר",
-  "מאיר קדוש"
+  "מאיר קדוש",
+  "עמית קורנפיין",
+  "קים זיבת",
+  "חן דילמוני",
+  "חן עזרא",
+  "שלומי אזולאי",
+  "מור אפרים",
+  "אנדרה קלדיירה",
+  "חסוס רואדה",
+  "אורן ביטון",
+  "דיוגו ורדשקה",
+  "אופיר עזו",
+  "רועי זכרי",
+  "אדם מורינו",
+  "אוראל חורב",
+  "איסמאילה סורו",
+  "גיל כהן",
+  "ויקטור פאסו",
+  "ליאור אסולין",
+  "ניסים נאור",
+  "לירן רוטמן",
+  "אנז' פרדי פלומה",
+  "דניאל שמשיאלשווילי",
+  "חוסואה מחיאס",
+  "בני חדד",
+  "יעקב מזרחי",
+  "חיים לוין",
+  "עלי מוחמד",
+  "שי קונסטנטין",
+  "נאור סבג",
+  "אבירם זיאת",
+  "הראל פולק",
+  "רונן שוויג",
+  "כריסטיאן אלווארז",
+  "ג'וניור ויסה",
+  "אלון בן עמי",
+  "גיא סולומון",
+  "ולדימיר גרצ'נב",
+  "רועי לויאן",
+  "אלון אופיר",
+  "יובל שלו",
+  "אלירן עטר",
+  "אריק סאבו",
+  "קובי גנון",
+  "יעקב אסייג",
+  "דניאל היידמן",
+  "אופק עברי",
+  "עדן מלכה",
+  "דן מורי",
+  "ערן לוי",
+  "יאן יוסופוב",
+  "חנן ממן",
+  "אבי נמני",
+  "ניסו קפילוטו",
+  "יוני קים",
+  "לידור כהן",
+  "דוד חוג'ה",
+  "ירין לוי",
+  "חיים מגרלשוילי",
+  "זוהר זסנו",
+  "דור קונסטנטינוס",
+  "מיירון ג'ורג'",
+  "דרק בואטנג",
+  "יקיר ארצי",
+  "אליאב יוני",
+  "אייל אלג",
+  "פרד פריידיי",
+  "עדן עזורי",
+  "רועי פדידה",
+  "אופיר עמרם",
+  "לירון דיאמנט",
+  "מרסל הייסטר",
+  "עוז ראלי",
+  "גולן חרמון",
+  "עמית כהן",
+  "טברטקו קאלה"
  ]
 }
