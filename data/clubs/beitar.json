@@ -902,6 +902,25 @@
    "target": true
   },
   {
+   "he": "גולן חרמון",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1977,
+   "spells": [
+    [
+     1997,
+     1997
+    ],
+    [
+     2003,
+     2004
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true
+  },
+  {
    "he": "ז'אן טלסניקוב",
    "pos": "MF",
    "nat": "IL",
@@ -1473,21 +1492,6 @@
     ]
    ],
    "seasons": 3,
-   "titles": 0,
-   "target": true
-  },
-  {
-   "he": "גולן חרמון",
-   "pos": "GK",
-   "nat": "IL",
-   "born": 1969,
-   "spells": [
-    [
-     2002,
-     2003
-    ]
-   ],
-   "seasons": 2,
    "titles": 0,
    "target": true
   },
