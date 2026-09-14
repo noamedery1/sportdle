@@ -985,25 +985,27 @@ ${items.join("\n")}
      tools/links.mjs מפיל את הבנייה אם דף חוזר להיות יתום. */
   {
     const cards = order.map(s => {
-      const n = players.filter(r => r.slug === s).length;
+      const n = data[s].players.length;
       const cov = data[s].coverage;
       return `  <a class="card" href="${up(1)}players/${s}/">
     <div class="n">${esc(data[s].he)}</div>
     <div class="t">${esc(data[s].game)}</div>
-    <div class="s">${n} שחקנים בבריכת התשובות · ${season(cov.from)}–${season(cov.to)}</div>
+    <div class="s">${n} שחקנים · ${season(cov.from)}–${season(cov.to)}</div>
   </a>`;
     });
+    const allPlayable = order.reduce((a, s) => a + data[s].players.length, 0);
     add("players/", shell({
       depth: 1, path: "players/", base, siteName: site.name,
       title: `שחקנים · ${site.name}`,
-      desc: `כל השחקנים שיכולים להיות תשובה ב-SportDle, לפי מועדון: עמדה, שנים במועדון, מספר עונות ותארים.`,
+      desc: `כל השחקנים שאפשר לנחש ב-SportDle, לפי מועדון: עמדה, שנים במועדון, מספר עונות ותארים.`,
       h1: "שחקנים",
-      kicker: `${players.length} שחקנים בבריכות התשובות של חמשת המועדונים.`,
+      kicker: `${allPlayable} שחקנים בחמשת המועדונים.`,
       crumbs: [HOME, { he: "שחקנים", path: "players/" }],
       body: `
-  <p>אלה השחקנים שיכולים להיות התשובה לחידה יומית. לכל אחד דף
-     עם מה שהמאגר יודע עליו — עמדה, לאום, שנת לידה, השנים
-     במועדון, מספר העונות והתארים שנספרו בזמן שהיה בסגל.</p>
+  <p>אלה כל השחקנים שאפשר להקליד במשחק. ${players.length} מהם יכולים
+     גם להיות התשובה לחידה יומית, ולכל אחד מאלה דף עם מה שהמאגר
+     יודע עליו — עמדה, לאום, שנת לידה, השנים במועדון, מספר
+     העונות והתארים שנספרו בזמן שהיה בסגל.</p>
   <p>שחקן שאין עליו הסכמה בין שני מקורות בלתי תלויים אינו כאן
      ואינו במשחק. הרקע ב<a href="${up(1)}about/">אודות</a>.</p>
   <div class="cards">
@@ -1015,32 +1017,51 @@ ${cards.join("\n")}
       }
     }));
 
-    /* ---------- טבלת סגל לכל מועדון ---------- */
+    /* ---------- טבלת סגל לכל מועדון ----------
+       הטבלה היא **מי שאפשר להקליד**, ולא מי שיכול להיות התשובה.
+       שני הדברים אינם זהים: בריכת התשובות דורשת שתי עונות ומעלה,
+       והמשחק מקבל כל שם במאגר. דווח מהשטח על שלומי אזולאי — שיחק
+       בבית"ר עונה אחת בהשאלה, ולכן נעדר מהרשימה בזמן שהוא כן
+       בתיבת החיפוש. מי שמחפש שם ולא מוצא אותו מסיק שהוא לא במשחק,
+       וזה בדיוק ההפך מהאמת.
+
+       דף אישי נשאר רק למי שבבריכה. לדף כזה יש מה לומר — באיזו
+       חידה הוא היה התשובה — ולמי שאינו בבריכה אין, וזה גם היה
+       מכפיל את דפי התוכן ב-710 בלי תוכן חדש. שורה בלי קישור
+       אומרת את זה בדיוק: הוא במשחק, אין לו דף. */
     for (const s of order) {
       const club = data[s];
-      const list = players.filter(r => r.slug === s)
-        .sort((a, b) => a.p.spells[0][0] - b.p.spells[0][0] ||
-                        a.p.he.localeCompare(b.p.he, "he"));
-      const rows = list.map(r => {
-        const p = r.p;
-        return `    <tr><td><b><a href="${up(2)}players/${s}/${r.s}/">${esc(p.he)}</a></b></td>` +
+      const linked = new Map(players.filter(r => r.slug === s).map(r => [r.p.he, r]));
+      const list = [...data[s].players]
+        .sort((a, b) => a.spells[0][0] - b.spells[0][0] ||
+                        a.he.localeCompare(b.he, "he"));
+      const rows = list.map(p => {
+        const r = linked.get(p.he);
+        const name = r ? `<a href="${up(2)}players/${s}/${r.s}/">${esc(p.he)}</a>`
+                       : esc(p.he);
+        return `    <tr><td><b>${name}</b></td>` +
           `<td>${esc(POS_HE[p.pos] || "")}</td>` +
           `<td>${esc(p.spells.map(([a, b]) => `${season(a)}–${season(b)}`).join(", "))}</td>` +
           `<td>${seasonsIn(p.spells)}</td><td>${p.titles}</td></tr>`;
       });
+      const inPool = list.filter(p => linked.has(p.he)).length;
       add(`players/${s}/`, shell({
         depth: 2, path: `players/${s}/`, base, siteName: site.name,
         title: `שחקני ${club.he} · ${site.name}`,
-        desc: `${list.length} שחקנים מבריכת התשובות של ${club.he}, עם עמדה, שנים במועדון, מספר עונות ותארים.`,
+        desc: `${list.length} שחקני ${club.he} שאפשר לנחש ב-${club.game}, עם עמדה, שנים במועדון, מספר עונות ותארים.`,
         h1: `שחקני ${club.he}`,
-        kicker: `${list.length} שחקנים בבריכת התשובות, לפי סדר העונה הראשונה במועדון.`,
+        kicker: `${list.length} שחקנים שאפשר להקליד, לפי סדר העונה הראשונה במועדון.`,
         crumbs: [HOME, { he: "שחקנים", path: "players/" },
                  { he: club.he, path: `players/${s}/` }],
         body: `
-  <p>כל השחקנים שיכולים להיות התשובה לחידה של ${esc(club.game)},
-     מסודרים לפי העונה הראשונה שלהם במועדון. "תארים" הוא מספר
-     תארי המועדון בעונות שבהן השחקן היה בסגל — ראה
+  <p>כל השחקנים שאפשר לנחש ב-${esc(club.game)}, מסודרים לפי העונה
+     הראשונה שלהם במועדון. "תארים" הוא מספר תארי המועדון בעונות
+     שבהן השחקן היה בסגל — ראה
      <a href="${up(2)}how-to-play/">איך משחקים</a>.</p>
+  <p><b>${inPool}</b> מהם יכולים גם להיות התשובה לחידה היומית, והם
+     אלה שיש להם דף משלהם. השאר שיחקו במועדון עונה אחת בלבד, או
+     שאין לנו את שנת הלידה שלהם — ובשני המקרים אפשר להקליד אותם,
+     אבל לא להיות התשובה.</p>
   <table>
     <tr><th>שחקן</th><th>עמדה</th><th>שנים</th><th>עונות</th><th>תארים</th></tr>
 ${rows.join("\n")}
