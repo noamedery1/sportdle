@@ -421,6 +421,110 @@ for (const club of clubs) {
     }
   }
 
+  /* --- שני אנשים, שם אחד ---------------------------------------
+     "שלומי אזולאי" הם שני שחקנים שונים ששיחקו באותם מועדונים
+     בשנים חופפות. כך גם "אבי כהן" במכבי ת"א ו"רפי כהן" בחיפה.
+
+     הצינור ידע להבהיר שני שחקנים בעלי אותו שם — אבל רק כששתי
+     **רשומות** כבר קיימות במועדון. כאן לא היו שתיים מלכתחילה:
+     הבסיס (ההתאחדות או ה-reference) מחזיק שורה אחת לכל שם,
+     וויקיפדיה רק ממלאת תכונות. וגרוע מזה, matchWiki מחזיר
+     `null` כשיש שני ערכים באותו שם — ובצדק, כי אסור לו לנחש —
+     ולכן הרשומה נשארה גם בלי עמדה וגם בלי שנת לידה.
+
+     מה שמאפשר לפתור את זה הוא ש**ויקיפדיה כבר יודעת שהם שניים**:
+     היא מחזיקה שני ערכים נפרדים, ולכל אחד טבלת קריירה משלו.
+     הטבלה הזאת נסרקה מאז ומעולם ל-data/raw/<slug>-wikicareer.json
+     ולא נקראה כאן אף פעם — רק tools/audit.mjs השתמש בה. היא בדיוק
+     מה שחסר: היא אומרת אילו עונות שייכות לאיזה מהשניים.
+
+     שלושה תנאים, וכולם חייבים להתקיים — אחרת לא נוגעים:
+       1. לפחות שני ערכים **עם שורות במועדון הזה**. ערך שרק חולק
+          שם אבל לא שיחק כאן אינו התנגשות.
+       2. שנות לידה שונות לכל אחד. בלעדיהן אין הבהרה אפשרית, וזה
+          הולך ל-review ומחכה לאדם — לא לניחוש.
+       3. עונות מהטבלה מוחלפות רק כשהערך אינו `ambiguous`. כשהסורק
+          עצמו לא היה בטוח בקריאת השורה, מה שכבר במאגר עדיף — שם
+          יושבים תיקוני העונות הידניים של בית"ר.
+
+     החלוקה בטוחה מול שני השלבים שבאים אחריה: המיזוג דורש **אותה
+     שנת לידה**, וכאן הן שונות בהגדרה; והבליעה דורשת **עמדה
+     ריקה**, וכאן לכולם יש עמדה מוויקיפדיה. */
+  {
+    const career = R("wikicareer");
+    if (wikiP && career?.details) {
+      const careerOf = new Map(career.details.map(d => [d.title, d]));
+      /* Map ולא מערך: wikiplayers ו-wikiextra מחזיקים את אותו ערך
+         פעמיים, ושתי הופעות של אותה כותרת אינן שני אנשים. */
+      const groups = new Map();
+      for (const d of wikiP.details) {
+        if (hasYearDisambig(d.title)) continue;   /* כבר מובהק בשם */
+        const k = normName(d.name);
+        if (!groups.has(k)) groups.set(k, new Map());
+        groups.get(k).set(d.title, d);
+      }
+
+      const yearsIn = spells => new Set((spells || [])
+        .flatMap(([a, b]) => Array.from({ length: b - a + 1 }, (_, i) => a + i)));
+
+      let names = 0, created = 0, respelled = 0;
+      for (const [key, titles] of groups) {
+        if (titles.size < 2) continue;
+        const cands = [...titles.values()]
+          .map(d => ({ d, c: careerOf.get(d.title) }))
+          .filter(x => x.c?.spells?.length);
+        if (cands.length < 2) continue;
+
+        const borns = cands.map(x => x.d.born);
+        if (!borns.every(Boolean) || new Set(borns).size !== cands.length) {
+          review.ambiguous.push({ he: key,
+            why: `${cands.length} ערכים בוויקיפדיה, בלי שנות לידה שמפרידות` });
+          continue;
+        }
+
+        const pool = players.filter(p => normName(stripParen(p.he)) === key);
+        const taken = new Set();
+        for (const { d, c } of cands) {
+          const yrs = yearsIn(c.spells);
+          /* שנת לידה מזהה ודאית. בלעדיה — חפיפת עונות, שהיא
+             הדרך היחידה לדעת איזו מהרשומות הקיימות היא מי. */
+          let rec = pool.find(p => !taken.has(p) && p.born != null && p.born === d.born)
+                 || pool.find(p => !taken.has(p) && p.born == null &&
+                      [...yearsIn(p.spells)].some(y => yrs.has(y)));
+          if (rec) taken.add(rec);
+          else {
+            rec = { he: d.name, name: null, pos: null, nat: null, born: null,
+                    years: null, spells: null, aliases: [], src: [],
+                    /* הרשומה הזאת לא הייתה כאן כשהלוח נקבע, ולכן
+                       אף חידה קיימת אינה עליה. זה מה שמכריע אחר כך
+                       לאן מצביע שם בלוח שהתפצל לשניים. */
+                    splitNew: true };
+            players.push(rec);
+            created++;
+          }
+          if (rec.pos  == null && d.pos)  rec.pos  = d.pos;
+          if (rec.born == null && d.born) rec.born = d.born;
+          if (rec.nat  == null && d.nat)  rec.nat  = d.nat;
+          if (!rec.spells || !c.ambiguous) {
+            if (JSON.stringify(rec.spells) !== JSON.stringify(c.spells)) respelled++;
+            rec.spells = c.spells;
+          }
+          rec.wiki = d.title;
+          rec.twoPeople = true;
+          if (!rec.src.includes("wiki:split")) rec.src.push("wiki:split");
+        }
+        names++;
+        review.duplicates.push({ he: key, count: cands.length,
+          resolved: "פוצל לפי טבלאות הקריירה",
+          detail: cands.map(x => `${x.d.title} ${JSON.stringify(x.c.spells)}`) });
+      }
+      if (names) {
+        sources.push("wikicareer");
+        log(`  שם משותף לשני אנשים: ${names} שמות · ${created} רשומות נוצרו · ${respelled} תקופות הופרדו`);
+      }
+    }
+  }
+
   /* --- ברירת מחדל ללאום --- */
   for (const p of players) {
     if (p.nat == null && p.foreign === false && p.ifaId) { p.nat = "IL"; p.src.push("ifa:local"); }
@@ -620,9 +724,15 @@ for (const club of clubs) {
   }
   for (const [k, group] of byHe) {
     if (group.length < 2) continue;
-    /* ניסיון ראשון: להחזיר את השם הרשמי המלא, אם הוא מפריד ביניהם */
+    /* ניסיון ראשון: להחזיר את השם הרשמי המלא, אם הוא מפריד ביניהם.
+       **לא כששני אנשים חולקים שם.** שם רשמי מפריד היטב בין שתי
+       רשומות של אותו אדם, אבל בין שני אנשים הוא נותן "שלומי יוסף
+       אזולאי" מול "שלומי אזולאי" — שם אחד שהוא רישא של השני, ומי
+       שמקליד את הקצר מקבל התאמה מדויקת לאדם הלא נכון. במקרה הזה
+       שנת הלידה היא המפרידה, בדיוק כמו בוויקיפדיה עצמה. */
     const officials = group.map(p => p.official || p.he);
-    if (new Set(officials.map(normName)).size === group.length) {
+    if (!group.some(p => p.twoPeople) &&
+        new Set(officials.map(normName)).size === group.length) {
       group.forEach((p, i) => {
         if (!p.aliases.includes(p.he)) p.aliases.push(p.he);
         p.he = officials[i];
@@ -696,6 +806,14 @@ for (const club of clubs) {
       for (const k of [normName(n), normName(stripParen(n))]) {
         const c = byAny.get(k);
         if (c?.size === 1) { followed++; return [...c][0].he; }
+        /* שניים — ובכל זאת חד־ערכי, כששם התפצל לשני אנשים: הרשומה
+           שנוצרה עכשיו לא הייתה קיימת כשהחידה נקבעה, ולכן החידה
+           שייכת לזו שכבר הייתה כאן. רק המקרה הזה; שתי רשומות
+           ותיקות עדיין נופלות. */
+        if (c && c.size > 1) {
+          const old = [...c].filter(p => !p.splitNew);
+          if (old.length === 1) { followed++; return old[0].he; }
+        }
       }
       return n;
     });

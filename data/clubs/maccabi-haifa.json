@@ -46,12 +46,13 @@
    "wikilang",
    "wikiplayers",
    "wikiextra",
-   "wikilang"
+   "wikilang",
+   "wikicareer"
   ]
  },
  "counts": {
-  "players": 380,
-  "targets": 184
+  "players": 382,
+  "targets": 187
  },
  "players": [
   {
@@ -592,6 +593,24 @@
    "target": true
   },
   {
+   "he": "רפי כהן (1970)",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1970,
+   "spells": [
+    [
+     1994,
+     1996
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "רפי כהן"
+   ]
+  },
+  {
    "he": "שי הולצמן",
    "pos": "FW",
    "nat": "IL",
@@ -1085,6 +1104,24 @@
    "seasons": 4,
    "titles": 2,
    "target": true
+  },
+  {
+   "he": "רפי כהן (1974)",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1974,
+   "spells": [
+    [
+     2000,
+     2003
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "רפי כהן"
+   ]
   },
   {
    "he": "ואליד באדיר",
@@ -1664,24 +1701,6 @@
    "target": false,
    "aliases": [
     "פרליה נאנד"
-   ]
-  },
-  {
-   "he": "רפי כהן",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "רפי כהן"
    ]
   },
   {
@@ -3165,19 +3184,19 @@
    "spells": [
     [
      2010,
-     2010
+     2012
     ],
     [
      2018,
-     2018
+     2019
     ]
    ],
-   "seasons": 2,
-   "titles": 0,
+   "seasons": 5,
+   "titles": 1,
    "target": true,
    "aliases": [
-    "שלומי אזולאי",
-    "שלומי יוסף אזולאי"
+    "שלומי יוסף אזולאי",
+    "שלומי אזולאי"
    ]
   },
   {
@@ -3291,6 +3310,24 @@
    "seasons": 2,
    "titles": 1,
    "target": true
+  },
+  {
+   "he": "שלומי אזולאי (1989)",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1989,
+   "spells": [
+    [
+     2011,
+     2014
+    ]
+   ],
+   "seasons": 4,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "שלומי אזולאי"
+   ]
   },
   {
    "he": "אדין צוצאליץ'",
@@ -7286,6 +7323,9 @@
   "גיא חיימוב",
   "מאוויס צ'יבוטה",
   "תמיר כהן",
-  "קובי גנון"
+  "קובי גנון",
+  "רפי כהן (1974)",
+  "שלומי אזולאי (1989)",
+  "רפי כהן (1970)"
  ]
 }

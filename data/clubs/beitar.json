@@ -36,11 +36,12 @@
    "reference",
    "wikiplayers",
    "wikiextra",
-   "wikilang"
+   "wikilang",
+   "wikicareer"
   ]
  },
  "counts": {
-  "players": 410,
+  "players": 411,
   "targets": 196
  },
  "players": [
@@ -3855,6 +3856,24 @@
    "seasons": 4,
    "titles": 0,
    "target": true
+  },
+  {
+   "he": "שלומי אזולאי (1990)",
+   "pos": "MF",
+   "nat": null,
+   "born": 1990,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שלומי אזולאי"
+   ]
   },
   {
    "he": "שמואל מלול",
