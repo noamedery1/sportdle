@@ -45,7 +45,7 @@ const OUT = args.out || "sportdle-80s.mp4";
 const W = 900, H = 1600;          // הקלטה. ffmpeg מגדיל ל-1080×1920.
 const DIR = "tools/assets/80s";
 
-for (const f of ["char-1986-phone.jpg", "char-1986-shrug.jpg", "src/character-beitar.png"])
+for (const f of ["video/1986-phone.mp4", "src/character-beitar.png"])
   if (!existsSync(join(DIR, f))) die(`חסר ${join(DIR, f)}`);
 
 /* ---------- החידה, מהמאגר ולא מהראש ---------- */
@@ -72,8 +72,6 @@ const HOST = String(site.siteUrl).replace(/^https?:\/\//, "").replace(/\/$/, "")
 /* ---------- הדף ---------- */
 const b64 = f => readFileSync(join(DIR, f)).toString("base64");
 const IMG = {
-  a: `data:image/jpeg;base64,${b64("char-1986-phone.jpg")}`,
-  b: `data:image/jpeg;base64,${b64("char-1986-shrug.jpg")}`,
   c: `data:image/png;base64,${b64("src/character-beitar.png")}`,
   grid: `data:image/jpeg;base64,${b64("grid.jpg")}`
 };
@@ -90,6 +88,7 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 /* ---------- שכבות התמונה ---------- */
 .shot{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;
   transform:scale(1.06);transition:opacity .18s linear}
+video.shot{width:100%;height:100%;object-fit:cover}
 .shot.on{opacity:1}
 .shot.push{animation:push 7s linear forwards}
 @keyframes push{from{transform:scale(1.02)}to{transform:scale(1.14)}}
@@ -140,7 +139,10 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 .cl .k{font-size:26px;color:#9aa0a6}
 .cl .v{font-size:46px;font-weight:900;margin-top:6px}
 .cl.hot{border-color:#f7d117;box-shadow:0 0 0 6px rgba(247,209,23,.16)}
-#count{font-size:150px;line-height:1;height:160px;font-weight:900;color:#f7d117;opacity:0}
+/* מחוץ לזרימה. בתוך הפלקס היא שומרת מקום גם כשהיא ריקה, והלוח
+   נדחף כלפי מעלה — נראה כמו תקלת פריסה, לא כמו עיצוב. */
+#count{position:absolute;left:0;right:0;bottom:19%;text-align:center;
+  font-size:150px;line-height:1;font-weight:900;color:#f7d117;opacity:0}
 #count.on{animation:cnt .82s ease-out forwards}
 @keyframes cnt{0%{opacity:0;transform:scale(1.5)}25%{opacity:1;transform:scale(1)}
   100%{opacity:0;transform:scale(.82)}}
@@ -167,8 +169,7 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
   padding:12px 30px;border-radius:14px;white-space:nowrap}
 #cta .s{font-size:34px;color:#e8eaed}
 </style></head><body><div id="stage">
-  <div class="shot" id="sa" style="background-image:url('${IMG.a}')"></div>
-  <div class="shot" id="sb" style="background-image:url('${IMG.b}')"></div>
+  <video class="shot" id="v86" muted playsinline preload="auto" src="video/1986-phone.mp4"></video>
   <div class="shot" id="sc" style="background-image:url('${IMG.c}')"></div>
   <div id="vhs"></div><div id="grain"></div><div id="flash"></div>
   <div id="cap"></div>
@@ -199,8 +200,12 @@ CL.forEach(([k, v], i) => {
   d.innerHTML = '<div class="k">' + k + '</div><div class="v">' + v + '</div>';
   (i < 3 ? r1 : r2).appendChild(d);
 });
-window.shot = n => { for (const s of ["sa","sb","sc"]) $("#"+s).classList.toggle("on", s === "s"+n); };
-window.push = n => $("#s"+n).classList.add("push");
+window.shot = n => {
+  const ids = { v: "v86", c: "sc" };
+  for (const [k, id] of Object.entries(ids)) $("#"+id).classList.toggle("on", k === n);
+};
+window.play86 = () => { const v = $("#v86"); v.currentTime = 0; return v.play(); };
+window.push = n => $("#" + (n === "v" ? "v86" : "s"+n)).classList.add("push");
 window.vhs  = on => { $("#vhs").classList.toggle("on", on); $("#grain").classList.toggle("on", on); };
 window.flash = () => { const f = $("#flash"); f.classList.remove("go"); void f.offsetWidth; f.classList.add("go"); };
 window.cap = (t, y) => { $("#cap").innerHTML = t ? '<b class="on' + (y ? " y" : "") + '">' + t + '</b>' : ""; };
@@ -228,15 +233,17 @@ await page.waitForTimeout(900);          // גופן ותמונות
 const wait = ms => page.waitForTimeout(ms);
 const run = (fn, ...a) => page.evaluate(([f, args]) => window[f](...args), [fn, a]);
 
-/* 1 · 1986 — היה לו הכול */
-await run("vhs", true); await run("shot", "a"); await run("push", "a");
+/* 1+2 · 1986, שוט אחד רציף מ-Flow.
+   הווידאו עושה את מה שהסטילס לא יכלו: הוא מחייך, מקיש על החוגה,
+   ואז מרים מבט מאוכזב. שני הכיתובים יושבים על הקשת הזאת — הראשון
+   על התקווה, השני בדיוק כשהפנים נופלות. אין כאן זום מלאכותי,
+   כי במסגרת נעולה התנועה של הדמות היא שמחזיקה את העין. */
+await run("vhs", true); await run("shot", "v"); await run("play86");
 await wait(600); await run("cap", "1986. היה לו הכול.");
-await wait(3200);
-
-/* 2 · חוץ מהמשחק */
-await run("shot", "b"); await run("cap", "");
-await wait(500); await run("cap", "חוץ מהמשחק.");
-await wait(2600);
+await wait(3500);
+await run("cap", "");
+await wait(400); await run("cap", "חוץ מהמשחק.");
+await wait(2500);
 
 /* 3 · חיתוך התאמה להיום */
 await run("cap", ""); await run("flash"); await wait(120);
