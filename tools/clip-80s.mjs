@@ -45,7 +45,7 @@ const OUT = args.out || "sportdle-80s.mp4";
 const W = 900, H = 1600;          // הקלטה. ffmpeg מגדיל ל-1080×1920.
 const DIR = "tools/assets/80s";
 
-for (const f of ["video/1986-phone.mp4", "src/character-beitar.png"])
+for (const f of ["video/1986-phone.mp4", "video/morph.mp4", "char-1986-phone.jpg", "src/character-beitar.png"])
   if (!existsSync(join(DIR, f))) die(`חסר ${join(DIR, f)}`);
 
 /* ---------- החידה, מהמאגר ולא מהראש ---------- */
@@ -72,6 +72,10 @@ const HOST = String(site.siteUrl).replace(/^https?:\/\//, "").replace(/\/$/, "")
 /* ---------- הדף ---------- */
 const b64 = f => readFileSync(join(DIR, f)).toString("base64");
 const IMG = {
+  /* ה-poster הוא התשובה לפריים השחור: ל-video אין תמונה עד ה-play,
+     והשחור הזה נכנס ישר לשנייה הראשונה של ההקלטה. המתנה לאירוע
+     loadeddata לא עבדה — ב-headless הוא לא נורה והריצה נתקעה. */
+  poster: `data:image/jpeg;base64,${b64("char-1986-phone.jpg")}`,
   c: `data:image/png;base64,${b64("src/character-beitar.png")}`,
   grid: `data:image/jpeg;base64,${b64("grid.jpg")}`
 };
@@ -169,7 +173,8 @@ video.shot{width:100%;height:100%;object-fit:cover}
   padding:12px 30px;border-radius:14px;white-space:nowrap}
 #cta .s{font-size:34px;color:#e8eaed}
 </style></head><body><div id="stage">
-  <video class="shot" id="v86" muted playsinline preload="auto" src="video/1986-phone.mp4"></video>
+  <video class="shot" id="v86" muted playsinline preload="auto" poster="${IMG.poster}" src="video/1986-phone.mp4"></video>
+  <video class="shot" id="vmo" muted playsinline preload="auto" src="video/morph.mp4"></video>
   <div class="shot" id="sc" style="background-image:url('${IMG.c}')"></div>
   <div id="vhs"></div><div id="grain"></div><div id="flash"></div>
   <div id="cap"></div>
@@ -201,10 +206,13 @@ CL.forEach(([k, v], i) => {
   (i < 3 ? r1 : r2).appendChild(d);
 });
 window.shot = n => {
-  const ids = { v: "v86", c: "sc" };
+  const ids = { v: "v86", m: "vmo", c: "sc" };
   for (const [k, id] of Object.entries(ids)) $("#"+id).classList.toggle("on", k === n);
 };
 window.play86 = () => { const v = $("#v86"); v.currentTime = 0; return v.play(); };
+/* המורף מתחיל ב-3.5: חמש השניות הראשונות שלו הן החדר של 1986
+   שכבר ראינו, וההשתנות עצמה קורית בשתיים האחרונות. */
+window.playMorph = () => { const v = $("#vmo"); v.currentTime = 3.5; return v.play(); };
 window.push = n => $("#" + (n === "v" ? "v86" : "s"+n)).classList.add("push");
 window.vhs  = on => { $("#vhs").classList.toggle("on", on); $("#grain").classList.toggle("on", on); };
 window.flash = () => { const f = $("#flash"); f.classList.remove("go"); void f.offsetWidth; f.classList.add("go"); };
@@ -228,28 +236,39 @@ const ctx = await browser.newContext({
 });
 const page = await ctx.newPage();
 await page.goto(pathToFileURL(resolve(page$)).href);
-await page.waitForTimeout(900);          // גופן ותמונות
 
 const wait = ms => page.waitForTimeout(ms);
 const run = (fn, ...a) => page.evaluate(([f, args]) => window[f](...args), [fn, a]);
+
+/* הווידאו מוצג כבר כאן, לפני שהתזמון מתחיל, כדי שה-poster שלו
+   ייצבע. בלעדיו השנייה הראשונה של ההקלטה שחורה.
+   **ולא ממתינים לאירוע טעינה** — ב-headless הוא לא נורה, וההמתנה
+   תלתה את הריצה עד ל-timeout. poster פותר את זה בלי אסינכרוניות. */
+await wait(900);                         // גופן, תמונות ו-poster
+await run("shot", "v");
+await wait(400);
 
 /* 1+2 · 1986, שוט אחד רציף מ-Flow.
    הווידאו עושה את מה שהסטילס לא יכלו: הוא מחייך, מקיש על החוגה,
    ואז מרים מבט מאוכזב. שני הכיתובים יושבים על הקשת הזאת — הראשון
    על התקווה, השני בדיוק כשהפנים נופלות. אין כאן זום מלאכותי,
    כי במסגרת נעולה התנועה של הדמות היא שמחזיקה את העין. */
-await run("vhs", true); await run("shot", "v"); await run("play86");
+await run("vhs", true); await run("play86");
 await wait(600); await run("cap", "1986. היה לו הכול.");
 await wait(3500);
 await run("cap", "");
 await wait(400); await run("cap", "חוץ מהמשחק.");
 await wait(2500);
 
-/* 3 · חיתוך התאמה להיום */
-await run("cap", ""); await run("flash"); await wait(120);
-await run("vhs", false); await run("shot", "c"); await run("push", "c");
-await wait(420); await run("cap", "היום כן.", true);
-await wait(2400);
+/* 3 · המעבר עצמו, ולא חיתוך.
+   זה מה שהטרנד בנוי עליו: אותו אדם, והעשור משתנה סביבו. Flow
+   קיבל את פריים הסיום של 1986 כהתחלה ואת הפריים של היום כסיום,
+   ולכן החדר, התאורה והמכשיר שביד מתחלפים בשוט אחד בלי חיתוך.
+   ה-VHS יורד תוך כדי, כדי שהגרעין ייעלם יחד עם העשור. */
+await run("cap", ""); await run("shot", "m"); await run("playMorph");
+await wait(900); await run("vhs", false);
+await wait(1700); await run("cap", "היום כן.", true);
+await wait(1900);
 
 /* 4 · הלוח */
 await run("cap", ""); await run("board", true);
@@ -282,7 +301,7 @@ const dur = parseFloat(probe.stdout.trim());
 if (!(dur > 5)) die(`אורך הקלטה לא תקין: ${probe.stdout.trim()}`);
 
 /* הפריים הראשון של recordVideo לבן — חותכים את ההתחלה */
-const CUT = 0.8;
+const CUT = 1.45;
 const ff = spawnSync("ffmpeg", ["-y", "-v", "error",
   "-ss", String(CUT), "-i", src,
   "-vf", `scale=1080:1920:flags=lanczos,eq=saturation=1.06:contrast=1.04,format=yuv420p`,
