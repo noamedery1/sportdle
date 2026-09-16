@@ -6,13 +6,22 @@
 
    **מה הסרטון עונה עליו.** ביום שהאפליקציה יוצאת השאלה אינה
    "מה המשחק" אלא "למה שיהיה לי את זה בטלפון", והתשובה אינה
-   "יש משחק" אלא **"יש רגע"**: חצות, חידה אחת, וכל אוהדי הכדורגל
-   בישראל מקבלים את אותו שחקן.
+   "יש משחק" אלא **"יש רגע"**: חצות, וכל אוהד מקבל את החידה של
+   הקבוצה שלו.
+
+   **תיקון עובדתי לגרסה הראשונה.** היא אמרה "אותו שחקן לכולם",
+   וזה פשוט לא נכון: לכל מועדון לוח נפרד ותשובה משלו. ב-16/09,
+   למשל, בית"ר קיבלה את אביאל זרגרי וחיפה את נהוראי יפרח. מה
+   שמשותף הוא **השעה**, לא התשובה — וזה גם הסיפור הנכון יותר,
+   כי הוא אומר "חמישה משחקים" ולא "משחק אחד".
 
    **המנגנון החזותי הוא כל הסרטון.** בכל חדר חשוך מסך הטלפון הוא
    מקור האור היחיד, והוא צובע את הפנים בצבע המועדון. החיתוך בין
    חדר לחדר הוא על ההידלקות — האור עובר מיריב ליריב כמו מסירה.
-   זו לא מטאפורה: כולם מקבלים את אותו שחקן באותה שנייה.
+
+   **ושם המועדון נכנס על כל פנים.** בלעדיו הצופה רואה חמישה
+   אנשים בחמישה צבעים ולא מבין שאלה חמישה מועדונים — דווח
+   מהשטח, וזו הייתה החולשה הגדולה של הגרסה הראשונה.
 
    **חמישה אנשים שונים ולא אחד** — אישה בת 35, גבר בן 65, נער בן
    17, וגברים בני 30 ו-45. אוהד כדורגל ישראלי אינו רק בן שלושים.
@@ -50,13 +59,14 @@ const W = 900, H = 1600;
 const DIR = "tools/assets/launch";
 
 /* סדר ההידלקויות. בית"ר פותח — הוא גם היחיד עם וידאו מ-Flow. */
-const FANS = [
-  { slug: "beitar",        he: 'בית"ר ירושלים', color: "#FFC72C", video: "video/ignite-beitar.mp4" },
-  { slug: "maccabi-haifa", he: "מכבי חיפה",      color: "#00843D" },
-  { slug: "maccabi-ta",    he: "מכבי תל אביב",   color: "#0033A0" },
-  { slug: "hapoel-ta",     he: "הפועל תל אביב",  color: "#C8102E" },
-  { slug: "hapoel-bs",     he: "הפועל באר שבע",  color: "#E4002B" }
-];
+const CLUBS = JSON.parse(readFileSync("config/clubs.json", "utf8"));
+const FANS = ["beitar", "maccabi-haifa", "maccabi-ta", "hapoel-ta", "hapoel-bs"].map(s => ({
+  slug: s,
+  he: CLUBS[s].he,              /* שם המועדון ושם המשחק נקראים מהקונפיג */
+  game: CLUBS[s].game,          /* ולא נכתבים כאן, אחרת הם יסתרו את האתר */
+  color: CLUBS[s].colors.brand,
+  ...(s === "beitar" ? { video: "video/ignite-beitar.mp4" } : {})
+}));
 
 for (const f of FANS)
   for (const p of [`${f.slug}.jpg`, `dark-${f.slug}.jpg`, ...(f.video ? [f.video] : [])])
@@ -127,19 +137,53 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 #tint.go{animation:tint .6s ease-out}
 @keyframes tint{0%{opacity:.34}100%{opacity:0}}
 
+/* ---------- שם המועדון על הפנים ----------
+   נכנס בחבטה: מגיע גדול ונופל למקומו תוך 0.22 שניות, ומתחתיו
+   פס בצבע המועדון שנפתח מהמרכז. בלי זה הצופה רואה חמישה אנשים
+   בחמישה צבעים ולא מבין שאלה חמישה מועדונים. */
+#club{position:absolute;left:0;right:0;top:132px;text-align:center;opacity:0;z-index:40}
+#club.go{animation:clubin .5s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes clubin{0%{opacity:0;transform:scale(1.5)}60%{opacity:1}100%{opacity:1;transform:scale(1)}}
+#club .n{font-size:74px;font-weight:900;line-height:1.05;
+  text-shadow:0 4px 26px rgba(0,0,0,.95),0 2px 6px rgba(0,0,0,.9)}
+#club .g{font-size:38px;font-weight:900;margin-top:10px;color:#fff;opacity:.92;
+  text-shadow:0 3px 18px rgba(0,0,0,.95)}
+#club .bar{height:9px;width:0;margin:20px auto 0;border-radius:6px}
+#club.go .bar{animation:barin .42s .16s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes barin{to{width:300px}}
+
+/* ---------- הבזק חצות ---------- */
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#flash.go{animation:fl .5s ease-out}
+@keyframes fl{0%{opacity:1}100%{opacity:0}}
+#streak{position:absolute;inset:0;display:flex;opacity:0;pointer-events:none}
+#streak div{flex:1;transform:scaleY(0)}
+#streak.go{opacity:1}
+#streak.go div{animation:str .62s cubic-bezier(.16,1,.3,1) forwards}
+#streak.go div:nth-child(2){animation-delay:.05s}
+#streak.go div:nth-child(3){animation-delay:.1s}
+#streak.go div:nth-child(4){animation-delay:.15s}
+#streak.go div:nth-child(5){animation-delay:.2s}
+@keyframes str{0%{transform:scaleY(0)}55%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+
 /* ---------- כיתוב ---------- */
-#cap{position:absolute;left:0;right:0;bottom:160px;text-align:center;padding:0 70px}
-#cap b{display:inline-block;background:rgba(0,0,0,.72);font-weight:900;font-size:58px;
-  line-height:1.3;padding:12px 28px;opacity:0;transform:translateY(16px)}
+/* z-index כי הכיתוב מוגדר בדום לפני הרשת ולפני דף החנות, ובלעדיו
+   הן צובעות מעליו — "חמישה מועדונים. חמש חידות." פשוט לא נראה. */
+#cap{position:absolute;left:0;right:0;bottom:160px;text-align:center;padding:0 70px;z-index:50}
+/* בקטע החנות הכיתוב יורד לתחתית הפריים ומכסה את צילומי המסך.
+   שם הוא עולה לראש, מעל שורת Google Play. */
+#cap.top{bottom:auto;top:26px}
+#cap b{display:inline-block;background:rgba(0,0,0,.82);font-weight:900;font-size:62px;
+  line-height:1.3;padding:14px 32px;opacity:0;transform:translateY(16px)}
 #cap b.on{animation:capin .36s cubic-bezier(.2,.9,.3,1.4) forwards}
 @keyframes capin{to{opacity:1;transform:translateY(0)}}
 
 /* ---------- לוח הרמזים ---------- */
 #board{position:absolute;inset:0;background:#0b0b0c;opacity:0;display:flex;
-  flex-direction:column;align-items:center;justify-content:center;gap:24px}
+  flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center}
 #board.on{opacity:1}
 #board h2{font-size:42px;font-weight:900;color:#FFC72C}
-.row{display:flex;gap:11px;width:770px;justify-content:center;flex-wrap:wrap}
+.row{display:flex;gap:11px;width:100%;max-width:780px;justify-content:center;flex-wrap:wrap}
 .cl{flex:0 0 236px;background:#17181b;border:3px solid #2a2c31;border-radius:18px;
   padding:18px 8px;text-align:center;opacity:0;transform:scale(.88)}
 .cl.on{animation:pop2 .28s cubic-bezier(.2,.9,.3,1.5) forwards}
@@ -160,7 +204,7 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 #grid .cell:nth-child(3){animation-delay:.25s}
 #grid .cell:nth-child(4){animation-delay:.35s}
 #grid .cell:nth-child(5){animation-delay:.45s;grid-column:1/3}
-@keyframes cellin{to{opacity:1}}
+@keyframes cellin{0%{opacity:0;transform:scale(1.14)}100%{opacity:1;transform:scale(1)}}
 
 /* ---------- דף החנות ---------- */
 #store{position:absolute;inset:0;opacity:0;background:#fff;color:#202124;
@@ -171,6 +215,8 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 #store .head{display:flex;gap:28px;align-items:center}
 #store .ic{width:170px;height:170px;border-radius:38px;background-size:cover;flex:0 0 auto;
   box-shadow:0 6px 22px rgba(0,0,0,.22)}
+#store.on .ic{animation:icin .6s cubic-bezier(.16,1,.3,1)}
+@keyframes icin{0%{transform:scale(.62) rotate(-8deg)}70%{transform:scale(1.07)}100%{transform:scale(1)}}
 #store .nm2{font-size:52px;font-weight:900;line-height:1.15}
 #store .dev{font-size:30px;color:#01875f;margin-top:8px}
 #store .meta{display:flex;gap:40px;margin:46px 4px 34px;color:#5f6368;font-size:26px}
@@ -187,10 +233,13 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 
   ${fanHtml}
   <div id="tint"></div>
+  <div id="club"><div class="n"></div><div class="g"></div><div class="bar"></div></div>
+  <div id="streak">${FANS.map(f => `<div style="background:${f.color}"></div>`).join("")}</div>
+  <div id="flash"></div>
   <div id="cap"></div>
 
   <div id="board">
-    <h2>אותו שחקן. לכולם.</h2>
+    <h2>שמונה ניסיונות. חמישה רמזים.</h2>
     <div class="row" id="r1"></div><div class="row" id="r2"></div>
     <div id="nm">${ANSWER}</div>
   </div>
@@ -235,7 +284,23 @@ window.fan = i => {
   t.classList.remove("go"); void t.offsetWidth; t.classList.add("go");
 };
 window.fansOff = () => document.querySelectorAll(".fan").forEach(e => e.classList.remove("on"));
-window.cap = t => { $("#cap").innerHTML = t ? '<b class="on">' + t + '</b>' : ""; };
+const NAMES = ${JSON.stringify(FANS.map(f => [f.he, f.game]))};
+window.club = i => {
+  const c = $("#club");
+  c.querySelector(".n").textContent = NAMES[i][0];
+  c.querySelector(".n").style.color = COLORS[i];
+  c.querySelector(".g").textContent = NAMES[i][1];
+  c.querySelector(".bar").style.background = COLORS[i];
+  c.classList.remove("go"); void c.offsetWidth; c.classList.add("go");
+};
+window.clubOff = () => $("#club").classList.remove("go");
+window.flash = () => { const f = $("#flash"); f.classList.remove("go"); void f.offsetWidth; f.classList.add("go"); };
+window.streak = () => { const s = $("#streak"); s.classList.remove("go"); void s.offsetWidth; s.classList.add("go"); };
+window.cap = (t, top) => {
+  const c = $("#cap");
+  c.classList.toggle("top", !!top);
+  c.innerHTML = t ? '<b class="on">' + t + '</b>' : "";
+};
 window.board = on => $("#board").classList.toggle("on", on);
 window.clue = i => $("#c" + i).classList.add("on");
 window.name_ = () => $("#nm").classList.add("on");
@@ -258,37 +323,52 @@ await page.goto(pathToFileURL(resolve(page$)).href);
 
 const wait = ms => page.waitForTimeout(ms);
 const run = (fn, ...a) => page.evaluate(([f, args]) => window[f](...args), [fn, a]);
+const FAN_N = FANS.length;
 await wait(1100);                       // גופן, תמונות, poster
 
-/* 1 · חצות */
+/* 1 · חצות. ההבזק ופסי הצבע הם הפתיחה של הסרטון, לא קישוט —
+   חמשת הצבעים מופיעים לפני שמבינים מה הם, ואז כל אחד חוזר. */
 await run("clockOn", true);
-for (const t of ["23:59:57", "23:59:58", "23:59:59"]) { await run("clock", t); await wait(760); }
-await run("clock", "00:00:00", true); await run("clockCap", "חידה חדשה. לכולם.");
-await wait(1100);
+for (const t of ["23:59:57", "23:59:58", "23:59:59"]) { await run("clock", t); await wait(720); }
+await run("clock", "00:00:00", true); await run("clockCap", "חמש חידות חדשות");
+await wait(1250);
+await run("flash"); await run("streak");
+await wait(420);
 await run("clockOn", false);
 
-/* 2 · חמש הידלקויות. בית"ר ראשון, והוא היחיד עם וידאו. */
-for (let i = 0; i < 5; i++) {
+/* 2 · חמש הידלקויות. שם המועדון נכנס בחבטה על כל אחת — בלעדיו
+   רואים חמישה אנשים בחמישה צבעים ולא מבינים שאלה חמישה מועדונים.
+   2.7 שניות לכל אחד: מספיק לקרוא את השם ואת שם המשחק בנחת. */
+for (let i = 0; i < FAN_N; i++) {
   await run("fan", i);
-  if (i === 0) { await wait(700); await run("cap", "כל לילה, בחצות."); await wait(1900); await run("cap", ""); }
-  else await wait(i === 4 ? 2000 : 1750);
+  await wait(260);
+  await run("club", i);
+  if (i === 0) {
+    await wait(1250); await run("cap", "כל לילה, בחצות.");
+    await wait(2000); await run("cap", "");
+    await wait(200);
+  } else await wait(2450);
+  await run("clubOff");
 }
 
-/* 3 · הלוח */
-await run("fansOff"); await run("board", true);
-await wait(450);
-for (let i = 0; i < CLUES.length; i++) { await run("clue", i); await wait(620); }
-await wait(500); await run("name_");
-await wait(1800);
+/* 3 · חמישה מועדונים, חמש חידות. הכיתוב יושב 3 שניות, כי
+   בגרסה הראשונה הוא עבר מהר מדי מכדי להיקרא. */
+await run("fansOff"); await run("grid", true);
+await wait(800); await run("cap", "חמישה מועדונים. חמש חידות.");
+await wait(3000); await run("cap", "");
+await wait(300);
 
-/* 4 · הרשת */
-await run("board", false); await run("grid", true);
-await wait(700); await run("cap", "חמישה מועדונים. חידה אחת.");
-await wait(2400); await run("cap", "");
+/* 4 · מה המשחק באמת */
+await run("grid", false); await run("board", true);
+await wait(450);
+for (let i = 0; i < CLUES.length; i++) { await run("clue", i); await wait(560); }
+await wait(400); await run("name_");
+await wait(1700);
 
 /* 5 · החנות */
-await run("grid", false); await run("store", true);
-await wait(4200);
+await run("board", false); await run("store", true);
+await wait(900); await run("cap", "עכשיו בגוגל פליי.", true);
+await wait(3400);
 
 await page.close(); await ctx.close(); await browser.close();
 
