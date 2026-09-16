@@ -547,6 +547,9 @@ for (const club of clubs) {
       const before = p.he;
       if (typeof val === "string") p.he = val;
       else Object.assign(p, val);
+      /* spells שנקבעו ביד מנצחים גם על טבלת הקריירה. דריסה ידנית
+         קיימת כדי לסתור מקור, ואיחוד אִתו היה מרוקן אותה מתוכן. */
+      if (val && typeof val === "object" && val.spells) p.spellsManual = true;
       if (p.he !== before) renamed.set(normName(before), p.he);
       p.src.push("manual");
       n++;
@@ -570,6 +573,80 @@ for (const club of clubs) {
       for (const p of dropped)
         review.notes.push(`הוסר ידנית מהמאגר: "${p.he}"`);
       log(`  הוסרו ${dropped.length} רשומות שסומנו drop`);
+    }
+  }
+
+  /* --- עונות חסרות מטבלת הקריירה -----------------------------
+     דווח מהשטח: "שנת ההתחלה של כחילה ואלהרר לא נכונה". נכון,
+     ולא בשניים — ב-349 שחקנים בחמשת המועדונים, 726 עונות חסרות.
+     אהוד כחילה התחיל ב-91/92 ולא ב-93/94, אילן אלהרר ב-87/88 ולא
+     ב-93/94, ורונן שוויג — שתי עונות מפוזרות אצלנו מול 86/87–99/00
+     בוויקיפדיה.
+
+     המקור היה כאן כל הזמן ולא נקרא. טבלת הקריירה נסרקת
+     ל-data/raw/<slug>-wikicareer.json, והיא המקור השלם ביותר
+     לשנים במועדון — שלם יותר מ-worldfootball, שממנו הגיעו רוב
+     השנים עד היום, ושלם יותר מצילום ה-reference.
+
+     **מאחדים ולא מחליפים.** האיחוד רק מוסיף עונות, ולכן הוא לא
+     יכול להוציא שחקן מבריכת התשובות ולא יכול לפרק לוח קיים.
+     החלפה הייתה מסוכנת בדיוק בכיוון ההפוך, ובלי תמורה: מה שחסר
+     הוא מה שדווח, לא מה שעודף.
+
+     שלושה סייגים:
+       1. ערך `ambiguous` נדחה. הסורק עצמו לא היה בטוח בקריאת
+          השורות, ואי-ודאות אינה מקור.
+       2. spells שנקבעו ידנית ב-config/names-<slug>.json מנצחים.
+          דריסה ידנית קיימת כדי לסתור מקור, ואיחוד היה מרוקן
+          אותה מתוכן.
+       3. ההתאמה לפי שם מלא בלבד. `shortName` היה מחבר שחקנים
+          שונים בעלי שם משפחה זהה, וכאן המחיר הוא עונות שגויות
+          בדיוק לשחקן שכבר בלוח.
+
+     **ושם שמשמש שני אנשים אינו נפתר לפי שם.** הניסיון הראשון כאן
+     מיפה לפי שם בלבד, ואז "רפי כהן" השוער קיבל את העונות של "רפי
+     כהן" החלוץ ולהפך — בדיוק התקלה ששלב הפיצול נבנה כדי למנוע.
+     לרשומות שפוצלו כבר יש `wiki` עם כותרת הערך המדויקת, ולכן הן
+     נפתרות לפיה; שם שיש לו יותר מערך אחד ואין לו כותרת פשוט נדחה.
+
+     מה שעודף אצלנו ואינו בוויקיפדיה נשאר, ונרשם ב-review לאדם. */
+  {
+    const career = R("wikicareer");
+    if (career?.details) {
+      const usable = career.details.filter(d => d.spells?.length && !d.ambiguous);
+      const byTitle = new Map(usable.map(d => [d.title, d]));
+      /* רק שמות חד-ערכיים. שם ששני ערכים חולקים נפתר לפי כותרת. */
+      const count = new Map();
+      for (const d of usable) count.set(normName(d.name), (count.get(normName(d.name)) || 0) + 1);
+      const byName = new Map();
+      for (const d of usable) if (count.get(normName(d.name)) === 1) byName.set(normName(d.name), d);
+
+      const flat = sp => (sp || []).flatMap(([a, b]) =>
+        Array.from({ length: b - a + 1 }, (_, i) => a + i));
+
+      let touched = 0, added = 0, extra = 0;
+      for (const p of players) {
+        if (p.spellsManual) continue;
+        const w = (p.wiki && byTitle.get(p.wiki)) || byName.get(normName(stripParen(p.he)));
+        if (!w) continue;
+        const mine = new Set(flat(p.spells));
+        const theirs = flat(w.spells);
+        const missing = theirs.filter(y => !mine.has(y));
+        const mineOnly = [...mine].filter(y => !theirs.includes(y));
+        if (mineOnly.length) {
+          extra++;
+          review.notes.push(`עונות אצלנו שאינן בטבלת הקריירה: "${p.he}" — ` +
+                            mineOnly.map(season).join(", "));
+        }
+        if (!missing.length) continue;
+        p.spells = toSpells([...mine, ...theirs]);
+        p.src.push("wikicareer:spells");
+        touched++; added += missing.length;
+      }
+      if (touched) {
+        sources.push("wikicareer");
+        log(`  עונות מטבלת הקריירה: ${touched} שחקנים · +${added} עונות · ${extra} עם עונות עודפות`);
+      }
     }
   }
 
