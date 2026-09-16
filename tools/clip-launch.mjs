@@ -54,7 +54,19 @@ const args = Object.fromEntries(process.argv.slice(2).map(a => {
 const log = m => console.log(m);
 const die = m => { console.error("✖ " + m); process.exit(1); };
 
-const OUT = args.out || "sportdle-launch.mp4";
+/* --short מפיק גרסה של ~28 שניות לפיד, במקום 35 של ההשקה.
+   הקיצור אינו אחיד: מה שקוצר הוא **זמני החזקה**, לא המעברים,
+   ובשום מקום לא ירדנו מתחת למה שצריך כדי לקרוא. שם המועדון
+   נשאר על המסך כמעט שתי שניות גם בגרסה הקצרה, כי הוא הדבר
+   היחיד שדווח מהשטח כלא-קריא. */
+const SHORT = !!args.short;
+const T = SHORT
+  ? { tick: 580, midnight: 950, fan: 1950, fan0cap: 1600, gridCap: 2100,
+      clue: 360, name: 1150, conv: 2150, store: 2350 }
+  : { tick: 720, midnight: 1250, fan: 2450, fan0cap: 2000, gridCap: 3000,
+      clue: 560, name: 1700, conv: 2700, store: 3400 };
+
+const OUT = args.out || (SHORT ? "sportdle-launch-28.mp4" : "sportdle-launch.mp4");
 const W = 900, H = 1600;
 const DIR = "tools/assets/launch";
 
@@ -380,9 +392,9 @@ await wait(1100);                       // גופן, תמונות, poster
 /* 1 · חצות. ההבזק ופסי הצבע הם הפתיחה של הסרטון, לא קישוט —
    חמשת הצבעים מופיעים לפני שמבינים מה הם, ואז כל אחד חוזר. */
 await run("clockOn", true);
-for (const t of ["23:59:57", "23:59:58", "23:59:59"]) { await run("clock", t); await wait(720); }
+for (const t of ["23:59:57", "23:59:58", "23:59:59"]) { await run("clock", t); await wait(T.tick); }
 await run("clock", "00:00:00", true); await run("clockCap", "חמש חידות חדשות");
-await wait(1250);
+await wait(T.midnight);
 await run("flash"); await run("streak");
 await wait(420);
 await run("clockOn", false);
@@ -395,10 +407,10 @@ for (let i = 0; i < FAN_N; i++) {
   await wait(260);
   await run("club", i);
   if (i === 0) {
-    await wait(1250); await run("cap", "כל לילה, בחצות.");
-    await wait(2000); await run("cap", "");
+    await wait(1150); await run("cap", "כל לילה, בחצות.");
+    await wait(T.fan0cap); await run("cap", "");
     await wait(200);
-  } else await wait(2450);
+  } else await wait(T.fan);
   await run("clubOff");
 }
 
@@ -406,22 +418,22 @@ for (let i = 0; i < FAN_N; i++) {
    בגרסה הראשונה הוא עבר מהר מדי מכדי להיקרא. */
 await run("fansOff"); await run("grid", true);
 await wait(800); await run("cap", "חמישה מועדונים. חמש חידות.");
-await wait(3000); await run("cap", "");
+await wait(T.gridCap); await run("cap", "");
 await wait(300);
 
 /* 4 · מה המשחק באמת */
 await run("grid", false); await run("board", true);
 await wait(450);
-for (let i = 0; i < CLUES.length; i++) { await run("clue", i); await wait(560); }
+for (let i = 0; i < CLUES.length; i++) { await run("clue", i); await wait(T.clue); }
 await wait(400); await run("name_");
-await wait(1700);
+await wait(T.name);
 
 /* 5 · ההתכנסות אל הסמל, ואז החנות */
 await run("board", false); await run("conv", true);
-await wait(2700);
+await wait(T.conv);
 await run("conv", false); await run("store", true);
 await wait(900); await run("cap", "עכשיו בגוגל פליי.", true);
-await wait(3400);
+await wait(T.store);
 
 await page.close(); await ctx.close(); await browser.close();
 
