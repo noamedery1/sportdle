@@ -65,7 +65,11 @@ const FANS = ["beitar", "maccabi-haifa", "maccabi-ta", "hapoel-ta", "hapoel-bs"]
   he: CLUBS[s].he,              /* שם המועדון ושם המשחק נקראים מהקונפיג */
   game: CLUBS[s].game,          /* ולא נכתבים כאן, אחרת הם יסתרו את האתר */
   color: CLUBS[s].colors.brand,
-  ...(s === "beitar" ? { video: "video/ignite-beitar.mp4" } : {})
+  /* **בלי וידאו.** ignite-beitar.mp4 נוצר מהתמונה הקודמת של
+     בית"ר, וזו הייתה אותה דמות בדיוק כמו באר שבע — דווח מהשטח,
+     ובצדק. בית"ר עברה לדמות החוזרת מכל הקליפים, והווידאו נשאר
+     מאחור עם הפרצוף הישן. לשחזור: להריץ את ההידלקות ב-Flow מול
+     beitar.jpg החדש, ואז להחזיר כאן { video: ... }. */
 }));
 
 for (const f of FANS)
@@ -206,6 +210,31 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
 #grid .cell:nth-child(5){animation-delay:.45s;grid-column:1/3}
 @keyframes cellin{0%{opacity:0;transform:scale(1.14)}100%{opacity:1;transform:scale(1)}}
 
+/* ---------- התכנסות אל הסמל ----------
+   הסמל עצמו הוא כדור זהב על קרניים בחמשת צבעי המועדונים, ולכן
+   הסיום הנכון הוא שחמשת הצבעים שראינו על חמישה פרצופים מתכנסים
+   בדיוק אל שם. בלי זה הסרטון חתך מפנים לדף לבן, וזה היה הרגע
+   החלש היחיד בו. */
+#conv{position:absolute;inset:0;background:#000;opacity:0;display:flex;
+  align-items:center;justify-content:center;overflow:hidden}
+#conv.on{opacity:1}
+#conv .rays{position:absolute;width:2400px;height:2400px;border-radius:50%;
+  opacity:0;transform:scale(1.9) rotate(0deg)}
+#conv.on .rays{animation:rays 1.5s cubic-bezier(.5,0,.2,1) forwards}
+@keyframes rays{
+  0%{opacity:0;transform:scale(1.9) rotate(-38deg)}
+  25%{opacity:1}
+  100%{opacity:.95;transform:scale(.21) rotate(14deg)}}
+#conv .ic{position:absolute;width:420px;height:420px;border-radius:94px;
+  background-size:cover;opacity:0;transform:scale(.4)}
+#conv.on .ic{animation:icpop .75s .95s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes icpop{0%{opacity:0;transform:scale(.4)}
+  60%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+#conv .wm{position:absolute;bottom:330px;font-size:86px;font-weight:900;
+  letter-spacing:-3px;opacity:0}
+#conv .wm i{color:#FFC72C;font-style:normal}
+#conv.on .wm{animation:capin .5s 1.5s forwards}
+
 /* ---------- דף החנות ---------- */
 #store{position:absolute;inset:0;opacity:0;background:#fff;color:#202124;
   display:flex;flex-direction:column;padding:70px 56px}
@@ -245,6 +274,12 @@ html,body{width:${W}px;height:${H}px;overflow:hidden;background:#000;
   </div>
 
   <div id="grid">${gridHtml}</div>
+
+  <div id="conv">
+    <div class="rays"></div>
+    <div class="ic" style="background-image:url('data:image/png;base64,${b64("store/icon.png")}')"></div>
+    <div class="wm">Sport<i>Dle</i></div>
+  </div>
 
   <div id="store">
     <div class="bar"><span class="g">Google Play</span></div>
@@ -306,6 +341,22 @@ window.clue = i => $("#c" + i).classList.add("on");
 window.name_ = () => $("#nm").classList.add("on");
 window.grid = on => $("#grid").classList.toggle("on", on);
 window.store = on => $("#store").classList.toggle("on", on);
+window.conv = on => {
+  const c = $("#conv");
+  if (on) {
+    /* הקרניים נבנות מצבעי המועדונים עצמם, כדי שההתכנסות תהיה
+       אל אותם חמישה צבעים שראינו על הפרצופים. */
+    const step = 360 / (COLORS.length * 2);
+    const stops = [];
+    COLORS.forEach((col, i) => {
+      const a = i * 2 * step;
+      stops.push(col + " " + a + "deg " + (a + step) + "deg",
+                 "#0b0b0c " + (a + step) + "deg " + (a + 2 * step) + "deg");
+    });
+    c.querySelector(".rays").style.background = "conic-gradient(" + stops.join(",") + ")";
+  }
+  c.classList.toggle("on", on);
+};
 </script></body></html>`;
 
 const page$ = join(DIR, "_launch.html");
@@ -365,8 +416,10 @@ for (let i = 0; i < CLUES.length; i++) { await run("clue", i); await wait(560); 
 await wait(400); await run("name_");
 await wait(1700);
 
-/* 5 · החנות */
-await run("board", false); await run("store", true);
+/* 5 · ההתכנסות אל הסמל, ואז החנות */
+await run("board", false); await run("conv", true);
+await wait(2700);
+await run("conv", false); await run("store", true);
 await wait(900); await run("cap", "עכשיו בגוגל פליי.", true);
 await wait(3400);
 
