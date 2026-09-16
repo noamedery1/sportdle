@@ -576,6 +576,61 @@ for (const club of clubs) {
     }
   }
 
+  /* --- שחקנים שקיימים רק בוויקיפדיה --------------------------
+     החלק השני של אותו דיווח: "חסרים מלא שחקנים". נכון — 565
+     שחקנים עם טבלת קריירה שמונה את המועדון הזה בשנים מפורשות,
+     ואינם במאגר כלל.
+
+     **הסיבה היא פער כיסוי, לא באג.** מסד ההתאחדות מתחיל ב-2003,
+     והחסרים הם כמעט כולם לפני כן: מתוך 565 רק ארבעה מופיעים
+     בהתאחדות ו-14 ב-worldfootball. ויקיפדיה היא המקור היחיד
+     שמכסה את שנות ה-70 עד ה-90 בכדורגל הישראלי.
+
+     **ולכן הם נכנסים לניחוש בלבד, ולא לבריכת התשובות.** הכלל
+     שדורש שני מקורות בלתי תלויים נכתב אחרי ליאור אסולין, שהופיע
+     במכבי חיפה על סמך רשימת סגל שנגרפה ומעולם לא שיחק שם. המקור
+     כאן חזק בהרבה — טבלת הקריירה בערך של השחקן עצמו — אבל הוא
+     עדיין מקור יחיד, ותשובה של חידה יומית היא טענה חזקה יותר
+     מאשר שורת השוואה. `guessOnly` שומר בדיוק על ההבחנה הזאת:
+     אפשר להקליד אותם ולקבל השוואה מלאה, והם לעולם לא התשובה.
+
+     דורש עמדה ושנת לידה — בלי עמדה הרמז הראשון הוא סימן שאלה,
+     והבנייה ממילא מסננת אותם. */
+  {
+    const career = R("wikicareer");
+    if (career?.details && wikiP) {
+      const attrs = new Map(wikiP.details.map(d => [d.title, d]));
+      const have = new Set();
+      for (const p of players)
+        for (const n of [p.he, p.official, ...(p.aliases || [])].filter(Boolean))
+          have.add(normName(n));
+
+      let added = 0, noAttrs = 0;
+      for (const d of career.details) {
+        if (!d.spells?.length || d.ambiguous) continue;
+        if (have.has(normName(d.name)) || have.has(normName(d.title))) continue;
+        const a = attrs.get(d.title);
+        if (!a?.pos || !a?.born) { noAttrs++; continue; }
+        const rec = {
+          he: hasYearDisambig(d.title) ? d.title : d.name,
+          name: null, pos: a.pos, nat: a.nat ?? null, born: a.born,
+          years: null, spells: d.spells, aliases: [],
+          src: ["wikicareer:only"],
+          wiki: d.title,
+          /* לא יכול להיות התשובה. מקור יחיד. */
+          guessOnly: true
+        };
+        players.push(rec);
+        have.add(normName(rec.he));
+        added++;
+      }
+      if (added) {
+        review.notes.push(`נוספו ${added} שחקנים מטבלת הקריירה בלבד — ניתנים לניחוש, לא לבריכה`);
+        log(`  מוויקיפדיה בלבד: ${added} שחקנים נוספו לניחוש · ${noAttrs} נדחו בלי עמדה או שנת לידה`);
+      }
+    }
+  }
+
   /* --- עונות חסרות מטבלת הקריירה -----------------------------
      דווח מהשטח: "שנת ההתחלה של כחילה ואלהרר לא נכונה". נכון,
      ולא בשניים — ב-349 שחקנים בחמשת המועדונים, 726 עונות חסרות.
@@ -682,7 +737,7 @@ for (const club of clubs) {
      עם הערה מהשטח שמתחתיה המשחק נשבר. */
   const MIN_SEASONS = 2;
   for (const p of players)
-    p.target = p.seasons >= MIN_SEASONS && p.born != null && p.pos != null;
+    p.target = !p.guessOnly && p.seasons >= MIN_SEASONS && p.born != null && p.pos != null;
 
   /* --- איחוד רשומות של אותו אדם ---
      "גיל ורמוט" ו"גילי ורמוט" נוצרו כשתי רשומות: זו של ההתאחדות
@@ -723,11 +778,14 @@ for (const club of clubs) {
     }
     if (merged) {
       players = players.filter(p => !p._gone);
-      /* התקופות השתנו — מחשבים מחדש */
+      /* התקופות השתנו — מחשבים מחדש.
+         **כולל `guessOnly`.** החישוב כאן שכפל את הנוסחה בלי
+         הסייג, ולכן 43 שחקנים שנוספו מוויקיפדיה בלבד חזרו
+         לבריכת התשובות מהדלת האחורית. */
       for (const p of players) {
         p.seasons = seasonsIn(p.spells);
         p.titles  = countTitles(p.spells, titleYears);
-        p.target  = p.seasons >= MIN_SEASONS && p.born != null && p.pos != null;
+        p.target  = !p.guessOnly && p.seasons >= MIN_SEASONS && p.born != null && p.pos != null;
       }
       log(`  אוחדו ${merged} רשומות של אותו אדם`);
     }

@@ -243,7 +243,15 @@ for (const c of clubs) {
                  `${blocked.slice(0, 5).join(", ")}`);
   const hidden = d.players.length - playable.length;
   const unconf = d.players.filter(p => p.pos != null && unconfirmed.has(p.he)).length;
-  const spanYears = playable.flatMap(p => p.spells.flat());
+  /* הטווח נמדד על **בריכת התשובות** ולא על כל מי שאפשר להקליד.
+     זו ההבטחה שהמספר הזה נותן — מאיזה טווח מגיעה החידה — ומאז
+     שנוספו שחקנים שקיימים רק בוויקיפדיה השניים אינם זהים: אפשר
+     להקליד את הפועל ת"א מ-1925, אבל התשובה לעולם לא משם.
+
+     ויש גם סיבה מעשית: עונה מוצגת בשתי ספרות, ו-"24/25" בטווח
+     שמתחיל ב-1924 ומסתיים ב-2026 נקרא כ-2024/25. טווח שחוצה מאה
+     שובר את הפורמט, והבריכה אינה חוצה. */
+  const spanYears = playable.filter(p => p.target).flatMap(p => p.spells.flat());
   data[c.slug] = {
     slug: d.slug, he: d.he, short: d.short, game: d.game,
     colors: d.colors, titles: d.titles,
