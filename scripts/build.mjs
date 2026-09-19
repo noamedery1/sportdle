@@ -37,6 +37,7 @@ const NAT_HE = {
   MX:"מקסיקו", PY:"פרגוואי", VE:"ונצואלה", PE:"פרו", EC:"אקוודור", CI:"חוף השנהב",
   SN:"סנגל", MA:"מרוקו", TN:"תוניסיה", DZ:"אלג'יריה", EG:"מצרים", ZA:"דרום אפריקה",
   CD:"קונגו", AO:"אנגולה", ML:"מאלי", GN:"גינאה", TG:"טוגו", BJ:"בנין", ZW:"זימבבואה",
+  NE:"ניז'ר",
   KE:"קניה", AU:"אוסטרליה", JP:"יפן", KR:"דרום קוריאה", UZ:"אוזבקיסטן", AM:"ארמניה",
   AZ:"אזרבייג'ן", MD:"מולדובה", BY:"בלארוס", LT:"ליטא", LV:"לטביה", EE:"אסטוניה",
   AL:"אלבניה", XK:"קוסובו", CH:"שווייץ", AT:"אוסטריה", IS:"איסלנד", JM:"ג'מייקה",
@@ -45,7 +46,7 @@ const NAT_HE = {
 const EU = ["UA","HU","MK","PT","ES","FR","GE","RU","RO","RS","HR","BA","SI","ME","BG",
             "PL","CZ","SK","NL","BE","DE","IT","EN","SC","IE","SE","NO","DK","FI","GR",
             "TR","AM","AZ","MD","BY","LT","LV","EE","AL","XK","CH","AT","IS","CY"];
-const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE"];
+const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE"];
 const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC"];
 const NA = ["US","CA","MX","JM"];
 const AS = ["JP","KR","UZ","AU"];
