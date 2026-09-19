@@ -125,6 +125,15 @@ jobs:
           echo "path=$aab" >> "$GITHUB_OUTPUT"
           echo "::notice::AAB חתום · $(du -h "$aab" | cut -f1) · versionCode ${{ github.run_number }}"
 
+      # איך מורידים את הפריט הזה כשכפתור ההורדה בדפדפן נכשל בשקט
+      # (קורה) — ארטיפקט של Actions דורש אימות גם במאגר ציבורי,
+      # אבל האישור שמאפשר git push שמור מקומית וה-API מקבל אותו:
+      #   TOK=$(printf 'protocol=https\nhost=github.com\n\n' \
+      #         | git credential fill | sed -n 's/^password=//p')
+      #   ID=$(curl -sH "Authorization: Bearer $TOK" \
+      #     ".../actions/runs/<RUN_ID>/artifacts" | jq .artifacts[0].id)
+      #   curl -sLH "Authorization: Bearer $TOK" -o aab.zip \
+      #     ".../actions/artifacts/$ID/zip"
       - uses: actions/upload-artifact@v4
         if: steps.secrets.outputs.ready == 'yes'
         with:
