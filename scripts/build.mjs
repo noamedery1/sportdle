@@ -37,7 +37,12 @@ const NAT_HE = {
   MX:"מקסיקו", PY:"פרגוואי", VE:"ונצואלה", PE:"פרו", EC:"אקוודור", CI:"חוף השנהב",
   SN:"סנגל", MA:"מרוקו", TN:"תוניסיה", DZ:"אלג'יריה", EG:"מצרים", ZA:"דרום אפריקה",
   CD:"קונגו", AO:"אנגולה", ML:"מאלי", GN:"גינאה", TG:"טוגו", BJ:"בנין", ZW:"זימבבואה",
-  NE:"ניז'ר",
+  /* הקודים האלה נחשפו על ידי checkNatCoverage למטה. עד שהוא נוסף הם
+     הוצגו במשחק כקוד גולמי — "ZM" בתא הלאום במקום "זמביה" — וחמישה
+     מהם בבריכות התשובות, כלומר בחידה עצמה ולא רק בניחוש. */
+  NE:"ניז'ר", ZM:"זמביה", MG:"מדגסקר", CV:"כף ורדה", GW:"גינאה ביסאו", GM:"גמביה",
+  SR:"סורינאם", BO:"בוליביה", GT:"גואטמלה", CR:"קוסטה ריקה",
+  TT:"טרינידד וטובגו", MQ:"מרטיניק", GP:"גוואדלופ",
   KE:"קניה", AU:"אוסטרליה", JP:"יפן", KR:"דרום קוריאה", UZ:"אוזבקיסטן", AM:"ארמניה",
   AZ:"אזרבייג'ן", MD:"מולדובה", BY:"בלארוס", LT:"ליטא", LV:"לטביה", EE:"אסטוניה",
   AL:"אלבניה", XK:"קוסובו", CH:"שווייץ", AT:"אוסטריה", IS:"איסלנד", JM:"ג'מייקה",
@@ -46,9 +51,9 @@ const NAT_HE = {
 const EU = ["UA","HU","MK","PT","ES","FR","GE","RU","RO","RS","HR","BA","SI","ME","BG",
             "PL","CZ","SK","NL","BE","DE","IT","EN","SC","IE","SE","NO","DK","FI","GR",
             "TR","AM","AZ","MD","BY","LT","LV","EE","AL","XK","CH","AT","IS","CY"];
-const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE"];
-const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC"];
-const NA = ["US","CA","MX","JM"];
+const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE","ZM","MG","CV","GW","GM"];
+const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC","SR","BO"];
+const NA = ["US","CA","MX","JM","GT","CR","TT","MQ","GP"];
 const AS = ["JP","KR","UZ","AU"];
 const REGION = { IL: "ME" };
 for (const c of EU) REGION[c] = "EU";
@@ -139,6 +144,33 @@ function checkFonts(html) {
     fail("html", 'אין קישור ל-fonts.css — הרץ node tools/fonts.mjs');
   if (!existsSync("src/static/fonts.css"))
     fail("html", "חסר src/static/fonts.css — הרץ node tools/fonts.mjs");
+}
+
+/* לכל קוד לאום שבמאגר יש שם עברי.
+   בלי הבדיקה הזאת קוד חסר אינו שגיאה אלא **תצוגה**: NAT_HE[n]||n
+   נופל אל הקוד הגולמי, והשחקן רואה "ZM" בתא הלאום במקום "זמביה".
+   שום דבר לא נשבר, שום לוג לא צועק, וזה נשאר באוויר עד שמישהו
+   מדווח. כשהבדיקה נוספה היא מצאה שנים־עשר כאלה — חמישה מהם
+   בבריכות התשובות, כלומר בחידה עצמה.
+
+   נבדק גם REGION: בלעדיו רמז "אותה יבשת" פשוט לא יידלק לעולם
+   לשחקן מאותה מדינה, וזה הפרש שקט עוד יותר. */
+function checkNatCoverage(data) {
+  const miss = new Map(), noRegion = new Set();
+  for (const c of Object.values(data)) {
+    for (const p of c.players) {
+      for (const n of (p.nats && p.nats.length ? p.nats : (p.nat ? [p.nat] : []))) {
+        if (!NAT_HE[n]) {
+          if (!miss.has(n)) miss.set(n, []);
+          if (miss.get(n).length < 3) miss.get(n).push(`${c.slug}:${p.he}`);
+        } else if (!REGION[n]) noRegion.add(n);
+      }
+    }
+  }
+  for (const [code, who] of miss)
+    fail("nat", `אין שם עברי לקוד "${code}" — יוצג כקוד גולמי במשחק (${who.join(", ")})`);
+  if (noRegion.size)
+    fail("nat", `קודים בלי אזור ב-REGION: ${[...noRegion].join(", ")} — רמז "אותה יבשת" לא יידלק`);
 }
 
 /* 2. אין id כפול ב-HTML */
@@ -404,6 +436,7 @@ checkIds(html);
 checkFonts(html);
 checkShareChars(html);
 checkShareDir(html);
+checkNatCoverage(data);
 checkHeaderButtons(html);
 checkSyntax(html);
 
