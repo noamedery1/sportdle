@@ -217,7 +217,7 @@ function submit(name){
   input.value = ""; closeSugg();
   if (p.name === answer.name) finish(true);
   else if (guesses.length >= MAX) finish(false);
-  else { saveState(); maybeHint(); }
+  else { saveState(); maybeHint(); maybeFriend(); }
 }
 
 /* ---------- רצף ---------- */
@@ -272,6 +272,7 @@ function finish(won){
   });
 
   $("#hintRow").classList.remove("on");
+  $("#friendRow").classList.remove("on");
   if (isToday()){
     saveState();
     bumpStreak(won); showStreak();
@@ -538,6 +539,7 @@ $("#again").addEventListener("click", ()=>{
   $("#story").style.display = "none";
   $("#yday").classList.remove("on");
   $("#hintRow").classList.remove("on"); $("#hintOut").textContent = "";
+  $("#friendRow").classList.remove("on");
   $("#hintBtn").style.display = "";
   answer = POOL[Math.floor(Math.random()*POOL.length)];
   board.innerHTML = ""; $("#result").classList.remove("on");
@@ -620,6 +622,7 @@ function loadPuzzle(n){
   board.innerHTML = "";
   $("#result").classList.remove("on");
   $("#hintOut").textContent = ""; $("#hintRow").classList.remove("on");
+  $("#friendRow").classList.remove("on");
   $("#hintBtn").style.display = "";
   input.disabled = false; input.value = "";
   $("#left").textContent = MAX;
@@ -657,6 +660,168 @@ $("#hintBtn").addEventListener("click", ()=>{
   $("#hintOut").textContent = hintText();
   $("#hintBtn").style.display = "none";
   saveState();
+});
+
+/* ---------- עזרת חבר ----------
+   הודעת וואטסאפ באמצע משחק. **מסקנות ולא יומן.** מי שמקבל אותה
+   לא בהכרח משחק בעצמו, ורשימת ניחושים עם סמלים לא אומרת לו כלום;
+   מה שהוא צריך זה מה שכבר ידוע על המבוקש. זה גם מה שנותן להודעה
+   אורך קבוע — עשר שורות בין אם ניחשת פעמיים או שבע.
+
+   **אין כאן שום גישה לתשובה.** הגבולות נגזרים מהחץ ומהצבע בלבד,
+   כלומר בדיוק מה שכבר מוצג על המסך. "קרוב" הוא מידע אמיתי ולא
+   קישוט: הוא מגביל לטווח 3 (עונה, לידה) או 1 (תארים), ולכן הוא
+   מכווץ משני הצדדים. "רחוק" עם חץ מלמד את ההפך — שהפער גדול
+   מהטווח — ולכן הוא דוחף את הגבול הלאה ולא רק בערך אחד.
+
+   **בלי אף אימוג'י, בכוונה.** checkShareChars ב-build.mjs חוסם
+   תווים מחוץ למישור הבסיסי כי הם נשברים בוואטסאפ ווב, ולכן צבע
+   ממילא פסול.
+
+   **וגם בלי תווי נקודה בתחילת שורה, וזה נמדד ולא הונח.** הגרסה
+   הראשונה פתחה כל עובדה ב-"• ". מדידת מיקום בפועל בשני ההקשרים
+   (tools/friend-check.mjs --bidi) הראתה שהנקודה נוחתת בצד ההפוך
+   של השורה כשההודעה מוצגת בהקשר LTR — כלומר וואטסאפ ווב בממשק
+   אנגלי — כי היא תו ניטרלי בתחילת שורה. עכשיו **כל שורה נפתחת
+   באות עברית**, והכיוון נקבע מעצמו בשני ההקשרים בלי אף תו בקרה.
+   הכוכביות של ה-bold אינן בעיה: וואטסאפ בולע אותן כסימון.
+
+   מכאן גם הכלל להמשך: אין להתחיל שורה כאן בתו ניטרלי — לא נקודה,
+   לא מקף, לא מספר. */
+const NEAR_RANGE = { "עונה 1": 3, "תארים": 1, "נולד": 3 };
+const RAW_OF     = { "עונה 1": g => g.from, "תארים": g => g.titles, "נולד": g => g.born };
+
+function knownFacts(){
+  let posCand = new Set(POS_ORDER);
+  let natHit = null, natNear = null;
+  const natOut = new Set();
+  const num = { "עונה 1": {lo:null,hi:null,exact:null},
+                "תארים":  {lo:null,hi:null,exact:null},
+                "נולד":   {lo:null,hi:null,exact:null} };
+
+  for (const g of guesses) for (const c of compare(g, answer)){
+    if (c.k === "עמדה"){
+      if (!g.pos) continue;
+      const gi  = POS_ORDER.indexOf(g.pos);
+      const adj = new Set([POS_ORDER[gi-1], POS_ORDER[gi+1]].filter(Boolean));
+      if      (c.s === "hit")  posCand = new Set([g.pos]);
+      else if (c.s === "near") posCand = new Set([...posCand].filter(p => adj.has(p)));
+      /* "רחוק" שולל גם את השכנות: אילו הייתה שכנה, התא היה "קרוב". */
+      else                     posCand = new Set([...posCand].filter(p => p !== g.pos && !adj.has(p)));
+    }
+    else if (c.k === "לאום"){
+      if (c.s === "hit") natHit = c.v;
+      else {
+        for (const n of g.nats) natOut.add(NAT_HE[n] || n);
+        if (c.s === "near" && !natNear) natNear = c.v;
+      }
+    }
+    else if (num[c.k]){
+      const v = RAW_OF[c.k](g);
+      if (v == null) continue;
+      const b = num[c.k], near = NEAR_RANGE[c.k];
+      if      (c.s === "hit") b.exact = v;
+      else if (c.ar === "↑"){
+        b.lo = Math.max(b.lo ?? -Infinity, c.s === "near" ? v + 1 : v + near + 1);
+        if (c.s === "near") b.hi = Math.min(b.hi ??  Infinity, v + near);
+      }
+      else if (c.ar === "↓"){
+        b.hi = Math.min(b.hi ??  Infinity, c.s === "near" ? v - 1 : v - near - 1);
+        if (c.s === "near") b.lo = Math.max(b.lo ?? -Infinity, v - near);
+      }
+    }
+  }
+  return { posCand, natHit, natNear, natOut, num };
+}
+
+/* ניסוח טווח. fmt ממיר ערך גולמי למחרוזת (שנה → "96/97"), ו-w
+   נותן את ארבעת הנוסחים. טווח שהתכווץ לערך יחיד מנוסח כערך מדויק
+   ולא כ"בין X ל-X". */
+function rangeLine(b, fmt, w){
+  if (b.exact != null)                return w.exact(fmt(b.exact));
+  if (b.lo != null && b.hi != null)   return b.lo === b.hi ? w.exact(fmt(b.lo))
+                                                          : w.both(fmt(b.lo), fmt(b.hi));
+  if (b.lo != null)                   return w.lo(fmt(b.lo));
+  if (b.hi != null)                   return w.hi(fmt(b.hi));
+  return null;
+}
+
+function friendText(){
+  const f = knownFacts(), L = [];
+
+  /* שתי השורות האלה מתויגות והאחרות לא, בכוונה. "התקפה" ו"ישראל"
+     לבדן נקראות כרשימת שמות עצם ולא כעובדות על שחקן; "הגיע למועדון
+     ב-98/99" כבר משפט שלם ותווית עליו רק מכבידה. */
+  if (f.posCand.size === 1)
+    L.push(`עמדה: ${POS_HE[[...f.posCand][0]]}`);
+  else if (f.posCand.size > 1 && f.posCand.size < POS_ORDER.length)
+    L.push(`עמדה: ${[...f.posCand].map(p => POS_HE[p]).join(" או ")}`);
+
+  if (f.natHit)            L.push(`לאום: ${f.natHit}`);
+  else if (f.natNear)      L.push(`לאום: מאותו אזור כמו ${f.natNear}, אבל לא ${f.natNear}`);
+  else if (f.natOut.size)  L.push(`לאום: לא ${[...f.natOut].join(", לא ")}`);
+
+  const num = f.num;
+  L.push(rangeLine(num["עונה 1"], season, {
+    exact: s      => `הגיע למועדון ב-${s}`,
+    both:  (a, b) => `הגיע למועדון בין ${a} ל-${b}`,
+    lo:    a      => `הגיע למועדון ב-${a} או אחרי`,
+    hi:    b      => `הגיע למועדון עד ${b}`
+  }));
+  /* "בדיוק 0 תארים" ו"לפחות 1 תארים" הם עברית שבורה, והם המקרים
+     הנפוצים דווקא — רוב השחקנים בלי תואר. titleWord מטפל בשלוש
+     הצורות; המספרים הגדולים תקינים ממילא. */
+  const tw = n => n === 0 ? "תארים" : n === 1 ? "תואר אחד" : `${n} תארים`;
+  L.push(rangeLine(num["תארים"], n => n, {
+    exact: n      => n === 0 ? `בלי תארים כלל` : `בדיוק ${tw(n)}`,
+    both:  (a, b) => `בין ${a} ל-${b} תארים`,
+    lo:    a      => `לפחות ${tw(a)}`,
+    hi:    b      => b === 0 ? `בלי תארים כלל` : `עד ${tw(b)}`
+  }));
+  L.push(rangeLine(num["נולד"], String, {
+    exact: y      => `נולד ב-${y}`,
+    both:  (a, b) => `נולד בין ${a} ל-${b}`,
+    lo:    a      => `נולד ב-${a} או אחרי`,
+    hi:    b      => `נולד עד ${b}`
+  }));
+
+  const facts = L.filter(Boolean);
+  const left  = MAX - guesses.length;
+  /* הכוכביות הן bold אמיתי בוואטסאפ, והן נבלעות כסימון — ולכן
+     אינן נחשבות לתו הפותח של השורה לעניין כיוון.
+
+     "מישהו יודע?" הוקדם, ולא רק כדי לפתוח בשאלה: השאלה בסוף
+     השאירה סימן שאלה בתו האחרון, וזה תו ניטרלי שזז בין ההקשרים.
+     עכשיו השורה נפתחת ונסגרת בעברית.
+
+     הכותרת היא החריג היחיד שנשאר, והוא בכוונה: היא מסתיימת ב-"#N"
+     וה-"dle" לועזי, ולכן שני חצאיה מתחלפים בהקשר LTR. זה מוסבר
+     ונסבל כי shareText() מציג אותה כותרת בדיוק מאז ומעולם, ושתי
+     גרסאות שונות לאותה כותרת גרועות יותר מהיפוך שקריא ממילא. */
+  const head  = `*${club.game} · חידה #${puzzleNo}*\n` +
+                `מישהו יודע? נשארו לי רק ${left} ${left === 1 ? "ניחוש" : "ניחושים"}`;
+  const known = facts.length ? `*מה שכבר ידוע*\n${facts.join("\n")}`
+                             : `עוד לא הצלחתי לצמצם כלום`;
+  const out   = `*נפסלו:* ${guesses.map(g => g.name).join(" · ")}`;
+  return `${head}\n\n${known}\n\n${out}\n\n${SITE_URL}/${club.slug}/`;
+}
+
+/* הסף הוא 3 ולא 5 כמו ברמז. הרמז מתומחר בקושי — הוא נפתח כשבאמת
+   נתקעת. זה לא רמז אלא שיתוף, והוא שווה משהו רק כשיש כבר מה
+   לספר: פחות משלושה ניחושים ו"מה שכבר ידוע" הוא שורה או שתיים. */
+function maybeFriend(){
+  $("#friendRow").classList.toggle("on", !over && !practice && guesses.length >= 3);
+}
+
+/* window.open עם "_blank" הוא no-op שקט ב-WebView של אנדרואיד;
+   src/native.js דורס את המאזין הזה ב-location.href. ההסבר המלא שם. */
+/* src/native.js עוצר את המאזין הזה עם stopImmediatePropagation, ולכן
+   הדיווח חייב להיות קריא גם משם ולא רק מתוך המאזין. */
+window.trackFriend = () => track("friend", { guesses: guesses.length });
+
+$("#friendBtn").addEventListener("click", ()=>{
+  window.trackFriend();
+  window.open("https://wa.me/?text=" + encodeURIComponent(friendText()), "_blank", "noopener");
 });
 
 /* ---------- סטטיסטיקה קהילתית ----------
@@ -1028,7 +1193,7 @@ function restore(){
     const last = guesses[guesses.length - 1];
     if (st.over || last.name === answer.name || guesses.length >= MAX)
       finish(last.name === answer.name);
-    else maybeHint();
+    else { maybeHint(); maybeFriend(); }
   }catch(e){}
 }
 

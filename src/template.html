@@ -264,6 +264,17 @@ input.rc:focus{border-color:var(--brand)}
 #hintOut:empty{display:none}
 #hintBtn + #hintOut{margin-top:9px}
 
+/* ---------- עזרת חבר ----------
+   אותו שפה ויזואלית כמו הרמז, כי הם יושבים באותו מקום בזרימה ושניהם
+   "אני תקוע". ההבדל היחיד הוא הרוחב: הכיתוב ארוך יותר ובמסך צר הוא
+   נשבר לשתי שורות, ולכן padding מעט הדוק יותר. */
+#friendRow{margin-top:10px;text-align:center;display:none}
+#friendRow.on{display:block}
+#friendBtn{background:none;border:1.5px dashed var(--line);border-radius:var(--r);
+  padding:9px 14px;color:var(--dim);font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;margin:0;width:auto;line-height:1.4}
+#friendBtn:hover{color:var(--brand);border-color:var(--brand)}
+
 /* ---------- ארכיון ---------- */
 /* ---------- בורר מועדון ---------- */
 #clubBtn{display:inline-flex;align-items:center;gap:7px;margin:11px auto 0;width:auto;
@@ -591,6 +602,12 @@ __APP_BANNER_CSS__
   <div id="hintRow">
     <button id="hintBtn">תקועים? קבלו רמז</button>
     <div id="hintOut"></div>
+  </div>
+
+  <!-- עזרת חבר. נפתח משלושה ניחושים ונסגר בסיום ובאימון.
+       הטקסט נבנה ב-friendText() ב-engine.js — מסקנות, לא יומן. -->
+  <div id="friendRow">
+    <button id="friendBtn">צריכים עזרה? שאלו חבר בוואטסאפ</button>
   </div>
 
   <div id="board"></div>

@@ -121,6 +121,26 @@
     }, true);
   });
 
+  /* ---------- 3ג. עזרת חבר ----------
+     אותה מלכודת בדיוק כמו 3ב, ומאותה סיבה: המנוע קורא ל-window.open
+     ובלעדי העקיפה הזאת הכפתור לא עושה שום דבר באפליקציה — בשקט,
+     בלי שגיאה. אם מוסיפים עוד כפתור שפותח כתובת חיצונית, הוא צריך
+     את אותו טיפול.
+
+     שים לב: stopImmediatePropagation מבטל גם את track() שבמאזין של
+     המנוע, ולכן הדיווח נשלח כאן. window.SPORTDEL.analyticsUrl הוא
+     מה שהמנוע כבר מפרסם. */
+  safe(() => {
+    const fb = document.getElementById("friendBtn");
+    if (!fb || typeof window.friendText !== "function") return;
+    fb.addEventListener("click", (ev) => {
+      ev.stopImmediatePropagation();
+      ev.preventDefault();
+      if (typeof window.trackFriend === "function") window.trackFriend();
+      location.href = "https://wa.me/?text=" + encodeURIComponent(window.friendText());
+    }, true);
+  });
+
   /* ---------- 4. כפתור "חזור" של אנדרואיד ----------
      בלי זה לחיצה אחת על "חזור" סוגרת את האפליקציה מתוך חלונית
      פתוחה. זו אחת התלונות הנפוצות בביקורות, ובדיקת איכות של
