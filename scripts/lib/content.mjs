@@ -175,7 +175,26 @@ export const APP_BANNER_CSS = `
 .appban a{display:inline-block;margin-top:9px;background:var(--brand,#FFC72C);
   color:#0C0C0E;text-decoration:none;font-weight:700;font-size:13.5px;
   padding:9px 20px;border-radius:8px}
+/* תג Google Play — שחור עם מסגרת אפורה, כמו התג הרשמי, כי זה הצורה
+   שאנשים מזהים כ"כאן מורידים". לא צבע המועדון: כפתור צהוב נראה
+   כמו עוד כפתור באתר. ltr כי הלוגו משמאל לשם, כמו בתג המקורי. */
+.appban a.play{display:inline-flex;align-items:center;gap:9px;direction:ltr;
+  background:#000;color:#fff;border:1px solid #A6A6A6;padding:7px 16px 7px 12px;
+  border-radius:9px;line-height:1.15;text-align:left}
+.appban a.play svg{width:26px;height:28px;flex:none}
+.appban a.play span{display:block;margin:0;color:#fff}
+.appban a.play small{display:block;font-size:10.5px;font-weight:400;direction:rtl;text-align:left}
+.appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:600;letter-spacing:.2px}
 `;
+
+/* הלוגו של Play בארבעת הצבעים, inline — בלי בקשה נוספת ובלי תלות
+   בקובץ חיצוני. */
+const PLAY_LOGO = `<svg viewBox="0 0 24 26" aria-hidden="true">
+<path fill="#32BBFF" d="M1.6 1.2 13.4 13 1.6 24.8c-.4-.3-.6-.8-.6-1.4V2.6c0-.6.2-1.1.6-1.4z"/>
+<path fill="#00D26A" d="M1.6 1.2c.5-.4 1.2-.4 1.9 0L17.3 9.1 13.4 13z"/>
+<path fill="#FF3A44" d="M1.6 24.8 13.4 13l3.9 3.9-13.8 7.9c-.7.4-1.4.4-1.9 0z"/>
+<path fill="#FFC900" d="m17.3 9.1 4.4 2.5c1.1.6 1.1 2.2 0 2.8l-4.4 2.5-3.9-3.9z"/>
+</svg>`;
 
 export function appBannerHtml(site) {
   const a = (site && site.androidApp) || {};
@@ -184,7 +203,7 @@ export function appBannerHtml(site) {
     return `<div class="appban" id="appban">
     <b>אפליקציית אנדרואיד</b>
     <span>אותו משחק, גם בלי חיבור לאינטרנט.</span>
-    <a href="${a.url}" target="_blank" rel="noopener">להורדה מ-Google Play</a>
+    <a class="play" href="${a.url}" target="_blank" rel="noopener" aria-label="להורדה מ-Google Play">${PLAY_LOGO}<span><small>זמין ב-</small><em>Google Play</em></span></a>
   </div>`;
   return `<div class="appban" id="appban">
     <b>אפליקציית אנדרואיד — בקרוב</b>
