@@ -91,6 +91,11 @@ jobs:
         working-directory: ios/App
         run: |
           set +e
+          # **ל-macOS אין timeout** (זה GNU coreutils). בלעדיו כל פקודה
+          # עטופה נכשלה מיד עם 127, והשלב דיווח "הסימולטור לא עלה בתוך
+          # 5 דקות" אחרי שתי שניות — ולכן אף פעם לא היו צילומים.
+          # alarm של perl עושה אותו דבר, ו-perl קיים בכל ראנר.
+          timeout() { perl -e 'alarm shift; exec @ARGV' "$@"; }
           APP=$(find build/Build/Products -maxdepth 3 -name "App.app" | head -1)
           if [ -z "$APP" ]; then echo "::warning::לא נמצא App.app"; exit 0; fi
 
