@@ -54,6 +54,23 @@
       "DD:32:BA:19:5F:41:CE:B2:3F:8B:4D:B4:A7:E5:37:16:30:C9:89:B3:EA:1C:24:6B:AC:67:7D:44:76:41:5A:8C"
     ]
   },
+  "_iosAppLinks": [
+    "Universal Links של iOS — המקבילה של androidAppLinks.",
+    "",
+    "teamId ריק = /.well-known/apple-app-site-association לא נוצר, והבנייה",
+    "זהה לחלוטין לבנייה בלעדיו. ממלאים אחרי פתיחת חשבון המפתח:",
+    "developer.apple.com → Account → Membership details → Team ID.",
+    "",
+    "**שני צדדים חייבים להסכים**, כמו באנדרואיד: הקובץ כאן, והרשאת",
+    "Associated Domains באפליקציה (applinks:sportdle.techbynoam.com).",
+    "ההרשאה עוד לא באפליקציה בכוונה — ראה store/ios/CHECKLIST.md,",
+    "שלב 'אחרי האישור הראשון'."
+  ],
+  "iosAppLinks": {
+    "teamId": "",
+    "bundleId": "sportdle.techbynoam.com",
+    "paths": ["/join/*", "/beitar/*", "/hapoel-bs/*", "/hapoel-ta/*", "/maccabi-haifa/*", "/maccabi-ta/*"]
+  },
   "siteUrl": "https://sportdle.techbynoam.com",
   "start": [
     2026,

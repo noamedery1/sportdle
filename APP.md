@@ -97,6 +97,11 @@ GitHub Actions מריץ ראנרים של macOS, ולכן הוא **יכול** ל
 
 ## iOS בלי מק
 
+> **עדכון — הדרך בפועל:** `.github/workflows/ios-release.yml` חותם עם
+> **מפתח API של App Store Connect** ו-cloud signing, כך שמסלול ה-CSR,
+> ה-`.p12` והפרופיל שלמטה **לא נדרש**. כל צעדי ההגשה, והערכים לכל שדה
+> בחנות: `store/ios/APP_STORE.md`.
+
 **אין שום שלב שדורש מק.** הנקודה שנראית חוסמת — יצירת תעודת
 החתימה — נפתרת ב-OpenSSL, ואת הבנייה עושה ראנר macOS ב-Actions.
 

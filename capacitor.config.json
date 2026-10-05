@@ -19,7 +19,12 @@
     "של ה-WebView ב-BaseInputConnection גולמי, וכל אצווה של תווים",
     "עוברת דרך evaluateJavascript שכותב .value ישירות — הקלדה",
     "איטית, ומחיקה שלא מגיבה כי לא נורה אף input. הודלק פעם אחת",
-    "בטעות וזה מה שקרה."
+    "בטעות וזה מה שקרה.",
+    "",
+    "ios.backgroundColor: הרקע של WKWebView לבן כברירת מחדל, וזה",
+    "מה שמבהב בקפיצה האלסטית בראש הדף ולפני הטעינה. contentInset",
+    "never כי ה-CSS כבר מטפל באזורים הבטוחים (env(safe-area-inset-*))",
+    "ו-automatic היה מוסיף אותם פעמיים."
   ],
   "appId": "sportdle.techbynoam.com",
   "appName": "SportDle",
@@ -30,6 +35,11 @@
   },
   "android": {
     "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  },
+  "ios": {
+    "backgroundColor": "#0C0C0EFF",
+    "contentInset": "never",
     "webContentsDebuggingEnabled": false
   },
   "plugins": {
