@@ -1,0 +1,255 @@
+# ============================================================
+# IPA חתום ל-App Store / TestFlight
+# ------------------------------------------------------------
+# המקבילה של release.yml (AAB לגוגל). בונה ארכיון Release למכשיר,
+# חותם, ומעלה ישר ל-App Store Connect — משם הוא נכנס ל-TestFlight,
+# וממנו מגישים לבדיקה.
+#
+# **אין צורך במק, ב-.p12 או בפרופיל.** החתימה היא "cloud signing":
+# Xcode על הראנר מתחבר לאפל עם מפתח API של App Store Connect,
+# ויוצר בעצמו תעודת הפצה ופרופיל (-allowProvisioningUpdates).
+# זה מחליף את כל מסלול ה-CSR/openssl שב-APP.md.
+#
+# **בלי סודות הריצה לא מדלגת — היא מוודאת.** היא בונה ארכיון
+# Release למכשיר (arm64) בלי חתימה, כך שאפשר לדעת עוד לפני שיש
+# חשבון שהקוד, התוספים וההגדרות מתקמפלים בדיוק בתצורה שתעלה.
+# ביום שיש חשבון, הדבר החדש היחיד הוא החתימה.
+#
+# ============================================================
+# הסודות — פעם אחת, אחרי פתיחת חשבון המפתח
+# ============================================================
+# 1. App Store Connect → Users and Access → Integrations →
+#    App Store Connect API → Team Keys → "+"
+#      שם: github-actions · Access: **Admin**
+#    (Admin נדרש כדי ש-Xcode יוכל ליצור תעודת הפצה בענן.)
+#    מורידים את AuthKey_XXXXXXXXXX.p8 — **אפשר להוריד פעם אחת בלבד**.
+#    רושמים את ה-Key ID ואת ה-Issuer ID מראש הדף.
+#
+# 2. Team ID: developer.apple.com → Account → Membership details.
+#
+# 3. ממירים את ה-.p8 ל-base64:
+#      Windows:  certutil -encode AuthKey_XXXXXXXXXX.p8 key.b64
+#      (ומוחקים מהקובץ את שורות BEGIN/END CERTIFICATE שמוסיף certutil)
+#      אחר:      base64 -w0 AuthKey_XXXXXXXXXX.p8 > key.b64
+#
+# 4. Settings → Secrets and variables → Actions:
+#      APPLE_TEAM_ID        10 תווים, למשל AB12CD34EF
+#      ASC_KEY_ID           Key ID של המפתח
+#      ASC_ISSUER_ID        Issuer ID (UUID)
+#      ASC_KEY_P8_BASE64    תוכן key.b64
+#
+# 5. לפני ההעלאה הראשונה: App Store Connect → Apps → "+" → New App,
+#    עם Bundle ID ‎sportdle.techbynoam.com. בלי רשומת אפליקציה ההעלאה
+#    נכשלת ב-"No suitable application records were found".
+#    (אם ה-Bundle ID לא מופיע ברשימה — Certificates, IDs & Profiles →
+#    Identifiers → "+" → App IDs → sportdle.techbynoam.com.)
+#
+# ============================================================
+# גרסאות
+# ============================================================
+# CFBundleShortVersionString ("version") מגיע מהקלט, ברירת מחדל 1.0.
+# CFBundleVersion ("build") הוא github.run_number — עולה בכל ריצה,
+# וזו הדרישה היחידה של אפל. לגרסה חדשה בחנות מעלים את version.
+# ============================================================
+name: IPA
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "גרסה בחנות (CFBundleShortVersionString)"
+        default: "1.0"
+        required: true
+      upload:
+        description: "להעלות ל-App Store Connect (אחרת רק IPA כ-artifact)"
+        type: boolean
+        default: true
+
+jobs:
+  ipa:
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: יש סודות?
+        id: secrets
+        env:
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+          P8: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          missing=""
+          [ -z "$TEAM" ] && missing="$missing APPLE_TEAM_ID"
+          [ -z "$KID" ]  && missing="$missing ASC_KEY_ID"
+          [ -z "$ISS" ]  && missing="$missing ASC_ISSUER_ID"
+          [ -z "$P8" ]   && missing="$missing ASC_KEY_P8_BASE64"
+          if [ -n "$missing" ]; then
+            echo "::notice::חסרים סודות:$missing — בונים ארכיון לא חתום לאימות בלבד. ראה את ההוראות בראש הקובץ."
+            echo "ready=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ============================================================
+      # Xcode — העדכני ביותר על הראנר
+      # ------------------------------------------------------------
+      # מאפריל 2026 אפל מקבלת רק בנייה עם Xcode 26 / iOS 26 SDK.
+      # ברירת המחדל של הראנר עלולה להיות ישנה יותר, ולכן בוחרים את
+      # הגרסה הגבוהה ביותר שמותקנת ומדפיסים אותה — כשההעלאה נדחית
+      # על SDK, הלוג אומר מיד באיזה Xcode נבנה.
+      # ============================================================
+      - name: בחירת Xcode
+        run: |
+          x=$(ls -d /Applications/Xcode_*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1)
+          [ -n "$x" ] && sudo xcode-select -s "$x/Contents/Developer"
+          xcodebuild -version
+          echo "::notice::$(xcodebuild -version | head -1) · iOS SDK $(xcrun --sdk iphoneos --show-sdk-version)"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"          # Capacitor 8 דורש >= 22
+          cache: npm
+
+      - name: התקנה
+        run: npm ci
+
+      - name: בנייה
+        run: |
+          node scripts/build.mjs
+          node tools/links.mjs dist
+          node tools/app-prepare.mjs
+
+      - name: העברה לאפליקציה
+        run: |
+          out=$(npx cap sync ios 2>&1) || {
+            echo "$out" | tail -30
+            echo "::error::cap sync ios נכשל · $(echo "$out" | tail -1 | cut -c1-300)"
+            exit 1
+          }
+          echo "$out" | tail -6
+
+      # המפתח נכתב מחוץ לעץ העבודה, כמו ה-keystore באנדרואיד.
+      - name: שחזור מפתח ה-API
+        if: steps.secrets.outputs.ready == 'yes'
+        id: key
+        env:
+          KID: ${{ secrets.ASC_KEY_ID }}
+          P8: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          path="$RUNNER_TEMP/AuthKey_$KID.p8"
+          echo "$P8" | tr -d '\n\r ' | base64 -d > "$path"
+          if ! grep -q "BEGIN PRIVATE KEY" "$path"; then
+            echo "::error::פענוח ה-.p8 נכשל — בדוק שה-base64 שלם ושהוסרו שורות BEGIN/END CERTIFICATE של certutil"
+            exit 1
+          fi
+          echo "path=$path" >> "$GITHUB_OUTPUT"
+
+      # ============================================================
+      # ארכיון
+      # ------------------------------------------------------------
+      # חתום: Automatic + DEVELOPMENT_TEAM + מפתח API. Xcode רושם את
+      # ה-App ID אם צריך, יוצר תעודה ופרופיל, וחותם.
+      # לא חתום: CODE_SIGNING_ALLOWED=NO — אותו קומפילציה בדיוק
+      # (Release, arm64, generic/platform=iOS), בלי חתימה.
+      # ============================================================
+      - name: xcodebuild archive
+        working-directory: ios/App
+        env:
+          READY: ${{ steps.secrets.outputs.ready }}
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+          KEY: ${{ steps.key.outputs.path }}
+          VERSION: ${{ inputs.version || '1.0' }}
+          BUILD: ${{ github.run_number }}
+        run: |
+          set -o pipefail
+          common=(-scheme App -configuration Release -destination 'generic/platform=iOS'
+                  -archivePath "$RUNNER_TEMP/App.xcarchive"
+                  MARKETING_VERSION="$VERSION" CURRENT_PROJECT_VERSION="$BUILD")
+          if [ "$READY" = "yes" ]; then
+            xcodebuild "${common[@]}" archive \
+              DEVELOPMENT_TEAM="$TEAM" CODE_SIGN_STYLE=Automatic \
+              -allowProvisioningUpdates \
+              -authenticationKeyPath "$KEY" \
+              -authenticationKeyID "$KID" \
+              -authenticationKeyIssuerID "$ISS" 2>&1 | tail -60
+          else
+            xcodebuild "${common[@]}" archive \
+              CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO 2>&1 | tail -60
+          fi
+          test -d "$RUNNER_TEMP/App.xcarchive/Products/Applications/App.app" || {
+            echo "::error::הארכיון לא נוצר"; exit 1; }
+
+      # מה שאפל בודקת בהעלאה, נבדק כאן קודם — כשל שם מגיע במייל אחרי
+      # שעה, כאן הוא מגיע בלוג.
+      - name: בדיקות לפני העלאה
+        env:
+          VERSION: ${{ inputs.version || '1.0' }}
+          BUILD: ${{ github.run_number }}
+        run: |
+          app="$RUNNER_TEMP/App.xcarchive/Products/Applications/App.app"
+          plist="$app/Info.plist"
+          id=$(/usr/libexec/PlistBuddy -c "Print CFBundleIdentifier" "$plist")
+          v=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$plist")
+          b=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$plist")
+          echo "bundle=$id version=$v build=$b"
+          [ "$id" = "sportdle.techbynoam.com" ] || { echo "::error::Bundle ID שגוי: $id"; exit 1; }
+          [ "$v" = "$VERSION" ] && [ "$b" = "$BUILD" ] || { echo "::error::גרסה לא נכנסה: $v ($b)"; exit 1; }
+          lipo -archs "$app/App" | grep -q arm64 || { echo "::error::אין arm64 בבינארי"; exit 1; }
+          # אייקון 1024 בלי ערוץ שקיפות — אפל דוחה אייקון עם alpha
+          [ -f "$app/Assets.car" ] || { echo "::error::Assets.car חסר — האייקון לא נארז"; exit 1; }
+          # תוכן האפליקציה ארוז: המשחק עובד אופליין
+          [ -f "$app/public/index.html" ] || { echo "::error::public/index.html חסר — cap sync לא העביר את app-dist"; exit 1; }
+          echo "::notice::$id $v ($b) · $(du -sh "$app" | cut -f1)"
+
+      - name: ייצוא והעלאה
+        if: steps.secrets.outputs.ready == 'yes'
+        working-directory: ios/App
+        env:
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KID: ${{ secrets.ASC_KEY_ID }}
+          ISS: ${{ secrets.ASC_ISSUER_ID }}
+          KEY: ${{ steps.key.outputs.path }}
+          UPLOAD: ${{ inputs.upload }}
+        run: |
+          set -o pipefail
+          dest=export
+          [ "$UPLOAD" = "true" ] && dest=upload
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>$dest</string>
+            <key>teamID</key><string>$TEAM</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>uploadSymbols</key><true/>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict></plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/App.xcarchive" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$KEY" \
+            -authenticationKeyID "$KID" \
+            -authenticationKeyIssuerID "$ISS" 2>&1 | tail -40
+          if [ "$dest" = "upload" ]; then
+            echo "::notice::הועלה ל-App Store Connect. העיבוד אצל אפל לוקח 5–30 דקות, ואז הבנייה מופיעה ב-TestFlight."
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: steps.secrets.outputs.ready == 'yes' && inputs.upload == false
+        with:
+          name: sportdle-ipa
+          path: ${{ runner.temp }}/export/*.ipa
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: מחיקת המפתח
+        if: always()
+        run: rm -f "$RUNNER_TEMP"/AuthKey_*.p8

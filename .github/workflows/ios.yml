@@ -91,6 +91,11 @@ jobs:
         working-directory: ios/App
         run: |
           set +e
+          # **ל-macOS אין timeout** (זה GNU coreutils). בלעדיו כל פקודה
+          # עטופה נכשלה מיד עם 127, והשלב דיווח "הסימולטור לא עלה בתוך
+          # 5 דקות" אחרי שתי שניות — ולכן אף פעם לא היו צילומים.
+          # alarm של perl עושה אותו דבר, ו-perl קיים בכל ראנר.
+          timeout() { perl -e 'alarm shift; exec @ARGV' "$@"; }
           APP=$(find build/Build/Products -maxdepth 3 -name "App.app" | head -1)
           if [ -z "$APP" ]; then echo "::warning::לא נמצא App.app"; exit 0; fi
 
@@ -109,11 +114,12 @@ jobs:
 
           timeout 120 xcrun simctl install "$ID" "$APP" || {
             echo "::warning::ההתקנה בסימולטור נכשלה"; exit 0; }
-          timeout 60 xcrun simctl launch "$ID" sportdle.techbynoam.com || {
-            echo "::warning::ההרצה בסימולטור נכשלה"; exit 0; }
+          # הרצה ראשונה על סימולטור קר לוקחת יותר מדקה — ב-60 שניות היא
+          # נקטעה בזמן שהאפליקציה כבר עלתה. מצלמים בכל מקרה.
+          timeout 180 xcrun simctl launch "$ID" sportdle.techbynoam.com ||             echo "::warning::launch לא חזר בזמן — מצלמים בכל זאת"
 
           for i in 1 2 3; do
-            sleep 6
+            sleep 8
             timeout 60 xcrun simctl io "$ID" screenshot "../../store/sim/ios-sim-$i.png"
           done
           ls -la ../../store/sim/

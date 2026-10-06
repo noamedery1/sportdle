@@ -515,6 +515,27 @@ if (!existsSync("dist/manifest.json"))
          "ראה את ההסבר ב-config/site.json.");
   }
 
+  /* ---------- Universal Links של iOS ----------
+     המקבילה של assetlinks. **teamId ריק = הקובץ לא נוצר**, ובנייה
+     בלי Team ID זהה בדיוק לבנייה שלפני שהבלוק הזה נוסף. מאותה סיבה
+     כמו באנדרואיד: קובץ עם מזהה שגוי גרוע מקובץ חסר, כי iOS מאמת
+     בהתקנה ונכשל בשקט.
+
+     בלי סיומת, כפי שאפל מבקשת. הנתיבים זהים ל-intent-filter של
+     אנדרואיד — /join ודפי חמשת המועדונים. */
+  const ios = site.iosAppLinks || {};
+  if (ios.teamId && ios.bundleId) {
+    writeJSON("dist/.well-known/apple-app-site-association", {
+      applinks: {
+        details: [{
+          appIDs: [`${ios.teamId}.${ios.bundleId}`],
+          components: (ios.paths || []).map(p => ({ "/": p }))
+        }]
+      }
+    }, 2);
+    log(`  נכתב .well-known/apple-app-site-association · ${ios.teamId}.${ios.bundleId}`);
+  }
+
   /* ---------- דף המעבר של ההזמנה ----------
      כאן היה location.replace אל "../?room=CODE" מיד עם הטעינה,
      והוא **הרס את הסיכוי היחיד לפתוח את האפליקציה**: /join הוא
