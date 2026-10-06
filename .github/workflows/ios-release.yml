@@ -54,8 +54,6 @@
 name: IPA
 
 on:
-  push:                     # זמני — אימות בענף ios-prep. להסיר לפני מיזוג.
-    branches: [ios-prep]
   workflow_dispatch:
     inputs:
       version:
