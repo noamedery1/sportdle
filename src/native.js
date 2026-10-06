@@ -40,7 +40,17 @@
   safe(async () => {
     if (!P.StatusBar) return;
     await P.StatusBar.setStyle({ style: "DARK" });
-    if (platform === "android") await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+    if (platform === "android") {
+      /* **האפליקציה מתחת לשורת הסטטוס, לא תחתיה.** ברירת המחדל של
+         @capacitor/status-bar היא overlaysWebView=true — ה-WebView
+         מצויר מאחורי השורה. ובאנדרואיד 14 ומטה SystemBars של
+         Capacitor מניח שאין חפיפה ומזריק --safe-area-inset-top=0,
+         כך שהכותרת ("ביתרdle" והכפתורים) נחתכה מתחת לשעון.
+         באנדרואיד 15+ זה no-op: שם Capacitor מטפל בשוליים בעצמו.
+         רק באנדרואיד — ב-iOS ה-WebView מתחת לשורה ו-env() מדויק. */
+      await P.StatusBar.setOverlaysWebView({ overlay: false }).catch(() => {});
+      await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+    }
   });
 
   /* המסך נסגר אחרי שהגופנים נטענו, לא אחרי DOMContentLoaded.
