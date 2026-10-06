@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -69,4 +70,11 @@
     <!-- Permissions -->
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- התוסף של ההתראות מצהיר על SCHEDULE_EXACT_ALARM במניפסט שלו.
+         תזכורת יומית לא צריכה דיוק של דקה, ובלי ההרשאה האזעקות
+         מתוזמנות כלא-מדויקות. כשהיא הייתה קיימת והמשתמש לא אישר
+         אותה, התוסף פתח את מסך "Alarms & reminders" של המערכת מעל
+         האפליקציה אחרי כל תוצאה. ראה src/native.js, סעיף 5. -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" tools:node="remove" />
 </manifest>
