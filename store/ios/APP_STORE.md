@@ -15,7 +15,7 @@
 | ✅ | שפה עברית, ממשק כהה, אייפון בלבד (בלי iPad — בלי צילומי iPad) | `Info.plist`, `project.pbxproj` |
 | ✅ | רקע WKWebView כהה — בלי הבהוב לבן בקפיצה האלסטית | `capacitor.config.json` |
 | ✅ | בנייה, חתימה בענן והעלאה מ-GitHub Actions, בלי מק | `.github/workflows/ios-release.yml` |
-| ✅ | 5 צילומי מסך 1290×2796 (מקובל לשדה 6.9") | `store/ios/*.png` |
+| ✅ | 5 צילומי מסך 1206×2622 לשדה ברירת המחדל (ו-1290×2796 כמקור) | `store/ios/6.3/*.png` |
 | ✅ | Universal Links — נוצר אוטומטית כשממלאים Team ID | `config/site.json` → `iosAppLinks` |
 
 ---
@@ -268,8 +268,13 @@ SportDle is an independent fan project, not affiliated with any club or league. 
 
 ## צילומי מסך
 
-`store/ios/` — 1290×2796, לשדה **iPhone 6.9" Display** (אפל גוזרת מהם את
-שאר הגדלים). להעלות לפי הסדר:
+`store/ios/6.3/` — 1206×2622, לשדה **iPhone with Dynamic Island (medium display)**,
+שהוא ברירת המחדל מאז שאפל שינתה את הדף (אוקטובר 2026). השדה דוחה 1290×2796
+("File dimensions are invalid"); הוא מקבל רק 1179×2556 או 1206×2622, ואפל
+מקטינה ממנו לשאר הגדלים. הקבצים ב-`store/ios/` הם המקור ב-1290×2796; הגרסה
+הקטנה נוצרה מהם בהקטנה ובחיתוך של 2 פיקסלים מכל צד:
+`ffmpeg -i X.png -vf "scale=1210:2622:flags=lanczos,crop=1206:2622" -pix_fmt rgb24 6.3/X.png`.
+להעלות לפי הסדר:
 
 1. `1-board.png` — לוח עם רמזים צבועים
 2. `2-win.png` — מסך ניצחון
