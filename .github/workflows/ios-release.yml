@@ -5,10 +5,9 @@
 # חותם, ומעלה ישר ל-App Store Connect — משם הוא נכנס ל-TestFlight,
 # וממנו מגישים לבדיקה.
 #
-# **אין צורך במק, ב-.p12 או בפרופיל.** החתימה היא "cloud signing":
-# Xcode על הראנר מתחבר לאפל עם מפתח API של App Store Connect,
-# ויוצר בעצמו תעודת הפצה ופרופיל (-allowProvisioningUpdates).
-# זה מחליף את כל מסלול ה-CSR/openssl שב-APP.md.
+# **אין צורך במק, ב-.p12 או בפרופיל ידני.** מפתח API של App Store
+# Connect, ומפתח פרטי אחד של תעודת ההפצה; tools/ios-signing.mjs
+# מוצא או יוצר דרך ה-API את התעודה ואת פרופיל ה-App Store.
 #
 # **בלי סודות הריצה לא מדלגת — היא מוודאת.** היא בונה ארכיון
 # Release למכשיר (arm64) בלי חתימה, כך שאפשר לדעת עוד לפני שיש
@@ -37,6 +36,10 @@
 #      ASC_KEY_ID           Key ID של המפתח
 #      ASC_ISSUER_ID        Issuer ID (UUID)
 #      ASC_KEY_P8_BASE64    תוכן key.b64
+#      DIST_KEY_BASE64      המפתח הפרטי של תעודת ההפצה (PEM ב-base64).
+#                           נוצר פעם אחת: openssl genrsa 2048 > dist.key
+#                           התעודה עצמה נוצרת ונמצאת אוטומטית לפיו.
+#                           **לא להחליף ולא לבטל** — ראה ios-signing.mjs.
 #
 # 5. לפני ההעלאה הראשונה: App Store Connect → Apps → "+" → New App,
 #    עם Bundle ID ‎sportdle.techbynoam.com. בלי רשומת אפליקציה ההעלאה
@@ -79,12 +82,19 @@ jobs:
           KID: ${{ secrets.ASC_KEY_ID }}
           ISS: ${{ secrets.ASC_ISSUER_ID }}
           P8: ${{ secrets.ASC_KEY_P8_BASE64 }}
+          DKEY: ${{ secrets.DIST_KEY_BASE64 }}
         run: |
           missing=""
           [ -z "$TEAM" ] && missing="$missing APPLE_TEAM_ID"
           [ -z "$KID" ]  && missing="$missing ASC_KEY_ID"
           [ -z "$ISS" ]  && missing="$missing ASC_ISSUER_ID"
           [ -z "$P8" ]   && missing="$missing ASC_KEY_P8_BASE64"
+          # מפתח API בלי מפתח תעודה — עוצרים ואומרים מה חסר, במקום
+          # לבנות בשקט ארכיון לא חתום כשביקשו העלאה.
+          if [ -z "$missing" ] && [ -z "$DKEY" ]; then
+            echo "::error::חסר הסוד DIST_KEY_BASE64 — המפתח הפרטי של תעודת ההפצה. ראה את ההוראות בראש הקובץ."
+            exit 1
+          fi
           if [ -n "$missing" ]; then
             echo "::notice::חסרים סודות:$missing — בונים ארכיון לא חתום לאימות בלבד. ראה את ההוראות בראש הקובץ."
             echo "ready=no" >> "$GITHUB_OUTPUT"
@@ -147,14 +157,15 @@ jobs:
           echo "path=$path" >> "$GITHUB_OUTPUT"
 
       # ============================================================
-      # תעודה ופרופיל — דרך ה-API, לריצה הזאת בלבד
+      # תעודה ופרופיל — דרך ה-API, קבועים
       # ------------------------------------------------------------
       # חתימה אוטומטית של Xcode נכשלה: "Your team has no devices from
       # which to generate a provisioning profile" — היא בונה קודם בפרופיל
       # פיתוח, וזה דורש אייפון רשום. פרופיל App Store לא דורש מכשיר.
-      # tools/ios-signing.mjs יוצר תעודת הפצה ופרופיל, והשלב "ביטול
-      # התעודה והפרופיל" מבטל את שניהם בסוף (ביטול לא פוגע בבנייה שכבר
-      # הועלתה).
+      # tools/ios-signing.mjs מוצא את תעודת ההפצה של DIST_KEY_BASE64
+      # (או יוצר אותה פעם אחת) ואת הפרופיל הקבוע. **שום דבר לא מבוטל**:
+      # תעודה מבוטלת הפכה את בנייה 5 ל-ITMS-90035 Invalid Signature
+      # ברגע ההגשה לבדיקה.
       # ============================================================
       - name: תעודה ופרופיל
         if: steps.secrets.outputs.ready == 'yes'
@@ -164,12 +175,18 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_PATH: ${{ steps.key.outputs.path }}
           TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          DKEY: ${{ secrets.DIST_KEY_BASE64 }}
           BUNDLE_ID: sportdle.techbynoam.com
         run: |
           set -e
-          openssl req -new -newkey rsa:2048 -nodes -keyout "$RUNNER_TEMP/dist.key" \
-            -out "$RUNNER_TEMP/dist.csr" -subj "/CN=SportDle CI/O=$TEAM" 2>/dev/null
-          CSR_PATH="$RUNNER_TEMP/dist.csr" node tools/ios-signing.mjs create
+          echo "$DKEY" | tr -d '\n\r ' | base64 -d > "$RUNNER_TEMP/dist.key"
+          grep -q "PRIVATE KEY" "$RUNNER_TEMP/dist.key" || {
+            echo "::error::פענוח DIST_KEY_BASE64 נכשל — צריך להיות PEM של מפתח פרטי, ב-base64"; exit 1; }
+          # CSR מאותו מפתח — בשימוש רק אם אין עדיין תעודה בתוקף
+          openssl req -new -key "$RUNNER_TEMP/dist.key" -out "$RUNNER_TEMP/dist.csr" \
+            -subj "/CN=SportDle Distribution/O=$TEAM"
+          DIST_KEY_PATH="$RUNNER_TEMP/dist.key" CSR_PATH="$RUNNER_TEMP/dist.csr" \
+            node tools/ios-signing.mjs create
           name=$(node -p 'require(process.argv[1]).profileName' "$RUNNER_TEMP/signing.json")
           uuid=$(node -p 'require(process.argv[1]).profileUuid' "$RUNNER_TEMP/signing.json")
 
@@ -297,14 +314,10 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-      - name: ביטול התעודה והפרופיל
+      # רק הקבצים על הראנר. התעודה והפרופיל אצל אפל נשארים — ראה למעלה.
+      - name: ניקוי ה-keychain
         if: always() && steps.secrets.outputs.ready == 'yes'
-        env:
-          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
-          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
-          ASC_KEY_PATH: ${{ steps.key.outputs.path }}
         run: |
-          node tools/ios-signing.mjs cleanup || true
           security delete-keychain "$RUNNER_TEMP/ci.keychain-db" 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/dist.key "$RUNNER_TEMP"/dist.csr "$RUNNER_TEMP"/dist.cer
 
