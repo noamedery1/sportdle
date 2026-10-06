@@ -1,34 +1,44 @@
 /* ============================================================
    ios-signing.mjs — תעודת הפצה ופרופיל App Store דרך ה-API של
-   App Store Connect, לריצה אחת ב-CI.
+   App Store Connect, לחתימה ב-CI.
 
    node tools/ios-signing.mjs create   → כותב ל-$RUNNER_TEMP:
         dist.cer, profile.mobileprovision, signing.json
-   node tools/ios-signing.mjs cleanup  → מוחק את התעודה והפרופיל
-                                         שנוצרו ב-create
+   node tools/ios-signing.mjs patch    → חתימה ידנית למטרה App
 
-   **למה לא החתימה האוטומטית של Xcode.** הניסיון הראשון נכשל ב-archive:
+   **למה לא החתימה האוטומטית של Xcode.** היא נכשלה ב-archive:
    "Your team has no devices from which to generate a provisioning
    profile". חתימה אוטומטית בונה קודם בפרופיל פיתוח, ופרופיל פיתוח
    דורש מכשיר רשום — ואין לנו אייפון רשום. פרופיל App Store לא דורש
    מכשירים, ולכן יוצרים אותו ישירות.
 
-   **תעודה לכל ריצה, ונמחקת בסוף.** אפל מגבילה את מספר תעודות ההפצה
-   לצוות. ביטול תעודה לא פוגע בבנייה שכבר הועלתה — אפל חותמת מחדש
-   את מה שמופץ מהחנות. כך אין סוד נוסף לשמור (.p12) ואין תעודות
-   שמצטברות.
+   **תעודה אחת קבועה — אסור לבטל אותה.** הגרסה הקודמת יצרה תעודה לכל
+   ריצה וביטלה אותה בסוף. ההעלאה עברה, אבל ההגשה לבדיקה נדחתה
+   אוטומטית: ITMS-90035 Invalid Signature. אפל בודקת את החתימה שוב
+   בזמן ההגשה, והתעודה כבר הייתה מבוטלת. ביטול לא פוגע רק במה שכבר
+   נמכר בחנות.
+   לכן המפתח הפרטי נשמר בסוד DIST_KEY_BASE64, והתעודה נמצאת לפי
+   המפתח הציבורי שלה: אם יש תעודת הפצה בתוקף שמתאימה למפתח — משתמשים
+   בה; אם אין (ריצה ראשונה, או שפג תוקפה אחרי שנה) — יוצרים אחת מה-CSR
+   של אותו מפתח. אף פעם לא מבטלים.
+   גם הפרופיל קבוע: שם אחד, ונוצר מחדש רק כשאינו בתוקף או כשאינו
+   כולל את התעודה.
 
    סביבה: ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH (ה-.p8), BUNDLE_ID,
-   CSR_PATH (ל-create), RUNNER_TEMP.
+   DIST_KEY_PATH (המפתח הפרטי של התעודה), CSR_PATH (CSR מאותו מפתח),
+   RUNNER_TEMP.
    ============================================================ */
-import { createSign, createPrivateKey } from "node:crypto";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { createSign, createPrivateKey, createPublicKey, X509Certificate } from "node:crypto";
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const { ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH, BUNDLE_ID, CSR_PATH, RUNNER_TEMP } = process.env;
+const { ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_PATH, BUNDLE_ID, DIST_KEY_PATH, CSR_PATH, RUNNER_TEMP } = process.env;
 const OUT = RUNNER_TEMP || ".";
 const STATE = join(OUT, "signing.json");
 const API = "https://api.appstoreconnect.apple.com/v1";
+const PROFILE_NAME = "SportDle App Store";
+/* תעודה שפגה בעוד פחות מזה — מחליפים כבר עכשיו, לא באמצע בדיקה */
+const MIN_DAYS_LEFT = 30;
 
 /* JWT של ES256 — Node חותם ב-DER, ואפל מצפה ל-r||s (ieee-p1363) */
 function jwt() {
@@ -52,41 +62,59 @@ async function api(method, path, body) {
   return text ? JSON.parse(text) : {};
 }
 
+const spki = k => k.export({ type: "spki", format: "der" });
+
+/* תעודת ההפצה של המפתח שלנו: קיימת ובתוקף, או חדשה */
+async function certificate() {
+  const mine = spki(createPublicKey(createPrivateKey(readFileSync(DIST_KEY_PATH))));
+  const list = await api("GET", "/certificates?filter[certificateType]=DISTRIBUTION&limit=200");
+  const soon = Date.now() + MIN_DAYS_LEFT * 864e5;
+  for (const c of list.data || []) {
+    const der = Buffer.from(c.attributes.certificateContent, "base64");
+    const x = new X509Certificate(der);
+    if (spki(x.publicKey).equals(mine) && new Date(x.validTo).getTime() > soon) {
+      console.log(`תעודה קיימת ${c.id} · בתוקף עד ${x.validTo}`);
+      return { id: c.id, der };
+    }
+  }
+  const cert = await api("POST", "/certificates", { data: { type: "certificates",
+    attributes: { certificateType: "DISTRIBUTION", csrContent: readFileSync(CSR_PATH, "utf8") } } });
+  console.log(`::notice::נוצרה תעודת הפצה חדשה ${cert.data.id} — היא תשמש את כל הריצות הבאות. לא לבטל אותה.`);
+  return { id: cert.data.id, der: Buffer.from(cert.data.attributes.certificateContent, "base64") };
+}
+
+/* הפרופיל הקבוע: בתוקף וכולל את התעודה, או נוצר מחדש */
+async function profile(bundleId, certId) {
+  const q = `/profiles?filter[name]=${encodeURIComponent(PROFILE_NAME)}&include=certificates&limit=20`;
+  const found = (await api("GET", q)).data || [];
+  const good = found.find(p => p.attributes.profileState === "ACTIVE" &&
+    (p.relationships?.certificates?.data || []).some(c => c.id === certId) &&
+    new Date(p.attributes.expirationDate).getTime() > Date.now() + MIN_DAYS_LEFT * 864e5);
+  if (good) { console.log(`פרופיל קיים "${PROFILE_NAME}" (${good.attributes.uuid})`); return good; }
+  /* פרופיל באותו שם שכבר לא מתאים — מוחקים כדי שהשם יישאר חד-משמעי */
+  for (const p of found) await api("DELETE", `/profiles/${p.id}`);
+  const prof = await api("POST", "/profiles", { data: { type: "profiles",
+    attributes: { name: PROFILE_NAME, profileType: "IOS_APP_STORE" },
+    relationships: {
+      bundleId: { data: { type: "bundleIds", id: bundleId } },
+      certificates: { data: [{ type: "certificates", id: certId }] }
+    } } });
+  console.log(`נוצר פרופיל "${PROFILE_NAME}" (${prof.data.attributes.uuid})`);
+  return prof.data;
+}
+
 async function create() {
   /* ה-App ID רשום מראש (Identifiers). כאן רק מוצאים את המזהה הפנימי. */
   const b = await api("GET", `/bundleIds?filter[identifier]=${encodeURIComponent(BUNDLE_ID)}&limit=5`);
   const bundle = (b.data || []).find(x => x.attributes.identifier === BUNDLE_ID);
   if (!bundle) throw new Error(`App ID ${BUNDLE_ID} לא רשום — Certificates, Identifiers & Profiles → Identifiers`);
 
-  const csr = readFileSync(CSR_PATH, "utf8");
-  const cert = await api("POST", "/certificates", { data: { type: "certificates",
-    attributes: { certificateType: "DISTRIBUTION", csrContent: csr } } });
-  const certId = cert.data.id;
-  writeFileSync(join(OUT, "dist.cer"), Buffer.from(cert.data.attributes.certificateContent, "base64"));
-  /* נשמר מיד — אם יצירת הפרופיל נכשלת, cleanup עדיין מוחק את התעודה */
-  writeFileSync(STATE, JSON.stringify({ certId }));
-
-  const name = `SportDle CI ${process.env.GITHUB_RUN_NUMBER || Date.now()}`;
-  const prof = await api("POST", "/profiles", { data: { type: "profiles",
-    attributes: { name, profileType: "IOS_APP_STORE" },
-    relationships: {
-      bundleId: { data: { type: "bundleIds", id: bundle.id } },
-      certificates: { data: [{ type: "certificates", id: certId }] }
-    } } });
-  writeFileSync(join(OUT, "profile.mobileprovision"), Buffer.from(prof.data.attributes.profileContent, "base64"));
-  writeFileSync(STATE, JSON.stringify({ certId, profileId: prof.data.id, profileName: name,
-    profileUuid: prof.data.attributes.uuid }));
-  console.log(`תעודה ${certId} · פרופיל "${name}" (${prof.data.attributes.uuid})`);
-}
-
-async function cleanup() {
-  if (!existsSync(STATE)) return console.log("אין מה לנקות");
-  const s = JSON.parse(readFileSync(STATE, "utf8"));
-  for (const [kind, id] of [["profiles", s.profileId], ["certificates", s.certId]]) {
-    if (!id) continue;
-    try { await api("DELETE", `/${kind}/${id}`); console.log(`נמחק ${kind}/${id}`); }
-    catch (e) { console.log(`::warning::מחיקת ${kind}/${id} נכשלה — ${e.message}`); }
-  }
+  const cert = await certificate();
+  writeFileSync(join(OUT, "dist.cer"), cert.der);
+  const prof = await profile(bundle.id, cert.id);
+  writeFileSync(join(OUT, "profile.mobileprovision"), Buffer.from(prof.attributes.profileContent, "base64"));
+  writeFileSync(STATE, JSON.stringify({ certId: cert.id, profileName: PROFILE_NAME,
+    profileUuid: prof.attributes.uuid }));
 }
 
 /* חתימה ידנית **רק למטרה App**, בקובץ הפרויקט. בשורת הפקודה של
@@ -112,5 +140,5 @@ function patch() {
 }
 
 const cmd = process.argv[2];
-try { await (cmd === "cleanup" ? cleanup() : cmd === "patch" ? patch() : create()); }
+try { await (cmd === "patch" ? patch() : create()); }
 catch (e) { console.log(`::error::${e.message}`); process.exit(1); }
