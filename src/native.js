@@ -40,7 +40,17 @@
   safe(async () => {
     if (!P.StatusBar) return;
     await P.StatusBar.setStyle({ style: "DARK" });
-    if (platform === "android") await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+    if (platform === "android") {
+      /* **האפליקציה מתחת לשורת הסטטוס, לא תחתיה.** ברירת המחדל של
+         @capacitor/status-bar היא overlaysWebView=true — ה-WebView
+         מצויר מאחורי השורה. ובאנדרואיד 14 ומטה SystemBars של
+         Capacitor מניח שאין חפיפה ומזריק --safe-area-inset-top=0,
+         כך שהכותרת ("ביתרdle" והכפתורים) נחתכה מתחת לשעון.
+         באנדרואיד 15+ זה no-op: שם Capacitor מטפל בשוליים בעצמו.
+         רק באנדרואיד — ב-iOS ה-WebView מתחת לשורה ו-env() מדויק. */
+      await P.StatusBar.setOverlaysWebView({ overlay: false }).catch(() => {});
+      await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+    }
   });
 
   /* המסך נסגר אחרי שהגופנים נטענו, לא אחרי DOMContentLoaded.
@@ -121,6 +131,26 @@
     }, true);
   });
 
+  /* ---------- 3ג. עזרת חבר ----------
+     אותה מלכודת בדיוק כמו 3ב, ומאותה סיבה: המנוע קורא ל-window.open
+     ובלעדי העקיפה הזאת הכפתור לא עושה שום דבר באפליקציה — בשקט,
+     בלי שגיאה. אם מוסיפים עוד כפתור שפותח כתובת חיצונית, הוא צריך
+     את אותו טיפול.
+
+     שים לב: stopImmediatePropagation מבטל גם את track() שבמאזין של
+     המנוע, ולכן הדיווח נשלח כאן. window.SPORTDEL.analyticsUrl הוא
+     מה שהמנוע כבר מפרסם. */
+  safe(() => {
+    const fb = document.getElementById("friendBtn");
+    if (!fb || typeof window.friendText !== "function") return;
+    fb.addEventListener("click", (ev) => {
+      ev.stopImmediatePropagation();
+      ev.preventDefault();
+      if (typeof window.trackFriend === "function") window.trackFriend();
+      location.href = "https://wa.me/?text=" + encodeURIComponent(window.friendText());
+    }, true);
+  });
+
   /* ---------- 4. כפתור "חזור" של אנדרואיד ----------
      בלי זה לחיצה אחת על "חזור" סוגרת את האפליקציה מתוך חלונית
      פתוחה. זו אחת התלונות הנפוצות בביקורות, ובדיקת איכות של
@@ -153,34 +183,60 @@
      דחייה אין דרך חזרה בלי להישלח להגדרות המערכת. אחרי שפתרת
      חידה, "להזכיר לך מחר?" הוא בדיוק מה שמצפים לו.
 
-     התזמון הוא התראה מקומית חוזרת, לא Push. אין שרת, אין FCM,
-     אין טוקנים, ואין תלות ברשת — וזה כל מה שצריך כדי להגיד
-     "החידה של היום באוויר". Push יתווסף רק אם נרצה לשלוח
-     הודעות שאינן יומיות. */
-  const NOTIF_ID = 1;
+     ההתראה מקומית, לא Push. אין שרת, אין FCM, אין טוקנים, ואין
+     תלות ברשת — וזה כל מה שצריך כדי להגיד "החידה של היום באוויר".
+
+     **תזכורות מתוארכות, לא התראה חוזרת.** עד 1.0.11 זו הייתה
+     התראה אחת "כל יום ב-8:30" (repeats), והיא לא יכלה לדעת
+     שכבר פתרת: מי ששיחק אחרי חצות קיבל בבוקר "החידה של היום
+     באוויר" על חידה שכבר סיים. עכשיו כל יום הוא התראה נפרדת עם
+     מזהה של התאריך, לשבועיים קדימה, וסיום החידה של היום מבטל את
+     של היום. כל פתיחה ממלאת את החלון מחדש, כך שהוא לא נגמר.
+
+     **isExactNotification: false.** ברירת המחדל של התוסף היא אזעקה
+     מדויקת. באנדרואיד 12+ בלי הרשאת SCHEDULE_EXACT_ALARM הוא פותח
+     את מסך "Alarms & reminders" של המערכת מעל האפליקציה — וזה מה
+     שקרה לכל מי שאישר התראות, מיד אחרי התוצאה. ההרשאה גם הוסרה
+     מהמניפסט. allowWhileIdle כבוי מאותה סיבה: תזכורת שמגיעה 8:30
+     או 8:41 היא אותה תזכורת. */
+  const LEGACY_ID = 1;                // ההתראה החוזרת של 1.0.11 ומטה
   const HOUR = 8, MINUTE = 30;
+  const DAYS = 14;
+  const BASE = 2000000;               // מזהה = BASE + מספר היום (שעון מקומי)
+
+  const dayKey = d => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+  const dayNum = d => Math.floor(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400000);
+
+  /* החידה של היום כבר נגמרה, באיזה מועדון שהוא. נרשם כשכרטיס התוצאה
+     נפתח על חידת היום — לא ארכיון ולא משחק אימון. */
+  const doneToday = () => get("done") === dayKey(new Date());
 
   async function scheduleDaily() {
     if (!P.LocalNotifications) return;
     const perm = await P.LocalNotifications.checkPermissions();
     if (perm.display !== "granted") return;
-    /* מחיקה לפני קביעה: בלי זה עדכון של הטקסט או השעה משאיר את
-       הקודמת בתוקף, והמשתמש מקבל שתי התראות בבוקר. */
-    await P.LocalNotifications.cancel({ notifications: [{ id: NOTIF_ID }] }).catch(() => {});
-    await P.LocalNotifications.schedule({
-      notifications: [{
-        id: NOTIF_ID,
-        title: "SportDle",
-        body: "החידה של היום באוויר. מי השחקן?",
-        /* allowWhileIdle כבוי בכוונה. הוא מתרגם לאזעקה מדויקת,
-           ואזעקה מדויקת דורשת SCHEDULE_EXACT_ALARM — הרשאה שגוגל
-           מצפה שתידרש רק כשתזמון מדויק הוא ליבת האפליקציה.
-           תזכורת יומית שמגיעה 8:30 או 8:41 היא אותה תזכורת, ולכן
-           אין שום סיבה לבקש את זה ולהזמין שאלות בביקורת. */
-        schedule: { on: { hour: HOUR, minute: MINUTE }, repeats: true },
+
+    const now = new Date();
+    const ids = [{ id: LEGACY_ID }];
+    const items = [];
+    for (let i = 0; i < DAYS; i++) {
+      /* Date מגלגל חודש ושנה בעצמו, ושומר 8:30 מקומי גם במעבר שעון */
+      const at = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i, HOUR, MINUTE);
+      const id = BASE + dayNum(at);
+      ids.push({ id });
+      if (at <= now) continue;                     // השעה של היום כבר עברה
+      if (i === 0 && doneToday()) continue;        // כבר פתרת היום
+      items.push({
+        id, title: "SportDle", body: "החידה של היום באוויר. מי השחקן?",
+        schedule: { at, allowWhileIdle: false },
+        isExactNotification: false,
         smallIcon: "ic_stat_sportdle"
-      }]
-    });
+      });
+    }
+    /* מחיקה לפני קביעה — כולל ההתראה החוזרת הישנה, אחרת מי שמעדכן
+       מ-1.0.11 מקבל שתי התראות בכל בוקר. */
+    await P.LocalNotifications.cancel({ notifications: ids }).catch(() => {});
+    if (items.length) await P.LocalNotifications.schedule({ notifications: items });
     set("daily", "1");
   }
 
@@ -192,21 +248,35 @@
     if (res.display === "granted") await scheduleDaily();
   }
 
-  /* מחדשים את התזמון בכל פתיחה של מי שכבר אישר — התראה חוזרת
-     יכולה להיאבד באיפוס מכשיר או בעדכון גרסה. */
+  /* מחדשים את החלון בכל פתיחה של מי שכבר אישר. */
   safe(() => { if (get("daily")) scheduleDaily(); });
 
-  /* הרגע הנכון לבקש: התוצאה נחשפה. #result מקבל class="on"
-     גם בניצחון וגם בהפסד, ובשני המקרים "מחר שחקן חדש" נכון. */
+  /* כרטיס התוצאה נפתח: גם הרגע לבקש הרשאה (פעם אחת), וגם הסימן
+     שהחידה של היום נגמרה. #result מקבל class="on" בניצחון ובהפסד.
+
+     המשתנים של המנוע (puzzleNo, todayNo, practice) גלויים כאן: שני
+     הקבצים הם סקריפטים רגילים באותו דף, לא מודולים.
+
+     **בדיקה גם בטעינה**, לא רק בשינוי: מי שפותח אחרי שכבר פתר — המנוע
+     משחזר את הלוח ומדליק את הכרטיס לפני שהסקריפט הזה רץ, והמשקיף
+     לא היה רואה שום שינוי. */
   safe(() => {
     const result = document.getElementById("result");
     if (!result || !window.MutationObserver) return;
-    const obs = new MutationObserver(() => {
+    let asked = false;
+    const onResult = (fromChange) => {
       if (!result.classList.contains("on")) return;
-      obs.disconnect();
-      setTimeout(askThenSchedule, 1400);   // אחרי שהשחקן ראה את התשובה
-    });
-    obs.observe(result, { attributes: true, attributeFilter: ["class"] });
+      const today = typeof puzzleNo !== "undefined" && typeof todayNo !== "undefined"
+        && puzzleNo === todayNo && !(typeof practice !== "undefined" && practice);
+      if (today && !doneToday()) {
+        set("done", dayKey(new Date()));
+        if (get("daily")) scheduleDaily();
+      }
+      if (fromChange && !asked) { asked = true; setTimeout(askThenSchedule, 1400); }
+    };
+    new MutationObserver(() => onResult(true))
+      .observe(result, { attributes: true, attributeFilter: ["class"] });
+    onResult(false);
   });
 
   /* ---------- 7. חתימת גרסה גלויה ----------
