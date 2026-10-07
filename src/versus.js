@@ -48,6 +48,122 @@ function vTrack(type, extra){
   }catch(e){}
 }
 
+/* ============================================================
+   בטיחות בקרב חברים — מה ש-App Store דורש מאפליקציה עם תוכן
+   משתמשים (Guideline 1.2): סינון, דיווח, חסימה, פרטי קשר והסכמה
+   לתנאים של אפס סובלנות. התוכן היחיד שמשתמש יוצר כאן הוא הכינוי,
+   ולכן הכל סובב סביבו.
+
+   **בלי שינוי בחוקי הפיירבייס.** החסימה מקומית (localStorage),
+   ומנהל החדר מוציא שחקן חסום מהחדר — החדר כתיב לכל מי שיודע את
+   הקוד, כך שזה עובד עם החוקים הקיימים.
+   ============================================================ */
+
+/* מילים שכינוי לא יכול להכיל. קצרות (עד 3 אותיות) נבדקות כמילה
+   שלמה — "זין" ולא "זינדין", "כוס" ולא "כוסמן". ארוכות נבדקות גם
+   כחלק ממילה, כדי לתפוס "הזונה" ו"fuuuck". */
+const BAD_WORDS = [
+  "זונה","שרמוטה","זונות","שרמוטות","מזדיין","תזדיין","לזיין","זיין","זין","כוס","כוסאמק","כוסעמק",
+  "כוסית","מניאק","חרא","בנזונה","קוקסינל","הומו","מפגר","נאצי","היטלר","כושי","ערבוש",
+  "מוותל","ימחשמו","ימש","אנס","אונס","פורנו","סקס","תמות","מחבל","טרוריסט","שהיד",
+  "fuck","fuk","shit","bitch","cunt","dick","cock","pussy","nigger","nigga","fag","faggot",
+  "whore","slut","rape","rapist","nazi","hitler","kike","retard","porn","sex","kill","die",
+  "terrorist","isis","hamas"
+];
+function normNick(s){
+  return String(s || "").toLowerCase()
+    .replace(/[֑-ׇ]/g, "")
+    .replace(/[ךםןףץ]/g, c => ({ "ך":"כ","ם":"מ","ן":"נ","ף":"פ","ץ":"צ" }[c]))
+    .replace(/0/g, "o").replace(/[1!|]/g, "i").replace(/3/g, "e").replace(/[$5]/g, "s").replace(/4|@/g, "a")
+    .replace(/(.)\1+/g, "$1");
+}
+const BAD_N = BAD_WORDS.map(normNick);
+function isBadNick(s){
+  const n = normNick(s);
+  const tokens = n.split(/[^a-zא-ת]+/).filter(Boolean);
+  const joined = tokens.join("");
+  return BAD_N.some(w => w.length <= 3 ? tokens.includes(w) : joined.includes(w));
+}
+
+const BLK_KEY = "sportdel:blocked", TERMS_KEY = "sportdel:duelTerms";
+const blocked = new Set((() => { try{ return JSON.parse(localStorage.getItem(BLK_KEY)) || []; }catch(e){ return []; } })());
+const saveBlocked = () => { try{ localStorage.setItem(BLK_KEY, JSON.stringify([...blocked])); }catch(e){} };
+/** השם שמוצג על המסך: חסום — מוסתר, כינוי פוגעני (מגרסה ישנה או מהאתר) — מוחלף. */
+function dispName(id, name){
+  if (id && blocked.has(id)) return "שחקן חסום";
+  if (!name || isBadNick(name)) return "שחקן";
+  return name;
+}
+
+/* חלון קטן משלנו — confirm() של הדפדפן נראה זר באפליקציה ונחסם בחלק מה-WebViews */
+function vModal(html, buttons){
+  return new Promise(resolve => {
+    const w = document.createElement("div");
+    w.className = "vmodal";
+    w.innerHTML = `<div class="vmodal-box"><div class="vmodal-txt">${html}</div><div class="vmodal-btns">` +
+      buttons.map(b => `<button type="button" data-v="${b.id}" class="${b.primary ? "pri" : ""}">${b.label}</button>`).join("") +
+      `</div></div>`;
+    w.addEventListener("click", e => {
+      const b = e.target.closest("button[data-v]");
+      if (!b && e.target !== w) return;
+      w.remove(); resolve(b ? b.dataset.v : null);
+    });
+    document.body.appendChild(w);
+  });
+}
+const termsUrl = () => ((window.SPORTDEL && window.SPORTDEL.siteUrl) || "https://sportdle.techbynoam.com").replace(/\/$/, "") + "/terms/";
+const CONTACT = "techbynoam@gmail.com";
+
+/** הסכמה חד-פעמית לתנאים, לפני הכניסה הראשונה לקרב. */
+async function ensureTerms(){
+  try{ if (localStorage.getItem(TERMS_KEY)) return true; }catch(e){}
+  const v = await vModal(
+    `<b>לפני שנכנסים לקרב</b><br>הכינוי שלכם יוצג לשחקנים בחדר.` +
+    ` <b>אפס סובלנות</b> לכינויים פוגעניים, גזעניים, מיניים או מאיימים — הם נחסמים אוטומטית.` +
+    ` אפשר לדווח על כל שחקן ולחסום אותו, וכל דיווח נבדק תוך 24 שעות.` +
+    `<br><br>הכניסה לקרב היא הסכמה ל<a href="${termsUrl()}" target="_blank" rel="noopener">תנאי השימוש</a>.` +
+    ` שאלות ופניות: <a href="mailto:${CONTACT}">${CONTACT}</a>`,
+    [{ id: "ok", label: "מסכים/ה", primary: true }, { id: "no", label: "ביטול" }]);
+  if (v !== "ok") return false;
+  try{ localStorage.setItem(TERMS_KEY, String(Date.now())); }catch(e){}
+  return true;
+}
+
+/** דיווח: לאותה נקודת קצה של טופס הפידבק, כך שהוא מגיע לתיבה שכבר נבדקת. */
+function sendReport(id, name, code){
+  const text = `דיווח על שחקן בקרב חברים — כינוי: "${name}" · מזהה: ${id} · חדר: ${code}`;
+  const URL_ = window.SPORTDEL && window.SPORTDEL.analyticsUrl;
+  if (typeof URL_ !== "string" || !URL_){
+    location.href = `mailto:${CONTACT}?subject=${encodeURIComponent("דיווח מקרב חברים")}&body=${encodeURIComponent(text)}`;
+    return;
+  }
+  const body = JSON.stringify({ type: "feedback", club: SLUG, puzzle: "קרב " + code, player: name, text, contact: "" });
+  try{
+    let sent = false;
+    try{ sent = !!(navigator.sendBeacon && navigator.sendBeacon(URL_, body)); }catch(e){}
+    if (!sent) fetch(URL_, { method: "POST", mode: "no-cors", body });
+  }catch(e){}
+}
+
+/** כפתורי דיווח וחסימה ליד כל שחקן אחר. */
+const modBtns = (id, me) => id === me ? "" :
+  `<span class="mods"><button type="button" data-mod="report" data-id="${id}">דיווח</button>` +
+  `<button type="button" data-mod="block" data-id="${id}">${blocked.has(id) ? "חסום" : "חסימה"}</button></span>`;
+
+(function vSafetyCss(){
+  const s = document.createElement("style");
+  s.textContent = `
+    .vmodal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:20px}
+    .vmodal-box{max-width:420px;width:100%;background:#17171b;color:#f2f2f0;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px;direction:rtl;text-align:right;line-height:1.6;font-size:15px}
+    .vmodal-box a{color:#ffc72c}
+    .vmodal-btns{display:flex;gap:10px;margin-top:18px}
+    .vmodal-btns button{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
+    .vmodal-btns button.pri{background:#ffc72c;color:#111;border-color:#ffc72c}
+    .mods{display:inline-flex;gap:6px;margin-inline-start:8px;vertical-align:middle}
+    .mods button{font:inherit!important;font-size:11px!important;font-weight:500!important;line-height:1!important;padding:5px 8px!important;width:auto!important;min-height:0!important;margin:0!important;border-radius:8px!important;border:1px solid rgba(255,255,255,.25)!important;background:transparent!important;color:#c9c9cf!important;box-shadow:none!important;cursor:pointer}`;
+  document.head.appendChild(s);
+})();
+
 async function bootVersus(){
   if (vReady) return;
   vReady = true;
@@ -496,6 +612,8 @@ async function startVersus(){
   $("#btnCreate").addEventListener("click", async () => {
     const name = $("#vName").value.trim();
     if (!name) return $("#vName").focus();
+    if (isBadNick(name)) return void ($("#joinErr").textContent = "הכינוי הזה לא מתאים. בחרו כינוי אחר.");
+    if (!await ensureTerms()) return;
     const pre = +($("#preReveal").value || 8);
     const sel = $("#setReveal"); if (sel) sel.value = String(pre);
     const code = mkCode();
@@ -557,7 +675,9 @@ async function startVersus(){
     err.textContent = "";
     if (code.length !== 4) return err.textContent = "קוד בן ארבע אותיות";
     if (!name) return err.textContent = "צריך שם";
-  
+    if (isBadNick(name)) return err.textContent = "הכינוי הזה לא מתאים. בחרו כינוי אחר.";
+    if (!await ensureTerms()) return;
+
     const snap = await get(ref(db, roomPath(code)));
     if (!snap.exists()) return err.textContent = "אין חדר עם הקוד הזה";
     if (snap.val().status === "done") return err.textContent = "המשחק בחדר הזה כבר נגמר";
@@ -703,7 +823,7 @@ ${roomLink()}
      ההודעה יוכל להיכנס לסיבוב הבא ולא רק לקרוא מי ניצח. */
   $("#btnEndShare").addEventListener("click", async () => {
     const rows = allPlayers()
-      .map((p, i) => `${i + 1}. ${p.name} — ${p.score || 0}`)
+      .map((p, i) => `${i + 1}. ${dispName(p.id, p.name)} — ${p.score || 0}`)
       .join("\n");
     const link = roomLink();
     const txt = `🏆 ${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"} · קרב חברים\n\n` +
@@ -812,6 +932,9 @@ ${roomLink()}
          מחדש חזר לברירת המחדל וקיבל רמזי שחקן בזמן שהמארח ראה
          שאלה — שני משחקים שונים באותו חדר, בלי שום שגיאה. */
       adoptMode(state);
+      /* שחקן שמנהל החדר חסם ונכנס שוב (רענון, קישור) — יוצא שוב */
+      if (isHost) for (const id of Object.keys(state.players || {}))
+        if (id !== uid && blocked.has(id)) set(ref(db, roomPath(room) + `/players/${id}`), null).catch(() => {});
       render();
     });
   }
@@ -829,8 +952,8 @@ ${roomLink()}
       show("scLobby");
       $("#lobbyCode").textContent = room;
       $("#lobbyPlayers").innerHTML = allPlayers().map(p =>
-        `<div class="${p.id===uid?"me":""}" style="${p.gone?"opacity:.45":""}">${esc(p.name)}
-           <i>${p.gone ? "מנותק" : (p.id===state.host?"מנהל החדר":"")}</i></div>`).join("");
+        `<div class="${p.id===uid?"me":""}" style="${p.gone?"opacity:.45":""}">${esc(dispName(p.id, p.name))}
+           <i>${p.gone ? "מנותק" : (p.id===state.host?"מנהל החדר":"")}</i>${modBtns(p.id, uid)}</div>`).join("");
       $("#hostBox").classList.toggle("hide", !isHost);
       $("#waitMsg").classList.toggle("hide", isHost);
       return;
@@ -851,10 +974,40 @@ ${roomLink()}
     $(sel).innerHTML = allPlayers().map((p,i) =>
       `<div class="${p.id===uid?"me":""}">
          <span class="rk">${i+1}</span>
-         <span class="nm" style="${p.gone?"opacity:.5":""}">${esc(p.name)}</span>
+         <span class="nm" style="${p.gone?"opacity:.5":""}">${esc(dispName(p.id, p.name))}${modBtns(p.id, uid)}</span>
          <span class="sc">${p.score}</span>
        </div>`).join("");
   }
+
+  /* דיווח וחסימה — מאזין אחד לכל הלוחות (לובי, חשיפה, סיום) */
+  document.addEventListener("click", async e => {
+    const b = e.target.closest("button[data-mod]");
+    if (!b || !state) return;
+    const id = b.dataset.id, nm = (state.players || {})[id]?.name || "";
+    const shown = esc(dispName(null, nm) === "שחקן" ? "(כינוי פוגעני)" : nm);
+    if (b.dataset.mod === "report"){
+      const v = await vModal(`<b>לדווח על "${shown}"?</b><br>הדיווח נשלח אלינו ונבדק תוך 24 שעות. השחקן גם ייחסם אצלך.`,
+        [{ id: "ok", label: "דיווח", primary: true }, { id: "no", label: "ביטול" }]);
+      if (v !== "ok") return;
+      sendReport(id, nm, room);
+      blocked.add(id); saveBlocked();
+      vTrack("report", {});
+    } else {
+      if (blocked.has(id)){ blocked.delete(id); saveBlocked(); render(); return; }
+      const v = await vModal(`<b>לחסום את "${shown}"?</b><br>הכינוי שלו יוסתר אצלך` +
+        (isHost ? " והוא יוצא מהחדר." : ". אפשר גם לצאת מהחדר בכל רגע."),
+        [{ id: "ok", label: "חסימה", primary: true }, { id: "no", label: "ביטול" }]);
+      if (v !== "ok") return;
+      blocked.add(id); saveBlocked();
+    }
+    /* מנהל החדר מוציא את השחקן החסום. החדר כתיב לכל מי שיודע את הקוד — אין צורך לשנות חוקים */
+    if (isHost && id !== state.host){
+      try{ await set(ref(db, roomPath(room) + `/players/${id}`), null); }catch(err){}
+    }
+    /* בלי render() באמצע סיבוב — הוא מריץ את הסיבוב מחדש. רק הלוח שעל המסך. */
+    if (state.status === "lobby") render();
+    else drawBoard(state.status === "done" ? "#endBoard" : "#revBoard");
+  });
   
   /* ============================================================
      7. סיבוב
@@ -1126,7 +1279,7 @@ ${roomLink()}
     show("scReveal");
     stopTick();
     if (isQuiz()){ showQuizReveal(answer, res); drawBoard("#revBoard"); return; }
-    const who = res.winner ? (state.players[res.winner]?.name || "מישהו") : null;
+    const who = res.winner ? (state.players[res.winner] ? dispName(res.winner, state.players[res.winner].name) : "מישהו") : null;
     $("#revText").innerHTML = who
       ? `<b>${esc(answer.he)}</b><br>${esc(who)} זיהה ראשון · ${res.pts} נקודות`
       : `<b>${esc(answer.he)}</b><br>אף אחד לא זיהה`;
@@ -1142,7 +1295,7 @@ ${roomLink()}
                `<b style="font-size:30px">${q.a}</b>`;
     if (!rank.length) html += `<br><span style="font-size:14px">אף אחד לא ענה</span>`;
     $("#revText").innerHTML = html + rank.map((r, i) => {
-      const nm = (state.players[r.id] || {}).name || "מישהו";
+      const nm = state.players[r.id] ? dispName(r.id, state.players[r.id].name) : "מישהו";
       const w  = i === 0 && r.id === res.winner;
       return `<div class="ansrow${w ? " win" : ""}"><span>${esc(nm)}</span>` +
              `<span><b>${r.v}</b> ${r.d === 0 ? "<i>בול</i>" : `<i>הפרש ${r.d}</i>`}</span></div>`;
