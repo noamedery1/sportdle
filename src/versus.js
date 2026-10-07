@@ -96,7 +96,7 @@ function dispName(id, name){
 }
 
 /* חלון קטן משלנו — confirm() של הדפדפן נראה זר באפליקציה ונחסם בחלק מה-WebViews */
-function vModal(html, buttons){
+function vModal(html, buttons, onShow){
   return new Promise(resolve => {
     const w = document.createElement("div");
     w.className = "vmodal";
@@ -109,6 +109,7 @@ function vModal(html, buttons){
       w.remove(); resolve(b ? b.dataset.v : null);
     });
     document.body.appendChild(w);
+    if (onShow) onShow(w);
   });
 }
 const termsUrl = () => ((window.SPORTDEL && window.SPORTDEL.siteUrl) || "https://sportdle.techbynoam.com").replace(/\/$/, "") + "/terms/";
@@ -121,9 +122,12 @@ async function ensureTerms(){
     `<b>לפני שנכנסים לקרב</b><br>הכינוי שלכם יוצג לשחקנים בחדר.` +
     ` <b>אפס סובלנות</b> לכינויים פוגעניים, גזעניים, מיניים או מאיימים — הם נחסמים אוטומטית.` +
     ` אפשר לדווח על כל שחקן ולחסום אותו, וכל דיווח נבדק תוך 24 שעות.` +
-    `<br><br>הכניסה לקרב היא הסכמה ל<a href="${termsUrl()}" target="_blank" rel="noopener">תנאי השימוש</a>.` +
+    /* הכתובת נכנסת אחרי שהחלון נפתח: tools/links.mjs קורא כל מאפיין href בעמוד כקישור פנימי,
+       וגם תבנית JS — והפריסה נכשלה עליה. */
+    `<br><br>הכניסה לקרב היא הסכמה ל<a class="vterms" target="_blank" rel="noopener">תנאי השימוש</a>.` +
     ` שאלות ופניות: <a href="mailto:${CONTACT}">${CONTACT}</a>`,
-    [{ id: "ok", label: "מסכים/ה", primary: true }, { id: "no", label: "ביטול" }]);
+    [{ id: "ok", label: "מסכים/ה", primary: true }, { id: "no", label: "ביטול" }],
+    box => { const a = box.querySelector(".vterms"); if (a) a.href = termsUrl(); });
   if (v !== "ok") return false;
   try{ localStorage.setItem(TERMS_KEY, String(Date.now())); }catch(e){}
   return true;
