@@ -620,6 +620,30 @@ const content = writeContentPages({
 log(`  נכתבו ${content.routes.length} דפי תוכן · ` +
     `${content.players} דפי שחקן · ${content.pastCount} חידות בארכיון`);
 
+/* ---------- הפניות מכתובות ישנות ----------
+   כתובת של דף שחקן נגזרת מהשם, ולכן תיקון שם מזיז אותה. הכתובת
+   הישנה כבר שותפה ואולי באינדקס — היא נשארת כדף קטן שמפנה לחדשה.
+   מחוץ ל-routes בכוונה: לא נכנסת ל-sitemap, ו-noindex.
+   config/redirects.json: { "<נתיב ישן>/": "<נתיב חדש>/" } */
+{
+  const redirects = readJSON("config/redirects.json", {});
+  const base = String(site.siteUrl).replace(/\/$/, "");
+  let n = 0;
+  for (const [from, to] of Object.entries(redirects)) {
+    if (from.startsWith("_")) continue;
+    if (!existsSync(`dist/${to}index.html`)) throw new Error(`הפניה ליעד שלא קיים: ${from} → ${to}`);
+    const home = "../".repeat(from.split("/").filter(Boolean).length), rel = home + to;
+    writeText(`dist/${from}index.html`,
+      `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8">` +
+      `<title>הדף עבר</title><meta name="robots" content="noindex">` +
+      `<link rel="canonical" href="${base}/${encodeURI(to)}">` +
+      `<meta http-equiv="refresh" content="0; url=${rel}"></head>` +
+      `<body><p><a href="${rel}">הדף עבר לכתובת חדשה</a> · <a href="${home}">לעמוד הראשי</a></p></body></html>\n`);
+    n++;
+  }
+  if (n) log(`  ${n} הפניות מכתובות ישנות`);
+}
+
 /* ---------- sitemap.xml ו-robots.txt ----------
    שניהם נגזרים מ-siteUrl ומהכתובות שנבנו, ולא נכתבים ביד: קובץ
    שמצביע לדומיין הישן גרוע מקובץ שלא קיים, כי גוגל מאמין לו. */

@@ -100,7 +100,10 @@ while (queue.length) {
     seen.add(nxt); queue.push(nxt);
   }
 }
-const orphans = pages.filter(p => !seen.has(p));
+/* דף הפניה (config/redirects.json) יתום בכוונה: הוא קיים רק בשביל
+   כתובת ישנה שכבר שותפה, ושום דף לא אמור לקשר אליו. */
+const isRedirect = p => /<meta http-equiv="refresh"/.test(readFileSync(join(ROOT, p), "utf8").slice(0, 600));
+const orphans = pages.filter(p => !seen.has(p) && !isRedirect(p));
 if (orphans.length)
   fail(`${orphans.length} דפים לא נגישים מהשורש: ${orphans.slice(0, 5).join(", ")}` +
        (orphans.length > 5 ? " …" : ""));
