@@ -750,6 +750,17 @@ for (const club of clubs) {
     const byKey = new Map();
     const keysOf = p => [p.he, p.official, ...(p.aliases || [])].filter(Boolean)
       .flatMap(n => [normName(n), normName(shortName(n)), ...nameVariants(n)]);
+    /* שם חד-מילתי מול השם המלא של אותו אדם: "קלאודמיר" (מהמאגר
+       שבייצור) ו"קלאודמיר פריירה" (מוויקיפדיה) לא חולקים אף מפתח,
+       ולכן נשארו שתי רשומות. מי שבחר בשם המלא כשקלאודמיר היה
+       החידה (#45) קיבל חמישה רמזים ירוקים ובלי ניצחון.
+       כאן נדרש יותר מבכלל הרגיל, כי מילה אחת היא ראיה חלשה: **אותה
+       שנת לידה, המילה היא המילה הראשונה בשם המלא, וגם התקופות
+       חופפות.** ושני שמות מלאים אף פעם לא מתאחדים בדרך הזאת —
+       "אבי כהן" ו"אבי לוי" מאותו מחזור הם שני אנשים. */
+    const words = p => normName(p.he).split(" ").filter(Boolean);
+    const overlap = (a, b) => (a.spells || []).some(([x, y]) => (b.spells || []).some(([u, v]) => x <= v && u <= y));
+    const byFirst = new Map();
     let merged = 0;
     for (const p of players) {
       if (p.born == null) continue;
@@ -758,6 +769,10 @@ for (const club of clubs) {
         const cand = byKey.get(`${p.born}|${k}`);
         if (cand && cand !== p) { hit = cand; break; }
       }
+      const w = words(p), fk = w.length ? `${p.born}|${w[0]}` : null;
+      if (!hit && fk)
+        hit = (byFirst.get(fk) || []).find(c => c !== p && !c._gone &&
+          (words(c).length === 1) !== (w.length === 1) && overlap(c, p)) || null;
       if (hit) {
         hit.years = [...(hit.years || []), ...(p.years || [])];
         if (p.spells) hit.spells = toSpells([
@@ -775,6 +790,7 @@ for (const club of clubs) {
         continue;
       }
       for (const k of keysOf(p)) if (!byKey.has(`${p.born}|${k}`)) byKey.set(`${p.born}|${k}`, p);
+      if (fk) byFirst.set(fk, [...(byFirst.get(fk) || []), p]);
     }
     if (merged) {
       players = players.filter(p => !p._gone);
