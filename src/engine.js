@@ -1183,9 +1183,12 @@ function restore(){
     const st = stateOf(puzzleNo);
     if (!st || !Array.isArray(st.g) || !st.g.length) return;
     hinted = !!st.h;
+    /* ניחוש שמור נמצא גם לפי כינוי: כשרשומה כפולה מתאחדת (קלאודמיר /
+       קלאודמיר פריירה, 07/10), השם הישן נשאר רק ב-aliases — ובלי זה
+       הניחוש היה נעלם מהלוח של מי שכבר שיחק. אותו שחקן פעמיים — פעם אחת. */
     st.g.forEach(n => {
-      const pl = PLAYERS.find(x => x.name === n);
-      if (pl){ guesses.push(pl); render(pl, true); }
+      const pl = PLAYERS.find(x => x.name === n) || PLAYERS.find(x => x.aliases.includes(n));
+      if (pl && !guesses.includes(pl)){ guesses.push(pl); render(pl, true); }
     });
     if (!guesses.length) return;
     if (hinted){ $("#hintOut").textContent = hintText(); $("#hintBtn").style.display = "none"; }

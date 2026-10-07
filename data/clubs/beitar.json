@@ -42,7 +42,7 @@
   ]
  },
  "counts": {
-  "players": 494,
+  "players": 493,
   "targets": 214
  },
  "players": [
@@ -4853,22 +4853,10 @@
    ],
    "seasons": 4,
    "titles": 0,
-   "target": true
-  },
-  {
-   "he": "קלאודמיר פריירה",
-   "pos": "MF",
-   "nat": "BR",
-   "born": 1984,
-   "spells": [
-    [
-     2015,
-     2018
-    ]
-   ],
-   "seasons": 4,
-   "titles": 0,
-   "target": false
+   "target": true,
+   "aliases": [
+    "קלאודמיר פריירה"
+   ]
   },
   {
    "he": "שלומי אזולאי (1990)",
