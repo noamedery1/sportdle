@@ -526,7 +526,7 @@ async function startVersus(){
      שאף אחד ירענן. בלי החוקים המעודכנים הקריאה נדחית — ואז פשוט
      אין הרחקות, והקרב עובד כמו קודם. */
   const BANS = "bans";
-  let wasIn = false;              // המשתמש כבר נראה בחדר — היעלמות שלו היא הוצאה
+  let wasIn = false;              // המשתמש כתב את עצמו לחדר — היעלמות שלו היא הוצאה
   const BANNED_MSG = "הכינוי הזה הורחק מקרב החברים בעקבות דיווח. לפניות: " + CONTACT;
   onValue(ref(db, BANS), s => {
     banned.clear();
@@ -961,7 +961,10 @@ ${roomLink()}
      ============================================================ */
   function watch(){
     if (unsub) off(roomRef);
-    wasIn = false;
+    /* כל מי שקורא ל-watch() כבר כתב את עצמו לחדר (פתיחה, הצטרפות, חזרה).
+       לא מחכים לעדכון הראשון: מנהל שחסם אותי מוחק אותי לפעמים לפניו,
+       ואז לא הייתי "רואה את עצמי" אף פעם — ונשאר בחדר בלי לדעת שהוצאתי. */
+    wasIn = true;
     unsub = onValue(roomRef, snap => {
       state = snap.val();
       if (!state) return;
@@ -982,7 +985,6 @@ ${roomLink()}
      לשחק בחדר שכבר אינו בו. מחזיר true כשהמשתמש הזה יצא. */
   function watchTick(){
     const players = state.players || {};
-    if (players[uid]) wasIn = true;
     if (banned.has(uid) || (wasIn && !players[uid])){
       const msg = banned.has(uid) ? BANNED_MSG : "מנהל החדר הוציא אותך מהחדר.";
       off(roomRef); state = null; room = null; wasIn = false;
