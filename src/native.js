@@ -186,6 +186,11 @@
   safe(() => {
     if (!P.App || platform !== "android") return;
     P.App.addListener("backButton", () => {
+      /* חלון של הקרב (תנאים, דיווח, חסימה) יושב מעל הכל. לחיצה על הרקע
+         שלו היא "ביטול" (vModal ב-versus.js) — בלי זה "חזור" ממזער את
+         כל האפליקציה כשהחלון פתוח. */
+      const vm = document.querySelector(".vmodal");
+      if (vm) { vm.click(); return; }
       /* סדר סגירה מהפנימי לחיצוני */
       const open = [
         document.querySelector("#sugg.on"),
