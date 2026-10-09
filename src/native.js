@@ -151,6 +151,34 @@
     }, true);
   });
 
+  /* ---------- 3ד. קישורים לאתר — בדפדפן שבתוך האפליקציה ----------
+     כל קישור שיוצא מה-origin של האפליקציה (תנאי השימוש בחלון הקרב,
+     "שחקנים" בפוטר, דפי השחקן מהארכיון) נפתח עד כאן בספארי. האתר נראה
+     בדיוק כמו האפליקציה, ולכן מי שהגיע אליו פשוט המשיך לשחק שם —
+     "חזור" בספארי מחזיר לדף הקודם באתר, לא לאפליקציה. כך צולמה
+     ההקלטה הראשונה לאפל: כל הקרב באתר.
+
+     Browser.open פותח SFSafariViewController (iOS) / Custom Tabs
+     (אנדרואיד): דפדפן מעל האפליקציה עם "סיום", שסוגר וחוזר בדיוק
+     לאותו מקום — גם לחלון התנאים באמצע הקרב.
+
+     **לא נוגעים** בוואטסאפ ובחנויות: שם המטרה היא כן לצאת לאפליקציה
+     האחרת. וגם לא ב-location.href של 3ב/3ג — הם לא עוברים דרך <a>. */
+  safe(() => {
+    if (!P.Browser) return;
+    const OUTSIDE = /^(wa\.me|api\.whatsapp\.com|play\.google\.com|apps\.apple\.com|itunes\.apple\.com)$/i;
+    document.addEventListener("click", (ev) => {
+      const a = ev.target && ev.target.closest && ev.target.closest("a[href]");
+      if (!a) return;
+      let u;
+      try { u = new URL(a.href, location.href); } catch (e) { return; }
+      if (!/^https?:$/.test(u.protocol) || u.origin === location.origin || OUTSIDE.test(u.hostname)) return;
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      P.Browser.open({ url: u.href, toolbarColor: "#0C0C0E" }).catch(() => { location.href = u.href; });
+    }, true);
+  });
+
   /* ---------- 4. כפתור "חזור" של אנדרואיד ----------
      בלי זה לחיצה אחת על "חזור" סוגרת את האפליקציה מתוך חלונית
      פתוחה. זו אחת התלונות הנפוצות בביקורות, ובדיקת איכות של
