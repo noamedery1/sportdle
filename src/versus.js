@@ -54,9 +54,15 @@ function vTrack(type, extra){
    לתנאים של אפס סובלנות. התוכן היחיד שמשתמש יוצר כאן הוא הכינוי,
    ולכן הכל סובב סביבו.
 
-   **בלי שינוי בחוקי הפיירבייס.** החסימה מקומית (localStorage),
-   ומנהל החדר מוציא שחקן חסום מהחדר — החדר כתיב לכל מי שיודע את
-   הקוד, כך שזה עובד עם החוקים הקיימים.
+   החסימה מקומית (localStorage), ומנהל החדר מוציא שחקן חסום מהחדר —
+   החדר כתיב לכל מי שיודע את הקוד. **גם חסימה וגם דיווח מגיעים אלינו.**
+
+   **הטיפול שלנו בדיווח — `bans/<uid>`.** אפל דורשת שהמפתח יסיר את
+   התוכן ויוציא את המשתמש תוך 24 שעות. אין כאן שרת, ולכן הכלי הוא
+   רשימה בפיירבייס שכל לקוח קורא ורק הקונסולה כותבת (".write": false):
+   מזהה שנכנס אליה לא יכול לפתוח חדר או להצטרף, הכינוי שלו מוסתר
+   אצל כולם, ומנהל כל חדר שהוא יושב בו מוציא אותו מיד. המזהה מופיע
+   בטקסט של כל דיווח.
    ============================================================ */
 
 /* מילים שכינוי לא יכול להכיל. קצרות (עד 3 אותיות) נבדקות כמילה
@@ -88,8 +94,11 @@ function isBadNick(s){
 const BLK_KEY = "sportdel:blocked", TERMS_KEY = "sportdel:duelTerms";
 const blocked = new Set((() => { try{ return JSON.parse(localStorage.getItem(BLK_KEY)) || []; }catch(e){ return []; } })());
 const saveBlocked = () => { try{ localStorage.setItem(BLK_KEY, JSON.stringify([...blocked])); }catch(e){} };
+/** מזהים שהמפתח הרחיק (bans/ בפיירבייס). מתמלא ב-startVersus. */
+const banned = new Set();
 /** השם שמוצג על המסך: חסום — מוסתר, כינוי פוגעני (מגרסה ישנה או מהאתר) — מוחלף. */
 function dispName(id, name){
+  if (id && banned.has(id)) return "שחקן שהורחק";
   if (id && blocked.has(id)) return "שחקן חסום";
   if (!name || isBadNick(name)) return "שחקן";
   return name;
@@ -133,12 +142,13 @@ async function ensureTerms(){
   return true;
 }
 
-/** דיווח: לאותה נקודת קצה של טופס הפידבק, כך שהוא מגיע לתיבה שכבר נבדקת. */
-function sendReport(id, name, code){
-  const text = `דיווח על שחקן בקרב חברים — כינוי: "${name}" · מזהה: ${id} · חדר: ${code}`;
+/** דיווח או חסימה: לאותה נקודת קצה של טופס הפידבק, כך שהם מגיעים לתיבה שכבר נבדקת.
+    המזהה בטקסט הוא מה שנכנס ל-bans/ אם הדיווח מוצדק. */
+function sendReport(id, name, code, kind = "דיווח"){
+  const text = `${kind} על שחקן בקרב חברים — כינוי: "${name}" · מזהה: ${id} · חדר: ${code}`;
   const URL_ = window.SPORTDEL && window.SPORTDEL.analyticsUrl;
   if (typeof URL_ !== "string" || !URL_){
-    location.href = `mailto:${CONTACT}?subject=${encodeURIComponent("דיווח מקרב חברים")}&body=${encodeURIComponent(text)}`;
+    location.href = `mailto:${CONTACT}?subject=${encodeURIComponent(kind + " מקרב חברים")}&body=${encodeURIComponent(text)}`;
     return;
   }
   const body = JSON.stringify({ type: "feedback", club: SLUG, puzzle: "קרב " + code, player: name, text, contact: "" });
@@ -160,6 +170,8 @@ const modBtns = (id, me) => id === me ? "" :
     .vmodal{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.72);display:flex;align-items:center;justify-content:center;padding:20px}
     .vmodal-box{max-width:420px;width:100%;background:#17171b;color:#f2f2f0;border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:22px;direction:rtl;text-align:right;line-height:1.6;font-size:15px}
     .vmodal-box a{color:#ffc72c}
+    .vterms-note{margin:14px 0 0;font-size:12px;line-height:1.55;opacity:.7;text-align:center}
+    .vterms-note a{color:#ffc72c}
     .vmodal-btns{display:flex;gap:10px;margin-top:18px}
     .vmodal-btns button{flex:1;padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
     .vmodal-btns button.pri{background:#ffc72c;color:#111;border-color:#ffc72c}
@@ -508,6 +520,25 @@ async function startVersus(){
     });
     presenceOff = () => off(ref(db, ".info/connected"), "value", un);
   }
+
+  /* ---------- רשימת ההרחקה של המפתח (bans/) ----------
+     מאזין חי: מזהה שנוסף בקונסולה מוסתר ומוצא מהחדר מיד, בלי
+     שאף אחד ירענן. בלי החוקים המעודכנים הקריאה נדחית — ואז פשוט
+     אין הרחקות, והקרב עובד כמו קודם. */
+  const BANS = "bans";
+  let wasIn = false;              // המשתמש כבר נראה בחדר — היעלמות שלו היא הוצאה
+  const BANNED_MSG = "הכינוי הזה הורחק מקרב החברים בעקבות דיווח. לפניות: " + CONTACT;
+  onValue(ref(db, BANS), s => {
+    banned.clear();
+    for (const [id, v] of Object.entries(s.val() || {})) if (v) banned.add(id);
+    /* בלובי מציירים מחדש (שם מוסתר); באמצע סיבוב render() מריץ אותו מחדש — רק ההוצאה */
+    if (state && !watchTick() && state.status === "lobby") render();
+  }, () => {});
+  /** בדיקה ישירה לפני כניסה — המאזין אולי עוד לא חזר. */
+  async function amBanned(){
+    if (banned.has(uid)) return true;
+    try{ return !!(await get(ref(db, `${BANS}/${uid}`))).val(); }catch(e){ return false; }
+  }
   
   /* ============================================================
      5. בחירת מועדונים לחדר
@@ -609,6 +640,7 @@ async function startVersus(){
 
   paintClubPick();
   paintTimeOpts();   // הבורר ריק בתבנית ונבנה כאן לפי המצב
+  document.querySelectorAll("#scHome .vterms").forEach(el => el.href = termsUrl());
 
   /* ============================================================
      5ב. פתיחה והצטרפות
@@ -618,6 +650,7 @@ async function startVersus(){
     if (!name) return $("#vName").focus();
     if (isBadNick(name)) return void ($("#joinErr").textContent = "הכינוי הזה לא מתאים. בחרו כינוי אחר.");
     if (!await ensureTerms()) return;
+    if (await amBanned()) return void ($("#joinErr").textContent = BANNED_MSG);
     const pre = +($("#preReveal").value || 8);
     const sel = $("#setReveal"); if (sel) sel.value = String(pre);
     const code = mkCode();
@@ -681,6 +714,7 @@ async function startVersus(){
     if (!name) return err.textContent = "צריך שם";
     if (isBadNick(name)) return err.textContent = "הכינוי הזה לא מתאים. בחרו כינוי אחר.";
     if (!await ensureTerms()) return;
+    if (await amBanned()) return err.textContent = BANNED_MSG;
 
     const snap = await get(ref(db, roomPath(code)));
     if (!snap.exists()) return err.textContent = "אין חדר עם הקוד הזה";
@@ -927,6 +961,7 @@ ${roomLink()}
      ============================================================ */
   function watch(){
     if (unsub) off(roomRef);
+    wasIn = false;
     unsub = onValue(roomRef, snap => {
       state = snap.val();
       if (!state) return;
@@ -936,11 +971,32 @@ ${roomLink()}
          מחדש חזר לברירת המחדל וקיבל רמזי שחקן בזמן שהמארח ראה
          שאלה — שני משחקים שונים באותו חדר, בלי שום שגיאה. */
       adoptMode(state);
-      /* שחקן שמנהל החדר חסם ונכנס שוב (רענון, קישור) — יוצא שוב */
-      if (isHost) for (const id of Object.keys(state.players || {}))
-        if (id !== uid && blocked.has(id)) set(ref(db, roomPath(room) + `/players/${id}`), null).catch(() => {});
+      if (watchTick()) return;
       render();
     });
+  }
+
+  /* הרחקה והוצאה, בכל עדכון של החדר ושל bans/.
+     מנהל החדר מוציא את מי שהוא חסם (גם כשהוא חוזר ברענון או בקישור)
+     ואת מי שהמפתח הרחיק. מי שהוצא — רואה את זה ויוצא, במקום להמשיך
+     לשחק בחדר שכבר אינו בו. מחזיר true כשהמשתמש הזה יצא. */
+  function watchTick(){
+    const players = state.players || {};
+    if (players[uid]) wasIn = true;
+    if (banned.has(uid) || (wasIn && !players[uid])){
+      const msg = banned.has(uid) ? BANNED_MSG : "מנהל החדר הוציא אותך מהחדר.";
+      off(roomRef); state = null; room = null; wasIn = false;
+      stopTick();
+      if (presenceOff) presenceOff();
+      mem.clear();
+      show("scHome");
+      $("#joinErr").textContent = msg;
+      return true;
+    }
+    if (isHost) for (const id of Object.keys(players))
+      if (id !== uid && (blocked.has(id) || banned.has(id)))
+        set(ref(db, roomPath(room) + `/players/${id}`), null).catch(() => {});
+    return false;
   }
   
   /** כולם — כולל מנותקים. מי שנופל לרגע לא נעלם מהטבלה. */
@@ -998,11 +1054,14 @@ ${roomLink()}
       vTrack("report", {});
     } else {
       if (blocked.has(id)){ blocked.delete(id); saveBlocked(); render(); return; }
-      const v = await vModal(`<b>לחסום את "${shown}"?</b><br>הכינוי שלו יוסתר אצלך` +
-        (isHost ? " והוא יוצא מהחדר." : ". אפשר גם לצאת מהחדר בכל רגע."),
+      const v = await vModal(`<b>לחסום את "${shown}"?</b><br>הכינוי שלו יוסתר אצלך מיד` +
+        (isHost ? " והוא יוצא מהחדר." : ". אפשר גם לצאת מהחדר בכל רגע.") +
+        ` החסימה מדווחת גם לנו, ונבדקת תוך 24 שעות.`,
         [{ id: "ok", label: "חסימה", primary: true }, { id: "no", label: "ביטול" }]);
       if (v !== "ok") return;
+      sendReport(id, nm, room, "חסימה");
       blocked.add(id); saveBlocked();
+      vTrack("block", {});
     }
     /* מנהל החדר מוציא את השחקן החסום. החדר כתיב לכל מי שיודע את הקוד — אין צורך לשנות חוקים */
     if (isHost && id !== state.host){

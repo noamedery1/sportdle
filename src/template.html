@@ -671,6 +671,11 @@ __APP_BANNER_CSS__
         <button id="btnJoin">כניסה</button>
       </div>
       <div class="err" id="joinErr"></div>
+      <!-- גלוי תמיד, ולא רק בחלון ההסכמה החד-פעמי: App Store (1.2) רוצה
+           לראות את התנאים לפני הכניסה, גם אצל מי שכבר הסכים פעם.
+           הכתובת נקבעת ב-versus.js — tools/links.mjs בודק כל href בעמוד. -->
+      <p class="vterms-note">כינויים פוגעניים נחסמים. ליד כל שחקן יש "דיווח" ו"חסימה", וכל דיווח נבדק תוך 24 שעות.
+        הכניסה לקרב היא הסכמה ל<a class="vterms" target="_blank" rel="noopener">תנאי השימוש</a>.</p>
     </div>
   </section>
 
