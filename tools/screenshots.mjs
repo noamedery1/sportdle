@@ -76,7 +76,8 @@ const browser = await chromium.launch({ headless: true });
 
 /* מסתירים את פוטר הניווט בצילומים של המשחק: הוא נכון לאתר, אבל
    בחנות הוא רק גוזל שליש מהפריים בקישורי טקסט קטנים. */
-const HIDE_NAV = ".sitenav{display:none!important}";
+/* .appban: באנר ההורדה, שאינו באפליקציה (app-prepare מסיר אותו) */
+const HIDE_NAV = ".sitenav,.appban{display:none!important}";
 
 async function shot(page, dir, name) {
   const path = `${dir}/${name}.png`;

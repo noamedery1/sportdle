@@ -85,7 +85,7 @@ async function certificate() {
 
 /* Associated Domains על ה-App ID. מחזיר true כשנוספה עכשיו. */
 async function ensureAssociatedDomains(bundleId) {
-  const caps = (await api("GET", `/bundleIds/${bundleId}/bundleIdCapabilities?limit=50`)).data || [];
+  const caps = (await api("GET", `/bundleIds/${bundleId}/bundleIdCapabilities`)).data || [];
   if (caps.some(c => c.attributes.capabilityType === "ASSOCIATED_DOMAINS")) return false;
   await api("POST", "/bundleIdCapabilities", { data: { type: "bundleIdCapabilities",
     attributes: { capabilityType: "ASSOCIATED_DOMAINS" },
