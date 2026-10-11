@@ -11,7 +11,7 @@ import {
   log, warn, die, normName, season, nameVariants
 } from "./lib/util.mjs";
 import { writeClubPages } from "./lib/clubpages.mjs";
-import { writeContentPages, appBannerHtml, APP_BANNER_CSS } from "./lib/content.mjs";
+import { writeContentPages, appBannerHtml, iosMetaHtml, APP_BANNER_CSS } from "./lib/content.mjs";
 
 const args  = parseArgs();
 const clubs = pickClubs(args);
@@ -402,6 +402,7 @@ html = html
   .split("__QUIZ__").join(readText("src/quiz.js", ""))
   /* באנר האפליקציה — מקור אחד עם דפי התוכן. ראה content.mjs. */
   .split("__APP_BANNER__").join(appBannerHtml(site))
+  .split("__IOS_META__").join(iosMetaHtml(site))
   .split("__APP_BANNER_CSS__").join(APP_BANNER_CSS)
   .split("__SITE_TITLE__").join(site.title)
   .split("__SITE_NAME__").join(site.name)
