@@ -177,6 +177,12 @@ td:first-child{min-width:7.5em}
 .card .n{font-size:13.5px;font-weight:500;color:var(--ui-ink-2)}
 .card .t{font-size:18px;font-weight:900;margin-top:2px}
 .card .s{font-size:14.5px;color:var(--ui-ink-2);margin-top:4px}
+/* ארכיון: התשובות מאחורי לחיצה — בדף (לגוגל), לא בעין (למי שעוד משחק) */
+details.reveal{margin:18px 0}
+details.reveal summary{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:var(--r-ctl);
+  background:var(--brand,#17181C);color:var(--on-brand,#fff);font-weight:700;cursor:pointer;list-style:none}
+details.reveal summary::-webkit-details-marker{display:none}
+details.reveal[open] summary{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line)}
 
 /* ---- שפת הרמזים: אותם ריבועים שטוחים כמו במשחק ---- */
 .swatch{display:inline-block;width:15px;height:15px;border-radius:3px;vertical-align:-2px;
@@ -1057,7 +1063,7 @@ export function writeContentPages({ data, order, site, NAT_HE, REGION, maxGuesse
       rows.push(`  <a class="card" href="${up(1)}archive/${n}/">
     <div class="n">חידה #${n} · ${dateHe(d)}</div>
     <div class="t">${answers.length} תשובות</div>
-    <div class="s">${answers.map(esc).join(" · ")}</div>
+    <div class="s">התשובות מוסתרות — עוד אפשר לשחק אותה בארכיון שבמשחק</div>
   </a>`);
     }
 
@@ -1066,7 +1072,9 @@ export function writeContentPages({ data, order, site, NAT_HE, REGION, maxGuesse
      כשהחידה של אתמול מפסיקה להיות החידה של היום, נוסף לה דף.</p>`
     : `
   <p>כל החידות שפורסמו, מהחדשה לישנה. לכל חידה דף משלה עם
-     התאריך והתשובה בכל אחד מחמשת המועדונים, וקישור לדף השחקן.</p>
+     התאריך והתשובה בכל אחד מחמשת המועדונים, וקישור לדף השחקן.
+     התשובות מוסתרות עד שלוחצים — מי שעוד לא פתר יכול לשחק כל חידה
+     ישנה דרך "ארכיון" במשחק עצמו.</p>
   <div class="note">החידה של <b>היום</b> אינה כאן, וגם לא תופיע
      כאן עד מחר — הארכיון נחתך בכוונה על החידה של אתמול.</div>
   <div class="cards">
@@ -1111,14 +1119,15 @@ ${rows.join("\n")}
       const next = n < maxN ? `<a href="${up(1)}${n + 1}/">חידה #${n + 1} →</a>` : "<span></span>";
 
       const body = `
-  <p>אלה היו התשובות של ${dateHe(d)}, בכל אחד מחמשת המועדונים.
-     לחיצה על שחקן פותחת את דף השחקן שלו.</p>
+  <p>התשובות של ${dateHe(d)}, בכל אחד מחמשת המועדונים.
+     עוד לא פתרתם? את החידה הזו אפשר לשחק דרך "ארכיון" במשחק
+     (<a href="${up(2)}">לשחק</a>) — לכן התשובות מוסתרות עד שלוחצים.</p>
+  <details class="reveal">
+  <summary>הצגת התשובות</summary>
   <div class="cards">
 ${items.join("\n")}
   </div>
-  <div class="note">המשחק מגיש תמיד את החידה של <b>היום</b>, ולכן
-     אי אפשר לשחק חידה מהארכיון מתוך הדף הזה.
-     <a href="${up(2)}">לחידה של היום</a>.</div>
+  </details>
   <div class="pager">${prev}${next}</div>
   <p style="margin-top:20px"><a href="${up(1)}">↑ כל הארכיון</a></p>`;
 

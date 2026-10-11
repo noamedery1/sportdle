@@ -33,7 +33,7 @@ const PHONE = { viewport: { width: 430, height: 932 }, deviceScaleFactor: 3, loc
 const browser = await chromium.launch();
 const mk = async (club) => {
   const ctx = await browser.newContext(PHONE);
-  await ctx.addInitScript(c => { try { localStorage.setItem("sportdel:seen", "1"); localStorage.setItem("sportdel:club", c); } catch {} }, club);
+  await ctx.addInitScript(c => { try { localStorage.setItem("sportdel:seen", "1"); localStorage.setItem("sportdel:club", c); localStorage.setItem("sportdel:duelTerms", "1"); } catch {} }, club);
   return ctx.newPage();
 };
 const host = await mk("hapoel-ta");
