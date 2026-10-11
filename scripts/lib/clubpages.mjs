@@ -14,6 +14,11 @@
    הקובץ הזה נפרד מ-build.mjs כי הוא ספוג ביטויים רגולריים עם
    לוכסנים, וכתיבתם דרך סקריפט תיקון שברה אותם פעם אחר פעם. */
 import { writeText } from "./util.mjs";
+import { NAV } from "./content.mjs";
+
+/* נגזר מ-NAV ולא רשימה קבועה: דף חדש בפוטר (נגישות) שבר את הפריסה
+   בחמשת עמודי המועדון, כי הקישור שלו לא עלה תיקייה. */
+const NAV_LINK = new RegExp(`href="(${NAV.map(n => n.path).join("|")})/"`, "g");
 
 export function writeClubPages({ html, data, order, siteUrl }) {
   const base = String(siteUrl).replace(/\/$/, "");
@@ -42,7 +47,7 @@ export function writeClubPages({ html, data, order, siteUrl }) {
                '$1="../$2"')
       /* גם ניווט דפי התוכן שבפוטר עולה תיקייה אחת. בלי זה
          /beitar/about/ הוא 404, והניווט שבור בחמישה עמודים. */
-      .replace(/href="(how-to-play|archive|players|about|contact|privacy|terms)\/"/g,
+      .replace(NAV_LINK,
                'href="../$1/"')
       /* "חידה יומית" בניווט מצביע על עצמו בשורש, ועל השורש
          מעמוד מועדון. בלי זה אין מכאן דרך חזרה הביתה, וזחלן
