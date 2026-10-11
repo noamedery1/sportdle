@@ -1252,7 +1252,8 @@ function applyTheme(c){
   const on = h => (lum(h) + .05) / (lum("#121214") + .05) >= 1.05 / (lum(h) + .05) ? "#121214" : "#FFFFFF";
   const mix = (h, k) => "#" + rgb(h).map(v => Math.round(v*k).toString(16).padStart(2,"0")).join("");
   const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + .05) / (y + .05); };
-  const second = c.colors.second || c.colors.ink, nearUi = mix(c.colors.brand, .72);
+  /* "קרוב" בצבע שהשחקנים מכירים מהמשחק: near של המועדון מ-config, לא נגזרת */
+  const second = c.colors.second || c.colors.ink, nearUi = c.colors.near || mix(c.colors.brand, .72);
   r.setProperty("--second", second);
   r.setProperty("--second-band", lum(second) < lum("#26272D") ? "#26272D" : second);
   r.setProperty("--on-brand", on(c.colors.brand));
