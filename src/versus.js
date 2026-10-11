@@ -366,7 +366,7 @@ async function startVersus(){
   function cluesOf(p){
     const c = [
       ["עמדה",  V_POS[p.pos] || p.pos],
-      ["לאום",  V_NAT[p.nat] || p.nat],
+      ["לאום",  p.nat ? (V_NAT[p.nat] || p.nat) : "לא ידוע"],
       ["עונה ראשונה", vSeason(p.spells[0][0])],
       ["תארים", String(p.titles)],
       ["נולד",  String(p.born)],
@@ -389,7 +389,7 @@ async function startVersus(){
   function matchCount(g, a){
     let n = 0;
     if (g.pos === a.pos) n++;
-    if (g.nat === a.nat) n++;
+    if (g.nat && g.nat === a.nat) n++;
     if (g.spells[0][0] === a.spells[0][0]) n++;
     if (g.titles === a.titles) n++;
     if (Math.abs(g.born - a.born) <= 2) n++;          // דור, לא שנה מדויקת

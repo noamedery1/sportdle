@@ -192,11 +192,11 @@ function render(g, instant){
   row.className = "row";
   if (instant) row.style.cssText = "animation:none";
   row.innerHTML =
-    `<p class="who">${g.name}<i>ניחוש ${guesses.length}</i></p><div class="tiles">` +
+    `<p class="who"><span class="nm">${g.name}</span><i>ניחוש ${guesses.length}</i><button type="button" class="rowfix" data-i="${guesses.length - 1}" aria-label="דיווח טעות בפרטי ${g.name}">דיווח טעות</button></p><div class="tiles">` +
     cells.map((c,i)=>
       `<div class="tile ${c.s}" style="${instant?"animation:none;opacity:1;transform:none":`animation-delay:${i*90}ms`}">
          <span class="k">${c.k}</span>
-         <span class="v">${c.v}${c.ar?` <span class="ar${c.ar==="↓"?" dn":""}" role="img" aria-label="${c.ar==="↑"?"גבוה או מאוחר יותר":"נמוך או מוקדם יותר"}"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:""}</span>
+         <span class="v${String(c.v).length > 6 ? " long" : ""}">${c.v}${c.ar?` <span class="ar${c.ar==="↓"?" dn":""}" role="img" aria-label="${c.ar==="↑"?"גבוה או מאוחר יותר":"נמוך או מוקדם יותר"}"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:""}</span>
        </div>`).join("") + `</div>`;
   board.appendChild(row);
   $("#left").textContent = MAX - guesses.length;
@@ -1044,9 +1044,11 @@ function reporterId(){
 const fixM = $("#fix");
 function closeFix(){ fixM.classList.remove("on"); }
 function fixField(){
-  const he = $("#fixField").value === "he";
-  $("#fixHeWrap").classList.toggle("hide", !he);
-  $("#fixPosWrap").classList.toggle("hide", he);
+  const f = $("#fixField").value;
+  $("#fixHeWrap").classList.toggle("hide", f !== "he");
+  $("#fixPosWrap").classList.toggle("hide", f !== "pos");
+  $("#fixValWrap").classList.toggle("hide", f === "he" || f === "pos");
+  if (fixTarget && f !== "he" && f !== "pos") $("#fixValNow").textContent = fixNow(fixTarget)[f];
 }
 /* רשימת העמדות בטופס התיקון נבנית מ-POS_HE ולא נכתבת בתבנית.
    כשהיא הייתה כתובה בשני מקומות הם נפרדו: המשחק הציג עמדה אחת
@@ -1058,29 +1060,56 @@ function fixField(){
     .map(k => `<option value="${k}">${POS_HE[k]}</option>`).join("");
 })();
 
-function openFix(){
-  if (!over || !answer) return;          // אין שחקן חשוף — אין מה לתקן
+/* השחקן שמתקנים: התשובה (בסוף המשחק, מהקישור שמתחת ללוח) או כל שחקן
+   שניחשו (מכפתור "דיווח טעות" בשורה שלו — גם באמצע משחק: מתקנים שחקן
+   שכבר מוצג על הלוח, ולכן זה לא חושף את התשובה). */
+let fixTarget = null;
+/* הערך הנוכחי של כל שדה, באותה צורה שמוצגת במשבצת */
+function fixNow(p){
+  const c = Object.fromEntries(compare(p, p).map(x => [x.k, x.v]));
+  return { he: p.name, pos: POS_HE[p.pos] || "עמדה לא ידועה",
+           nat: (p.nats || []).map(n => NAT_HE[n] || n).join(" / ") || "?",
+           from: c["עונה 1"], titles: c["תארים"], born: c["נולד"] ?? "?" };
+}
+function openFix(target){
+  if (!target && (!over || !answer)) return;   // אין שחקן חשוף — אין מה לתקן
+  fixTarget = target || answer;
   closeRep(); closeHelp();
-  $("#fixWho").textContent    = answer.name;
-  $("#fixPosNow").textContent = POS_HE[answer.pos] || "עמדה לא ידועה";
-  $("#fixName").value   = answer.name;
-  $("#fixPosVal").value = POS_ORDER.includes(answer.pos) ? answer.pos : "MF";
+  const now = fixNow(fixTarget);
+  $("#fixWho").textContent    = fixTarget.name;
+  $("#fixPosNow").textContent = now.pos;
+  $("#fixName").value   = fixTarget.name;
+  $("#fixPosVal").value = POS_ORDER.includes(fixTarget.pos) ? fixTarget.pos : "MF";
   $("#fixField").value  = "he";
+  $("#fixVal").value    = "";
   fixField();
   $("#fixStat").textContent = ""; $("#fixStat").className = "";
   $("#fixSend").textContent = "שליחה"; $("#fixSend").disabled = false;
   fixM.classList.add("on");
+  focusSheet(fixM);
 }
 $("#fixField").addEventListener("change", fixField);
 $("#closeFix").addEventListener("click", closeFix);
 fixM.addEventListener("click", e => { if (e.target === fixM) closeFix(); });
 $("#fixLink").addEventListener("click", e => { e.preventDefault(); openFix(); });
+/* "דיווח טעות" בשורה — מאזין אחד ללוח, כולל שורות שנטענו מחדש */
+$("#board").addEventListener("click", e => {
+  const b = e.target.closest(".rowfix");
+  if (b && guesses[+b.dataset.i]) openFix(guesses[+b.dataset.i]);
+});
 $("#fixToRep").addEventListener("click", e => { e.preventDefault(); closeFix(); openRep(); });
 $("#repToFix").addEventListener("click", e => { e.preventDefault(); closeRep(); openFix(); });
 
 /* מה שהטופס מרשה לשלוח, ולמה. כל דחייה חוזרת למשתמש בעברית. */
+const FIX_MANUAL = { nat: "לאום", from: "עונה ראשונה במועדון", titles: "תארים", born: "שנת לידה" };
 function fixPayload(){
+  const answer = fixTarget;   // השחקן שבטופס, לא בהכרח התשובה
   const field = $("#fixField").value;
+  if (FIX_MANUAL[field]){
+    const proposed = $("#fixVal").value.replace(/\s+/g, " ").trim().slice(0, 60);
+    if (!proposed) return { err: "כתבו את הערך הנכון." };
+    return { manual: true, field, current: String(fixNow(answer)[field]), proposed };
+  }
   if (field !== "he" && field !== "pos") return { err: "שדה לא מוכר." };
 
   if (field === "pos"){
@@ -1109,8 +1138,22 @@ $("#fixSend").addEventListener("click", async () => {
     st.className = "bad"; return;
   }
   btn.disabled = true; btn.textContent = "שולח…";
+  /* לאום, עונה, תארים ושנת לידה: הצינור האוטומטי מכיר רק שם ועמדה,
+     אז אלה נשלחים לתיבת הפידבק כדיווח מובנה ונבדקים ידנית. */
+  if (p.manual){
+    const text = `תיקון פרטי שחקן — ${fixTarget.name} · ${FIX_MANUAL[p.field]}: רשום "${p.current}", צריך להיות "${p.proposed}"`;
+    const fb = JSON.stringify({ type: "feedback", club: club.slug, puzzle: `${club.game} תיקון`,
+                                player: fixTarget.name, text, contact: "" });
+    let sent = false;
+    try{ sent = !!(navigator.sendBeacon && navigator.sendBeacon(ANALYTICS_URL, fb)); }catch(e){}
+    if (!sent){ try{ await fetch(ANALYTICS_URL, { method: "POST", mode: "no-cors", body: fb }); sent = true; }catch(e){} }
+    st.textContent = sent ? "תודה. הדיווח ייבדק מול המקורות." : "השליחה נכשלה. נסו שוב מאוחר יותר.";
+    st.className = sent ? "ok" : "bad"; btn.textContent = sent ? "נשלח ✓" : "שליחה"; btn.disabled = sent;
+    if (sent) setTimeout(closeFix, 1600);
+    return;
+  }
   const body = JSON.stringify({
-    type: "fix", club: club.slug, player: answer.name,
+    type: "fix", club: club.slug, player: fixTarget.name,
     field: p.field, current: p.current, proposed: p.proposed,
     rid: reporterId(), puzzle: practice ? 0 : puzzleNo
   });
@@ -1202,7 +1245,9 @@ function restore(){
 
 /* ---------- חלונית עזרה ---------- */
 const help = $("#help");
-function openHelp(){ help.classList.add("on"); store.set(GKEY("seen"),"1"); }
+/* החלונית מסומנת aria-modal — הפוקוס נכנס אליה, לכפתור הסגירה */
+function focusSheet(m){ setTimeout(() => { const f = m && m.querySelector(".x, button, [href], input, select"); if (f) f.focus({ preventScroll: true }); }, 30); }
+function openHelp(){ help.classList.add("on"); store.set(GKEY("seen"),"1"); focusSheet(help); }
 function closeHelp(){ help.classList.remove("on"); }
 $("#helpBtn").addEventListener("click", openHelp);
 $("#reportLink").addEventListener("click", e => { e.preventDefault(); openRep(); });
@@ -1230,7 +1275,7 @@ function renderPicker(){
   $("#clubList").querySelectorAll("button").forEach(b =>
     b.onclick = () => { closePicker(); chooseClub(b.dataset.slug); });
 }
-function openPicker(){ renderPicker(); picker.classList.add("on"); }
+function openPicker(){ renderPicker(); picker.classList.add("on"); focusSheet(picker.querySelector(".clubs")); }
 function closePicker(){ picker.classList.remove("on"); }
 $("#clubBtn").addEventListener("click", openPicker);
 

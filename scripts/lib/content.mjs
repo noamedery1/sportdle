@@ -134,7 +134,7 @@ body{color:var(--ui-ink);font-family:'Heebo',system-ui,sans-serif;
 h1{font-weight:900;font-size:clamp(30px,8.4vw,44px);line-height:1.12;letter-spacing:-.015em;
   margin:0 0 10px;color:var(--ui-ink)}
 .kicker{color:var(--ui-ink-2);font-size:16px;line-height:1.6;margin:0 0 30px}
-h2{font-size:23px;font-weight:800;line-height:1.3;margin:48px 0 12px;color:var(--ui-ink)}
+h2{font-size:23px;font-weight:900;line-height:1.3;margin:48px 0 12px;color:var(--ui-ink)}
 h3{font-size:18.5px;font-weight:700;line-height:1.35;margin:32px 0 8px;color:var(--ui-ink)}
 p{margin:0 0 18px}
 ul,ol{margin:0 0 22px;padding-inline-start:24px}
@@ -163,7 +163,7 @@ td:first-child{min-width:7.5em}
 .fact{background:linear-gradient(var(--brand),var(--brand)) top/100% 5px no-repeat,var(--surface);border:1px solid var(--ui-line);
   border-radius:10px;padding:15px 14px 12px;line-height:1.35}
 .fact .k{font-size:13.5px;font-weight:500;color:var(--ui-ink-2);display:block;margin-bottom:4px}
-.fact .v{font-size:19px;font-weight:800;color:var(--ui-ink)}
+.fact .v{font-size:19px;font-weight:900;color:var(--ui-ink)}
 .chip{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:700;line-height:1.2;
   color:var(--ui-ink);background:var(--surface);border:1.5px solid var(--ui-ctl);border-radius:22px;
   padding:8px 16px;margin:0 0 8px 8px;text-decoration:none}
@@ -175,22 +175,22 @@ td:first-child{min-width:7.5em}
 .card[style]{background:linear-gradient(var(--c),var(--c)) right/6px 100% no-repeat,var(--surface);padding-right:24px}
 .card:hover{border-color:var(--ui-ink)}
 .card .n{font-size:13.5px;font-weight:500;color:var(--ui-ink-2)}
-.card .t{font-size:18px;font-weight:800;margin-top:2px}
+.card .t{font-size:18px;font-weight:900;margin-top:2px}
 .card .s{font-size:14.5px;color:var(--ui-ink-2);margin-top:4px}
 
 /* ---- שפת הרמזים: אותם ריבועים שטוחים כמו במשחק ---- */
 .swatch{display:inline-block;width:15px;height:15px;border-radius:3px;vertical-align:-2px;
   margin-inline-end:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28)}
 .sw-hit{background:var(--brand)} .sw-miss{background:var(--miss)}
-.sw-near{background:#fff;box-shadow:inset 0 0 0 3px var(--brand),inset 0 0 0 4px rgba(0,0,0,.3)}
+.sw-near{background:var(--near,#8A6A1C)}
 .demo{overflow-x:auto;margin:0 0 14px;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);padding:6px}
 .demo table{border-collapse:separate;border-spacing:6px}
 .demo th{background:none;border:0;padding:2px 6px;text-align:center}
-.demo td{border:0;border-radius:8px;padding:12px 10px;font-size:15px;font-weight:800;text-align:center;white-space:nowrap;
+.demo td{border:0;border-radius:8px;padding:12px 10px;font-size:15px;font-weight:900;text-align:center;white-space:nowrap;
   background:var(--surface-2)}
 .demo td:first-child{text-align:start;background:none;padding-inline:4px}
 .demo .hit{background:var(--brand);color:var(--on-brand)}
-.demo .near{background:#fff;color:#17181C;box-shadow:inset 0 0 0 4px var(--brand),inset 0 0 0 5px rgba(0,0,0,.25)}
+.demo .near{background:var(--near,#8A6A1C);color:#fff}
 .demo .miss{background:var(--miss);color:var(--on-miss)}
 .pager{display:flex;justify-content:space-between;gap:10px;margin:28px 0 0}
 
@@ -256,7 +256,7 @@ export const APP_BANNER_CSS = `
 .appban a.play svg{width:26px;height:28px;flex:none}
 .appban a.play span{display:block;margin:0;color:#fff}
 .appban a.play small{display:block;font-size:10.5px;font-weight:400;direction:rtl;text-align:left}
-.appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:600;letter-spacing:.2px}
+.appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:700;letter-spacing:.2px}
 .appban span.stores{display:flex;margin:0;flex-wrap:wrap;justify-content:center;gap:0 10px}
 `;
 
