@@ -35,7 +35,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="theme-color" content="#0C0C0E">__IOS_META__
+<meta name="theme-color" content="#161C2D">__IOS_META__
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="apple-touch-icon" href="icon-180.png">
@@ -558,6 +558,350 @@ select.rc:focus{border-color:var(--brand)}
    מקורו ב-scripts/lib/content.mjs, ולא כתוב כאן, כדי שהמשחק
    והדפים לא ייפרדו. */
 __APP_BANNER_CSS__
+
+/* ============================================================
+   עולם הצעיף — אוקטובר 2026
+   הלוח הוא צעיף האוהדים של המועדון: כל ניחוש נסרג כפס חדש.
+   הכל כאן דורס את השכבה שמעליו; ה-DOM והמנוע לא השתנו.
+
+   המרקמים (src/static/scarf/) נחתכו מהקומפוזיציה המאושרת והפכו
+   לאפור, ונצבעים כאן ב-multiply מעל צבע המועדון — אותו צעיף צהוב-
+   שחור לבית"ר וירוק-לבן לחיפה, בלי חמישה סטים של תמונות.
+   --second / --on-brand / --near-ui וחבריהם נקבעים ב-applyTheme.
+   ============================================================ */
+:root{
+  --ground:#14151A; --fabric:#D9CDB0; --fabric-ink:#2A251C; --stitch:#B8A780;
+  --miss:#34353A; --on-miss:#F2F2F0; --knit:url(scarf/knit.webp);
+  --second:#0C0C0E; --on-brand:#121214; --on-second:#FFFFFF;
+  --near-ui:#B88F20; --on-near:#121214; --title-ink:#0C0C0E;
+  --second-band:#26272D; --title-band:#2E2F36; --seam:rgba(184,167,128,.55);
+}
+html,body{background-color:var(--ground);overflow-x:clip}
+html{background-image:url(scarf/ground.webp);background-size:200px auto;background-blend-mode:soft-light}
+body{background:transparent}
+::selection{background:var(--brand);color:var(--on-brand)}
+input,textarea{caret-color:var(--brand)}
+html{scrollbar-color:#3A3B42 var(--ground)}
+@media (min-width:640px){
+  body{background:transparent}
+  .wrap{border-inline:0;background:none}
+}
+/* פסי הסרט הישנים — הצעיף בכותרת מחליף אותם */
+.scarf{display:none}
+
+/* ---------- כותרת: הצעיף ---------- */
+header{padding:52px 0 6px}
+h1{position:relative;margin:0 30px;padding:24px 14px 26px;color:var(--title-ink);
+  font-family:'Heebo',system-ui,sans-serif;font-weight:900;font-size:clamp(44px,14vw,72px);
+  line-height:.95;letter-spacing:-.02em;
+  /* שורות הקצה סרוגות בצבע השני — אותו צמר, לא קו מצויר */
+  background:var(--knit) center/auto 100% repeat-x,
+    linear-gradient(var(--second-band),var(--second-band)) top/100% 12px no-repeat,
+    linear-gradient(var(--second-band),var(--second-band)) bottom/100% 12px no-repeat,
+    var(--brand);
+  background-blend-mode:multiply,normal,normal}
+/* האותיות עצמן סרוגות: אותו מרקם, נחתך לצורת הטקסט */
+h1 a{display:block;color:transparent;
+  background:var(--knit) center/auto 1.3em repeat,var(--title-band);background-blend-mode:multiply;
+  -webkit-background-clip:text;background-clip:text}
+/* הגדילים בשני הקצוות: אותו אריג, נצבע בצבע המועדון ובמסכה של עצמו */
+/* הגדילים: נוצרו לכל מועדון בשני צבעיו (tools/scarf-fringe.mjs) */
+h1::before,h1::after{content:"";position:absolute;top:2px;bottom:2px;width:30px;
+  background:no-repeat center top/100% auto;pointer-events:none}
+h1::after{right:-28px}
+h1::before{left:-28px;transform:scaleX(-1)}
+[data-club="beitar"] h1::before,[data-club="beitar"] h1::after,[data-club="beitar"] .mini::before,[data-club="beitar"] .mini::after,.clubs button[data-slug="beitar"]::before,.clubs button[data-slug="beitar"]::after{background-image:url(scarf/fringe-beitar.webp)}
+[data-club="hapoel-bs"] h1::before,[data-club="hapoel-bs"] h1::after,[data-club="hapoel-bs"] .mini::before,[data-club="hapoel-bs"] .mini::after,.clubs button[data-slug="hapoel-bs"]::before,.clubs button[data-slug="hapoel-bs"]::after{background-image:url(scarf/fringe-hapoel-bs.webp)}
+[data-club="maccabi-ta"] h1::before,[data-club="maccabi-ta"] h1::after,[data-club="maccabi-ta"] .mini::before,[data-club="maccabi-ta"] .mini::after,.clubs button[data-slug="maccabi-ta"]::before,.clubs button[data-slug="maccabi-ta"]::after{background-image:url(scarf/fringe-maccabi-ta.webp)}
+[data-club="maccabi-haifa"] h1::before,[data-club="maccabi-haifa"] h1::after,[data-club="maccabi-haifa"] .mini::before,[data-club="maccabi-haifa"] .mini::after,.clubs button[data-slug="maccabi-haifa"]::before,.clubs button[data-slug="maccabi-haifa"]::after{background-image:url(scarf/fringe-maccabi-haifa.webp)}
+[data-club="hapoel-ta"] h1::before,[data-club="hapoel-ta"] h1::after,[data-club="hapoel-ta"] .mini::before,[data-club="hapoel-ta"] .mini::after,.clubs button[data-slug="hapoel-ta"]::before,.clubs button[data-slug="hapoel-ta"]::after{background-image:url(scarf/fringe-hapoel-ta.webp)}
+@media (min-width:640px){
+  header{padding:60px 0 8px}
+  h1{margin:0 40px;font-size:76px;padding:28px 40px 30px}
+  h1::before,h1::after{width:38px}
+  h1::after{right:-36px}
+  h1::before{left:-36px}
+}
+
+/* תווית התפורה: מספר החידה והניסיונות */
+.sub{display:inline-block;margin:16px auto 0;padding:7px 16px 6px;transform:rotate(-1.2deg);
+  background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);
+  font-size:15px;font-weight:700;border-radius:2px;
+  box-shadow:inset 0 0 0 4px var(--fabric),inset 0 0 0 5px var(--stitch),0 2px 6px rgba(0,0,0,.45)}
+.sub b{color:var(--fabric-ink);font-weight:900}
+@media (min-width:640px){.sub{font-size:16px;margin-top:20px}}
+
+#clubBtn{border:0;border-radius:2px;margin-top:12px;padding:8px 14px;
+  background:transparent;color:var(--fabric);font-weight:700;
+  box-shadow:inset 0 0 0 1.5px var(--stitch);text-decoration:none}
+#clubBtn svg{width:15px;height:15px}
+#clubBtn:hover{background:var(--brand);color:var(--on-brand);box-shadow:none}
+
+#helpBtn,#archBtn{top:8px;border-radius:2px;background:var(--fabric) url(scarf/fabric.webp);
+  color:var(--fabric-ink);border:0;box-shadow:inset 0 0 0 3px var(--fabric),inset 0 0 0 4px var(--stitch)}
+#helpBtn:hover,#archBtn:hover{color:var(--fabric-ink);background:var(--brand);box-shadow:none}
+#streak{top:10px;border-radius:2px;background:transparent;border:0;color:var(--fabric);
+  box-shadow:inset 0 0 0 1.5px var(--stitch)}
+#streak b{color:var(--brand)}
+@media (min-width:640px){#helpBtn,#archBtn{top:10px}#streak{top:14px}}
+
+/* לשוניות: שתי תוויות, הפעילה נסרגת בצבע המועדון */
+.nav{background:none;border:0;padding:0;gap:10px;max-width:320px;margin-top:18px}
+.nav button{border-radius:2px;color:var(--fabric);padding:10px 12px;
+  box-shadow:inset 0 0 0 1.5px var(--stitch)}
+.nav button.on{background:var(--brand) var(--knit) center/auto 100%;background-blend-mode:multiply;
+  color:var(--on-brand);box-shadow:none}
+.nav button:not(.on):hover{color:var(--brand)}
+
+/* ---------- שדה הניחוש: תווית בד תפורה ---------- */
+#guess{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);border:0;border-radius:3px;
+  font-weight:700;font-size:18px;padding:16px 18px;
+  box-shadow:inset 0 0 0 6px var(--fabric),inset 0 0 0 7.5px var(--stitch),0 3px 10px rgba(0,0,0,.5)}
+#guess::placeholder{color:#4A4233}
+#guess:focus{box-shadow:inset 0 0 0 6px var(--fabric),inset 0 0 0 7.5px var(--brand),0 3px 10px rgba(0,0,0,.5)}
+#sugg{background:var(--fabric) url(scarf/fabric.webp);border:0;border-radius:3px;
+  box-shadow:0 14px 34px rgba(0,0,0,.65)}
+#sugg button{color:var(--fabric-ink);border-bottom:1px dashed var(--stitch);font-weight:500}
+#sugg button:hover,#sugg button.sel{background:var(--brand);color:var(--on-brand)}
+
+.legend{color:#A9A296}
+.dot{border-radius:2px}
+.dot.o{background:var(--near-ui)} .dot.s{background:var(--miss);border:0}
+
+/* ---------- ניחוש = פס סרוג ---------- */
+#board{gap:0;margin-top:20px}
+.row{background:none;border:0;border-radius:0;padding:0;margin:0 -14px;
+  animation:knitIn .55s steps(9,end) both}
+.row .who{margin:0;padding:14px 16px 12px;font-size:clamp(22px,7vw,30px);font-weight:900;line-height:1.1;
+  color:var(--on-brand);letter-spacing:-.01em;
+  background:var(--brand) var(--knit) repeat-x center/auto 100%;background-blend-mode:multiply}
+/* מספר הניחוש כבר על התווית התפורה — כאן הוא רק רעש */
+.row .who i{display:none}
+.tiles{gap:8px;padding:30px 14px 18px;border-bottom:2px dashed var(--seam);
+  background:var(--second-band) var(--knit) repeat center top/auto 70px;background-blend-mode:multiply}
+/* כשהפס השני בהיר (חיפה, הפועל): המשבצות יושבות על פס כהה, אחרת הלבן בוהק */
+.tile{position:relative;border-radius:5px;background:var(--miss);color:var(--on-miss);min-height:58px;
+  box-shadow:0 2px 6px rgba(0,0,0,.28);justify-content:center}
+.tile .k{position:absolute;top:-23px;inset-inline:0;font-size:12.5px;font-weight:500;opacity:1;
+  color:var(--on-second);text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.tile .v{font-size:clamp(14px,4.2vw,19px);font-weight:900}
+/* החצים מצוירים, במשקל הספרות */
+.ar{display:inline-block;width:.72em;height:.9em;vertical-align:-.1em}
+.ar .arw{display:block;width:100%;height:100%}
+.ar.dn .arw{transform:rotate(180deg)}
+.legend .ar{width:.75em;height:.95em;vertical-align:-.15em}
+.tile.hit{background:var(--brand);color:var(--on-brand)}
+.tile.near{background:var(--near-ui);color:var(--on-near)}
+@media (min-width:640px){
+  .row{margin:0 -30px}
+  .row .who{padding:16px 30px 14px}
+  .tiles{padding:32px 30px 20px;gap:10px}
+  .tile{min-height:66px}
+}
+/* הסריגה: הפס נחשף תפר אחר תפר מימין לשמאל, ואז המשבצות מתהפכות */
+@keyframes knitIn{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.row{animation:none}}
+
+/* ---------- רמז / חבר / אתמול ---------- */
+#hintBtn,#friendBtn{border:0;border-radius:2px;color:var(--fabric);box-shadow:inset 0 0 0 1.5px var(--stitch)}
+#hintBtn:hover,#friendBtn:hover{color:var(--on-brand);background:var(--brand);box-shadow:none}
+#hintOut{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);border:0;border-radius:2px;
+  box-shadow:inset 0 0 0 4px var(--fabric),inset 0 0 0 5px var(--stitch)}
+#yday{background:transparent;border:0;border-radius:2px;box-shadow:inset 0 0 0 1.5px rgba(184,167,128,.5);color:#A9A296}
+#yday button{border-radius:2px;border-color:var(--stitch);color:var(--fabric)}
+
+/* ---------- תוצאה: הצעיף המלא ---------- */
+#result .card{border:0;border-radius:0;margin:0 -14px;padding:0 0 18px;background:var(--second-band) var(--knit) center/auto 90px;
+  background-blend-mode:multiply;color:var(--on-second)}
+#result .card h2{margin:0;padding:18px 16px 16px;font-family:'Heebo',system-ui,sans-serif;font-weight:900;
+  font-size:clamp(30px,9vw,40px);letter-spacing:-.02em;color:var(--on-brand);
+  background:var(--brand) var(--knit) repeat-x center/auto 100%;background-blend-mode:multiply}
+#result .card p{color:var(--on-second);padding:0 16px}
+#result .card p b{color:var(--on-second);opacity:1}
+#result .card > :not(h2){margin-inline:16px}
+#result .card p{margin-inline:0}
+/* התוצאה היא הצעיף הגמור: פס בצבע המועדון לכל ניחוש, משבצות על הפס השני, וגדילים בקצוות */
+.mini{position:relative;background:none;border-radius:0;padding:0;gap:0;margin-top:20px}
+.mini .r{gap:4px;padding:5px 10px 6px;border-top:6px solid var(--brand);
+  background:var(--second-band) var(--knit) center/auto 40px;background-blend-mode:multiply}
+.mini .r:last-child{border-bottom:6px solid var(--brand)}
+.mini i{border-radius:2px}
+.mini i.near{background:var(--near-ui)} .mini i.miss{background:var(--miss)}
+.mini::before,.mini::after{content:"";position:absolute;top:0;bottom:0;width:16px;
+  background:no-repeat center top/100% auto}
+.mini::after{right:-15px}
+.mini::before{left:-15px;transform:scaleX(-1)}
+.stats,#comm,.promo{border-top:1px dashed rgba(184,167,128,.45)}
+.stats .nums div{color:var(--on-second)}
+.stats .nums b{color:var(--on-second)}
+.bars .b{color:var(--on-second)}
+.bars .b span{background:var(--miss);border-radius:2px;color:var(--on-miss)}
+.bars .b.now span{background:var(--brand);color:var(--on-brand)}
+#next{color:var(--on-second)}
+#next b{color:var(--on-second)}
+@media (min-width:640px){#result .card{margin:0 -30px}#result .card h2{padding:20px 30px 18px}#result .card > :not(h2){margin-inline:30px}}
+
+button.act{border-radius:3px;background:var(--brand) var(--knit) center/auto 100%;background-blend-mode:multiply;
+  color:var(--on-brand)}
+button.ghost,button.act.ghost{border:0;border-radius:3px;background:none;color:var(--fabric);box-shadow:inset 0 0 0 1.5px var(--stitch)}
+button.act.wa{background:#1FA855;color:#fff}
+#result .card button.act{width:calc(100% - 32px)}
+@media (min-width:640px){#result .card button.act{width:calc(100% - 60px)}}
+#result .card button.ghost{color:var(--on-second)}
+
+/* ---------- חלוניות ---------- */
+.sheet{background:var(--ground) url(scarf/ground.webp);background-size:200px auto;background-blend-mode:soft-light;
+  border:0;border-top:10px solid var(--brand)}
+.sheet h3{font-family:'Heebo',system-ui,sans-serif;font-weight:900;font-size:26px;letter-spacing:-.01em}
+.ex div{border-radius:4px;background:var(--miss)}
+.ex div.hit{background:var(--brand);color:var(--on-brand)}
+.ex div.near{background:var(--near-ui);color:var(--on-near)}
+@media (min-width:640px){.sheet{border-bottom:0}}
+
+/* ---------- בורר המועדון: כל מועדון הוא צעיף ---------- */
+#picker{overflow-x:hidden;background:var(--ground) url(scarf/ground.webp);background-size:200px auto;background-blend-mode:soft-light}
+#picker h2{font-family:'Heebo',system-ui,sans-serif;font-weight:900;font-size:clamp(34px,10vw,46px);
+  letter-spacing:-.02em;color:#F2F2F0}
+#picker p.lead{color:#A9A296}
+.clubs{gap:14px}
+.clubs button{position:relative;border:0;border-radius:0;padding:18px 18px;margin:0 26px;
+  background:var(--knit) center/auto 100% repeat-x,
+    linear-gradient(var(--c2),var(--c2)) top/100% 9px no-repeat,
+    linear-gradient(var(--c2),var(--c2)) bottom/100% 9px no-repeat,var(--c);
+  background-blend-mode:multiply,normal,normal;
+  box-shadow:0 4px 12px rgba(0,0,0,.45);transition:transform .2s cubic-bezier(.2,.7,.3,1),box-shadow .2s}
+.clubs button::before,.clubs button::after{content:"";position:absolute;top:1px;bottom:1px;width:24px;
+  background:no-repeat center top/100% auto}
+.clubs button::after{right:-23px}
+.clubs button::before{left:-23px;transform:scaleX(-1)}
+.clubs button .swatch{display:none}
+.clubs button .t b{font-family:'Heebo',system-ui,sans-serif;font-weight:900;font-size:26px;line-height:1.1;
+  color:var(--c2);text-shadow:0 1px 0 rgba(255,255,255,.1)}
+.clubs button .t i{color:var(--c2);opacity:.8;font-weight:500}
+/* המועדון שלך: הצעיף מורם מהמתלה */
+.clubs button.cur{transform:translateY(-4px) scale(1.02);box-shadow:0 14px 26px rgba(0,0,0,.6)}
+.clubs button:hover,.clubs button:focus-visible{transform:translateY(-2px)}
+
+/* ---------- קרב חברים ---------- */
+#versusView .card{margin:14px 0 0;border-radius:3px;padding:20px 18px;
+  background:#DDD1B5;color:var(--fabric-ink);
+  box-shadow:inset 0 0 0 6px var(--fabric),inset 0 0 0 7.5px var(--stitch),0 3px 10px rgba(0,0,0,.45)}
+#versusView .card h2{padding:0;background:none;color:var(--fabric-ink);font-size:24px}
+#versusView .card p,#versusView label,#versusView .pickhint{color:#5A5140;opacity:1}
+#versusView .card b{color:var(--fabric-ink)}
+#versusView input,#versusView select{background:#F3ECDC;color:var(--fabric-ink);border:1.5px dashed var(--stitch);border-radius:3px}
+#versusView input:focus,#versusView select:focus{border-style:solid;border-color:var(--fabric-ink)}
+#versusView button{border-radius:3px;background:var(--brand) var(--knit) center/auto 100%;
+  background-blend-mode:multiply;color:var(--on-brand)}
+#versusView button.ghost{background:none;color:var(--fabric-ink);border:1.5px dashed var(--stitch)}
+#versusView .clubpick button{background:#F3ECDC;border:1.5px dashed var(--stitch);color:#5A5140;border-radius:3px}
+#versusView .clubpick button.on{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+#versusView .pad button{background:#F3ECDC;color:var(--fabric-ink);border:1px dashed var(--stitch)}
+#versusView .pad button.ok{background:var(--brand);color:var(--on-brand)}
+#versusView .qtext{background:#F3ECDC;color:var(--fabric-ink);border:1.5px dashed var(--stitch)}
+#versusView .vtop button{width:auto;margin:0;padding:8px 16px;border-radius:2px;border:0;background:none;color:var(--fabric);
+  font-size:13px;font-weight:700;box-shadow:inset 0 0 0 1.5px var(--stitch)}
+#versusView .vtop button:hover{background:var(--brand);color:var(--on-brand);box-shadow:none}
+.roomcode{font-family:'Heebo',system-ui,sans-serif;font-weight:900;color:var(--fabric-ink)}
+.plist div,.board div{background:#F3ECDC;color:var(--fabric-ink);border:1.5px dashed var(--stitch);border-radius:3px}
+.plist div.me,.board div.me{border-style:solid;border-color:var(--fabric-ink)}
+.plist div i{color:#5A5140}
+.board .rk{font-family:'Heebo',system-ui,sans-serif;font-weight:900;color:#5A5140}
+.board div:first-child .rk,.board .sc{color:var(--fabric-ink)}
+.clue{background:#F3ECDC;color:var(--fabric-ink);border-radius:3px}
+.clue span{color:#5A5140}
+.clue.on.fresh{background:var(--brand);color:var(--on-brand)}
+.clue.on.fresh span{color:var(--on-brand);opacity:.75}
+.bar{background:rgba(42,37,28,.18)}
+.meta{color:#5A5140}
+.meta b{color:var(--fabric-ink)}
+.orsep{color:#8A8170}
+.orsep::before,.orsep::after{background:var(--stitch)}
+.rev b{font-family:'Heebo',system-ui,sans-serif;font-weight:900}
+
+/* פוטר וניווט — טקסט בהיר על הקרקע הסרוגה */
+footer,.sitenav{border-top:1px dashed rgba(184,167,128,.35)}
+.sitenav a{color:#A9A296}
+.sitenav a:hover{color:var(--brand)}
+.credit,.credit b{color:#A9A296}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+
+/* ---------- קרקע כחול-לילה, טקסט שמנת ותוויות בד (סוכן UI/UX, אוקטובר 2026) ----------
+   הקרקע הכמעט-שחורה בלעה את הפסים השחורים של ביתר וב"ש (ניגודיות 1.0–1.15), והטקסט
+   המשני האפור נכשל בפוטר (2.47:1). כחול-לילה קר מפריד את הצמר השחור ומנגד את הבז' החם,
+   כמו בקומפוזיציה. כל פקד-מסגרת הופך לתווית פשתן עם תפר שמנת מקווקו. */
+:root{--ground:#161C2D;--text-2:#E4DAC3;--text-3:#B8AF9A;--thread:rgba(255,248,230,.8)}
+html,.sheet,#picker{background-size:260px auto}
+html{scrollbar-color:#2C3550 var(--ground)}
+.sub,#helpBtn,#archBtn,#clubBtn,.nav button:not(.on),#hintBtn,#friendBtn,#streak,
+button.ghost,button.act.ghost,#versusView .vtop button,#yday,.appban{
+  background:var(--fabric) url(scarf/fabric.webp);background-blend-mode:normal;color:var(--fabric-ink);
+  border:0;border-radius:2px;box-shadow:0 2px 6px rgba(0,0,0,.45);
+  outline:1.5px dashed var(--thread);outline-offset:-5px}
+#clubBtn,.nav button:not(.on),#hintBtn,#friendBtn,#versusView .vtop button{font-weight:700}
+#guess{box-shadow:0 3px 10px rgba(0,0,0,.5);outline:1.5px dashed var(--thread);outline-offset:-7px}
+#guess:focus{outline:2px solid var(--fabric-ink);outline-offset:-7px}
+.nav button:not(.on):hover,#helpBtn:hover,#archBtn:hover{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);outline-style:solid}
+#clubBtn:hover,#hintBtn:hover,#friendBtn:hover,#versusView .vtop button:hover,button.ghost:hover{
+  background:var(--brand) var(--knit) center/auto 100%;background-blend-mode:multiply;color:var(--on-brand);outline-color:transparent}
+#streak b,#result .card button.ghost{color:var(--fabric-ink)}
+#yday{color:var(--fabric-ink);padding:12px 16px}
+#yday b{color:var(--fabric-ink)}
+#yday button{border:0;border-radius:2px;background:var(--fabric-ink);color:var(--fabric);font-weight:700}
+.dot{box-shadow:0 0 0 1.5px rgba(255,248,230,.75)}
+.appban b,.appban span{color:var(--fabric-ink)}
+.appban a.play span{color:#fff}
+.legend{color:var(--text-2);font-size:12.5px;font-weight:500}
+#picker p.lead,.sitenav a{color:var(--text-2)}
+footer,footer .who a,.credit,.credit b,#picker .foot,#picker .foot a,.sitenav span{color:var(--text-3)}
+footer,.sitenav{border-top-color:rgba(217,205,176,.3)}
+:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#clubBtn:focus-visible,
+.nav button:focus-visible,#hintBtn:focus-visible,#friendBtn:focus-visible,button.ghost:focus-visible,
+#versusView .vtop button:focus-visible{outline:2px solid #FFF8E6;outline-offset:3px}
+
+/* שם ארוך (באר־שבעdle) נשבר לשתי שורות בטלפון — הצעיף נשאר שורה אחת */
+h1 a{white-space:nowrap}
+[data-club="hapoel-bs"] h1{font-size:clamp(34px,11vw,64px)}
+
+/* ---------- תיקוני QA ---------- */
+/* דיווח וחסימה (App Store 1.2): ה-CSS של versus.js נכתב לרקע כהה וחזק ב-!important */
+#versusView .mods button{color:var(--fabric-ink)!important;background:#F3ECDC!important;
+  border:1.5px solid var(--fabric-ink)!important;border-radius:2px!important;font-weight:700!important}
+#versusView .mods button:hover{background:var(--fabric-ink)!important;color:#F3ECDC!important}
+/* תנאי השימוש גלויים על הבד, לא צהוב על שמנת */
+#versusView .vterms-note{opacity:1;color:#4A4233}
+#versusView .vterms-note a{color:var(--fabric-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+/* חלונות האישור של הקרב — תווית בד, באותה שפה */
+body .vmodal-box{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);border:0;border-radius:3px;
+  outline:1.5px dashed var(--fabric-ink);outline-offset:-8px;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+body .vmodal-box a{color:var(--fabric-ink);font-weight:700;text-decoration:underline}
+body .vmodal-btns button{border-radius:3px;border:1.5px solid var(--fabric-ink);color:var(--fabric-ink)}
+body .vmodal-btns button.pri{background:var(--brand) var(--knit) center/auto 100%;background-blend-mode:multiply;
+  color:var(--on-brand);border-color:transparent}
+/* ספרות ההתפלגות על הפס השני */
+.bars .b i{color:var(--on-second)}
+.promo{color:var(--on-second)}
+.promo a{color:var(--on-second);text-decoration:underline}
+/* בורר: הצעיף לא חורג — רוחב אוטומטי בתוך העמודה, הגדילים בפנים */
+.clubs button{width:auto}
+.clubs button .t i{opacity:1}
+/* לאום ארוך (טרינידד וטובגו): הערך נשבר בתוך המשבצת במקום לדחוף את השורה */
+.tiles{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tile .v{white-space:normal;overflow-wrap:anywhere;line-height:1.08;text-wrap:balance}
+@media (max-width:360px){.tile .v{font-size:13px}.tile .k{font-size:11px}.tiles{gap:5px;padding-inline:10px}}
+/* הקרב: שדות ותוויות קריאים על הבד */
+#versusView input::placeholder{color:#6A604C}
+#versusView .orsep{color:#5A5140}
+#versusView .answerbox{background:none}
+#versusView .card :focus-visible{outline-color:var(--fabric-ink)}
+/* כותרות החלוניות: שמנת עם פס בצבע המועדון (כחול מכבי על כחול-לילה לא נקרא) */
+.sheet h3{color:#F2EBDD;display:inline-block;padding-bottom:5px;border-bottom:5px solid var(--brand)}
+/* מרווח בין הלשוניות לשדה */
+.nav{margin-bottom:16px}
+/* ישן אבל נמצא עכשיו: וואטסאפ 3.1:1, קישורי דיווח וארכיון */
+button.wa,button.act.wa{background:#168A45}
+#report a{color:var(--text-3);border-bottom-color:var(--text-3)}
+.arch button i{color:var(--text-3)}
 </style>
 </head>
 <body>
@@ -571,7 +915,7 @@ __APP_BANNER_CSS__
     <button id="archBtn" aria-label="ארכיון חידות" title="ארכיון"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4.5 7h15M4.5 12h15M4.5 17h15"/></svg></button>
     <h1><a href="./" id="gameName" aria-label="ספורטדל">ספורטדל</a></h1>
     <p class="sub">חידה <b id="pnum">#1</b> · <b id="left">8</b> ניסיונות נותרו</p>
-    <button id="clubBtn" type="button"><i>⇄</i>החלפת מועדון</button>
+    <button id="clubBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg>החלפת מועדון</button>
   </header>
 
   <nav class="nav">
@@ -591,7 +935,7 @@ __APP_BANNER_CSS__
     <span><i class="dot y"></i> מדויק</span>
     <span><i class="dot o"></i> קרוב</span>
     <span><i class="dot s"></i> רחוק</span>
-    <span>↑ מאוחר/גבוה יותר · ↓ מוקדם/נמוך יותר</span>
+    <span><span class="ar"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> מאוחר/גבוה יותר · <span class="ar dn"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> מוקדם/נמוך יותר</span>
   </div>
 
   <div id="yday">
@@ -820,7 +1164,7 @@ __APP_BANNER_CSS__
 
 <div class="modal" id="help">
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים">
-    <button class="x" id="closeHelp" aria-label="סגירה">✕</button>
+    <button class="x" id="closeHelp" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>איך משחקים</h3>
     <p>יש שחקן <span class="clubShort">—</span> אחד מסתורי, ויש לכם <b>8 ניסיונות</b> לגלות אותו.
        כל שם שתקלידו מחזיר חמישה רמזים — <b>עמדה, לאום, עונה ראשונה, תארים ושנת לידה</b> —
@@ -854,8 +1198,8 @@ __APP_BANNER_CSS__
     <div class="ex">
       <div><span class="k">עמדה</span><span class="v">התקפה</span></div>
       <div class="hit"><span class="k">לאום</span><span class="v">ישראל</span></div>
-      <div><span class="k">עונה 1</span><span class="v">03/04 ↓</span></div>
-      <div class="near"><span class="k">תארים</span><span class="v">4 ↓</span></div>
+      <div><span class="k">עונה 1</span><span class="v">03/04 <span class="ar dn"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></div>
+      <div class="near"><span class="k">תארים</span><span class="v">4 <span class="ar dn"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></div>
     </div>
     <p>העמדה שגויה, הלאום נכון, השחקן המבוקש הגיע מוקדם יותר ויש לו פחות תארים.
        מכאן מצמצמים.</p>
@@ -885,7 +1229,7 @@ __APP_BANNER_CSS__
 
 <div class="modal" id="fix">
   <div class="sheet" role="dialog" aria-modal="true" aria-label="תיקון פרטי שחקן">
-    <button class="x" id="closeFix" aria-label="סגירה">✕</button>
+    <button class="x" id="closeFix" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>טעות בפרטי השחקן?</h3>
     <p>אפשר לתקן את <b>איות השם</b> או את <b>העמדה</b> של השחקן שהרגע שיחקתם.
        כל דבר אחר — <a href="#" id="fixToRep" style="color:var(--brand)">כתבו לי</a> ואני מטפל ידנית.</p>
@@ -918,7 +1262,7 @@ __APP_BANNER_CSS__
 
 <div class="modal" id="rep">
   <div class="sheet" role="dialog" aria-modal="true" aria-label="דיווח על טעות">
-    <button class="x" id="closeRep" aria-label="סגירה">✕</button>
+    <button class="x" id="closeRep" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>פידבק ובאגים</h3>
     <p>משהו נראה שבור, חסר שחקן, יש רעיון? כתבו כאן והמייל מגיע ישר אליי.
        לתיקון של שם או עמדה יש
@@ -938,7 +1282,7 @@ __APP_BANNER_CSS__
 
 <div class="modal" id="arch">
   <div class="sheet" role="dialog" aria-modal="true" aria-label="ארכיון חידות">
-    <button class="x" id="closeArch" aria-label="סגירה">✕</button>
+    <button class="x" id="closeArch" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>ארכיון החידות</h3>
     <p>כל החידות שהיו עד היום. אפשר לשחק כל אחת מהן — התוצאה נשמרת בנפרד,
        אבל רק החידה של היום נספרת ברצף ובסטטיסטיקה.</p>
@@ -948,7 +1292,7 @@ __APP_BANNER_CSS__
 
 <div class="modal" id="vHelp">
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים קרב">
-    <button class="x" id="vHelpClose" aria-label="סגירה">✕</button>
+    <button class="x" id="vHelpClose" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>קרב חברים</h3>
     <p>אחד פותח חדר ומקבל קוד בן ארבע אותיות. כולם מזינים אותו ונכנסים.
        צריך לפחות שני שחקנים כדי להתחיל.</p>

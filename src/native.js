@@ -49,7 +49,7 @@
          באנדרואיד 15+ זה no-op: שם Capacitor מטפל בשוליים בעצמו.
          רק באנדרואיד — ב-iOS ה-WebView מתחת לשורה ו-env() מדויק. */
       await P.StatusBar.setOverlaysWebView({ overlay: false }).catch(() => {});
-      await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+      await P.StatusBar.setBackgroundColor({ color: "#161C2D" });   // קרקע הצעיף
     }
   });
 
@@ -175,7 +175,7 @@
       if (!/^https?:$/.test(u.protocol) || u.origin === location.origin || OUTSIDE.test(u.hostname)) return;
       ev.preventDefault();
       ev.stopImmediatePropagation();
-      P.Browser.open({ url: u.href, toolbarColor: "#0C0C0E" }).catch(() => { location.href = u.href; });
+      P.Browser.open({ url: u.href, toolbarColor: "#161C2D" }).catch(() => { location.href = u.href; });
     }, true);
   });
 

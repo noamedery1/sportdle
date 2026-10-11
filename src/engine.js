@@ -196,7 +196,7 @@ function render(g, instant){
     cells.map((c,i)=>
       `<div class="tile ${c.s}" style="${instant?"animation:none;opacity:1;transform:none":`animation-delay:${i*90}ms`}">
          <span class="k">${c.k}</span>
-         <span class="v">${c.v}${c.ar?` <span class="ar">${c.ar}</span>`:""}</span>
+         <span class="v">${c.v}${c.ar?` <span class="ar${c.ar==="↓"?" dn":""}" role="img" aria-label="${c.ar==="↑"?"גבוה או מאוחר יותר":"נמוך או מוקדם יותר"}"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:""}</span>
        </div>`).join("") + `</div>`;
   board.appendChild(row);
   $("#left").textContent = MAX - guesses.length;
@@ -1209,7 +1209,7 @@ $("#reportLink").addEventListener("click", e => { e.preventDefault(); openRep();
 $("#closeHelp").addEventListener("click", closeHelp);
 help.addEventListener("click", e => { if (e.target === help) closeHelp(); });
 $("#repFromHelp").addEventListener("click", e => { e.preventDefault(); openRep(); });
-addEventListener("keydown", e => { if (e.key === "Escape"){ closeHelp(); closeRep(); closeFix(); closeArch(); } });
+addEventListener("keydown", e => { if (e.key === "Escape"){ closeHelp(); closeRep(); closeFix(); closeArch(); if (club) closePicker(); } });
 
 /* ============================================================
    6. בורר המועדון
@@ -1237,13 +1237,36 @@ $("#clubBtn").addEventListener("click", openPicker);
 /* צבע המותג מוחלף בשורש. hex → rgb כדי שהשקיפויות יעבדו גם הן. */
 function applyTheme(c){
   const r = document.documentElement.style;
+  document.documentElement.dataset.club = c.slug || "";
   r.setProperty("--brand", c.colors.brand);
   r.setProperty("--near",  c.colors.near);
   r.setProperty("--ink",   c.colors.ink);
   const m = c.colors.brand.replace("#","").match(/.{2}/g).map(h => parseInt(h,16));
   r.setProperty("--brand-rgb", m.join(","));
+  /* עולם הצעיף: הפס השני של הצעיף, וצבע טקסט שקריא על כל אחד מהם.
+     לפי ניגודיות ולא לפי מועדון — כך מועדון שישתנה צבעו לא ישבור כלום. */
+  const rgb = h => h.replace("#","").match(/.{2}/g).map(x => parseInt(x,16));
+  const lum = h => { const [R,G,B] = rgb(h).map(v => { v /= 255; return v <= .03928 ? v/12.92 : ((v+.055)/1.055)**2.4; });
+                     return .2126*R + .7152*G + .0722*B; };
+  /* השחור או הלבן שנותן ניגודיות גבוהה יותר — סף בהירות קבוע בחר לבן על חרדל (3:1) */
+  const on = h => (lum(h) + .05) / (lum("#121214") + .05) >= 1.05 / (lum(h) + .05) ? "#121214" : "#FFFFFF";
+  const mix = (h, k) => "#" + rgb(h).map(v => Math.round(v*k).toString(16).padStart(2,"0")).join("");
+  const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + .05) / (y + .05); };
+  const second = c.colors.second || c.colors.ink, nearUi = mix(c.colors.brand, .72);
+  r.setProperty("--second", second);
+  r.setProperty("--second-band", lum(second) < lum("#26272D") ? "#26272D" : second);
+  r.setProperty("--on-brand", on(c.colors.brand));
+  r.setProperty("--on-second", on(second));
+  r.setProperty("--near-ui", nearUi);
+  r.setProperty("--on-near", on(nearUi));
+  /* שם המשחק נסרג בצבע הפס השני כשהוא קריא על הצבע הראשי (ביתר: שחור על
+     צהוב, מכבי: צהוב על כחול), ואחרת בצבע הניגודי */
+  const titleInk = contrast(c.colors.brand, second) >= 3 ? second : on(c.colors.brand);
+  r.setProperty("--title-ink", titleInk);
+  /* האותיות נסרגות: צמר שחור לגמרי לא מראה תפרים, אז הוא מורם לשחור-צמר */
+  r.setProperty("--title-band", lum(titleInk) < lum("#2E2F36") ? "#2E2F36" : titleInk);
   const tc = document.querySelector('meta[name="theme-color"]');
-  if (tc) tc.setAttribute("content", c.colors.ink);
+  if (tc) tc.setAttribute("content", "#161C2D");   // קרקע הצעיף (כחול-לילה), לא ink
 }
 
 function chooseClub(slug){
