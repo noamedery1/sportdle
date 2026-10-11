@@ -39,7 +39,7 @@
   /* ---------- 1. שורת מצב ומסך פתיחה ---------- */
   safe(async () => {
     if (!P.StatusBar) return;
-    await P.StatusBar.setStyle({ style: "DARK" });
+    await P.StatusBar.setStyle({ style: "LIGHT" });   // טקסט כהה: הקרקע בהירה
     if (platform === "android") {
       /* **האפליקציה מתחת לשורת הסטטוס, לא תחתיה.** ברירת המחדל של
          @capacitor/status-bar היא overlaysWebView=true — ה-WebView
@@ -49,7 +49,7 @@
          באנדרואיד 15+ זה no-op: שם Capacitor מטפל בשוליים בעצמו.
          רק באנדרואיד — ב-iOS ה-WebView מתחת לשורה ו-env() מדויק. */
       await P.StatusBar.setOverlaysWebView({ overlay: false }).catch(() => {});
-      await P.StatusBar.setBackgroundColor({ color: "#0C0C0E" });
+      await P.StatusBar.setBackgroundColor({ color: "#ECEAE5" });   // קרקע הצעיף
     }
   });
 
@@ -175,7 +175,7 @@
       if (!/^https?:$/.test(u.protocol) || u.origin === location.origin || OUTSIDE.test(u.hostname)) return;
       ev.preventDefault();
       ev.stopImmediatePropagation();
-      P.Browser.open({ url: u.href, toolbarColor: "#0C0C0E" }).catch(() => { location.href = u.href; });
+      P.Browser.open({ url: u.href, toolbarColor: "#ECEAE5" }).catch(() => { location.href = u.href; });
     }, true);
   });
 

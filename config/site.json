@@ -63,13 +63,15 @@
     "",
     "**שני צדדים חייבים להסכים**, כמו באנדרואיד: הקובץ כאן, והרשאת",
     "Associated Domains באפליקציה (applinks:sportdle.techbynoam.com).",
-    "ההרשאה עוד לא באפליקציה בכוונה — ראה store/ios/CHECKLIST.md,",
-    "שלב 'אחרי האישור הראשון'."
+    "ההרשאה: ios/App/App/App.entitlements, והיכולת על ה-App ID נוספת",
+    "ב-tools/ios-signing.mjs. כל נתיב מופיע גם בלי לוכסן — הקישור הקצר",
+    "בשיתוף הוא /beitar, ו-'/beitar/*' לא תופס אותו."
   ],
   "iosAppLinks": {
-    "teamId": "",
+    "teamId": "T4LAH8P2HN",
     "bundleId": "sportdle.techbynoam.com",
-    "paths": ["/join/*", "/beitar/*", "/hapoel-bs/*", "/hapoel-ta/*", "/maccabi-haifa/*", "/maccabi-ta/*"]
+    "paths": ["/join", "/join/*", "/beitar", "/beitar/*", "/hapoel-bs", "/hapoel-bs/*",
+              "/hapoel-ta", "/hapoel-ta/*", "/maccabi-haifa", "/maccabi-haifa/*", "/maccabi-ta", "/maccabi-ta/*"]
   },
   "siteUrl": "https://sportdle.techbynoam.com",
   "start": [

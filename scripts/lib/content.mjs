@@ -66,94 +66,165 @@ const esc = s => String(s)
   .replace(/"/g, "&quot;");
 
 /* ---------- העיצוב ----------
-   אותם טוקנים ואותם גופנים כמו המשחק. לא ייבאתי את ה-CSS של
-   המשחק: הוא כתוב סביב הרשת, האריחים והמודאלים, ורובו לא נוגע
-   לדף טקסט. שכפול שני עיצובים היה מזמין דריפט, ולכן מה שכאן הוא
-   תת-קבוצה מכוונת — אותם משתנים בדיוק, מהמקור אחד. */
+   אותה שפה כמו המשחק אחרי סבב ה-UI/UX השני (src/template.html,
+   הבלוק "חלק ובהיר"): קרקע אבן בהירה, משטחים לבנים חלקים, דיו
+   מלא, כפתורים מוצקים. אותם טוקנים בדיוק — --ui-ink, --ui-ink-2,
+   --ui-line, --ui-ctl — ובלי קווקוו, בלי בד ובלי קרקע כהה.
+
+   הצעיף נשאר רק בלוגו שבראש הדף: פס סרוג ב---brand עם שורות קצה
+   ב---second-band וגדילים בשני הקצוות. האותיות בדיו מלא.
+   דף בלי מועדון לובש את צהוב-שחור של SportDle (ברירת המחדל של
+   העמוד הראשי). דף של מועדון מקבל את צבעיו מ-themeStyle() על
+   <html>, ואת הגדילים שלו דרך __FRINGE__.
+
+   __U__ מוחלף ב-up(depth) ב-shell(): הדפים יושבים בעומק 1–3,
+   וכתובת יחסית ב-<style> נפתרת מול הדף. */
 const CSS = `
 :root{
-  --ink:#0C0C0E; --ink-2:#141418; --ink-3:#1C1C22; --line:#2E2E36;
-  --brand:#FFC72C; --near:#8A6A1C; --slate:#24242A;
-  --text:#F2F2F0; --dim:#8C8C94; --r:10px;
+  --ground:#ECEAE5; --surface:#FFFFFF; --surface-2:#F5F4F1;
+  --ui-ink:#17181C; --ui-ink-2:#454850; --ui-line:#D4D0C8; --ui-ctl:#77736B;
+  --miss:#454750; --on-miss:#FFFFFF; --knit-mute:.68; --r-ctl:12px;
+  --brand:#FFC72C; --brand-rgb:255,199,44; --on-brand:#121214;
+  --second-band:#26272D; --title-ink:#0C0C0E;
+  --knit:url(__U__scarf/knit.webp);
+  /* הטוקנים הישנים שבאנר האפליקציה קורא — אותו מיפוי כמו במשחק */
+  --text:#17181C; --dim:#454850; --line:#D4D0C8; --ink-2:#FFFFFF;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{background:var(--ink);-webkit-text-size-adjust:100%}
-html,body{margin:0;padding:0}
-body{background:var(--ink);color:var(--text);font-family:'Heebo',system-ui,sans-serif;
-  font-size:16px;line-height:1.7;min-height:100dvh;display:flex;flex-direction:column;
+html{-webkit-text-size-adjust:100%;scrollbar-color:#B9B5AD var(--ground)}
+html,body{margin:0;padding:0;background:var(--ground)}
+body{color:var(--ui-ink);font-family:'Heebo',system-ui,sans-serif;
+  font-size:17px;line-height:1.75;min-height:100dvh;display:flex;flex-direction:column;overflow-wrap:break-word;
   padding-top:var(--safe-area-inset-top,env(safe-area-inset-top));padding-bottom:var(--safe-area-inset-bottom,env(safe-area-inset-bottom))}
-.wrap{max-width:640px;width:100%;margin:0 auto;padding:0 16px 40px;flex:1}
-@media (min-width:640px){
-  body{background:radial-gradient(900px 520px at 50% -8%, #1A1A21 0%, rgba(12,12,14,0) 68%), var(--ink)}
-  .wrap{max-width:680px;padding:0 30px 56px;
-        border-inline:1px solid rgba(46,46,54,.7)}
-}
-.top{display:flex;align-items:center;justify-content:space-between;gap:12px;
-  padding:16px 0 14px;border-bottom:1px solid rgba(46,46,54,.55);margin-bottom:22px}
-.logo{font-family:'Suez One',Georgia,serif;font-size:22px;color:var(--brand);
-  text-decoration:none;letter-spacing:-.5px}
-.logo span{color:var(--text)}
-.toplink{font-size:13px;color:var(--dim);text-decoration:none;border:1px solid var(--line);
-  border-radius:999px;padding:6px 14px;white-space:nowrap}
-.toplink:hover{color:var(--brand);border-color:var(--brand)}
-.crumb{font-size:12.5px;color:#6A6A72;margin:0 0 14px}
-.crumb a{color:#8C8C94;text-decoration:none}
-.crumb a:hover{color:var(--brand)}
-h1{font-family:'Suez One',Georgia,serif;font-size:clamp(27px,7.5vw,36px);line-height:1.15;
-  margin:0 0 6px;color:var(--text)}
-.kicker{color:var(--dim);font-size:14.5px;margin:0 0 26px}
-h2{font-size:20px;font-weight:900;margin:32px 0 10px;color:var(--text)}
-h3{font-size:16.5px;font-weight:700;margin:22px 0 6px;color:var(--brand)}
-p{margin:0 0 14px;color:#DCDCD8}
-a{color:var(--brand)}
-ul,ol{margin:0 0 16px;padding-inline-start:22px;color:#DCDCD8}
-li{margin-bottom:7px}
-strong,b{color:var(--text);font-weight:700}
-.note{background:var(--ink-3);border:1px solid var(--line);border-inline-start:3px solid var(--brand);
-  border-radius:var(--r);padding:13px 15px;margin:0 0 22px;font-size:14.5px;color:#C9C9D1}
-.note b{color:var(--brand)}
-table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px;display:block;
-  overflow-x:auto;white-space:nowrap}
-th,td{text-align:start;padding:9px 10px;border-bottom:1px solid rgba(46,46,54,.7)}
-th{color:var(--dim);font-weight:500;font-size:13px}
-td{color:#DCDCD8}
-td b{color:var(--text)}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 22px}
-.fact{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px}
-.fact .k{font-size:11.5px;color:var(--dim);display:block;margin-bottom:2px}
-.fact .v{font-size:17px;font-weight:700;color:var(--text)}
-.chip{display:inline-block;font-size:12.5px;color:#C9C9D1;background:var(--ink-3);
-  border:1px solid var(--line);border-radius:999px;padding:5px 12px;margin:0 0 6px 6px;
-  text-decoration:none}
-.chip:hover{border-color:var(--brand);color:var(--brand)}
-.cards{display:grid;gap:10px;margin:0 0 24px}
-.card{display:block;background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r);
-  padding:13px 15px;text-decoration:none}
-.card:hover{border-color:var(--brand)}
-.card .n{font-size:12px;color:var(--dim)}
-.card .t{font-size:16.5px;font-weight:700;color:var(--text);margin-top:1px}
-.card .s{font-size:13px;color:var(--dim);margin-top:3px}
-.swatch{display:inline-block;width:13px;height:13px;border-radius:3px;vertical-align:-2px;
-  margin-inline-end:7px;border:1px solid rgba(255,255,255,.14)}
-.sw-hit{background:var(--brand)} .sw-near{background:var(--near)} .sw-miss{background:var(--slate)}
-.demo{border:1px solid var(--line);border-radius:var(--r);overflow-x:auto;margin:0 0 8px}
-.demo table{margin:0;border:0}
-.demo th{background:var(--ink-3)}
-.demo td{font-size:13.5px}
-.demo .hit{background:rgba(255,199,44,.15);color:var(--brand);font-weight:700}
-.demo .near{background:rgba(138,106,28,.22);color:#D9BE7A}
-.demo .miss{color:#9A9AA2}
-.pager{display:flex;justify-content:space-between;gap:10px;margin:24px 0 0;font-size:14px}
-.pager a{text-decoration:none}
-footer{border-top:1px solid rgba(46,46,54,.55);margin-top:34px;padding:16px 0 0;
-  font-size:12px;color:#55555E;line-height:1.9}
-.sitenav{display:flex;flex-wrap:wrap;gap:0 6px;margin-bottom:10px}
-.sitenav a{color:#8C8C94;text-decoration:none;font-size:12.5px}
-.sitenav a:hover{color:var(--brand)}
-.sitenav span{color:#3A3A42}
-footer .who a{color:#55555E;text-decoration:none}
-footer .who a:hover{color:var(--dim)}
+::selection{background:var(--ui-ink);color:#fff}
+.wrap{max-width:700px;width:100%;margin:0 auto;padding:0 16px 48px;flex:1}
+/* 18px על 592px של טקסט: כ-70 תווים בשורה */
+@media (min-width:640px){body{font-size:18px}.wrap{max-width:640px;padding:0 24px 64px}}
+
+/* ---- ראש הדף: הלוגו כצעיף, וכפתור משני לחידה ---- */
+.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px 12px;
+  padding:22px 0 20px;margin-bottom:26px;border-bottom:1px solid var(--ui-line)}
+.logo{position:relative;display:block;margin:0 22px;padding:13px 16px 14px;
+  font-weight:900;font-size:26px;line-height:1;letter-spacing:-.02em;color:var(--title-ink);text-decoration:none;
+  background:
+    linear-gradient(var(--second-band),var(--second-band)) top/100% 6px no-repeat,
+    linear-gradient(var(--second-band),var(--second-band)) bottom/100% 6px no-repeat,
+    linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
+    var(--knit) center/auto 100% repeat-x,
+    var(--brand);
+  background-blend-mode:normal,normal,normal,multiply}
+.logo span{color:inherit}
+.logo::before,.logo::after{content:"";position:absolute;top:1px;bottom:1px;width:22px;pointer-events:none;
+  background:url(__U__scarf/fringe-__FRINGE__.webp) no-repeat center top/100% auto}
+.logo::after{right:-21px}
+.logo::before{left:-21px;transform:scaleX(-1)}
+.toplink,.pager a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;
+  background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
+  box-shadow:0 1px 2px rgba(23,24,28,.08);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none;white-space:nowrap}
+.toplink:hover,.pager a:hover{background:#F1EFEA;border-color:var(--ui-ink);box-shadow:none}
+@media (max-width:359px){.top{gap:14px 8px}.logo{font-size:20px;padding:11px 10px 12px;margin:0 18px}
+  .logo::before,.logo::after{width:18px}.logo::after{right:-17px}.logo::before{left:-17px}
+  .toplink{font-size:13.5px;padding:8px 10px}}
+@media (min-width:640px){.logo{font-size:30px;padding:15px 20px 16px;margin:0 26px}
+  .logo::before,.logo::after{width:26px}.logo::after{right:-25px}.logo::before{left:-25px}}
+
+/* ---- טקסט ---- */
+.crumb{font-size:14px;line-height:1.6;color:var(--ui-ink-2);margin:0 0 14px}
+.crumb a{color:var(--ui-ink-2)}
+h1{font-weight:900;font-size:clamp(30px,8.4vw,44px);line-height:1.12;letter-spacing:-.015em;
+  margin:0 0 10px;color:var(--ui-ink)}
+.kicker{color:var(--ui-ink-2);font-size:16px;line-height:1.6;margin:0 0 30px}
+h2{font-size:23px;font-weight:900;line-height:1.3;margin:48px 0 12px;color:var(--ui-ink)}
+h3{font-size:18.5px;font-weight:700;line-height:1.35;margin:32px 0 8px;color:var(--ui-ink)}
+p{margin:0 0 18px}
+ul,ol{margin:0 0 22px;padding-inline-start:24px}
+li{margin-bottom:10px;padding-inline-start:4px}
+li::marker{color:var(--ui-ink-2);font-weight:700}
+strong,b{font-weight:700}
+a{color:var(--ui-ink);text-decoration:underline;text-decoration-color:var(--ui-ctl);
+  text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ui-ink);text-decoration-thickness:2px}
+:focus-visible{outline:2.5px solid var(--ui-ink);outline-offset:3px;border-radius:4px}
+
+/* ---- משטחים ---- */
+.note{background:linear-gradient(var(--brand),var(--brand)) right/5px 100% no-repeat,var(--surface);border:1px solid var(--ui-line);
+  border-radius:var(--r-ctl);padding:14px 23px 14px 18px;margin:0 0 26px;font-size:16px;line-height:1.7;color:var(--ui-ink-2)}
+.note b{color:var(--ui-ink)}
+.tbl{overflow-x:auto;margin:0 0 24px;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl)}
+table{width:100%;border-collapse:collapse;font-size:15.5px;line-height:1.5}
+th,td{text-align:start;padding:11px 14px;border-bottom:1px solid #E6E3DD;vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{color:var(--ui-ink-2);font-weight:700;font-size:14px;background:var(--surface-2);white-space:nowrap}
+tr:nth-child(2n+3) td{background:#FAF9F7}
+td:first-child{min-width:7.5em}
+.nw{white-space:nowrap}
+@media (max-width:479px){table{font-size:15px}th,td{padding:10px 10px}}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 30px}
+.fact{background:linear-gradient(var(--brand),var(--brand)) top/100% 5px no-repeat,var(--surface);border:1px solid var(--ui-line);
+  border-radius:10px;padding:15px 14px 12px;line-height:1.35}
+.fact .k{font-size:13.5px;font-weight:500;color:var(--ui-ink-2);display:block;margin-bottom:4px}
+.fact .v{font-size:19px;font-weight:900;color:var(--ui-ink)}
+.chip{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:700;line-height:1.2;
+  color:var(--ui-ink);background:var(--surface);border:1.5px solid var(--ui-ctl);border-radius:22px;
+  padding:8px 16px;margin:0 0 8px 8px;text-decoration:none}
+.chip:hover{background:#F1EFEA;border-color:var(--ui-ink)}
+.cards{display:grid;gap:10px;margin:0 0 28px}
+@media (min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+.card{display:block;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);
+  padding:14px 18px 15px;text-decoration:none;color:var(--ui-ink);line-height:1.45;box-shadow:0 1px 2px rgba(23,24,28,.05)}
+.card[style]{background:linear-gradient(var(--c),var(--c)) right/6px 100% no-repeat,var(--surface);padding-right:24px}
+.card:hover{border-color:var(--ui-ink)}
+.card .n{font-size:13.5px;font-weight:500;color:var(--ui-ink-2)}
+.card .t{font-size:18px;font-weight:900;margin-top:2px}
+.card .s{font-size:14.5px;color:var(--ui-ink-2);margin-top:4px}
+
+/* ---- שפת הרמזים: אותם ריבועים שטוחים כמו במשחק ---- */
+.swatch{display:inline-block;width:15px;height:15px;border-radius:3px;vertical-align:-2px;
+  margin-inline-end:8px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28)}
+.sw-hit{background:var(--brand)} .sw-miss{background:var(--miss)}
+.sw-near{background:var(--near,#8A6A1C)}
+.demo{overflow-x:auto;margin:0 0 14px;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);padding:6px}
+.demo table{border-collapse:separate;border-spacing:6px}
+.demo th{background:none;border:0;padding:2px 6px;text-align:center}
+.demo td{border:0;border-radius:8px;padding:12px 10px;font-size:15px;font-weight:900;text-align:center;white-space:nowrap;
+  background:var(--surface-2)}
+.demo td:first-child{text-align:start;background:none;padding-inline:4px}
+.demo .hit{background:var(--brand);color:var(--on-brand)}
+.demo .near{background:var(--near,#8A6A1C);color:#fff}
+.demo .miss{background:var(--miss);color:var(--on-miss)}
+.pager{display:flex;justify-content:space-between;gap:10px;margin:28px 0 0}
+
+/* ---- פוטר ---- */
+.appban{background:var(--surface);border:1px solid var(--ui-line);border-radius:16px;box-shadow:none}
+.appban b{color:var(--ui-ink)} .appban span{color:var(--ui-ink-2)}
+.appban a.play span{color:#fff}
+footer{border-top:1px solid var(--ui-line);margin-top:48px;padding:6px 0 0;
+  font-size:14px;color:var(--ui-ink-2);line-height:1.8}
+.sitenav{display:flex;flex-wrap:wrap;gap:0 8px;margin:18px 0 12px;border-top:1px solid var(--ui-line);padding-top:12px}
+.sitenav a{display:inline-block;padding:4px 0;color:var(--ui-ink-2);font-size:14px;text-decoration:none}
+.sitenav a:hover{color:var(--ui-ink);text-decoration:underline}
+.sitenav span{color:var(--ui-ctl);padding:4px 0}
+footer .who a{color:var(--ui-ink-2)}
+footer .who a:hover{color:var(--ui-ink)}
 `;
+
+/* ---------- צבעי מועדון לדף של מועדון ----------
+   אותו חישוב כמו applyTheme ב-src/engine.js, בזמן הבנייה: הפס
+   השני, ודיו קריא על כל אחד מהם — לפי ניגודיות ולא לפי מועדון. */
+const rgbOf = h => h.replace("#", "").match(/.{2}/g).map(x => parseInt(x, 16));
+const lumOf = h => { const [R, G, B] = rgbOf(h).map(v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
+  return .2126 * R + .7152 * G + .0722 * B; };
+const onOf = h => (lumOf(h) + .05) / (lumOf("#121214") + .05) >= 1.05 / (lumOf(h) + .05) ? "#121214" : "#FFFFFF";
+const ratio = (a, b) => { const [x, y] = [lumOf(a), lumOf(b)].sort((p, q) => q - p); return (x + .05) / (y + .05); };
+function themeStyle(colors) {
+  const second = colors.second || colors.ink;
+  return [`--brand:${colors.brand}`, `--brand-rgb:${rgbOf(colors.brand).join(",")}`,
+    `--on-brand:${onOf(colors.brand)}`,
+    `--second-band:${lumOf(second) < lumOf("#26272D") ? "#26272D" : second}`,
+    `--title-ink:${ratio(colors.brand, second) >= 3 ? second : onOf(colors.brand)}`].join(";");
+}
+/* פס הצבע בכרטיס של מועדון (ארכיון, מפתח השחקנים) */
+const cardTint = c => c && c.colors ? ` style="--c:${c.colors.brand}"` : "";
 
 /* ---------- באנר האפליקציה ----------
    מקור אחד גם לדפי התוכן וגם למסך המשחק: build.mjs מזריק את
@@ -185,7 +256,7 @@ export const APP_BANNER_CSS = `
 .appban a.play svg{width:26px;height:28px;flex:none}
 .appban a.play span{display:block;margin:0;color:#fff}
 .appban a.play small{display:block;font-size:10.5px;font-weight:400;direction:rtl;text-align:left}
-.appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:600;letter-spacing:.2px}
+.appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:700;letter-spacing:.2px}
 .appban span.stores{display:flex;margin:0;flex-wrap:wrap;justify-content:center;gap:0 10px}
 `;
 
@@ -242,7 +313,7 @@ export function navHtml(depth) {
 }
 
 /* ---------- שלד הדף ---------- */
-function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteName, jsonld }) {
+function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteName, jsonld, club }) {
   const u = up(depth);
   /* מקודד. שמות השחקנים בכתובת הם עברית, וה-sitemap חייב אחוזים
      לפי התקן — אם ה-canonical היה גולמי, גוגל היה משווה שתי
@@ -262,8 +333,10 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
     });
   if (jsonld) ld.push(jsonld);
 
+  /* דף של מועדון אחד לובש את צבעיו ואת הגדילים שלו; כל השאר — ברירת המחדל */
+  const css = CSS.split("__U__").join(u).split("__FRINGE__").join(club ? club.slug : "beitar");
   return `<!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl"${club ? ` data-club="${club.slug}" style="${themeStyle(club.colors)}"` : ""}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -279,12 +352,12 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${base}/og.png">
-<meta name="theme-color" content="#0C0C0E">${iosMetaHtml(SITE)}
+<meta name="theme-color" content="#ECEAE5">${iosMetaHtml(SITE)}
 <link rel="icon" href="${u}favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="${u}icon-32.png">
 <link rel="apple-touch-icon" href="${u}icon-180.png">
 <link rel="stylesheet" href="${u}fonts.css">
-<style>${CSS}${APP_BANNER_CSS}</style>
+<style>${APP_BANNER_CSS}${css}</style>
 ${ld.map(o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n")}
 </head>
 <body>
@@ -909,7 +982,7 @@ export function writeContentPages({ data, order, site, NAT_HE, REGION, maxGuesse
      ביותר במשחק — הוא חוצה את טווח החיפוש בכל ניחוש.</p>
 
   <h2>חמשת הרמזים, במדויק</h2>
-  <table>
+  <div class="tbl"><table>
     <tr><th>רמז</th><th>מה זה</th><th>מתי "קרוב"</th></tr>
     <tr><td><b>עמדה</b></td><td>שוער, הגנה, קישור או התקפה</td>
         <td>קו שכן בסדר שוער→הגנה→קישור→התקפה</td></tr>
@@ -921,7 +994,7 @@ export function writeContentPages({ data, order, site, NAT_HE, REGION, maxGuesse
         <td>הפרש של תואר אחד</td></tr>
     <tr><td><b>נולד</b></td><td>שנת הלידה</td>
         <td>עד שלוש שנים הפרש</td></tr>
-  </table>
+  </table></div>
   <p>שני דברים ששווה לדעת על "תארים": הוא נספר לפי <b>נוכחות
      בסגל</b> בעונה שבה המועדון זכה, ולא לפי תרומה למשחקים.
      ולכן שחקן מתקופה מוצלחת יקבל מספר גבוה גם אם שיחק מעט.
@@ -1027,7 +1100,7 @@ ${rows.join("\n")}
           p.spells.map(([a, b]) => `${season(a)}–${season(b)}`).join(", "),
           `${seasonsIn(p.spells)} עונות`
         ].filter(Boolean).join(" · ") : "";
-        return `  <a class="card" href="${rec ? up(2) + rec.path : up(2)}">
+        return `  <a class="card"${cardTint(data[s])} href="${rec ? up(2) + rec.path : up(2)}">
     <div class="n">${esc(data[s].game)}</div>
     <div class="t">${esc(name)}</div>
     ${meta ? `<div class="s">${esc(meta)}</div>` : ""}
@@ -1077,7 +1150,7 @@ ${items.join("\n")}
     const cards = order.map(s => {
       const n = data[s].players.length;
       const cov = data[s].coverage;
-      return `  <a class="card" href="${up(1)}players/${s}/">
+      return `  <a class="card"${cardTint(data[s])} href="${up(1)}players/${s}/">
     <div class="n">${esc(data[s].he)}</div>
     <div class="t">${esc(data[s].game)}</div>
     <div class="s">${n} שחקנים · ${season(cov.from)}–${season(cov.to)}</div>
@@ -1131,12 +1204,13 @@ ${cards.join("\n")}
                        : esc(p.he);
         return `    <tr><td><b>${name}</b></td>` +
           `<td>${esc(POS_HE[p.pos] || "")}</td>` +
-          `<td>${esc(p.spells.map(([a, b]) => `${season(a)}–${season(b)}`).join(", "))}</td>` +
+          /* טווח אחד לא נשבר באמצע; השורה נשברת רק בין טווחים */
+          `<td>${p.spells.map(([a, b]) => `<span class="nw">${esc(`${season(a)}–${season(b)}`)}</span>`).join(", ")}</td>` +
           `<td>${seasonsIn(p.spells)}</td><td>${p.titles}</td></tr>`;
       });
       const inPool = list.filter(p => linked.has(p.he)).length;
       add(`players/${s}/`, shell({
-        depth: 2, path: `players/${s}/`, base, siteName: site.name,
+        depth: 2, path: `players/${s}/`, base, siteName: site.name, club: { slug: s, colors: club.colors },
         title: `שחקני ${club.he} · ${site.name}`,
         desc: `${list.length} שחקני ${club.he} שאפשר לנחש ב-${club.game}, עם עמדה, שנים במועדון, מספר עונות ותארים.`,
         h1: `שחקני ${club.he}`,
@@ -1152,10 +1226,10 @@ ${cards.join("\n")}
      אלה שיש להם דף משלהם. השאר שיחקו במועדון עונה אחת בלבד, או
      שאין לנו את שנת הלידה שלהם — ובשני המקרים אפשר להקליד אותם,
      אבל לא להיות התשובה.</p>
-  <table>
+  <div class="tbl"><table>
     <tr><th>שחקן</th><th>עמדה</th><th>שנים</th><th>עונות</th><th>תארים</th></tr>
 ${rows.join("\n")}
-  </table>
+  </table></div>
   <p><a href="${up(2)}${s}/">לחידה של ${esc(club.game)}</a> ·
      <a href="${up(1)}">כל המועדונים</a> ·
      <a href="${up(2)}">לעמוד הראשי</a></p>`,
@@ -1221,7 +1295,7 @@ ${mates.length ? `  <h2>מאותה תקופה ב${esc(club.he)}</h2>
      <a href="${up(3)}">לעמוד הראשי</a></p>`;
 
     add(rec.path, shell({
-      depth: 3, path: rec.path, base, siteName: site.name,
+      depth: 3, path: rec.path, base, siteName: site.name, club: { slug, colors: data[slug].colors },
       title: `${p.he} · ${club.he} · ${site.name}`,
       desc: `${p.he} במאגר של ${club.he}: ` +
             [POS_HE[p.pos], spells, `${seasonsIn(p.spells)} עונות`].filter(Boolean).join(", ") + ".",

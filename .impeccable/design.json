@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T12:36:18.769Z",
+  "title": "Design System: SportDle",
+  "extensions": {
+    "colorMeta": {
+      "stone-ground": {
+        "role": "neutral",
+        "displayName": "Stone Ground",
+        "canonical": "oklch(93.7% 0.007 89)",
+        "tonalRamp": [
+          "#0C0B08",
+          "#252420",
+          "#41403C",
+          "#5F5D59",
+          "#7F7D79",
+          "#A09E9A",
+          "#C6C4BF",
+          "#F0EEE9"
+        ]
+      },
+      "surface-white": {
+        "role": "neutral",
+        "displayName": "Surface White",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "surface-row": {
+        "role": "neutral",
+        "displayName": "Surface Row",
+        "canonical": "oklch(96.7% 0.004 91)",
+        "tonalRamp": [
+          "#0C0B09",
+          "#252422",
+          "#40403D",
+          "#5E5D5B",
+          "#7E7D7A",
+          "#9F9E9B",
+          "#C5C4C1",
+          "#EFEEEB"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Surface Hover",
+        "canonical": "oklch(95.2% 0.007 89)",
+        "tonalRamp": [
+          "#0C0B08",
+          "#252420",
+          "#41403C",
+          "#5F5D59",
+          "#7F7D79",
+          "#A09E9A",
+          "#C6C4BF",
+          "#F0EEE9"
+        ]
+      },
+      "segment-track": {
+        "role": "neutral",
+        "displayName": "Segment Track",
+        "canonical": "oklch(89.2% 0.010 87)",
+        "tonalRamp": [
+          "#0D0B07",
+          "#26241F",
+          "#423F3A",
+          "#605D57",
+          "#807D77",
+          "#A19E98",
+          "#C7C4BD",
+          "#F1EEE7"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(21.0% 0.008 275)",
+        "tonalRamp": [
+          "#0A0B0F",
+          "#232428",
+          "#3E3F44",
+          "#5C5D62",
+          "#7C7D82",
+          "#9D9EA3",
+          "#C2C4C9",
+          "#EDEEF4"
+        ]
+      },
+      "ink-secondary": {
+        "role": "neutral",
+        "displayName": "Ink Secondary",
+        "canonical": "oklch(40.2% 0.014 269)",
+        "tonalRamp": [
+          "#090B11",
+          "#21242B",
+          "#3D4047",
+          "#5A5D66",
+          "#7A7D86",
+          "#9B9EA7",
+          "#C0C4CD",
+          "#EBEEF8"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(85.9% 0.012 85)",
+        "tonalRamp": [
+          "#0D0B06",
+          "#27241E",
+          "#433F39",
+          "#615D56",
+          "#807D75",
+          "#A29E96",
+          "#C8C4BC",
+          "#F2EEE6"
+        ]
+      },
+      "row-divider": {
+        "role": "neutral",
+        "displayName": "Row Divider",
+        "canonical": "oklch(91.6% 0.009 85)",
+        "tonalRamp": [
+          "#0D0B07",
+          "#26241F",
+          "#423F3B",
+          "#605D58",
+          "#807D77",
+          "#A19E98",
+          "#C7C4BE",
+          "#F1EEE8"
+        ]
+      },
+      "control-edge": {
+        "role": "neutral",
+        "displayName": "Control Edge",
+        "canonical": "oklch(55.7% 0.013 85)",
+        "tonalRamp": [
+          "#0E0B06",
+          "#27241D",
+          "#433F38",
+          "#615D55",
+          "#817D75",
+          "#A29E95",
+          "#C8C4BB",
+          "#F3EEE5"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "oklch(48.9% 0.013 269)",
+        "tonalRamp": [
+          "#090B11",
+          "#21242B",
+          "#3D4047",
+          "#5A5D65",
+          "#7A7D85",
+          "#9B9EA7",
+          "#C0C4CD",
+          "#EBEEF8"
+        ]
+      },
+      "miss-slate": {
+        "role": "neutral",
+        "displayName": "Miss Slate (Far)",
+        "canonical": "oklch(39.9% 0.015 276)",
+        "tonalRamp": [
+          "#090B12",
+          "#22242C",
+          "#3D3F48",
+          "#5B5D66",
+          "#7A7D87",
+          "#9B9EA8",
+          "#C1C3CE",
+          "#EBEEF9"
+        ]
+      },
+      "dark-band-floor": {
+        "role": "neutral",
+        "displayName": "Dark Band Floor",
+        "canonical": "oklch(27.4% 0.011 278)",
+        "tonalRamp": [
+          "#0A0B10",
+          "#232429",
+          "#3E3F46",
+          "#5C5D64",
+          "#7B7D84",
+          "#9C9EA5",
+          "#C2C3CB",
+          "#ECEEF6"
+        ]
+      },
+      "dark-on-colour": {
+        "role": "neutral",
+        "displayName": "Dark On-Colour Ink",
+        "canonical": "oklch(18.3% 0.004 286)",
+        "tonalRamp": [
+          "#0B0B0D",
+          "#242426",
+          "#3F3F42",
+          "#5D5D60",
+          "#7D7D80",
+          "#9E9EA1",
+          "#C4C4C7",
+          "#EEEEF1"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "neutral",
+        "displayName": "WhatsApp Green",
+        "canonical": "oklch(55.7% 0.143 151)",
+        "tonalRamp": [
+          "#001700",
+          "#003400",
+          "#00520D",
+          "#00732F",
+          "#27944F",
+          "#50B76F",
+          "#78DE94",
+          "#A3FFBD"
+        ]
+      },
+      "error-rust": {
+        "role": "neutral",
+        "displayName": "Error Rust",
+        "canonical": "oklch(47.0% 0.143 37)",
+        "tonalRamp": [
+          "#320000",
+          "#550000",
+          "#791100",
+          "#9D3716",
+          "#C2593A",
+          "#E87B5B",
+          "#FFA17F",
+          "#FFCBA9"
+        ]
+      },
+      "beitar-brand": {
+        "role": "primary",
+        "displayName": "beitar brand",
+        "canonical": "oklch(85.7% 0.165 87)",
+        "tonalRamp": [
+          "#260000",
+          "#451200",
+          "#643200",
+          "#855200",
+          "#A87300",
+          "#CB9500",
+          "#F3BB10",
+          "#FFE657"
+        ]
+      },
+      "beitar-near": {
+        "role": "tertiary",
+        "displayName": "beitar near",
+        "canonical": "oklch(54.2% 0.100 85)",
+        "tonalRamp": [
+          "#1D0300",
+          "#391D00",
+          "#583900",
+          "#775800",
+          "#99782D",
+          "#BB9951",
+          "#E2BF76",
+          "#FFEAA0"
+        ]
+      },
+      "beitar-second": {
+        "role": "secondary",
+        "displayName": "beitar second",
+        "canonical": "oklch(15.5% 0.004 286)",
+        "tonalRamp": [
+          "#0B0B0D",
+          "#242426",
+          "#3F3F42",
+          "#5D5D60",
+          "#7D7D80",
+          "#9E9EA1",
+          "#C4C4C7",
+          "#EEEEF1"
+        ]
+      },
+      "hapoel-bs-brand": {
+        "role": "primary",
+        "displayName": "hapoel-bs brand",
+        "canonical": "oklch(57.9% 0.234 24)",
+        "tonalRamp": [
+          "#430000",
+          "#6F0000",
+          "#970000",
+          "#BF0002",
+          "#E80E2E",
+          "#FF4A51",
+          "#FF7676",
+          "#FFA49F"
+        ]
+      },
+      "hapoel-bs-near": {
+        "role": "tertiary",
+        "displayName": "hapoel-bs near",
+        "canonical": "oklch(42.9% 0.141 17)",
+        "tonalRamp": [
+          "#310000",
+          "#550008",
+          "#790A24",
+          "#9D3341",
+          "#C2555F",
+          "#E8777F",
+          "#FF9CA4",
+          "#FFC7CD"
+        ]
+      },
+      "hapoel-bs-second": {
+        "role": "secondary",
+        "displayName": "hapoel-bs second",
+        "canonical": "oklch(15.5% 0.004 286)",
+        "tonalRamp": [
+          "#0B0B0D",
+          "#242426",
+          "#3F3F42",
+          "#5D5D60",
+          "#7D7D80",
+          "#9E9EA1",
+          "#C4C4C7",
+          "#EEEEF1"
+        ]
+      },
+      "maccabi-ta-brand": {
+        "role": "primary",
+        "displayName": "maccabi-ta brand",
+        "canonical": "oklch(37.8% 0.182 263)",
+        "tonalRamp": [
+          "#0A0057",
+          "#00017A",
+          "#00309D",
+          "#1F54C2",
+          "#3E76E8",
+          "#5E99FF",
+          "#83C0FF",
+          "#ABECFF"
+        ]
+      },
+      "maccabi-ta-near": {
+        "role": "tertiary",
+        "displayName": "maccabi-ta near",
+        "canonical": "oklch(35.7% 0.096 262)",
+        "tonalRamp": [
+          "#000232",
+          "#072051",
+          "#223E72",
+          "#3F5C94",
+          "#5E7DB7",
+          "#7E9FDB",
+          "#A2C5FF",
+          "#CCEFFF"
+        ]
+      },
+      "maccabi-ta-second": {
+        "role": "secondary",
+        "displayName": "maccabi-ta second",
+        "canonical": "oklch(87.5% 0.179 93)",
+        "tonalRamp": [
+          "#230000",
+          "#411600",
+          "#613500",
+          "#815500",
+          "#A37600",
+          "#C59800",
+          "#EDBF00",
+          "#FFEA3F"
+        ]
+      },
+      "maccabi-haifa-brand": {
+        "role": "primary",
+        "displayName": "maccabi-haifa brand",
+        "canonical": "oklch(53.6% 0.146 151)",
+        "tonalRamp": [
+          "#001700",
+          "#003400",
+          "#005309",
+          "#00732D",
+          "#24954D",
+          "#4EB76D",
+          "#77DF92",
+          "#A2FFBB"
+        ]
+      },
+      "maccabi-haifa-near": {
+        "role": "tertiary",
+        "displayName": "maccabi-haifa near",
+        "canonical": "oklch(42.2% 0.087 154)",
+        "tonalRamp": [
+          "#001400",
+          "#002F0E",
+          "#0B4D2A",
+          "#306C47",
+          "#518D65",
+          "#72AF86",
+          "#97D5AB",
+          "#C1FFD4"
+        ]
+      },
+      "maccabi-haifa-second": {
+        "role": "secondary",
+        "displayName": "maccabi-haifa second",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "hapoel-ta-brand": {
+        "role": "primary",
+        "displayName": "hapoel-ta brand",
+        "canonical": "oklch(53.0% 0.207 22)",
+        "tonalRamp": [
+          "#410000",
+          "#680000",
+          "#8F0000",
+          "#B6001F",
+          "#DE3040",
+          "#FF5A60",
+          "#FF8384",
+          "#FFAFAD"
+        ]
+      },
+      "hapoel-ta-near": {
+        "role": "tertiary",
+        "displayName": "hapoel-ta near",
+        "canonical": "oklch(42.9% 0.141 17)",
+        "tonalRamp": [
+          "#310000",
+          "#550008",
+          "#790A24",
+          "#9D3341",
+          "#C2555F",
+          "#E8777F",
+          "#FF9CA4",
+          "#FFC7CD"
+        ]
+      },
+      "hapoel-ta-second": {
+        "role": "secondary",
+        "displayName": "hapoel-ta second",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Wordmark",
+        "purpose": "The <club>dle wordmark in the header scarf; picker headline."
+      },
+      "headline": {
+        "displayName": "Guess Name",
+        "purpose": "Player name on the brand band of a guess stripe; result headline."
+      },
+      "page-title": {
+        "displayName": "Page Title",
+        "purpose": "Content-page h1 in ink."
+      },
+      "title": {
+        "displayName": "Section Title",
+        "purpose": "Content h2; sheet titles at 900/26px."
+      },
+      "tile-value": {
+        "displayName": "Tile Value",
+        "purpose": "Clue values inside tiles; wraps and balances."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Content-page prose, ~70ch column."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Secondary buttons, tabs, chips."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Clue labels, legend, metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "control-lift",
+        "value": "0 1px 2px rgba(23,24,28,.08)",
+        "purpose": "Secondary and icon buttons at rest; removed on hover."
+      },
+      {
+        "name": "primary-press-edge",
+        "value": "inset 0 -3px 0 rgba(0,0,0,.18)",
+        "purpose": "Bottom inner shade on solid club-colour buttons."
+      },
+      {
+        "name": "floating-list",
+        "value": "0 12px 28px rgba(23,24,28,.18)",
+        "purpose": "Guess suggestion dropdown."
+      },
+      {
+        "name": "scarf-lift",
+        "value": "0 2px 6px rgba(23,24,28,.18)",
+        "purpose": "Picker scarves."
+      },
+      {
+        "name": "dialog",
+        "value": "0 18px 40px rgba(23,24,28,.25)",
+        "purpose": "Duel confirmation modal."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2.5px solid #17181C; outline-offset: 3px",
+        "purpose": "Every focusable element, on every club colour."
+      }
+    ],
+    "motion": [
+      {
+        "name": "row-drop",
+        "value": ".45s cubic-bezier(.2,.9,.25,1.15)",
+        "purpose": "Guess row enters from -22px."
+      },
+      {
+        "name": "patch",
+        "value": ".9s cubic-bezier(.3,.7,.25,1)",
+        "purpose": "Each clue tile falls in like a pressed patch: -26px/-7deg/1.15 to +3px/1.5deg/.97 to rest."
+      },
+      {
+        "name": "press",
+        "value": ".34s ease-out, delayed .9s",
+        "purpose": "Exact tiles squeeze 1 to .92 to 1 after landing."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation:none",
+        "purpose": "prefers-reduced-motion and restored rows render instantly."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "360px"
+      },
+      {
+        "name": "wide",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid club-colour action (Beitar shown).",
+      "html": "<button class=\"ds-btn-primary\">שחקו שוב</button>",
+      "css": ".ds-btn-primary{background:#FFC72C;color:#121214;border:0;border-radius:12px;min-height:50px;padding:0 24px;font:800 17px Heebo,system-ui,sans-serif;box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);cursor:pointer}.ds-btn-primary:hover{filter:brightness(1.05)}.ds-btn-primary:focus-visible{outline:2.5px solid #17181C;outline-offset:3px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White, solid-bordered control.",
+      "html": "<button class=\"ds-btn-sec\">רמז</button>",
+      "css": ".ds-btn-sec{background:#FFFFFF;color:#17181C;border:1.5px solid #77736B;border-radius:12px;min-height:44px;padding:10px 18px;font:700 15px Heebo,system-ui,sans-serif;box-shadow:0 1px 2px rgba(23,24,28,.08);cursor:pointer}.ds-btn-sec:hover{background:#F1EFEA;border-color:#17181C;box-shadow:none}.ds-btn-sec:focus-visible{outline:2.5px solid #17181C;outline-offset:3px}"
+    },
+    {
+      "name": "Guess Input",
+      "kind": "input",
+      "refersTo": "input-guess",
+      "description": "The obvious input.",
+      "html": "<input class=\"ds-input\" dir=\"rtl\" placeholder=\"הקלידו שם של שחקן…\">",
+      "css": ".ds-input{background:#FFFFFF;color:#17181C;border:2px solid #77736B;border-radius:12px;min-height:56px;padding:14px 16px;font:600 18px Heebo,system-ui,sans-serif;width:100%}.ds-input::placeholder{color:#5D6068;font-weight:500;opacity:1}.ds-input:focus{border-color:#17181C;box-shadow:0 0 0 3px rgba(23,24,28,.14);outline:0}"
+    },
+    {
+      "name": "Segmented Tabs",
+      "kind": "nav",
+      "refersTo": "segmented-tabs",
+      "description": "Daily / friends tabs.",
+      "html": "<div class=\"ds-tabs\" dir=\"rtl\"><button class=\"on\">חידה יומית</button><button>קרב חברים</button></div>",
+      "css": ".ds-tabs{display:flex;gap:4px;background:#DEDBD4;border:1px solid #CFCBC2;border-radius:14px;padding:4px;max-width:340px}.ds-tabs button{flex:1;border:0;border-radius:10px;background:none;color:#454850;min-height:44px;font:700 15px Heebo,system-ui,sans-serif;cursor:pointer}.ds-tabs button.on{background:#FFC72C;color:#121214;font-weight:800;box-shadow:0 1px 3px rgba(23,24,28,.2)}.ds-tabs button:not(.on):hover{background:rgba(255,255,255,.7);color:#17181C}.ds-tabs button:focus-visible{outline:2.5px solid #17181C;outline-offset:3px}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill link on content pages; duel club pick.",
+      "html": "<a class=\"ds-chip\" href=\"#\">בית\"ר ירושלים</a>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;background:#FFFFFF;color:#17181C;border:1.5px solid #77736B;border-radius:22px;font:700 15px Heebo,system-ui,sans-serif;text-decoration:none}.ds-chip:hover{background:#F1EFEA;border-color:#17181C}.ds-chip:focus-visible{outline:2.5px solid #17181C;outline-offset:3px}"
+    },
+    {
+      "name": "Club Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Content-page card with club strip on the inline-start edge.",
+      "html": "<a class=\"ds-card\" dir=\"rtl\" href=\"#\"><div class=\"n\">חידה #12</div><div class=\"t\">אורי מלמיליאן</div></a>",
+      "css": ".ds-card{display:block;background:linear-gradient(#FFC72C,#FFC72C) right/6px 100% no-repeat,#FFFFFF;border:1px solid #D4D0C8;border-radius:12px;padding:14px 24px 15px 18px;color:#17181C;text-decoration:none;font-family:Heebo,system-ui,sans-serif;box-shadow:0 1px 2px rgba(23,24,28,.05)}.ds-card:hover{border-color:#17181C}.ds-card:focus-visible{outline:2.5px solid #17181C;outline-offset:3px}.ds-card .n{font-size:13.5px;color:#454850}.ds-card .t{font-size:18px;font-weight:800}"
+    },
+    {
+      "name": "Guess Stripe",
+      "kind": "custom",
+      "refersTo": "clue-tile-exact",
+      "description": "Signature: brand band with name over second band with five clue tiles (exact / close / far), patch reveal.",
+      "html": "<div class=\"ds-row\" dir=\"rtl\"><div class=\"who\">אורי מלמיליאן</div><div class=\"tiles\"><div class=\"tile near\"><span class=\"k\">עמדה</span>קישור</div><div class=\"tile hit\"><span class=\"k\">לאום</span>ישראל</div><div class=\"tile\"><span class=\"k\">עונה 1</span>↑ 73/74</div><div class=\"tile\"><span class=\"k\">תארים</span>↓ 6</div><div class=\"tile\"><span class=\"k\">נולד</span>↑ 1957</div></div></div>",
+      "css": ".ds-row{font-family:Heebo,system-ui,sans-serif;animation:ds-drop .45s cubic-bezier(.2,.9,.25,1.15) both}.ds-row .who{background:#FFC72C;color:#121214;padding:14px 16px 12px;font-size:26px;font-weight:900;line-height:1.1;letter-spacing:-.01em}.ds-row .tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;padding:30px 14px 18px;background:#26272D}.ds-row .tile{position:relative;display:flex;align-items:center;justify-content:center;min-height:58px;border-radius:8px;background:#454750;color:#fff;font-weight:900;font-size:17px;outline:1px solid rgba(0,0,0,.12);outline-offset:-1px;animation:ds-patch .9s cubic-bezier(.3,.7,.25,1) both}.ds-row .tile.hit{background:#FFC72C;color:#121214}.ds-row .tile.near{background:#8A6A1C;color:#fff}.ds-row .k{position:absolute;top:-23px;inset-inline:0;text-align:center;font-size:13px;font-weight:600;color:#fff}@keyframes ds-drop{from{opacity:0;transform:translateY(-22px)}}@keyframes ds-patch{0%,30%{opacity:0;transform:translateY(-26px) rotate(-7deg) scale(1.15)}62%{opacity:1;transform:translateY(3px) rotate(1.5deg) scale(.97)}80%{transform:translateY(-1px) scale(1.01)}100%{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.ds-row,.ds-row .tile{animation:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Supporter's Scarf on a Clean Counter",
+    "overview": "Each club's game is that club's knitted supporter scarf, laid out on a light stone ground. The scarf shows up in three places only: the header wordmark band with its fringe, the guess stripes, and the club picker, plus the small mini-scarf on the result card. Everything around it is plain and solid: white surfaces, ink text, controls with solid borders that look like controls. The knit carries the identity. The chrome doesn't compete with it.\n\nThe system is per-club. One set of rules is retinted at runtime from `config/clubs.json` through `applyTheme` (game) and `themeStyle` (content pages). Brand colour, second colour and \"near\" colour are all club data. Contrast-picked ink (dark-on-colour or white) is computed from luminance, never hand-assigned per club, so a club that changes its colours does not break anything.\n\nThe direction was first built as a dark navy knitted ground with sewn fabric labels and dashed stitch outlines. The owner rejected that twice and steered to the current light, smooth ground. None of the fabric-label language survives in the rendered result.",
+    "keyCharacteristics": [
+      "A light stone ground (never dark), with solid white surfaces and solid ink text.",
+      "Club colour appears as knitted wool only in scarf bands. Everywhere else it is a flat fill.",
+      "Controls are solid and bordered, at least 44px tall, and clearly controls.",
+      "Clue tiles are flat, high-contrast swatches: exact, close, far.",
+      "Guess reveal (\"patches\"): tiles drop onto the stripe like patches pressed onto a scarf."
+    ],
+    "rules": [
+      {
+        "name": "The Three Signals Rule",
+        "body": "Exact is the club's full brand colour. Close is the club's own config near colour with white text. Far is Miss Slate gray. There is no fourth state, and no ring, outline or white variant of \"close\".",
+        "section": "colors"
+      },
+      {
+        "name": "The Club Colours Are Data Rule",
+        "body": "Club names and club colours come from `config/clubs.json` and are binding. Never hard-code a club colour in a component. Never pick on-colour ink per club: compute it from contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stone, Never Night Rule",
+        "body": "The ground is Stone Ground. A dark or navy page ground is rejected.",
+        "section": "colors"
+      },
+      {
+        "name": "The Solid Ink Wordmark Rule",
+        "body": "The club name in the header is set in solid ink (`--title-ink`: the club's second colour when that reaches 3:1 on brand, otherwise the contrast-picked ink). The knit texture is never clipped into the letters.",
+        "section": "typography"
+      },
+      {
+        "name": "The Knit Is Diluted Rule",
+        "body": "Wherever the knit texture shows, a brand-colour wash at `--knit-mute` (0.68) sits over the multiplied knit, so the wool is felt rather than seen and text on it stays crisp.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the page ground at Stone Ground (#ECEAE5) on every surface, game and content alike.",
+      "**Do** render \"close\" as the club's config near colour with white text, everywhere a close swatch appears, including the how-to-play demo and the legend.",
+      "**Do** give every control a solid 1.5–2px border or a solid fill, at least 44px tall, and the 2.5px ink focus ring.",
+      "**Do** set the header club name in solid `--title-ink`.",
+      "**Do** restrict knit texture to scarf bands, always under the 0.68 brand wash.",
+      "**Do** derive on-colour text from contrast (`applyTheme` / `themeStyle`), never per club by hand.",
+      "**Do** pair every colour clue with text or an arrow."
+    ],
+    "donts": [
+      "**Don't** use dashed borders or stitch outlines on anything.",
+      "**Don't** put fabric or knit textures behind controls, labels, inputs or body text.",
+      "**Don't** use a dark or navy page ground.",
+      "**Don't** clip knit texture into the wordmark letters.",
+      "**Don't** render \"close\" as a white tile with a brand ring. That was tried and it broke the habit of existing players.",
+      "**Don't** rename clubs or substitute their colours."
+    ]
+  }
+}

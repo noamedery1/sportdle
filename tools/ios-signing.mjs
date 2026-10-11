@@ -83,11 +83,22 @@ async function certificate() {
   return { id: cert.data.id, der: Buffer.from(cert.data.attributes.certificateContent, "base64") };
 }
 
+/* Associated Domains על ה-App ID. מחזיר true כשנוספה עכשיו. */
+async function ensureAssociatedDomains(bundleId) {
+  const caps = (await api("GET", `/bundleIds/${bundleId}/bundleIdCapabilities?limit=50`)).data || [];
+  if (caps.some(c => c.attributes.capabilityType === "ASSOCIATED_DOMAINS")) return false;
+  await api("POST", "/bundleIdCapabilities", { data: { type: "bundleIdCapabilities",
+    attributes: { capabilityType: "ASSOCIATED_DOMAINS" },
+    relationships: { bundleId: { data: { type: "bundleIds", id: bundleId } } } } });
+  console.log("נוספה יכולת Associated Domains ל-App ID");
+  return true;
+}
+
 /* הפרופיל הקבוע: בתוקף וכולל את התעודה, או נוצר מחדש */
-async function profile(bundleId, certId) {
+async function profile(bundleId, certId, force = false) {
   const q = `/profiles?filter[name]=${encodeURIComponent(PROFILE_NAME)}&include=certificates&limit=20`;
   const found = (await api("GET", q)).data || [];
-  const good = found.find(p => p.attributes.profileState === "ACTIVE" &&
+  const good = !force && found.find(p => p.attributes.profileState === "ACTIVE" &&
     (p.relationships?.certificates?.data || []).some(c => c.id === certId) &&
     new Date(p.attributes.expirationDate).getTime() > Date.now() + MIN_DAYS_LEFT * 864e5);
   if (good) { console.log(`פרופיל קיים "${PROFILE_NAME}" (${good.attributes.uuid})`); return good; }
@@ -109,9 +120,12 @@ async function create() {
   const bundle = (b.data || []).find(x => x.attributes.identifier === BUNDLE_ID);
   if (!bundle) throw new Error(`App ID ${BUNDLE_ID} לא רשום — Certificates, Identifiers & Profiles → Identifiers`);
 
+  /* Universal Links: היכולת חייבת להיות על ה-App ID לפני שהפרופיל נוצר.
+     כשהיא נוספה עכשיו — הפרופיל הקיים לא כולל אותה ונוצר מחדש. */
+  const fresh = await ensureAssociatedDomains(bundle.id);
   const cert = await certificate();
   writeFileSync(join(OUT, "dist.cer"), cert.der);
-  const prof = await profile(bundle.id, cert.id);
+  const prof = await profile(bundle.id, cert.id, fresh);
   writeFileSync(join(OUT, "profile.mobileprovision"), Buffer.from(prof.attributes.profileContent, "base64"));
   writeFileSync(STATE, JSON.stringify({ certId: cert.id, profileName: PROFILE_NAME,
     profileUuid: prof.attributes.uuid }));
@@ -133,7 +147,8 @@ function patch() {
     `${t}CODE_SIGN_IDENTITY = "Apple Distribution";`,
     `${t}"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution";`,
     `${t}DEVELOPMENT_TEAM = ${process.env.TEAM};`,
-    `${t}PROVISIONING_PROFILE_SPECIFIER = "${profileName}";`
+    `${t}PROVISIONING_PROFILE_SPECIFIER = "${profileName}";`,
+    `${t}CODE_SIGN_ENTITLEMENTS = App/App.entitlements;`
   ].join("\n"));
   writeFileSync(p, s);
   console.log(`חתימה ידנית ב-${n} תצורות של App · פרופיל "${profileName}"`);

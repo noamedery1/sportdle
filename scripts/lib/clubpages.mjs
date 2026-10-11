@@ -45,6 +45,8 @@ export function writeClubPages({ html, data, order, siteUrl }) {
       .replace(/(<meta name="twitter:image"\s+content=")[^"]*/, `$1${base}/og-${slug}.png`)
       .replace(/(href|content)="(favicon\.ico|icon-\d+\.png|manifest\.json|og\.png|fonts\.css)"/g,
                '$1="../$2"')
+      /* מרקמי הצעיף ב-CSS המוטמע: url יחסי לדף, ובעמוד מועדון זה /beitar/scarf/ שאינו קיים */
+      .replace(/url\(scarf\//g, "url(../scarf/")
       /* גם ניווט דפי התוכן שבפוטר עולה תיקייה אחת. בלי זה
          /beitar/about/ הוא 404, והניווט שבור בחמישה עמודים. */
       .replace(NAV_LINK,
