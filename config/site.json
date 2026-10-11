@@ -97,6 +97,15 @@
     "state": "live",
     "url": "https://play.google.com/store/apps/details?id=sportdle.techbynoam.com"
   },
+  "_iosApp": [
+    "כמו androidApp. live מוסיף תג App Store לבאנר ואת ה-Smart App Banner",
+    "של ספארי (meta apple-itunes-app) לכל דף. id הוא מזהה האפליקציה ב-App Store Connect."
+  ],
+  "iosApp": {
+    "state": "live",
+    "id": "6819586243",
+    "url": "https://apps.apple.com/il/app/sportdle/id6819586243"
+  },
 
   "shareStyle": "safe",
   "shuffleSeed": 20260825,

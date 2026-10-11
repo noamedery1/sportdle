@@ -185,6 +185,7 @@ export const APP_BANNER_CSS = `
 .appban a.play span{display:block;margin:0;color:#fff}
 .appban a.play small{display:block;font-size:10.5px;font-weight:400;direction:rtl;text-align:left}
 .appban a.play em{display:block;font-style:normal;font-size:17px;font-weight:600;letter-spacing:.2px}
+.appban span.stores{display:flex;margin:0;flex-wrap:wrap;justify-content:center;gap:0 10px}
 `;
 
 /* הלוגו של Play בארבעת הצבעים, inline — בלי בקשה נוספת ובלי תלות
@@ -196,15 +197,27 @@ const PLAY_LOGO = `<svg viewBox="0 0 24 26" aria-hidden="true">
 <path fill="#FFC900" d="m17.3 9.1 4.4 2.5c1.1.6 1.1 2.2 0 2.8l-4.4 2.5-3.9-3.9z"/>
 </svg>`;
 
+const APPLE_LOGO = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.68 1.09-4.61 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.81-3.53 1.82-.78.9-1.45 2.34-1.27 3.71 1.34.1 2.71-.69 3.56-1.7"/></svg>`;
+
+/** מטא של Smart App Banner — ספארי באייפון מציג מעליו פס "פתיחה/קבלה" לאפליקציה. */
+export function iosMetaHtml(site) {
+  const i = (site && site.iosApp) || {};
+  return i.state === "live" && i.id ? `<meta name="apple-itunes-app" content="app-id=${i.id}">` : "";
+}
+
 export function appBannerHtml(site) {
-  const a = (site && site.androidApp) || {};
-  if (a.state === "off") return "";
-  if (a.state === "live" && a.url)
+  const a = (site && site.androidApp) || {}, i = (site && site.iosApp) || {};
+  const play = a.state === "live" && a.url
+    ? `<a class="play" href="${a.url}" target="_blank" rel="noopener" aria-label="להורדה מ-Google Play">${PLAY_LOGO}<span><small>זמין ב-</small><em>Google Play</em></span></a>` : "";
+  const apple = i.state === "live" && i.url
+    ? `<a class="play" href="${i.url}" target="_blank" rel="noopener" aria-label="להורדה מ-App Store">${APPLE_LOGO}<span><small>להורדה ב-</small><em>App Store</em></span></a>` : "";
+  if (play || apple)
     return `<div class="appban" id="appban">
-    <b>אפליקציית אנדרואיד</b>
-    <span>אותו משחק, גם בלי חיבור לאינטרנט.</span>
-    <a class="play" href="${a.url}" target="_blank" rel="noopener" aria-label="להורדה מ-Google Play">${PLAY_LOGO}<span><small>זמין ב-</small><em>Google Play</em></span></a>
+    <b>${play && apple ? "האפליקציה — לאייפון ולאנדרואיד" : apple ? "אפליקציית אייפון" : "אפליקציית אנדרואיד"}</b>
+    <span>אותו משחק, גם בלי חיבור לאינטרנט, ותזכורת לחידה היומית.</span>
+    <span class="stores">${apple}${play}</span>
   </div>`;
+  if (a.state === "off") return "";
   return `<div class="appban" id="appban">
     <b>אפליקציית אנדרואיד — בקרוב</b>
     <span>הגרסה בבדיקות. כשהיא תאושר, קישור ההורדה יופיע כאן.</span>
@@ -265,7 +278,7 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${base}/og.png">
-<meta name="theme-color" content="#0C0C0E">
+<meta name="theme-color" content="#0C0C0E">${iosMetaHtml(SITE)}
 <link rel="icon" href="${u}favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="${u}icon-32.png">
 <link rel="apple-touch-icon" href="${u}icon-180.png">
