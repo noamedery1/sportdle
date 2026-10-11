@@ -1156,6 +1156,38 @@ body .vmodal-btns button.pri{border-color:transparent}
 #hintBtn:focus-visible,#friendBtn:focus-visible,button.ghost:focus-visible,button.act:focus-visible,
 #versusView button:focus-visible,#versusView .vtop button:focus-visible,#versusView .card :focus-visible{
   outline:2.5px solid var(--ui-ink);outline-offset:3px}
+
+/* ============================================================
+   חשיפת ניחוש: הצעיף נפרש (דוגמה, אוקטובר 2026)
+   1. פס השם נסרג פנימה מימין, והשם מחליק אחריו
+   2. פס הרמזים נפרש כלפי מטה מתחתיו
+   3. כל משבצת מתהפכת כמו קלף, אחת אחרי השנייה, עם עצירה רכה
+   4. "מדויק" מקבל קפיצה קטנה; החצים מחליקים לכיוון שלהם
+   ההשהיה בין המשבצות מגיעה מה-JS (animation-delay: i*90ms בשורה),
+   ולכן ה-keyframes של המשבצת מחזיקים אותה מוסתרת בתחילתם — עד שהפס נפרש.
+   שורה שנטענת מחדש (render עם instant) מקבלת style על השורה — שם אין תנועה.
+   ============================================================ */
+.row{animation:rowIn .42s cubic-bezier(.22,.8,.24,1) both}
+@keyframes rowIn{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+.row .who{animation:nameIn .5s .08s cubic-bezier(.22,.8,.24,1) both}
+@keyframes nameIn{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+.row .tiles{transform-origin:top center;animation:unroll .46s .26s cubic-bezier(.22,.8,.24,1) both}
+@keyframes unroll{from{clip-path:inset(0 0 100% 0);transform:translateY(-6px)}to{clip-path:inset(0 0 0 0);transform:none}}
+.tiles .tile{opacity:0;transform:none;animation:tileTurn 1s cubic-bezier(.3,.7,.25,1) forwards}
+@keyframes tileTurn{
+  0%,42%{opacity:0;transform:perspective(700px) rotateY(-95deg) scale(.92)}
+  72%{opacity:1;transform:perspective(700px) rotateY(10deg) scale(1.02)}
+  100%{opacity:1;transform:perspective(700px) rotateY(0) scale(1)}}
+.tiles .tile.hit{animation:tileTurn 1s cubic-bezier(.3,.7,.25,1) forwards,hitPop .32s 1s cubic-bezier(.3,1.6,.4,1) both}
+@keyframes hitPop{0%{scale:1}45%{scale:1.09}100%{scale:1}}
+.tiles .tile .ar .arw{animation:arUp .4s .95s cubic-bezier(.3,1.4,.4,1) both}
+.tiles .tile .ar.dn .arw{animation-name:arDown}
+@keyframes arUp{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+@keyframes arDown{from{opacity:0;translate:0 -7px}to{opacity:1;translate:0 0}}
+/* שורות שנטענו מחדש — בלי תנועה */
+.row[style] .who,.row[style] .tiles,.row[style] .tile,.row[style] .ar .arw{animation:none!important;opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .row,.row .who,.row .tiles,.tiles .tile,.tiles .tile .ar .arw{animation:none!important;opacity:1;transform:none;clip-path:none}}
 </style>
 </head>
 <body>
