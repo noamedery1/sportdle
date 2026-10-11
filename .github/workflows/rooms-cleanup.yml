@@ -1,0 +1,49 @@
+# ============================================================
+# ניקוי חדרי קרב שננטשו — פעם ברבעון
+# ------------------------------------------------------------
+# מדיניות הפרטיות מתחייבת: "חדר שננטש בלי יציאה נמחק בניקוי
+# תקופתי, לפחות פעם בשלושה חודשים". זה הניקוי. ההסבר המלא:
+# tools/rooms-cleanup.mjs.
+#
+# ============================================================
+# הסוד — פעם אחת
+# ============================================================
+# 1. Firebase console → beitardle → ⚙ Project settings →
+#    Service accounts → Firebase Admin SDK → "Generate new private key"
+#    → יורד קובץ JSON. **הוא מפתח מנהל למסד — לא לשתף ולא לדחוף.**
+# 2. GitHub → Settings → Secrets and variables → Actions →
+#    New repository secret:
+#      FIREBASE_SA     כל תוכן קובץ ה-JSON, כמו שהוא
+# 3. למחוק את הקובץ מהמחשב.
+# 4. Actions → "ניקוי חדרים" → Run workflow עם dry מסומן, ולוודא
+#    שהריצה מדפיסה "N חדרים · M נטושים".
+# ============================================================
+name: ניקוי חדרים
+
+on:
+  schedule:
+    # ה-1 בינואר, אפריל, יולי ואוקטובר, 03:23 UTC — לילה בישראל,
+    # ולא דקה עגולה (עומס בתור של GitHub).
+    - cron: "23 3 1 1,4,7,10 *"
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "הרצה יבשה — רק לספור, בלי למחוק"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+      - name: מחיקת חדרים נטושים
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+        run: node tools/rooms-cleanup.mjs ${{ (github.event_name == 'workflow_dispatch' && inputs.dry) && '--dry' || '' }}
