@@ -561,13 +561,20 @@ if (!existsSync("dist/manifest.json"))
 <title>הצטרפות לחדר · ${site.name}</title>
 <link rel="stylesheet" href="../fonts.css">
 <style>
-  html,body{margin:0;height:100%;background:#0C0C0E;color:#8C8C94;
+  /* אותה שפה כמו המשחק ודפי התוכן: קרקע אבן, דיו, כפתור ראשי מוצק ומשני לבן */
+  html,body{margin:0;height:100%;background:#ECEAE5;color:#454850;
     font-family:'Heebo',system-ui,sans-serif;display:flex;
     align-items:center;justify-content:center;text-align:center}
-  a{color:#FFC72C}
-  .btn{display:inline-block;background:#FFC72C;color:#0C0C0E;text-decoration:none;
-    font-weight:700;padding:13px 26px;border-radius:10px;font-size:17px}
-  #msg{color:#F2F2F0;font-size:19px;font-weight:700}
+  body>div{padding:24px 16px}
+  a{color:#17181C}
+  .btn,#go{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;
+    text-decoration:none;font-weight:800;line-height:1.3}
+  .btn{background:#FFC72C;color:#121214;min-height:50px;padding:12px 28px;font-size:17px;
+    box-shadow:inset 0 -3px 0 rgba(0,0,0,.18)}
+  #go{background:#fff;color:#17181C;border:1.5px solid #77736B;min-height:44px;padding:9px 20px;font-size:15px;
+    font-weight:700;box-shadow:0 1px 2px rgba(23,24,28,.08)}
+  #msg{color:#17181C;font-size:21px;font-weight:800}
+  :focus-visible{outline:2.5px solid #17181C;outline-offset:3px}
 </style>
 </head>
 <body>
