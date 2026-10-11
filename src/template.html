@@ -35,14 +35,14 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="theme-color" content="#161C2D">__IOS_META__
+<meta name="theme-color" content="#ECEAE5">__IOS_META__
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-title" content="__SITE_NAME__">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 <!-- גופנים מקומיים. נוצרים ב-tools/fonts.mjs, ולא נטענים מגוגל:
      באפליקציה בלי רשת גופן חסר מפיל את המשחק לגופן מערכת, וגם
@@ -902,6 +902,260 @@ body .vmodal-btns button.pri{background:var(--brand) var(--knit) center/auto 100
 button.wa,button.act.wa{background:#168A45}
 #report a{color:var(--text-3);border-bottom-color:var(--text-3)}
 .arch button i{color:var(--text-3)}
+
+/* ============================================================
+   סבב UI/UX שני (אוקטובר 2026): חלק ובהיר.
+   בעל המוצר דחה את הקווקוו, את הבד מאחורי טקסט ואת הקרקע הכהה
+   (פעמיים). מכאן: קרקע אבן בהירה, פקדים חלקים שנראים כפקדים,
+   שם המועדון בדיו מלא. הצעיף נשאר — פסי סריגה וגדילים בצבעי המועדון.
+   ============================================================ */
+/* ============================================================
+   Smooth scarf (UI/UX round 2, Oct 2026)
+   Light stone ground, solid white surfaces, solid controls.
+   Scarf identity stays in the header band + fringe and in the guess
+   stripes; the knit there is diluted so text stays crisp.
+   This block neutralises: dashed outlines/borders, fabric.webp
+   labels, ground.webp knit ground, knit-clipped h1 text, navy ground.
+   ============================================================ */
+:root{
+  --ground:#ECEAE5;          /* page + status bar */
+  --surface:#FFFFFF;         /* cards, inputs, secondary buttons */
+  --surface-2:#F5F4F1;       /* rows inside cards */
+  --ui-ink:#17181C;          /* primary text  (16.2:1 on ground) */
+  --ui-ink-2:#454850;        /* secondary text (8.0:1 on ground) */
+  --ui-line:#D4D0C8;         /* hairlines / card borders */
+  --ui-ctl:#77736B;          /* control borders (4.3:1 on white, 3.6:1 on ground) */
+  --miss:#454750; --on-miss:#FFFFFF;
+  --knit-mute:.68;           /* 0 = full knit, 1 = flat colour */
+  --r-ctl:12px;
+  /* legacy base tokens (not touched by applyTheme): repoint so any rule
+     not overridden below still lands dark-on-light */
+  --text:#17181C; --dim:#454850; --line:#D4D0C8; --ink-2:#FFFFFF; --ink-3:#FFFFFF; --slate:#454750;
+}
+
+/* ---- ground: flat, light, no knit ---- */
+html,body{background:var(--ground)!important;background-image:none!important}
+html{scrollbar-color:#B9B5AD var(--ground)}
+body{color:var(--ui-ink)}
+input,textarea{caret-color:var(--ui-ink)}
+::selection{background:var(--ui-ink);color:#fff}
+
+/* ---- kill every stitch: outlines, dashed borders, fabric ---- */
+.sub,#helpBtn,#archBtn,#clubBtn,.nav button,#hintBtn,#friendBtn,#streak,#guess,#sugg,#hintOut,
+button.ghost,button.act.ghost,button.act,#versusView .vtop button,#yday,#yday button,.appban,
+#versusView .card,#versusView input,#versusView select,#versusView button,#versusView .qtext,
+.plist div,.board div,.clue,body .vmodal-box{
+  outline:0;background-image:none;background-blend-mode:normal;border-style:solid;transform:none}
+footer,.sitenav,.stats,#comm,.promo{border-top:1px solid var(--ui-line)}
+#sugg button{border-bottom:1px solid #E6E3DD}
+.tiles{border-bottom:0}
+
+/* ---- header scarf: solid ink title, diluted knit ---- */
+h1{background:
+    linear-gradient(var(--second-band),var(--second-band)) top/100% 12px no-repeat,
+    linear-gradient(var(--second-band),var(--second-band)) bottom/100% 12px no-repeat,
+    linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
+    var(--knit) center/auto 100% repeat-x,
+    var(--brand);
+  background-blend-mode:normal,normal,normal,multiply}
+h1 a{color:var(--title-ink);background:none;-webkit-background-clip:border-box;background-clip:border-box;
+  -webkit-text-fill-color:currentColor}
+
+/* puzzle number: plain text, not a sewn label */
+.sub{background:none;box-shadow:none;border:0;padding:0;margin-top:14px;color:var(--ui-ink-2);
+  font-size:15px;font-weight:500}
+.sub b{color:var(--ui-ink);font-weight:800}
+
+/* ---- buttons ---- */
+/* secondary: white, solid border, 44px */
+#clubBtn,#hintBtn,#friendBtn,button.ghost,button.act.ghost,#versusView button.ghost,#versusView .vtop button,
+#result .card button.ghost{
+  background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
+  box-shadow:0 1px 2px rgba(23,24,28,.08);min-height:44px;padding:10px 18px;font-size:15px;font-weight:700;
+  text-decoration:none}
+#clubBtn{margin-top:12px;display:inline-flex}
+#clubBtn:hover,#hintBtn:hover,#friendBtn:hover,button.ghost:hover,#versusView .vtop button:hover,#versusView button.ghost:hover{
+  background:#F1EFEA;color:var(--ui-ink);border-color:var(--ui-ink);box-shadow:none}
+/* primary: solid club colour */
+button.act,#versusView button,body .vmodal-btns button.pri{
+  background:var(--brand);color:var(--on-brand);border:0;border-radius:var(--r-ctl);
+  box-shadow:inset 0 -3px 0 rgba(0,0,0,.18);min-height:50px;font-size:17px;font-weight:800}
+button.act:hover,#versusView button:not(.ghost):hover{filter:brightness(1.05)}
+button.wa,button.act.wa{background:#168A45;color:#fff}
+/* icon buttons: 44px round, white */
+#helpBtn,#archBtn{top:4px;width:44px;height:44px;border-radius:50%;background:var(--surface);color:var(--ui-ink);
+  border:1.5px solid var(--ui-ctl);box-shadow:0 1px 2px rgba(23,24,28,.08)}
+#helpBtn svg,#archBtn svg{width:18px;height:18px}
+#archBtn{inset-inline-end:52px}
+#helpBtn:hover,#archBtn:hover{background:#F1EFEA;color:var(--ui-ink);border-color:var(--ui-ink)}
+#streak{top:12px;background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-line);border-radius:22px;
+  box-shadow:none;padding:6px 12px;font-size:13px}
+#streak b,#streak b{color:var(--ui-ink)}
+@media (min-width:640px){
+  #helpBtn,#archBtn{top:6px;width:44px;height:44px}#archBtn{inset-inline-end:52px}#streak{top:14px}
+}
+
+/* ---- tabs: segmented control ---- */
+.nav{background:#DEDBD4;border:1px solid #CFCBC2;border-radius:14px;padding:4px;gap:4px;max-width:340px;margin:18px auto 16px}
+.nav button,.nav button:not(.on){outline:0;border:0;border-radius:10px;background:none;color:var(--ui-ink-2);min-height:44px;padding:10px 12px;
+  font-size:15px;font-weight:700;box-shadow:none}
+.nav button.on{background:var(--brand);color:var(--on-brand);font-weight:800;box-shadow:0 1px 3px rgba(23,24,28,.2)}
+.nav button:not(.on):hover{background:rgba(255,255,255,.7);color:var(--ui-ink);outline:0}
+
+/* ---- the guess field: an obvious input ---- */
+#guess{background:var(--surface);color:var(--ui-ink);border:2px solid var(--ui-ctl);border-radius:var(--r-ctl);
+  box-shadow:none;font-size:18px;font-weight:600;padding:14px 16px;min-height:56px}
+#guess::placeholder{color:#5D6068;font-weight:500;opacity:1}
+#guess:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px rgba(23,24,28,.14);outline:0}
+#sugg{background:var(--surface);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
+  box-shadow:0 12px 28px rgba(23,24,28,.18)}
+#sugg button{color:var(--ui-ink);font-weight:500;min-height:46px}
+#sugg button:hover,#sugg button.sel{background:var(--brand);color:var(--on-brand);font-weight:700}
+
+/* ---- legend ---- */
+.legend{color:var(--ui-ink-2);font-size:13px;font-weight:500}
+.dot{width:13px;height:13px;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.28)}
+.dot.y{background:var(--brand)} .dot.o{background:#fff;box-shadow:inset 0 0 0 3px var(--brand),inset 0 0 0 4px rgba(0,0,0,.3)} .dot.s{background:var(--miss);border:0}
+
+/* ---- yesterday / hint ---- */
+#yday{background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);box-shadow:none;
+  color:var(--ui-ink-2);font-size:14px;padding:10px 12px 10px 10px}
+#yday b{color:var(--ui-ink)}
+#yday button{background:var(--ui-ink);color:#fff;border:0;border-radius:10px;min-height:44px;padding:0 18px;font-size:14px}
+#hintOut{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:var(--r-ctl);
+  box-shadow:none;font-size:14.5px;padding:11px 14px}
+
+/* ---- guess rows: scarf stripes, crisp ---- */
+#board{gap:10px}
+.row .who{background:
+    linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
+    var(--knit) repeat-x center/auto 100%,var(--brand);
+  background-blend-mode:normal,multiply}
+.tiles{background:var(--second-band);background-image:none}
+.tile{background:var(--miss);color:var(--on-miss);border-radius:8px;box-shadow:none}
+.tile.hit{background:var(--brand);color:var(--on-brand)}
+.tile.near{background:#FFFFFF;color:#17181C;outline:0;box-shadow:inset 0 0 0 4px var(--brand),inset 0 0 0 5px rgba(0,0,0,.25)}
+/* white band (Haifa, Hapoel): define tile edges */
+.tile{outline:1px solid rgba(0,0,0,.12);outline-offset:-1px}
+.tile .k{color:var(--on-second);text-shadow:none;font-size:13px;font-weight:600}
+
+/* ---- result: white card under a scarf headline ---- */
+#result .card{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:0;
+  box-shadow:0 2px 10px rgba(23,24,28,.08)}
+#result .card h2{background:
+    linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
+    var(--knit) repeat-x center/auto 100%,var(--brand);
+  background-blend-mode:normal,multiply;color:var(--title-ink)}
+#result .card p,#result .card p b,#next,#next b,.stats .nums div,.stats .nums b,.bars .b,.bars .b i,.promo,.promo a{color:var(--ui-ink)}
+#result .card p,#next,.stats .nums div,.bars .b,.promo,#comm .hd{color:var(--ui-ink-2)}
+#comm .hd b,#comm b{color:var(--ui-ink)}
+#result .card p,#next{font-size:15px}
+.stats .nums div{font-size:13px}
+.bars .b span{background:#DEDBD4;color:var(--ui-ink)}
+.bars .b.now span{background:var(--brand);color:var(--on-brand)}
+.mini .r{background:var(--second-band);background-image:none}
+.mini i.miss{background:var(--miss)}
+.mini i.near{background:#fff;box-shadow:inset 0 0 0 3px var(--brand)}
+#report a{color:var(--ui-ink-2);border-bottom:1px solid var(--ui-ctl);font-size:13px}
+#result .card button.ghost{color:var(--ui-ink)}
+
+/* ---- sheets & modal backdrop ---- */
+.modal{background:rgba(23,24,28,.55);backdrop-filter:none;-webkit-backdrop-filter:none}
+.sheet{background:var(--surface);background-image:none;color:var(--ui-ink);border:0;border-top:8px solid var(--brand)}
+.sheet h3{color:var(--ui-ink);border-bottom:0;padding-bottom:0}
+.sheet h4,.sheet b{color:var(--ui-ink)}
+.sheet p{color:var(--ui-ink-2);font-size:14.5px}
+.sheet .x{color:var(--ui-ink);width:44px;height:44px;top:8px;inset-inline-end:8px}
+.ex div{background:var(--miss);color:#fff}
+.ex div.hit{background:var(--brand);color:var(--on-brand)}
+.ex div.near{background:#fff;color:#17181C;box-shadow:inset 0 0 0 4px var(--brand),inset 0 0 0 5px rgba(0,0,0,.25)}
+.ex .k{font-size:12px;opacity:.9}
+.arch button{background:var(--surface-2);border:1px solid var(--ui-line);color:var(--ui-ink);min-height:46px}
+.arch button.done{color:var(--ui-ink-2)}
+.arch button i{color:var(--ui-ink-2)}
+.arch button.cur{border:2px solid var(--ui-ink)}
+textarea.rt,input.rc,select.rc{background:var(--surface);color:var(--ui-ink);border:2px solid var(--ui-ctl)}
+textarea.rt:focus,input.rc:focus,select.rc:focus{border-color:var(--ui-ink)}
+.rlab{color:var(--ui-ink-2);font-size:13px}
+#fixWas{background:var(--surface-2);border-color:var(--ui-line);color:var(--ui-ink-2)}
+
+/* ---- club picker ---- */
+#picker{background:var(--ground);background-image:none}
+#picker h2{color:var(--ui-ink)}
+#picker p.lead{color:var(--ui-ink-2);font-size:15px}
+.clubs button{background:
+    linear-gradient(var(--c2),var(--c2)) top/100% 9px no-repeat,
+    linear-gradient(var(--c2),var(--c2)) bottom/100% 9px no-repeat,
+    linear-gradient(color-mix(in srgb,var(--c) 62%,transparent),color-mix(in srgb,var(--c) 62%,transparent)),
+    var(--knit) center/auto 100% repeat-x,var(--c);
+  background-blend-mode:normal,normal,normal,multiply;box-shadow:0 2px 6px rgba(23,24,28,.18)}
+.clubs button.cur{box-shadow:0 0 0 3px var(--ground),0 0 0 6px var(--ui-ink);transform:none}
+.clubs button .t b{text-shadow:none}
+#picker .foot,#picker .foot a{color:var(--ui-ink-2)}
+
+/* ---- friends duel ---- */
+#versusView .card{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:16px;
+  box-shadow:0 1px 3px rgba(23,24,28,.06)}
+#versusView .card h2,#versusView .card b,.roomcode{color:var(--ui-ink)}
+#versusView .card p,#versusView label,#versusView .pickhint,.meta,#versusView .orsep{color:var(--ui-ink-2)}
+#versusView label{font-size:14px;font-weight:600}
+#versusView input,#versusView select{background:var(--surface);color:var(--ui-ink);border:2px solid var(--ui-ctl);
+  border-radius:var(--r-ctl);min-height:52px}
+#versusView input:focus,#versusView select:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px rgba(23,24,28,.14)}
+#versusView input::placeholder{color:#5D6068;opacity:1}
+#versusView .clubpick button{background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);
+  border-radius:22px;box-shadow:none;min-height:44px;font-size:14.5px;font-weight:700}
+#versusView .clubpick button.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+#versusView .pad button{background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);box-shadow:none}
+#versusView .pad button.ok{background:var(--brand);color:var(--on-brand);border-color:transparent}
+#versusView .qtext{background:var(--surface-2);color:var(--ui-ink);border:1px solid var(--ui-line)}
+#versusView .ansrow{background:var(--surface-2)}
+#versusView .ansrow.win{background:var(--brand);color:var(--on-brand)}
+.plist div,.board div{background:var(--surface-2);color:var(--ui-ink);border:1px solid var(--ui-line)}
+.plist div.me,.board div.me{border:2px solid var(--ui-ink)}
+.plist div i,.board .rk{color:var(--ui-ink-2)}
+.board div:first-child .rk,.board .sc{color:var(--ui-ink)}
+.clue{background:var(--surface-2);color:var(--ui-ink);border:1px solid var(--ui-line)}
+.clue span{color:var(--ui-ink-2)}
+.clue.on.fresh{background:var(--brand);color:var(--on-brand);border-color:transparent}
+.clue.on.fresh span{color:var(--on-brand);opacity:.85}
+.bar{background:#DEDBD4}
+.orsep::before,.orsep::after{background:var(--ui-line)}
+.answerbox,#versusView .answerbox{background:var(--surface)}
+body.kb #scPlay{background:var(--ground)}
+#vSugg{background:var(--surface);border:1.5px solid var(--ui-ctl)}
+#vSugg button{color:var(--ui-ink);border-bottom:1px solid #E6E3DD;background:none;box-shadow:none;min-height:44px}
+#vSugg button:hover{background:var(--brand);color:var(--on-brand)}
+.feed.good{color:var(--ui-ink)} .feed.bad{color:#8A2A12}
+.err{color:#9A3412}
+#versusView .vterms-note{color:var(--ui-ink-2)}
+#versusView .vterms-note a{color:var(--ui-ink)}
+/* report / block (App Store 1.2): bordered, readable, never hidden */
+#versusView .mods button{background:var(--surface)!important;color:var(--ui-ink)!important;
+  border:1.5px solid var(--ui-ink)!important;border-radius:8px!important;font-size:13px!important;
+  font-weight:700!important;padding:7px 10px!important;min-height:34px!important}
+#versusView .mods button:hover{background:var(--ui-ink)!important;color:#fff!important}
+body .vmodal{background:rgba(23,24,28,.55)}
+body .vmodal-box{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:16px;
+  box-shadow:0 18px 40px rgba(23,24,28,.25)}
+body .vmodal-box a{color:var(--ui-ink)}
+body .vmodal-btns button{background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);min-height:48px}
+body .vmodal-btns button.pri{border-color:transparent}
+
+/* ---- app banner, footer ---- */
+.appban{background:var(--surface);border:1px solid var(--ui-line);border-radius:16px;box-shadow:none}
+.appban b{color:var(--ui-ink)} .appban span{color:var(--ui-ink-2)}
+.appban a.play span{color:#fff}
+.sitenav a{color:var(--ui-ink-2);font-size:14px}
+.sitenav span,footer,footer .who a,.credit,.credit b{color:var(--ui-ink-2)}
+.sitenav a:hover,.credit:hover,.credit:hover b{color:var(--ui-ink)}
+
+/* ---- focus: ink ring, visible on every club colour ---- */
+:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#clubBtn:focus-visible,.nav button:focus-visible,
+#hintBtn:focus-visible,#friendBtn:focus-visible,button.ghost:focus-visible,button.act:focus-visible,
+#versusView button:focus-visible,#versusView .vtop button:focus-visible,#versusView .card :focus-visible{
+  outline:2.5px solid var(--ui-ink);outline-offset:3px}
 </style>
 </head>
 <body>

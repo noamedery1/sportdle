@@ -478,7 +478,7 @@ if (!existsSync("dist/manifest.json"))
   writeJSON("dist/manifest.json", {
     name: site.title, short_name: site.name,
     start_url: "./", scope: "./", display: "standalone", dir: "rtl", lang: "he",
-    background_color: "#0C0C0E", theme_color: "#0C0C0E",
+    background_color: "#ECEAE5", theme_color: "#ECEAE5",
     icons: [
       { src: "icon-32.png",  sizes: "32x32",   type: "image/png" },
       { src: "icon-180.png", sizes: "180x180", type: "image/png" },
