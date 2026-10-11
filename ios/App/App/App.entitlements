@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Universal Links: קישור לדף מועדון או להזמנה לקרב (sportdle.techbynoam.com/beitar,
+	     /join/?room=…) נפתח באפליקציה כשהיא מותקנת. הצד השני: /.well-known/apple-app-site-association
+	     שנוצר ב-scripts/build.mjs מ-iosAppLinks ב-config/site.json. -->
+	<key>com.apple.developer.associated-domains</key>
+	<array>
+		<string>applinks:sportdle.techbynoam.com</string>
+	</array>
+</dict>
+</plist>

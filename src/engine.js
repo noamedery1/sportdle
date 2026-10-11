@@ -336,7 +336,7 @@ function shareText(){
      להתאים לפי query string, ולכן רק נתיב פותח את האפליקציה בקישור
      ששותפו. הדף הזה קיים ממילא — הוא המשחק עם המועדון נבחר — והוא
      גם מאונדקס, כך שהקישור טוב יותר גם לרשת. */
-  return `${head}\n\n${grid}\n\n${key}\n${SITE_URL}/${club.slug}/`;
+  return `${head}\n\n${grid}\n\n${key}\n${SITE_URL}/${club.slug}`;
 }
 async function copyText(txt){
   // הדרך המודרנית — דורשת HTTPS
@@ -803,7 +803,7 @@ function friendText(){
   const known = facts.length ? `*מה שכבר ידוע*\n${facts.join("\n")}`
                              : `עוד לא הצלחתי לצמצם כלום`;
   const out   = `*נפסלו:* ${guesses.map(g => g.name).join(" · ")}`;
-  return `${head}\n\n${known}\n\n${out}\n\n${SITE_URL}/${club.slug}/`;
+  return `${head}\n\n${known}\n\n${out}\n\n${SITE_URL}/${club.slug}`;
 }
 
 /* הסף הוא 3 ולא 5 כמו ברמז. הרמז מתומחר בקושי — הוא נפתח כשבאמת
