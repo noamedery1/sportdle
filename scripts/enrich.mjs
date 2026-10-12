@@ -9,6 +9,7 @@
    הולכת לקובץ הבדיקה ומחכה לאישור אנושי.
    ============================================================ */
 import { existsSync } from "node:fs";
+import { plausible } from "./lib/translit.mjs";
 import {
   parseArgs, pickClubs, readJSON, writeJSON, log, warn, die,
   normName, normLatin, shortName, stripParen, hasYearDisambig, toSpells, seasonsIn, countTitles, season, nameVariants
@@ -355,7 +356,15 @@ for (const club of clubs) {
         for (const k of [normName(heName), normName(shortName(heName)), ...nameVariants(heName)]) {
           hit = byHe.get(k); if (hit) break;
         }
-      if (!hit) hit = structural.get(w.en) || null;
+      /* הגשר המבני, כשהגשר הבין־לשוני כבר נתן שם עברי שאינו במאגר,
+         מותר רק אם השם הלטיני נשמע כמו הרשומה שהוא נוחת עליה. בלי
+         זה "Amir Agayev" נדבק לאדי גוטליב, ו-"Blessing Kaku" הניגרי
+         ליניב אלול — עם הלאום, העמדה והעונות שלו. "אורן ניסים" מול
+         "אורן נסים" עובר (0.83); הזיווגים השגויים נמדדו עד 0.75. */
+      if (!hit) {
+        const s = structural.get(w.en) || null;
+        if (s && (!heName || plausible(s.he, w.en).score >= 0.8)) hit = s;
+      }
 
       if (hit) {
         if (!hit.pos && w.pos)        { hit.pos = w.pos;   hit.src.push("wf:pos"); }
@@ -372,7 +381,9 @@ for (const club of clubs) {
         hit.src.push("wf");
         filled++;
       } else if (heName) {
-        const p = { ...w, he: heName, years: [...w.years], src: ["wf", "wikilang"] };
+        /* השם הלטיני נשמר ככינוי — בלעדיו tools/trust.mjs לא מוצא
+           את הרשומה ב-worldfootball, והיא נספרת כמקור יחיד. */
+        const p = { ...w, he: heName, years: [...w.years], aliases: [w.en], src: ["wf", "wikilang"] };
         players.push(p); idx(p);
         addedHist++;
       } else {

@@ -1,0 +1,6772 @@
+{
+ "source": "rsssf",
+ "fetched": "2026-10-11",
+ "pages": [
+  "https://www.rsssf.org/tablesi/isra86.html",
+  "https://www.rsssf.org/tablesi/isra87.html",
+  "https://www.rsssf.org/tablesi/isra88.html",
+  "https://www.rsssf.org/tablesi/isra89.html",
+  "https://www.rsssf.org/tablesi/isra90.html",
+  "https://www.rsssf.org/tablesi/isra91.html",
+  "https://www.rsssf.org/tablesi/isra92.html",
+  "https://www.rsssf.org/tablesi/isra93.html",
+  "https://www.rsssf.org/tablesi/isra94.html",
+  "https://www.rsssf.org/tablesi/isra95.html",
+  "https://www.rsssf.org/tablesi/isra96.html",
+  "https://www.rsssf.org/tablesi/isra97.html",
+  "https://www.rsssf.org/tablesi/isra98.html",
+  "https://www.rsssf.org/tablesi/isra99.html",
+  "https://www.rsssf.org/tablesi/isra00.html",
+  "https://www.rsssf.org/tablesi/isra01.html",
+  "https://www.rsssf.org/tablesi/isra02.html",
+  "https://www.rsssf.org/tablesi/isra03.html",
+  "https://www.rsssf.org/tablesi/isratops.html"
+ ],
+ "matchGoals": {
+  "1986": {},
+  "1987": {},
+  "1988": {},
+  "1989": {},
+  "1990": {},
+  "1991": {},
+  "1992": {},
+  "1993": {},
+  "1994": {},
+  "1995": {},
+  "1996": {
+   "hapoel-ta": {
+    "Yosi Madar": {
+     "goals": 10,
+     "matches": 6
+    },
+    "Nisim Avitan": {
+     "goals": 12,
+     "matches": 10
+    },
+    "Alon Ofir": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Eyal Ben-Ami": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sharon Mimer": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Tomer Eliyahu": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sagiv Eliyahu": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Kazimish Moskal": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Sergei Pogodin": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Shalom Tikva": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Cobi Hadadi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-bs": {
+    "Sergei Gusev": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Oren Sagron": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Armands Zeiberlins": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Baruh David": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Sharon Avitan": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Gadi Hazut": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Stav Elimeleh": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Hisham Zuabi": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Rami Eliyahu": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sharon Sagron": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Amir Avigdor": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Zlaiko Leikovic": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Alon Rif": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Alon Hazan": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Haim Revivo": {
+     "goals": 29,
+     "matches": 21
+    },
+    "Edgardo Adinolfi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sergei Kandaurov": {
+     "goals": 14,
+     "matches": 11
+    },
+    "Ofer Shitrit": {
+     "goals": 20,
+     "matches": 13
+    },
+    "Alon Mizrahi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Eyal Berkovich": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Moshe Glam": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Jaroslav Kintush": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Haim Silvas": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Roni Levi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Alon Harazi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Istvan Salloi": {
+     "goals": 15,
+     "matches": 11
+    },
+    "Sahar Saado": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eli Ohana": {
+     "goals": 15,
+     "matches": 11
+    },
+    "Ehud Kahila": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Ronen Harazi": {
+     "goals": 13,
+     "matches": 12
+    },
+    "Arik Benado": {
+     "goals": 2,
+     "matches": 2
+    },
+    "David Amsalem": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Laszlo Ceh": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shmulik Levi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eitan Mizrahi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Istvan Pisont": {
+     "goals": 11,
+     "matches": 7
+    },
+    "Yosi Abuksis": {
+     "goals": 2,
+     "matches": 2
+    }
+   },
+   "maccabi-ta": {
+    "Victor Moroz": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Avi Nimni": {
+     "goals": 12,
+     "matches": 12
+    },
+    "Yevgeni Kashentsev": {
+     "goals": 8,
+     "matches": 6
+    },
+    "Itzik Zohar": {
+     "goals": 10,
+     "matches": 10
+    },
+    "Nir Klinger": {
+     "goals": 12,
+     "matches": 11
+    },
+    "Eli Driks": {
+     "goals": 17,
+     "matches": 14
+    },
+    "Amir Shelah": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Meir Melika": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Noam Shoham": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yaacov Hilel": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Alon Brumer": {
+     "goals": 1,
+     "matches": 1
+    }
+   }
+  },
+  "1997": {
+   "hapoel-ta": {
+    "Cobi Hadadi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yosi Madar": {
+     "goals": 8,
+     "matches": 6
+    },
+    "Sagiv Eliyahu": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Alon Hazan": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Sergei Pogodin": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Nisim Avitan": {
+     "goals": 7,
+     "matches": 4
+    },
+    "Kazimish Moskal": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eyal Ben-Ami": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Felix Halfon": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Hezi Shirazi": {
+     "goals": 14,
+     "matches": 11
+    },
+    "Roni Levi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Sergei Kandaurov": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Eyal Berkovich": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sergei Balanchuk": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Avishay Jano": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Amir Turjeman": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Reuven Atar": {
+     "goals": 5,
+     "matches": 3
+    },
+    "Haim Silvas": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Reuven atar": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Alon Harazi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Idan Shum": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Rajid Baransi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Aiman Halahla": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Itzik Zohar": {
+     "goals": 15,
+     "matches": 12
+    },
+    "Eli Ohana": {
+     "goals": 21,
+     "matches": 15
+    },
+    "Ronen Harazi": {
+     "goals": 6,
+     "matches": 4
+    },
+    "Istvan Salloi": {
+     "goals": 10,
+     "matches": 7
+    },
+    "David Amsalem": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shmulik Levi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Eitan Mizrahi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir Sevilia": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Yosi Abuksis": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Istvan Pisont": {
+     "goals": 5,
+     "matches": 3
+    },
+    "Istvan Sahloi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ehud Kahila": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-ta": {
+    "Avi Nimni": {
+     "goals": 17,
+     "matches": 14
+    },
+    "Alon Brumer": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Eli Driks": {
+     "goals": 7,
+     "matches": 7
+    },
+    "Nir Klinger": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Nir sevilia": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ofer Mizrahi": {
+     "goals": 9,
+     "matches": 6
+    },
+    "Amir Shelah": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yevgeni Kashentsev": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir Sevilia": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Haim Hajaj": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Noam Shoham": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Guy Tsarfati": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ron Nahman": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Arik Hengeli": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-bs": {
+    "Giovanni Rosso": {
+     "goals": 8,
+     "matches": 8
+    },
+    "Liron Basis": {
+     "goals": 10,
+     "matches": 10
+    },
+    "Shay Holtzman": {
+     "goals": 13,
+     "matches": 12
+    },
+    "Gadi Hazut": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Oren Sagron": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Sejad Halilovic": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Dudu Hefer": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Sharon Avitan": {
+     "goals": 4,
+     "matches": 3
+    }
+   }
+  },
+  "1998": {
+   "maccabi-ta": {
+    "Avi Nimni": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eli Driks": {
+     "goals": 16,
+     "matches": 12
+    },
+    "Rodrigo Goldberg": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Nir Klinger": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Domagoi Kosic": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Dedi Ben-Dayan": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Moshe Glam": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Alon Ofir": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Guy Tsarfati": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Haim Hajaj": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Alon Brumer": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Elek Nyilas": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Eli Tsafrir": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ben Luz": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Alexei Gerasimov": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Istvan Hamar": {
+     "goals": 9,
+     "matches": 9
+    },
+    "Alon Harazi": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Istvan Pisont": {
+     "goals": 15,
+     "matches": 12
+    },
+    "Istvan Salloi": {
+     "goals": 16,
+     "matches": 9
+    },
+    "Nir Sevilia": {
+     "goals": 11,
+     "matches": 7
+    },
+    "Yosi Abuksis": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Eli Ohana": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Alon Cohen": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Shay Holtzman": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Tomer Azulay": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir sevilia": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Shmulik Levi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir Reichman": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eitan Mizrahi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-bs": {
+    "Oren Sagron": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Yosi Benayun": {
+     "goals": 17,
+     "matches": 11
+    },
+    "Dudu Hefer": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Alon Rif": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Sergei Gusev": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yair Simhon": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Sharon Avitan": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Tomer Vaaknin": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Amir Avigdor": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Aris Eliacic": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Christian Okapela": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Salbisa Cula": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Bahajat Uda": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Marko Diconstanzo": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Marko diconstanzo": {
+     "goals": 1,
+     "matches": 1
+    },
+    "David Peretz": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Eliezer Lavi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Alon Mizrahi": {
+     "goals": 25,
+     "matches": 19
+    },
+    "Sergei Kandaurov": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Avishay Jano": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Hezi Shirazi": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Arik Benado": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Ibrahim Duro": {
+     "goals": 8,
+     "matches": 6
+    },
+    "Golan Deri": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sergei Balanchuk": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Adoram Keisy": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Haim Silvas": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Itzik Zohar": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Vladimir Nidergaus": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Rajid Baransi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-ta": {
+    "Georgi Darasilia": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Asi Domb": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Ofer Shitrit": {
+     "goals": 22,
+     "matches": 14
+    },
+    "Pini Balili": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Kfir Udi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Shalom Tikva": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Kazimish Moskal": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Shimon Gershon": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sebastian Simerotic": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Mario Mestrovic": {
+     "goals": 1,
+     "matches": 1
+    }
+   }
+  },
+  "1999": {
+   "maccabi-ta": {
+    "Alexei Kosolapov": {
+     "goals": 9,
+     "matches": 8
+    },
+    "Andrzej Kubica": {
+     "goals": 21,
+     "matches": 17
+    },
+    "Eli Driks": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Dedi Ben-Dayan": {
+     "goals": 3,
+     "matches": 3
+    },
+    "David Revivo": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Avi Nimni": {
+     "goals": 17,
+     "matches": 14
+    },
+    "Alon Ofir": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Ofir Haim": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Moshe Glam": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Kfir Edri": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Guy Tsarfati": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Itzik Zohar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eli Biton": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Ofer Shitrit": {
+     "goals": 16,
+     "matches": 11
+    },
+    "Sergei Tretiak": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yosi Abuksis": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Asi Domb": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Tamas Sandor": {
+     "goals": 10,
+     "matches": 9
+    },
+    "Istvan Salloi": {
+     "goals": 7,
+     "matches": 4
+    },
+    "Istvan Hamar": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Amir Shelah": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir Sevilia": {
+     "goals": 17,
+     "matches": 13
+    },
+    "Jan Talesnikov": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shmulik Levi": {
+     "goals": 2,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Adoram Keisy": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Radovan Hromadko": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Haim Silvas": {
+     "goals": 2,
+     "matches": 1
+    },
+    "Alon Mizrahi": {
+     "goals": 14,
+     "matches": 9
+    },
+    "Alon Harazi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Yosi Benayun": {
+     "goals": 16,
+     "matches": 13
+    },
+    "Yaniv Katan": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Radovan Hromatko": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Avishay Jano": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Victor Pacha": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Shuki Nagar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Ronen Harazi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Jerzy Brzeczek": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Ibrahim Duro": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shlomi Ben-Hamo": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ofir Kopel": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Arik Benado": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-ta": {
+    "Aviv Volnerman": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Israel Cohen": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sebastian Simerotic": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Ron Nahman": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eyal Ben-Ami": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Asi Tubi": {
+     "goals": 10,
+     "matches": 8
+    },
+    "Shimon Gershon": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Avi Azulay": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Salim Tuama": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Shalom Tikva": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Ziv Kabeda": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Idan Tal": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Gabor Marton": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Kfir Udi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Davor Rupnik": {
+     "goals": 1,
+     "matches": 1
+    }
+   }
+  },
+  "2000": {
+   "hapoel-ta": {
+    "Kfir Udi": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Ronen Harazi": {
+     "goals": 17,
+     "matches": 13
+    },
+    "Sebastian Simerotic": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Salim Tuama": {
+     "goals": 7,
+     "matches": 7
+    },
+    "Moti Ohayon": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Istvan Pisont": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Shimon Gershon": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Pini Balili": {
+     "goals": 11,
+     "matches": 10
+    },
+    "Ilan Bahar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shalom Tikva": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Igal Antebi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Omri Afek": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Denis Onischenko": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Dean Racunica": {
+     "goals": 2,
+     "matches": 2
+    }
+   },
+   "maccabi-haifa": {
+    "Sergei Clescenco": {
+     "goals": 22,
+     "matches": 17
+    },
+    "Alon Harazi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Rafi Cohen": {
+     "goals": 18,
+     "matches": 13
+    },
+    "Avishay Jano": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Jerzy Brzeczek": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Yaniv Katan": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Yosi Benayun": {
+     "goals": 19,
+     "matches": 12
+    },
+    "Vasili Ivanov": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Georgi Gakhokidze": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Shuki Nagar": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Adoram Keisy": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Reuven Atar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Arik Benado": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Radoslaw Michalski": {
+     "goals": 2,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Victor Pacha": {
+     "goals": 13,
+     "matches": 11
+    },
+    "Tamas Sandor": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Raanan Deri": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ofer Shitrit": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Asi Domb": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Elad Yaacobi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yosi Abuksis": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Shmulik Levi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Reuven Atar": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Istvan Hamar": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Cobi Ganon": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Alon Mizrahi": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Nir Sevilia": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Alon Mizrai": {
+     "goals": 3,
+     "matches": 1
+    }
+   },
+   "maccabi-ta": {
+    "Andrzej Kubica": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Grzegorz Wedzynski": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Dedi Ben-Dayan": {
+     "goals": 11,
+     "matches": 8
+    },
+    "Kfir Edri": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Liron Basis": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Guy Tsarfati": {
+     "goals": 9,
+     "matches": 9
+    },
+    "Alexei Kosolapov": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Felix Halfon": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Ben Luz": {
+     "goals": 1,
+     "matches": 1
+    },
+    "David Revivo": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Avi Nimni": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Olexandr Kosyrin": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Ofir Haim": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Gadi Brumer": {
+     "goals": 1,
+     "matches": 1
+    }
+   }
+  },
+  "2001": {
+   "hapoel-ta": {
+    "Avi Tikva": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Milan Osterc": {
+     "goals": 9,
+     "matches": 8
+    },
+    "Omri Afek": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Gabor Halmai": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Pini Balili": {
+     "goals": 9,
+     "matches": 8
+    },
+    "Ilan Bahar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Salim Tuama": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Shimon Gershon": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Asi Domb": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Istvan Pisont": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Aviv Volnerman": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Dean Racunica": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Dmytro Mikhailenko": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Kfir Udi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yaacov Hilel": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Manor Hassan": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Yossi Benayoun": {
+     "goals": 12,
+     "matches": 9
+    },
+    "Yaniv Katan": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Sergei Clescenco": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Alon Harazi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Rafi Cohen": {
+     "goals": 11,
+     "matches": 8
+    },
+    "Arik Benado": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nenad Pralija": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Walid Badir": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Avishai Jano": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Adoram Keisy": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Reuven Atar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Andrei Ostrovski": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yakubu Aiyegbeni": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Raimondas Zutautas": {
+     "goals": 2,
+     "matches": 2
+    }
+   },
+   "beitar": {
+    "Alon Mizrahi": {
+     "goals": 12,
+     "matches": 9
+    },
+    "Yossi Abuksis": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Branko Savic": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Giovanni Rosso": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Istvan Hamar": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Cobi Ganon": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Yaniv Abarjil": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Tamas Sandor": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Nir Sevilia": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Felix Halfon": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Vladimir Petrovic": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eitan Mizrahi": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-ta": {
+    "Tal Banin": {
+     "goals": 8,
+     "matches": 6
+    },
+    "Grzegorz Wedzynski": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Cobi Refua": {
+     "goals": 6,
+     "matches": 4
+    },
+    "Avi Nimni": {
+     "goals": 23,
+     "matches": 16
+    },
+    "Guy Tsarfati": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Meho Kodro": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Andrei Tikhonov": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ferenc Horvath": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Baruch Dego": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Eli Biton": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Dedi Ben-Dayan": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Rodrigo Goldberg": {
+     "goals": 6,
+     "matches": 5
+    }
+   }
+  },
+  "2002": {
+   "maccabi-ta": {
+    "Tal Banin": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Baruch Dego": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Avi Nimni": {
+     "goals": 13,
+     "matches": 11
+    },
+    "Rodrigo Goldberg": {
+     "goals": 13,
+     "matches": 10
+    },
+    "Tal Ben-Haim": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Amir Turjeman": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Meni Levi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eli Biton": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Eyal Shen": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ferenc Horvath": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Gadi Brumer": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-bs": {
+    "Shuki Nagar": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Ofir Haim": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Rubenilson Monteiro": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Kfir Edri": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Rami Abu-Laben": {
+     "goals": 9,
+     "matches": 8
+    },
+    "Deivi Korman": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Elyaniv Barda": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Drazen Madunovic": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Marek Citko": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yaniv Abarjil": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Elad Bonfeld": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yaniv Elul": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-haifa": {
+    "Yakubu Aiyegbeni": {
+     "goals": 13,
+     "matches": 10
+    },
+    "Giovanni Rosso": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Yaniv Katan": {
+     "goals": 5,
+     "matches": 3
+    },
+    "Adoram Keisy": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Rafi Cohen": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Arik Benado": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Raimondas Zutautas": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Nenad Pralija": {
+     "goals": 8,
+     "matches": 6
+    },
+    "Eyal Almoshnino": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Alon Harazi": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Yossi Benayoun": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Nir Sevilia": {
+     "goals": 6,
+     "matches": 4
+    },
+    "Walid Badir": {
+     "goals": 9,
+     "matches": 8
+    },
+    "Avishai Jano": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Reuven Atar": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Victor Pacha": {
+     "goals": 8,
+     "matches": 8
+    },
+    "Dmytro Mikhailenko": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Manor Hassan": {
+     "goals": 11,
+     "matches": 8
+    },
+    "David Amsalem": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Tamas Sandor": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Moti Ohayon": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Itzik Zohar": {
+     "goals": 6,
+     "matches": 4
+    },
+    "Moti Menahem": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Cornelio Papora": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sergei Konovalov": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-ta": {
+    "Ilan Bahar": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Shimon Gershon": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Sergei Clescenco": {
+     "goals": 14,
+     "matches": 14
+    },
+    "Asi Domb": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Pini Balili": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Yossi Abuksis": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Kfir Udi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Igal Antebi": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ben Luz": {
+     "goals": 5,
+     "matches": 4
+    },
+    "Milan Osterc": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Salim Tuama": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Denis Onischenko": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Gabor Halmai": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Istvan Pisont": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Omri Afek": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Avi Knafo": {
+     "goals": 3,
+     "matches": 2
+    }
+   }
+  },
+  "2003": {
+   "maccabi-haifa": {
+    "Erik Ejiofor": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Yaniv Katan": {
+     "goals": 6,
+     "matches": 5
+    },
+    "Giovanni Rosso": {
+     "goals": 11,
+     "matches": 9
+    },
+    "Yakubu Aiyegbeni": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Rafi Cohen": {
+     "goals": 5,
+     "matches": 3
+    },
+    "Michael Zandberg": {
+     "goals": 14,
+     "matches": 12
+    },
+    "Alon Harazi": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Walid Badir": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Arik Benado": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nenad Pralija": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Avishai Jano": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Nir Sevilia": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Adoram Keisy": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Elyaniv Barda": {
+     "goals": 3,
+     "matches": 2
+    },
+    "Idan Tal": {
+     "goals": 6,
+     "matches": 4
+    }
+   },
+   "hapoel-bs": {
+    "Shuki Nagar": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Blessing Kaku": {
+     "goals": 9,
+     "matches": 9
+    },
+    "Rami Abu-Laben": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Oren Sagron": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Bartosz Tarachulski": {
+     "goals": 4,
+     "matches": 3
+    },
+    "Remigiusz Jezierski": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Tomer Haleva": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Ofir Haim": {
+     "goals": 10,
+     "matches": 7
+    },
+    "Elad Bonfeld": {
+     "goals": 6,
+     "matches": 6
+    },
+    "Amir Abutbul": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Rami Eliyahu": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Stav Elimeleh": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Bartosz Tarachulsky": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "maccabi-ta": {
+    "Reuven Oved": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Baruch Dego": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Eli Biton": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Rodrigo Goldberg": {
+     "goals": 9,
+     "matches": 9
+    },
+    "Andrejs Prohorenkovs": {
+     "goals": 10,
+     "matches": 9
+    },
+    "Tal Banin": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Avi Nimni": {
+     "goals": 14,
+     "matches": 7
+    },
+    "Bruno Reis": {
+     "goals": 5,
+     "matches": 5
+    },
+    "Amir Turjeman": {
+     "goals": 7,
+     "matches": 6
+    },
+    "Asaf Crispis": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "hapoel-ta": {
+    "Gabor Halmai": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Pini Balili": {
+     "goals": 8,
+     "matches": 8
+    },
+    "Salim Tuama": {
+     "goals": 7,
+     "matches": 7
+    },
+    "Omri Afek": {
+     "goals": 7,
+     "matches": 5
+    },
+    "Kfir Udi": {
+     "goals": 4,
+     "matches": 4
+    },
+    "Shimon Gershon": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Ben Luz": {
+     "goals": 10,
+     "matches": 9
+    },
+    "Avi Knafo": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Sergei Clescenco": {
+     "goals": 8,
+     "matches": 7
+    },
+    "Yossi Abuksis": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Aviv Elhadad": {
+     "goals": 1,
+     "matches": 1
+    }
+   },
+   "beitar": {
+    "Moshe Biton": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Itzik Zohar": {
+     "goals": 10,
+     "matches": 9
+    },
+    "Andrzej Kubica": {
+     "goals": 12,
+     "matches": 9
+    },
+    "Pablo Del Rio": {
+     "goals": 1,
+     "matches": 1
+    },
+    "Edmilson Ferreira": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Eli Sason": {
+     "goals": 2,
+     "matches": 1
+    },
+    "Ofer Talker": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Maor Melikson": {
+     "goals": 3,
+     "matches": 3
+    },
+    "Kfir Edri": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Chukri Ogagawa": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Shlomi Arbeitman": {
+     "goals": 2,
+     "matches": 2
+    },
+    "David Amsalem": {
+     "goals": 2,
+     "matches": 2
+    },
+    "Aviram Bruchyan": {
+     "goals": 1,
+     "matches": 1
+    }
+   }
+  }
+ },
+ "tops": [
+  {
+   "year": 1986,
+   "slug": "beitar",
+   "name": "Uri Malmilian",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "maccabi-haifa",
+   "name": "Zahi Armeli",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "maccabi-ta",
+   "name": "Moti Ivanir",
+   "goals": 12,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "hapoel-ta",
+   "name": "Eli Cohen",
+   "goals": 11,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "maccabi-haifa",
+   "name": "Roni Rosenthal",
+   "goals": 11,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "maccabi-haifa",
+   "name": "Moshe Selecter",
+   "goals": 9,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1986,
+   "slug": "hapoel-ta",
+   "name": "Moshe Sinay",
+   "goals": 9,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra86.html"
+  },
+  {
+   "year": 1989,
+   "slug": "maccabi-ta",
+   "name": "Beni Tabak",
+   "goals": 18,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra89.html"
+  },
+  {
+   "year": 1990,
+   "slug": "maccabi-ta",
+   "name": "Uri Malmilian",
+   "goals": 16,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra90.html"
+  },
+  {
+   "year": 1990,
+   "slug": "hapoel-ta",
+   "name": "Moris Jano",
+   "goals": 15,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra90.html"
+  },
+  {
+   "year": 1991,
+   "slug": "maccabi-haifa",
+   "name": "Reuven Attar",
+   "goals": 15,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra91.html"
+  },
+  {
+   "year": 1991,
+   "slug": "maccabi-haifa",
+   "name": "Yigal Menahem",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra91.html"
+  },
+  {
+   "year": 1994,
+   "slug": "maccabi-haifa",
+   "name": "Alon Mizrahi",
+   "goals": 28,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1994,
+   "slug": "maccabi-ta",
+   "name": "Itzik Zohar",
+   "goals": 22,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1994,
+   "slug": "beitar",
+   "name": "Vladimir Greshnev",
+   "goals": 19,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1994,
+   "slug": "hapoel-bs",
+   "name": "Amir Avigdor",
+   "goals": 16,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1994,
+   "slug": "beitar",
+   "name": "Eli Ohana",
+   "goals": 16,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1994,
+   "slug": "beitar",
+   "name": "Ronen Harazi",
+   "goals": 15,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra94.html"
+  },
+  {
+   "year": 1995,
+   "slug": "maccabi-haifa",
+   "name": "Haim Revivo",
+   "goals": 17,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra95.html"
+  },
+  {
+   "year": 1995,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 12,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra95.html"
+  },
+  {
+   "year": 1995,
+   "slug": "maccabi-haifa",
+   "name": "Ofer Shitrit",
+   "goals": 12,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra95.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Haim Revivo",
+   "goals": 26,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Eli Driks",
+   "goals": 15,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Ofer Shitrit",
+   "goals": 15,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Istvan Salloi",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Ronen Harazi",
+   "goals": 13,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Eli Ohana",
+   "goals": 13,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Nisim Avitan",
+   "goals": 12,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Kandaurov",
+   "goals": 11,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Nir Klinger",
+   "goals": 10,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 10,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Yosi Madar",
+   "goals": 9,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Itzik Zohar",
+   "goals": 9,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Yevgeni Kashentsev",
+   "goals": 8,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Sagiv Eliyahu",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Sergei Gusev",
+   "goals": 6,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Alon Hazan",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Istvan Pisont",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Kazimish Moskal",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Hisham Zuabi",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Alon Ofir",
+   "goals": 4,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "David Amsalem",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Eyal Berkovich",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Moshe Glam",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Roni Levi",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Sergei Pogodin",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Shalom Tikva",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Yosi Abuksis",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Amir Avigdor",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Sharon Avitan",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Arik Benado",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Baruh David",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Stav Elimeleh",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Ehud Kahila",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Zlaiko Leikovic",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Shmulik Levi",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Victor Moroz",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Sahar Saado",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Oren Sagron",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Laszlo Ceh",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Armands Zeiberlins",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Edgardo Adinolfi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Eyal Ben-Ami",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Rami Eliyahu",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Tomer Eliyahu",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Cobi Hadadi",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Gadi Hazut",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Yaacov Hilel",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Jaroslav Kintush",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Meir Melika",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Sharon Mimer",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Eitan Mizrahi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Alon Rif",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-bs",
+   "name": "Sharon Sagron",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Amir Shelah",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Haim Silvas",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-ta",
+   "name": "Noam Shoham",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "beitar",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Moti Fliter",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1996,
+   "slug": "hapoel-ta",
+   "name": "Sharon Mimer",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra96.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Eli Ohana",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Itzik Zohar",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Hezi Shirazi",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 12,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Shay Holtzman",
+   "goals": 11,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Istvan Salloi",
+   "goals": 10,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Liron Basis",
+   "goals": 9,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Amir Turjeman",
+   "goals": 9,
+   "team": "Maccabi Haifa",
+   "note": "(2 in Hapoel Haifa)",
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Yosi Madar",
+   "goals": 8,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Reuven Atar",
+   "goals": 7,
+   "team": "Maccabi Haifa",
+   "note": "(1 in Hapoel Haifa)",
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Eli Driks",
+   "goals": 7,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Kandaurov",
+   "goals": 7,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Nir Sevilia",
+   "goals": 7,
+   "team": "Beitar Jerusalem",
+   "note": "(2 in Maccabi Tel-Aviv)",
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Nisim Avitan",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Haim Hajaj",
+   "goals": 6,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Ronen Harazi",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Ofer Mizrahi",
+   "goals": 6,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Giovanni Rosso",
+   "goals": 6,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Oren Sagron",
+   "goals": 6,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Dudu Hefer",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Istvan Pisont",
+   "goals": 5,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Sagiv Eliyahu",
+   "goals": 4,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Nir Klinger",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Yosi Abuksis",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Alon Brumer",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Sejad Halilovic",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Alon Hazan",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Gadi Hazut",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Avishay Jano",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "David Amsalem",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Roni Levi",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Shmulik Levi",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Kazimish Moskal",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Sergei Pogodin",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Idan Shum",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Haim Silvas",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Sharon Avitan",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Balanchuk",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Rajid Baransi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Eyal Ben-Ami",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Eyal Berkovich",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Cobi Hadadi",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-haifa",
+   "name": "Aiman Halahla",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Felix Halfon",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "beitar",
+   "name": "Eitan Mizrahi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Ron Nahman",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Amir Shelah",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Noam Shoham",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "maccabi-ta",
+   "name": "Guy Tsarfati",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Leonardo Bauer",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-bs",
+   "name": "Stav Elimeleh",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1997,
+   "slug": "hapoel-ta",
+   "name": "Sharon Mimer",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra97.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Alon Mizrahi",
+   "goals": 18,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Ofer Shitrit",
+   "goals": 17,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Istvan Salloi",
+   "goals": 16,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Yosi Benayun",
+   "goals": 15,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Istvan Pisont",
+   "goals": 15,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Eli Driks",
+   "goals": 14,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Nir Sevilia",
+   "goals": 12,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Istvan Hamar",
+   "goals": 8,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Georgi Darasilia",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Ibrahim Duro",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Alon Harazi",
+   "goals": 5,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Dudu Hefer",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Kandaurov",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Hezi Shirazi",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Sebastian Simerotic",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Shalom Tikva",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Yosi Abuksis",
+   "goals": 4,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Itzik Zohar",
+   "goals": 4,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Dedi Ben-Dayan",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Marko Diconstanzo",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Asi Domb",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Moshe Glam",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Rodrigo Goldberg",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Shay Holtzman",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Vladimir Nidergaus",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Alon Ofir",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Guy Tsarfati",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Salbisa Cula",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Haim Hajaj",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Nir Klinger",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Ben Luz",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Elek Nyilas",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Eli Ohana",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Alon Rif",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Tomer Vaaknin",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Amir Avigdor",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Tomer Azulay",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Pini Balili",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Balanchuk",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Rajid Baransi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Alon Brumer",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Alon Cohen",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Golan Deri",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Aris Eliacic",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Sergei Gusev",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Avishay Jano",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Domagoi Kosic",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Shmulik Levi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Mario Mestrovic",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-ta",
+   "name": "Kazimish Moskal",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Christian Okapela",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Nir Reichman",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Oren Sagron",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Yair Simhon",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-ta",
+   "name": "Eli Tsafrir",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Bahajat Uda",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Amir Avigdor",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "hapoel-bs",
+   "name": "Alon Elbaz",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1998,
+   "slug": "beitar",
+   "name": "Itzik Korenfein",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra98.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Andrzej Kubica",
+   "goals": 21,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 17,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Nir Sevilia",
+   "goals": 17,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Yosi Benayun",
+   "goals": 16,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Ofer Shitrit",
+   "goals": 16,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Alon Mizrahi",
+   "goals": 14,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Victor Pacha",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": "(9 in Hapoel Jerusalem)",
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Tamas Sandor",
+   "goals": 10,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Asi Tubi",
+   "goals": 10,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Alexei Kosolapov",
+   "goals": 9,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Istvan Salloi",
+   "goals": 7,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Sebastian Simerotic",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Kfir Edri",
+   "goals": 6,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Shalom Tikva",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Salim Tuama",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Moshe Glam",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Radovan Hromadko",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Idan Tal",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": "(3 in Maccabi Petah-Tikva)",
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Istvan Hamar",
+   "goals": 4,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Guy Tsarfati",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Yosi Abuksis",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Dedi Ben-Dayan",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Asi Domb",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Eli Driks",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Gabor Marton",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": "(2 in Hapoel Petah-Tikva)",
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Alon Ofir",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Eyal Ben-Ami",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Jerzy Brzeczek",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Ibrahim Duro",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Ronen Harazi",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Avishay Jano",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Shmulik Levi",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Shuki Nagar",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Ron Nahman",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Haim Silvas",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Jan Talesnikov",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Itzik Zohar",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Avi Azulay",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Shlomi Ben-Hamo",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Eli Biton",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Israel Cohen",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Ofir Haim",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Ziv Kabeda",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Yaniv Katan",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-haifa",
+   "name": "Ofir Kopel",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "David Revivo",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Davor Rupnik",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Amir Shelah",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Sergei Tretiak",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "hapoel-ta",
+   "name": "Aviv Volnerman",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 1999,
+   "slug": "beitar",
+   "name": "Asi Domb",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra99.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Clescenco",
+   "goals": 22,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Yosi Benayun",
+   "goals": 19,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Rafi Cohen",
+   "goals": 18,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Ronen Harazi",
+   "goals": 17,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Victor Pacha",
+   "goals": 13,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Pini Balili",
+   "goals": 11,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Dedi Ben-Dayan",
+   "goals": 11,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Reuven Atar",
+   "goals": 9,
+   "team": "Maccabi Haifa",
+   "note": "(2 in Hapoel Haifa, 5 in Beitar Jerusalem)",
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Alon Mizrahi",
+   "goals": 9,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Guy Tsarfati",
+   "goals": 9,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Jerzy Brzeczek",
+   "goals": 8,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Andrzej Kubica",
+   "goals": 8,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 8,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Sebastian Simerotic",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Salim Tuama",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Yosi Abuksis",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Istvan Hamar",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Istvan Pisont",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Nir Sevilia",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": "(2 in Hapoel Haifa)",
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Tamas Sandor",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Liron Basis",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Kfir Edri",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Grzegorz Wedzynski",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Avishay Jano",
+   "goals": 4,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Olexandr Kosyrin",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Omri Afek",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Asi Domb",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Ofir Haim",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Felix Halfon",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Yaniv Katan",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Igal Antebi",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Ilan Bahar",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Cobi Ganon",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Vasili Ivanov",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Alexei Kosolapov",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Radoslaw Michalski",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Dean Racunica",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Gadi Brumer",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Raanan Deri",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Georgi Gakhokidze",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Shmulik Levi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "Ben Luz",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Moti Ohayon",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-haifa",
+   "name": "Shuki Nagar",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "maccabi-ta",
+   "name": "David Revivo",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Shalom Tikva",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "hapoel-ta",
+   "name": "Denis Onischenko",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2000,
+   "slug": "beitar",
+   "name": "Elad Yaacobi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra00.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 25,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Yossi Benayoun",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Rafi Cohen",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Alon Mizrahi",
+   "goals": 12,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Pini Balili",
+   "goals": 9,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Milan Osterc",
+   "goals": 9,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Tal Banin",
+   "goals": 8,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Gabor Halmai",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Ferenc Horvath",
+   "goals": 7,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Sergei Clescenco",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Baruch Dego",
+   "goals": 6,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Rodrigo Goldberg",
+   "goals": 6,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Nenad Pralija",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Giovanni Rosso",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Tamas Sandor",
+   "goals": 6,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 5,
+   "team": "Hapoel Tel Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Yaniv Katan",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Yaniv Abarjil",
+   "goals": 4,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Yossi Abuksis",
+   "goals": 4,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Walid Badir",
+   "goals": 4,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Nir Sevilia",
+   "goals": 4,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Avi Tikva",
+   "goals": 4,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Guy Tsarfati",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Omri Afek",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Reuven Atar",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Yakubu Aiyegbeni",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Dedi Ben-Dayan",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Manor Hassan",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Avishai Jano",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Alon Ofir",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": "(2 in Hapoel Ironi Rishon-Lezion)",
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Salim Tuama",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Ilan Bahar",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Cobi Ganon",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Dmytro Mikhailenko",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Vladimir Petrovic",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Istvan Pisont",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Grzegorz Wedzynski",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Elad Yaacobi",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Raimondas Zutautas",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Eli Biton",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Asi Domb",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Felix Halfon",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Yaacov Hilel",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Meho Kodro",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Eitan Mizrahi",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-haifa",
+   "name": "Andrei Ostrovski",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "beitar",
+   "name": "Branko Savic",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Andrei Tikhonov",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "hapoel-ta",
+   "name": "Aviv Volnerman",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Amir Shelah",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Grzegorz Wedzynski",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra01.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Sergei Clescenco",
+   "goals": 14,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Yakubu Aiyegbeni",
+   "goals": 13,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Rodrigo Goldberg",
+   "goals": 13,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 13,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Manor Hassan",
+   "goals": 11,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Itzik Zohar",
+   "goals": 11,
+   "team": "Beitar Jerusalem",
+   "note": "(5 in Maccabi Netanya)",
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Rami Abu-Laben",
+   "goals": 9,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Victor Pacha",
+   "goals": 8,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Nenad Pralija",
+   "goals": 8,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Yaniv Abarjil",
+   "goals": 7,
+   "team": "Hapoel Beer-Sheva",
+   "note": "(1 in Maccabi Petah-Tikva)",
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Yossi Benayoun",
+   "goals": 7,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Yossi Abuksis",
+   "goals": 6,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Nir Sevilia",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Rafi Cohen",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Ofir Haim",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Yaniv Katan",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Ben Luz",
+   "goals": 5,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Shuki Nagar",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Giovanni Rosso",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Pini Balili",
+   "goals": 4,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Elyaniv Barda",
+   "goals": 4,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 4,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Amir Turjeman",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "David Amsalem",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Ilan Bahar",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Eli Biton",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Baruch Dego",
+   "goals": 3,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Asi Domb",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Avi Knafo",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Deivi Korman",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Dmytro Mikhailenko",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Rubenilson Monteiro",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Salim Tuama",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Eyal Almoshnino",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Kfir Edri",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Meni Levi",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Drazen Madunovic",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Moti Ohayon",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Istvan Pisont",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Tamas Sandor",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Raimondas Zutautas",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Omri Afek",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Igal Antebi",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Reuven Atar",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Tal Banin",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Tal Ben-Haim",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Elad Bonfeld",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Gadi Brumer",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Marek Citko",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-bs",
+   "name": "Yaniv Elul",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Gabor Halmai",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Ferenc Horvath",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Avishai Jano",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Sergei Konovalov",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Moti Menahem",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Denis Onischenko",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Milan Osterc",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Cornelio Papora",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-ta",
+   "name": "Eyal Shen",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Asi Domb",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "hapoel-ta",
+   "name": "Yaacov Hilel",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "maccabi-haifa",
+   "name": "Andrei Ostrovski",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2002,
+   "slug": "beitar",
+   "name": "Ami Vaaknin",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra02.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 14,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Michael Zandberg",
+   "goals": 14,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Andrzej Kubica",
+   "goals": 12,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Giovanni Rosso",
+   "goals": 11,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Itzik Zohar",
+   "goals": 11,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Ofir Haim",
+   "goals": 10,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Ben Luz",
+   "goals": 10,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Andrejs Prohorenkovs",
+   "goals": 10,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Rodrigo Goldberg",
+   "goals": 9,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Blessing Kaku",
+   "goals": 9,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Yakubu Aiyegbeni",
+   "goals": 8,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Pini Balili",
+   "goals": 8,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Sergei Clescenco",
+   "goals": 8,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Baruch Dego",
+   "goals": 8,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Omri Afek",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Salim Tuama",
+   "goals": 7,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Amir Turjeman",
+   "goals": 7,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Elad Bonfeld",
+   "goals": 6,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Remigiusz Jezierski",
+   "goals": 6,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Yaniv Katan",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Nenad Pralija",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Idan Tal",
+   "goals": 6,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Rami Abu-Laben",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Walid Badir",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Eli Biton",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Rafi Cohen",
+   "goals": 5,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Bruno Reis",
+   "goals": 5,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Bartosz Tarachulski",
+   "goals": 5,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Tomer Haleva",
+   "goals": 4,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Adoram Keisy",
+   "goals": 4,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Reuven Oved",
+   "goals": 4,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Kfir Udi",
+   "goals": 4,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Yossi Abuksis",
+   "goals": 3,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Elyaniv Barda",
+   "goals": 3,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Rami Eliyahu",
+   "goals": 3,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Maor Melikson",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Ofer Talker",
+   "goals": 3,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Amir Abutbul",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "David Amsalem",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Shlomi Arbeitman",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Tal Banin",
+   "goals": 2,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Moshe Biton",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Kfir Edri",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Stav Elimeleh",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Edmilson Ferreira",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Gabor Halmai",
+   "goals": 2,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 2,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Chukri Ogagawa",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Oren Sagron",
+   "goals": 2,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Eli Sason",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Arik Benado",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Aviram Bruchyan",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-ta",
+   "name": "Asaf Crispis",
+   "goals": 1,
+   "team": "Maccabi Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Pablo Del Rio",
+   "goals": 1,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Erik Ejiofor",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Aviv Elhadad",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Shimon Gershon",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Avishai Jano",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Avi Knafo",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-bs",
+   "name": "Shuki Nagar",
+   "goals": 1,
+   "team": "Hapoel Beer-Sheva",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "beitar",
+   "name": "Edmilson Ferreira",
+   "goals": 2,
+   "team": "Beitar Jerusalem",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "hapoel-ta",
+   "name": "Yossi Abuksis",
+   "goals": 1,
+   "team": "Hapoel Tel-Aviv",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 2003,
+   "slug": "maccabi-haifa",
+   "name": "Alon Harazi",
+   "goals": 1,
+   "team": "Maccabi Haifa",
+   "note": null,
+   "src": "isra03.html"
+  },
+  {
+   "year": 1950,
+   "slug": "maccabi-ta",
+   "name": "Yosef Mirmovich",
+   "goals": 25,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1952,
+   "slug": "maccabi-ta",
+   "name": "Yehoshua Glazer",
+   "goals": 24,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1958,
+   "slug": "maccabi-ta",
+   "name": "Rafi Levi",
+   "goals": 14,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1959,
+   "slug": "maccabi-haifa",
+   "name": "Aharon Amar",
+   "goals": 17,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1960,
+   "slug": "maccabi-ta",
+   "name": "Rafi Levi",
+   "goals": 19,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1977,
+   "slug": "maccabi-ta",
+   "name": "Viki Peretz",
+   "goals": 17,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1979,
+   "slug": "beitar",
+   "name": "Eli Miali",
+   "goals": 18,
+   "team": "Beitar Jerusalem",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1986,
+   "slug": "beitar",
+   "name": "Uri Malmilian",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1988,
+   "slug": "maccabi-haifa",
+   "name": "Zahi Armeli",
+   "goals": 25,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1989,
+   "slug": "maccabi-ta",
+   "name": "Beni Tabak",
+   "goals": 18,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1990,
+   "slug": "maccabi-ta",
+   "name": "Uri Malmilian",
+   "goals": 16,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1994,
+   "slug": "maccabi-haifa",
+   "name": "Alon Mizrahi",
+   "goals": 28,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1995,
+   "slug": "maccabi-haifa",
+   "name": "Haim Revivo",
+   "goals": 17,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1996,
+   "slug": "maccabi-haifa",
+   "name": "Haim Revivo",
+   "goals": 26,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1998,
+   "slug": "maccabi-haifa",
+   "name": "Alon Mizrahi",
+   "goals": 18,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 1999,
+   "slug": "maccabi-ta",
+   "name": "Andrzej Kubica",
+   "goals": 21,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2001,
+   "slug": "maccabi-ta",
+   "name": "Avi Nimni",
+   "goals": 25,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2004,
+   "slug": "hapoel-bs",
+   "name": "Ofir Haim",
+   "goals": 16,
+   "team": "Hapoel Beer-Sheva",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2005,
+   "slug": "maccabi-haifa",
+   "name": "Roberto Colautti",
+   "goals": 19,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2009,
+   "slug": "beitar",
+   "name": "Barak Itzhaki",
+   "goals": 14,
+   "team": "Beitar Jerusalem",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2010,
+   "slug": "maccabi-haifa",
+   "name": "Shlomi Arbeitman",
+   "goals": 28,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2011,
+   "slug": "hapoel-ta",
+   "name": "Tamuz Toto",
+   "goals": 21,
+   "team": "Hapoel Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2013,
+   "slug": "maccabi-ta",
+   "name": "Eliran Atar",
+   "goals": 22,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2014,
+   "slug": "maccabi-ta",
+   "name": "Eran Zahavi",
+   "goals": 29,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2015,
+   "slug": "maccabi-ta",
+   "name": "Eran Zahavi",
+   "goals": 27,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2016,
+   "slug": "maccabi-ta",
+   "name": "Eran Zahavi",
+   "goals": 35,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2017,
+   "slug": "maccabi-ta",
+   "name": "Vidar O. Kjartansson",
+   "goals": 19,
+   "team": "Maccabi Tel-Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2019,
+   "slug": "hapoel-bs",
+   "name": "Ben Sahar",
+   "goals": 15,
+   "team": "Hapoel Beer-Sheva",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2020,
+   "slug": "maccabi-haifa",
+   "name": "Nikita Rukavytsya",
+   "goals": 22,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2021,
+   "slug": "maccabi-haifa",
+   "name": "Nikita Rukavytsya",
+   "goals": 19,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2022,
+   "slug": "maccabi-haifa",
+   "name": "Omer Atzili",
+   "goals": 20,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2023,
+   "slug": "maccabi-haifa",
+   "name": "Omer Atzili",
+   "goals": 21,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2024,
+   "slug": "maccabi-haifa",
+   "name": "Dean David",
+   "goals": 20,
+   "team": "Maccabi Haifa",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2024,
+   "slug": "maccabi-ta",
+   "name": "Eran Zahavi",
+   "goals": 20,
+   "team": "Maccabi Tel Aviv",
+   "src": "isratops.html"
+  },
+  {
+   "year": 2026,
+   "slug": "maccabi-ta",
+   "name": "Dor Peretz",
+   "goals": 19,
+   "team": "Maccabi Tel Aviv",
+   "src": "isratops.html"
+  }
+ ]
+}

@@ -43,6 +43,14 @@ const span = spells => (spells || []).map(([a, b]) =>
 const rows = [];
 const stats = [];
 
+/* דפי השחקן ב-Transfermarkt (tools/tm-verify.mjs): שם עברי → מזהים */
+const tmByHe = new Map();
+for (const [id, p] of Object.entries(readJSON("data/raw/tm-profiles.json", {}).profiles || {}))
+  if (p?.he && /[א-ת]/.test(p.he)) {
+    const k = normName(p.he.replace(/[‎‏]/g, ""));
+    (tmByHe.get(k) || tmByHe.set(k, []).get(k)).push(id);
+  }
+
 for (const club of loadClubs()) {
   if (only && club.slug !== only) continue;
   const db = readJSON(`data/clubs/${club.slug}.json`, null);
@@ -157,6 +165,19 @@ for (const club of loadClubs()) {
     if (hits.length > 1 && hits[0].s - hits[1].s < 0.08) return null;
     return hits[0].s >= 0.8 ? hits[0].r : null;
   };
+  /* ולפי השם העברי שבדף השחקן עצמו ("Name in home country"),
+     כשהמזהה הזה רשום בסגל של המועדון באחת העונות שלנו. גשר
+     ישיר, בלי תעתיק — זוהר חוגג עובר כאן ולא בתעתיק. שם עברי
+     ששני מזהים חולקים אינו מכריע. */
+  const tmIdYears = new Map();
+  for (const [y, list] of Object.entries(tmRaw?.seasons || {}))
+    for (const p of list) (tmIdYears.get(p.id) || tmIdYears.set(p.id, []).get(p.id)).push(+y);
+  const tmFindHe = (heKeys, mySeasons) => {
+    const ids = new Set(heKeys.flatMap(k => tmByHe.get(k) || []));
+    if (ids.size !== 1) return null;
+    const [id] = ids;
+    return (tmIdYears.get(id) || []).some(y => mySeasons.has(y)) ? { id } : null;
+  };
 
   /* ---------- 4. קטגוריית ויקיפדיה ---------- */
   const cat = new Set();
@@ -206,6 +227,12 @@ for (const club of loadClubs()) {
     for (const n of [p.he, p.name].filter(Boolean))
       { refNames.add(normName(n)); refNames.add(normName(shortName(n))); }
 
+  /* ---------- 7. סגלי RSSSF, 98/99–02/03 ----------
+     המקור הלטיני היחיד לפער שלפני ההתאחדות. הקישורים כבר אומתו
+     בשנת לידה או בחפיפת עונות ב-tools/rsssf.mjs; כאן רק סופרים. */
+  const rsssfNames = new Set(readJSON("data/raw/rsssf-links.json", [])
+    .filter(l => l.slug === club.slug && l.he).map(l => normName(l.he)));
+
   /* ---------- מעבר על השחקנים ---------- */
   const found = [];
   for (const p of db.players) {
@@ -226,7 +253,8 @@ for (const club of loadClubs()) {
       const loose = wfLoose(p.he, p.born, new Set(yearsOf(p.spells)));
       if (loose) { wfYears = loose.years; wfVia = "תעתיק+לידה+עונות"; }
     }
-    const tm       = tmFind(p.he, latin, new Set(yearsOf(p.spells)));
+    const tm       = tmFind(p.he, latin, new Set(yearsOf(p.spells))) ||
+                     tmFindHe(heKeys, new Set(yearsOf(p.spells)));
     const inCat    = heKeys.some(k => cat.has(k));
     const wc       = heKeys.map(k => wcByName.get(k)).find(Boolean) || null;
     const en       = latin.map(k => enByName.get(k)).find(Boolean) || null;
@@ -238,12 +266,14 @@ for (const club of loadClubs()) {
       wiki: !!wc,
       en:   !!en && en.atClub,
       ref:  heKeys.some(k => refNames.has(k)),
-      tm:   !!tm
+      tm:   !!tm,
+      rsssf: heKeys.some(k => rsssfNames.has(k))
     };
     /* ויקיפדיה נספרת פעם אחת: קטגוריה וטבלה הן אותו ערך */
     const heWiki = src.cat || src.wiki;
     const n = (src.ifa ? 1 : 0) + (src.wf ? 1 : 0) + (heWiki ? 1 : 0) +
-              (src.en ? 1 : 0) + (src.ref ? 1 : 0) + (src.tm ? 1 : 0);
+              (src.en ? 1 : 0) + (src.ref ? 1 : 0) + (src.tm ? 1 : 0) +
+              (src.rsssf ? 1 : 0);
 
     /* סתירה מפורשת: הערך האנגלי קיים, מפרט קריירה, ואין בו
        המועדון שלנו. זה מה שהיה קורה עם אסולין. */
@@ -265,7 +295,7 @@ for (const club of loadClubs()) {
       level === "סותר"      ? "גבוה" :
       level === "בלי מקור"  ? "גבוה" :
       src.wf                ? "גבוה" :
-      src.ifa || src.ref || src.tm ? "נמוך" : "בינוני";
+      src.ifa || src.ref || src.tm || src.rsssf ? "נמוך" : "בינוני";
 
     found.push({
       slug: club.slug, game: db.game, he: p.he, id,
@@ -277,7 +307,8 @@ for (const club of loadClubs()) {
             src.cat && "קטגוריה", src.wiki && "קריירה-עברית",
             src.en && "קריירה-אנגלית",
             src.ref && "הגרסה שבייצור",
-            src.tm && "Transfermarkt"].filter(Boolean).join(" · "),
+            src.tm && "Transfermarkt",
+            src.rsssf && "RSSSF"].filter(Boolean).join(" · "),
       enClubs: en && !en.atClub ? (en.allClubs || []).slice(0, 6).join(" / ") : ""
     });
   }

@@ -614,7 +614,27 @@ input.addEventListener("focus", ()=>{
 });
 
 /* ---------- טעינת חידה ---------- */
-function answerFor(n){ return POOL[(n - 1) % POOL.length]; }
+/* כשהלוח נגמר לא מתחילים מההתחלה באותו סדר: כל סבב נוסף הוא
+   ערבוב דטרמיניסטי של אותה בריכה — seed לפי מועדון וסבב, כך
+   שבכל מכשיר יוצאת אותה חידה באותו יום. הסבב הראשון הוא הלוח
+   עצמו, ולכן שום חידה שפורסמה לא זזה. ואם הערבוב פותח בשחקן
+   שסגר את הסבב הקודם — מחליפים אותו בשני, שלא יופיע יומיים ברצף. */
+const ROUNDS = new Map();
+function roundOrder(r){
+  const key = club.slug + ":" + r;
+  if (!ROUNDS.has(key)) {
+    const seed = [...club.slug].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) | 0, r);
+    const a = seededShuffle(POOL, seed);
+    const prevLast = r === 1 ? POOL[POOL.length - 1] : roundOrder(r - 1)[POOL.length - 1];
+    if (a.length > 1 && a[0] === prevLast) [a[0], a[1]] = [a[1], a[0]];
+    ROUNDS.set(key, a);
+  }
+  return ROUNDS.get(key);
+}
+function answerFor(n){
+  const r = Math.floor((n - 1) / POOL.length), i = (n - 1) % POOL.length;
+  return r ? roundOrder(r)[i] : POOL[i];
+}
 
 function loadPuzzle(n){
   practice = false; puzzleNo = n; answer = answerFor(n);
@@ -1386,6 +1406,7 @@ function bootClub(slug){
   const byName = new Map(PLAYERS.map(p => [p.name, p]));
   POOL = club.schedule.map(n => byName.get(n)).filter(Boolean);
   PLAYERS.filter(p => p.target && !club.schedule.includes(p.name)).forEach(p => POOL.push(p));
+  ROUNDS.clear();
   todayNo = dayIndex() + 1;
   applyResets();
 

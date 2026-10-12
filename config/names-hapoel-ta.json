@@ -276,5 +276,125 @@
     "של ההתאחדות, ושני מקורות בלתי תלויים — worldfootball ו-Transfermarkt —",
     "שמזהים את אותו אדם באותן עונות. `node tools/unhide.mjs` מייצר אותן מחדש.",
     "העונות של אף שחקן לא שונו כאן, ואף שם לא אוחד."
-  ]
+  ],
+  "Ido Sharon": "עידו שרון",
+  "Raz Stain": "רז שטיין",
+  "Denis Onishenko": "דניס אונישנקו",
+  "Tal Benesh": "טל בנש",
+  "Tomer Ben Yousef": "תומר בן יוסף",
+  "Henry Nwosu": "הנרי נוואסו",
+  "Sintayehu Sallalich": "סינטאיהו סלליך",
+  "דודו דהאן": {
+    "pos": "DF"
+  },
+  "אביב אלחדד": {
+    "born": 1983,
+    "pos": "FW"
+  },
+  "וולטון סילבה": {
+    "born": 1978,
+    "pos": "FW"
+  },
+  "אביב וולנרמן": {
+    "born": 1980
+  },
+  "רחמים חלייס": {
+    "pos": "DF",
+    "born": 1982,
+    "guessOnly": true
+  },
+  "ברוך דגו": {
+    "born": 1981
+  },
+  "יקיר לוסקי": {
+    "pos": "MF",
+    "born": 1986,
+    "guessOnly": true
+  },
+  "רמי דואני": {
+    "pos": "DF"
+  },
+  "יהודה חוטה": {
+    "pos": "DF",
+    "born": 1989,
+    "guessOnly": true
+  },
+  "מור שושן": {
+    "pos": "DF",
+    "born": 1988,
+    "guessOnly": true
+  },
+  "גל מאיו": {
+    "pos": "DF",
+    "born": 1991
+  },
+  "דור חמו": {
+    "pos": "MF",
+    "born": 1993
+  },
+  "אברהם צקול": {
+    "pos": "DF",
+    "born": 1992,
+    "guessOnly": true
+  },
+  "אביחי דהן": {
+    "pos": "GK",
+    "born": 1995
+  },
+  "צליל חתוכה": {
+    "pos": "GK",
+    "born": 1989,
+    "guessOnly": true
+  },
+  "עדן הרשקוביץ": {
+    "pos": "FW",
+    "born": 1997,
+    "guessOnly": true
+  },
+  "מור נעמן": {
+    "pos": "DF",
+    "born": 1998
+  },
+  "סבסטיאן לאנוס": {
+    "pos": "MF",
+    "born": 2003
+  },
+  "רועי אלקוקין": {
+    "pos": "MF",
+    "guessOnly": true
+  },
+  "Ahmed Mussa": "אחמד מוסא",
+  "Shahar Cohen": "שחר כהן",
+  "Edi Elkayam": "אדי אלקיים",
+  "Kobi Shalo": "קובי שאלו",
+  "Yishay Brosh": "ישי ברוש",
+  "Ilay Krispi": "עילי קריספי",
+  "Ofek Ovadia": "אופק עובדיה",
+  "Yehonatan Levy": "יהונתן לוי",
+  "Kobi Hadadi": "קובי הדדי",
+  "Hagay Luk": "חגי לוק",
+  "אחמד מוסא": {
+    "guessOnly": true
+  },
+  "קובי הדדי": {
+    "guessOnly": true
+  },
+  "שחר כהן": {
+    "guessOnly": true
+  },
+  "אדי אלקיים": {
+    "guessOnly": true
+  },
+  "דניס אונישנקו": {
+    "guessOnly": true
+  },
+  "יהונתן לוי": {
+    "guessOnly": true
+  },
+  "עילי קריספי": {
+    "guessOnly": true
+  },
+  "ישי ברוש": {
+    "guessOnly": true
+  }
 }

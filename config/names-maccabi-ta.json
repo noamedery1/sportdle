@@ -182,5 +182,101 @@
         1996
       ]
     ]
+  },
+  "Elad Bounfeld": "אלעד בונפלד",
+  "אלעד בונפלד": {
+    "pos": "MF"
+  },
+  "אסף שדה": {
+    "born": 1983,
+    "pos": "DF",
+    "guessOnly": true
+  },
+  "גדי ברומר": {
+    "pos": "DF"
+  },
+  "ברוך דגו": {
+    "born": 1981
+  },
+  "אורן רותם": {
+    "pos": "DF",
+    "born": 1977
+  },
+  "איל שן": {
+    "pos": "MF",
+    "born": 1980
+  },
+  "קובי נכטיילר": {
+    "pos": "DF",
+    "born": 1978
+  },
+  "ברק ורד": {
+    "pos": "DF",
+    "born": 1985
+  },
+  "יקיר שינה": {
+    "pos": "DF"
+  },
+  "אליאור וקנין": {
+    "born": 1986
+  },
+  "אסף מנדס": {
+    "pos": "GK",
+    "born": 1984
+  },
+  "עמירן שקלים": {
+    "pos": "DF"
+  },
+  "מאור חלבי": {
+    "pos": "MF",
+    "born": 1990
+  },
+  "משה לוגסי": {
+    "pos": "MF"
+  },
+  "אור יצחק": {
+    "pos": "GK",
+    "born": 2001,
+    "guessOnly": true
+  },
+  "תומר אלון": {
+    "pos": "GK",
+    "born": 2003,
+    "guessOnly": true
+  },
+  "אופק אהרון": {
+    "pos": "GK",
+    "born": 2005,
+    "guessOnly": true
+  },
+  "Avi Yerushalmi": "אבי ירושלמי",
+  "Guy Nachman": "גיא נחמן",
+  "Elen Masraki": "אלן משרקי",
+  "Gal Fibach": "גל פיבך",
+  "Ori Azo": "אורי עזו",
+  "Omri Ron": "עומרי רון",
+  "Yaron Melika": "ירון מליקה",
+  "Idan Trau": "עידן טראו",
+  "Idan Weinberg": "עידן וינברג",
+  "אבי ירושלמי": {
+    "guessOnly": true
+  },
+  "גל פיבך": {
+    "guessOnly": true
+  },
+  "גיא נחמן": {
+    "guessOnly": true
+  },
+  "ברונו רייס": {
+    "guessOnly": true
+  },
+  "עומרי רון": {
+    "guessOnly": true
+  },
+  "עידן וינברג": {
+    "guessOnly": true
+  },
+  "עידן טראו": {
+    "guessOnly": true
   }
 }
