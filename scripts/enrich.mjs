@@ -554,6 +554,15 @@ for (const club of clubs) {
       if (key.startsWith("_")) continue;
       if (/[A-Za-z]/.test(key) && typeof val === "string") continue;   // תעתיק, כבר הוחל
       const p = byKey.get(key) || players.find(x => normName(x.he) === normName(key));
+      /* { "add": true, ... } — שחקן שאף מקור עוד לא מכיר (ג'יימס טברנייר
+         הגיע בקיץ 2026, אחרי האיסוף). המפתח הוא השם העברי. */
+      if (!p && val?.add) {
+        const { add, ...rest } = val;
+        players.push({ he: key, name: null, nat: null, years: null, aliases: [], ...rest,
+                       src: ["manual:add"], spellsManual: !!rest.spells });
+        n++;
+        continue;
+      }
       if (!p) { review.notes.push(`תיקון שם ללא שחקן תואם: ${key}`); continue; }
       const before = p.he;
       if (typeof val === "string") p.he = val;

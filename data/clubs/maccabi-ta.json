@@ -57,7 +57,7 @@
  },
  "coverage": {
   "from": 1935,
-  "to": 2026,
+  "to": 2027,
   "sources": [
    "ifa",
    "enbridge",
@@ -71,7 +71,7 @@
   ]
  },
  "counts": {
-  "players": 485,
+  "players": 482,
   "targets": 205
  },
  "players": [
@@ -8614,24 +8614,6 @@
    ]
   },
   {
-   "he": "היטור סנטוס",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "היטור דוס סנטוס"
-   ]
-  },
-  {
    "he": "הייטור",
    "pos": "DF",
    "nat": "BR",
@@ -8644,7 +8626,11 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
+   "target": false,
+   "aliases": [
+    "היטור סנטוס",
+    "היטור דוס סנטוס"
+   ]
   },
   {
    "he": "הליו וארלה",
@@ -8661,24 +8647,7 @@
    "titles": 1,
    "target": false,
    "aliases": [
-    "Hélio Varela"
-   ]
-  },
-  {
-   "he": "חליו וארלה",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
+    "Hélio Varela",
     "חליו וארלה"
    ]
   },
@@ -8748,7 +8717,8 @@
    "titles": 1,
    "target": false,
    "aliases": [
-    "Kristijan Belić"
+    "Kristijan Belić",
+    "קריסטיאן בליץ"
    ]
   },
   {
@@ -8764,23 +8734,9 @@
    ],
    "seasons": 1,
    "titles": 1,
-   "target": false
-  },
-  {
-   "he": "מוחמד קאמארה",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1997,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
    "target": false,
    "aliases": [
+    "מוחמד קאמארה",
     "מוחמד עלי קאמארה"
    ]
   },
@@ -8823,24 +8779,6 @@
    ]
   },
   {
-   "he": "קריסטיאן בליץ",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "קריסטיאן בליץ"
-   ]
-  },
-  {
    "he": "שליו סעדיה",
    "pos": "GK",
    "nat": "IL",
@@ -8856,6 +8794,25 @@
    "target": false,
    "aliases": [
     "שליו סעדיה"
+   ]
+  },
+  {
+   "he": "ג'יימס טברנייר",
+   "pos": "DF",
+   "nat": "EN",
+   "born": 1991,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "James Tavernier",
+    "טברנייר"
    ]
   }
  ],
