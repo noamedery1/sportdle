@@ -213,6 +213,18 @@ function submit(name){
   const p = PLAYERS.find(x => x.name === name);
   if (!p) return;
   if (guesses.some(x => x.name === name)) { flash("כבר ניחשתם את השחקן הזה"); return; }
+  /* "תאום": שחקן אחר שזהה לתשובה בכל חמשת הרמזים (תמיר כחלון מול
+     תום מנשרוב). אין דרך להבדיל ביניהם מהלוח, ולכן הניחוש לא נספר
+     ולא נרשם — רק אומרים שזה לא הוא ושהתשובה נראית בדיוק כמוהו. */
+  const tw = $("#twin");
+  if (p.name !== answer.name && compare(p, answer).every(c => c.s === "hit")){
+    input.value = ""; closeSugg();
+    /* הודעה ב-placeholder לא נראתה — היא נעלמה מתחת לאצבע. כרטיס בולט במקום */
+    tw.hidden = false; tw.style.animation = "none"; void tw.offsetWidth; tw.style.animation = "";
+    tw.innerHTML = `<b>כמעט! אותם נתונים בדיוק</b>${p.name} זהה לתשובה בכל הרמזים, אבל זה שחקן אחר. הניחוש לא נספר — נסו שחקן אחר עם אותם נתונים.`;
+    return;
+  }
+  tw.hidden = true;
   guesses.push(p); render(p);
   input.value = ""; closeSugg();
   if (p.name === answer.name) finish(true);
@@ -534,7 +546,7 @@ $("#story").addEventListener("click", async () => {
 });
 
 $("#again").addEventListener("click", ()=>{
-  practice = true; over = false; guesses = []; hinted = false;
+  practice = true; over = false; guesses = []; hinted = false; $("#twin").hidden = true;
   $("#share").style.display = "none";
   $("#story").style.display = "none";
   $("#yday").classList.remove("on");
@@ -637,7 +649,7 @@ function answerFor(n){
 }
 
 function loadPuzzle(n){
-  practice = false; puzzleNo = n; answer = answerFor(n);
+  practice = false; puzzleNo = n; answer = answerFor(n); $("#twin").hidden = true;
   guesses = []; over = false; hinted = false;
   board.innerHTML = "";
   $("#result").classList.remove("on");

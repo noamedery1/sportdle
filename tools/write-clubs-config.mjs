@@ -35,7 +35,7 @@ const CLUBS = {
     he: "מכבי תל אביב", short: 'מכבי ת"א', game: "מכביdle",
     worldfootball: "te1258/maccabi-tel-aviv", ifaTeamId: 1061,
     wikiCategory: "קטגוריה:כדורגלני מכבי תל אביב",
-    colors: { brand: "#0033A0", near: "#1F3A6E", ink: "#0C0C0E", second: "#FFD100" },
+    colors: { brand: "#0033A0", near: "#6E8FD6", ink: "#0C0C0E", second: "#FFD100" },
     expect: null
   },
   "maccabi-haifa": {
