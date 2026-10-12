@@ -25,7 +25,7 @@ colors:
   hapoel-bs-near: "#8C2233"
   hapoel-bs-second: "#0C0C0E"
   maccabi-ta-brand: "#0033A0"
-  maccabi-ta-near: "#1F3A6E"
+  maccabi-ta-near: "#6E8FD6"
   maccabi-ta-second: "#FFD100"
   maccabi-haifa-brand: "#00843D"
   maccabi-haifa-near: "#1E5B37"
