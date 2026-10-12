@@ -1,0 +1,5053 @@
+{
+ "source": "rsssf",
+ "fetched": "2026-10-11",
+ "pages": [
+  "https://www.rsssf.org/tablesi/isra99squads.html",
+  "https://www.rsssf.org/tablesi/isra00squads.html",
+  "https://www.rsssf.org/tablesi/isra01squads.html",
+  "https://www.rsssf.org/tablesi/isra02squads.html",
+  "https://www.rsssf.org/tablesi/isra03squads.html"
+ ],
+ "seasons": {
+  "1999": {
+   "maccabi-ta": {
+    "team": "Maccabi Tel-Aviv",
+    "players": [
+     {
+      "name": "Alexander Uvarov",
+      "pos": "GK",
+      "dob": "13/01/1960",
+      "born": 1960,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Rafi Cohen",
+      "pos": "GK",
+      "dob": "28/11/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Dayan",
+      "pos": "DF",
+      "dob": "27/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Ofir",
+      "pos": "DF",
+      "dob": "28/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Michael Amanelo",
+      "pos": "DF",
+      "dob": "17/07/1965",
+      "born": 1965,
+      "nat": "Nigeria",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Marko Balbul",
+      "pos": "DF",
+      "dob": "13/07/1967",
+      "born": 1967,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Gadi Brumer",
+      "pos": "DF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Jefri Ishay",
+      "pos": "DF",
+      "dob": "10/01/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oren Rotem",
+      "pos": "DF",
+      "dob": "21/12/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Ironi Rishon-Lezion"
+     },
+     {
+      "name": "Ofer Levi",
+      "pos": "DF",
+      "dob": "19/07/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": "left during the season to Bnei-Yehuda Tel-Aviv"
+     },
+     {
+      "name": "Alin Ros",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": null,
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Alexei Kosolapov",
+      "pos": "MF",
+      "dob": "17/03/1971",
+      "born": 1971,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Avi Nimni",
+      "pos": "MF",
+      "dob": "26/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": "joined during the season from Atlético Madrid (Spain)"
+     },
+     {
+      "name": "Kfir Edri",
+      "pos": "MF",
+      "dob": "12/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "David Revivo",
+      "pos": "MF",
+      "dob": "05/12/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Tsarfati",
+      "pos": "MF",
+      "dob": "28/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moshe Glam",
+      "pos": "MF",
+      "dob": "28/12/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ben Luz",
+      "pos": "MF",
+      "dob": "18/02/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofir Haim",
+      "pos": "MF",
+      "dob": "21/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Brumer",
+      "pos": "MF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Ironi Rishon-Lezion"
+     },
+     {
+      "name": "Itzik Zohar",
+      "pos": "MF",
+      "dob": "30/10/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Haim Hajaj",
+      "pos": "MF",
+      "dob": "15/10/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Haifa"
+     },
+     {
+      "name": "Avi Strol",
+      "pos": "MF",
+      "dob": "18/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Andrzej Kubica",
+      "pos": "FW",
+      "dob": "07/07/1972",
+      "born": 1972,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Eli Driks",
+      "pos": "FW",
+      "dob": "13/10/1964",
+      "born": 1964,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Biton",
+      "pos": "FW",
+      "dob": "25/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Efi Tsafrir",
+      "pos": "FW",
+      "dob": "28/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Tsafririm Holon"
+     }
+    ]
+   },
+   "maccabi-haifa": {
+    "team": "Maccabi Haifa",
+    "players": [
+     {
+      "name": "Nir Davidovich",
+      "pos": "GK",
+      "dob": "17/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Vakrat",
+      "pos": "GK",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Avishay Jano",
+      "pos": "DF",
+      "dob": "19/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Arik Benado",
+      "pos": "DF",
+      "dob": "05/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Harazi",
+      "pos": "DF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adoram Keisy",
+      "pos": "DF",
+      "dob": "17/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Melamed",
+      "pos": "DF",
+      "dob": "12/09/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Balanchuk",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Ukraine",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Amos Sasi",
+      "pos": "DF",
+      "dob": "29/01/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eliran Elkayam",
+      "pos": "DF",
+      "dob": "30/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Hector Almandoz",
+      "pos": "DF",
+      "dob": "17/01/1969",
+      "born": 1969,
+      "nat": "Argentina",
+      "remarks": "joined and left during the season"
+     },
+     {
+      "name": "Ofir Kopel",
+      "pos": "MF",
+      "dob": "25/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shuki Nagar",
+      "pos": "MF",
+      "dob": "07/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yosi Benayun",
+      "pos": "MF",
+      "dob": "05/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Radovan Hromadko",
+      "pos": "MF",
+      "dob": "16/05/1967",
+      "born": 1967,
+      "nat": "Czech Republic",
+      "remarks": null
+     },
+     {
+      "name": "Ibrahim Duro",
+      "pos": "MF",
+      "dob": "26/04/1970",
+      "born": 1970,
+      "nat": "Bosnia-Herzegovina",
+      "remarks": null
+     },
+     {
+      "name": "Jerzy Brzeczek",
+      "pos": "MF",
+      "dob": "18/03/1971",
+      "born": 1971,
+      "nat": "Poland",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Haim Silvas",
+      "pos": "MF",
+      "dob": "21/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asaf Kelman",
+      "pos": "MF",
+      "dob": "13/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shlomi Ben-Hamo",
+      "pos": "MF",
+      "dob": "05/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": "joined during the season from Maccabi Ironi Ashdod"
+     },
+     {
+      "name": "Shlomi Dahan",
+      "pos": "MF",
+      "dob": "30/09/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "join and left during the season from/to Maccabi Nethanya"
+     },
+     {
+      "name": "Alon Mizrahi",
+      "pos": "FW",
+      "dob": "22/01/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": "left during the season to Nice (France)"
+     },
+     {
+      "name": "Yaniv Katan",
+      "pos": "FW",
+      "dob": "27/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Victor Pacha",
+      "pos": "FW",
+      "dob": "14/02/1971",
+      "born": 1971,
+      "nat": "Albania",
+      "remarks": "joined during the season from Hapoel Jerusalem"
+     },
+     {
+      "name": "Ronen Harazi",
+      "pos": "FW",
+      "dob": "30/03/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": "joined during the season from Bursaspor (Turkey)"
+     },
+     {
+      "name": "Liron Vilner",
+      "pos": "FW",
+      "dob": "07/02/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "left during the season to Maccabi Herzliya"
+     }
+    ]
+   },
+   "beitar": {
+    "team": "Beitar Jerusalem",
+    "players": [
+     {
+      "name": "Itzik Korenfein",
+      "pos": "GK",
+      "dob": "24/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Grif",
+      "pos": "GK",
+      "dob": "20/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Domb",
+      "pos": "DF",
+      "dob": "27/02/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Shelah",
+      "pos": "DF",
+      "dob": "11/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Tretiak",
+      "pos": "DF",
+      "dob": "07/09/1966",
+      "born": 1966,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Raanan Deri",
+      "pos": "DF",
+      "dob": "12/07/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eitan Mizrahi",
+      "pos": "DF",
+      "dob": "22/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shmulik Levi",
+      "pos": "DF",
+      "dob": "09/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Valentin Theodoriku",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": null,
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Yosi Abuksis",
+      "pos": "MF",
+      "dob": "10/09/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Jan Talesnikov",
+      "pos": "MF",
+      "dob": "11/12/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Hamar",
+      "pos": "MF",
+      "dob": "06/10/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Ilan Bahar",
+      "pos": "MF",
+      "dob": "17/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tamas Sandor",
+      "pos": "MF",
+      "dob": "20/06/1974",
+      "born": 1974,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Salloi",
+      "pos": "MF",
+      "dob": "26/09/1966",
+      "born": 1966,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Mati Hajaj",
+      "pos": "MF",
+      "dob": "17/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Reichman",
+      "pos": "MF",
+      "dob": "24/09/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Reuven",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofer Shitrit",
+      "pos": "FW",
+      "dob": "12/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Sevilia",
+      "pos": "FW",
+      "dob": "26/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Ohana",
+      "pos": "FW",
+      "dob": "01/02/1964",
+      "born": 1964,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elad Yaacobi",
+      "pos": "FW",
+      "dob": "04/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "hapoel-ta": {
+    "team": "Hapoel Tel-Aviv",
+    "players": [
+     {
+      "name": "Shavit Elimeleh",
+      "pos": "GK",
+      "dob": "07/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Shalo",
+      "pos": "GK",
+      "dob": "04/05/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Felix Halfon",
+      "pos": "DF",
+      "dob": "07/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shimon Gershon",
+      "pos": "DF",
+      "dob": "06/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaacov Hilel",
+      "pos": "DF",
+      "dob": "27/08/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Israel Cohen",
+      "pos": "DF",
+      "dob": "16/12/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moti Ohayon",
+      "pos": "DF",
+      "dob": "26/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ehud Kahila",
+      "pos": "DF",
+      "dob": "13/07/1968",
+      "born": 1968,
+      "nat": "Israel",
+      "remarks": "joined during the season from Hapoel Kfar-Saba"
+     },
+     {
+      "name": "Avi Azulay",
+      "pos": "DF",
+      "dob": "04/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shahar Cohen",
+      "pos": "DF",
+      "dob": "13/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Ben-Ami",
+      "pos": "MF",
+      "dob": "29/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Davor Rupnik",
+      "pos": "MF",
+      "dob": "29/08/1971",
+      "born": 1971,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Shalom Tikva",
+      "pos": "MF",
+      "dob": "08/05/1965",
+      "born": 1965,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Idan Tal",
+      "pos": "MF",
+      "dob": "10/02/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "joined during the season from Maccabi Petah-Tikva"
+     },
+     {
+      "name": "Salim Tuama",
+      "pos": "MF",
+      "dob": "09/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gabor Marton",
+      "pos": "MF",
+      "dob": "06/12/1968",
+      "born": 1968,
+      "nat": "Hungary",
+      "remarks": "joined during the season from Hapoel Petah-Tikva"
+     },
+     {
+      "name": "Robert Tezacki",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Croatia",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Ron Nahman",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season from Maccabi Jaffa"
+     },
+     {
+      "name": "Ziv Kabeda",
+      "pos": "MF",
+      "dob": "10/12/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Yaron",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Ironi Rishon-Lezion"
+     },
+     {
+      "name": "Asi Tubi",
+      "pos": "FW",
+      "dob": "27/01/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sebastian Simerotic",
+      "pos": "FW",
+      "dob": "14/09/1974",
+      "born": 1974,
+      "nat": "Slovenia",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Udi",
+      "pos": "FW",
+      "dob": "28/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Aviv Volnerman",
+      "pos": "FW",
+      "dob": "18/07/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pini Balili",
+      "pos": "FW",
+      "dob": "18/06/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   }
+  },
+  "2000": {
+   "hapoel-ta": {
+    "team": "Hapoel Tel-Aviv",
+    "players": [
+     {
+      "name": "Shavit Elimeleh",
+      "pos": "GK",
+      "dob": "07/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Rahmin",
+      "pos": "GK",
+      "dob": "11/06/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ilan Bahar",
+      "pos": "DF",
+      "dob": "17/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shimon Gershon",
+      "pos": "DF",
+      "dob": "06/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Israel Cohen",
+      "pos": "DF",
+      "dob": "16/12/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moti Ohayon",
+      "pos": "DF",
+      "dob": "26/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaacov Hilel",
+      "pos": "DF",
+      "dob": "27/08/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Igal Antebi",
+      "pos": "DF",
+      "dob": "01/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tsiki Kotler",
+      "pos": "DF",
+      "dob": "19/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shay Mahluf",
+      "pos": "DF",
+      "dob": "06/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Edi Elkayam",
+      "pos": "DF",
+      "dob": "26/07/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sagi Zinger",
+      "pos": "DF",
+      "dob": "09/10/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Davor Rupnik",
+      "pos": "MF",
+      "dob": "29/08/1971",
+      "born": 1971,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Ben-Ami",
+      "pos": "MF",
+      "dob": "29/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Pisont",
+      "pos": "MF",
+      "dob": "16/05/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Salim Tuama",
+      "pos": "MF",
+      "dob": "09/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dean Racunica",
+      "pos": "MF",
+      "dob": "05/12/1969",
+      "born": 1969,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Shalom Tikva",
+      "pos": "MF",
+      "dob": "08/05/1965",
+      "born": 1965,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sebastian Simerotic",
+      "pos": "MF",
+      "dob": "14/09/1974",
+      "born": 1974,
+      "nat": "Slovenia",
+      "remarks": null
+     },
+     {
+      "name": "Denis Onischenko",
+      "pos": "MF",
+      "dob": "21/06/1978",
+      "born": 1978,
+      "nat": "Ukraine",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Ziv Kabeda",
+      "pos": "MF",
+      "dob": "10/12/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avner Danayev",
+      "pos": "MF",
+      "dob": "09/08/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ronen Harazi",
+      "pos": "FW",
+      "dob": "30/03/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Udi",
+      "pos": "FW",
+      "dob": "28/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pini Balili",
+      "pos": "FW",
+      "dob": "18/06/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Omri Afek",
+      "pos": "FW",
+      "dob": "31/03/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Aviv Volnerman",
+      "pos": "FW",
+      "dob": "18/07/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-haifa": {
+    "team": "Maccabi Haifa",
+    "players": [
+     {
+      "name": "Nir Davidovich",
+      "pos": "GK",
+      "dob": "17/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Peretz",
+      "pos": "GK",
+      "dob": "02/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sagi Strauss",
+      "pos": "GK",
+      "dob": "29/06/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "joined during the season from Hapoel Ironi Rishon-Lezion"
+     },
+     {
+      "name": "Avishay Jano",
+      "pos": "DF",
+      "dob": "19/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Arik Benado",
+      "pos": "DF",
+      "dob": "05/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Harazi",
+      "pos": "DF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adoram Keisy",
+      "pos": "DF",
+      "dob": "17/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Itay Koren",
+      "pos": "DF",
+      "dob": "27/03/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Ironi Rishon-Lezion"
+     },
+     {
+      "name": "Guy Melamed",
+      "pos": "DF",
+      "dob": "12/09/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eliran Elkayam",
+      "pos": "DF",
+      "dob": "30/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amos Sasi",
+      "pos": "DF",
+      "dob": "29/01/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "left during the season to Maccabi Nethanya"
+     },
+     {
+      "name": "Tom Benado",
+      "pos": "DF",
+      "dob": "19/10/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kamal Jubrin",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Vasili Ivanov",
+      "pos": "MF",
+      "dob": "21/03/1970",
+      "born": 1970,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Raimondas Zutautas",
+      "pos": "MF",
+      "dob": "04/09/1972",
+      "born": 1972,
+      "nat": "Lithuania",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Jerzy Brzeczek",
+      "pos": "MF",
+      "dob": "18/03/1971",
+      "born": 1971,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Shuki Nagar",
+      "pos": "MF",
+      "dob": "07/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yosi Benayun",
+      "pos": "MF",
+      "dob": "05/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Georgi Gakhokidze",
+      "pos": "MF",
+      "dob": "07/02/1976",
+      "born": 1976,
+      "nat": "Georgia",
+      "remarks": "joined during the season from PSV Eindhoven (Netherlands)"
+     },
+     {
+      "name": "Reuven Atar",
+      "pos": "MF",
+      "dob": "13/06/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": "joined during the season from Beitar Jerusalem"
+     },
+     {
+      "name": "Asaf Kelman",
+      "pos": "MF",
+      "dob": "13/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Radoslaw Michalski",
+      "pos": "MF",
+      "dob": "21/09/1969",
+      "born": 1969,
+      "nat": "Poland",
+      "remarks": "joined during the season from Widzew Lodz (Poland)"
+     },
+     {
+      "name": "Rafi Cohen",
+      "pos": "FW",
+      "dob": "21/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Clescenco",
+      "pos": "FW",
+      "dob": "20/05/1972",
+      "born": 1972,
+      "nat": "Moldova",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Katan",
+      "pos": "FW",
+      "dob": "27/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shlomi Ben-Hamo",
+      "pos": "FW",
+      "dob": "05/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Nadiv Siman-Tov",
+      "pos": "FW",
+      "dob": "22/03/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Erez Mesika",
+      "pos": "FW",
+      "dob": "20/12/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "beitar": {
+    "team": "Beitar Jerusalem",
+    "players": [
+     {
+      "name": "Itzik Korenfein",
+      "pos": "GK",
+      "dob": "24/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Grif",
+      "pos": "GK",
+      "dob": "20/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Golan Deri",
+      "pos": "DF",
+      "dob": "22/07/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Tretiak",
+      "pos": "DF",
+      "dob": "07/09/1966",
+      "born": 1966,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Ehud Kahila",
+      "pos": "DF",
+      "dob": "13/07/1968",
+      "born": 1968,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Raanan Deri",
+      "pos": "DF",
+      "dob": "12/07/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shmulik Levi",
+      "pos": "DF",
+      "dob": "09/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Domb",
+      "pos": "DF",
+      "dob": "27/02/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tomer Azulay",
+      "pos": "DF",
+      "dob": "28/11/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eitan Mizrahi",
+      "pos": "DF",
+      "dob": "22/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": "left during the season to Maccabi Herzliya"
+     },
+     {
+      "name": "Cobi Ganon",
+      "pos": "DF",
+      "dob": "17/05/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "joined during the season from Hapoel Kfar-Saba"
+     },
+     {
+      "name": "David Peretz",
+      "pos": "DF",
+      "dob": "24/04/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Valerin Todorika",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Yosi Abuksis",
+      "pos": "MF",
+      "dob": "10/09/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Danut Perja",
+      "pos": "MF",
+      "dob": "14/11/1974",
+      "born": 1974,
+      "nat": "Romania",
+      "remarks": "joined during the season from Ceahlaul Piatra Neamt (Romania)"
+     },
+     {
+      "name": "Tamas Sandor",
+      "pos": "MF",
+      "dob": "20/06/1974",
+      "born": 1974,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Hamar",
+      "pos": "MF",
+      "dob": "06/10/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Elad Yaacobi",
+      "pos": "MF",
+      "dob": "04/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "left during the season to Maccabi Kiryat-Gat"
+     },
+     {
+      "name": "Haim Silvas",
+      "pos": "MF",
+      "dob": "21/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Reuven Atar",
+      "pos": "MF",
+      "dob": "13/06/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": "joined during the season from Hapoel Haifa, left to Maccabi Haifa"
+     },
+     {
+      "name": "Jan Talesnikov",
+      "pos": "MF",
+      "dob": "11/12/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": "left during the season to Dundee United (Scotland)"
+     },
+     {
+      "name": "Mati Hajaj",
+      "pos": "MF",
+      "dob": "17/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Abramovich",
+      "pos": "MF",
+      "dob": "10/03/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Roi Hazan",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Victor Pacha",
+      "pos": "FW",
+      "dob": "14/02/1971",
+      "born": 1971,
+      "nat": "Albania",
+      "remarks": null
+     },
+     {
+      "name": "Ofer Shitrit",
+      "pos": "FW",
+      "dob": "12/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Haifa"
+     },
+     {
+      "name": "Nir Sevilia",
+      "pos": "FW",
+      "dob": "26/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "joined during the season from Hapoel Haifa"
+     },
+     {
+      "name": "Eli Peretz",
+      "pos": "FW",
+      "dob": "21/06/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ronen Schweig",
+      "pos": "FW",
+      "dob": "22/04/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Jerusalem"
+     },
+     {
+      "name": "Nir Reichman",
+      "pos": "FW",
+      "dob": "24/09/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left during the season to Hapoel Jerusalem"
+     },
+     {
+      "name": "? Zaken",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     }
+    ]
+   },
+   "maccabi-ta": {
+    "team": "Maccabi Tel-Aviv",
+    "players": [
+     {
+      "name": "Liran Strauber",
+      "pos": "GK",
+      "dob": "20/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alexander Uvarov",
+      "pos": "GK",
+      "dob": "13/01/1960",
+      "born": 1960,
+      "nat": "Israel",
+      "remarks": "changed from Russian to Israeli during the season"
+     },
+     {
+      "name": "Felix Halfon",
+      "pos": "DF",
+      "dob": "07/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gadi Brumer",
+      "pos": "DF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Michael Amanelo",
+      "pos": "DF",
+      "dob": "17/07/1965",
+      "born": 1965,
+      "nat": "Nigeria",
+      "remarks": null
+     },
+     {
+      "name": "Marko Balbul",
+      "pos": "DF",
+      "dob": "13/07/1967",
+      "born": 1967,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Dayan",
+      "pos": "DF",
+      "dob": "27/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Jefri Ishay",
+      "pos": "DF",
+      "dob": "10/01/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Ofir",
+      "pos": "DF",
+      "dob": "28/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": "left during the season to Maccabi Herzliya"
+     },
+     {
+      "name": "Avi Strol",
+      "pos": "MF",
+      "dob": "18/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alexei Kosolapov",
+      "pos": "MF",
+      "dob": "17/03/1971",
+      "born": 1971,
+      "nat": "Russia",
+      "remarks": null
+     },
+     {
+      "name": "Avi Nimni",
+      "pos": "MF",
+      "dob": "26/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": "left and joined during the season to/from Derby County (England)"
+     },
+     {
+      "name": "Kfir Edri",
+      "pos": "MF",
+      "dob": "12/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "David Revivo",
+      "pos": "MF",
+      "dob": "05/12/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Tsarfati",
+      "pos": "MF",
+      "dob": "28/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ben Luz",
+      "pos": "MF",
+      "dob": "18/02/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Grzegorz Wedzynski",
+      "pos": "MF",
+      "dob": "04/06/1970",
+      "born": 1970,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Ofir Haim",
+      "pos": "MF",
+      "dob": "21/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Shein",
+      "pos": "MF",
+      "dob": "29/01/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Avraham",
+      "pos": "MF",
+      "dob": "01/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Jarni Jevornick",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Slovenia",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Meni Levi",
+      "pos": "MF",
+      "dob": "06/08/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Andrzej Kubica",
+      "pos": "FW",
+      "dob": "07/07/1972",
+      "born": 1972,
+      "nat": "Poland",
+      "remarks": "left during the season to Urawa Red Diamond (Japan)"
+     },
+     {
+      "name": "Liron Basis",
+      "pos": "FW",
+      "dob": "26/03/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dimitri Popov",
+      "pos": "FW",
+      "dob": "27/02/1967",
+      "born": 1967,
+      "nat": "Russia",
+      "remarks": "joined and left during the season"
+     },
+     {
+      "name": "Eli Biton",
+      "pos": "FW",
+      "dob": "25/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Olexandr Kosyrin",
+      "pos": "FW",
+      "dob": "18/06/1977",
+      "born": 1977,
+      "nat": "Ukraine",
+      "remarks": "joined during the season from Dinamo Kiev (Ukraine)"
+     }
+    ]
+   }
+  },
+  "2001": {
+   "beitar": {
+    "team": "Beitar Jerusalem",
+    "players": [
+     {
+      "name": "Yaniv Abarjil",
+      "pos": "FW",
+      "dob": "16/08/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yossi Abuksis",
+      "pos": "MF",
+      "dob": "10/09/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "David Amsalem",
+      "pos": "DF",
+      "dob": "04/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Liron Basis",
+      "pos": "FW",
+      "dob": "26/03/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": "joined from Ashdod SC before round 21"
+     },
+     {
+      "name": "Israel Cohen",
+      "pos": "DF",
+      "dob": "16/12/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ohad Cohen",
+      "pos": "GK",
+      "dob": "10/06/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Raanan Deri",
+      "pos": "MF",
+      "dob": "12/07/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Ganon",
+      "pos": "DF",
+      "dob": "17/05/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Grif",
+      "pos": "GK",
+      "dob": "20/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Beni Hadad",
+      "pos": "DF",
+      "dob": "04/08/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Felix Halfon",
+      "pos": "DF",
+      "dob": "07/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Hamar",
+      "pos": "MF",
+      "dob": "06/10/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": "left to Maccabi Nethanya after round 22"
+     },
+     {
+      "name": "Itzik Korenfein",
+      "pos": "GK",
+      "dob": "24/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shmulik Lavan",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined from Aalst (Belgium) before round 25"
+     },
+     {
+      "name": "Shmulik Levi",
+      "pos": "DF",
+      "dob": "09/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Mizrahi",
+      "pos": "FW",
+      "dob": "22/11/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eitan Mizrahi",
+      "pos": "MF",
+      "dob": "22/01/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Ofir",
+      "pos": "DF",
+      "dob": "28/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": "joined from Hapoel Ironi Rishon-Lezion before round 25"
+     },
+     {
+      "name": "Vladimir Petrovic",
+      "pos": "FW",
+      "dob": "05/05/1972",
+      "born": 1972,
+      "nat": "Croatia",
+      "remarks": "joined from Toulouse FC (France) before round 22"
+     },
+     {
+      "name": "Nir Reichman",
+      "pos": "MF",
+      "dob": "24/09/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Giovanni Rosso",
+      "pos": "MF",
+      "dob": "17/11/1972",
+      "born": 1972,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Tamas Sandor",
+      "pos": "MF",
+      "dob": "20/06/1974",
+      "born": 1974,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Branko Savic",
+      "pos": "DF",
+      "dob": "08/08/1972",
+      "born": 1972,
+      "nat": "Yugoslavia",
+      "remarks": null
+     },
+     {
+      "name": "Nir Sevilia",
+      "pos": "FW",
+      "dob": "26/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Milan Stojanovski",
+      "pos": "DF",
+      "dob": "16/03/1973",
+      "born": 1973,
+      "nat": "Macedonia",
+      "remarks": null
+     },
+     {
+      "name": "Jan Talesnikov",
+      "pos": "MF",
+      "dob": "11/12/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Tretiak",
+      "pos": "DF",
+      "dob": "07/09/1963",
+      "born": 1963,
+      "nat": "Israel",
+      "remarks": "left after round 24 to Hakoah Maccabi Ramat-Gan"
+     },
+     {
+      "name": "Elad Yaacobi",
+      "pos": "FW",
+      "dob": "04/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "hapoel-ta": {
+    "team": "Hapoel Tel-Aviv",
+    "players": [
+     {
+      "name": "Eyal Ahwan",
+      "pos": "DF",
+      "dob": "15/11/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Omri Afek",
+      "pos": "FW",
+      "dob": "31/03/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Igal Antebi",
+      "pos": "DF",
+      "dob": "01/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ilan Bahar",
+      "pos": "DF",
+      "dob": "17/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pini Balili",
+      "pos": "FW",
+      "dob": "18/06/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Ben-Ami",
+      "pos": "MF",
+      "dob": "29/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Petah-Tikva after round 3"
+     },
+     {
+      "name": "Dudu Dahan",
+      "pos": "DF",
+      "dob": "08/12/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Domb",
+      "pos": "DF",
+      "dob": "27/02/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shavit Elimeleh",
+      "pos": "GK",
+      "dob": "07/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Edi Elkayam",
+      "pos": "DF",
+      "dob": "26/07/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shimon Gershon",
+      "pos": "DF",
+      "dob": "06/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gabor Halmai",
+      "pos": "MF",
+      "dob": "07/01/1972",
+      "born": 1972,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Yaacov Hilel",
+      "pos": "DF",
+      "dob": "27/08/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tsiki Kotler",
+      "pos": "DF",
+      "dob": "19/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Knafo",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Erez Mesika",
+      "pos": "MF",
+      "dob": "20/12/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dmytro Mikhailenko",
+      "pos": "MF",
+      "dob": "13/07/1973",
+      "born": 1973,
+      "nat": "Ukraine",
+      "remarks": "joined from Dinamo Kiev (Ukraine) before round 25"
+     },
+     {
+      "name": "Yosef Oba",
+      "pos": "MF",
+      "dob": "11/12/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Denis Onischenko",
+      "pos": "MF",
+      "dob": "15/09/1978",
+      "born": 1978,
+      "nat": "Ukraine",
+      "remarks": null
+     },
+     {
+      "name": "Milan Osterc",
+      "pos": "FW",
+      "dob": "04/07/1975",
+      "born": 1975,
+      "nat": "Slovenia",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Pisont",
+      "pos": "MF",
+      "dob": "16/05/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Dean Racunica",
+      "pos": "MF",
+      "dob": "05/12/1969",
+      "born": 1969,
+      "nat": "Croatia",
+      "remarks": "left to Hapoel Ironi Rishon-Lezion after round 24"
+     },
+     {
+      "name": "Nir Rahmin",
+      "pos": "GK",
+      "dob": "11/06/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Idan Skorchero",
+      "pos": "DF",
+      "dob": "24/04/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Tikva",
+      "pos": "MF",
+      "dob": "28/06/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ohad Tsur",
+      "pos": "MF",
+      "dob": "05/05/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": "joined from Hapoel Kfar-Saba before round 25"
+     },
+     {
+      "name": "Salim Tuama",
+      "pos": "MF",
+      "dob": "09/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Udi",
+      "pos": "FW",
+      "dob": "28/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Aviv Volnerman",
+      "pos": "FW",
+      "dob": "18/07/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-haifa": {
+    "team": "Maccabi Haifa",
+    "players": [
+     {
+      "name": "Reuven Atar",
+      "pos": "MF",
+      "dob": "03/01/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yakubu Aiyegbeni",
+      "pos": "FW",
+      "dob": "06/12/1977",
+      "born": 1977,
+      "nat": "Nigeria",
+      "remarks": "joined before round 22"
+     },
+     {
+      "name": "Walid Badir",
+      "pos": "MF",
+      "dob": "12/03/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Marko Balbul",
+      "pos": "DF",
+      "dob": "13/07/1967",
+      "born": 1967,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Hamo",
+      "pos": "DF",
+      "dob": "14/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Arik Benado",
+      "pos": "DF",
+      "dob": "05/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yossi Benayoun",
+      "pos": "MF",
+      "dob": "05/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shai Birok",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined from Ajax (Netherlands) before round 25"
+     },
+     {
+      "name": "Sergei Clescenco",
+      "pos": "FW",
+      "dob": "20/05/1972",
+      "born": 1972,
+      "nat": "Moldova",
+      "remarks": null
+     },
+     {
+      "name": "Rafi Cohen",
+      "pos": "FW",
+      "dob": "21/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shai Dahan",
+      "pos": "FW",
+      "dob": "21/06/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Davidovich",
+      "pos": "GK",
+      "dob": "17/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Golan Deri",
+      "pos": "DF",
+      "dob": "22/07/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Petah-Tikva after round 3"
+     },
+     {
+      "name": "Eliran Elkayam",
+      "pos": "DF",
+      "dob": "30/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Harazi",
+      "pos": "DF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Manor Hassan",
+      "pos": "MF",
+      "dob": "22/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Vasili Ivanov",
+      "pos": "MF",
+      "dob": "21/03/1970",
+      "born": 1970,
+      "nat": "Russia",
+      "remarks": "left to Maccabi Herzliya after round 8"
+     },
+     {
+      "name": "Avishai Jano",
+      "pos": "DF",
+      "dob": "19/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kamal Jubrin",
+      "pos": "DF",
+      "dob": "12/06/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Katan",
+      "pos": "FW",
+      "dob": "27/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adoram Keisy",
+      "pos": "DF",
+      "dob": "17/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Radoslaw Michalski",
+      "pos": "MF",
+      "dob": "21/09/1969",
+      "born": 1969,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Andrei Ostrovski",
+      "pos": "DF",
+      "dob": "13/09/1970",
+      "born": 1970,
+      "nat": "Belarus",
+      "remarks": null
+     },
+     {
+      "name": "Avi Peretz",
+      "pos": "GK",
+      "dob": "02/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nenad Pralija",
+      "pos": "MF",
+      "dob": "11/12/1970",
+      "born": 1970,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Haim Silvas",
+      "pos": "MF",
+      "dob": "21/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left to Bnei-Yehuda Tel-Aviv after round 7"
+     },
+     {
+      "name": "Ami Tayer",
+      "pos": "DF",
+      "dob": "29/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yoav Ziv",
+      "pos": "MF",
+      "dob": "16/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Raimondas Zutautas",
+      "pos": "MF",
+      "dob": "04/09/1972",
+      "born": 1972,
+      "nat": "Lithuania",
+      "remarks": "joined before round 9"
+     }
+    ]
+   },
+   "maccabi-ta": {
+    "team": "Maccabi Tel-Aviv",
+    "players": [
+     {
+      "name": "Cobi Abadayev",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Avraham",
+      "pos": "MF",
+      "dob": "01/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tal Banin",
+      "pos": "MF",
+      "dob": "07/03/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Dayan",
+      "pos": "DF",
+      "dob": "27/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Biton",
+      "pos": "FW",
+      "dob": "25/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Brumer",
+      "pos": "MF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gadi Brumer",
+      "pos": "DF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Baruch Dego",
+      "pos": "FW",
+      "dob": "26/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "joined from Ashdod SC before round 6"
+     },
+     {
+      "name": "Givi Didava",
+      "pos": "DF",
+      "dob": "21/03/1976",
+      "born": 1976,
+      "nat": "Georgia",
+      "remarks": "left to Beitar Avraham Beer-Sheva after round 10"
+     },
+     {
+      "name": "Kfir Edri",
+      "pos": "MF",
+      "dob": "12/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "left to Ashdod SC after round 5"
+     },
+     {
+      "name": "Roni Gafni",
+      "pos": "DF",
+      "dob": "11/03/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Petah-Tikva after round 22"
+     },
+     {
+      "name": "Rodrigo Goldberg",
+      "pos": "FW",
+      "dob": "09/08/1971",
+      "born": 1971,
+      "nat": "Chile",
+      "remarks": "joined before round 21"
+     },
+     {
+      "name": "Ofir Haim",
+      "pos": "FW",
+      "dob": "21/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Beer-Sheva after round 18"
+     },
+     {
+      "name": "Daniel Heidman",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ferenc Horvath",
+      "pos": "FW",
+      "dob": "06/05/1973",
+      "born": 1973,
+      "nat": "Hungary",
+      "remarks": "joined before round 11"
+     },
+     {
+      "name": "Meho Kodro",
+      "pos": "FW",
+      "dob": "12/01/1967",
+      "born": 1967,
+      "nat": "Bosnia-Herzegovina",
+      "remarks": "left after round 9"
+     },
+     {
+      "name": "Meni Levi",
+      "pos": "MF",
+      "dob": "06/08/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Brian Man",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dani Mishan",
+      "pos": "DF",
+      "dob": "01/02/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Nimni",
+      "pos": "MF",
+      "dob": "26/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Reuven Oved",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Refua",
+      "pos": "FW",
+      "dob": "03/09/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": "left to Bnei-Yehuda Tel-Aviv after round 24"
+     },
+     {
+      "name": "Oren Rotem",
+      "pos": "DF",
+      "dob": "21/12/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Shelah",
+      "pos": "DF",
+      "dob": "11/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Shen",
+      "pos": "MF",
+      "dob": "29/01/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Liran Strauber",
+      "pos": "GK",
+      "dob": "20/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Strol",
+      "pos": "DF",
+      "dob": "18/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Andrei Tikhonov",
+      "pos": "MF",
+      "dob": "16/10/1970",
+      "born": 1970,
+      "nat": "Russia",
+      "remarks": "joined before round 11, left to Kryliya Sovetov Samara (Russia) after round 18"
+     },
+     {
+      "name": "Guy Tsarfati",
+      "pos": "MF",
+      "dob": "28/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alexander Uvarov",
+      "pos": "GK",
+      "dob": "13/01/1960",
+      "born": 1960,
+      "nat": "Israel",
+      "remarks": "joined as player before round 9 (goalkeeper's coach before)"
+     },
+     {
+      "name": "Jozef Valachovic",
+      "pos": "MF",
+      "dob": "12/07/1975",
+      "born": 1975,
+      "nat": "Slovakia",
+      "remarks": null
+     },
+     {
+      "name": "Adam Vezer",
+      "pos": "GK",
+      "dob": "21/09/1974",
+      "born": 1974,
+      "nat": "Hungary",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Grzegorz Wedzynski",
+      "pos": "MF",
+      "dob": "04/06/1970",
+      "born": 1970,
+      "nat": "Poland",
+      "remarks": null
+     }
+    ]
+   }
+  },
+  "2002": {
+   "beitar": {
+    "team": "Beitar Jerusalem",
+    "players": [
+     {
+      "name": "Alon Abramovich",
+      "pos": "DF",
+      "dob": "10/03/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "David Amsalem",
+      "pos": "DF",
+      "dob": "04/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tomer Azulay",
+      "pos": "DF",
+      "dob": "28/11/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Raanan Deri",
+      "pos": "MF",
+      "dob": "12/07/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Grif",
+      "pos": "GK",
+      "dob": "20/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left after round 16 to Hapoel Tsafririm Holon"
+     },
+     {
+      "name": "Yoel Greenberg",
+      "pos": "FW",
+      "dob": "04/12/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Mati Hajaj",
+      "pos": "MF",
+      "dob": "17/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Manor Hassan",
+      "pos": "MF",
+      "dob": "22/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "joined before round 6"
+     },
+     {
+      "name": "Nir Hazut",
+      "pos": "FW",
+      "dob": "27/11/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left after round 16 to Maccabi Kiryat-Gat"
+     },
+     {
+      "name": "Elimeleh Kasai",
+      "pos": "MF",
+      "dob": "15/07/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Konovalov",
+      "pos": "MF",
+      "dob": "01/03/1972",
+      "born": 1972,
+      "nat": "Ukraine",
+      "remarks": "joined from Dinamo Kiev before round 6"
+     },
+     {
+      "name": "Ziv Kabeda",
+      "pos": "MF",
+      "dob": "10/12/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": "joined from Hapoel Tsafririm Holon before round 10"
+     },
+     {
+      "name": "Itzik Korenfein",
+      "pos": "GK",
+      "dob": "24/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shmulik Lavan",
+      "pos": "DF",
+      "dob": "21/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Hagai Maman",
+      "pos": "GK",
+      "dob": "26/09/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moti Menahem",
+      "pos": "FW",
+      "dob": "19/02/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "joined before round 5"
+     },
+     {
+      "name": "Dmytro Mikhailenko",
+      "pos": "MF",
+      "dob": "13/07/1973",
+      "born": 1973,
+      "nat": "Ukraine",
+      "remarks": "joined before round 5"
+     },
+     {
+      "name": "Eitan Mizrahi",
+      "pos": "MF",
+      "dob": "22/01/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moti Ohayon",
+      "pos": "DF",
+      "dob": "26/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": "joined before round 5"
+     },
+     {
+      "name": "Alon Ofir",
+      "pos": "MF",
+      "dob": "28/10/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Victor Pacha",
+      "pos": "FW",
+      "dob": "14/02/1971",
+      "born": 1971,
+      "nat": "Albania",
+      "remarks": null
+     },
+     {
+      "name": "Cornelio Papora",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Romania",
+      "remarks": "joined before round 8"
+     },
+     {
+      "name": "Nir Reichman",
+      "pos": "MF",
+      "dob": "24/09/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Sagir",
+      "pos": "DF",
+      "dob": "20/08/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tamas Sandor",
+      "pos": "MF",
+      "dob": "20/06/1974",
+      "born": 1974,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Eli Sason",
+      "pos": "MF",
+      "dob": "29/08/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moshe Shlomi",
+      "pos": "MF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Jan Talesnikov",
+      "pos": "MF",
+      "dob": "11/12/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofer Talker",
+      "pos": "DF",
+      "dob": "22/04/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": "joined before round 14 from Hapoel Haifa"
+     },
+     {
+      "name": "Valentin Teodorika",
+      "pos": "DF",
+      "dob": "26/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moris Uzan",
+      "pos": "MF",
+      "dob": "15/04/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Beit-Shean"
+     },
+     {
+      "name": "Ami Vaaknin",
+      "pos": "DF",
+      "dob": "24/10/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elad Yaacobi",
+      "pos": "FW",
+      "dob": "04/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Zion Zaken",
+      "pos": "MF",
+      "dob": "02/08/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Itzik Zohar",
+      "pos": "MF",
+      "dob": "30/10/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": "joined before round 16 from Maccabi Netanya"
+     }
+    ]
+   },
+   "hapoel-bs": {
+    "team": "Hapoel Beer-Sheva",
+    "players": [
+     {
+      "name": "Yaniv Abarjil",
+      "pos": "FW",
+      "dob": "16/08/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": "joined before round 14 from Maccabi Petah-Tikva"
+     },
+     {
+      "name": "Rami Abu-Laben",
+      "pos": "MF",
+      "dob": "05/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Fernando Araujo",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Uruguay",
+      "remarks": "joined before round 17"
+     },
+     {
+      "name": "Elyaniv Barda",
+      "pos": "FW",
+      "dob": "15/12/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gilad Benayoun",
+      "pos": "MF",
+      "dob": "05/03/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elad Bonfeld",
+      "pos": "MF",
+      "dob": "08/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Marek Citko",
+      "pos": "MF",
+      "dob": "26/03/1974",
+      "born": 1974,
+      "nat": "Poland",
+      "remarks": "joined before round 14"
+     },
+     {
+      "name": "Golan Deri",
+      "pos": "DF",
+      "dob": "22/07/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "joined before round 7"
+     },
+     {
+      "name": "Yanai Deri",
+      "pos": "DF",
+      "dob": "22/10/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Edri",
+      "pos": "MF",
+      "dob": "12/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Stav Elimeleh",
+      "pos": "MF",
+      "dob": "09/11/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rami Eliyahu",
+      "pos": "MF",
+      "dob": "16/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Elul",
+      "pos": "DF",
+      "dob": "17/09/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Eved",
+      "pos": "DF",
+      "dob": "18/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofir Haim",
+      "pos": "FW",
+      "dob": "21/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Hayun",
+      "pos": "GK",
+      "dob": "10/03/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oz Ifrah",
+      "pos": "DF",
+      "dob": "10/12/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Deivi Korman",
+      "pos": "MF",
+      "dob": "27/01/1971",
+      "born": 1971,
+      "nat": "Belgium",
+      "remarks": null
+     },
+     {
+      "name": "Elazar Lavi",
+      "pos": "MF",
+      "dob": "02/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Drazen Madunovic",
+      "pos": "DF",
+      "dob": "17/03/1971",
+      "born": 1971,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Rubenilson Monteiro",
+      "pos": "FW",
+      "dob": "07/08/1972",
+      "born": 1972,
+      "nat": "Brazil",
+      "remarks": null
+     },
+     {
+      "name": "Shuki Nagar",
+      "pos": "DF",
+      "dob": "07/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Itzik Peretz",
+      "pos": "FW",
+      "dob": "23/02/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Rahamim",
+      "pos": "GK",
+      "dob": "03/07/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oren Sagron",
+      "pos": "FW",
+      "dob": "12/07/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Mordi Schwartz",
+      "pos": "GK",
+      "dob": "25/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Zarko Serafimovski",
+      "pos": "MF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Macedonia",
+      "remarks": null
+     },
+     {
+      "name": "Tomer Tadesa",
+      "pos": "DF",
+      "dob": "25/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kenny Verhoenen",
+      "pos": "DF",
+      "dob": "15/04/1973",
+      "born": 1973,
+      "nat": "USA",
+      "remarks": "left after round 1"
+     },
+     {
+      "name": "Ada Visnica",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Yugoslavia",
+      "remarks": "joined before round 11, left after round 15"
+     }
+    ]
+   },
+   "hapoel-ta": {
+    "team": "Hapoel Tel-Aviv",
+    "players": [
+     {
+      "name": "Yossi Abuksis",
+      "pos": "MF",
+      "dob": "10/09/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Ahwan",
+      "pos": "DF",
+      "dob": "15/11/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Omri Afek",
+      "pos": "FW",
+      "dob": "31/03/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Igal Antebi",
+      "pos": "DF",
+      "dob": "01/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Azari Babayev",
+      "pos": "DF",
+      "dob": "18/05/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ilan Bahar",
+      "pos": "DF",
+      "dob": "17/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pini Balili",
+      "pos": "FW",
+      "dob": "18/06/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Clescenco",
+      "pos": "FW",
+      "dob": "20/05/1972",
+      "born": 1972,
+      "nat": "Moldova",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Dahan",
+      "pos": "DF",
+      "dob": "08/12/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Domb",
+      "pos": "DF",
+      "dob": "27/02/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shavit Elimeleh",
+      "pos": "GK",
+      "dob": "07/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shimon Gershon",
+      "pos": "DF",
+      "dob": "06/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Beni Hadad",
+      "pos": "DF",
+      "dob": "04/08/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Hadad",
+      "pos": "MF",
+      "dob": "28/03/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rami Halis",
+      "pos": "DF",
+      "dob": "26/06/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gabor Halmai",
+      "pos": "MF",
+      "dob": "07/01/1972",
+      "born": 1972,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Yaacov Hilel",
+      "pos": "DF",
+      "dob": "27/08/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Knafo",
+      "pos": "MF",
+      "dob": "04/08/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ben Luz",
+      "pos": "MF",
+      "dob": "18/02/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Erez Mesika",
+      "pos": "MF",
+      "dob": "20/12/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "left after round 14 to Maccabi Netanya"
+     },
+     {
+      "name": "Denis Onischenko",
+      "pos": "MF",
+      "dob": "15/09/1978",
+      "born": 1978,
+      "nat": "Ukraine",
+      "remarks": null
+     },
+     {
+      "name": "Milan Osterc",
+      "pos": "FW",
+      "dob": "04/07/1975",
+      "born": 1975,
+      "nat": "Slovenia",
+      "remarks": null
+     },
+     {
+      "name": "Yosef Oba",
+      "pos": "MF",
+      "dob": "11/12/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Istvan Pisont",
+      "pos": "MF",
+      "dob": "16/05/1970",
+      "born": 1970,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Nir Rahmin",
+      "pos": "GK",
+      "dob": "11/06/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Klimi Saban",
+      "pos": "DF",
+      "dob": "17/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Idan Skorchero",
+      "pos": "DF",
+      "dob": "24/04/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ohad Tsur",
+      "pos": "MF",
+      "dob": "05/05/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Salim Tuama",
+      "pos": "MF",
+      "dob": "09/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Udi",
+      "pos": "FW",
+      "dob": "28/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ronen Zelig",
+      "pos": "MF",
+      "dob": "19/04/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-haifa": {
+    "team": "Maccabi Haifa",
+    "players": [
+     {
+      "name": "Yakubu Aiyegbeni",
+      "pos": "FW",
+      "dob": "06/12/1977",
+      "born": 1977,
+      "nat": "Nigeria",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Almoshnino",
+      "pos": "MF",
+      "dob": "10/04/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Reuven Atar",
+      "pos": "MF",
+      "dob": "03/01/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Awat",
+      "pos": "GK",
+      "dob": "17/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Walid Badir",
+      "pos": "MF",
+      "dob": "12/03/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Marko Balbul",
+      "pos": "DF",
+      "dob": "13/07/1967",
+      "born": 1967,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Arik Benado",
+      "pos": "DF",
+      "dob": "05/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yossi Benayoun",
+      "pos": "MF",
+      "dob": "05/05/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rafi Cohen",
+      "pos": "FW",
+      "dob": "21/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Davidovich",
+      "pos": "GK",
+      "dob": "17/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Harazi",
+      "pos": "DF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avishai Jano",
+      "pos": "DF",
+      "dob": "19/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kamal Jubrin",
+      "pos": "DF",
+      "dob": "12/06/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Katan",
+      "pos": "FW",
+      "dob": "27/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adoram Keisy",
+      "pos": "DF",
+      "dob": "17/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yossi Nagar",
+      "pos": "DF",
+      "dob": "27/02/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Andrei Ostrovski",
+      "pos": "DF",
+      "dob": "13/09/1970",
+      "born": 1970,
+      "nat": "Belarus",
+      "remarks": null
+     },
+     {
+      "name": "Avi Peretz",
+      "pos": "GK",
+      "dob": "02/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": "left after round 7 to Hapoel Haifa"
+     },
+     {
+      "name": "Nenad Pralija",
+      "pos": "MF",
+      "dob": "11/12/1970",
+      "born": 1970,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Giovanni Rosso",
+      "pos": "MF",
+      "dob": "17/11/1972",
+      "born": 1972,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Nir Sevilia",
+      "pos": "FW",
+      "dob": "26/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yoav Ziv",
+      "pos": "MF",
+      "dob": "16/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "left after round 16 to Hapoel Haifa"
+     },
+     {
+      "name": "Raimondas Zutautas",
+      "pos": "MF",
+      "dob": "04/09/1972",
+      "born": 1972,
+      "nat": "Lithuania",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-ta": {
+    "team": "Maccabi Tel-Aviv",
+    "players": [
+     {
+      "name": "Salam Abu-Siam",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Avraham",
+      "pos": "MF",
+      "dob": "01/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tal Banin",
+      "pos": "MF",
+      "dob": "07/03/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Dayan",
+      "pos": "DF",
+      "dob": "27/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tal Ben-Haim",
+      "pos": "DF",
+      "dob": "31/03/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Biton",
+      "pos": "FW",
+      "dob": "25/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gadi Brumer",
+      "pos": "DF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Baruch Dego",
+      "pos": "FW",
+      "dob": "26/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rodrigo Goldberg",
+      "pos": "FW",
+      "dob": "09/08/1971",
+      "born": 1971,
+      "nat": "Chile",
+      "remarks": null
+     },
+     {
+      "name": "Daniel Heidman",
+      "pos": "MF",
+      "dob": "10/12/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ferenc Horvath",
+      "pos": "FW",
+      "dob": "06/05/1973",
+      "born": 1973,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Meni Levi",
+      "pos": "MF",
+      "dob": "06/08/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oshri Levi",
+      "pos": "GK",
+      "dob": "05/01/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dani Mishan",
+      "pos": "DF",
+      "dob": "01/02/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Mussa",
+      "pos": "DF",
+      "dob": "18/04/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Nimni",
+      "pos": "MF",
+      "dob": "26/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Reuven Oved",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Gal Pilian",
+      "pos": "MF",
+      "dob": "14/07/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Shelah",
+      "pos": "DF",
+      "dob": "11/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": "left after round 16 to Maccabi Netanya"
+     },
+     {
+      "name": "Eyal Shen",
+      "pos": "MF",
+      "dob": "29/01/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Liran Strauber",
+      "pos": "GK",
+      "dob": "20/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Strol",
+      "pos": "DF",
+      "dob": "18/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guy Tsarfati",
+      "pos": "MF",
+      "dob": "28/04/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": "left after round 11 to Maccabi Netanya"
+     },
+     {
+      "name": "Itai Tuaf",
+      "pos": "DF",
+      "dob": "05/12/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Turjeman",
+      "pos": "FW",
+      "dob": "05/10/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Grzegorz Wedzynski",
+      "pos": "MF",
+      "dob": "04/06/1970",
+      "born": 1970,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Oren Zeituni",
+      "pos": "MF",
+      "dob": "18/02/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   }
+  },
+  "2003": {
+   "beitar": {
+    "team": "Beitar Jerusalem",
+    "players": [
+     {
+      "name": "Alon Abramovich",
+      "pos": "DF",
+      "dob": "10/03/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "David Amsalem",
+      "pos": "DF",
+      "dob": "04/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shlomi Arbeitman",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Miki Atiya",
+      "pos": "DF",
+      "dob": "18/04/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moshe Biton",
+      "pos": "FW",
+      "dob": "18/11/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Aviram Bruchyan",
+      "pos": "MF",
+      "dob": "20/03/1985",
+      "born": 1985,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Cohen",
+      "pos": "MF",
+      "dob": "10/10/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pablo Del Rio",
+      "pos": "MF",
+      "dob": "11/02/1976",
+      "born": 1976,
+      "nat": "Argentina",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Raanan Deri",
+      "pos": "MF",
+      "dob": "12/07/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Edri",
+      "pos": "MF",
+      "dob": "12/10/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Edmilson Ferreira",
+      "pos": "DF",
+      "dob": "17/07/1973",
+      "born": 1973,
+      "nat": "Brazil",
+      "remarks": null
+     },
+     {
+      "name": "Golan Hermon",
+      "pos": "DF",
+      "dob": "26/09/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ehud Kahila",
+      "pos": "DF",
+      "dob": "13/07/1968",
+      "born": 1968,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Itzik Korenfein",
+      "pos": "GK",
+      "dob": "24/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Andrzej Kubica",
+      "pos": "FW",
+      "dob": "07/07/1972",
+      "born": 1972,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Maor Melikson",
+      "pos": "MF",
+      "dob": "30/10/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eitan Mizrahi",
+      "pos": "MF",
+      "dob": "22/01/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shlomi Moshe",
+      "pos": "MF",
+      "dob": "24/05/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Chukri Ogagawa",
+      "pos": "FW",
+      "dob": null,
+      "born": null,
+      "nat": "Nigeria",
+      "remarks": "joined during the season"
+     },
+     {
+      "name": "Dani Podalski",
+      "pos": "GK",
+      "dob": "11/08/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Sagir",
+      "pos": "DF",
+      "dob": "20/08/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofer Talker",
+      "pos": "DF",
+      "dob": "22/04/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Itzik Zohar",
+      "pos": "MF",
+      "dob": "30/10/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Sason",
+      "pos": "MF",
+      "dob": "29/08/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adir Shimon",
+      "pos": "DF",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": "joined from Hapoel Beit-Shemesh"
+     },
+     {
+      "name": "Jan Talesnikov",
+      "pos": "MF",
+      "dob": "11/12/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dimitri Ulianov",
+      "pos": "MF",
+      "dob": "28/10/1970",
+      "born": 1970,
+      "nat": "Russia",
+      "remarks": "joined from Hapoel Haifa"
+     },
+     {
+      "name": "Elad Yaacobi",
+      "pos": "FW",
+      "dob": "04/02/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Zion Zaken",
+      "pos": "MF",
+      "dob": "02/08/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "hapoel-bs": {
+    "team": "Hapoel Beer-Sheva",
+    "players": [
+     {
+      "name": "Eyal Abed",
+      "pos": "DF",
+      "dob": "18/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rami Abu-Laben",
+      "pos": "MF",
+      "dob": "05/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Abutbul",
+      "pos": "MF",
+      "dob": "30/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elyaniv Barda",
+      "pos": "FW",
+      "dob": "15/12/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "left to Maccabi Haifa"
+     },
+     {
+      "name": "Inon Barda",
+      "pos": "FW",
+      "dob": "02/10/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ido Bokovza",
+      "pos": "DF",
+      "dob": "20/02/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elad Bonfeld",
+      "pos": "MF",
+      "dob": "08/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Stav Elimeleh",
+      "pos": "MF",
+      "dob": "09/11/1969",
+      "born": 1969,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rami Eliyahu",
+      "pos": "MF",
+      "dob": "16/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yaniv Elul",
+      "pos": "DF",
+      "dob": "17/09/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ofir Haim",
+      "pos": "FW",
+      "dob": "21/04/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tomer Haleva",
+      "pos": "DF",
+      "dob": "27/09/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Zohar Hogeg",
+      "pos": "MF",
+      "dob": "16/10/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oz Ifrah",
+      "pos": "DF",
+      "dob": "10/12/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Evyatar Iluz",
+      "pos": "MF",
+      "dob": "04/11/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Remigiusz Jezierski",
+      "pos": "MF",
+      "dob": "19/01/1976",
+      "born": 1976,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Blessing Kaku",
+      "pos": "MF",
+      "dob": "05/03/1978",
+      "born": 1978,
+      "nat": "Nigeria",
+      "remarks": null
+     },
+     {
+      "name": "Drazen Madunovic",
+      "pos": "DF",
+      "dob": "17/03/1971",
+      "born": 1971,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Shuki Nagar",
+      "pos": "DF",
+      "dob": "07/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Rahamim",
+      "pos": "GK",
+      "dob": "03/07/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oren Sagron",
+      "pos": "FW",
+      "dob": "12/07/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Mordi Schwartz",
+      "pos": "GK",
+      "dob": "25/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tomer Tadesa",
+      "pos": "DF",
+      "dob": "25/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Bartosz Tarachulski",
+      "pos": "FW",
+      "dob": "14/05/1975",
+      "born": 1975,
+      "nat": "Poland",
+      "remarks": null
+     },
+     {
+      "name": "Amir Uzan",
+      "pos": "DF",
+      "dob": "22/11/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "hapoel-ta": {
+    "team": "Hapoel Tel-Aviv",
+    "players": [
+     {
+      "name": "Yossi Abuksis",
+      "pos": "MF",
+      "dob": "10/09/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shai Abutbul",
+      "pos": "MF",
+      "dob": "16/01/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Omri Afek",
+      "pos": "FW",
+      "dob": "31/03/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Igal Antebi",
+      "pos": "DF",
+      "dob": "01/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Azari Babayev",
+      "pos": "DF",
+      "dob": "18/05/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Pini Balili",
+      "pos": "FW",
+      "dob": "18/06/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Ben-Ami",
+      "pos": "MF",
+      "dob": "29/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Galil Ben-Shanan",
+      "pos": "GK",
+      "dob": null,
+      "born": null,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Sergei Clescenco",
+      "pos": "FW",
+      "dob": "20/05/1972",
+      "born": 1972,
+      "nat": "Moldova",
+      "remarks": null
+     },
+     {
+      "name": "Asi Domb",
+      "pos": "DF",
+      "dob": "27/02/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Aviv Elhadad",
+      "pos": "FW",
+      "dob": "20/02/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shavit Elimeleh",
+      "pos": "GK",
+      "dob": "07/09/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shimon Gershon",
+      "pos": "DF",
+      "dob": "06/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Beni Hadad",
+      "pos": "DF",
+      "dob": "04/08/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Alon Halfon",
+      "pos": "DF",
+      "dob": "02/07/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rami Halis",
+      "pos": "DF",
+      "dob": "26/06/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gabor Halmai",
+      "pos": "MF",
+      "dob": "07/01/1972",
+      "born": 1972,
+      "nat": "Hungary",
+      "remarks": null
+     },
+     {
+      "name": "Yaacov Hilel",
+      "pos": "DF",
+      "dob": "27/08/1966",
+      "born": 1966,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Knafo",
+      "pos": "MF",
+      "dob": "04/08/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tsiki Kotler",
+      "pos": "DF",
+      "dob": "19/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Ben Luz",
+      "pos": "MF",
+      "dob": "18/02/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Denis Onischenko",
+      "pos": "MF",
+      "dob": "15/09/1978",
+      "born": 1978,
+      "nat": "Ukraine",
+      "remarks": null
+     },
+     {
+      "name": "Nir Rahmin",
+      "pos": "GK",
+      "dob": "11/06/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Klimi Saban",
+      "pos": "DF",
+      "dob": "17/02/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Welton Silva",
+      "pos": "FW",
+      "dob": "11/07/1978",
+      "born": 1978,
+      "nat": "Brazil",
+      "remarks": "left during the season"
+     },
+     {
+      "name": "Salim Tuama",
+      "pos": "MF",
+      "dob": "09/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kfir Udi",
+      "pos": "FW",
+      "dob": "28/08/1979",
+      "born": 1979,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-haifa": {
+    "team": "Maccabi Haifa",
+    "players": [
+     {
+      "name": "Yakubu Aiyegbeni",
+      "pos": "FW",
+      "dob": "06/12/1977",
+      "born": 1977,
+      "nat": "Nigeria",
+      "remarks": "left to Portsmouth (England)"
+     },
+     {
+      "name": "Tom Almadon",
+      "pos": "GK",
+      "dob": "17/10/1977",
+      "born": 1977,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eyal Almoshnino",
+      "pos": "MF",
+      "dob": "10/04/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": "left to Ashdod SC"
+     },
+     {
+      "name": "Liad Amir",
+      "pos": "DF",
+      "dob": "27/02/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asi Avrahami",
+      "pos": "MF",
+      "dob": "07/04/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dudu Awat",
+      "pos": "GK",
+      "dob": "05/12/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Walid Badir",
+      "pos": "MF",
+      "dob": "12/03/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Elyaniv Barda",
+      "pos": "FW",
+      "dob": "15/12/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "joined from Hapoel Beer-Sheva"
+     },
+     {
+      "name": "Arik Benado",
+      "pos": "DF",
+      "dob": "05/12/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Shai Birok",
+      "pos": "MF",
+      "dob": "15/02/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rafi Cohen",
+      "pos": "FW",
+      "dob": "21/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nir Davidovich",
+      "pos": "GK",
+      "dob": "17/12/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eric Ejiofor",
+      "pos": "DF",
+      "dob": "27/05/1978",
+      "born": 1978,
+      "nat": "Nigeria",
+      "remarks": null
+     },
+     {
+      "name": "Alon Harazi",
+      "pos": "DF",
+      "dob": "13/02/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Guillermo Israelevich",
+      "pos": "MF",
+      "dob": "09/10/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Maor Janah",
+      "pos": "MF",
+      "dob": "10/02/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avishai Jano",
+      "pos": "DF",
+      "dob": "19/07/1970",
+      "born": 1970,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Kamal Jubrin",
+      "pos": "DF",
+      "dob": "12/06/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": "left to Maccabi Herzliya"
+     },
+     {
+      "name": "Yaniv Katan",
+      "pos": "FW",
+      "dob": "27/01/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Adoram Keisy",
+      "pos": "DF",
+      "dob": "17/06/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eran Levi",
+      "pos": "FW",
+      "dob": "07/06/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Yossi Nagar",
+      "pos": "DF",
+      "dob": "27/02/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Nenad Pralija",
+      "pos": "MF",
+      "dob": "11/12/1970",
+      "born": 1970,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Giovanni Rosso",
+      "pos": "MF",
+      "dob": "17/11/1972",
+      "born": 1972,
+      "nat": "Croatia",
+      "remarks": null
+     },
+     {
+      "name": "Nir Sevilia",
+      "pos": "FW",
+      "dob": "26/05/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "left to Bnei-Yehuda Tel-Aviv"
+     },
+     {
+      "name": "Idan Tal",
+      "pos": "MF",
+      "dob": "10/02/1975",
+      "born": 1975,
+      "nat": "Israel",
+      "remarks": "joined from Rayo Vallacano (Spain)"
+     },
+     {
+      "name": "Michael Zandberg",
+      "pos": "MF",
+      "dob": "16/04/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Raimondas Zutautas",
+      "pos": "MF",
+      "dob": "04/09/1972",
+      "born": 1972,
+      "nat": "Lithuania",
+      "remarks": null
+     }
+    ]
+   },
+   "maccabi-ta": {
+    "team": "Maccabi Tel-Aviv",
+    "players": [
+     {
+      "name": "Cobi Abadayev",
+      "pos": "FW",
+      "dob": "10/11/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Haifa"
+     },
+     {
+      "name": "Dudu Avraham",
+      "pos": "MF",
+      "dob": "01/12/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": "left to Ashdod SC"
+     },
+     {
+      "name": "Salam Abu-Siam",
+      "pos": "DF",
+      "dob": "08/03/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Mauricio Aros",
+      "pos": "DF",
+      "dob": "09/03/1976",
+      "born": 1976,
+      "nat": "Chile",
+      "remarks": null
+     },
+     {
+      "name": "Tal Banin",
+      "pos": "MF",
+      "dob": "07/03/1971",
+      "born": 1971,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Dedi Ben-Dayan",
+      "pos": "DF",
+      "dob": "27/11/1978",
+      "born": 1978,
+      "nat": "Israel",
+      "remarks": "left to Hapoel Petah-Tikva"
+     },
+     {
+      "name": "Tal Ben-Haim",
+      "pos": "DF",
+      "dob": "31/03/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Eli Biton",
+      "pos": "FW",
+      "dob": "25/01/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Gadi Brumer",
+      "pos": "DF",
+      "dob": "05/11/1973",
+      "born": 1973,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Liran Cohen",
+      "pos": "MF",
+      "dob": "14/02/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Tamir Cohen",
+      "pos": "DF",
+      "dob": "04/03/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asaf Crispis",
+      "pos": "FW",
+      "dob": "07/04/1984",
+      "born": 1984,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Baruch Dego",
+      "pos": "FW",
+      "dob": "26/03/1981",
+      "born": 1981,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Rodrigo Goldberg",
+      "pos": "FW",
+      "dob": "09/08/1971",
+      "born": 1971,
+      "nat": "Chile",
+      "remarks": null
+     },
+     {
+      "name": "Cobi Mussa",
+      "pos": "DF",
+      "dob": "18/04/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Moshe Mishaelov",
+      "pos": "DF",
+      "dob": "14/09/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Nimni",
+      "pos": "MF",
+      "dob": "26/04/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Reuven Oved",
+      "pos": "FW",
+      "dob": "28/11/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "John Paintsil",
+      "pos": "DF",
+      "dob": "15/06/1981",
+      "born": 1981,
+      "nat": "Ghana",
+      "remarks": "joined from Berekum Arsenals (Ghana)"
+     },
+     {
+      "name": "Gal Pilian",
+      "pos": "MF",
+      "dob": "14/07/1982",
+      "born": 1982,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Andrejs Prohorenkovs",
+      "pos": "FW",
+      "dob": "05/02/1977",
+      "born": 1977,
+      "nat": "Latvia",
+      "remarks": null
+     },
+     {
+      "name": "Bruno Reis",
+      "pos": "MF",
+      "dob": "18/06/1978",
+      "born": 1978,
+      "nat": "Brazil",
+      "remarks": null
+     },
+     {
+      "name": "Ami Rozenberg",
+      "pos": "GK",
+      "dob": "02/08/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Asaf Sade",
+      "pos": "DF",
+      "dob": "28/09/1983",
+      "born": 1983,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Liran Strauber",
+      "pos": "GK",
+      "dob": "20/08/1974",
+      "born": 1974,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Avi Strol",
+      "pos": "DF",
+      "dob": "18/09/1980",
+      "born": 1980,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Amir Turjeman",
+      "pos": "FW",
+      "dob": "05/10/1972",
+      "born": 1972,
+      "nat": "Israel",
+      "remarks": null
+     },
+     {
+      "name": "Oren Zeituni",
+      "pos": "MF",
+      "dob": "18/02/1976",
+      "born": 1976,
+      "nat": "Israel",
+      "remarks": null
+     }
+    ]
+   }
+  }
+ }
+}
