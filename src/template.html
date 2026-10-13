@@ -43,6 +43,8 @@
 <meta name="apple-mobile-web-app-title" content="__SITE_NAME__">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<!-- בהיר/כהה לפני הציור הראשון. המקור ב-scripts/lib/content.mjs (THEME_BOOT). -->
+__THEME_BOOT__
 
 <!-- גופנים מקומיים. נוצרים ב-tools/fonts.mjs, ולא נטענים מגוגל:
      באפליקציה בלי רשת גופן חסר מפיל את המשחק לגופן מערכת, וגם
@@ -307,16 +309,17 @@ input.rc:focus{border-color:var(--brand)}
 
 /* שני כפתורי הכותרת חייבים אותו גודל ואותה מרכוז — בלי flex
    הגליף יושב על קו הבסיס, וכל אחד יושב אחרת. */
-#helpBtn,#archBtn{position:absolute;top:22px;width:30px;height:30px;border-radius:50%;
+#helpBtn,#archBtn,#themeBtn{position:absolute;top:22px;width:30px;height:30px;border-radius:50%;
   background:var(--ink-2);border:1px solid var(--line);color:var(--dim);
   cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
 /* שני האייקונים הם SVG באותה תיבת 24×24, אז הם זהים בפיקסל.
    הגליפים ☰ ו-? נבדלים ברוחב ב-75% ו-☰ יורד מתחת לקו הבסיס —
    flex ממרכז את תיבת השורה ולא את הדיו, ולכן הם נראו עקומים. */
-#helpBtn svg,#archBtn svg{width:15px;height:15px;display:block}
+#helpBtn svg,#archBtn svg,#themeBtn svg{width:15px;height:15px;display:block}
 #helpBtn{inset-inline-end:0}
 #archBtn{inset-inline-end:38px}
-#helpBtn:hover,#archBtn:hover{color:var(--brand);border-color:var(--brand)}
+#themeBtn{inset-inline-end:76px}
+#helpBtn:hover,#archBtn:hover,#themeBtn:hover{color:var(--brand);border-color:var(--brand)}
 .arch{display:flex;flex-direction:column;gap:6px;margin-top:8px}
 .arch button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;
   background:var(--ink);border:1px solid var(--line);border-radius:9px;padding:11px 13px;
@@ -330,9 +333,10 @@ input.rc:focus{border-color:var(--brand)}
    קודם היה כלל נפרד ל-#archBtn שהגיע אחרי כלל משותף — ולכן
    במסך רחב הארכיון היה 33px והעזרה 30px, בגבהים שונים. */
 @media (min-width:640px){
-  #helpBtn,#archBtn{top:30px;width:33px;height:33px}
-  #helpBtn svg,#archBtn svg{width:16px;height:16px}
+  #helpBtn,#archBtn,#themeBtn{top:30px;width:33px;height:33px}
+  #helpBtn svg,#archBtn svg,#themeBtn svg{width:16px;height:16px}
   #archBtn{inset-inline-end:43px}
+  #themeBtn{inset-inline-end:86px}
 }
 
 #report{margin-top:11px;font-size:11.5px}
@@ -637,13 +641,13 @@ h1::before{left:-28px;transform:scaleX(-1)}
 #clubBtn svg{width:15px;height:15px}
 #clubBtn:hover{background:var(--brand);color:var(--on-brand);box-shadow:none}
 
-#helpBtn,#archBtn{top:8px;border-radius:2px;background:var(--fabric) url(scarf/fabric.webp);
+#helpBtn,#archBtn,#themeBtn{top:8px;border-radius:2px;background:var(--fabric) url(scarf/fabric.webp);
   color:var(--fabric-ink);border:0;box-shadow:inset 0 0 0 3px var(--fabric),inset 0 0 0 4px var(--stitch)}
-#helpBtn:hover,#archBtn:hover{color:var(--fabric-ink);background:var(--brand);box-shadow:none}
+#helpBtn:hover,#archBtn:hover,#themeBtn:hover{color:var(--fabric-ink);background:var(--brand);box-shadow:none}
 #streak{top:10px;border-radius:2px;background:transparent;border:0;color:var(--fabric);
   box-shadow:inset 0 0 0 1.5px var(--stitch)}
 #streak b{color:var(--brand)}
-@media (min-width:640px){#helpBtn,#archBtn{top:10px}#streak{top:14px}}
+@media (min-width:640px){#helpBtn,#archBtn,#themeBtn{top:10px}#streak{top:14px}}
 
 /* לשוניות: שתי תוויות, הפעילה נסרגת בצבע המועדון */
 .nav{background:none;border:0;padding:0;gap:10px;max-width:320px;margin-top:18px}
@@ -833,7 +837,7 @@ footer,.sitenav{border-top:1px dashed rgba(184,167,128,.35)}
 :root{--ground:#161C2D;--text-2:#E4DAC3;--text-3:#B8AF9A;--thread:rgba(255,248,230,.8)}
 html,.sheet,#picker{background-size:260px auto}
 html{scrollbar-color:#2C3550 var(--ground)}
-.sub,#helpBtn,#archBtn,#clubBtn,.nav button:not(.on),#hintBtn,#friendBtn,#streak,
+.sub,#helpBtn,#archBtn,#themeBtn,#clubBtn,.nav button:not(.on),#hintBtn,#friendBtn,#streak,
 button.ghost,button.act.ghost,#versusView .vtop button,#yday,.appban{
   background:var(--fabric) url(scarf/fabric.webp);background-blend-mode:normal;color:var(--fabric-ink);
   border:0;border-radius:2px;box-shadow:0 2px 6px rgba(0,0,0,.45);
@@ -841,7 +845,7 @@ button.ghost,button.act.ghost,#versusView .vtop button,#yday,.appban{
 #clubBtn,.nav button:not(.on),#hintBtn,#friendBtn,#versusView .vtop button{font-weight:700}
 #guess{box-shadow:0 3px 10px rgba(0,0,0,.5);outline:1.5px dashed var(--thread);outline-offset:-7px}
 #guess:focus{outline:2px solid var(--fabric-ink);outline-offset:-7px}
-.nav button:not(.on):hover,#helpBtn:hover,#archBtn:hover{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);outline-style:solid}
+.nav button:not(.on):hover,#helpBtn:hover,#archBtn:hover,#themeBtn:hover{background:var(--fabric) url(scarf/fabric.webp);color:var(--fabric-ink);outline-style:solid}
 #clubBtn:hover,#hintBtn:hover,#friendBtn:hover,#versusView .vtop button:hover,button.ghost:hover{
   background:var(--brand) var(--knit) center/auto 100%;background-blend-mode:multiply;color:var(--on-brand);outline-color:transparent}
 #streak b,#result .card button.ghost{color:var(--fabric-ink)}
@@ -855,7 +859,7 @@ button.ghost,button.act.ghost,#versusView .vtop button,#yday,.appban{
 #picker p.lead,.sitenav a{color:var(--text-2)}
 footer,footer .who a,.credit,.credit b,#picker .foot,#picker .foot a,.sitenav span{color:var(--text-3)}
 footer,.sitenav{border-top-color:rgba(217,205,176,.3)}
-:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#clubBtn:focus-visible,
+:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#themeBtn:focus-visible,#clubBtn:focus-visible,
 .nav button:focus-visible,#hintBtn:focus-visible,#friendBtn:focus-visible,button.ghost:focus-visible,
 #versusView .vtop button:focus-visible{outline:2px solid #FFF8E6;outline-offset:3px}
 
@@ -931,23 +935,30 @@ button.wa,button.act.wa{background:#168A45}
   /* legacy base tokens (not touched by applyTheme): repoint so any rule
      not overridden below still lands dark-on-light */
   --text:#17181C; --dim:#454850; --line:#D4D0C8; --ink-2:#FFFFFF; --ink-3:#FFFFFF; --slate:#454750;
+  /* פעם ערכים קשיחים בבלוק הזה; טוקנים כדי שלמצב הכהה יהיה מה להחליף */
+  --hover:#F1EFEA;           /* hover on white controls */
+  --well:#DEDBD4; --well-line:#CFCBC2; --well-hover:rgba(255,255,255,.7);  /* tabs track, bar tracks */
+  --ui-line-2:#E6E3DD;       /* list dividers */
+  --ph:#5D6068;              /* placeholder */
+  --shadow:23,24,28; --ring:rgba(23,24,28,.14); --scrim:rgba(23,24,28,.55);
+  --scroll:#B9B5AD;
 }
 
 /* ---- ground: flat, light, no knit ---- */
 html,body{background:var(--ground)!important;background-image:none!important}
-html{scrollbar-color:#B9B5AD var(--ground)}
+html{scrollbar-color:var(--scroll) var(--ground)}
 body{color:var(--ui-ink)}
 input,textarea{caret-color:var(--ui-ink)}
-::selection{background:var(--ui-ink);color:#fff}
+::selection{background:var(--ui-ink);color:var(--surface)}
 
 /* ---- kill every stitch: outlines, dashed borders, fabric ---- */
-.sub,#helpBtn,#archBtn,#clubBtn,.nav button,#hintBtn,#friendBtn,#streak,#guess,#sugg,#hintOut,
+.sub,#helpBtn,#archBtn,#themeBtn,#clubBtn,.nav button,#hintBtn,#friendBtn,#streak,#guess,#sugg,#hintOut,
 button.ghost,button.act.ghost,button.act,#versusView .vtop button,#yday,#yday button,.appban,
 #versusView .card,#versusView input,#versusView select,#versusView button,#versusView .qtext,
 .plist div,.board div,.clue,body .vmodal-box{
   outline:0;background-image:none;background-blend-mode:normal;border-style:solid;transform:none}
 footer,.sitenav,.stats,#comm,.promo{border-top:1px solid var(--ui-line)}
-#sugg button{border-bottom:1px solid #E6E3DD}
+#sugg button{border-bottom:1px solid var(--ui-line-2)}
 .tiles{border-bottom:0}
 
 /* ---- header scarf: solid ink title, diluted knit ---- */
@@ -971,11 +982,11 @@ h1 a{color:var(--title-ink);background:none;-webkit-background-clip:border-box;b
 #clubBtn,#hintBtn,#friendBtn,button.ghost,button.act.ghost,#versusView button.ghost,#versusView .vtop button,
 #result .card button.ghost{
   background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
-  box-shadow:0 1px 2px rgba(23,24,28,.08);min-height:44px;padding:10px 18px;font-size:15px;font-weight:700;
+  box-shadow:0 1px 2px rgba(var(--shadow),.08);min-height:44px;padding:10px 18px;font-size:15px;font-weight:700;
   text-decoration:none}
 #clubBtn{margin-top:12px;display:inline-flex}
 #clubBtn:hover,#hintBtn:hover,#friendBtn:hover,button.ghost:hover,#versusView .vtop button:hover,#versusView button.ghost:hover{
-  background:#F1EFEA;color:var(--ui-ink);border-color:var(--ui-ink);box-shadow:none}
+  background:var(--hover);color:var(--ui-ink);border-color:var(--ui-ink);box-shadow:none}
 /* primary: solid club colour */
 button.act,#versusView button,body .vmodal-btns button.pri{
   background:var(--brand);color:var(--on-brand);border:0;border-radius:var(--r-ctl);
@@ -983,32 +994,32 @@ button.act,#versusView button,body .vmodal-btns button.pri{
 button.act:hover,#versusView button:not(.ghost):hover{filter:brightness(1.05)}
 button.wa,button.act.wa{background:#168A45;color:#fff}
 /* icon buttons: 44px round, white */
-#helpBtn,#archBtn{top:4px;width:44px;height:44px;border-radius:50%;background:var(--surface);color:var(--ui-ink);
-  border:1.5px solid var(--ui-ctl);box-shadow:0 1px 2px rgba(23,24,28,.08)}
-#helpBtn svg,#archBtn svg{width:18px;height:18px}
-#archBtn{inset-inline-end:52px}
-#helpBtn:hover,#archBtn:hover{background:#F1EFEA;color:var(--ui-ink);border-color:var(--ui-ink)}
+#helpBtn,#archBtn,#themeBtn{top:4px;width:44px;height:44px;border-radius:50%;background:var(--surface);color:var(--ui-ink);
+  border:1.5px solid var(--ui-ctl);box-shadow:0 1px 2px rgba(var(--shadow),.08)}
+#helpBtn svg,#archBtn svg,#themeBtn svg{width:18px;height:18px}
+#archBtn{inset-inline-end:52px}#themeBtn{inset-inline-end:104px}
+#helpBtn:hover,#archBtn:hover,#themeBtn:hover{background:var(--hover);color:var(--ui-ink);border-color:var(--ui-ink)}
 #streak{top:12px;background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-line);border-radius:22px;
   box-shadow:none;padding:6px 12px;font-size:13px}
 #streak b,#streak b{color:var(--ui-ink)}
 @media (min-width:640px){
-  #helpBtn,#archBtn{top:6px;width:44px;height:44px}#archBtn{inset-inline-end:52px}#streak{top:14px}
+  #helpBtn,#archBtn,#themeBtn{top:6px;width:44px;height:44px}#archBtn{inset-inline-end:52px}#themeBtn{inset-inline-end:104px}#streak{top:14px}
 }
 
 /* ---- tabs: segmented control ---- */
-.nav{background:#DEDBD4;border:1px solid #CFCBC2;border-radius:14px;padding:4px;gap:4px;max-width:340px;margin:18px auto 16px}
+.nav{background:var(--well);border:1px solid var(--well-line);border-radius:14px;padding:4px;gap:4px;max-width:340px;margin:18px auto 16px}
 .nav button,.nav button:not(.on){outline:0;border:0;border-radius:10px;background:none;color:var(--ui-ink-2);min-height:44px;padding:10px 12px;
   font-size:15px;font-weight:700;box-shadow:none}
-.nav button.on{background:var(--brand);color:var(--on-brand);font-weight:900;box-shadow:0 1px 3px rgba(23,24,28,.2)}
-.nav button:not(.on):hover{background:rgba(255,255,255,.7);color:var(--ui-ink);outline:0}
+.nav button.on{background:var(--brand);color:var(--on-brand);font-weight:900;box-shadow:0 1px 3px rgba(var(--shadow),.2)}
+.nav button:not(.on):hover{background:var(--well-hover);color:var(--ui-ink);outline:0}
 
 /* ---- the guess field: an obvious input ---- */
 #guess{background:var(--surface);color:var(--ui-ink);border:2px solid var(--ui-ctl);border-radius:var(--r-ctl);
   box-shadow:none;font-size:18px;font-weight:700;padding:14px 16px;min-height:56px}
-#guess::placeholder{color:#5D6068;font-weight:500;opacity:1}
-#guess:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px rgba(23,24,28,.14);outline:0}
+#guess::placeholder{color:var(--ph);font-weight:500;opacity:1}
+#guess:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px var(--ring);outline:0}
 #sugg{background:var(--surface);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
-  box-shadow:0 12px 28px rgba(23,24,28,.18)}
+  box-shadow:0 12px 28px rgba(var(--shadow),.18)}
 #sugg button{color:var(--ui-ink);font-weight:500;min-height:46px}
 #sugg button:hover,#sugg button.sel{background:var(--brand);color:var(--on-brand);font-weight:700}
 
@@ -1021,7 +1032,7 @@ button.wa,button.act.wa{background:#168A45;color:#fff}
 #yday{background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);box-shadow:none;
   color:var(--ui-ink-2);font-size:14px;padding:10px 12px 10px 10px}
 #yday b{color:var(--ui-ink)}
-#yday button{background:var(--ui-ink);color:#fff;border:0;border-radius:10px;min-height:44px;padding:0 18px;font-size:14px}
+#yday button{background:var(--ui-ink);color:var(--surface);border:0;border-radius:10px;min-height:44px;padding:0 18px;font-size:14px}
 #hintOut{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:var(--r-ctl);
   box-shadow:none;font-size:14.5px;padding:11px 14px}
 
@@ -1041,7 +1052,7 @@ button.wa,button.act.wa{background:#168A45;color:#fff}
 
 /* ---- result: white card under a scarf headline ---- */
 #result .card{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:0;
-  box-shadow:0 2px 10px rgba(23,24,28,.08)}
+  box-shadow:0 2px 10px rgba(var(--shadow),.08)}
 #result .card h2{background:
     linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
     var(--knit) repeat-x center/auto 100%,var(--brand);
@@ -1051,7 +1062,7 @@ button.wa,button.act.wa{background:#168A45;color:#fff}
 #comm .hd b,#comm b{color:var(--ui-ink)}
 #result .card p,#next{font-size:15px}
 .stats .nums div{font-size:13px}
-.bars .b span{background:#DEDBD4;color:var(--ui-ink)}
+.bars .b span{background:var(--well);color:var(--ui-ink)}
 .bars .b.now span{background:var(--brand);color:var(--on-brand)}
 .mini .r{background:var(--second-band);background-image:none}
 .mini i.miss{background:var(--miss)}
@@ -1060,13 +1071,13 @@ button.wa,button.act.wa{background:#168A45;color:#fff}
 #result .card button.ghost{color:var(--ui-ink)}
 
 /* ---- sheets & modal backdrop ---- */
-.modal{background:rgba(23,24,28,.55);backdrop-filter:none;-webkit-backdrop-filter:none}
+.modal{background:var(--scrim);backdrop-filter:none;-webkit-backdrop-filter:none}
 .sheet{background:var(--surface);background-image:none;color:var(--ui-ink);border:0;border-top:8px solid var(--brand)}
 .sheet h3{color:var(--ui-ink);border-bottom:0;padding-bottom:0}
 .sheet h4,.sheet b{color:var(--ui-ink)}
 .sheet p{color:var(--ui-ink-2);font-size:14.5px}
 .sheet .x{color:var(--ui-ink);width:44px;height:44px;top:8px;inset-inline-end:8px}
-.ex div{background:var(--miss);color:#fff}
+.ex div{background:var(--miss);color:var(--on-miss)}
 .ex div.hit{background:var(--brand);color:var(--on-brand)}
 .ex div.near{background:#fff;color:#17181C;box-shadow:inset 0 0 0 4px var(--brand),inset 0 0 0 5px rgba(0,0,0,.25)}
 .ex .k{font-size:12px;opacity:.9}
@@ -1088,21 +1099,21 @@ textarea.rt:focus,input.rc:focus,select.rc:focus{border-color:var(--ui-ink)}
     linear-gradient(var(--c2),var(--c2)) bottom/100% 9px no-repeat,
     linear-gradient(color-mix(in srgb,var(--c) 62%,transparent),color-mix(in srgb,var(--c) 62%,transparent)),
     var(--knit) center/auto 100% repeat-x,var(--c);
-  background-blend-mode:normal,normal,normal,multiply;box-shadow:0 2px 6px rgba(23,24,28,.18)}
+  background-blend-mode:normal,normal,normal,multiply;box-shadow:0 2px 6px rgba(var(--shadow),.18)}
 .clubs button.cur{box-shadow:0 0 0 3px var(--ground),0 0 0 6px var(--ui-ink);transform:none}
 .clubs button .t b{text-shadow:none}
 #picker .foot,#picker .foot a{color:var(--ui-ink-2)}
 
 /* ---- friends duel ---- */
 #versusView .card{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:16px;
-  box-shadow:0 1px 3px rgba(23,24,28,.06)}
+  box-shadow:0 1px 3px rgba(var(--shadow),.06)}
 #versusView .card h2,#versusView .card b,.roomcode{color:var(--ui-ink)}
 #versusView .card p,#versusView label,#versusView .pickhint,.meta,#versusView .orsep{color:var(--ui-ink-2)}
 #versusView label{font-size:14px;font-weight:700}
 #versusView input,#versusView select{background:var(--surface);color:var(--ui-ink);border:2px solid var(--ui-ctl);
   border-radius:var(--r-ctl);min-height:52px}
-#versusView input:focus,#versusView select:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px rgba(23,24,28,.14)}
-#versusView input::placeholder{color:#5D6068;opacity:1}
+#versusView input:focus,#versusView select:focus{border-color:var(--ui-ink);box-shadow:0 0 0 3px var(--ring)}
+#versusView input::placeholder{color:var(--ph);opacity:1}
 #versusView .clubpick button{background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);
   border-radius:22px;box-shadow:none;min-height:44px;font-size:14.5px;font-weight:700}
 #versusView .clubpick button.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand);
@@ -1120,12 +1131,12 @@ textarea.rt:focus,input.rc:focus,select.rc:focus{border-color:var(--ui-ink)}
 .clue span{color:var(--ui-ink-2)}
 .clue.on.fresh{background:var(--brand);color:var(--on-brand);border-color:transparent}
 .clue.on.fresh span{color:var(--on-brand);opacity:.85}
-.bar{background:#DEDBD4}
+.bar{background:var(--well)}
 .orsep::before,.orsep::after{background:var(--ui-line)}
 .answerbox,#versusView .answerbox{background:var(--surface)}
 body.kb #scPlay{background:var(--ground)}
 #vSugg{background:var(--surface);border:1.5px solid var(--ui-ctl)}
-#vSugg button{color:var(--ui-ink);border-bottom:1px solid #E6E3DD;background:none;box-shadow:none;min-height:44px}
+#vSugg button{color:var(--ui-ink);border-bottom:1px solid var(--ui-line-2);background:none;box-shadow:none;min-height:44px}
 #vSugg button:hover{background:var(--brand);color:var(--on-brand)}
 .feed.good{color:var(--ui-ink)} .feed.bad{color:#8A2A12}
 .err{color:#9A3412}
@@ -1135,10 +1146,10 @@ body.kb #scPlay{background:var(--ground)}
 #versusView .mods button{background:var(--surface)!important;color:var(--ui-ink)!important;
   border:1.5px solid var(--ui-ink)!important;border-radius:8px!important;font-size:13px!important;
   font-weight:700!important;padding:7px 10px!important;min-height:34px!important}
-#versusView .mods button:hover{background:var(--ui-ink)!important;color:#fff!important}
-body .vmodal{background:rgba(23,24,28,.55)}
+#versusView .mods button:hover{background:var(--ui-ink)!important;color:var(--surface)!important}
+body .vmodal{background:var(--scrim)}
 body .vmodal-box{background:var(--surface);color:var(--ui-ink);border:1px solid var(--ui-line);border-radius:16px;
-  box-shadow:0 18px 40px rgba(23,24,28,.25)}
+  box-shadow:0 18px 40px rgba(var(--shadow),.25)}
 body .vmodal-box a{color:var(--ui-ink)}
 body .vmodal-btns button{background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);min-height:48px}
 body .vmodal-btns button.pri{border-color:transparent}
@@ -1152,7 +1163,7 @@ body .vmodal-btns button.pri{border-color:transparent}
 .sitenav a:hover,.credit:hover,.credit:hover b{color:var(--ui-ink)}
 
 /* ---- focus: ink ring, visible on every club colour ---- */
-:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#clubBtn:focus-visible,.nav button:focus-visible,
+:focus-visible,#helpBtn:focus-visible,#archBtn:focus-visible,#themeBtn:focus-visible,#clubBtn:focus-visible,.nav button:focus-visible,
 #hintBtn:focus-visible,#friendBtn:focus-visible,button.ghost:focus-visible,button.act:focus-visible,
 #versusView button:focus-visible,#versusView .vtop button:focus-visible,#versusView .card :focus-visible{
   outline:2.5px solid var(--ui-ink);outline-offset:3px}
@@ -1255,6 +1266,51 @@ button.wa,button.act.wa{background:#15803D}
 #twin b{display:block;font-size:18px;font-weight:900;margin-bottom:2px}
 @keyframes twinIn{0%{transform:scale(.9);opacity:0}60%{transform:scale(1.04);opacity:1}100%{transform:none}}
 @media (prefers-reduced-motion:reduce){#twin{animation:none}}
+/* ============================================================
+   מצב כהה (אוקטובר 2026)
+   לא היפוך: קרקע כמעט-שחורה, משטחים מורמים מעט, דיו בהיר-אפור.
+   הכל טוקנים — הכללים למעלה לא יודעים שיש מצב כהה. צבעי המועדון
+   (--brand, --near-ui, --on-*) מגיעים מ-applyTheme כרגיל ולא משתנים.
+
+   הטוקנים כתובים פעמיים בכוונה: [data-theme="dark"] הוא מה ש-THEME_BOOT
+   קובע (בחירה מפורשת או ה-OS), וה-media query הוא נפילה כשאין JS.
+   אותם ערכים חיים גם ב-DARK_TOKENS שב-scripts/lib/content.mjs.
+   ============================================================ */
+:root[data-theme="dark"]{color-scheme:dark;
+  --ground:#121214; --surface:#1C1C21; --surface-2:#25252B;
+  --ui-ink:#EDEDEF; --ui-ink-2:#A0A0A8; --ui-line:#2E2E35; --ui-ctl:#6E6E78;
+  --miss:#2F3036; --on-miss:#EDEDEF;
+  --text:#EDEDEF; --dim:#A0A0A8; --line:#2E2E35; --ink-2:#1C1C21; --ink-3:#1C1C21; --slate:#2F3036;
+  --hover:#27272D; --well:#0B0B0D; --well-line:#26262C; --well-hover:rgba(255,255,255,.06);
+  --ui-line-2:#2A2A30; --ph:#7D7D87;
+  --shadow:0,0,0; --ring:rgba(237,237,239,.18); --scrim:rgba(0,0,0,.66);
+  --scroll:#3A3A42}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;
+  --ground:#121214; --surface:#1C1C21; --surface-2:#25252B;
+  --ui-ink:#EDEDEF; --ui-ink-2:#A0A0A8; --ui-line:#2E2E35; --ui-ctl:#6E6E78;
+  --miss:#2F3036; --on-miss:#EDEDEF;
+  --text:#EDEDEF; --dim:#A0A0A8; --line:#2E2E35; --ink-2:#1C1C21; --ink-3:#1C1C21; --slate:#2F3036;
+  --hover:#27272D; --well:#0B0B0D; --well-line:#26262C; --well-hover:rgba(255,255,255,.06);
+  --ui-line-2:#2A2A30; --ph:#7D7D87;
+  --shadow:0,0,0; --ring:rgba(237,237,239,.18); --scrim:rgba(0,0,0,.66);
+  --scroll:#3A3A42}}
+/* מה שאינו טוקן — רק על [data-theme], ש-THEME_BOOT קובע תמיד */
+/* "רחוק" כמעט בגוון המשטח: קו שיער מפריד אותו. "מדויק" מקבל טבעת
+   בצבע הטקסט שעליו — כך שלושת המצבים נבדלים גם בלי צבע (קרוב = נקודה),
+   ומכבי ת"א, שבה כחול מדויק ואפור רחוק כמעט באותה בהירות, נקרא. */
+[data-theme="dark"] .tile,[data-theme="dark"] .ex div,[data-theme="dark"] .mini i{box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+[data-theme="dark"] .tile.hit,[data-theme="dark"] .ex div.hit,[data-theme="dark"] .mini i.hit{
+  box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--on-brand) 40%,transparent)}
+[data-theme="dark"] .tile.near,[data-theme="dark"] .ex div.near,[data-theme="dark"] .mini i.near{box-shadow:none}
+[data-theme="dark"] .dot{box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+/* צבע המועדון כטקסט על משטח כהה (כחול מכבי 1.6:1) — דיו במקום */
+[data-theme="dark"] .rev b,[data-theme="dark"] #repStat.ok,[data-theme="dark"] #fixStat.ok{color:var(--ui-ink)}
+[data-theme="dark"] .feed.bad,[data-theme="dark"] .err{color:#F2A285}
+
+/* כפתור ערכת הצבעים: אייקון אחד לכל מצב */
+#themeBtn svg{display:none}
+[data-theme-mode="system"] #themeBtn .ts,[data-theme-mode="dark"] #themeBtn .td,
+[data-theme-mode="light"] #themeBtn .tl{display:block}
 </style>
 </head>
 <body>
@@ -1266,6 +1322,8 @@ button.wa,button.act.wa{background:#15803D}
     <div id="streak">רצף <b id="streakn">0</b></div>
     <button id="helpBtn" aria-label="איך משחקים" title="איך משחקים"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.6 8.8a3.5 3.5 0 1 1 4.8 3.3c-1.1.5-1.9 1.4-1.9 2.6v.5"/><circle cx="11.5" cy="19" r="1.35" fill="currentColor" stroke="none"/></svg></button>
     <button id="archBtn" aria-label="ארכיון חידות" title="ארכיון"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4.5 7h15M4.5 12h15M4.5 17h15"/></svg></button>
+    <!-- ערכת צבעים: לפי המכשיר → ההפך → השני → חזרה. הלחיצה והתווית ב-THEME_BOOT. -->
+    <button id="themeBtn" type="button" aria-label="ערכת צבעים" title="ערכת צבעים"><svg class="ts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg><svg class="td" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1z"/></svg><svg class="tl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
     <h1><a href="./" id="gameName" aria-label="ספורטדל">ספורטדל</a></h1>
     <p class="sub">חידה <b id="pnum">#1</b> · <b id="left">8</b> ניסיונות נותרו</p>
     <button id="clubBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg>החלפת מועדון</button>

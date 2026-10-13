@@ -39,7 +39,14 @@
   /* ---------- 1. שורת מצב ומסך פתיחה ---------- */
   safe(async () => {
     if (!P.StatusBar) return;
-    await P.StatusBar.setStyle({ style: "LIGHT" });   // טקסט כהה: הקרקע בהירה
+    /* השורה בצבע הקרקע של ערכת הצבעים, ומתעדכנת בכל החלפה — sd:theme
+       נשלח מ-THEME_BOOT גם כשה-OS עובר בין בהיר לכהה. DARK = טקסט בהיר. */
+    const paint = () => safe(async () => {
+      const dark = !!(window.SDTheme && window.SDTheme.dark());
+      await P.StatusBar.setStyle({ style: dark ? "DARK" : "LIGHT" });
+      if (platform === "android")
+        await P.StatusBar.setBackgroundColor({ color: dark ? "#121214" : "#ECEAE5" });   // --ground
+    });
     if (platform === "android") {
       /* **האפליקציה מתחת לשורת הסטטוס, לא תחתיה.** ברירת המחדל של
          @capacitor/status-bar היא overlaysWebView=true — ה-WebView
@@ -49,8 +56,9 @@
          באנדרואיד 15+ זה no-op: שם Capacitor מטפל בשוליים בעצמו.
          רק באנדרואיד — ב-iOS ה-WebView מתחת לשורה ו-env() מדויק. */
       await P.StatusBar.setOverlaysWebView({ overlay: false }).catch(() => {});
-      await P.StatusBar.setBackgroundColor({ color: "#ECEAE5" });   // קרקע הצעיף
     }
+    document.addEventListener("sd:theme", paint);
+    await paint();
   });
 
   /* המסך נסגר אחרי שהגופנים נטענו, לא אחרי DOMContentLoaded.
