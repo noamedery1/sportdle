@@ -211,6 +211,46 @@
     }, true);
   });
 
+  /* ---------- 3ה. דירוג בחנות ----------
+     שורה בכרטיס התוצאה, לא חלון קופץ: מופיעה רק אחרי ניצחון, ורק מי
+     שכבר פיצח 3 חידות (באיזה מועדון שהוא) — מי שחזר שלוש פעמים אוהב את
+     המשחק. לחיצה אחת והיא נעלמת לתמיד, גם אם לא דירג בסוף.
+
+     קישור לדף כתיבת הביקורת ולא ה-API של הדירוג בתוך האפליקציה: שתי
+     החנויות מגבילות את החלון המובנה במכסה, ולפעמים הוא פשוט לא מופיע —
+     כפתור שלא עושה כלום גרוע מבלי כפתור. location.href יוצא לחנות
+     (play.google.com/apps.apple.com פטורים מהדפדפן הפנימי ב-3ד).
+
+     בלי שאלת "אהבתם?" לפני: גוגל ואפל אוסרות לסנן מי נשלח לדרג. התזמון —
+     רגע הניצחון — הוא כל ההטיה, וזה מותר. */
+  safe(() => {
+    const btn = document.getElementById("rateApp");
+    const result = document.getElementById("result");
+    if (!btn || !result || !window.MutationObserver) return;
+    const STORE = platform === "ios"
+      ? "https://apps.apple.com/app/id6819586243?action=write-review"
+      : "https://play.google.com/store/apps/details?id=sportdle.techbynoam.com";
+    const solved = () => { try { return JSON.parse(get("solved")) || []; } catch (e) { return []; } };
+    const update = () => {
+      if (get("rated") || !result.classList.contains("on")) { btn.hidden = true; return; }
+      const won = typeof guesses !== "undefined" && guesses.length
+        && typeof answer !== "undefined" && answer && guesses[guesses.length - 1].name === answer.name;
+      const real = typeof practice === "undefined" || !practice;
+      if (won && real && typeof club !== "undefined" && club && typeof puzzleNo !== "undefined") {
+        const key = `${club.slug}:${puzzleNo}`, list = solved();
+        if (!list.includes(key)) { list.push(key); set("solved", JSON.stringify(list.slice(-50))); }
+      }
+      btn.hidden = !(won && real && solved().length >= 3);
+    };
+    btn.addEventListener("click", () => {
+      set("rated", "1");
+      btn.hidden = true;
+      location.href = STORE;
+    });
+    new MutationObserver(update).observe(result, { attributes: true, attributeFilter: ["class"] });
+    update();
+  });
+
   /* ---------- 4. כפתור "חזור" של אנדרואיד ----------
      בלי זה לחיצה אחת על "חזור" סוגרת את האפליקציה מתוך חלונית
      פתוחה. זו אחת התלונות הנפוצות בביקורות, ובדיקת איכות של
