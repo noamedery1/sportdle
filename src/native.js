@@ -91,22 +91,46 @@
     }).observe(board, { childList: true, subtree: true });
   });
 
-  /* ---------- 3. גיליון שיתוף מקומי ----------
-     באתר הכפתור מעתיק ללוח. באפליקציה זה מרגיש שבור: המשתמש
-     מצפה לגיליון השיתוף של המערכת. shareText() הוא גלובלי של
-     המנוע, ולכן אין צורך לשכפל את בניית הטקסט.
+  /* ---------- 3. תמונה לסטורי ----------
+     "העתקת התוצאה" כבר לא נחטף לכאן: עד 1.0.21 הוא פתח את גיליון
+     השיתוף עם אותו טקסט שכפתור וואטסאפ שולח, ושני הכפתורים עשו
+     אותו דבר. עכשיו כל כפתור עושה מה שכתוב עליו — וואטסאפ שולח,
+     העתקה מעתיקה (copyText של המנוע עובד ב-WebView: https://localhost
+     הוא secure context), והתמונה היא זו שעוברת בגיליון השיתוף.
 
-     ההאזנה היא בשלב ה-capture עם stopImmediatePropagation, כדי
-     להחליף התנהגות בלי לערוך את engine.js. */
+     בתמונה המנוע מנסה navigator.share עם קובץ, וב-WebView של
+     אנדרואיד canShare({files}) שלילי — אז הוא נופל ל-<a download>
+     על blob:, ש-WebView פשוט מתעלם ממנו. הכפתור כתב "ירד למחשב ✓"
+     ולא קרה כלום. כאן: הקנבס נכתב לקובץ בתיקיית המטמון, ו-Share
+     מקבל את ה-file:// — גיליון המערכת עם אינסטגרם, וואטסאפ, ו"שמירת
+     תמונה" (iOS) / תמונות או קבצים (אנדרואיד). */
   safe(() => {
-    if (!P.Share) return;
-    const btn = document.getElementById("share");
-    if (!btn || typeof window.shareText !== "function") return;
-    btn.addEventListener("click", (ev) => {
+    if (!P.Share || !P.Filesystem) return;
+    const btn = document.getElementById("story");
+    if (!btn || typeof window.storyCanvas !== "function") return;
+    btn.addEventListener("click", async (ev) => {
       ev.stopImmediatePropagation();
       ev.preventDefault();
-      P.Share.share({ text: window.shareText(), dialogTitle: "שיתוף התוצאה" })
-        .catch(() => {});
+      const was = btn.textContent;
+      btn.disabled = true; btn.textContent = "מכין…";
+      try {
+        const cv = await window.storyCanvas();
+        const data = cv.toDataURL("image/png").split(",")[1];
+        /* club הוא let של המנוע — גלוי בשם, לא כ-window.club */
+        const slug = typeof club !== "undefined" && club && club.slug;
+        const name = `sportdle-${slug || "story"}-${Date.now()}.png`;
+        const { uri } = await P.Filesystem.writeFile({ path: name, data, directory: "CACHE" });
+        await P.Share.share({ files: [uri], dialogTitle: "שמירה או שיתוף התמונה" });
+        btn.textContent = was;
+      } catch (e) {
+        /* ביטול הגיליון מגיע כשגיאה "Share canceled" — לא תקלה */
+        const canceled = /cancel/i.test(String(e && (e.message || e)));
+        btn.textContent = canceled ? was : "לא הצלחנו לייצר תמונה";
+        if (!canceled) console.warn("[native] story:", e);
+      } finally {
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = was; }, 2400);
+      }
     }, true);
   });
 
