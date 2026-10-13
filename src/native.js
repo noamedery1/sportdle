@@ -345,13 +345,65 @@
     set("daily", "1");
   }
 
+  /* מה קרה לבקשת ההרשאה, לגיליון האנליטיקס. דווח מהשטח: "באייפון אין
+     תזכורת בבוקר, ובהגדרות אין בכלל שורת התראות" — כלומר iOS מעולם לא
+     ראה בקשה. בלי דיווח אי אפשר לדעת מה קורה במכשיר שאין לנו. */
+  const report = (state, extra) => safe(() => {
+    if (typeof track === "function") track("notif", { platform, state, ...(extra || {}) });
+  });
+
   async function askThenSchedule() {
-    if (!P.LocalNotifications) return;
+    if (!P.LocalNotifications) { report("no-plugin"); return; }
     if (get("asked")) { if (get("daily")) scheduleDaily(); return; }
-    set("asked", "1");
-    const res = await P.LocalNotifications.requestPermissions();
-    if (res.display === "granted") await scheduleDaily();
+    try {
+      const res = await P.LocalNotifications.requestPermissions();
+      /* "asked" נרשם רק אחרי שהבקשה באמת חזרה. קודם הוא נרשם לפני,
+         וכל כישלון בדרך נעל את המשתמש מחוץ להתראות לתמיד. */
+      set("asked", "1");
+      report(res.display);
+      if (res.display === "granted") await scheduleDaily();
+    } catch (e) {
+      report("error", { err: String(e && (e.message || e)).slice(0, 120) });
+    }
+    await refreshNotify();
   }
+
+  /* ---------- 5ב. כפתור "תזכורת כל בוקר" ----------
+     הבקשה האוטומטית קורית פעם אחת, שנייה וחצי אחרי שהחידה הראשונה
+     נגמרת. מי שפספס אותה — או שהיא לא הגיעה — לא היה לו שום דרך
+     להפעיל תזכורת, וב-iOS אפילו שורת "התראות" לא קיימת בהגדרות עד
+     שהאפליקציה מבקשת פעם אחת. עכשיו בכרטיס התוצאה יש כפתור, כל עוד
+     ההרשאה לא ניתנה. חסום? iOS פותח את מסך ההגדרות של האפליקציה. */
+  const notifyBtn = document.getElementById("notifyApp");
+  async function refreshNotify() {
+    if (!notifyBtn) return;
+    const result = document.getElementById("result");
+    if (!P.LocalNotifications || !result || !result.classList.contains("on")) { notifyBtn.hidden = true; return; }
+    const perm = await P.LocalNotifications.checkPermissions().catch(() => null);
+    notifyBtn.hidden = !perm || perm.display === "granted";
+    if (perm && perm.display === "denied")
+      notifyBtn.lastElementChild.textContent = platform === "ios"
+        ? "התזכורת חסומה — להפעלה בהגדרות"
+        : "התזכורת חסומה — אפשר להפעיל בהגדרות הטלפון";
+  }
+  safe(() => {
+    if (!notifyBtn) return;
+    notifyBtn.addEventListener("click", async () => {
+      const perm = await P.LocalNotifications.checkPermissions().catch(() => null);
+      if (perm && perm.display === "denied") {
+        report("denied-tap");
+        if (platform === "ios") location.href = "app-settings:";
+        return;
+      }
+      set("asked", "");
+      await askThenSchedule();
+      if (!notifyBtn.hidden) return;
+      notifyBtn.hidden = false;
+      notifyBtn.lastElementChild.textContent = "מעולה — נתראה מחר ב-08:30";
+      notifyBtn.disabled = true;
+      setTimeout(() => { notifyBtn.hidden = true; }, 2500);
+    });
+  });
 
   /* מחדשים את החלון בכל פתיחה של מי שכבר אישר. */
   safe(() => { if (get("daily")) scheduleDaily(); });
@@ -378,6 +430,7 @@
         if (get("daily")) scheduleDaily();
       }
       if (fromChange && !asked) { asked = true; setTimeout(askThenSchedule, 1400); }
+      refreshNotify();
     };
     new MutationObserver(() => onResult(true))
       .observe(result, { attributes: true, attributeFilter: ["class"] });
