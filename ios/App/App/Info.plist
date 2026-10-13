@@ -6,6 +6,8 @@
 	<string>$(CAPACITOR_DEBUG)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>he</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>כדי לשמור את תמונת התוצאה לגלריה.</string>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>he</string>
