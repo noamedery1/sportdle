@@ -79,6 +79,19 @@ const esc = s => String(s)
 
    __U__ מוחלף ב-up(depth) ב-shell(): הדפים יושבים בעומק 1–3,
    וכתובת יחסית ב-<style> נפתרת מול הדף. */
+/* ---------- מצב כהה ----------
+   אותם טוקנים בדיוק, ערכים כהים. נכנס בשני מקרים: ה-OS כהה ולא נבחר
+   בהיר (בלי JS בכלל), או ש-THEME_BOOT קבע data-theme="dark". הערכים
+   חייבים להיות זהים לבלוק המקביל ב-src/template.html. */
+const DARK_TOKENS = `color-scheme:dark;
+  --ground:#121214; --surface:#1C1C21; --surface-2:#25252B;
+  --ui-ink:#EDEDEF; --ui-ink-2:#A0A0A8; --ui-line:#2E2E35; --ui-ctl:#6E6E78;
+  --miss:#2F3036; --on-miss:#EDEDEF;
+  --text:#EDEDEF; --dim:#A0A0A8; --line:#2E2E35; --ink-2:#1C1C21;
+  --hover:#27272D; --ui-line-2:#2A2A30; --scroll:#3A3A42; --shadow:0,0,0;`;
+const darkTokens = t => `:root[data-theme="dark"]{${t}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){${t}}}`;
+
 const CSS = `
 :root{
   --ground:#ECEAE5; --surface:#FFFFFF; --surface-2:#F5F4F1;
@@ -89,14 +102,16 @@ const CSS = `
   --knit:url(__U__scarf/knit.webp);
   /* הטוקנים הישנים שבאנר האפליקציה קורא — אותו מיפוי כמו במשחק */
   --text:#17181C; --dim:#454850; --line:#D4D0C8; --ink-2:#FFFFFF;
+  --hover:#F1EFEA; --ui-line-2:#E6E3DD; --zebra:#FAF9F7; --scroll:#B9B5AD; --shadow:23,24,28;
 }
+${darkTokens(DARK_TOKENS + "--zebra:#202026;")}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{-webkit-text-size-adjust:100%;scrollbar-color:#B9B5AD var(--ground)}
+html{-webkit-text-size-adjust:100%;scrollbar-color:var(--scroll) var(--ground)}
 html,body{margin:0;padding:0;background:var(--ground)}
 body{color:var(--ui-ink);font-family:'Heebo',system-ui,sans-serif;
   font-size:17px;line-height:1.75;min-height:100dvh;display:flex;flex-direction:column;overflow-wrap:break-word;
   padding-top:var(--safe-area-inset-top,env(safe-area-inset-top));padding-bottom:var(--safe-area-inset-bottom,env(safe-area-inset-bottom))}
-::selection{background:var(--ui-ink);color:#fff}
+::selection{background:var(--ui-ink);color:var(--surface)}
 .wrap{max-width:700px;width:100%;margin:0 auto;padding:0 16px 48px;flex:1}
 /* 18px על 592px של טקסט: כ-70 תווים בשורה */
 @media (min-width:640px){body{font-size:18px}.wrap{max-width:640px;padding:0 24px 64px}}
@@ -120,8 +135,8 @@ body{color:var(--ui-ink);font-family:'Heebo',system-ui,sans-serif;
 .logo::before{left:-21px;transform:scaleX(-1)}
 .toplink,.pager a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 16px;
   background:var(--surface);color:var(--ui-ink);border:1.5px solid var(--ui-ctl);border-radius:var(--r-ctl);
-  box-shadow:0 1px 2px rgba(23,24,28,.08);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none;white-space:nowrap}
-.toplink:hover,.pager a:hover{background:#F1EFEA;border-color:var(--ui-ink);box-shadow:none}
+  box-shadow:0 1px 2px rgba(var(--shadow),.08);font-size:15px;font-weight:700;line-height:1.3;text-decoration:none;white-space:nowrap}
+.toplink:hover,.pager a:hover{background:var(--hover);border-color:var(--ui-ink);box-shadow:none}
 @media (max-width:359px){.top{gap:14px 8px}.logo{font-size:20px;padding:11px 10px 12px;margin:0 18px}
   .logo::before,.logo::after{width:18px}.logo::after{right:-17px}.logo::before{left:-17px}
   .toplink{font-size:13.5px;padding:8px 10px}}
@@ -152,10 +167,10 @@ a:hover{text-decoration-color:var(--ui-ink);text-decoration-thickness:2px}
 .note b{color:var(--ui-ink)}
 .tbl{overflow-x:auto;margin:0 0 24px;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl)}
 table{width:100%;border-collapse:collapse;font-size:15.5px;line-height:1.5}
-th,td{text-align:start;padding:11px 14px;border-bottom:1px solid #E6E3DD;vertical-align:top}
+th,td{text-align:start;padding:11px 14px;border-bottom:1px solid var(--ui-line-2);vertical-align:top}
 tr:last-child td{border-bottom:0}
 th{color:var(--ui-ink-2);font-weight:700;font-size:14px;background:var(--surface-2);white-space:nowrap}
-tr:nth-child(2n+3) td{background:#FAF9F7}
+tr:nth-child(2n+3) td{background:var(--zebra)}
 td:first-child{min-width:7.5em}
 .nw{white-space:nowrap}
 @media (max-width:479px){table{font-size:15px}th,td{padding:10px 10px}}
@@ -167,11 +182,11 @@ td:first-child{min-width:7.5em}
 .chip{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:700;line-height:1.2;
   color:var(--ui-ink);background:var(--surface);border:1.5px solid var(--ui-ctl);border-radius:22px;
   padding:8px 16px;margin:0 0 8px 8px;text-decoration:none}
-.chip:hover{background:#F1EFEA;border-color:var(--ui-ink)}
+.chip:hover{background:var(--hover);border-color:var(--ui-ink)}
 .cards{display:grid;gap:10px;margin:0 0 28px}
 @media (min-width:640px){.cards{grid-template-columns:1fr 1fr}}
 .card{display:block;background:var(--surface);border:1px solid var(--ui-line);border-radius:var(--r-ctl);
-  padding:14px 18px 15px;text-decoration:none;color:var(--ui-ink);line-height:1.45;box-shadow:0 1px 2px rgba(23,24,28,.05)}
+  padding:14px 18px 15px;text-decoration:none;color:var(--ui-ink);line-height:1.45;box-shadow:0 1px 2px rgba(var(--shadow),.05)}
 .card[style]{background:linear-gradient(var(--c),var(--c)) right/6px 100% no-repeat,var(--surface);padding-right:24px}
 .card:hover{border-color:var(--ui-ink)}
 .card .n{font-size:13.5px;font-weight:500;color:var(--ui-ink-2)}
@@ -359,6 +374,7 @@ function shell({ depth, path, title, desc, h1, kicker, body, crumbs, base, siteN
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${base}/og.png">
 <meta name="theme-color" content="#ECEAE5">${iosMetaHtml(SITE)}
+${THEME_BOOT}
 <link rel="icon" href="${u}favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="${u}icon-32.png">
 <link rel="apple-touch-icon" href="${u}icon-180.png">
@@ -1324,3 +1340,54 @@ ${mates.length ? `  <h2>מאותה תקופה ב${esc(club.he)}</h2>
 
   return { routes, pastCount, players: players.length };
 }
+
+/* ---------- ערכת צבעים: בהירה / כהה / לפי המכשיר ----------
+   רץ ב-<head> של המשחק (build.mjs מזריק אותו ל-__THEME_BOOT__) ושל
+   כל דף תוכן, לפני הציור הראשון — אחרת מי שבמצב כהה רואה הבזק בהיר.
+
+   ברירת המחדל היא ה-OS. בחירה מפורשת נשמרת ב-localStorage. התוצאה
+   האפקטיבית נכתבת תמיד ל-data-theme, ולכן כללי CSS שאינם טוקנים
+   נשענים רק על [data-theme="dark"]; בלי JS הטוקנים עדיין עוקבים אחרי
+   ה-OS דרך prefers-color-scheme.
+
+   כל שינוי מודיע ב-sd:theme על document — native.js צובע לפיו את
+   שורת הסטטוס. הכפתור (#themeBtn) קיים רק במשחק; כאן רק המאזין. */
+export const THEME_BOOT = `<script>
+(function(){
+  var K = "sportdle:theme", root = document.documentElement,
+      mq = window.matchMedia ? matchMedia("(prefers-color-scheme: dark)") : null,
+      LABEL = { system: "לפי המכשיר", dark: "כהה", light: "בהירה" };
+  function mode(){
+    try { var v = localStorage.getItem(K); return v === "dark" || v === "light" ? v : "system"; }
+    catch (e) { return "system"; }
+  }
+  function apply(){
+    var m = mode(), dark = m === "dark" || (m === "system" && !!(mq && mq.matches));
+    root.setAttribute("data-theme", dark ? "dark" : "light");
+    root.setAttribute("data-theme-mode", m);
+    var tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute("content", dark ? "#121214" : "#ECEAE5");
+    var b = document.getElementById("themeBtn");
+    if (b) { var l = "ערכת צבעים: " + LABEL[m]; b.setAttribute("aria-label", l); b.title = l; }
+    document.dispatchEvent(new CustomEvent("sd:theme", { detail: { mode: m, dark: dark } }));
+  }
+  window.SDTheme = {
+    mode: mode,
+    dark: function(){ return root.getAttribute("data-theme") === "dark"; },
+    set: function(m){
+      try { if (m === "system") localStorage.removeItem(K); else localStorage.setItem(K, m); } catch (e) {}
+      apply();
+    }
+  };
+  /* מחזור שכל לחיצה בו משנה משהו על המסך: מ"לפי המכשיר" קודם אל
+     ההפך ממה שה-OS מציג, אחר כך השני, ואז חזרה ל-OS. */
+  document.addEventListener("click", function(e){
+    if (!e.target.closest || !e.target.closest("#themeBtn")) return;
+    var order = mq && mq.matches ? ["system", "light", "dark"] : ["system", "dark", "light"];
+    SDTheme.set(order[(order.indexOf(mode()) + 1) % 3]);
+  });
+  if (mq) { if (mq.addEventListener) mq.addEventListener("change", apply); else if (mq.addListener) mq.addListener(apply); }
+  document.addEventListener("DOMContentLoaded", apply);
+  apply();
+})();
+</script>`;

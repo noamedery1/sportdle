@@ -11,7 +11,7 @@ import {
   log, warn, die, normName, season, nameVariants
 } from "./lib/util.mjs";
 import { writeClubPages } from "./lib/clubpages.mjs";
-import { writeContentPages, appBannerHtml, iosMetaHtml, APP_BANNER_CSS } from "./lib/content.mjs";
+import { writeContentPages, appBannerHtml, iosMetaHtml, APP_BANNER_CSS, THEME_BOOT } from "./lib/content.mjs";
 
 const args  = parseArgs();
 const clubs = pickClubs(args);
@@ -195,20 +195,20 @@ function checkShareChars(html) {
   }
 }
 
-/* שני כפתורי הכותרת חייבים להשתנות יחד.
+/* כפתורי הכותרת (עזרה, ארכיון, ערכת צבעים) חייבים להשתנות יחד.
    כלל נפרד ל-#archBtn שהגיע אחרי הכלל המשותף גרם לכך שבמסך רחב
    הארכיון היה 33px והעזרה 30px, בגבהים שונים — וזה נראה עקום.
-   כל כלל שקובע גודל או מיקום לאחד מהם חייב לכלול את שניהם. */
+   כל כלל שקובע גודל או מיקום לאחד מהם חייב לכלול את כולם. */
 function checkHeaderButtons(html) {
   /* בלי הסרת ההערות, טקסט הערה שמזכיר #archBtn נקרא כסלקטור */
   const css = html.slice(html.indexOf("<style>"), html.indexOf("</style>"))
     .replace(/\/\*[\s\S]*?\*\//g, "");
-  const rules = [...css.matchAll(/([^{};]*#(?:helpBtn|archBtn)[^{};]*)\{([^}]*)\}/g)];
+  const rules = [...css.matchAll(/([^{};]*#(?:helpBtn|archBtn|themeBtn)[^{};]*)\{([^}]*)\}/g)];
   for (const [, sel, body] of rules) {
     if (!/\b(width|height|top)\s*:/.test(body)) continue;      // מיקום אופקי מותר בנפרד
-    const both = sel.includes("#helpBtn") && sel.includes("#archBtn");
-    if (!both)
-      fail("html", `כלל שקובע גודל לכפתור כותרת אחד בלבד: "${sel.trim()}" — שניהם חייבים להשתנות יחד`);
+    const all = ["#helpBtn", "#archBtn", "#themeBtn"].every(id => sel.includes(id));
+    if (!all)
+      fail("html", `כלל שקובע גודל לחלק מכפתורי הכותרת: "${sel.trim()}" — כולם חייבים להשתנות יחד`);
   }
 }
 
@@ -404,6 +404,8 @@ html = html
   .split("__APP_BANNER__").join(appBannerHtml(site))
   .split("__IOS_META__").join(iosMetaHtml(site))
   .split("__APP_BANNER_CSS__").join(APP_BANNER_CSS)
+  /* בהיר/כהה לפני הציור הראשון — מקור אחד עם דפי התוכן */
+  .split("__THEME_BOOT__").join(THEME_BOOT)
   .split("__SITE_TITLE__").join(site.title)
   .split("__SITE_NAME__").join(site.name)
   .split("__SITE_URL__").join(site.siteUrl.replace(/\/$/, ""))

@@ -1343,8 +1343,7 @@ function applyTheme(c){
   r.setProperty("--title-ink", titleInk);
   /* האותיות נסרגות: צמר שחור לגמרי לא מראה תפרים, אז הוא מורם לשחור-צמר */
   r.setProperty("--title-band", lum(titleInk) < lum("#2E2F36") ? "#2E2F36" : titleInk);
-  const tc = document.querySelector('meta[name="theme-color"]');
-  if (tc) tc.setAttribute("content", "#ECEAE5");   // קרקע הצעיף (אבן בהירה), לא ink
+  /* meta theme-color נקבע לפי בהיר/כהה ב-THEME_BOOT (scripts/lib/content.mjs) */
 }
 
 function chooseClub(slug){
