@@ -39,6 +39,8 @@ const card = (c, db) => `<!doctype html><html lang="he" dir="rtl"><head>
   h1{font-family:'Suez One',Georgia,serif;font-size:132px;line-height:1;
      color:${c.colors.brand};letter-spacing:-2px}
   h1 span{color:#F2F2F0}
+  /* נבחרת: כחול הדגל כהה מדי על רקע כהה — השם בלבן וה-dle בתכלת */
+  ${c.kind === "national" ? `h1{color:#F2F2F0} h1 span{color:${c.colors.near}}` : ""}
   p.sub{font-size:40px;font-weight:700;color:#F2F2F0}
   p.meta{font-size:27px;color:#9A9AA2;font-weight:400}
   .pills{display:flex;gap:12px;margin-top:6px}
@@ -53,8 +55,8 @@ const card = (c, db) => `<!doctype html><html lang="he" dir="rtl"><head>
     <p class="sub">שחקן אחד. שמונה ניסיונות.</p>
     <p class="meta">${c.he} · ${db.counts.players} שחקנים · חידה חדשה כל יום</p>
     <div class="pills">
-      <div class="pill">עמדה</div><div class="pill">לאום</div>
-      <div class="pill">עונה</div><div class="pill">תארים</div>
+      ${(c.kind === "national" ? ["עמדה", "מועדון עיקרי", "הופעה ראשונה", "הופעות"] : ["עמדה", "לאום", "עונה", "תארים"])
+          .map(t => `<div class="pill">${t}</div>`).join("")}
       <div class="pill">שנת לידה</div>
     </div>
   </div>
@@ -64,7 +66,9 @@ const card = (c, db) => `<!doctype html><html lang="he" dir="rtl"><head>
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 
-for (const club of loadClubs()) {
+const teams = Object.entries(readJSON("config/teams.json", {}))
+  .filter(([k]) => !k.startsWith("_")).map(([slug, t]) => ({ slug, ...t }));
+for (const club of [...loadClubs(), ...teams]) {
   const db = readJSON(`data/clubs/${club.slug}.json`, null);
   if (!db) continue;
   await page.setContent(card({ ...club, ...db }, db), { waitUntil: "networkidle" });

@@ -1520,6 +1520,8 @@ addEventListener("keydown", e => { if (e.key === "Escape") vHelp.classList.remov
 
 const views = { daily: $("#dailyView"), versus: $("#versusView") };
 function openTab(t){
+  /* נבחרת: אין קרב — הוא עובר על המועדונים בלבד */
+  if (t === "versus" && document.documentElement.dataset.kind === "national") t = "daily";
   document.querySelectorAll(".nav button").forEach(b =>
     b.classList.toggle("on", b.dataset.tab === t));
   views.daily.classList.toggle("hide", t !== "daily");

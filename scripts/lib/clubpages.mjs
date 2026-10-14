@@ -27,7 +27,8 @@ export function writeClubPages({ html, data, order, siteUrl }) {
     if (!c) continue;
     const title = `${c.game} · חידת השחקן היומית של ${c.he}`;
     const desc = `${c.he}: שחקן אחד מסתורי בכל יום, שמונה ניסיונות. ` +
-                 `עמדה, לאום, עונה ראשונה, תארים ושנת לידה.`;
+                 (c.kind === "national" ? `עמדה, מועדון עיקרי, הופעה ראשונה, הופעות ושנת לידה.`
+                                         : `עמדה, לאום, עונה ראשונה, תארים ושנת לידה.`);
 
     const page = html
       .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)

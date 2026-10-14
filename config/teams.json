@@ -1,0 +1,23 @@
+{
+ "_comment": "נבחרות. מחוץ ל-clubs.json בכוונה: כל הכלים שעוברים על המועדונים (scrape, enrich, trust, audit) בנויים על עונות ותארים. נבנה ב-scripts/national.mjs.",
+ "israel": {
+  "he": "נבחרת ישראל",
+  "short": "נבחרת ישראל",
+  "game": "נבחרתdle",
+  "wikiCategory": "קטגוריה:כדורגלני נבחרת ישראל",
+  "wikiCategoryEn": "Category:Israel men's international footballers",
+  "minCaps": 10,
+  "seed": 19640000,
+  "colors": {
+   "brand": "#0038B8",
+   "near": "#6E8FD6",
+   "ink": "#0C0C0E",
+   "second": "#FFFFFF"
+  },
+  "start": [
+   2026,
+   10,
+   15
+  ]
+ }
+}

@@ -337,6 +337,36 @@ if (!Object.keys(data).length) die("אין נתוני מועדון לבנות מ
 
 const order = clubs.map(c => c.slug).filter(s => data[s]);
 
+/* ---------- נבחרות (config/teams.json, נבנות ב-scripts/national.mjs) ----------
+   **ב-DATA.teams ולא ב-DATA.clubs, בכוונה.** boot.js באפליקציות
+   שכבר מותקנות דוחה עותק מרוחק שמספר המועדונים בו שונה מהארוז —
+   נבחרת ב-clubs הייתה מקפיאה את עדכוני הנתונים אצל כל מי שהתקין
+   עד שיעדכן גרסה. מפתח נפרד עובר את האימות הישן ונבלע בשקט, ורק
+   מנוע שמכיר אותו מציג אותו. גם versus ו-quiz עוברים על clubs
+   בלבד, וכך הנבחרת לא נכנסת לקרב ולסבב המספרים. */
+const teams = {};
+for (const slug of Object.keys(readJSON("config/teams.json", {})).filter(k => !k.startsWith("_"))) {
+  const path = `data/clubs/${slug}.json`;
+  if (!existsSync(path)) { warn(`${slug}: אין ${path} — הרץ node scripts/national.mjs`); continue; }
+  const d = readJSON(path);
+  checkClub(d);
+  const years = d.players.filter(p => p.target).flatMap(p => p.spells.flat());
+  teams[slug] = {
+    slug: d.slug, kind: d.kind, start: d.start, he: d.he, short: d.short, game: d.game,
+    colors: d.colors, titles: d.titles, titlesPreState: { league: [], cup: [] },
+    coverage: { ...d.coverage, from: Math.min(...years), to: Math.max(...years) },
+    counts: { players: d.players.length, targets: d.players.filter(p => p.target).length, hidden: 0, unconfirmed: 0 },
+    players: d.players.map(p => {
+      const al = [...new Set([...(p.aliases || []), ...nameVariants(p.he)])];
+      return { he: p.he, pos: p.pos, nat: p.nat, born: p.born, spells: p.spells, titles: 0,
+               target: p.target, caps: p.caps, club: p.club, clubs: p.clubs,
+               ...(al.length ? { aliases: al } : {}) };
+    }),
+    schedule: d.schedule
+  };
+}
+const teamOrder = Object.keys(teams);
+
 let engine = readText("src/engine.js");
 const subst = {
   __SITE_URL__:      site.siteUrl.replace(/\/$/, ""),
@@ -372,9 +402,9 @@ for (const [k, v] of Object.entries(subst)) engine = engine.split(k).join(v);
 
    גיבוב של המאגר עצמו משתנה בדיוק כשהמאגר משתנה, ונשאר זהה
    בין בניות של אותם נתונים — כך שאין רענון מדומה בכל פריסה. */
-const body = JSON.stringify({ order, clubs: data });
+const body = JSON.stringify({ order, clubs: data, teamOrder, teams });
 const hash = createHash("sha1").update(body).digest("hex").slice(0, 10);
-const DATA = { v: `${site.build}-${hash}`, order, clubs: data };
+const DATA = { v: `${site.build}-${hash}`, order, clubs: data, teamOrder, teams };
 
 /* הקובץ עצמו נכתב רק אחרי rmSync("dist") שבהמשך — כתיבה כאן
    הייתה נמחקת בשקט, וזה לא מפיל שום בדיקה. */
@@ -659,7 +689,7 @@ log(`  נכתבו ${content.routes.length} דפי תוכן · ` +
    שמצביע לדומיין הישן גרוע מקובץ שלא קיים, כי גוגל מאמין לו. */
 {
   const base = site.siteUrl.replace(/\/$/, "");
-  const paths = ["/", ...order.map(s => `/${s}/`), ...content.routes];
+  const paths = ["/", ...[...order, ...teamOrder].map(s => `/${s}/`), ...content.routes];
   writeText("dist/sitemap.xml",
     '<?xml version="1.0" encoding="UTF-8"?>\n' +
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
@@ -667,7 +697,7 @@ log(`  נכתבו ${content.routes.length} דפי תוכן · ` +
        משתנים הוא אות רועש, וגוזל מהזחלן את התקציב שהיה אמור
        ללכת לדפים שכן מתחלפים. */
     paths.map(p => {
-      const g = p === "/" || /^\/[a-z-]+\/$/.test(p) && order.includes(p.slice(1, -1));
+      const g = p === "/" || /^\/[a-z-]+\/$/.test(p) && [...order, ...teamOrder].includes(p.slice(1, -1));
       const arc = /^\/archive\/\d+\/$/.test(p);
       const ply = p.startsWith("/players/");
       const freq = g ? "daily" : p === "/archive/" ? "daily" : arc ? "yearly" : "monthly";
@@ -689,7 +719,7 @@ log(`  נכתבו ${content.routes.length} דפי תוכן · ` +
   log(`  נכתבו sitemap.xml (${paths.length} כתובות) ו-robots.txt`);
 }
 
-const pages = writeClubPages({ html, data, order, siteUrl: site.siteUrl });
+const pages = writeClubPages({ html, data: { ...data, ...teams }, order: [...order, ...teamOrder], siteUrl: site.siteUrl });
 log(`  נכתבו ${pages} עמודי מועדון — dist/<slug>/index.html`);
 
 /* מזהירים על נכסים שהדף מבקש ולא קיימים — 404 בפרודקשן זה שקט מדי */
