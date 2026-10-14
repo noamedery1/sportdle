@@ -49,7 +49,10 @@ const floor = h => lum(h) < lum("#26272D") ? "#26272D" : h;
 
 const clubs = JSON.parse(readFileSync("config/clubs.json", "utf8"));
 /* config/clubs.json ממופה לפי slug, והמפתחות שמתחילים ב-"_" הם תיעוד */
-const list = Object.entries(clubs).filter(([k, v]) => !k.startsWith("_") && v && v.colors).map(([slug, v]) => ({ ...v, slug }));
+/* גם הנבחרות (config/teams.json) — בלעדיהן הצעיף שלהן בבורר בלי גדילים */
+const teams = JSON.parse(readFileSync("config/teams.json", "utf8"));
+const list = [...Object.entries(clubs), ...Object.entries(teams)]
+  .filter(([k, v]) => !k.startsWith("_") && v && v.colors).map(([slug, v]) => ({ ...v, slug }));
 for (const c of list) {
   const A = hex(c.colors.brand), B = hex(floor(c.colors.second || c.colors.ink));
   const out = Buffer.alloc(W * H * 4);
