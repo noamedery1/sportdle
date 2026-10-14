@@ -349,6 +349,9 @@ input.rc:focus{border-color:var(--brand)}
 
 .tag{margin:7px 0 0;font-size:12.5px;color:var(--dim);font-weight:500;letter-spacing:.01em}
 
+/* נבחרת: בלי קרב חברים, ועזרה משלה (src/engine.js, data-kind) */
+html[data-kind="national"] .nav, html[data-kind="national"] .only-club{display:none}
+html:not([data-kind="national"]) .only-nat{display:none}
 .nav{display:flex;gap:6px;background:var(--ink-2);border:1px solid var(--line);
   border-radius:24px;padding:4px;max-width:300px;margin:14px auto 0}
 .nav button{flex:1;margin:0;width:auto;padding:8px 10px;border-radius:20px;border:0;cursor:pointer;
@@ -1593,6 +1596,7 @@ button.wa,button.act.wa{background:#15803D}
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים">
     <button class="x" id="closeHelp" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>איך משחקים</h3>
+    <div class="only-club">
     <p>יש שחקן <span class="clubShort">—</span> אחד מסתורי, ויש לכם <b>8 ניסיונות</b> לגלות אותו.
        כל שם שתקלידו מחזיר חמישה רמזים — <b>עמדה, לאום, עונה ראשונה, תארים ושנת לידה</b> —
        וכל אחד נצבע לפי הקרבה לתשובה.</p>
@@ -1609,6 +1613,22 @@ button.wa,button.act.wa{background:#15803D}
        אחת כדי שהתא ייצבע, והתא מראה את הלאום שהתאים. כך שחקן שנולד
        בחו"ל ושיחק כאן כמקומי אינו נקרא זר.</p>
 
+    </div>
+    <div class="only-nat">
+    <p>יש שחקן אחד מסתורי מנבחרת ישראל, ויש לכם <b>8 ניסיונות</b> לגלות אותו.
+       כל שם שתקלידו מחזיר חמישה רמזים — <b>עמדה, מועדון עיקרי, הופעה ראשונה, הופעות ושנת לידה</b> —
+       וכל אחד נצבע לפי הקרבה לתשובה.</p>
+
+    <h4>מועדון עיקרי — איפה שיחק הכי הרבה</h4>
+    <p>המועדון שבו השחקן שיחק <b>הכי הרבה משחקים בקריירה</b> — לא האחרון ולא הראשון,
+       וגם אם זה מועדון בחו"ל. <b>קרוב</b> פירושו ששני השחקנים עברו באותו מועדון:
+       המועדון העיקרי של אחד מהם מופיע בקריירה של השני.</p>
+
+    <h4>"הופעה 1" והופעות</h4>
+    <p><b>הופעה 1</b> היא השנה של ההופעה הראשונה בנבחרת הבוגרת (קרוב = עד 3 שנים).
+       <b>הופעות</b> הוא מספר המשחקים בנבחרת הבוגרת (קרוב = עד 10). נבחרות הנוער לא נספרות.</p>
+    </div>
+
     <h4>העמדה — קו, לא תפקיד</h4>
     <p>יש ארבע עמדות בלבד: <b>שוער · הגנה · קישור · התקפה</b>.
        בלם ומגן הם שניהם <b>הגנה</b>, וכנף וחלוץ מרכזי הם שניהם
@@ -1619,6 +1639,7 @@ button.wa,button.act.wa{background:#15803D}
     <p><span id="lgnd">● מדויק · ◐ קרוב · ○ רחוק</span><br>
        ↑ הערך האמיתי גבוה או מאוחר יותר · ↓ נמוך או מוקדם יותר</p>
 
+    <div class="only-club">
     <h4>דוגמה</h4>
     <p>ניחשתם שחקן התקפה ישראלי שעונתו הראשונה 03/04 ויש לו 4 תארים,
        והתשובה היא שחקן קישור שהתחיל ב-96/97 עם 2 תארים:</p>
@@ -1637,13 +1658,17 @@ button.wa,button.act.wa{background:#15803D}
        <b>אליפויות:</b> <span id="hLeague">—</span><br>
        <b>גביעי מדינה:</b> <span id="hCups">—</span></p>
 
+    </div>
+
     <h4>כמה כללים</h4>
     <p id="hScope">—</p>
     <!-- הסף ירד מ-3 עונות ל-2 ב-06/09/2026 (MIN_SEASONS ב-
          scripts/enrich.mjs). **המספר כאן חייב לרדוף אחריו** —
          טקסט חוקים ששוכב על סף ישן משקר לשחקן בלי ששום בדיקה
          תתפוס את זה. -->
-    <p>אפשר לנחש כל שחקן במאגר, אבל התשובה תמיד שחקן ששיחק שתי עונות ומעלה.<br>
+    <p class="only-nat">אפשר לנחש כל שחקן במאגר, אבל התשובה תמיד שחקן עם 10 הופעות ומעלה בנבחרת.<br>
+       חידה חדשה כל יום בחצות, וכולם מקבלים את אותו שחקן.</p>
+    <p class="only-club">אפשר לנחש כל שחקן במאגר, אבל התשובה תמיד שחקן ששיחק שתי עונות ומעלה.<br>
        חידה חדשה כל יום בחצות, וכולם מקבלים את אותו שחקן.</p>
 
     <h4>מצאתם טעות?</h4>

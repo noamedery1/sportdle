@@ -488,7 +488,8 @@
       let seg;
       try { seg = new URL(url).pathname.split("/").filter(Boolean)[0]; }
       catch (e) { return false; }
-      const known = (window.SPORTDEL && window.SPORTDEL.order) || [];
+      const known = [...((window.SPORTDEL && window.SPORTDEL.order) || []),
+                     ...((window.SD && window.SD.teamOrder) || [])];
       if (!seg || !known.includes(seg)) return false;
       if (new URLSearchParams(location.search).get("club") === seg) return true;
       location.replace(`/?club=${encodeURIComponent(seg)}`);

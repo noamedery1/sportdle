@@ -27,8 +27,14 @@ const CONTACT_MAIL  = "techbynoam@gmail.com";
       הקריאה סינכרונית ובלי רשת: boot.js מציב את הארוז מיד,
       והרענון נכנס לתוקף בפתיחה הבאה בלבד.
    ============================================================ */
-const CLUBS      = window.SD.clubs;
-const CLUB_ORDER = window.SD.order;
+/* נבחרות יושבות ב-SD.teams ולא ב-SD.clubs — ראה build.mjs. כאן הן
+   מצטרפות לבורר ולמשחק היומי, אבל SPORTDEL.clubs שהקרב והמספרים
+   קוראים נשאר מועדונים בלבד. */
+const CLUBS      = { ...window.SD.clubs, ...(window.SD.teams || {}) };
+const CLUB_ORDER = [...window.SD.order, ...(window.SD.teamOrder || [])];
+/* נבחרת: "מועדון עיקרי" במקום לאום, שנת הופעה ראשונה במקום עונה,
+   הופעות במקום תארים. ראה compare. */
+const isNat = () => !!(club && club.kind === "national");
 
 /* ============================================================
    3. טבלאות תרגום
@@ -88,7 +94,9 @@ function seededShuffle(arr, seed){
 
 /* מספר החידה של היום — לפי תאריך מקומי */
 function dayIndex(){
-  const s = Date.UTC(START[0], START[1]-1, START[2]);
+  /* לנבחרת תאריך חידה #1 משלה — היא לא מתחילה בחידה #52 */
+  const st = (club && club.start) || START;
+  const s = Date.UTC(st[0], st[1]-1, st[2]);
   const n = new Date();
   const today = Date.UTC(n.getFullYear(), n.getMonth(), n.getDate());
   return Math.max(0, Math.floor((today - s)/86400000));
@@ -112,6 +120,9 @@ function normalize(p){
     aliases: p.aliases || [],
     born: p.born || null,
     target: p.target !== false,
+    caps: p.caps ?? null,
+    club: p.club || null,
+    clubs: p.clubs || [],
     titles: typeof p.titles === "number" ? p.titles : countTitles(spells),
     from: Math.min(...spells.map(s=>s[0])),
     to:   Math.max(...spells.map(s=>s[1]))
@@ -137,6 +148,33 @@ let practice = false, guesses = [], over = false, hinted = false;
 const isToday = () => !practice && puzzleNo === todayNo;
 const board = $("#board"), input = $("#guess"), sugg = $("#sugg");
 
+/* ---------- נבחרת ----------
+   "מועדון עיקרי" — המועדון שבו שיחק הכי הרבה משחקים בקריירה, לא
+   האחרון. "קרוב" = שני השחקנים עברו באותו מועדון, כלומר המועדון
+   העיקרי של אחד מופיע בקריירה של השני. */
+function compareNat(g, a, out){
+  const sameClub = g.club && g.club === a.club;
+  const crossed  = g.club && a.club && (a.clubs.includes(g.club) || g.clubs.includes(a.club));
+  out.push({k:"מועדון עיקרי", v:g.club || "?", s: sameClub ? "hit" : (crossed ? "near" : "miss")});
+
+  const gd = a.from - g.from;
+  out.push({k:"הופעה 1", v:g.from, ar: gd===0 ? "" : (gd>0?"↑":"↓"),
+            s: gd===0 ? "hit" : (Math.abs(gd)<=3 ? "near" : "miss")});
+
+  if (g.caps != null && a.caps != null){
+    const d = a.caps - g.caps;
+    out.push({k:"הופעות", v:g.caps, ar: d===0 ? "" : (d>0?"↑":"↓"),
+              s: d===0 ? "hit" : (Math.abs(d)<=10 ? "near" : "miss")});
+  } else out.push({k:"הופעות", v:g.caps ?? "?", s:"miss"});
+
+  if (a.born && g.born){
+    const b = a.born - g.born;
+    out.push({k:"נולד", v:g.born, ar: b===0 ? "" : (b>0?"↑":"↓"),
+              s: b===0 ? "hit" : (Math.abs(b)<=3 ? "near" : "miss")});
+  } else out.push({k:"נולד", v:g.born || "?", s:"miss"});
+  return out;
+}
+
 function compare(g, a){
   const out = [];
 
@@ -154,6 +192,8 @@ function compare(g, a){
 
      והתא מציג את הלאום ש**התאים**, לא את הראשון ברשימה. תא
      צהוב שכתוב בו "צרפת" מול תשובה ישראלית נראה כמו באג. */
+  if (isNat()) return compareNat(g, a, out);
+
   const gn = g.nats, an = a.nats;
   const shared = gn.find(n => an.includes(n));
   const nearNat = !shared &&
@@ -682,6 +722,7 @@ function decadeHe(y){
   return `שנות ה-${String(d).slice(-2)}`;   // שנות ה-80
 }
 function hintText(){
+  if (isNat()) return `השם מתחיל באות ${answer.name.trim()[0]} · הופעה ראשונה ב${decadeHe(answer.from)}`;
   return `השם מתחיל באות ${answer.name.trim()[0]} · הגיע ב${decadeHe(answer.from - 1)}`;
 }
 function maybeHint(){
@@ -720,8 +761,9 @@ $("#hintBtn").addEventListener("click", ()=>{
 
    מכאן גם הכלל להמשך: אין להתחיל שורה כאן בתו ניטרלי — לא נקודה,
    לא מקף, לא מספר. */
-const NEAR_RANGE = { "עונה 1": 3, "תארים": 1, "נולד": 3 };
-const RAW_OF     = { "עונה 1": g => g.from, "תארים": g => g.titles, "נולד": g => g.born };
+const NEAR_RANGE = { "עונה 1": 3, "תארים": 1, "נולד": 3, "הופעה 1": 3, "הופעות": 10 };
+const RAW_OF     = { "עונה 1": g => g.from, "תארים": g => g.titles, "נולד": g => g.born,
+                     "הופעה 1": g => g.from, "הופעות": g => g.caps };
 
 function knownFacts(){
   let posCand = new Set(POS_ORDER);
@@ -729,7 +771,10 @@ function knownFacts(){
   const natOut = new Set();
   const num = { "עונה 1": {lo:null,hi:null,exact:null},
                 "תארים":  {lo:null,hi:null,exact:null},
-                "נולד":   {lo:null,hi:null,exact:null} };
+                "נולד":   {lo:null,hi:null,exact:null},
+                "הופעה 1": {lo:null,hi:null,exact:null},
+                "הופעות":  {lo:null,hi:null,exact:null} };
+  let clubHit = null; const clubOut = new Set(), clubNear = [];
 
   for (const g of guesses) for (const c of compare(g, answer)){
     if (c.k === "עמדה"){
@@ -740,6 +785,11 @@ function knownFacts(){
       else if (c.s === "near") posCand = new Set([...posCand].filter(p => adj.has(p)));
       /* "רחוק" שולל גם את השכנות: אילו הייתה שכנה, התא היה "קרוב". */
       else                     posCand = new Set([...posCand].filter(p => p !== g.pos && !adj.has(p)));
+    }
+    else if (c.k === "מועדון עיקרי"){
+      if (!g.club) continue;
+      if      (c.s === "hit")  clubHit = g.club;
+      else { clubOut.add(g.club); if (c.s === "near") clubNear.push(g.name); }
     }
     else if (c.k === "לאום"){
       if (c.s === "hit") natHit = c.v;
@@ -763,7 +813,7 @@ function knownFacts(){
       }
     }
   }
-  return { posCand, natHit, natNear, natOut, num };
+  return { posCand, natHit, natNear, natOut, num, clubHit, clubOut, clubNear };
 }
 
 /* ניסוח טווח. fmt ממיר ערך גולמי למחרוזת (שנה → "96/97"), ו-w
@@ -778,6 +828,33 @@ function rangeLine(b, fmt, w){
   return null;
 }
 
+/* עזרת חבר לנבחרת — אותו מבנה, עובדות של נבחרת */
+function friendNat(f, L){
+  if (f.clubHit)            L.push(`שיחק הכי הרבה ב${f.clubHit}`);
+  else if (f.clubOut.size)  L.push(`המועדון העיקרי שלו לא ${[...f.clubOut].join(", לא ")}` +
+                                   (f.clubNear.length ? ` (אבל עבר באותו מועדון כמו ${f.clubNear.join(", ")})` : ""));
+  const num = f.num;
+  L.push(rangeLine(num["הופעה 1"], String, {
+    exact: y      => `הופעה ראשונה בנבחרת ב-${y}`,
+    both:  (a, b) => `הופעה ראשונה בנבחרת בין ${a} ל-${b}`,
+    lo:    a      => `הופעה ראשונה בנבחרת ב-${a} או אחרי`,
+    hi:    b      => `הופעה ראשונה בנבחרת עד ${b}`
+  }));
+  L.push(rangeLine(num["הופעות"], n => n, {
+    exact: n      => `בדיוק ${n} הופעות בנבחרת`,
+    both:  (a, b) => `בין ${a} ל-${b} הופעות בנבחרת`,
+    lo:    a      => `לפחות ${a} הופעות בנבחרת`,
+    hi:    b      => `עד ${b} הופעות בנבחרת`
+  }));
+  L.push(rangeLine(num["נולד"], String, {
+    exact: y      => `נולד ב-${y}`,
+    both:  (a, b) => `נולד בין ${a} ל-${b}`,
+    lo:    a      => `נולד ב-${a} או אחרי`,
+    hi:    b      => `נולד עד ${b}`
+  }));
+  return friendWrap(L);
+}
+
 function friendText(){
   const f = knownFacts(), L = [];
 
@@ -789,6 +866,7 @@ function friendText(){
   else if (f.posCand.size > 1 && f.posCand.size < POS_ORDER.length)
     L.push(`עמדה: ${[...f.posCand].map(p => POS_HE[p]).join(" או ")}`);
 
+  if (isNat()) return friendNat(f, L);
   if (f.natHit)            L.push(`לאום: ${f.natHit}`);
   else if (f.natNear)      L.push(`לאום: מאותו אזור כמו ${f.natNear}, אבל לא ${f.natNear}`);
   else if (f.natOut.size)  L.push(`לאום: לא ${[...f.natOut].join(", לא ")}`);
@@ -817,6 +895,9 @@ function friendText(){
     hi:    b      => `נולד עד ${b}`
   }));
 
+  return friendWrap(L);
+}
+function friendWrap(L){
   const facts = L.filter(Boolean);
   const left  = MAX - guesses.length;
   /* הכוכביות הן bold אמיתי בוואטסאפ, והן נבלעות כסימון — ולכן
@@ -1101,7 +1182,9 @@ function fixNow(p){
   const c = Object.fromEntries(compare(p, p).map(x => [x.k, x.v]));
   return { he: p.name, pos: POS_HE[p.pos] || "עמדה לא ידועה",
            nat: (p.nats || []).map(n => NAT_HE[n] || n).join(" / ") || "?",
-           from: c["עונה 1"], titles: c["תארים"], born: c["נולד"] ?? "?" };
+           from: c["עונה 1"] ?? c["הופעה 1"], titles: c["תארים"] ?? c["הופעות"], born: c["נולד"] ?? "?",
+           /* בנבחרת "לאום" הוא המועדון העיקרי */
+           ...(isNat() ? { nat: p.club || "?" } : {}) };
 }
 function openFix(target){
   if (!target && (!over || !answer)) return;   // אין שחקן חשוף — אין מה לתקן
@@ -1297,7 +1380,9 @@ function renderPicker(){
   $("#clubList").innerHTML = CLUB_ORDER.map(slug => {
     const c = CLUBS[slug];
     /* עונות ולא שנים — כמו בכל מקום אחר במשחק */
-    const cov = `${c.counts.players} שחקנים · ${season(c.coverage.from)}–${season(c.coverage.to)}`;
+    const cov = c.kind === "national"
+      ? `${c.counts.players} שחקנים · ${c.coverage.from}–${c.coverage.to}`
+      : `${c.counts.players} שחקנים · ${season(c.coverage.from)}–${season(c.coverage.to)}`;
     return `<button type="button" data-slug="${slug}" style="--c:${c.colors.brand};--c2:${c.colors.second || c.colors.ink}"
               class="${club && club.slug===slug ? "cur" : ""}">
         <span class="swatch"></span>
@@ -1368,8 +1453,9 @@ window.SPORTDEL = window.SPORTDEL || {};
    אזהרה: אל תזכיר שם של מציין מקום בהערה כאן. הבנייה עושה
    split/join על כל מציין מקום בקובץ הזה, כולל בתוך הערות —
    הערה שהזכירה את שם המשתנה הזה תפחה את הדף ב-268KB. */
-window.SPORTDEL.clubs = CLUBS;
-window.SPORTDEL.order = CLUB_ORDER;
+/* מועדונים בלבד — הקרב והמספרים בנויים על עונות ותארים */
+window.SPORTDEL.clubs = window.SD.clubs;
+window.SPORTDEL.order = window.SD.order;
 
 function publishClub(c){
   window.SPORTDEL.slug         = c.slug;
@@ -1406,9 +1492,17 @@ function bootClub(slug){
   const switching = club && club.slug !== slug;
   club = CLUBS[slug];
   publishClub(club);
+  document.documentElement.dataset.kind = club.kind || "club";
+  /* בנבחרת אין קרב ואין מספרים (הם עוברים על המועדונים בלבד) */
+  if (isNat()) { const d = document.querySelector('.nav [data-tab="daily"]'); if (d && !d.classList.contains("on")) d.click(); }
+  /* תוויות טופס התיקון לפי סוג המשחק */
+  { const o = k => document.querySelector(`#fixField option[value="${k}"]`);
+    if (o("nat"))    o("nat").textContent    = isNat() ? "המועדון העיקרי" : "הלאום";
+    if (o("from"))   o("from").textContent   = isNat() ? "שנת ההופעה הראשונה בנבחרת" : "העונה הראשונה במועדון";
+    if (o("titles")) o("titles").textContent = isNat() ? "מספר ההופעות בנבחרת" : "מספר התארים"; }
   /* אם הקרב כבר נטען — לצאת מהחדר ולרענן את הבריכה.
      חדר שייך למועדון אחד. */
-  if (switching && typeof window.SPORTDEL.versusClubChanged === "function") {
+  if (switching && !isNat() && typeof window.SPORTDEL.versusClubChanged === "function") {
     try { window.SPORTDEL.versusClubChanged(slug); } catch(e){}
   }
   applyTheme(club);
@@ -1428,8 +1522,10 @@ function bootClub(slug){
   document.querySelectorAll(".clubShort").forEach(el => el.textContent = club.short);
   $("#hLeague").textContent = club.titles.league.join(", ") || "—";
   $("#hCups").textContent   = club.titles.cup.join(", ")    || "—";
-  $("#hScope").innerHTML =
-    `המאגר הוא שחקני ${club.short} מעונת ${season(club.coverage.from)} ועד היום — ` +
+  $("#hScope").innerHTML = isNat()
+    ? `המאגר הוא שחקני נבחרת ישראל הבוגרת מ-${club.coverage.from} ועד היום — ` +
+      `<b>${club.counts.players}</b> שחקנים, מתוכם <b>${club.counts.targets}</b> (10 הופעות ומעלה) יכולים להיות התשובה.`
+    : `המאגר הוא שחקני ${club.short} מעונת ${season(club.coverage.from)} ועד היום — ` +
     `<b>${club.counts.players}</b> שחקנים, מתוכם <b>${club.counts.targets}</b> יכולים להיות התשובה.`;
 
   input.disabled = false;
