@@ -201,6 +201,34 @@ for (const club of clubs) {
     /* בית"ר: הגרסה שבייצור מנצחת. יש בה תיקוני עונות ידניים
        שאין בשום מקור, ו-119 חידות שכבר פורסמו תלויות בשמות שלה. */
     players = fromReference(ref); sources.push("reference");
+    /* עונה שאחרי הצילום: ההתאחדות מאריכה את מי שכבר בצילום, וחדשים
+       נכנסים לניחוש בלבד — הלוח שפורסם לא זז. */
+    if (ifa) {
+      const last = Math.max(...players.flatMap(p => p.spells.flat()));
+      const byName = new Map(players.map(p => [normName(p.he), p]));
+      for (const [y, list] of Object.entries(ifa.seasons)) {
+        if (+y <= last) continue;
+        for (const q of list) {
+          /* כתיב אחר לאותו אדם ("נאנה"/"נאנא אנטווי"): שם משפחה זהה
+             למי שהיה בסגל בעונה הקודמת, ורק אם הוא יחיד. */
+          const sur = n => normName(n).split(" ").at(-1);
+          const bySur = players.filter(x => !x.guessOnly && sur(x.he) === sur(q.short)
+                                         && x.spells?.flat().includes(last));
+          const p = byName.get(normName(q.short)) || byName.get(normName(q.full))
+                 || (bySur.length === 1 ? bySur[0] : null);
+          if (p) {
+            p.spells = toSpells([...p.spells.flatMap(([a, b]) => Array.from({length: b-a+1}, (_, i) => a+i)), +y]);
+            continue;
+          }
+          const rec = { he: q.short, name: null, pos: null, nat: null, born: null,
+                        years: [+y], spells: null, aliases: [q.full], src: ["ifa"],
+                        ifaId: q.id || null, official: q.full, foreign: !!q.foreign, guessOnly: true };
+          players.push(rec);
+          byName.set(normName(rec.he), rec);
+        }
+      }
+      sources.push("ifa");
+    }
   } else if (ifa) {
     /* ההתאחדות היא הבסיס: היא היחידה שנותנת שם עברי לכל שורה.
        worldfootball נכנס מעליה כשכבה — לא כבסיס — כי חצי מהשמות
@@ -536,9 +564,16 @@ for (const club of clubs) {
     }
   }
 
-  /* --- ברירת מחדל ללאום --- */
+  /* --- ברירת מחדל ללאום ---
+     רק כשאין לאום מאף מקור אחר. אזרחות ההתאחדות קודמת ל"לא מתויג
+     כזר": התגית /זר/ נעלמה מהאתר אחרי 2005/06, וכל זר חדש נרשם
+     "ישראל" (טייריס אסנטה, נייגל לונווייק). */
+  const ifaStore = readJSON("data/raw/ifa-players.json", { players: {} }).players;
   for (const p of players) {
-    if (p.nat == null && p.foreign === false && p.ifaId) { p.nat = "IL"; p.src.push("ifa:local"); }
+    if (p.nat != null || !p.ifaId) continue;
+    const natIfa = p.natIfa ?? ifaStore[p.ifaId]?.natIso;
+    if (natIfa && !(natIfa === "IL" && p.foreign)) { p.nat = natIfa; p.src.push("ifa:nat"); }
+    else if (p.foreign === false) { p.nat = "IL"; p.src.push("ifa:local"); }
   }
 
   /* --- תיקונים ידניים. גוברים על הכל. --- */
@@ -547,10 +582,13 @@ for (const club of clubs) {
      אחרת כל תיקון איות של שחקן מהבריכה מפיל את enrich. הלוח נשמר
      כלשונו: אותו סדר, אותו שחקן, איות מעודכן. */
   const renamed = new Map();
-  if (namesFix) {
+  /* תיקון שלא מצא שחקן נדחה לסבב שני, אחרי ההוספה מטבלת הקריירה:
+     שחקן שקיים רק בוויקיפדיה (שלמה ג'רבי) עוד לא במאגר כאן. */
+  const pendingFix = [];
+  const applyFix = (entries, last) => {
     const byKey = new Map(players.map(p => [String(p.ifaId ?? normName(p.he)), p]));
     let n = 0;
-    for (const [key, val] of Object.entries(namesFix)) {
+    for (const [key, val] of entries) {
       if (key.startsWith("_")) continue;
       if (/[A-Za-z]/.test(key) && typeof val === "string") continue;   // תעתיק, כבר הוחל
       const p = byKey.get(key) || players.find(x => normName(x.he) === normName(key));
@@ -563,7 +601,11 @@ for (const club of clubs) {
         n++;
         continue;
       }
-      if (!p) { review.notes.push(`תיקון שם ללא שחקן תואם: ${key}`); continue; }
+      if (!p) {
+        if (last) review.notes.push(`תיקון שם ללא שחקן תואם: ${key}`);
+        else pendingFix.push([key, val]);
+        continue;
+      }
       const before = p.he;
       if (typeof val === "string") p.he = val;
       else Object.assign(p, val);
@@ -574,8 +616,9 @@ for (const club of clubs) {
       p.src.push("manual");
       n++;
     }
-    log(`  תיקונים ידניים: ${n}`);
-  }
+    return n;
+  };
+  if (namesFix) log(`  תיקונים ידניים: ${applyFix(Object.entries(namesFix), false)}`);
 
   /* --- הסרת רשומה שאינה שייכת למועדון ---
      "ליאור אסולין" הופיע במכבי חיפה על סמך worldfootball בלבד,
@@ -650,6 +693,7 @@ for (const club of clubs) {
       }
     }
   }
+  if (pendingFix.length) log(`  תיקונים ידניים, סבב שני: ${applyFix(pendingFix, true)}`);
 
   /* --- עונות חסרות מטבלת הקריירה -----------------------------
      דווח מהשטח: "שנת ההתחלה של כחילה ואלהרר לא נכונה". נכון,
