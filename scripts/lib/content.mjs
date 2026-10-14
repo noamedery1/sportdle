@@ -37,6 +37,8 @@ export const NAV = [
   { path: "how-to-play", he: "איך משחקים" },
   { path: "archive",     he: "ארכיון" },
   { path: "players",     he: "שחקנים" },
+  /* נבחרתdle — דף משחק, לא דף תוכן. בלי הקישור הוא יתום (tools/links.mjs) */
+  { path: "israel",      he: "נבחרת ישראל" },
   { path: "about",       he: "אודות" },
   { path: "contact",     he: "צור קשר" },
   { path: "privacy",     he: "פרטיות" },
