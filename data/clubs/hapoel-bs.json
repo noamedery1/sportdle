@@ -27,7 +27,7 @@
  },
  "coverage": {
   "from": 1960,
-  "to": 2026,
+  "to": 2027,
   "sources": [
    "ifa",
    "enbridge",
@@ -40,7 +40,7 @@
   ]
  },
  "counts": {
-  "players": 464,
+  "players": 478,
   "targets": 146
  },
  "players": [
@@ -1835,7 +1835,7 @@
   {
    "he": "קאקו בלסינג",
    "pos": "MF",
-   "nat": "IL",
+   "nat": "NG",
    "born": 1978,
    "spells": [
     [
@@ -2245,7 +2245,7 @@
   {
    "he": "אלין מינטואין",
    "pos": null,
-   "nat": "IL",
+   "nat": "RO",
    "born": null,
    "spells": [
     [
@@ -2263,7 +2263,7 @@
   {
    "he": "ולדימיר אנדונוב",
    "pos": null,
-   "nat": "IL",
+   "nat": "BG",
    "born": null,
    "spells": [
     [
@@ -2300,7 +2300,7 @@
   {
    "he": "מאטיץ סטיפה",
    "pos": null,
-   "nat": "IL",
+   "nat": "HR",
    "born": null,
    "spells": [
     [
@@ -2318,7 +2318,7 @@
   {
    "he": "מרטין סאריץ",
    "pos": "MF",
-   "nat": "IL",
+   "nat": "HR",
    "born": 1979,
    "spells": [
     [
@@ -2372,7 +2372,7 @@
   {
    "he": "רוגריו דה אוליביריה",
    "pos": "MF",
-   "nat": "IL",
+   "nat": "BR",
    "born": 1978,
    "spells": [
     [
@@ -2408,7 +2408,7 @@
   {
    "he": "אולמידה אגוי",
    "pos": null,
-   "nat": "IL",
+   "nat": "NG",
    "born": null,
    "spells": [
     [
@@ -2522,7 +2522,7 @@
   {
    "he": "דרקו דוגיץ",
    "pos": null,
-   "nat": "IL",
+   "nat": "SI",
    "born": null,
    "spells": [
     [
@@ -2761,7 +2761,7 @@
   {
    "he": "גורג דאטורו",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "NG",
    "born": 1977,
    "spells": [
     [
@@ -2869,7 +2869,7 @@
   {
    "he": "מרסיו סרייבה",
    "pos": null,
-   "nat": "IL",
+   "nat": "BR",
    "born": null,
    "spells": [
     [
@@ -3038,7 +3038,7 @@
   {
    "he": "אנדרי גפיסלי",
    "pos": null,
-   "nat": "IL",
+   "nat": "BR",
    "born": null,
    "spells": [
     [
@@ -3110,7 +3110,7 @@
   {
    "he": "סעיד מקאסי",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "CD",
    "born": 1982,
    "spells": [
     [
@@ -3202,7 +3202,7 @@
   {
    "he": "איגור קוסטרוב",
    "pos": "MF",
-   "nat": "IL",
+   "nat": "MD",
    "born": 1987,
    "spells": [
     [
@@ -3539,7 +3539,7 @@
   {
    "he": "דנילו מורירה",
    "pos": "DF",
-   "nat": "IL",
+   "nat": "BR",
    "born": 1980,
    "spells": [
     [
@@ -3670,7 +3670,7 @@
   {
    "he": "מוחמד אדאמו",
    "pos": null,
-   "nat": "IL",
+   "nat": "GH",
    "born": null,
    "spells": [
     [
@@ -3688,7 +3688,7 @@
   {
    "he": "מרקוס גלרזה",
    "pos": null,
-   "nat": "IL",
+   "nat": "AR",
    "born": null,
    "spells": [
     [
@@ -3875,6 +3875,28 @@
    ]
   },
   {
+   "he": "אופיר דודזאדה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2011,
+     2016
+    ],
+    [
+     2026,
+     2027
+    ]
+   ],
+   "seasons": 8,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "אופיר דודזאדה"
+   ]
+  },
+  {
    "he": "אופיר דוידזאדה",
    "pos": "DF",
    "nat": "IL",
@@ -3893,8 +3915,7 @@
    "titles": 2,
    "target": true,
    "aliases": [
-    "Ofir Davidzada",
-    "אופיר דודזאדה"
+    "Ofir Davidzada"
    ]
   },
   {
@@ -3918,7 +3939,7 @@
   {
    "he": "איברהים ראזק",
    "pos": null,
-   "nat": "IL",
+   "nat": "GH",
    "born": null,
    "spells": [
     [
@@ -3936,7 +3957,7 @@
   {
    "he": "בסיט אברהם",
    "pos": null,
-   "nat": "IL",
+   "nat": "GH",
    "born": null,
    "spells": [
     [
@@ -3954,7 +3975,7 @@
   {
    "he": "גיימס ביסו",
    "pos": null,
-   "nat": "IL",
+   "nat": "GH",
    "born": null,
    "spells": [
     [
@@ -4193,7 +4214,7 @@
   {
    "he": "איוון פינזון",
    "pos": null,
-   "nat": "IL",
+   "nat": "CO",
    "born": null,
    "spells": [
     [
@@ -4454,7 +4475,7 @@
   {
    "he": "ננאד קיסו",
    "pos": "MF",
-   "nat": "IL",
+   "nat": "RS",
    "born": 1989,
    "spells": [
     [
@@ -4491,7 +4512,7 @@
   {
    "he": "פטר גרביץ'",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "ME",
    "born": 1988,
    "spells": [
     [
@@ -4679,7 +4700,7 @@
   {
    "he": "מזי אוסייקו",
    "pos": null,
-   "nat": "IL",
+   "nat": "KE",
    "born": null,
    "spells": [
     [
@@ -5152,7 +5173,7 @@
   {
    "he": "אוגוצוקאו הוגו",
    "pos": null,
-   "nat": "IL",
+   "nat": "NG",
    "born": null,
    "spells": [
     [
@@ -5755,7 +5776,7 @@
   {
    "he": "מיחאלי קורהוט",
    "pos": "DF",
-   "nat": "IL",
+   "nat": "HU",
    "born": 1988,
    "spells": [
     [
@@ -6033,7 +6054,7 @@
   {
    "he": "חואן לופז",
    "pos": null,
-   "nat": "IL",
+   "nat": "ES",
    "born": null,
    "spells": [
     [
@@ -6354,7 +6375,7 @@
   {
    "he": "קווין טפוקו",
    "pos": null,
-   "nat": "IL",
+   "nat": "FR",
    "born": null,
    "spells": [
     [
@@ -6428,7 +6449,7 @@
   {
    "he": "ארנסטאס סטקוס",
    "pos": null,
-   "nat": "IL",
+   "nat": "LT",
    "born": null,
    "spells": [
     [
@@ -6479,7 +6500,7 @@
   {
    "he": "גוזואה פסקאוורה",
    "pos": null,
-   "nat": "IL",
+   "nat": "PT",
    "born": null,
    "spells": [
     [
@@ -6886,7 +6907,7 @@
   {
    "he": "גונתן ולאסקז",
    "pos": null,
-   "nat": "IL",
+   "nat": "CO",
    "born": null,
    "spells": [
     [
@@ -6922,7 +6943,7 @@
   {
    "he": "ויירה פארליי",
    "pos": null,
-   "nat": "IL",
+   "nat": "BR",
    "born": null,
    "spells": [
     [
@@ -7045,7 +7066,7 @@
   {
    "he": "סזאר מלי",
    "pos": null,
-   "nat": "IL",
+   "nat": "AR",
    "born": null,
    "spells": [
     [
@@ -7248,7 +7269,7 @@
   {
    "he": "אנדרה מרטינס",
    "pos": null,
-   "nat": "IL",
+   "nat": "PT",
    "born": null,
    "spells": [
     [
@@ -7284,7 +7305,7 @@
   {
    "he": "גוסטבו סאנטוס",
    "pos": null,
-   "nat": "IL",
+   "nat": "BR",
    "born": null,
    "spells": [
     [
@@ -7359,7 +7380,7 @@
   {
    "he": "הלדר לופז",
    "pos": null,
-   "nat": "IL",
+   "nat": "PT",
    "born": null,
    "spells": [
     [
@@ -7689,7 +7710,7 @@
   {
    "he": "מאגומד סוליימאנוב",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "RU",
    "born": 1999,
    "spells": [
     [
@@ -7741,7 +7762,7 @@
   {
    "he": "קונסטנטין אלכסנדרו",
    "pos": null,
-   "nat": "IL",
+   "nat": "RO",
    "born": null,
    "spells": [
     [
@@ -8081,7 +8102,7 @@
   {
    "he": "עומאר אימראן",
    "pos": null,
-   "nat": "IL",
+   "nat": "NL",
    "born": null,
    "spells": [
     [
@@ -8415,6 +8436,24 @@
    ]
   },
   {
+   "he": "איגור זלאטנוביץ",
+   "pos": null,
+   "nat": "RS",
+   "born": null,
+   "spells": [
+    [
+     2026,
+     2027
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "איגור זלאטנוביץ"
+   ]
+  },
+  {
    "he": "איגור זלטנוביץ'",
    "pos": "FW",
    "nat": "RS",
@@ -8429,8 +8468,7 @@
    "titles": 1,
    "target": false,
    "aliases": [
-    "Igor Zlatanović",
-    "איגור זלאטנוביץ"
+    "Igor Zlatanović"
    ]
   },
   {
@@ -8529,10 +8567,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8547,10 +8585,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8565,10 +8603,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8583,10 +8621,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8601,10 +8639,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8627,6 +8665,222 @@
    "target": false,
    "aliases": [
     "רועי לוי"
+   ]
+  },
+  {
+   "he": "אדריאן טלו",
+   "pos": null,
+   "nat": "PE",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אדריאן מרטין אוגריזה טלו"
+   ]
+  },
+  {
+   "he": "איתי רוטמן",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "איתי רוטמן"
+   ]
+  },
+  {
+   "he": "גואאו סוזה",
+   "pos": null,
+   "nat": "BR",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ג'ואאו ויקטור ויירה פריירה סוזה"
+   ]
+  },
+  {
+   "he": "דוד פילניק",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דוד פילניק"
+   ]
+  },
+  {
+   "he": "יונס מלדה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יונס מלדה"
+   ]
+  },
+  {
+   "he": "יונתן גרינבאום",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יונתן גרינבאום"
+   ]
+  },
+  {
+   "he": "ליאור שוגר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ליאור שוגר"
+   ]
+  },
+  {
+   "he": "מרקו וולף",
+   "pos": "GK",
+   "nat": "AR",
+   "born": 1996,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מרקו וולף"
+   ]
+  },
+  {
+   "he": "ניב יהושע",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2005,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "ניב יהושע"
+   ]
+  },
+  {
+   "he": "עידן נחמיאס",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "עידן נחמיאס"
+   ]
+  },
+  {
+   "he": "פדרו אמאדור",
+   "pos": "DF",
+   "nat": "PT",
+   "born": 1998,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פדרו אמאדור"
+   ]
+  },
+  {
+   "he": "פורסון אמנקווה",
+   "pos": "MF",
+   "nat": "GH",
+   "born": 2002,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "פורסון אמנקווה"
    ]
   }
  ],

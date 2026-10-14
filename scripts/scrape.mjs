@@ -17,7 +17,7 @@
      node scripts/scrape.mjs --club=beitar --source=wf --reparse   (בלי רשת)
 
    דגלים:
-     --from=1969 --to=2025   טווח עונות ב-worldfootball (שנת פתיחה)
+     --from=1969 --to=2026   טווח עונות ב-worldfootball (שנת פתיחה)
      --headless              בלי חלון דפדפן (worldfootball נחסם ככה)
      --force                 להתעלם מה-cache ולמשוך מחדש
      --reparse               לפרסר רק מה-cache, בלי לגעת ברשת
@@ -36,7 +36,7 @@ const clubs  = pickClubs(args);
 const only   = args.source ? String(args.source).split(",")
              : ["reference", "wf", "ifa", "wiki", "wikiplayers", "wikiextra", "wikilang", "wikicareer", "enbridge"];
 const FROM   = +(args.from || 1969);
-const TO     = +(args.to   || 2025);
+const TO     = +(args.to   || 2026);
 const FORCE  = !!args.force;
 const REPARSE= !!args.reparse;
 
@@ -128,7 +128,7 @@ async function scrapeWorldfootball(club, page, thr) {
    season_id = שנת_סיום − 1999.  מכסה 2002/03 ואילך בלבד.
    ============================================================ */
 const IFA_GUID = "%7B2AE09DED-5019-4C49-BFD5-4458C66F9D24%7D";
-const IFA_MIN = 4, IFA_MAX = 27;
+const IFA_MIN = 4, IFA_MAX = 28;
 
 function extractIfaInPage() {
   const as = [...document.querySelectorAll('a[href*="/players/player/?player_id="]')];

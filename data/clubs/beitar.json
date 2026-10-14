@@ -31,9 +31,10 @@
  },
  "coverage": {
   "from": 1943,
-  "to": 2026,
+  "to": 2027,
   "sources": [
    "reference",
+   "ifa",
    "wikiplayers",
    "wikiextra",
    "wikilang",
@@ -42,7 +43,7 @@
   ]
  },
  "counts": {
-  "players": 493,
+  "players": 505,
   "targets": 214
  },
  "players": [
@@ -534,7 +535,7 @@
   {
    "he": "שלמה ג'רבי",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1952,
    "spells": [
     [
@@ -4578,10 +4579,10 @@
     ],
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 5,
+   "seasons": 6,
    "titles": 0,
    "target": true
   },
@@ -6364,10 +6365,10 @@
    "spells": [
     [
      2021,
-     2026
+     2027
     ]
    ],
-   "seasons": 6,
+   "seasons": 7,
    "titles": 1,
    "target": true
   },
@@ -6557,9 +6558,13 @@
     [
      2025,
      2025
+    ],
+    [
+     2027,
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 1,
    "target": true
   },
@@ -6601,10 +6606,10 @@
    "spells": [
     [
      2022,
-     2026
+     2027
     ]
    ],
-   "seasons": 5,
+   "seasons": 6,
    "titles": 1,
    "target": true
   },
@@ -6841,10 +6846,10 @@
    "spells": [
     [
      2023,
-     2026
+     2027
     ]
    ],
-   "seasons": 4,
+   "seasons": 5,
    "titles": 1,
    "target": true
   },
@@ -7051,10 +7056,10 @@
    "spells": [
     [
      2024,
-     2026
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 0,
    "target": true
   },
@@ -7201,10 +7206,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 0,
    "target": true
   },
@@ -7426,10 +7431,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7501,10 +7506,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7516,10 +7521,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7576,10 +7581,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7591,10 +7596,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7606,10 +7611,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7621,10 +7626,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7636,10 +7641,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7674,7 +7679,7 @@
    "target": false
   },
   {
-   "he": "רביד אברג'יל",
+   "he": "רביד אברגיל",
    "pos": "FW",
    "nat": "IL",
    "born": 2003,
@@ -7686,7 +7691,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "רביד חי אברגיל"
+   ]
   },
   {
    "he": "רועי אלימלך",
@@ -7696,10 +7704,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -7717,6 +7725,222 @@
    "seasons": 1,
    "titles": 0,
    "target": false
+  },
+  {
+   "he": "אורי עזו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אורי נתן עזו"
+   ]
+  },
+  {
+   "he": "אלקסיס סרנה",
+   "pos": null,
+   "nat": "CO",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "אלקסיס סרנה"
+   ]
+  },
+  {
+   "he": "בוריס טאקאנג",
+   "pos": null,
+   "nat": "CM",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "בוריס אינאו טאקאנג"
+   ]
+  },
+  {
+   "he": "דביר ניר",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דביר ניר"
+   ]
+  },
+  {
+   "he": "דגאץ וורקו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "דג'אץ וורקו"
+   ]
+  },
+  {
+   "he": "זיו בן שימול",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זיו ישראל בן שימול"
+   ]
+  },
+  {
+   "he": "יוגין אנסה",
+   "pos": "FW",
+   "nat": "GH",
+   "born": 1994,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "יוג'ין אנסה"
+   ]
+  },
+  {
+   "he": "מיכאל ואקנין",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "מיכאל ראובן ואקנין"
+   ]
+  },
+  {
+   "he": "נבו שדו",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "נבו יחזקאל שדו"
+   ]
+  },
+  {
+   "he": "נועם מוצה",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "נועם מו'צה"
+   ]
+  },
+  {
+   "he": "שון וייסמן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "שון וייסמן"
+   ]
+  },
+  {
+   "he": "תומר יוספי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "תומר יוספי"
+   ]
   }
  ],
  "schedule": [
