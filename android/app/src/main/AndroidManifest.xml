@@ -55,6 +55,8 @@
                       android:pathPrefix="/maccabi-haifa" />
                 <data android:scheme="https" android:host="sportdle.techbynoam.com"
                       android:pathPrefix="/maccabi-ta" />
+                <data android:scheme="https" android:host="sportdle.techbynoam.com"
+                      android:pathPrefix="/israel" />
             </intent-filter>
         </activity>
 

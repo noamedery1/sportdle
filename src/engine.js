@@ -5,6 +5,8 @@ const SITE_URL      = "__SITE_URL__";   // בלי / בסוף
 const START         = __START__;        // [שנה, חודש 1-12, יום] של חידה #1
 const MAX           = __MAX__;
 const BUILD         = "__BUILD__";
+const IOS_URL       = "__IOS_URL__";      // ריק = האפליקציה לא live
+const PLAY_URL      = "__PLAY_URL__";
 /* סט האמוג'ים לשיתוף.
    "safe"   — עיגולים גיאומטריים (יוניקוד 1.1, 1993). שני בתים,
               קיימים בכל פונט. מלא=מדויק, חצי=קרוב, ריק=רחוק.
@@ -332,6 +334,7 @@ function finish(won){
     renderStats(won ? guesses.length : 0);
     track("done", {guesses: guesses.length, won, hint: hinted, rid: reporterId(), snap: rankSnap()});
     if (rankReq) rankReq.then(renderRank);
+    showGetApp();
     /* השורה מגיעה מבקשה שיצאה **בטעינת הדף**, לא כאן. Apps Script
        מגיב באיטיות — הפניה, התנעה קרה, קריאת גיליון — וכשהבקשה יצאה
        ברגע הסיום היא הופיעה 20 שניות אחרי שהשחקן קרא את התוצאה, ואז
@@ -982,6 +985,25 @@ function getJSON(q){
       document.body.appendChild(sc);
     }))
     .catch(() => null);
+}
+
+/* ---------- מהאתר לאפליקציה ----------
+   רוב השחקנים משחקים באתר. הרגע הכי טוב להציע את האפליקציה הוא מיד
+   אחרי סיום החידה של היום — ורק בטלפון, ורק לחנות של אותו טלפון.
+   במחשב יש כבר את הבאנר בתחתית הדף עם שתי החנויות.
+   לא מבטיחים "שמירת רצף": localStorage של האפליקציה נפרד מזה של
+   הדפדפן, והרצף לא עובר. ההבטחה היא התזכורת, וזו אמת. */
+function showGetApp(){
+  const el = $("#getApp");
+  if (!el) return;
+  const C = window.Capacitor;
+  if (C && typeof C.isNativePlatform === "function" && C.isNativePlatform()) return;
+  const ua = navigator.userAgent;
+  const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  const url = ios ? IOS_URL : /Android/.test(ua) ? PLAY_URL : "";
+  if (!url) return;
+  el.href = url;
+  el.hidden = false;
 }
 
 /* ---------- איפה אני במועדון ----------

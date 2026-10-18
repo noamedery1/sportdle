@@ -71,7 +71,8 @@
     "teamId": "T4LAH8P2HN",
     "bundleId": "sportdle.techbynoam.com",
     "paths": ["/join", "/join/*", "/beitar", "/beitar/*", "/hapoel-bs", "/hapoel-bs/*",
-              "/hapoel-ta", "/hapoel-ta/*", "/maccabi-haifa", "/maccabi-haifa/*", "/maccabi-ta", "/maccabi-ta/*"]
+              "/hapoel-ta", "/hapoel-ta/*", "/maccabi-haifa", "/maccabi-haifa/*", "/maccabi-ta", "/maccabi-ta/*",
+              "/israel", "/israel/*"]
   },
   "siteUrl": "https://sportdle.techbynoam.com",
   "start": [
