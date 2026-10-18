@@ -213,10 +213,14 @@ footer .who a:hover{color:var(--dim)}
 .sitenav a:hover{color:var(--brand)}
 .sitenav span{color:#3A3A42}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
-#comm{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
-#comm.on{display:block}
-#comm .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
-#comm .hd b{color:var(--text);font-weight:900}
+#comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
+#comm.on,#rank.on{display:block}
+#comm .hd,#rank .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#comm .hd b,#rank .hd b{color:var(--text);font-weight:900}
+#rank .rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+#rank .rows div{font-size:12px;line-height:1.35;padding:8px 6px;border-radius:10px;background:rgba(127,127,127,.1);text-align:center}
+#rank .rows b{display:block;font-size:17px;font-weight:900}
+#rep .rid{margin-top:12px;font-size:11px;opacity:.6;text-align:center}
 .stats{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09)}
 .stats .nums{display:flex;justify-content:center;gap:22px;margin-bottom:12px}
 .stats .nums div{font-size:10.5px;color:var(--dim)}
@@ -739,7 +743,7 @@ h1::before{left:-28px;transform:scaleX(-1)}
   background:no-repeat center top/100% auto}
 .mini::after{right:-15px}
 .mini::before{left:-15px;transform:scaleX(-1)}
-.stats,#comm,.promo{border-top:1px dashed rgba(184,167,128,.45)}
+.stats,#comm,#rank,.promo{border-top:1px dashed rgba(184,167,128,.45)}
 .stats .nums div{color:var(--on-second)}
 .stats .nums b{color:var(--on-second)}
 .bars .b{color:var(--on-second)}
@@ -961,7 +965,7 @@ button.ghost,button.act.ghost,button.act,#versusView .vtop button,#yday,#yday bu
 #versusView .card,#versusView input,#versusView select,#versusView button,#versusView .qtext,
 .plist div,.board div,.clue,body .vmodal-box{
   outline:0;background-image:none;background-blend-mode:normal;border-style:solid;transform:none}
-footer,.sitenav,.stats,#comm,.promo{border-top:1px solid var(--ui-line)}
+footer,.sitenav,.stats,#comm,#rank,.promo{border-top:1px solid var(--ui-line)}
 #sugg button{border-bottom:1px solid var(--ui-line-2)}
 .tiles{border-bottom:0}
 
@@ -1062,8 +1066,8 @@ button.wa,button.act.wa{background:#168A45;color:#fff}
     var(--knit) repeat-x center/auto 100%,var(--brand);
   background-blend-mode:normal,multiply;color:var(--title-ink)}
 #result .card p,#result .card p b,#next,#next b,.stats .nums div,.stats .nums b,.bars .b,.bars .b i,.promo,.promo a{color:var(--ui-ink)}
-#result .card p,#next,.stats .nums div,.bars .b,.promo,#comm .hd{color:var(--ui-ink-2)}
-#comm .hd b,#comm b{color:var(--ui-ink)}
+#result .card p,#next,.stats .nums div,.bars .b,.promo,#comm .hd,#rank .hd{color:var(--ui-ink-2)}
+#comm .hd b,#rank .hd b,#comm b,#rank b{color:var(--ui-ink)}
 #result .card p,#next{font-size:15px}
 .stats .nums div{font-size:13px}
 .bars .b span{background:var(--well);color:var(--ui-ink)}
@@ -1388,6 +1392,8 @@ button.wa,button.act.wa{background:#15803D}
       <div class="legend mlegend" aria-hidden="true"><span><i class="dot y"></i> מדויק</span><span><i class="dot o"></i> קרוב</span><span><i class="dot s"></i> רחוק</span></div>
       <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
       <div id="comm"></div>
+      <!-- איפה אני במועדון: אחוזונים מ-fn=ranks, המיקום מחושב במכשיר (renderRank) -->
+      <div id="rank"></div>
       <div class="stats" id="stats"></div>
       <button class="act wa" id="wa">שליחה בוואטסאפ</button>
       <button class="act ghost" id="story">תמונה לסטורי</button>
@@ -1739,6 +1745,8 @@ button.wa,button.act.wa{background:#15803D}
 
     <div id="repStat"></div>
     <button class="act" id="repSend">שליחה</button>
+    <!-- למחיקת שורת הדירוג במייל (מדיניות הפרטיות → "שורת הדירוג") -->
+    <p class="rid">המזהה האקראי שלך: <span dir="ltr" id="repRid"></span></p>
   </div>
 </div>
 

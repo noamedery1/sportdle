@@ -3,7 +3,8 @@
    ------------------------------------------------------------
    Web App אחד שמשרת ארבעה דברים:
 
-     view / done   סטטיסטיקה (כמו קודם)
+     view / done   סטטיסטיקה (כמו קודם), ו-done גם מעדכן שורת שחקן לדירוג
+     GET fn=ranks  אחוזוני המועדון · fn=top (טוקן) הטבלה הארצית
      fix           טופס תיקון פרטי שחקן — שדות סגורים בלבד
      feedback      טקסט חופשי, יוצא כמייל ולא נכנס לשום צינור
      ack           סימון שורות שהוחלו, מגיע רק מ-CI עם טוקן
@@ -38,9 +39,12 @@ const SHEET_DAILY    = 'daily';
 const SHEET_FIXES    = 'fixes';
 const SHEET_FEEDBACK  = 'feedback';
 const SHEET_TOTALS   = 'totals';
+const SHEET_PLAYERS  = 'players';
 
 /* רשימות סגורות. שינוי מועדון או עמדה מחייב שינוי כאן — במכוון. */
-const CLUBS  = ['beitar', 'hapoel-bs', 'hapoel-ta', 'maccabi-haifa', 'maccabi-ta'];
+/* israel נוסף עם נבחרתdle. לפני כן clubOf_ הפך כל משחק של הנבחרת
+   לבית"ר, והסטטיסטיקה של שניהם הייתה מעורבבת. */
+const CLUBS  = ['beitar', 'hapoel-bs', 'hapoel-ta', 'maccabi-haifa', 'maccabi-ta', 'israel'];
 const FIELDS = ['he', 'pos'];
 const POSES  = ['GK', 'DF', 'MF', 'FW'];
 
@@ -299,10 +303,144 @@ function handleEvent_(d) {
      בקשה עד לפסק הזמן — הדף של השחקן מחכה לתשובה הזאת. */
   var lock = LockService.getScriptLock();
   if (lock.tryLock(10000)) {
-    try { rollup_(ss, d); }
+    try {
+      rollup_(ss, d);
+      if (d.type === 'done') upsertPlayer_(ss, d);
+    }
     finally { lock.releaseLock(); }
   }
   return json_({ ok: true });
+}
+
+/* ============================================================
+   דירוג שחקנים — שורה אחת לכל מזהה+מועדון
+   ------------------------------------------------------------
+   הקליינט שולח עם כל "done" את הסיכום המצטבר שלו מהמכשיר (snap).
+   השורה **נדרסת**, לא מתווספת: מה שנשמר הוא תמיד המצב האחרון, ולכן
+   אין ספירה כפולה, ושחקן ותיק מביא את כל ההיסטוריה שלו כבר במשחק
+   הראשון אחרי העדכון.
+
+   המזהה הוא ה-rid האקראי שכבר קיים (טופס התיקונים). אין בו שם או
+   פרט מזהה. מי שמנקה אחסון מתחיל שורה חדשה — זה המחיר של בלי חשבונות.
+
+   האימות כאן לא מונע זיוף (הקליינט פתוח) — הוא מונע ערכים בלתי
+   אפשריים. שחקן שמזייף את עצמו משקר רק לעצמו: אין שמות בטבלה.
+   ============================================================ */
+const PLAYERS_HEAD_ = ['מזהה', 'מועדון', 'שיחק', 'פיצח', 'סכום ניחושים', 'רצף', 'רצף שיא', 'עודכן'];
+const RANK_MIN_GAMES = 3;     // פחות מזה לא נכנס לטבלת האחוזונים
+const RANK_K   = 10;          // משקל הקדם — ראה rankScore_
+const RANK_PRIOR = 5.5;       // ממוצע ניחושים "סביר" שאליו נמשך שחקן חדש
+
+function snap_(d) {
+  var s = d && d.snap;
+  if (!s || typeof s !== 'object') return null;
+  var n = function (v) { v = Number(v); return isFinite(v) && v >= 0 && v === Math.floor(v) ? v : -1; };
+  var o = { p: n(s.p), w: n(s.w), s: n(s.s), c: n(s.c), m: n(s.m) };
+  if (o.p < 1 || o.p > 5000 || o.w < 0 || o.s < 0 || o.c < 0 || o.m < 0) return null;
+  if (o.w > o.p || o.c > o.m || o.m > o.p) return null;
+  if (o.s < o.w || o.s > o.w * MAX_GUESSES) return null;
+  return o;
+}
+
+function upsertPlayer_(ss, d) {
+  var rid = str_(d.rid, 30);
+  if (!/^[a-z0-9]{6,24}$/.test(rid)) return;
+  var o = snap_(d);
+  if (!o) return;
+  var club = clubOf_(d);
+
+  var sh = ss.getSheetByName(SHEET_PLAYERS);
+  if (!sh) {
+    sh = ss.insertSheet(SHEET_PLAYERS);
+    sh.appendRow(PLAYERS_HEAD_);
+    sh.setFrozenRows(1);
+  }
+  var rowVals = [rid, club, o.p, o.w, o.s, o.c, o.m, new Date()];
+  var last = sh.getLastRow();
+  if (last > 1) {
+    /* ponytail: סריקה של שתי עמודות בכל משחק. אלפי שורות = עשרות ms.
+       מעל ~50 אלף שורות לעבור לאינדקס rid→שורה ב-CacheService. */
+    var ids = sh.getRange(2, 1, last - 1, 2).getValues();
+    for (var i = 0; i < ids.length; i++) {
+      if (ids[i][0] === rid && ids[i][1] === club) {
+        sh.getRange(i + 2, 1, 1, rowVals.length).setValues([rowVals]);
+        return;
+      }
+    }
+  }
+  sh.appendRow(rowVals);
+}
+
+/* ציון לדירוג — נמוך יותר = טוב יותר. **זהה ל-rankScore ב-src/engine.js.**
+   כישלון נספר כ-MAX_GUESSES+1. הממוצע נמשך לכיוון RANK_PRIOR במשקל
+   של RANK_K משחקים, ולכן נפח מנצח מזל: 3 פיצוחים בניחוש אחד נותנים
+   (3+55)/13 = 4.46, ושחקן עם 80 משחקים בממוצע 4 נותן (320+55)/90 = 4.17. */
+function rankScore_(p, w, s) {
+  var total = s + (p - w) * (MAX_GUESSES + 1);
+  return (total + RANK_K * RANK_PRIOR) / (p + RANK_K);
+}
+
+/* 101 אחוזונים (0..100) של מערך ממוין — מספיק לקליינט כדי למקם את
+   עצמו בלי לשלוח לו אלפי שורות. */
+function quantiles_(arr) {
+  arr.sort(function (a, b) { return a - b; });
+  var q = [];
+  for (var i = 0; i <= 100; i++) {
+    var v = arr[Math.min(arr.length - 1, Math.round(i / 100 * (arr.length - 1)))];
+    q.push(Math.round(v * 1000) / 1000);
+  }
+  return q;
+}
+
+function playerRows_() {
+  var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_PLAYERS);
+  if (!sh || sh.getLastRow() < 2) return [];
+  return sh.getRange(2, 1, sh.getLastRow() - 1, 7).getValues();
+}
+
+/* טבלת אחוזונים למועדון. פומבית ובלי טוקן: רק מצרפים, בלי מזהים. */
+function ranks_(p) {
+  var club = clubOf_(p);
+  var cache = CacheService.getScriptCache();
+  var key = 'rk:' + club;
+  var hit = cache.get(key);
+  if (hit) { try { return JSON.parse(hit); } catch (err) { /* ממשיכים */ } }
+
+  var v = playerRows_();
+  var score = [], win = [], max = [], played = [];
+  for (var i = 0; i < v.length; i++) {
+    if (String(v[i][1]) !== club) continue;
+    var pl = Number(v[i][2]) || 0, w = Number(v[i][3]) || 0, s = Number(v[i][4]) || 0;
+    if (pl < RANK_MIN_GAMES) continue;
+    score.push(rankScore_(pl, w, s));
+    win.push(w / pl);
+    max.push(Number(v[i][6]) || 0);
+    played.push(pl);
+  }
+  var out = { ok: true, club: club, n: score.length, min: RANK_MIN_GAMES };
+  if (score.length) {
+    out.score = quantiles_(score); out.win = quantiles_(win);
+    out.max = quantiles_(max);     out.played = quantiles_(played);
+  }
+  try { cache.put(key, JSON.stringify(out), 600); } catch (err) { /* מטמון מלא */ }
+  return out;
+}
+
+/* הטבלה הארצית לוועדה — מאחורי REPORTS_TOKEN. בלי שמות: אין כאלה. */
+function top_(p) {
+  var lim = Math.min(Number(p.limit) || 50, 500);
+  var min = Math.max(Number(p.min) || 20, RANK_MIN_GAMES);
+  var v = playerRows_(), rows = [];
+  for (var i = 0; i < v.length; i++) {
+    var pl = Number(v[i][2]) || 0, w = Number(v[i][3]) || 0, s = Number(v[i][4]) || 0;
+    if (pl < min) continue;
+    rows.push({ rid: String(v[i][0]), club: String(v[i][1]), played: pl, wins: w,
+                avg: w ? Math.round(s / w * 100) / 100 : null,
+                maxStreak: Number(v[i][6]) || 0,
+                score: Math.round(rankScore_(pl, w, s) * 1000) / 1000 });
+  }
+  rows.sort(function (a, b) { return a.score - b.score || b.played - a.played; });
+  return json_({ ok: true, players: v.length, ranked: rows.length, top: rows.slice(0, lim) });
 }
 
 /** סיכום יומי מתגלגל — כדי שלא תצטרך לחשב ידנית.
@@ -493,6 +631,12 @@ function doGet(e) {
      בלי טוקן במכוון: אין כאן שום נתון אישי, רק מצרפים שכבר מוצגים
      לכל מי שמשחק. p.callback קיים כדי שנפילת ה-CORS בקליינט תוכל
      ליפול ל-JSONP. */
+  if (p.fn === 'top') {
+    if (!checkToken_(p.token)) return json_({ ok: false, error: 'אין הרשאה' });
+    return top_(p);
+  }
+  if (p.fn === 'ranks') return json_(ranks_(p), p.callback);
+
   if (p.puzzle) return json_(stats_(p), p.callback);
 
   return json_({ ok: true, msg: 'sportdle collector is running' }, p.callback);

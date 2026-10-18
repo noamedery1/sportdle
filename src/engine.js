@@ -330,7 +330,8 @@ function finish(won){
     bumpStreak(won); showStreak();
     addStat(won, guesses.length);
     renderStats(won ? guesses.length : 0);
-    track("done", {guesses: guesses.length, won, hint: hinted});
+    track("done", {guesses: guesses.length, won, hint: hinted, rid: reporterId(), snap: rankSnap()});
+    if (rankReq) rankReq.then(renderRank);
     /* השורה מגיעה מבקשה שיצאה **בטעינת הדף**, לא כאן. Apps Script
        מגיב באיטיות — הפניה, התנעה קרה, קריאת גיליון — וכשהבקשה יצאה
        ברגע הסיום היא הופיעה 20 שניות אחרי שהשחקן קרא את התוצאה, ואז
@@ -705,7 +706,7 @@ function loadPuzzle(n){
   scrollTo({top:0, behavior:"smooth"});
 }
 
-/* ---------- דיווח אנונימי: מועדון, מספר חידה ותוצאה בלבד ---------- */
+/* ---------- דיווח: מועדון, חידה ותוצאה; ב-done גם המזהה האקראי והסיכום (דירוג) ---------- */
 function track(type, extra){
   if (!ANALYTICS_URL || practice) return;
   try{
@@ -963,8 +964,11 @@ function primeStats(n){
 }
 
 function fetchStats(puzzle){
+  return getJSON(`puzzle=${puzzle}&club=${encodeURIComponent(club.slug)}`);
+}
+
+function getJSON(q){
   // GET רגיל, ואם CORS חוסם — נפילה ל-JSONP
-  const q = `puzzle=${puzzle}&club=${encodeURIComponent(club.slug)}`;
   return fetch(`${ANALYTICS_URL}?${q}`)
     .then(r => r.json())
     .catch(() => new Promise(res => {
@@ -978,6 +982,62 @@ function fetchStats(puzzle){
       document.body.appendChild(sc);
     }))
     .catch(() => null);
+}
+
+/* ---------- איפה אני במועדון ----------
+   השרת מחזיק שורה אחת לכל מזהה אקראי+מועדון (הסיכום שנשלח עם "done")
+   ומחזיר רק 101 אחוזונים לכל מדד — בלי מזהים. המיקום שלי מחושב כאן,
+   מהסטטיסטיקה המקומית, ולכן הוא נכון גם לפני שהשרת קלט את המשחק הזה. */
+const RANK_SHOW = 20;   // פחות שחקנים במועדון = אחוזון חסר משמעות
+let rankReq = null;
+function primeRanks(){
+  rankReq = ANALYTICS_URL
+    ? getJSON(`fn=ranks&club=${encodeURIComponent(club.slug)}`).catch(() => null)
+    : null;
+}
+
+/* הסיכום שנשלח לשרת. s = סכום הניחושים בפיצוחים בלבד. */
+function rankSnap(){
+  const st = loadStats();
+  if (!st) return null;
+  const s = Object.entries(st.dist).reduce((a, [n, v]) => a + n * v, 0);
+  return { p: st.played, w: st.wins, s, c: loadStreak().n, m: st.max || 0 };
+}
+
+/* **זהה ל-rankScore_ ב-server/apps-script.gs** — אותם קבועים.
+   נמוך = טוב. כישלון = MAX+1 ניחושים, והממוצע נמשך ל-5.5 במשקל של
+   10 משחקים: כך נפח גובר על מזל (3 פיצוחים בניחוש אחד לא עוקפים
+   80 משחקים בממוצע 4). */
+function rankScore(p, w, s){
+  return (s + (p - w) * (MAX + 1) + 10 * 5.5) / (p + 10);
+}
+/* כמה אחוז מהשחקנים אני עוקף. q = 101 אחוזונים ממוינים עולה. */
+function beats(q, x, lowerIsBetter){
+  const n = q.filter(v => lowerIsBetter ? v > x : v < x).length;
+  return Math.round(n / q.length * 100);
+}
+
+function renderRank(r){
+  const el = $("#rank");
+  const me = rankSnap();
+  if (!r || !r.ok || !me || (r.n || 0) < RANK_SHOW){ el.classList.remove("on"); return; }
+  if (me.p < r.min){
+    const left = r.min - me.p;
+    el.innerHTML = `<div class="hd">עוד <b>${left}</b> ${left === 1 ? "משחק" : "משחקים"} ונכנסים לדירוג של <b>${r.n}</b> שחקני ${club.short}</div>`;
+    el.classList.add("on"); return;
+  }
+  const top = Math.max(1, 100 - beats(r.score, rankScore(me.p, me.w, me.s), true));
+  const avg = me.w ? (me.s / me.w).toFixed(1) : "—";
+  const cell = (big, small) => `<div><b>${big}</b>${small}</div>`;
+  el.innerHTML =
+    `<div class="hd">איפה אתם בין <b>${r.n}</b> שחקני ${club.short}: <b>טופ ${top}%</b></div>
+     <div class="rows">
+       ${cell(avg, `ממוצע ניחושים · טוב מ-${beats(r.score, rankScore(me.p, me.w, me.s), true)}%`)}
+       ${cell(Math.round(me.w / me.p * 100) + "%", `הצלחה · מעל ${beats(r.win, me.w / me.p, false)}%`)}
+       ${cell(me.m, `רצף שיא · מעל ${beats(r.max, me.m, false)}%`)}
+       ${cell(me.p, `משחקים · מעל ${beats(r.played, me.p, false)}%`)}
+     </div>`;
+  el.classList.add("on");
 }
 
 function renderComm(st, myGuesses, iWon){
@@ -1075,6 +1135,7 @@ function openRep(){
   closeHelp();
   $("#repStat").textContent = ""; $("#repStat").className = "";
   $("#repSend").textContent = "שליחה"; $("#repSend").disabled = false;
+  $("#repRid").textContent = reporterId();
   rep.classList.add("on");
   setTimeout(()=> $("#repMsg").focus(), 60);
 }
@@ -1553,6 +1614,7 @@ function bootClub(slug){
   }
 
   primeStats(todayNo);     // לפני loadPuzzle — ראה את ההסבר שם
+  primeRanks();
   loadPuzzle(todayNo);
   track("view");
 }
