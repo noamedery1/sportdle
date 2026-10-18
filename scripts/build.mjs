@@ -375,6 +375,9 @@ const subst = {
   __BUILD__:         site.build,
   __SHARE_STYLE__:   site.shareStyle,
   __ANALYTICS_URL__: site.analyticsUrl || "",
+  /* כרטיס "לאפליקציה" אחרי ניצחון באתר — רק לחנות שבמצב live */
+  __IOS_URL__:       (site.iosApp || {}).state === "live" ? site.iosApp.url : "",
+  __PLAY_URL__:      (site.androidApp || {}).state === "live" ? site.androidApp.url : "",
   /* __CLUBS__ ו-__CLUB_ORDER__ אינם כאן יותר: engine.js קורא
      מ-window.SD, ש-boot.js מציב. ראה DATA למטה. */
   __RESET__:         JSON.stringify(site.reset || {}),
