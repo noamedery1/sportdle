@@ -62,6 +62,9 @@ jobs:
         run: |
           npm i --no-save playwright@^1.49.0
           npx playwright install --with-deps chromium
+          # ffmpeg כבר לא מותקן ב-ubuntu-latest. בלעדיו כל ריצת ראשון נפלה
+          # (11/10, 18/10) — וגם הפוסט עצמו לא יצא, כי הוא אחרי הסרטון.
+          sudo apt-get install -y --no-install-recommends ffmpeg
 
       - name: יצירת הסרטון
         if: steps.mode.outputs.video == 'true'

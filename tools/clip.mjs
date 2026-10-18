@@ -176,5 +176,6 @@ const ff = spawnSync("ffmpeg", [
   OUT
 ], { stdio: "inherit" });
 rmSync(dir, { recursive: true, force: true });
+if (ff.error) die(`ffmpeg לא הורץ: ${ff.error.message}`);
 if (ff.status !== 0) die("ffmpeg נכשל");
 log(`  נכתב ${OUT}`);
