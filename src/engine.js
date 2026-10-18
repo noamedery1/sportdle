@@ -988,6 +988,8 @@ function getJSON(q){
    השרת מחזיק שורה אחת לכל מזהה אקראי+מועדון (הסיכום שנשלח עם "done")
    ומחזיר רק 101 אחוזונים לכל מדד — בלי מזהים. המיקום שלי מחושב כאן,
    מהסטטיסטיקה המקומית, ולכן הוא נכון גם לפני שהשרת קלט את המשחק הזה. */
+/* מספר השחקנים לא מוצג במכוון — מספר קטן נראה חלש, והוא חושף את היקף
+   השימוש. r.n משמש רק כסף. */
 const RANK_SHOW = 20;   // פחות שחקנים במועדון = אחוזון חסר משמעות
 let rankReq = null;
 function primeRanks(){
@@ -1023,14 +1025,14 @@ function renderRank(r){
   if (!r || !r.ok || !me || (r.n || 0) < RANK_SHOW){ el.classList.remove("on"); return; }
   if (me.p < r.min){
     const left = r.min - me.p;
-    el.innerHTML = `<div class="hd">עוד <b>${left}</b> ${left === 1 ? "משחק" : "משחקים"} ונכנסים לדירוג של <b>${r.n}</b> שחקני ${club.short}</div>`;
+    el.innerHTML = `<div class="hd">עוד <b>${left}</b> ${left === 1 ? "משחק" : "משחקים"} ונכנסים לדירוג שחקני ${club.short}</div>`;
     el.classList.add("on"); return;
   }
   const top = Math.max(1, 100 - beats(r.score, rankScore(me.p, me.w, me.s), true));
   const avg = me.w ? (me.s / me.w).toFixed(1) : "—";
   const cell = (big, small) => `<div><b>${big}</b>${small}</div>`;
   el.innerHTML =
-    `<div class="hd">איפה אתם בין <b>${r.n}</b> שחקני ${club.short}: <b>טופ ${top}%</b></div>
+    `<div class="hd">איפה אתם בין שחקני ${club.short}: <b>טופ ${top}%</b></div>
      <div class="rows">
        ${cell(avg, `ממוצע ניחושים · טוב מ-${beats(r.score, rankScore(me.p, me.w, me.s), true)}%`)}
        ${cell(Math.round(me.w / me.p * 100) + "%", `הצלחה · מעל ${beats(r.win, me.w / me.p, false)}%`)}
