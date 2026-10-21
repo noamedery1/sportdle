@@ -2905,21 +2905,6 @@
    "target": true
   },
   {
-   "he": "עמית שמש",
-   "pos": "GK",
-   "nat": "IL",
-   "born": 1987,
-   "spells": [
-    [
-     2005,
-     2007
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": true
-  },
-  {
    "he": "רועי לויאן",
    "pos": "DF",
    "nat": "IL",
@@ -3349,6 +3334,21 @@
    ],
    "seasons": 2,
    "titles": 3,
+   "target": true
+  },
+  {
+   "he": "עמית שמש",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
    "target": true
   },
   {
