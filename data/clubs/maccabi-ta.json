@@ -213,7 +213,7 @@
   {
    "he": "שייע גלזר",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1927,
    "spells": [
     [
@@ -292,7 +292,7 @@
   {
    "he": "יצחק שניאור",
    "pos": "DF",
-   "nat": "PL",
+   "nat": "IL",
    "born": 1925,
    "spells": [
     [
@@ -401,7 +401,7 @@
   {
    "he": "משה עסיס",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1943,
    "spells": [
     [
@@ -938,7 +938,7 @@
   {
    "he": "דני נוימן",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1955,
    "spells": [
     [
