@@ -46,15 +46,19 @@ const NAT_HE = {
   KE:"קניה", AU:"אוסטרליה", JP:"יפן", KR:"דרום קוריאה", UZ:"אוזבקיסטן", AM:"ארמניה",
   AZ:"אזרבייג'ן", MD:"מולדובה", BY:"בלארוס", LT:"ליטא", LV:"לטביה", EE:"אסטוניה",
   AL:"אלבניה", XK:"קוסובו", CH:"שווייץ", AT:"אוסטריה", IS:"איסלנד", JM:"ג'מייקה",
-  CY:"קפריסין"
+  CY:"קפריסין",
+  /* בדיקה מלאה 24/10/2026 — זרים שהיו בלי לאום. אפליקציה ישנה מציגה את
+     הקוד עצמו (SL) עד העדכון, כי המפה ארוזה בקוד ולא בנתונים. */
+  SL:"סיירה לאון", PA:"פנמה", NC:"קלדוניה החדשה", LR:"ליבריה", TZ:"טנזניה",
+  TD:"צ'אד", NZ:"ניו זילנד"
 };
 const EU = ["UA","HU","MK","PT","ES","FR","GE","RU","RO","RS","HR","BA","SI","ME","BG",
             "PL","CZ","SK","NL","BE","DE","IT","EN","SC","IE","SE","NO","DK","FI","GR",
             "TR","AM","AZ","MD","BY","LT","LV","EE","AL","XK","CH","AT","IS","CY"];
-const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE","ZM","MG","CV","GW","GM"];
+const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE","ZM","MG","CV","GW","GM","SL","LR","TZ","TD"];
 const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC","SR","BO"];
-const NA = ["US","CA","MX","JM","GT","CR","TT","MQ","GP"];
-const AS = ["JP","KR","UZ","AU"];
+const NA = ["US","CA","MX","JM","GT","CR","TT","MQ","GP","PA"];
+const AS = ["JP","KR","UZ","AU","NZ","NC"];
 const REGION = { IL: "ME" };
 for (const c of EU) REGION[c] = "EU";
 for (const c of AF) REGION[c] = "AF";

@@ -207,14 +207,25 @@ const count = new Map();
 for (const p of parsed) count.set(p.he, (count.get(p.he) || 0) + 1);
 for (const p of parsed) if (count.get(p.he) > 1) p.he = p.title.includes("(") ? p.title : `${p.he} (${p.born})`;
 
+/* תיקונים ידניים — config/names-israel.json, כמו names-<club>.json במועדונים.
+   ויקיפדיה טועה לפעמים בשדה אחד (שנת עלייה בתור שנת לידה), ושחקן מהסגל
+   המורחב שלא הופיע במשחק רשמי נרשם בלי הופעות: { "drop": true } מוציא אותו. */
+const FIX = readJSON("config/names-israel.json", {});
+const fixOf = he => Object.entries(FIX).find(([k]) => !k.startsWith("_") && normName(k) === normName(he))?.[1];
+
 /* שחקן חייב שנה בנבחרת — זה עמוד השדרה של spells ושל "הופעה 1" */
-const players = parsed.filter(p => p.from && p.pos).map(p => ({
-  he: p.he, pos: p.pos, nat: "IL", born: p.born,
-  spells: [[p.from, Math.max(p.from, p.to || p.from)]],
-  titles: 0, caps: p.caps, club: p.club, clubs: [...new Set(p.clubs.map(c => canon(c.key)))],
-  target: !!(p.born && p.caps >= TEAM.minCaps),
-  aliases: p.title !== p.he ? [p.title] : []
-}));
+const players = parsed.filter(p => p.from && p.pos && !fixOf(p.he)?.drop).map(p => {
+  const fix = fixOf(p.he) || {};
+  const q = { ...p, ...fix };
+  const from = fix.spells ? fix.spells[0][0] : q.from;
+  return {
+    he: q.he, pos: q.pos, nat: "IL", born: q.born,
+    spells: fix.spells || [[from, Math.max(from, q.to || from)]],
+    titles: 0, caps: q.caps, club: q.club, clubs: [...new Set([...p.clubs.map(c => canon(c.key)), ...(fix.club ? [fix.club] : [])])],
+    target: fix.target ?? !!(q.born && q.caps >= TEAM.minCaps),
+    aliases: p.title !== q.he ? [p.title] : []
+  };
+});
 const dropped = parsed.length - players.length;
 
 /* ---------- 4. לוח — append-only, כמו במועדונים ---------- */

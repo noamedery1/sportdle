@@ -601,14 +601,10 @@
     [
      1979,
      1979
-    ],
-    [
-     2008,
-     2008
     ]
    ],
-   "seasons": 2,
-   "titles": 3,
+   "seasons": 1,
+   "titles": 1,
    "target": true
   },
   {
@@ -3490,7 +3486,7 @@
    "he": "יהונתן זדה",
    "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1988,
    "spells": [
     [
      2008,
@@ -4353,7 +4349,7 @@
   {
    "he": "איברהים באנגורה",
    "pos": "FW",
-   "nat": null,
+   "nat": "SL",
    "born": 1989,
    "spells": [
     [
@@ -6505,9 +6501,9 @@
   },
   {
    "he": "גלאופילו וליגטר",
-   "pos": "MF",
-   "nat": "IL",
-   "born": null,
+   "pos": "FW",
+   "nat": "SR",
+   "born": 1999,
    "spells": [
     [
      2022,
@@ -6694,7 +6690,7 @@
   {
    "he": "אדוארדו גררו",
    "pos": "FW",
-   "nat": null,
+   "nat": "PA",
    "born": 2000,
    "spells": [
     [
@@ -7234,7 +7230,7 @@
   {
    "he": "ז'קוב ז'נו",
    "pos": "MF",
-   "nat": null,
+   "nat": "NC",
    "born": 2000,
    "spells": [
     [
@@ -7414,7 +7410,7 @@
   {
    "he": "איילסון טבארש",
    "pos": "MF",
-   "nat": null,
+   "nat": "CV",
    "born": 1998,
    "spells": [
     [
@@ -7655,7 +7651,7 @@
    "he": "עדו זברו",
    "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 2008,
    "spells": [
     [
      2026,
