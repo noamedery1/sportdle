@@ -47,7 +47,7 @@
   {
    "he": "אליהו עופר",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1944,
    "spells": [
     [
@@ -107,7 +107,7 @@
   {
    "he": "אברהם נומה",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1947,
    "spells": [
     [
@@ -342,7 +342,7 @@
   {
    "he": "ויקטור סרוסי",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1944,
    "spells": [
     [
@@ -453,7 +453,7 @@
   {
    "he": "סמי מלכה",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1963,
    "spells": [
     [
@@ -648,7 +648,7 @@
   {
    "he": "אריה אלטר",
    "pos": "GK",
-   "nat": null,
+   "nat": "IL",
    "born": 1961,
    "spells": [
     [
@@ -6485,7 +6485,7 @@
   {
    "he": "ג'ימי מרין",
    "pos": "MF",
-   "nat": null,
+   "nat": "CR",
    "born": 1997,
    "spells": [
     [
@@ -7728,7 +7728,7 @@
   {
    "he": "מגומד-שאפי סוליימאנוב",
    "pos": "MF",
-   "nat": null,
+   "nat": "RU",
    "born": 1999,
    "spells": [
     [

@@ -144,7 +144,7 @@
   {
    "he": "ניסים אלמליח",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1928,
    "spells": [
     [
@@ -313,7 +313,7 @@
   {
    "he": "ויקטור סרוסי",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1944,
    "spells": [
     [
@@ -2453,7 +2453,7 @@
   {
    "he": "זיו קבדה",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1978,
    "spells": [
     [
@@ -6153,7 +6153,7 @@
   {
    "he": "ליוואי גארסיה",
    "pos": "FW",
-   "nat": null,
+   "nat": "TT",
    "born": 1997,
    "spells": [
     [
@@ -6799,7 +6799,7 @@
   {
    "he": "חגי גולדנברג",
    "pos": "DF",
-   "nat": null,
+   "nat": "IL",
    "born": 1990,
    "spells": [
     [

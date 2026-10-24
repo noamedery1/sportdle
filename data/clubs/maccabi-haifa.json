@@ -93,7 +93,7 @@
   {
    "he": "ג'וני הרדי",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1934,
    "spells": [
     [
@@ -108,7 +108,7 @@
   {
    "he": "אברהם מנצ'ל",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1950,
    "spells": [
     [
@@ -186,7 +186,7 @@
   {
    "he": "חיים לוין",
    "pos": "GK",
-   "nat": null,
+   "nat": "IL",
    "born": 1937,
    "spells": [
     [
@@ -988,7 +988,7 @@
   {
    "he": "ולדימיר בסונוב",
    "pos": "DF",
-   "nat": null,
+   "nat": "UA",
    "born": 1958,
    "spells": [
     [
@@ -1663,7 +1663,7 @@
   {
    "he": "ולדימיר נידרגאוס",
    "pos": "FW",
-   "nat": null,
+   "nat": "RU",
    "born": 1967,
    "spells": [
     [
@@ -5679,7 +5679,7 @@
   {
    "he": "ניקולה דרינצ'יץ'",
    "pos": "MF",
-   "nat": null,
+   "nat": "ME",
    "born": 1984,
    "spells": [
     [
@@ -5893,7 +5893,7 @@
   {
    "he": "מוחמד עוואד",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1997,
    "spells": [
     [
@@ -7782,7 +7782,7 @@
   {
    "he": "חמזה שיבלי",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 2004,
    "spells": [
     [
