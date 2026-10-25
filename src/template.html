@@ -1326,6 +1326,11 @@ button.wa,button.act.wa{background:#15803D}
 #rateApp .stars,#notifyApp .stars,#getApp .stars{color:#F5B301;font-size:17px;letter-spacing:1px;flex:none}
 #rateApp:hover,#rateApp:focus-visible,#notifyApp:hover,#notifyApp:focus-visible,#getApp:hover,#getApp:focus-visible{border-style:solid;color:var(--ui-ink,#121214)}
 #rateApp[hidden],#notifyApp[hidden],#getApp[hidden]{display:none}
+/* באתר: אין חידה יומית, ולכן גם לא רצף, ארכיון ו"אתמול" (WEB_GATE ב-engine.js) */
+[data-web] #archBtn,[data-web] #streak,[data-web] #yday{display:none!important}
+#webGate{margin:0 auto 14px}
+#webGate.wall{padding:22px 16px;border:2px solid var(--brand)}
+#webGate.wall b{font-size:17px}
 </style>
 </head>
 <body>
