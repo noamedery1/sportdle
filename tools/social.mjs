@@ -56,10 +56,15 @@ const lines = [`SportDle · חידה #${todayNo}`, ""];
 if (rows.length) {
   lines.push(`התשובות של אתמול (#${todayNo - 1}):`, ...rows, "");
 }
-lines.push("החידה של היום כבר באוויר. שמונה ניסיונות.");
-lines.push("חמישה מועדונים, לכל אחד מאגר ולוח משלו.");
+/* החידה היומית קיימת רק באפליקציה (באתר: 3 משחקים אקראיים), ולכן
+   הפוסט שולח לחנויות ולא לאתר. */
+lines.push("החידה של היום כבר באוויר — באפליקציה. שמונה ניסיונות.");
+lines.push("חמישה מועדונים ונבחרת ישראל, לכל אחד לוח משלו.");
 lines.push("");
-lines.push(`${base}/`);
+const live = a => a && a.state === "live" && a.url;
+if (live(site.iosApp))     lines.push(`אייפון: ${site.iosApp.url}`);
+if (live(site.androidApp)) lines.push(`אנדרואיד: ${site.androidApp.url}`);
+if (!live(site.iosApp) && !live(site.androidApp)) lines.push(`${base}/`);
 const message = lines.join("\n");
 
 /* ---------- שליחה ---------- */
