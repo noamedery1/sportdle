@@ -25,8 +25,8 @@ export function writeClubPages({ html, data, order, siteUrl }) {
   for (const slug of order) {
     const c = data[slug];
     if (!c) continue;
-    const title = `${c.game} · חידת השחקן היומית של ${c.he}`;
-    const desc = `${c.he}: שחקן אחד מסתורי בכל יום, שמונה ניסיונות. ` +
+    const title = `${c.game} · משחק ניחוש שחקני ${c.he}`;
+    const desc = `טריוויה ל${c.he}: נחשו את השחקן המסתורי בשמונה ניסיונות. ` +
                  (c.kind === "national" ? `עמדה, מועדון עיקרי, הופעה ראשונה, הופעות ושנת לידה.`
                                          : `עמדה, לאום, עונה ראשונה, תארים ושנת לידה.`);
 

@@ -176,6 +176,8 @@ tr:nth-child(2n+3) td{background:var(--zebra)}
 td:first-child{min-width:7.5em}
 .nw{white-space:nowrap}
 @media (max-width:479px){table{font-size:15px}th,td{padding:10px 10px}}
+.cta a{display:block;margin:0 0 26px;padding:14px 18px;border-radius:12px;background:var(--brand);color:var(--ink,#121214);text-decoration:none;font-weight:700;line-height:1.4}
+.cta a b{display:block}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 30px}
 .fact{background:linear-gradient(var(--brand),var(--brand)) top/100% 5px no-repeat,var(--surface);border:1px solid var(--ui-line);
   border-radius:10px;padding:15px 14px 12px;line-height:1.35}
@@ -1305,6 +1307,7 @@ ${rows.join("\n")}
 
     const body = `
   <p>${esc(playerSentence(p, club))}</p>
+  <p class="cta"><a href="${up(3)}${slug}/"><b>חושבים שתזהו אותו לפי רמזים?</b> נחשו את שחקני ${esc(club.he)} ב-${esc(club.game)} ←</a></p>
   <div class="facts">
 ${facts.map(([k, v]) => `    <div class="fact"><span class="k">${esc(k)}</span><span class="v">${esc(v)}</span></div>`).join("\n")}
   </div>
@@ -1328,15 +1331,16 @@ ${mates.length ? `  <h2>מאותה תקופה ב${esc(club.he)}</h2>
 
   <h2>קישורים</h2>
   <p><a href="${up(1)}">כל שחקני ${esc(club.he)}</a> ·
-     <a href="${up(3)}${slug}/">${esc(club.game)} — החידה של היום</a> ·
+     <a href="${up(3)}${slug}/">לשחק ${esc(club.game)}</a> ·
      <a href="${up(3)}archive/">ארכיון החידות</a> ·
      <a href="${up(3)}">לעמוד הראשי</a></p>`;
 
     add(rec.path, shell({
       depth: 3, path: rec.path, base, siteName: site.name, club: { slug, colors: data[slug].colors },
-      title: `${p.he} · ${club.he} · ${site.name}`,
-      desc: `${p.he} במאגר של ${club.he}: ` +
-            [POS_HE[p.pos], spells, `${seasonsIn(p.spells)} עונות`].filter(Boolean).join(", ") + ".",
+      title: `${p.he} · שחקן ${club.he} (${season(af)}–${season(al)}) · ${site.name}`,
+      desc: `${p.he} ב${club.he}: ` +
+            [POS_HE[p.pos], spells, `${seasonsIn(p.spells)} עונות`].filter(Boolean).join(", ") +
+            `. תזהו אותו לפי רמזים? נחשו ב${club.game}.`,
       h1: p.he, kicker: `${club.he} · ${spells}`,
       crumbs: [HOME, { he: "שחקנים", path: "players/" },
                { he: club.he, path: `players/${slug}/` },
