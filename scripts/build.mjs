@@ -41,6 +41,7 @@ const NAT_HE = {
      הוצגו במשחק כקוד גולמי — "ZM" בתא הלאום במקום "זמביה" — וחמישה
      מהם בבריכות התשובות, כלומר בחידה עצמה ולא רק בניחוש. */
   NE:"ניז'ר", ZM:"זמביה", MG:"מדגסקר", CV:"כף ורדה", GW:"גינאה ביסאו", GM:"גמביה",
+  PA:"פנמה", GY:"גיאנה", GA:"גבון", KZ:"קזחסטן",
   SR:"סורינאם", BO:"בוליביה", GT:"גואטמלה", CR:"קוסטה ריקה",
   TT:"טרינידד וטובגו", MQ:"מרטיניק", GP:"גוואדלופ",
   KE:"קניה", AU:"אוסטרליה", JP:"יפן", KR:"דרום קוריאה", UZ:"אוזבקיסטן", AM:"ארמניה",
@@ -50,10 +51,10 @@ const NAT_HE = {
 };
 const EU = ["UA","HU","MK","PT","ES","FR","GE","RU","RO","RS","HR","BA","SI","ME","BG",
             "PL","CZ","SK","NL","BE","DE","IT","EN","SC","IE","SE","NO","DK","FI","GR",
-            "TR","AM","AZ","MD","BY","LT","LV","EE","AL","XK","CH","AT","IS","CY"];
-const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE","ZM","MG","CV","GW","GM"];
-const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC","SR","BO"];
-const NA = ["US","CA","MX","JM","GT","CR","TT","MQ","GP"];
+            "TR","AM","AZ","MD","BY","LT","LV","EE","AL","XK","CH","AT","IS","CY","KZ"];   // KZ: אופ"א, כמו AM/AZ/GE
+const AF = ["GH","NG","CM","CI","SN","MA","TN","DZ","EG","ZA","CD","AO","ML","GN","TG","BJ","ZW","KE","NE","ZM","MG","CV","GW","GM","GA"];
+const SA = ["BR","AR","CO","UY","CL","PY","VE","PE","EC","SR","BO","GY"];
+const NA = ["US","CA","MX","JM","GT","CR","TT","MQ","GP","PA"];
 const AS = ["JP","KR","UZ","AU"];
 const REGION = { IL: "ME" };
 for (const c of EU) REGION[c] = "EU";
@@ -405,9 +406,52 @@ for (const [k, v] of Object.entries(subst)) engine = engine.split(k).join(v);
 
    גיבוב של המאגר עצמו משתנה בדיוק כשהמאגר משתנה, ונשאר זהה
    בין בניות של אותם נתונים — כך שאין רענון מדומה בכל פריסה. */
-const body = JSON.stringify({ order, clubs: data, teamOrder, teams });
+/* ---------- לוח הגרידים (config/grid-schedule.json) ----------
+   הגריד נגזר מהמאגר, ולכן כל עדכון נתונים היה מחליף לכולם את הגריד
+   של היום ומוחק התקדמות — ושני חברים עם גרסאות נתונים שונות היו
+   רואים גרידים שונים תחת אותו מספר. הפתרון זהה ללוח החידות:
+   **התנאים של כל יום נקבעים פעם אחת ונשמרים, append-only.**
+   התשובות עדיין מחושבות מהמאגר (תיקון שחקן מתקן גם את הגריד).
+   כאן גם הבדיקה: משבצת עתידית בלי 3 תשובות מפילה את הבנייה. */
+await import("../src/grid.js");
+const GR = globalThis.SportGrid;
+const gSD = { order, clubs: data, teams };
+const gIdx = GR.buildIndex(gSD), gConds = GR.conditions(gSD);
+const GRID_AHEAD = 120;
+const gToday = Math.floor((Date.now() - Date.UTC(2026, 10, 11)) / 86400000);
+const gridSched = readJSON("config/grid-schedule.json", {});
+for (const slug of order) {
+  const list = gridSched[slug] = gridSched[slug] || [];
+  for (let n = list.length; n <= gToday + GRID_AHEAD; n++) {
+    /* אותו סט תנאים לא חוזר תוך 90 יום (בלי זה ~40% מהימים חזרו על סט) */
+    const setOf = str => str.replace("|", ",").split(",").sort().join(",");
+    const recent = new Set(list.slice(-90).map(setOf));
+    let str = null;
+    for (let k = 0; k < 50 && !str; k++) {
+      const g = GR.makeGrid(gIdx, gConds, n + 100000 * k, slug);
+      if (!g) continue;
+      const cand = g.rows.map(c => c.id).join(",") + "|" + g.cols.map(c => c.id).join(",");
+      if (!recent.has(setOf(cand)) || k === 49) str = cand;
+    }
+    if (!str) die(`גריד ${slug} #${n + 1}: המחולל לא מצא גריד`);
+    list.push(str);
+  }
+  for (let n = Math.max(0, gToday); n < list.length; n++) {
+    const g = GR.fromIds(gConds, list[n], slug, n);
+    if (!g) die(`גריד ${slug} #${n + 1}: תנאי לא מוכר ב-${list[n]}`);
+    for (const a of g.rows) for (const c of g.cols) {
+      const ans = GR.answers(gIdx, a, c, g.home);
+      if (ans.length < 3 || !ans.some(GR.known))
+        die(`גריד ${slug} #${n + 1}: "${a.he} × ${c.he}" — ${ans.length} תשובות. תיקון נתונים שבר משבצת מתוזמנת.`);
+    }
+  }
+}
+writeJSON("config/grid-schedule.json", gridSched);
+log(`גריד: ${order.length} מועדונים · עד #${gToday + GRID_AHEAD + 1} · כל המשבצות מ-#${gToday + 1} עם 3+ תשובות`);
+
+const body = JSON.stringify({ order, clubs: data, teamOrder, teams, grids: gridSched });
 const hash = createHash("sha1").update(body).digest("hex").slice(0, 10);
-const DATA = { v: `${site.build}-${hash}`, order, clubs: data, teamOrder, teams };
+const DATA = { v: `${site.build}-${hash}`, order, clubs: data, teamOrder, teams, grids: gridSched };
 
 /* הקובץ עצמו נכתב רק אחרי rmSync("dist") שבהמשך — כתיבה כאן
    הייתה נמחקת בשקט, וזה לא מפיל שום בדיקה. */
@@ -433,6 +477,7 @@ html = html
   /* מחולל שאלות המספרים. נשלח המחולל ולא ~6,000 השאלות — ראה
      את ההסבר בראש src/quiz.js. */
   .split("__QUIZ__").join(readText("src/quiz.js", ""))
+  .split("__GRID__").join(readText("src/grid.js", ""))
   /* באנר האפליקציה — מקור אחד עם דפי התוכן. ראה content.mjs. */
   .split("__APP_BANNER__").join(appBannerHtml(site))
   .split("__IOS_META__").join(iosMetaHtml(site))
