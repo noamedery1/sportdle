@@ -52,7 +52,7 @@
   ]
  },
  "counts": {
-  "players": 482,
+  "players": 480,
   "targets": 215
  },
  "players": [
@@ -2298,8 +2298,8 @@
   },
   {
    "he": "אגאפור אריק",
-   "pos": null,
-   "nat": null,
+   "pos": "DF",
+   "nat": "NG",
    "born": null,
    "spells": [
     [
@@ -2355,7 +2355,7 @@
    "he": "אסף אברהמי",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2003,
@@ -2823,7 +2823,7 @@
    "he": "אלעד צחקו",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1984,
    "spells": [
     [
      2004,
@@ -3451,7 +3451,7 @@
    "he": "מור ממן",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1986,
    "spells": [
     [
      2007,
@@ -4059,9 +4059,9 @@
   },
   {
    "he": "ולדימיר דוואלישוילי",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
+   "pos": "FW",
+   "nat": "GE",
+   "born": 1986,
    "spells": [
     [
      2010,
@@ -4168,24 +4168,6 @@
    "target": false,
    "aliases": [
     "טיאגו דה סילבה דוטרה"
-   ]
-  },
-  {
-   "he": "כליבאת מוחמד",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2010,
-     2010
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "כליבאת מוחמד"
    ]
   },
   {
@@ -4335,7 +4317,8 @@
    "titles": 2,
    "target": true,
    "aliases": [
-    "Mohammed Kalibat"
+    "Mohammed Kalibat",
+    "כליבאת מוחמד"
    ]
   },
   {
@@ -5061,7 +5044,7 @@
    "he": "מיכה לאוטה",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2014,
@@ -5214,9 +5197,9 @@
   },
   {
    "he": "תאמש פריסקין",
-   "pos": null,
+   "pos": "FW",
    "nat": "HU",
-   "born": null,
+   "born": 1986,
    "spells": [
     [
      2014,
@@ -5325,9 +5308,9 @@
   },
   {
    "he": "טל בומשטיין",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1995,
    "spells": [
     [
      2015,
@@ -5922,6 +5905,21 @@
    "aliases": [
     "מיכאל אשר בן ברוך"
    ]
+  },
+  {
+   "he": "מריו מוסה",
+   "pos": "DF",
+   "nat": "HR",
+   "born": 1990,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "ניקיטה רוקאביציה",
@@ -6539,7 +6537,7 @@
   {
    "he": "קארים פריי",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "CH",
    "born": 1993,
    "spells": [
     [
@@ -6551,25 +6549,8 @@
    "titles": 0,
    "target": false,
    "aliases": [
-    "קארים פריי"
-   ]
-  },
-  {
-   "he": "קרים פריי",
-   "pos": "FW",
-   "nat": "TR",
-   "born": 1993,
-   "spells": [
-    [
-     2019,
-     2019
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "Kerim Frei"
+    "קארים פריי",
+    "קרים פריי"
    ]
   },
   {
@@ -6663,7 +6644,7 @@
    "he": "גושוע כהן",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2020,
@@ -7350,7 +7331,7 @@
   {
    "he": "עלי מוחמד",
    "pos": "MF",
-   "nat": null,
+   "nat": "NE",
    "born": 1995,
    "spells": [
     [
@@ -8058,9 +8039,9 @@
   },
   {
    "he": "גיא מלמד",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2025,
@@ -8352,24 +8333,6 @@
    ]
   },
   {
-   "he": "בנסון מנואל",
-   "pos": null,
-   "nat": "BE",
-   "born": null,
-   "spells": [
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "בנסון הדילאזיו מנואל"
-   ]
-  },
-  {
    "he": "ג'ורג'ה יובאנוביץ'",
    "pos": "FW",
    "nat": "RS",
@@ -8583,7 +8546,8 @@
    "titles": 0,
    "target": false,
    "aliases": [
-    "Manuel Benson"
+    "Manuel Benson",
+    "בנסון מנואל"
    ]
   },
   {
@@ -8664,7 +8628,7 @@
    "he": "איילון ברוך",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 2007,
    "spells": [
     [
      2027,
@@ -8718,7 +8682,7 @@
    "he": "גלן אלוין",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 2007,
    "spells": [
     [
      2027,
@@ -8770,9 +8734,9 @@
   },
   {
    "he": "ינון פיינגזיכט",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 2007,
    "spells": [
     [
      2027,
@@ -8806,9 +8770,9 @@
   },
   {
    "he": "נבות רטנר",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2007,
    "spells": [
     [
      2027,

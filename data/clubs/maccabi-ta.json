@@ -71,7 +71,7 @@
   ]
  },
  "counts": {
-  "players": 487,
+  "players": 490,
   "targets": 205
  },
  "players": [
@@ -967,6 +967,21 @@
    "aliases": [
     "Eli Driks"
    ]
+  },
+  {
+   "he": "אלי מיאלי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1955,
+   "spells": [
+    [
+     1982,
+     1982
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "מוטי איוניר",
@@ -2122,7 +2137,8 @@
    "titles": 3,
    "target": true,
    "aliases": [
-    "Rodrigo Goldberg"
+    "Rodrigo Goldberg",
+    "גולדברג רודריגו"
    ]
   },
   {
@@ -2412,6 +2428,21 @@
    "aliases": [
     "Felix Halfon"
    ]
+  },
+  {
+   "he": "אנדריי טיחונוב",
+   "pos": "MF",
+   "nat": "RU",
+   "born": 1970,
+   "spells": [
+    [
+     2001,
+     2001
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
   },
   {
    "he": "ברוך דגו",
@@ -2736,24 +2767,6 @@
    ]
   },
   {
-   "he": "ברונו רייס",
-   "pos": "MF",
-   "nat": "BR",
-   "born": 1978,
-   "spells": [
-    [
-     2003,
-     2005
-    ]
-   ],
-   "seasons": 3,
-   "titles": 2,
-   "target": false,
-   "aliases": [
-    "Bruno Reis"
-   ]
-  },
-  {
    "he": "ג'ון פנטסיל",
    "pos": "DF",
    "nat": "GH",
@@ -2772,24 +2785,6 @@
     "גון פנסטיל",
     "ג'ון פנטסיל",
     "John Paintsil"
-   ]
-  },
-  {
-   "he": "גולדברג רודריגו",
-   "pos": null,
-   "nat": null,
-   "born": null,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "גולדברג רודריגו"
    ]
   },
   {
@@ -2812,9 +2807,9 @@
   },
   {
    "he": "דן משען",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
-   "born": null,
+   "born": 1976,
    "spells": [
     [
      2003,
@@ -2870,9 +2865,9 @@
   },
   {
    "he": "יעקב אבדיאב",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2003,
@@ -3014,7 +3009,8 @@
    "titles": 2,
    "target": true,
    "aliases": [
-    "רייס לינו ברונו"
+    "רייס לינו ברונו",
+    "ברונו רייס"
    ]
   },
   {
@@ -3053,9 +3049,9 @@
   },
   {
    "he": "אדורנו אלדו",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "FW",
+   "nat": "PY",
+   "born": 1982,
    "spells": [
     [
      2004,
@@ -3203,7 +3199,7 @@
    "he": "אדוארדו מרקוש",
    "pos": null,
    "nat": "BR",
-   "born": null,
+   "born": 1976,
    "spells": [
     [
      2005,
@@ -3214,7 +3210,8 @@
    "titles": 1,
    "target": false,
    "aliases": [
-    "אדוארדו מרקוש"
+    "אדוארדו מרקוש",
+    "אדוארדו מרקש"
    ]
   },
   {
@@ -3441,7 +3438,7 @@
    "he": "רומן חאוסטוב",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1985,
    "spells": [
     [
      2005,
@@ -3553,7 +3550,7 @@
   },
   {
    "he": "אליאור וקנין",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
    "born": 1986,
    "spells": [
@@ -3586,6 +3583,21 @@
    "aliases": [
     "אסף מנדס"
    ]
+  },
+  {
+   "he": "ארז אליאב",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1977,
+   "spells": [
+    [
+     2006,
+     2006
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "בלסינג קאקו",
@@ -3626,7 +3638,7 @@
    "he": "הנרי מקינאווה",
    "pos": null,
    "nat": "NG",
-   "born": null,
+   "born": 1977,
    "spells": [
     [
      2006,
@@ -3752,9 +3764,24 @@
    ]
   },
   {
+   "he": "גיא שמיר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1978,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "דזאן איליץ",
    "pos": null,
-   "nat": "IL",
+   "nat": null,
    "born": null,
    "spells": [
     [
@@ -3771,9 +3798,9 @@
   },
   {
    "he": "חי אטיאס",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1987,
    "spells": [
     [
      2007,
@@ -4150,6 +4177,21 @@
    ]
   },
   {
+   "he": "ז'וזה ראמליו",
+   "pos": "MF",
+   "nat": "BR",
+   "born": 1980,
+   "spells": [
+    [
+     2008,
+     2008
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "יאניק קאמנן",
    "pos": "FW",
    "nat": "FR",
@@ -4304,7 +4346,7 @@
    "he": "אורי ביטון",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1987,
    "spells": [
     [
      2009,
@@ -4362,7 +4404,7 @@
    "he": "אריק הורט",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1987,
    "spells": [
     [
      2009,
@@ -4489,9 +4531,9 @@
   },
   {
    "he": "סקוט סילי",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
+   "pos": "FW",
+   "nat": "TT",
+   "born": 1981,
    "spells": [
     [
      2009,
@@ -4692,7 +4734,7 @@
    "he": "מייק חן",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1990,
    "spells": [
     [
      2010,
@@ -4726,7 +4768,7 @@
   },
   {
    "he": "ריף פרץ",
-   "pos": "MF",
+   "pos": "DF",
    "nat": "IL",
    "born": 1991,
    "spells": [
@@ -4745,7 +4787,7 @@
   },
   {
    "he": "אלירן עטר",
-   "pos": "MF",
+   "pos": "FW",
    "nat": "IL",
    "born": 1987,
    "spells": [
@@ -4917,7 +4959,7 @@
    "he": "מישל נחמיאס",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1991,
    "spells": [
     [
      2011,
@@ -5104,7 +5146,7 @@
    "he": "טקלה אסמלש",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1992,
    "spells": [
     [
      2012,
@@ -5232,7 +5274,7 @@
   },
   {
    "he": "רחמים צ'קול",
-   "pos": "MF",
+   "pos": "DF",
    "nat": "IL",
    "born": 1988,
    "spells": [
@@ -5438,7 +5480,7 @@
    "he": "דניאל לוי",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1993,
    "spells": [
     [
      2013,
@@ -5619,7 +5661,7 @@
    "he": "דניאל גרץ",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1994,
    "spells": [
     [
      2014,
@@ -6106,7 +6148,7 @@
    "he": "גאי אביב",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1996,
    "spells": [
     [
      2016,
@@ -6770,9 +6812,9 @@
   },
   {
    "he": "חביב אוחיון",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2018,
@@ -6960,7 +7002,7 @@
    "he": "פאדי נגאר",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2018,
@@ -6995,7 +7037,7 @@
   {
    "he": "אדוארדו גררו",
    "pos": "FW",
-   "nat": "IL",
+   "nat": "PA",
    "born": 2000,
    "spells": [
     [
@@ -7822,7 +7864,7 @@
    "he": "גויאגון פארפה",
    "pos": null,
    "nat": "CI",
-   "born": null,
+   "born": 2001,
    "spells": [
     [
      2023,
@@ -8020,7 +8062,7 @@
   {
    "he": "אורלנדו מוסקרה",
    "pos": "GK",
-   "nat": "IL",
+   "nat": "PA",
    "born": 1994,
    "spells": [
     [
@@ -8337,9 +8379,9 @@
   },
   {
    "he": "השאם ליוס",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 2000,
    "spells": [
     [
      2025,
@@ -8413,9 +8455,9 @@
   },
   {
    "he": "טייריס אסנטה",
-   "pos": null,
+   "pos": "DF",
    "nat": "NL",
-   "born": null,
+   "born": 2002,
    "spells": [
     [
      2025,
@@ -8841,9 +8883,9 @@
   },
   {
    "he": "איאון ניקולסקו",
-   "pos": null,
+   "pos": "FW",
    "nat": "RO",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2027,

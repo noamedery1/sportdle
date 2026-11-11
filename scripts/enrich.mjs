@@ -10,6 +10,7 @@
    ============================================================ */
 import { existsSync } from "node:fs";
 import { plausible } from "./lib/translit.mjs";
+import { NAT_HE_TO_ISO } from "./lib/nat-he.mjs";
 import {
   parseArgs, pickClubs, readJSON, writeJSON, log, warn, die,
   normName, normLatin, shortName, stripParen, hasYearDisambig, toSpells, seasonsIn, countTitles, season, nameVariants
@@ -261,7 +262,8 @@ for (const club of clubs) {
          הרמז במשחק הוא לאום כדורגלני, וזה מה שוויקיפדיה ו-worldfootball
          נותנים. מאותה סיבה בדיוק היא גם לא משמשת שומר בגשר המבני —
          "ישראל" מול "Croatia" אינה סתירה אלא שני דברים שונים. */
-      if (rec.natIso) { p.natIfa = rec.natIso; nNat++; }
+      const iso = rec.natIso ?? NAT_HE_TO_ISO[rec.natHe] ?? null;
+      if (iso) { p.natIfa = iso; nNat++; }
     }
     if (nBorn || nNat) log(`  דפי שחקן בהתאחדות: ${nBorn} שנות לידה · ${nNat} אזרחויות (לתיעוד, לא לתצוגה)`);
   }
@@ -571,8 +573,11 @@ for (const club of clubs) {
   const ifaStore = readJSON("data/raw/ifa-players.json", { players: {} }).players;
   for (const p of players) {
     if (p.nat != null || !p.ifaId) continue;
-    const natIfa = p.natIfa ?? ifaStore[p.ifaId]?.natIso;
+    const st = ifaStore[p.ifaId];
+    const natIfa = p.natIfa ?? st?.natIso ?? NAT_HE_TO_ISO[st?.natHe] ?? null;
     if (natIfa && !(natIfa === "IL" && p.foreign)) { p.nat = natIfa; p.src.push("ifa:nat"); }
+    /* אזרחות זרה שלא הצלחנו להמיר אינה "ישראלי" — עדיף בלי לאום מלאום שגוי */
+    else if (st?.natHe && st.natHe !== "ישראל") review.notes.push(`אזרחות לא ממופה "${st.natHe}": ${p.he}`);
     else if (p.foreign === false) { p.nat = "IL"; p.src.push("ifa:local"); }
   }
 
@@ -608,7 +613,9 @@ for (const club of clubs) {
       }
       const before = p.he;
       if (typeof val === "string") p.he = val;
-      else Object.assign(p, val);
+      else { const { addAliases, ...rest } = val; Object.assign(p, rest);
+        /* addAliases: איות נוסף שמופיע בוויקיפדיה (מחקר 11/11) — מוסיף, לא דורס */
+        for (const a of addAliases || []) if (!p.aliases.includes(a)) p.aliases.push(a); }
       /* spells שנקבעו ביד מנצחים גם על טבלת הקריירה. דריסה ידנית
          קיימת כדי לסתור מקור, ואיחוד אִתו היה מרוקן אותה מתוכן. */
       if (val && typeof val === "object" && val.spells) p.spellsManual = true;

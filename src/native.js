@@ -284,7 +284,8 @@
       if (open) { open.classList.remove("on"); return; }
       /* בלשונית הקרב — חזרה לחידה היומית, לא יציאה */
       const versus = document.querySelector("#versusView");
-      if (versus && !versus.classList.contains("hide")) {
+      const grid = document.querySelector("#gridView");
+      if ((versus && !versus.classList.contains("hide")) || (grid && !grid.classList.contains("hide"))) {
         const daily = document.querySelector('[data-tab="daily"], #tabDaily');
         if (daily) { daily.click(); return; }
       }

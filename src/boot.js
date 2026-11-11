@@ -55,6 +55,14 @@
         /* לוח החידות הוא append-only. התקצרות מזיזה חידות שפורסמו. */
         if (c.schedule.length < b.schedule.length) return false;
       }
+      /* לוח הגרידים — אותו כלל: append-only. מאגר מרוחק בלי grids
+         (אתר שעוד לא נפרס) או עם לוח קצר יותר היה מחזיר את המנוע לחישוב
+         עצמי, ובפועל מחליף גרידים שכבר פורסמו (QA 11/11: 113 מתוך 605). */
+      if (BUNDLED.grids) {
+        if (!cand.grids) return false;
+        for (var g in BUNDLED.grids)
+          if (!cand.grids[g] || cand.grids[g].length < BUNDLED.grids[g].length) return false;
+      }
       return true;
     } catch (e) { return false; }
   }

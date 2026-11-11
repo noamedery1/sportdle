@@ -43,7 +43,7 @@
   ]
  },
  "counts": {
-  "players": 505,
+  "players": 507,
   "targets": 214
  },
  "players": [
@@ -1271,7 +1271,7 @@
   },
   {
    "he": "רענן דרעי",
-   "pos": "DF",
+   "pos": "MF",
    "nat": "IL",
    "born": 1976,
    "spells": [
@@ -3303,6 +3303,21 @@
    "target": true
   },
   {
+   "he": "כריסטיאן פביאני",
+   "pos": "FW",
+   "nat": "AR",
+   "born": 1983,
+   "spells": [
+    [
+     2007,
+     2007
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
    "he": "מיכאל זנדברג",
    "pos": "MF",
    "nat": "IL",
@@ -4017,7 +4032,7 @@
   },
   {
    "he": "צחי אליחן",
-   "pos": "MF",
+   "pos": "FW",
    "nat": "IL",
    "born": 1991,
    "spells": [
@@ -5448,7 +5463,7 @@
   },
   {
    "he": "עוז ראלי",
-   "pos": "MF",
+   "pos": "DF",
    "nat": "IL",
    "born": 1987,
    "spells": [
@@ -6000,6 +6015,21 @@
    "target": true
   },
   {
+   "he": "קרלוס קוויאר",
+   "pos": "DF",
+   "nat": "ES",
+   "born": 1981,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "רועי פדידה",
    "pos": "FW",
    "nat": "IL",
@@ -6418,7 +6448,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "מתאוסיניו"
+   ]
   },
   {
    "he": "ניקו אולסק",
@@ -7817,9 +7850,9 @@
   },
   {
    "he": "זיו בן שימול",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 2004,
    "spells": [
     [
      2027,
