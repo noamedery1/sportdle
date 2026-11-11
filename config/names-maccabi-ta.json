@@ -473,7 +473,9 @@
     "born": 1976,
     "addAliases": [
       "אדוארדו מרקש"
-    ]
+    ],
+    "pos": "FW",
+    "guessOnly": true
   },
   "רומן חאוסטוב": {
     "born": 1985
@@ -624,5 +626,32 @@
     "addAliases": [
       "ברונו רייס"
     ]
+  },
+  "קאקו בלסינג": {
+    "pos": "MF",
+    "guessOnly": true,
+    "born": 1978
+  },
+  "דזאן איליץ": {
+    "born": 1976,
+    "guessOnly": true,
+    "pos": "MF"
+  },
+  "ריור פיליפנקה": {
+    "born": 1988,
+    "guessOnly": true,
+    "pos": "DF"
+  },
+  "יצחק נחמיאס": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "נח רזניק": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "אמנון אהרונסקינד": {
+    "nat": "IL",
+    "guessOnly": true
   }
 }

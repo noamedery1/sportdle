@@ -334,7 +334,9 @@
     "born": 1984
   },
   "מור ממן": {
-    "born": 1986
+    "born": 1986,
+    "pos": "DF",
+    "guessOnly": true
   },
   "ולדימיר דוואלישוילי": {
     "pos": "FW",
@@ -361,7 +363,9 @@
     "guessOnly": true
   },
   "גושוע כהן": {
-    "born": 1992
+    "born": 1992,
+    "pos": "GK",
+    "guessOnly": true
   },
   "עלי מוחמד": {
     "nat": "NE"
@@ -426,5 +430,51 @@
   },
   "סרגיי קנדאורוב": {
     "born": 1972
+  },
+  "אסמאעיל ריאן": {
+    "pin": {
+      "pos": "FW",
+      "aliases": [
+        "אסמאעיל ריאן",
+        "איסמעיל ריאן",
+        "Ismaeel Ryan"
+      ]
+    }
+  },
+  "יחזקאל גרשוני": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "איתי קורן": {
+    "born": 1978,
+    "guessOnly": true
+  },
+  "מאור גנח": {
+    "born": 1984,
+    "guessOnly": true,
+    "pos": "MF"
+  },
+  "במידלה ימפולסקי": {
+    "born": 1988,
+    "guessOnly": true
+  },
+  "דניאל ססארץ": {
+    "born": 1983,
+    "guessOnly": true,
+    "pos": "FW"
+  },
+  "אמיר נסראלדין": {
+    "born": 1993,
+    "guessOnly": true
+  },
+  "לורנצו סימיץ": {
+    "born": 1996,
+    "guessOnly": true,
+    "pos": "DF"
+  },
+  "יילה בטאיי": {
+    "born": 1999,
+    "guessOnly": true,
+    "pos": "DF"
   }
 }

@@ -504,7 +504,9 @@
     "born": 1986
   },
   "יניב ציציאן": {
-    "born": 1979
+    "born": 1979,
+    "pos": "DF",
+    "guessOnly": true
   },
   "אלירן אפריאט": {
     "born": 1987
@@ -538,7 +540,9 @@
     "guessOnly": true
   },
   "סראג נסאר": {
-    "born": 1990
+    "born": 1990,
+    "pos": "MF",
+    "guessOnly": true
   },
   "שי לוק": {
     "born": 1990
@@ -748,5 +752,56 @@
     "addAliases": [
       "קאקו בלסינג"
     ]
+  },
+  "רוני מוסקוביץ'": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "אסף רחמים": {
+    "born": 1971,
+    "guessOnly": true,
+    "pos": "GK"
+  },
+  "אקקי מקוצבזה": {
+    "born": 1980,
+    "guessOnly": true,
+    "pos": "FW"
+  },
+  "קינגס קאוגנה": {
+    "born": 1999,
+    "guessOnly": true,
+    "pos": "MF"
+  },
+  "וייס מירוסלב": {
+    "pos": "DF",
+    "guessOnly": true,
+    "nat": "MK",
+    "born": 1979
+  },
+  "מירוסלב ביצ'ניץ'": {
+    "add": true,
+    "born": 1969,
+    "pos": "MF",
+    "nat": "HR",
+    "spells": [
+      [
+        2000,
+        2000
+      ]
+    ],
+    "guessOnly": true
+  },
+  "צ'אסווה נסופוואה": {
+    "add": true,
+    "born": 1978,
+    "pos": "FW",
+    "nat": "ZM",
+    "spells": [
+      [
+        2008,
+        2008
+      ]
+    ],
+    "guessOnly": true
   }
 }

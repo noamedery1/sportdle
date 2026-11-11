@@ -1089,6 +1089,17 @@ for (const club of clubs) {
     review.ambiguous = review.ambiguous.filter(a => !done.has(normName(a.he)));
   }
 
+  /* pin — תיקון ידני שמוחל **אחרי** כל האיחודים. applyFix רץ מוקדם, ואיחוד
+     מאוחר של שתי רשומות באותו שם יכול לדרוס אותו מהרשומה השנייה (אסמאעיל
+     ריאן קיבל DF משורת worldfootball של אייאד אבו עביד, גם הוא יליד 1994).
+     { "pin": { "pos": "FW", "aliases": [...] } } — רק השדות שנכתבו. */
+  for (const [key, val] of Object.entries(namesFix || {})) {
+    if (!val || typeof val !== "object" || !val.pin) continue;
+    const p = players.find(x => x.he === key);
+    if (!p) { review.notes.push(`pin ללא שחקן: ${key}`); continue; }
+    Object.assign(p, val.pin);
+  }
+
   const out = players
     .map(p => ({
       he: p.he, pos: p.pos, nat: p.nat, born: p.born,
