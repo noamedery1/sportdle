@@ -188,8 +188,7 @@
 
 
   /* "נדירות" אופליין: כמה מוכר השחקן ביחס לשאר התשובות במשבצת.
-     ponytail: פרוקסי מקומי (עונות). הנדירות האמיתית — אחוז מי
-     שבחר אותו — דורשת ספירה ב-Firebase; לא מחובר עדיין. */
+     גיבוי בלבד — עד שיש מספיק בחירות אמיתיות במשבצת (liveRarity למטה). */
   function rarity(idx, a, b, x, home) {
     const ans = answers(idx, a, b, home).sort((p, q) => q.seasons - p.seasons);
     const i = ans.findIndex(p => p.id === x.id);
@@ -217,12 +216,47 @@
       const v = JSON.parse(localStorage.getItem(k));
       if (v && v.cells && v.sig === sig) {
         /* תווית שנעלמה בעדכון נתונים — המשבצת נשארת מלאה בשם שנשמר */
-        v.cells = v.cells.map(c => { if (!c) return null; const x = IDX.people.find(p => p.label === c.k); return { id: x ? x.id : null, k: c.k, rar: c.rar }; });
+        v.cells = v.cells.map(c => { if (!c) return null; const x = IDX.people.find(p => p.label === c.k); return { id: x ? x.id : null, k: c.k, rar: c.rar, pct: c.pct }; });
         return v;
       }
     } catch (e) {}
     return { sig, cells: Array(9).fill(null), left: 9, reveal: false };
   }
+  /* ---------- נדירות אמיתית ----------
+     כל ניחוש נכון מעלה מונה ב-Firebase דרך REST (בלי ה-SDK):
+       grid/v1/<מועדון|all>/<יום>/<משבצת>/<שחקן> += 1
+     הנדירות = 100 − אחוז מי שבחר את אותה תשובה. עד MIN_VOTES בחירות במשבצת
+     — הפרוקסי המקומי. ponytail: כל לקוח יכול לנפח מונה; משחק, לא דירוג. */
+  const FBDB = "__FBDB__", MIN_VOTES = 10;
+  function fbUrl(path) {
+    let base = FBDB, q = "";
+    try { const e = localStorage.getItem("sportdel:fbEmu");   // בדיקות: tools/fb-emu
+          if (e && /^http/.test(FBDB)) { q = "?ns=" + new URL(FBDB).hostname.split(".")[0]; base = "http://" + e; } } catch (e) {}
+    return /^http/.test(base) ? base.replace(/\/$/, "") + "/" + path + ".json" + q : null;
+  }
+  const fbKey = s => String(s).replace(/[.#$\[\]\/]/g, "_").slice(0, 60);
+  const dayPath = () => "grid/v1/" + (G.slug || "all") + "/" + G.grid.n;
+  function vote(i, label) {
+    const u = fbUrl(dayPath() + "/" + i + "/" + fbKey(label));
+    if (!u) return Promise.resolve();
+    return fetch(u, { method: "PUT", body: JSON.stringify({ ".sv": { increment: 1 } }) }).catch(() => {});
+  }
+  async function liveRarity() {
+    const u = fbUrl(dayPath()); if (!u || !G.st.cells.some(Boolean)) return;
+    const g = G;
+    let d; try { const r = await fetch(u); if (!r.ok) return; d = await r.json(); } catch (e) { return; }
+    if (!d || G !== g) return;
+    let ch = false;
+    g.st.cells.forEach((v, i) => {
+      const c = v && d[i]; if (!c) return;
+      const tot = Object.values(c).reduce((s, n) => s + (+n || 0), 0);
+      if (tot < MIN_VOTES) return;
+      const pct = Math.round(100 * (+c[fbKey(v.k)] || 0) / tot);
+      if (v.pct !== pct) { v.pct = pct; v.rar = Math.max(1, 100 - pct); ch = true; }
+    });
+    if (ch) { save(); render(); }
+  }
+
   function save() { try { localStorage.setItem(G.key, JSON.stringify(G.st)); } catch (e) {} }
   const $ = s => document.querySelector(s);
   const cellConds = i => [G.grid.rows[Math.floor(i / 3)], G.grid.cols[i % 3]];
@@ -241,9 +275,11 @@
     if (document.getElementById("gGate")) return;
     const el = document.createElement("div");
     el.id = "gGate"; el.className = "appban";
-    el.innerHTML = '<b>לוח 3×3 של היום — רק באפליקציה</b><span class="wgTxt">כל יום לוח חדש לכל מועדון. מלאו אותו באפליקציה, בחינם.</span>' +
+    el.innerHTML = '<b>כדי לשחק 3×3 יש להוריד את האפליקציה</b><span class="wgTxt">כל יום לוח חדש לכל מועדון — בחינם, באפליקציה.</span>' +
       '<span class="stores">' + document.querySelector("#appban .stores").innerHTML + '</span>';
-    $("#gBoard").before(el);
+    /* באתר הלוח מוסתר לגמרי (נועם, 11/11): רק הבאנר ו"איך משחקים?" */
+    $("#gridView").classList.add("gated");
+    $("#gridView .vtop").after(el);
   }
   function boot() {
     const cur = document.documentElement.dataset.club || "";
@@ -261,6 +297,7 @@
       msg("");
       if (!wired) { wire(); wired = true; }
       if (GATE()) { G.gate = true; gateNote(); }
+      liveRarity();
     }
     render();
   }
@@ -288,7 +325,7 @@
           el.classList.add("ok"); el.disabled = true;
           el.innerHTML = "<span></span><span class=r></span>";
           el.firstChild.textContent = label;
-          el.lastChild.textContent = "נדירות " + v.rar + "%";
+          el.lastChild.textContent = v.pct != null ? "בחרו " + v.pct + "%" : "נדירות " + v.rar + "%";
           el.setAttribute("aria-label", A.he + " × " + B.he + ": " + label);
         } else if (st.reveal) {
           el.classList.add("ans"); el.disabled = true;
@@ -354,6 +391,7 @@
     if (ok) {
       G.st.cells[i] = { id: x.id, k: x.label, rar: rarity(G.idx, A, B, x, G.grid.home) };
       G.sel = -1; msg("✓ " + x.label);
+      vote(i, x.label).then(liveRarity);
     } else { msg("✗ " + x.label + " — " + whyNot(x, A, B), true); $("#gGuess").value = ""; }
     save(); render();
     if (!ok) {

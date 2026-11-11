@@ -481,7 +481,9 @@ html = html
   /* מחולל שאלות המספרים. נשלח המחולל ולא ~6,000 השאלות — ראה
      את ההסבר בראש src/quiz.js. */
   .split("__QUIZ__").join(readText("src/quiz.js", ""))
-  .split("__GRID__").join(readText("src/grid.js", ""))
+  .split("__GRID__").join(readText("src/grid.js", "")
+    .split('"__FBDB__"').join(JSON.stringify((site.firebase && site.firebase.databaseURL) || "")))
+  .split("__TTT__").join(readText("src/ttt.js", ""))
   /* באנר האפליקציה — מקור אחד עם דפי התוכן. ראה content.mjs. */
   .split("__APP_BANNER__").join(appBannerHtml(site))
   .split("__IOS_META__").join(iosMetaHtml(site))

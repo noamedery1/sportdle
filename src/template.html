@@ -378,6 +378,7 @@ html{scrollbar-gutter:stable}
   color:var(--text);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;padding:4px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:44px}
 #gBoard .gc.sel{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand) inset}
+#gridView.gated>:not(.vtop):not(#gGate){display:none!important}
 #gBoard .gc.ok{background:var(--brand);color:var(--on-brand);border-color:var(--brand);cursor:default}
 #gBoard .gc .r{font-size:10.5px;font-weight:600;opacity:.75}
 #gBoard .gc.ans{font-size:11px;font-weight:500;color:var(--dim);cursor:default}
@@ -402,6 +403,33 @@ html{scrollbar-gutter:stable}
 #gEnd{text-align:center;margin-top:14px;display:flex;flex-direction:column;gap:8px}
 #gEnd[hidden]{display:none}
 #gScore{font-size:18px;font-weight:800}
+
+/* ===== איקס-עיגול 3×3 ===== */
+.tHead{display:flex;align-items:center;justify-content:space-between;gap:6px;direction:rtl}
+.tSide{font-size:13px;font-weight:700;padding:5px 10px;border-radius:16px;border:2px solid transparent}
+.tSide.tx{background:#FFC72C;color:#121214}.tSide.to{background:#3B6FD8;color:#fff}
+.tSide.on{border-color:var(--text);box-shadow:0 0 0 2px var(--ink)}
+.tTurn{font-size:13px;color:var(--dim);text-align:center}.tTurn b{color:var(--text)}
+.tTrack{height:5px;background:var(--line);border-radius:3px;margin:8px 0 4px;overflow:hidden}
+#tBar{height:5px;background:var(--brand);width:100%;transition:width .25s linear}
+.tBoard{display:grid;grid-template-columns:72px repeat(3,1fr);gap:6px;margin-top:8px}
+.tBoard .gh{display:flex;align-items:center;justify-content:center;text-align:center;font-size:12.5px;font-weight:800;line-height:1.2;padding:6px 2px;color:var(--text);min-height:44px}
+#versusView .tBoard .gc{aspect-ratio:1;border:1.5px solid var(--line);border-radius:12px;background:var(--ink-2);color:var(--text);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;padding:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:44px;width:auto;margin:0;background-image:none;box-shadow:none;opacity:1}
+#versusView .tBoard .gc.sel{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand) inset}
+#versusView .tBoard .gc b{font-size:22px;line-height:1}
+#versusView .tBoard .gc.tx{background:#FFC72C;border-color:#FFC72C;color:#121214;cursor:default}
+#versusView .tBoard .gc.to{background:#3B6FD8;border-color:#3B6FD8;color:#fff;cursor:default}
+#versusView .tBoard .gc.tw{box-shadow:0 0 0 3px var(--text) inset}
+#versusView .tBoard .gc:disabled{opacity:1;cursor:default}#versusView .tBoard .gc:disabled:not(.tx):not(.to){opacity:.6}
+#scTtt .tPass{margin:0 0 8px}
+#versusView.ttt-mode [data-nottt]{display:none!important}
+#versusView .tBoard .gc.tx b,#versusView .tSide.tx b,#versusView .tSide.tx{color:#121214}
+#versusView .tBoard .gc.to b,#versusView .tSide.to b,#versusView .tSide.to{color:#fff}
+.tSide .n{font-style:normal;display:inline-block;min-width:20px;padding:0 6px;margin-inline-start:4px;border-radius:10px;background:rgba(0,0,0,.18);text-align:center}
+body:has(#gridView.gated:not(.hide)) #appban{display:none}
+#tMsg{text-align:center;min-height:22px;margin-top:8px;font-size:14px;font-weight:700}#tMsg.bad{color:var(--dim)}
+#tEnd{text-align:center;margin-top:12px;display:flex;flex-direction:column;gap:8px}#tEnd[hidden]{display:none}
+#tResult{font-size:22px;font-weight:900}#tWhy{font-size:13px;color:var(--dim);margin-top:-6px}
 .gnote{font-size:12.5px;color:var(--dim);margin-top:-4px}
 .vtop{text-align:center;margin-top:12px}
 .vtop button{width:auto;margin:0;padding:7px 16px;border-radius:18px;background:none;
@@ -1499,17 +1527,18 @@ button.wa,button.act.wa{background:#15803D}
       <div class="clubpick modepick" id="modePick">
         <button type="button" data-mode="players">מי השחקן?</button>
         <button type="button" data-mode="quiz">מספרים</button>
+        <button type="button" data-mode="ttt">איקס-עיגול <bdi>3×3</bdi></button>
       </div>
       <div class="pickhint" id="modeHint"></div>
 
-      <label>להוסיף עוד קבוצות לחדר?</label>
-      <div class="clubpick" id="clubPick"></div>
-      <div class="pickhint" id="clubHint"></div>
+      <label data-nottt>להוסיף עוד קבוצות לחדר?</label>
+      <div class="clubpick" id="clubPick" data-nottt></div>
+      <div class="pickhint" id="clubHint" data-nottt></div>
       <!-- הכיתוב והערכים מתחלפים לפי המשחק: ברמזים זה הזמן בין
            רמז לרמז, ובמספרים זה הזמן לשאלה. הבחירה **נשמרת**
            בשני המצבים — קודם היא נבלעה במספרים, שם הזמן היה קבוע. -->
-      <label for="preReveal" id="preRevealLabel">כמה זמן בין רמז לרמז</label>
-      <select id="preReveal"></select>
+      <label for="preReveal" id="preRevealLabel" data-nottt>כמה זמן בין רמז לרמז</label>
+      <select id="preReveal" data-nottt></select>
       <button id="btnCreate">פתיחת חדר חדש</button>
       </div>
       <div class="orsep" id="orSep"><span>או שיש לכם קוד</span></div>
@@ -1542,10 +1571,10 @@ button.wa,button.act.wa{background:#15803D}
     </div>
     <div class="card" id="hostBox">
       <h2>הגדרות</h2>
-      <label for="setRounds">כמה סיבובים</label>
-      <select id="setRounds"><option>5</option><option selected>10</option><option>15</option></select>
-      <label for="setReveal" id="setRevealLabel">כל כמה שניות נחשף רמז</label>
-      <select id="setReveal">
+      <label for="setRounds" data-nottt>כמה סיבובים</label>
+      <select id="setRounds" data-nottt><option>5</option><option selected>10</option><option>15</option></select>
+      <label for="setReveal" id="setRevealLabel" data-nottt>כל כמה שניות נחשף רמז</label>
+      <select id="setReveal" data-nottt>
         <option value="6">6 שניות · מהיר</option>
         <option value="8" selected>8 שניות · רגיל</option>
         <option value="12">12 שניות · נינוח</option>
@@ -1616,6 +1645,31 @@ button.wa,button.act.wa{background:#15803D}
     <div class="card">
       <div class="rev" id="revText"></div>
       <div class="board" id="revBoard"></div>
+    </div>
+  </section>
+
+  <!-- איקס-עיגול 3×3 (src/ttt.js) -->
+  <section id="scTtt" class="hide">
+    <div class="card">
+      <div class="tHead"><div class="tSide tx" id="tX"></div><div class="tTurn"><span id="tTurn"></span> · <b id="tClock"></b></div><div class="tSide to" id="tO"></div></div>
+      <div class="tTrack"><div id="tBar"></div></div>
+      <div id="tBoard" class="tBoard" role="grid" aria-label="איקס-עיגול 3 על 3"></div>
+      <div id="tPick" hidden>
+        <div class="gnow">מנחשים: <b id="tNow"></b> · <b id="tClock2"></b> שנ׳</div>
+        <button type="button" class="ghost tPass" id="tPass">אין לי — העבר תור</button>
+        <div class="searchbox">
+          <input id="tGuess" type="text" autocomplete="off" spellcheck="false" placeholder="שם השחקן…" aria-label="ניחוש לאיקס-עיגול">
+          <div id="tSugg" class="gsugg" role="listbox"></div>
+        </div>
+      </div>
+      <div id="tMsg" role="status"></div>
+      <div id="tEnd" hidden>
+        <div id="tResult"></div><div id="tWhy"></div>
+        <button type="button" id="tRematch">ריוואנש — לוח חדש</button>
+        <div id="tWait" class="pickhint">מנהל החדר יכול לפתוח ריוואנש</div>
+        <button type="button" class="ghost" id="tShare">שליחה בוואטסאפ</button>
+      </div>
+      <button type="button" class="ghost" id="tLeave">יציאה מהחדר</button>
     </div>
   </section>
 
@@ -1930,6 +1984,11 @@ __NATIVE__
 <!-- גריד 3×3. הליבה רצה גם ב-Node (tools/grid-check.mjs). -->
 <script>
 __GRID__
+</script>
+
+<!-- איקס-עיגול בקרב חברים. משתמש ב-SportGrid; versus.js יוצר אותו. -->
+<script>
+__TTT__
 </script>
 
 <script type="module">
