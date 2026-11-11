@@ -307,5 +307,44 @@
       ]
     ],
     "guessOnly": true
+  },
+  "סבסטיאן אבראו": {
+    "add": true,
+    "born": 1976,
+    "pos": "FW",
+    "nat": "UY",
+    "spells": [
+      [
+        2009,
+        2009
+      ]
+    ],
+    "guessOnly": true
+  },
+  "דני הוצ'קו": {
+    "add": true,
+    "born": 1994,
+    "pos": "MF",
+    "nat": "ME",
+    "spells": [
+      [
+        2024,
+        2024
+      ]
+    ],
+    "guessOnly": true
+  },
+  "לאסלו צה": {
+    "add": true,
+    "born": 1968,
+    "pos": "MF",
+    "nat": "HU",
+    "spells": [
+      [
+        1996,
+        1996
+      ]
+    ],
+    "guessOnly": true
   }
 }

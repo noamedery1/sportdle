@@ -49,7 +49,7 @@
   ]
  },
  "counts": {
-  "players": 575,
+  "players": 576,
   "targets": 183
  },
  "players": [
@@ -99,6 +99,25 @@
     ]
    ],
    "seasons": 7,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "וילי ברגר",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1906,
+   "spells": [
+    [
+     1928,
+     1928
+    ],
+    [
+     1931,
+     1937
+    ]
+   ],
+   "seasons": 8,
    "titles": 0,
    "target": false
   },
@@ -319,7 +338,7 @@
   {
    "he": "שמעון כהן",
    "pos": "MF",
-   "nat": null,
+   "nat": "IL",
    "born": 1942,
    "spells": [
     [
@@ -401,7 +420,7 @@
   {
    "he": "יואל שוהם",
    "pos": "GK",
-   "nat": null,
+   "nat": "IL",
    "born": 1944,
    "spells": [
     [

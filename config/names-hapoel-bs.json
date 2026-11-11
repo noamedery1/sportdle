@@ -647,7 +647,10 @@
   "איברהים ראזק": {
     "addAliases": [
       "איברהים עבדול ראזאק"
-    ]
+    ],
+    "pos": "MF",
+    "guessOnly": true,
+    "born": 1983
   },
   "דניאל אסקלינג": {
     "add": true,
@@ -776,7 +779,8 @@
     "pos": "DF",
     "guessOnly": true,
     "nat": "MK",
-    "born": 1979
+    "born": 1979,
+    "drop": true
   },
   "מירוסלב ביצ'ניץ'": {
     "add": true,
@@ -803,5 +807,18 @@
       ]
     ],
     "guessOnly": true
+  },
+  "דנדי אוקוגו": {
+    "born": 1981,
+    "guessOnly": true
+  },
+  "יאיר נוסובסקי": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "מירוסלב וייס": {
+    "addAliases": [
+      "וייס מירוסלב"
+    ]
   }
 }
