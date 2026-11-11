@@ -231,6 +231,20 @@
   /* גריד מועדון: המועדון שנבחר בדף (applyTheme ב-engine.js מציב data-club).
      נבחרת / בלי מועדון → הגריד המשותף. */
   let IDX = null, CONDS = null, wired = false;
+  /* באתר — כמו החידה היומית (#46, engine.js WEB_GATE): הלוח של היום מוצג
+     כטיזר, והמילוי רק באפליקציה. אותו מתג: בלי חנות live (#appban .stores)
+     אין חסימה. */
+  const GATE = () => { const C = window.Capacitor;
+    if (C && C.isNativePlatform && C.isNativePlatform()) return false;
+    return !!document.querySelector("#appban .stores"); };
+  function gateNote() {
+    if (document.getElementById("gGate")) return;
+    const el = document.createElement("div");
+    el.id = "gGate"; el.className = "appban";
+    el.innerHTML = '<b>לוח 3×3 של היום — רק באפליקציה</b><span class="wgTxt">כל יום לוח חדש לכל מועדון. מלאו אותו באפליקציה, בחינם.</span>' +
+      '<span class="stores">' + document.querySelector("#appban .stores").innerHTML + '</span>';
+    $("#gBoard").before(el);
+  }
   function boot() {
     const cur = document.documentElement.dataset.club || "";
     const slug = window.SD.clubs[cur] ? cur : null;
@@ -246,6 +260,7 @@
       $("#gWho").textContent = grid.home ? "שחקני " + grid.home.he + " בלבד · " : "";
       msg("");
       if (!wired) { wire(); wired = true; }
+      if (GATE()) { G.gate = true; gateNote(); }
     }
     render();
   }
@@ -280,7 +295,7 @@
           const top = answers(idx, A, B, grid.home).sort((p, q) => q.seasons - p.seasons).slice(0, 3);
           el.textContent = top.map(x => x.label).join(" · ");
         } else {
-          el.disabled = done();
+          el.disabled = done() || !!G.gate;
           el.setAttribute("aria-label", A.he + " × " + B.he);
           if (i === G.sel) el.classList.add("sel");
         }
@@ -290,7 +305,7 @@
     $("#gLeft").textContent = st.left;
     const fin = done();
     if (fin) G.sel = -1;
-    $("#gPick").hidden = fin || G.sel < 0;
+    $("#gPick").hidden = fin || G.sel < 0 || !!G.gate;
     $("#gEnd").hidden = !fin;
     if (fin) {
       const k = st.cells.filter(Boolean).length;

@@ -350,6 +350,15 @@ function finish(won){
     $("#stats").innerHTML = "";
     $("#comm").classList.remove("on");
   }
+  if (WEB_GATE && practice){
+    store.set(K("webPlays"), String(webPlays() + 1));
+    const left = WEB_FREE - webPlays();
+    if (left > 0){
+      $("#again").textContent = `עוד משחק אקראי (נשארו ${left})`;
+      webGateNote().querySelector(".wgTxt").textContent =
+        `באתר יש ${WEB_FREE} משחקים עם שחקן אקראי. נשארו לכם ${left}.`;
+    } else showWall(false);
+  }
   tickCountdown();
   $("#share").style.display = practice ? "none" : "";
   $("#wa").style.display = practice ? "none" : "";
@@ -589,7 +598,7 @@ $("#story").addEventListener("click", async () => {
   }
 });
 
-$("#again").addEventListener("click", ()=>{
+function practiceGame(){
   practice = true; over = false; guesses = []; hinted = false; $("#twin").hidden = true;
   $("#share").style.display = "none";
   $("#story").style.display = "none";
@@ -600,10 +609,66 @@ $("#again").addEventListener("click", ()=>{
   answer = POOL[Math.floor(Math.random()*POOL.length)];
   board.innerHTML = ""; $("#result").classList.remove("on");
   input.disabled = false; input.value = ""; $("#left").textContent = MAX;
-  $("#pnum").textContent = "אימון";
+  $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "אימון";
   $("#wa").style.display = "none";
   input.focus();
+}
+$("#again").addEventListener("click", ()=>{
+  if (WEB_GATE && webPlays() >= WEB_FREE) return showWall(true);
+  practiceGame();
 });
+
+/* ---------- באתר: שלושה משחקים אקראיים למועדון, בלי חידה יומית ----------
+   החידה היומית, הרצף והארכיון — רק באפליקציה. באתר כל מועדון נותן
+   WEB_FREE משחקים אקראיים, ואחריהם קיר הורדה. נספר בסיום משחק, לא
+   בתחילתו: רענון באמצע לא שורף משחק.
+   הכפתורים נלקחים מבאנר האפליקציה (#appban), שקיים רק באתר ורק כשיש
+   חנות live — בלי חנות פתוחה אין קיר, וזה מתג הכיבוי. */
+const WEB_FREE = 3;
+const WEB_GATE = (() => {
+  const C = window.Capacitor;
+  if (C && typeof C.isNativePlatform === "function" && C.isNativePlatform()) return false;
+  return !!document.querySelector("#appban .stores");
+})();
+const webPlays = () => +store.get(K("webPlays")) || 0;
+function webGateNote(){
+  let el = $("#webGate");
+  if (!el){
+    el = document.createElement("div");
+    el.id = "webGate"; el.className = "appban";
+    el.innerHTML = `<b></b><span class="wgTxt"></span>` +
+      `<span class="stores">${$("#appban .stores").innerHTML}</span>`;
+    el.addEventListener("click", e => { if (e.target.closest("a")) track("webstore", {web: 1}); });
+    $(".searchbox").before(el);
+  }
+  return el;
+}
+function showWall(scroll){
+  const el = webGateNote();
+  el.classList.add("wall");
+  el.querySelector("b").textContent = `שיחקתם ${WEB_FREE} משחקים — להמשך צריך את האפליקציה`;
+  el.querySelector(".wgTxt").textContent =
+    "באפליקציה: החידה היומית, שחקן חדש כל יום, רצף, ארכיון ומשחקים בלי הגבלה. בחינם.";
+  $(".sub").style.visibility = "hidden";
+  input.disabled = true; input.placeholder = "להמשך — הורידו את האפליקציה";
+  $("#again").textContent = "להמשך — הורידו את האפליקציה";
+  track("webwall", {web: 1});
+  if (scroll) el.scrollIntoView({behavior:"smooth", block:"center"});
+}
+function startWebGame(){
+  const el = webGateNote();
+  el.classList.remove("wall");
+  $("#again").textContent = "עוד משחק אקראי";
+  $(".sub").style.visibility = "";
+  $(".sub").firstChild.textContent = "";      // "חידה" — באתר אין חידה ממוספרת
+  if (webPlays() >= WEB_FREE) return showWall(false);
+  el.querySelector("b").textContent = "השחקן היומי — רק באפליקציה";
+  el.querySelector(".wgTxt").textContent =
+    `באתר יש ${WEB_FREE} משחקים עם שחקן אקראי. נשארו לכם ${WEB_FREE - webPlays()}.`;
+  practiceGame();
+  input.placeholder = askText();
+  scrollTo({top:0});
+}
 
 /* ---------- השלמה אוטומטית ---------- */
 let selIdx = -1;
@@ -711,7 +776,7 @@ function loadPuzzle(n){
 
 /* ---------- דיווח: מועדון, חידה ותוצאה; ב-done גם המזהה האקראי והסיכום (דירוג) ---------- */
 function track(type, extra){
-  if (!ANALYTICS_URL || practice) return;
+  if (!ANALYTICS_URL || (practice && !(extra && extra.web))) return;
   try{
     const body = JSON.stringify({ type, club: club.slug, puzzle: puzzleNo, ...extra });
     if (navigator.sendBeacon) navigator.sendBeacon(ANALYTICS_URL, body);
@@ -1637,6 +1702,13 @@ function bootClub(slug){
     }
   }
 
+  if (WEB_GATE){
+    document.documentElement.dataset.web = "1";
+    document.querySelector('.nav [data-tab="daily"]').textContent = "משחק אקראי";
+    startWebGame();
+    track("view", {web: 1});
+    return;
+  }
   primeStats(todayNo);     // לפני loadPuzzle — ראה את ההסבר שם
   primeRanks();
   loadPuzzle(todayNo);
