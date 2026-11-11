@@ -1,0 +1,177 @@
+{
+  "rules": {
+    "bans": {
+      ".read": true,
+      ".write": false
+    },
+    "rooms": {
+      "v2": {
+        "$code": {
+          ".read": true,
+          ".write": true,
+          ".validate": "$code.length === 4 && newData.hasChildren(['host'])",
+          "host": {
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+          "status": {
+            ".validate": "newData.isString() && newData.val().length <= 12"
+          },
+          "mode": {
+            ".validate": "newData.isString() && (newData.val() === 'players' || newData.val() === 'quiz' || newData.val() === 'ttt')"
+          },
+          "round": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 40"
+          },
+          "game": {
+            ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 1000"
+          },
+          "createdAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "roundStartedAt": {
+            ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+          },
+          "clubs": {
+            "$i": {
+              ".validate": "newData.isString() && newData.val().length <= 20"
+            }
+          },
+          "settings": {
+            "rounds": {
+              ".validate": "newData.isNumber() && newData.val() >= 1    && newData.val() <= 20"
+            },
+            "revealMs": {
+              ".validate": "newData.isNumber() && newData.val() >= 4000 && newData.val() <= 60000"
+            },
+            "roundMs": {
+              ".validate": "newData.isNumber() && newData.val() >= 4000 && newData.val() <= 600000"
+            },
+            "$other": {
+              ".validate": false
+            }
+          },
+          "results": {
+            "$idx": {
+              ".validate": "$idx.matches(/^[0-9]{1,2}$/)",
+              "winner": {
+                ".validate": "newData.isString() && newData.val().length <= 40"
+              },
+              "pts": {
+                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 20"
+              },
+              "at": {
+                ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "answers": {
+            "$idx": {
+              ".validate": "$idx.matches(/^[0-9]{1,2}$/)",
+              "$uid": {
+                ".validate": "$uid.length <= 40",
+                "v": {
+                  ".validate": "newData.isNumber() && newData.val() >= -9999 && newData.val() <= 9999"
+                },
+                "at": {
+                  ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+                },
+                "$other": {
+                  ".validate": false
+                }
+              }
+            }
+          },
+          "ttt": {
+            "grid": {
+              ".validate": "newData.isString() && newData.val().length <= 200"
+            },
+            "slug": {
+              ".validate": "newData.isString() && newData.val().length <= 20"
+            },
+            "x": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "o": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "turn": {
+              ".validate": "newData.isString() && newData.val().length <= 40"
+            },
+            "deadline": {
+              ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 120000"
+            },
+            "miss": {
+              ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 40"
+            },
+            "win": {
+              ".validate": "newData.isString() && (newData.val() === 'x' || newData.val() === 'o' || newData.val() === 'draw')"
+            },
+            "line": {
+              ".validate": "newData.isString() && newData.val().length <= 10"
+            },
+            "cells": {
+              "$i": {
+                ".validate": "($i.matches(/^[0-8]$/) && newData.hasChildren(['by', 'k'])) && (!data.exists() || (newData.child(\"by\").val() === data.child(\"by\").val() && newData.child(\"k\").val() === data.child(\"k\").val()))",
+                "by": {
+                  ".validate": "newData.isString() && (newData.val() === 'x' || newData.val() === 'o')"
+                },
+                "k": {
+                  ".validate": "newData.isString() && newData.val().length <= 40"
+                },
+                "$other": {
+                  ".validate": false
+                }
+              },
+              ".validate": "(!data.child('0').exists() || newData.child('0').exists()) && (!data.child('1').exists() || newData.child('1').exists()) && (!data.child('2').exists() || newData.child('2').exists()) && (!data.child('3').exists() || newData.child('3').exists()) && (!data.child('4').exists() || newData.child('4').exists()) && (!data.child('5').exists() || newData.child('5').exists()) && (!data.child('6').exists() || newData.child('6').exists()) && (!data.child('7').exists() || newData.child('7').exists()) && (!data.child('8').exists() || newData.child('8').exists())"
+            },
+            "$other": {
+              ".validate": false
+            },
+            ".validate": "!data.child('cells').exists() || newData.child('cells').exists()"
+          },
+          "players": {
+            "$uid": {
+              ".validate": "$uid.length <= 40 && newData.hasChildren(['name'])",
+              "name": {
+                ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 24"
+              },
+              "score": {
+                ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 500"
+              },
+              "at": {
+                ".validate": "newData.isNumber() && newData.val() > 0 && newData.val() <= now + 60000"
+              },
+              "gone": {
+                ".validate": "newData.isBoolean()"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "$other": {
+            ".validate": false
+          }
+        }
+      }
+    },
+    "grid": {
+      "v1": {
+        "$slug": {
+          "$n": {
+            ".read": true,
+            "$i": {
+              "$k": {
+                ".write": "newData.exists()",
+                ".validate": "$slug.matches(/^[a-z-]{2,20}$/) && $n.matches(/^[0-9]{1,4}$/) && $i.matches(/^[0-8]$/) && $k.length <= 60 && newData.isNumber() && newData.val() === (data.exists() ? data.val() : 0) + 1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

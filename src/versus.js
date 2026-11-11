@@ -196,7 +196,7 @@ async function bootVersus(){
 async function startVersus(){
   const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
   const { getDatabase, ref, set, get, update, onValue, onDisconnect,
-          runTransaction, serverTimestamp, off }
+          runTransaction, serverTimestamp, off, connectDatabaseEmulator }
     = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
 
   /* המודול נטען לפני שנבחר מועדון, אז SLUG מקבל ערך התחלתי בלבד.
@@ -211,6 +211,11 @@ async function startVersus(){
 
   const app = initializeApp(FIREBASE_CONFIG);
   const db  = getDatabase(app);
+  /* בדיקות בלבד: localStorage "sportdel:fbEmu" = "host:port" מחבר לאמולטור
+     מקומי של Firebase (tools/fb-emu) — חוקים חדשים נבדקים בלי לגעת בייצור.
+     בלי המפתח — אין שום שינוי. */
+  try { const emu = localStorage.getItem("sportdel:fbEmu");
+        if (emu) { const [h, p] = emu.split(":"); connectDatabaseEmulator(db, h, +p); } } catch (e) {}
 
   
   
@@ -299,6 +304,7 @@ async function startVersus(){
   let MODE = "players";
   let QUIZ = [];
   const isQuiz = () => MODE === "quiz";
+  const isTtt = () => MODE === "ttt";
 
   function refreshPools(){
     /* מסלול אחד לכל המצבים. במועדון בודד המיזוג הוא ללא-מעש —
@@ -406,7 +412,7 @@ async function startVersus(){
   /* ============================================================
      3. עזרים
      ============================================================ */
-  const show = id => { ["scHome","scLobby","scPlay","scReveal","scEnd"]
+  const show = id => { ["scHome","scLobby","scPlay","scReveal","scEnd","scTtt"]
     .forEach(s => $("#"+s).classList.toggle("hide", s !== id)); };
   
   const uid = (() => {
@@ -449,6 +455,7 @@ async function startVersus(){
   const DEFAULT_SEC = { players: 8, quiz: 25 };
 
   function paintTimeOpts(){
+    $("#versusView").classList.toggle("ttt-mode", isTtt());   // מסתיר הגדרות שלא חלות על איקס-עיגול
     const mode = isQuiz() ? "quiz" : "players";
     for (const id of ["preReveal", "setReveal"]) {
       const sel = $("#" + id);
@@ -594,21 +601,24 @@ async function startVersus(){
       b.setAttribute("aria-pressed", String(on));
     }
     if (modeHint)
-      modeHint.textContent = isQuiz()
+      modeHint.textContent = isTtt()
+        ? "שני שחקנים · תופסים משבצת בתשובה נכונה, שלוש בשורה מנצחות"
+        : isQuiz()
         ? `${QUIZ.length} שאלות · כל אחד עונה במספר, והכי קרוב זוכה`
         : `${POOL.length} שחקנים · הראשון שמזהה זוכה`;
   }
   if (modePick) modePick.addEventListener("click", e => {
     const b = e.target.closest("button");
     if (!b) return;
-    MODE = b.dataset.mode === "quiz" ? "quiz" : "players";
+    MODE = b.dataset.mode === "quiz" ? "quiz" : b.dataset.mode === "ttt" ? "ttt" : "players";
     paintModePick(); paintClubPick(); paintTimeOpts();
   });
 
   /* מי שמצטרף מאמץ את המצב של החדר. ברירת המחדל "players" היא
      גם מה שחדר ישן, בלי השדה, אמור לשחק. */
   function adoptMode(val){
-    const want = (val && val.mode) === "quiz" ? "quiz" : "players";
+    const m = val && val.mode;
+    const want = m === "quiz" || m === "ttt" ? m : "players";
     if (want === MODE) return;
     MODE = want;
     paintModePick(); paintTimeOpts();
@@ -673,7 +683,7 @@ async function startVersus(){
            כך המשחק הישן ממשיך לעבוד בדיוק כמו קודם בכל מצב, ורק
            המשחק החדש דורש את החוקים המעודכנים — ואומר את זה
            במפורש כשהוא נכשל. */
-        ...(isQuiz() ? { mode: "quiz" } : {}),
+        ...(isQuiz() ? { mode: "quiz" } : isTtt() ? { mode: "ttt" } : {}),
         game: 0,                       // מקדם בכל "סיבוב חדש", ומזריע את ההגרלה
         /* במשחק המספרים אין רמזים מתגלים, ולכן אין "זמן בין רמז
            לרמז": סיבוב הוא חלון אחד קבוע. revealMs נשאר שווה לו
@@ -693,8 +703,8 @@ async function startVersus(){
          עדיין מתירים רק rooms/<code> ולא rooms/<slug>/<code>. */
       isHost = false; room = null; roomRef = null;
       err.textContent = /PERMISSION_DENIED/i.test(e.message || "")
-        ? (isQuiz()
-            ? "משחק המספרים דורש עדכון של חוקי הפיירבייס (config/firebase-rules.json). משחק השחקנים עובד."
+        ? (isQuiz() || isTtt()
+            ? "המשחק הזה דורש עדכון של חוקי הפיירבייס (config/firebase-rules.json). משחק השחקנים עובד."
             : "אין הרשאה לפתוח חדר. צריך לעדכן את חוקי הפיירבייס (config/firebase-rules.json).")
         : "לא הצלחנו לפתוח חדר: " + (e.message || e);
       console.error("createRoom:", e);
@@ -763,7 +773,9 @@ async function startVersus(){
   const inviteText = () =>
 `⚫🟡 בואו לדו־קרב ב${(window.SPORTDEL && window.SPORTDEL.game) || "ספורטדל"}
 
-${isQuiz()
+${isTtt()
+  ? `איקס-עיגול של שחקני כדורגל: תופסים משבצת בתשובה נכונה.\nשלוש בשורה מנצחות.`
+  : isQuiz()
   ? `שאלה שאף אחד לא באמת יודע, וכל אחד עונה מספר.\nהכי קרוב לתשובה לוקח את הסיבוב.`
   : `מי מזהה את השחקן הכי מהר?\nהרמזים נחשפים לכולם יחד — והראשון שפוגע לוקח את הסיבוב.`}
 
@@ -806,6 +818,10 @@ ${roomLink()}
   $("#btnStart").addEventListener("click", async () => {
     const ps = Object.values(state?.players || {}).filter(p => !p.gone);
     if (ps.length < 2) return $("#startErr").textContent = "צריך לפחות שני שחקנים";
+    if (isTtt()) {
+      try { await TTT.start(state); } catch (e) { $("#startErr").textContent = e.message || String(e); }
+      return;
+    }
     /* ---------- ההגדרות תלויות במצב ----------
        הבלוק הזה דרס את ההגדרות בנוסחת משחק השחקנים בלי לבדוק
        במה משחקים, ולכן סיבוב מספרים קיבל 52 שניות במקום 25:
@@ -846,7 +862,7 @@ ${roomLink()}
       for (const [id, p] of Object.entries(state.players || {}))
         scores[id] = { ...p, score: 0 };
       await update(roomRef, {
-        status: "lobby", round: 0, results: null, answers: null, roundStartedAt: null,
+        status: "lobby", round: 0, results: null, answers: null, roundStartedAt: null, ttt: null,
         game: ((state && state.game) || 0) + 1,
         players: scores
       });
@@ -1010,6 +1026,8 @@ ${roomLink()}
   const livePlayers = () => allPlayers().filter(p => !p.gone);
   
   function render(){
+    if (state.mode === "ttt" && state.status !== "lobby"){ stopTick(); TTT.render(state); return; }
+    TTT.stop();
     if (state.status === "lobby"){
       show("scLobby");
       $("#lobbyCode").textContent = room;
@@ -1031,6 +1049,24 @@ ${roomLink()}
   }
   
   const esc = s => String(s).replace(/[<>&"]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;",'"':"&quot;"}[c]));
+
+  /* ---------- איקס-עיגול (src/ttt.js) ----------
+     הלוח והתורות שם; כאן רק החיבור לחדר. ריוואנש = אותו מנגנון של
+     "סיבוב חדש": game+1 → לובי → המארח לוחץ התחלה ולוח חדש נבנה. */
+  const TTT = window.SportTTT.create({
+    uid: () => uid, code: () => room, slug: () => SLUG, now, state: () => state,
+    isHost: () => isHost, roomRef: () => roomRef, tttRef: () => ref(db, roomPath(room) + "/ttt"),
+    update, tx: runTransaction, show,
+    name: id => dispName(id, (state.players || {})[id]?.name || "שחקן"),
+    link: () => roomLink(),
+    rematch: async () => {
+      if (!isHost) return;
+      await update(roomRef, { status: "lobby", ttt: null, game: ((state && state.game) || 0) + 1 });
+    },
+    leave: () => leaveRoom(),
+    /* navigator.share לא קיים ב-WebView וה-clipboard נדחה שם — וואטסאפ, כמו btnShareWa */
+    share: txt => openExternal("https://wa.me/?text=" + encodeURIComponent(txt))
+  });
   
   function drawBoard(sel){
     $(sel).innerHTML = allPlayers().map((p,i) =>
