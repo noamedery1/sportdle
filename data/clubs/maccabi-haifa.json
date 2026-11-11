@@ -201,7 +201,7 @@
   {
    "he": "יחזקאל גרשוני",
    "pos": "GK",
-   "nat": null,
+   "nat": "IL",
    "born": 1940,
    "spells": [
     [
@@ -2318,7 +2318,7 @@
    "he": "איתי קורן",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1978,
    "spells": [
     [
      2003,
@@ -2923,9 +2923,9 @@
   },
   {
    "he": "מאור גנח",
-   "pos": null,
+   "pos": "MF",
    "nat": "IL",
-   "born": null,
+   "born": 1984,
    "spells": [
     [
      2004,
@@ -3449,7 +3449,7 @@
   },
   {
    "he": "מור ממן",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
    "born": 1986,
    "spells": [
@@ -4499,7 +4499,7 @@
    "he": "במידלה ימפולסקי",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1988,
    "spells": [
     [
      2012,
@@ -4551,9 +4551,9 @@
   },
   {
    "he": "דניאל ססארץ",
-   "pos": null,
+   "pos": "FW",
    "nat": "HR",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2012,
@@ -4719,7 +4719,7 @@
    "he": "אמיר נסראלדין",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1993,
    "spells": [
     [
      2013,
@@ -4753,7 +4753,7 @@
   },
   {
    "he": "אסמאעיל ריאן",
-   "pos": "DF",
+   "pos": "FW",
    "nat": "IL",
    "born": 1994,
    "spells": [
@@ -4766,9 +4766,8 @@
    "titles": 1,
    "target": true,
    "aliases": [
-    "איסמעיל ריאן",
-    "Iyad Abu Abaid",
     "אסמאעיל ריאן",
+    "איסמעיל ריאן",
     "Ismaeel Ryan"
    ]
   },
@@ -6642,7 +6641,7 @@
   },
   {
    "he": "גושוע כהן",
-   "pos": null,
+   "pos": "GK",
    "nat": "IL",
    "born": 1992,
    "spells": [
@@ -7777,9 +7776,9 @@
   },
   {
    "he": "לורנצו סימיץ",
-   "pos": null,
+   "pos": "DF",
    "nat": "HR",
-   "born": null,
+   "born": 1996,
    "spells": [
     [
      2024,
@@ -8442,9 +8441,9 @@
   },
   {
    "he": "יילה בטאיי",
-   "pos": null,
+   "pos": "DF",
    "nat": "BE",
-   "born": null,
+   "born": 1999,
    "spells": [
     [
      2026,

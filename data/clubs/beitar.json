@@ -43,7 +43,7 @@
   ]
  },
  "counts": {
-  "players": 507,
+  "players": 510,
   "targets": 214
  },
  "players": [
@@ -1492,6 +1492,21 @@
    "pos": "MF",
    "nat": "IL",
    "born": 1967,
+   "spells": [
+    [
+     1995,
+     1995
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "מאיר מליקה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1969,
    "spells": [
     [
      1995,
@@ -5860,6 +5875,21 @@
    "target": false
   },
   {
+   "he": "ארון אולנארה",
+   "pos": "FW",
+   "nat": "NG",
+   "born": 1994,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "גדי קינדה",
    "pos": "MF",
    "nat": "IL",
@@ -7043,6 +7073,21 @@
    "pos": "DF",
    "nat": "IL",
    "born": 1991,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
+   "he": "גידי קאניוק",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1993,
    "spells": [
     [
      2024,

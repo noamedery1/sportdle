@@ -548,7 +548,9 @@
     "guessOnly": true
   },
   "מהראן אל לאלה": {
-    "born": 1982
+    "born": 1982,
+    "pos": "FW",
+    "guessOnly": true
   },
   "בוגאן ורוצינה": {
     "pos": "FW",
@@ -614,7 +616,9 @@
     "guessOnly": true
   },
   "ניב סרדל": {
-    "born": 1993
+    "born": 1993,
+    "pos": "DF",
+    "guessOnly": true
   },
   "דייויד קופרמן": {
     "pos": "DF",
@@ -714,5 +718,61 @@
   },
   "ירון בן דב": {
     "born": 1970
+  },
+  "עמנואל בואטנג": {
+    "pin": {
+      "born": 1996,
+      "pos": "FW"
+    }
+  },
+  "יניב בן ניסן": {
+    "born": 1983,
+    "guessOnly": true
+  },
+  "איבאן יוליץ": {
+    "pos": "FW",
+    "guessOnly": true
+  },
+  "עמית מלכה": {
+    "born": 1998,
+    "guessOnly": true
+  },
+  "הרוויה איליץ": {
+    "born": 1999,
+    "guessOnly": true
+  },
+  "גיא מיכאלי": {
+    "pos": "FW",
+    "guessOnly": true,
+    "born": 2005
+  },
+  "ירין שיוביץ": {
+    "born": 2006,
+    "guessOnly": true
+  },
+  "ציקו אלבס": {
+    "born": 1998,
+    "guessOnly": true,
+    "pos": "MF"
+  },
+  "דוד שווייצר": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "שלומי אזולאי (1990)": {
+    "nat": "IL"
+  },
+  "ויאם עמאשה": {
+    "add": true,
+    "born": 1985,
+    "pos": "FW",
+    "nat": "IL",
+    "spells": [
+      [
+        2017,
+        2017
+      ]
+    ],
+    "guessOnly": true
   }
 }

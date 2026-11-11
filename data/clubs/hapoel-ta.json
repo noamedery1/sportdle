@@ -49,7 +49,7 @@
   ]
  },
  "counts": {
-  "players": 574,
+  "players": 575,
   "targets": 183
  },
  "players": [
@@ -210,7 +210,7 @@
   {
    "he": "דוד שווייצר",
    "pos": "DF",
-   "nat": null,
+   "nat": "IL",
    "born": 1925,
    "spells": [
     [
@@ -2520,7 +2520,7 @@
    "he": "יניב בן ניסן",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1983,
    "spells": [
     [
      2003,
@@ -3525,7 +3525,7 @@
   },
   {
    "he": "איבאן יוליץ",
-   "pos": null,
+   "pos": "FW",
    "nat": "HR",
    "born": null,
    "spells": [
@@ -4244,7 +4244,7 @@
   },
   {
    "he": "מהראן אל לאלה",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
    "born": 1982,
    "spells": [
@@ -6952,6 +6952,21 @@
    ]
   },
   {
+   "he": "ויאם עמאשה",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1985,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "חן עזרא",
    "pos": "MF",
    "nat": "IL",
@@ -7481,7 +7496,7 @@
    "he": "עמית מלכה",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2018,
@@ -7717,9 +7732,9 @@
   },
   {
    "he": "עמנואל בואטנג",
-   "pos": "MF",
+   "pos": "FW",
    "nat": "GH",
-   "born": 1997,
+   "born": 1996,
    "spells": [
     [
      2019,
@@ -8330,7 +8345,7 @@
   },
   {
    "he": "ניב סרדל",
-   "pos": null,
+   "pos": "DF",
    "nat": "IL",
    "born": 1993,
    "spells": [
@@ -9048,7 +9063,7 @@
    "he": "הרוויה איליץ",
    "pos": null,
    "nat": "HR",
-   "born": null,
+   "born": 1999,
    "spells": [
     [
      2023,
@@ -9683,9 +9698,9 @@
   },
   {
    "he": "גיא מיכאלי",
-   "pos": null,
+   "pos": "FW",
    "nat": "IL",
-   "born": null,
+   "born": 2005,
    "spells": [
     [
      2025,
@@ -10124,7 +10139,7 @@
    "he": "ירין שיוביץ",
    "pos": null,
    "nat": "IL",
-   "born": null,
+   "born": 2006,
    "spells": [
     [
      2026,
@@ -10252,9 +10267,9 @@
   },
   {
    "he": "ציקו אלבס",
-   "pos": null,
+   "pos": "MF",
    "nat": "BR",
-   "born": null,
+   "born": 1998,
    "spells": [
     [
      2026,

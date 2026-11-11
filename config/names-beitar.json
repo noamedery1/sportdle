@@ -264,5 +264,48 @@
   },
   "ארצי בן יעקב": {
     "pos": "MF"
+  },
+  "שלומי אזולאי (1990)": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "ארון אולנארה": {
+    "add": true,
+    "born": 1994,
+    "pos": "FW",
+    "nat": "NG",
+    "spells": [
+      [
+        2019,
+        2019
+      ]
+    ],
+    "guessOnly": true
+  },
+  "מאיר מליקה": {
+    "add": true,
+    "born": 1969,
+    "pos": "FW",
+    "nat": "IL",
+    "spells": [
+      [
+        1995,
+        1995
+      ]
+    ],
+    "guessOnly": true
+  },
+  "גידי קאניוק": {
+    "add": true,
+    "born": 1993,
+    "pos": "MF",
+    "nat": "IL",
+    "spells": [
+      [
+        2024,
+        2024
+      ]
+    ],
+    "guessOnly": true
   }
 }
