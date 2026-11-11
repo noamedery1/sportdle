@@ -9,6 +9,7 @@ const FIX = [
   ["beitar", "רענן דרעי", { pos: "MF" }],
   ["beitar", "צחי אליחן", { pos: "FW" }],
   ["beitar", "עוז ראלי", { pos: "DF" }],
+  ["hapoel-bs", "דודו בן שושן", { born: 1983 }],         // IFA 17416 + TM 211519 (סבב 1; אבד במיזוג main)
   ["hapoel-bs", "אמיר גנאח", { pos: "FW" }],
   ["hapoel-bs", "איתי חזות", { pos: "MF" }],
   ["hapoel-ta", "אדמונד שמילוביץ'", { born: 1921 }],   // באג scrape: שנת פטירה/הערה
