@@ -52,7 +52,7 @@
   ]
  },
  "counts": {
-  "players": 480,
+  "players": 482,
   "targets": 215
  },
  "players": [
@@ -1312,6 +1312,21 @@
     "אלירן אלקיים",
     "Eliran Elkayam"
    ]
+  },
+  {
+   "he": "וסילי קרדש",
+   "pos": "MF",
+   "nat": "UA",
+   "born": 1973,
+   "spells": [
+    [
+     1995,
+     1995
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
   },
   {
    "he": "חיים סילבס",
@@ -2905,9 +2920,9 @@
   },
   {
    "he": "לופז דנטה",
-   "pos": null,
-   "nat": null,
-   "born": null,
+   "pos": "FW",
+   "nat": "PY",
+   "born": 1983,
    "spells": [
     [
      2004,
@@ -5340,6 +5355,21 @@
    "aliases": [
     "יניב בריק"
    ]
+  },
+  {
+   "he": "מוהמדו אידריסו",
+   "pos": "FW",
+   "nat": "CM",
+   "born": 1980,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "מוחמד קמארה",

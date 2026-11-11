@@ -56,7 +56,7 @@
   ]
  },
  "coverage": {
-  "from": 1935,
+  "from": 1929,
   "to": 2027,
   "sources": [
    "ifa",
@@ -71,10 +71,25 @@
   ]
  },
  "counts": {
-  "players": 490,
+  "players": 492,
   "targets": 205
  },
  "players": [
+  {
+   "he": "וילי ברגר",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 1906,
+   "spells": [
+    [
+     1929,
+     1930
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
   {
    "he": "פרי נויפלד",
    "pos": "FW",
@@ -832,7 +847,7 @@
   {
    "he": "גדי צלניקר",
    "pos": "FW",
-   "nat": null,
+   "nat": "IL",
    "born": 1944,
    "spells": [
     [
@@ -1991,6 +2006,21 @@
    "aliases": [
     "David Revivo"
    ]
+  },
+  {
+   "he": "מירוסלב צ'צ'אק",
+   "pos": "FW",
+   "nat": "PL",
+   "born": 1968,
+   "spells": [
+    [
+     1997,
+     1997
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "עופר מזרחי",
@@ -3495,6 +3525,21 @@
    ]
   },
   {
+   "he": "אאוג'ן טריקה",
+   "pos": "MF",
+   "nat": "RO",
+   "born": 1976,
+   "spells": [
+    [
+     2006,
+     2006
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "אבי יחיאל",
    "pos": "DF",
    "nat": "IL",
@@ -3612,7 +3657,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "קאקו בלסינג"
+   ]
   },
   {
    "he": "ג'ובאני רוסו",
@@ -3726,24 +3774,6 @@
    "seasons": 1,
    "titles": 0,
    "target": false
-  },
-  {
-   "he": "קאקו בלסינג",
-   "pos": "MF",
-   "nat": "NG",
-   "born": 1978,
-   "spells": [
-    [
-     2006,
-     2006
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "קאקו בלסינג"
-   ]
   },
   {
    "he": "גיא סולומון",

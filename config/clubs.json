@@ -63,10 +63,11 @@
    "players עלה מ-493 ל-505 ב-14/10/2026: עונת 2026/27 מההתאחדות. 13 חדשים",
    "ו-9 שחצו שתי עונות סומנו guessOnly — targets לא זז.",
    "11/11/2026: 505 → 507. שני שחקנים מאומתים ממחקר סבב 2 (פביאני, קוויאר), guessOnly.",
-   "11/11/2026: 507 → 510. שלושה מאומתים מסבב 3 (tools/apply-round3b.mjs), guessOnly."
+   "11/11/2026: 507 → 510. שלושה מאומתים מסבב 3 (tools/apply-round3b.mjs), guessOnly.",
+   "11/11/2026: 510 → 513. שלושה מאומתים מסבב 4 (apply-round3b.mjs round4), guessOnly."
   ],
   "expect": {
-   "players": 510,
+   "players": 513,
    "targets": 214
   },
   "wikiEn": "Beitar Jerusalem",

@@ -5,8 +5,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const J = p => JSON.parse(readFileSync(p, "utf8"));
-const rows = J("data/review/research/round3-fields.json").players;
-const fresh = J("data/review/research/round3-new-players.json").players;
+/* node tools/apply-round3b.mjs [round3|round4|...] — אותם כללים לכל סבב */
+const R = process.argv[2] || "round3";
+const rows = J(`data/review/research/${R}-fields.json`).players;
+const fresh = J(`data/review/research/${R}-new-players.json`).players;
 const SKIP_NEW = new Set(["יוסי קרמר", "יוסי שושני"]);   // עונות סותרות את TM (סבב 2)
 
 const target = new Set();
@@ -27,7 +29,7 @@ for (const r of rows) {
   if (!target.has(r.club + "|" + r.he)) e.guessOnly = true;
 }
 for (const p of fresh) {
-  if (SKIP_NEW.has(p.he) || !Object.values(p.status).every(s => s === "verified")) continue;
+  if (SKIP_NEW.has(p.he) || p.current || !Object.values(p.status).every(s => s === "verified")) continue;
   const e = entry(p.club, p.he);
   if (e.add) continue;                                    // נוסף כבר בסבב 2
   Object.assign(e, { add: true, born: p.born, pos: p.pos, nat: p.nat, spells: p.spells, guessOnly: true });

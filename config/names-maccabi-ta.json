@@ -630,7 +630,8 @@
   "קאקו בלסינג": {
     "pos": "MF",
     "guessOnly": true,
-    "born": 1978
+    "born": 1978,
+    "drop": true
   },
   "דזאן איליץ": {
     "born": 1976,
@@ -653,5 +654,53 @@
   "אמנון אהרונסקינד": {
     "nat": "IL",
     "guessOnly": true
+  },
+  "גדי צלניקר": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "וילי ברגר": {
+    "add": true,
+    "born": 1906,
+    "pos": "GK",
+    "nat": "IL",
+    "spells": [
+      [
+        1929,
+        1930
+      ]
+    ],
+    "guessOnly": true
+  },
+  "אאוג'ן טריקה": {
+    "add": true,
+    "born": 1976,
+    "pos": "MF",
+    "nat": "RO",
+    "spells": [
+      [
+        2006,
+        2006
+      ]
+    ],
+    "guessOnly": true
+  },
+  "מירוסלב צ'צ'אק": {
+    "add": true,
+    "born": 1968,
+    "pos": "FW",
+    "nat": "PL",
+    "spells": [
+      [
+        1997,
+        1997
+      ]
+    ],
+    "guessOnly": true
+  },
+  "בלסינג קאקו": {
+    "addAliases": [
+      "קאקו בלסינג"
+    ]
   }
 }

@@ -774,5 +774,30 @@
       ]
     ],
     "guessOnly": true
+  },
+  "שמעון כהן": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "יואל שוהם": {
+    "nat": "IL",
+    "guessOnly": true
+  },
+  "וילי ברגר": {
+    "add": true,
+    "born": 1906,
+    "pos": "GK",
+    "nat": "IL",
+    "spells": [
+      [
+        1928,
+        1928
+      ],
+      [
+        1931,
+        1937
+      ]
+    ],
+    "guessOnly": true
   }
 }

@@ -43,7 +43,7 @@
   ]
  },
  "counts": {
-  "players": 510,
+  "players": 513,
   "targets": 214
  },
  "players": [
@@ -1625,6 +1625,21 @@
    "seasons": 6,
    "titles": 2,
    "target": true
+  },
+  {
+   "he": "לאסלו צה",
+   "pos": "MF",
+   "nat": "HU",
+   "born": 1968,
+   "spells": [
+    [
+     1996,
+     1996
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "נועם אלבוים",
@@ -3743,6 +3758,21 @@
    "pos": "MF",
    "nat": "IL",
    "born": 1983,
+   "spells": [
+    [
+     2009,
+     2009
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
+  },
+  {
+   "he": "סבסטיאן אבראו",
+   "pos": "FW",
+   "nat": "UY",
+   "born": 1976,
    "spells": [
     [
      2009,
@@ -7112,6 +7142,21 @@
    "seasons": 3,
    "titles": 0,
    "target": true
+  },
+  {
+   "he": "דני הוצ'קו",
+   "pos": "MF",
+   "nat": "ME",
+   "born": 1994,
+   "spells": [
+    [
+     2024,
+     2024
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": false
   },
   {
    "he": "זוהר זסנו",

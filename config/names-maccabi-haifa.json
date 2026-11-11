@@ -476,5 +476,37 @@
     "born": 1999,
     "guessOnly": true,
     "pos": "DF"
+  },
+  "לופז דנטה": {
+    "pos": "FW",
+    "guessOnly": true,
+    "nat": "PY",
+    "born": 1983
+  },
+  "מוהמדו אידריסו": {
+    "add": true,
+    "born": 1980,
+    "pos": "FW",
+    "nat": "CM",
+    "spells": [
+      [
+        2015,
+        2015
+      ]
+    ],
+    "guessOnly": true
+  },
+  "וסילי קרדש": {
+    "add": true,
+    "born": 1973,
+    "pos": "MF",
+    "nat": "UA",
+    "spells": [
+      [
+        1995,
+        1995
+      ]
+    ],
+    "guessOnly": true
   }
 }
