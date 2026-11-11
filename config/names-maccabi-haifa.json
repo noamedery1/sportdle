@@ -234,7 +234,8 @@
     "guessOnly": true
   },
   "ג'ון קולמה": {
-    "guessOnly": true
+    "guessOnly": true,
+    "pos": "MF"
   },
   "מוחמד אבו פאני": {
     "guessOnly": true
@@ -422,5 +423,8 @@
     "addAliases": [
       "קרים פריי"
     ]
+  },
+  "סרגיי קנדאורוב": {
+    "born": 1972
   }
 }

@@ -1240,7 +1240,7 @@
    "he": "ירון בן דב",
    "pos": "DF",
    "nat": "IL",
-   "born": 1971,
+   "born": 1970,
    "spells": [
     [
      1994,
@@ -3072,8 +3072,8 @@
   },
   {
    "he": "ברק בדש",
-   "pos": "MF",
-   "nat": "BR",
+   "pos": "FW",
+   "nat": "IL",
    "born": 1982,
    "spells": [
     [
@@ -3085,8 +3085,7 @@
    "titles": 0,
    "target": false,
    "aliases": [
-    "ברק בדש",
-    "Fábio Rosa"
+    "ברק בדש"
    ]
   },
   {
@@ -4055,8 +4054,7 @@
    "titles": 0,
    "target": true,
    "aliases": [
-    "רועי דיין",
-    "Roy Dayan"
+    "רועי דיין"
    ]
   },
   {

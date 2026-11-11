@@ -282,7 +282,7 @@
   },
   {
    "he": "ארצי בן יעקב",
-   "pos": "FW",
+   "pos": "MF",
    "nat": "IL",
    "born": 1946,
    "spells": [
@@ -869,7 +869,7 @@
   },
   {
    "he": "יעקב בוזגלו",
-   "pos": "FW",
+   "pos": "MF",
    "nat": "IL",
    "born": 1957,
    "spells": [
@@ -4892,7 +4892,7 @@
    "he": "שמואל מלול",
    "pos": "DF",
    "nat": "IL",
-   "born": 1994,
+   "born": 1993,
    "spells": [
     [
      2015,
@@ -4901,7 +4901,10 @@
    ],
    "seasons": 1,
    "titles": 0,
-   "target": false
+   "target": false,
+   "aliases": [
+    "שמוליק מלול"
+   ]
   },
   {
    "he": "תומר סויסה",
