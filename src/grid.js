@@ -84,7 +84,7 @@
     const born = (rs.find(r => r.p.born) || {}).p?.born || null;
     const x = {
       name, born, label: many && born ? name + " (" + born + ")" : name,
-      clubs: new Set(), pos: null, foreign: false, seasons: 0, caps: 0, aliases: [],
+      clubs: new Set(), pos: null, foreign: false, seasons: 0, by: {}, caps: 0, aliases: [],
       /* עשור ואליפות נבדקים **באותו מועדון** של המשבצת: "ב"ש × שנות
          ה-70" אינו "שיחק בב"ש, ובשנות ה-70 במקום כלשהו" (מלמיליאן:
          בית"ר בשנות ה-70, ב"ש רק ב-1993). */
@@ -98,6 +98,7 @@
       const ds = x.dec[slug] = x.dec[slug] || new Set();
       for (const [a, b] of p.spells) {
         x.seasons += b - a + 1;
+        x.by[slug] = (x.by[slug] || 0) + b - a + 1;
         /* spells בשנת סיום העונה (2009/10 = 2010); העשור לפי שנת הפתיחה */
         for (const d of DECADES) if (a - 1 <= d + 9 && b - 1 >= d) ds.add(d);
         /* אליפות = עונה שבה המועדון זכה והשחקן היה בסגל */
@@ -190,7 +191,11 @@
   /* "נדירות" אופליין: כמה מוכר השחקן ביחס לשאר התשובות במשבצת.
      גיבוי בלבד — עד שיש מספיק בחירות אמיתיות במשבצת (liveRarity למטה). */
   function rarity(idx, a, b, x, home) {
-    const ans = answers(idx, a, b, home).sort((p, q) => q.seasons - p.seasons);
+    /* מוכרות = עונות **במועדונים של המשבצת**, לא בקריירה: בוזגלו (13 עונות,
+       3 במכבי ת"א) היה "מוכר" במשבצת של מכבי. משבצת בלי מועדון → כל הקריירה. */
+    const slugs = [...new Set([a, b, home].filter(c => c && c.kind === "club").map(c => c.slug))];
+    const w = p => slugs.length ? slugs.reduce((t, s) => t + (p.by[s] || 0), 0) : p.seasons;
+    const ans = answers(idx, a, b, home).sort((p, q) => w(q) - w(p));
     const i = ans.findIndex(p => p.id === x.id);
     return Math.round(100 * (i + 1) / ans.length);   // 1..100, גבוה = נדיר
   }
@@ -368,8 +373,15 @@
     const nq = norm(q);
     if (nq.length < 2) { box.classList.remove("on"); return; }
     const used = new Set(G.st.cells.filter(Boolean).map(v => v.id));
-    const hits = G.idx.people.filter(x =>
-      norm(x.name).includes(nq) || x.aliases.some(a => norm(a).includes(nq))).slice(0, 8);
+    /* מכיל-מוכל, מילה-מילה ובכל סדר. כתיב מלא/חסר (אהרון/ארון, אולנרה/אולנארה):
+       בלי אמות קריאה. קודם התאמות מדויקות, אחר כך הרופפות. */
+    const loose = t => t.replace(/[אהוי]/g, "");
+    const words = nq.split(" "), lw = words.map(loose).filter(Boolean);
+    const strict = t => words.every(w => t.includes(w));
+    const fuzzy = t => lw.length && lw.every(w => loose(t).includes(w));
+    const names = x => [x.name, ...x.aliases].map(norm);
+    const hits = [strict, fuzzy].flatMap(f => G.idx.people.filter(x => names(x).some(f)))
+      .filter((x, i, a) => a.indexOf(x) === i).slice(0, 8);
     for (const x of hits) {
       const btn = document.createElement("button");
       btn.type = "button"; btn.setAttribute("role", "option");
