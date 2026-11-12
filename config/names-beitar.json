@@ -280,7 +280,13 @@
         2019
       ]
     ],
-    "guessOnly": true
+    "guessOnly": true,
+    "addAliases": [
+      "ארון אולנרה",
+      "אהרון אולנארה",
+      "אהרון אולנרה",
+      "Aaron Olanare"
+    ]
   },
   "מאיר מליקה": {
     "add": true,

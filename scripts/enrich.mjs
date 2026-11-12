@@ -600,8 +600,8 @@ for (const club of clubs) {
       /* { "add": true, ... } — שחקן שאף מקור עוד לא מכיר (ג'יימס טברנייר
          הגיע בקיץ 2026, אחרי האיסוף). המפתח הוא השם העברי. */
       if (!p && val?.add) {
-        const { add, ...rest } = val;
-        players.push({ he: key, name: null, nat: null, years: null, aliases: [], ...rest,
+        const { add, addAliases, ...rest } = val;
+        players.push({ he: key, name: null, nat: null, years: null, aliases: [...(addAliases || [])], ...rest,
                        src: ["manual:add"], spellsManual: !!rest.spells });
         n++;
         continue;
