@@ -373,8 +373,15 @@
     const nq = norm(q);
     if (nq.length < 2) { box.classList.remove("on"); return; }
     const used = new Set(G.st.cells.filter(Boolean).map(v => v.id));
-    const hits = G.idx.people.filter(x =>
-      norm(x.name).includes(nq) || x.aliases.some(a => norm(a).includes(nq))).slice(0, 8);
+    /* מכיל-מוכל, מילה-מילה ובכל סדר. כתיב מלא/חסר (אהרון/ארון, אולנרה/אולנארה):
+       בלי אמות קריאה. קודם התאמות מדויקות, אחר כך הרופפות. */
+    const loose = t => t.replace(/[אהוי]/g, "");
+    const words = nq.split(" "), lw = words.map(loose).filter(Boolean);
+    const strict = t => words.every(w => t.includes(w));
+    const fuzzy = t => lw.length && lw.every(w => loose(t).includes(w));
+    const names = x => [x.name, ...x.aliases].map(norm);
+    const hits = [strict, fuzzy].flatMap(f => G.idx.people.filter(x => names(x).some(f)))
+      .filter((x, i, a) => a.indexOf(x) === i).slice(0, 8);
     for (const x of hits) {
       const btn = document.createElement("button");
       btn.type = "button"; btn.setAttribute("role", "option");
