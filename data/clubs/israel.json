@@ -27,7 +27,7 @@
   ]
  },
  "counts": {
-  "players": 447,
+  "players": 448,
   "targets": 207
  },
  "players": [
@@ -10143,6 +10143,26 @@
     "בית\"ר ירושלים",
     "מכבי עכו",
     "אחווה עראבה"
+   ],
+   "target": false,
+   "aliases": []
+  },
+  {
+   "he": "שלמה שירזי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1960,
+   "spells": [
+    [
+     1983,
+     1985
+    ]
+   ],
+   "titles": 0,
+   "caps": 11,
+   "club": "בית\"ר ירושלים",
+   "clubs": [
+    "בית\"ר ירושלים"
    ],
    "target": false,
    "aliases": []

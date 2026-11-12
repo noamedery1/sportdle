@@ -214,7 +214,7 @@ const FIX = readJSON("config/names-israel.json", {});
 const fixOf = he => Object.entries(FIX).find(([k]) => !k.startsWith("_") && normName(k) === normName(he))?.[1];
 
 /* שחקן חייב שנה בנבחרת — זה עמוד השדרה של spells ושל "הופעה 1" */
-const players = parsed.filter(p => p.from && p.pos && !fixOf(p.he)?.drop).map(p => {
+const players = parsed.filter(p => (p.from || fixOf(p.he)?.spells) && p.pos && !fixOf(p.he)?.drop).map(p => {
   const fix = fixOf(p.he) || {};
   const q = { ...p, ...fix };
   const from = fix.spells ? fix.spells[0][0] : q.from;
