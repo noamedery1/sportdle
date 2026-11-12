@@ -84,7 +84,7 @@
     const born = (rs.find(r => r.p.born) || {}).p?.born || null;
     const x = {
       name, born, label: many && born ? name + " (" + born + ")" : name,
-      clubs: new Set(), pos: null, foreign: false, seasons: 0, caps: 0, aliases: [],
+      clubs: new Set(), pos: null, foreign: false, seasons: 0, by: {}, caps: 0, aliases: [],
       /* עשור ואליפות נבדקים **באותו מועדון** של המשבצת: "ב"ש × שנות
          ה-70" אינו "שיחק בב"ש, ובשנות ה-70 במקום כלשהו" (מלמיליאן:
          בית"ר בשנות ה-70, ב"ש רק ב-1993). */
@@ -98,6 +98,7 @@
       const ds = x.dec[slug] = x.dec[slug] || new Set();
       for (const [a, b] of p.spells) {
         x.seasons += b - a + 1;
+        x.by[slug] = (x.by[slug] || 0) + b - a + 1;
         /* spells בשנת סיום העונה (2009/10 = 2010); העשור לפי שנת הפתיחה */
         for (const d of DECADES) if (a - 1 <= d + 9 && b - 1 >= d) ds.add(d);
         /* אליפות = עונה שבה המועדון זכה והשחקן היה בסגל */
@@ -190,7 +191,11 @@
   /* "נדירות" אופליין: כמה מוכר השחקן ביחס לשאר התשובות במשבצת.
      גיבוי בלבד — עד שיש מספיק בחירות אמיתיות במשבצת (liveRarity למטה). */
   function rarity(idx, a, b, x, home) {
-    const ans = answers(idx, a, b, home).sort((p, q) => q.seasons - p.seasons);
+    /* מוכרות = עונות **במועדונים של המשבצת**, לא בקריירה: בוזגלו (13 עונות,
+       3 במכבי ת"א) היה "מוכר" במשבצת של מכבי. משבצת בלי מועדון → כל הקריירה. */
+    const slugs = [...new Set([a, b, home].filter(c => c && c.kind === "club").map(c => c.slug))];
+    const w = p => slugs.length ? slugs.reduce((t, s) => t + (p.by[s] || 0), 0) : p.seasons;
+    const ans = answers(idx, a, b, home).sort((p, q) => w(q) - w(p));
     const i = ans.findIndex(p => p.id === x.id);
     return Math.round(100 * (i + 1) / ans.length);   // 1..100, גבוה = נדיר
   }
