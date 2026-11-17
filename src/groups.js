@@ -161,27 +161,58 @@
     show();
   }
 
-  /* ניקוד: פיצוח ב-k ניחושים = MAX+1-k נקודות, כישלון = 0 */
-  function table(g, today, max) {
-    const me = uid(), members = Object.entries(g.m || {}), R = g.r || {};
-    const rows = members.filter(([id]) => !(S().banned && S().banned.has(id))).map(([id, m]) => {
-      let w = 0, mo = 0;
-      for (const [d, byU] of Object.entries(R)) {
+  /* ניקוד: פיצוח ב-k ניחושים = MAX+1-k נקודות, כישלון = 0.
+     התחרות היא על סך הנקודות מאז שכל אחד הצטרף: מי ששיחק כל יום וגם
+     פיצח מהר — מוביל. שוויון: יותר פיצוחים, ואז ממוצע ניחושים נמוך. */
+  const DAYS = 7;
+  const pts = (v, max) => v > 0 ? max + 1 - v : 0;
+  function rowsOf(g, max) {
+    const R = g.r || {};
+    return Object.entries(g.m || {}).filter(([id]) => !(S().banned && S().banned.has(id))).map(([id, m]) => {
+      let games = 0, wins = 0, sumG = 0, p = 0;
+      for (const byU of Object.values(R)) {
         const v = byU[id]; if (v == null) continue;
-        const n = +d.slice(1), pts = v > 0 ? max + 1 - v : 0;
-        if (n > today - 7) w += pts;
-        if (n > today - 30) mo += pts;
+        games++; p += pts(v, max);
+        if (v > 0) { wins++; sumG += v; }
       }
-      const t = (R[day(today)] || {})[id];
-      return { id, name: S().dispName ? S().dispName(id, m.n) : m.n, t, w, mo };
-    }).sort((a, b) => b.w - a.w || b.mo - a.mo || (a.t > 0 ? a.t : 99) - (b.t > 0 ? b.t : 99));
-    const td = t => t == null ? "—" : t > 0 ? `${t}/${max}` : "✗";
+      return { id, name: S().dispName ? S().dispName(id, m.n) : m.n, games, wins, avg: wins ? sumG / wins : 0, p };
+    }).sort((a, b) => b.p - a.p || b.wins - a.wins || (a.avg || 99) - (b.avg || 99));
+  }
+  /* שם התשובה רק לחידה שכבר נסגרה. החידה של היום עדיין באוויר אצל אחרים. */
+  function answerName(n, today) {
+    if (n >= today) return "";
+    try { const a = typeof answerFor === "function" ? answerFor(n) : null; return a ? a.name : ""; } catch (e) { return ""; }
+  }
+  function table(g, today, max) {
+    const me = uid(), R = g.r || {}, rows = rowsOf(g, max);
     const mods = id => id === me ? "" :
       `<span class="mods"><button type="button" data-gmod="report" data-id="${id}">דיווח</button>` +
       `<button type="button" data-gmod="block" data-id="${id}">${S().blocked && S().blocked.has(id) ? "חסום" : "חסימה"}</button></span>`;
-    return `<table class="gtab"><thead><tr><th>#</th><th>שם</th><th>היום</th><th>7 ימים</th><th>30 ימים</th></tr></thead><tbody>` +
-      rows.map((r, i) => `<tr class="${r.id === me ? "me" : ""}"><td>${i + 1}</td><td>${esc(r.name)}${mods(r.id)}</td>` +
-        `<td>${td(r.t)}</td><td><b>${r.w}</b></td><td>${r.mo}</td></tr>`).join("") + `</tbody></table>`;
+    const medal = i => ["🥇", "🥈", "🥉"][i] || String(i + 1);
+    const lead = `<table class="gtab"><thead><tr><th>#</th><th>שם</th><th>חידות</th><th>פיצח</th><th>ממוצע</th><th>נק׳</th></tr></thead><tbody>` +
+      rows.map((r, i) => `<tr class="${r.id === me ? "me" : ""}"><td>${r.p ? medal(i) : i + 1}</td><td><span class="gnm">${esc(r.name)}</span>${mods(r.id)}</td>` +
+        `<td>${r.games}</td><td>${r.wins}</td><td>${r.wins ? r.avg.toFixed(1) : "—"}</td><td><b>${r.p}</b></td></tr>`).join("") + `</tbody></table>`;
+    /* יומן: עמודה לכל חידה מ-DAYS האחרונות, היום מימין */
+    const days = Array.from({ length: DAYS }, (_, i) => today - i).filter(n => n >= 1);
+    const cell = v => v == null ? `<td class="nx">·</td>` : v > 0 ? `<td class="ok">${v}</td>` : `<td class="no">✗</td>`;
+    const hist = `<div class="ghist"><table class="gtab gday"><thead><tr><th></th>` +
+      days.map(n => { const nm = answerName(n, today);
+        return `<th>${n === today ? "היום" : "#" + n}${nm ? `<i>${esc(nm)}</i>` : ""}</th>`; }).join("") +
+      `</tr></thead><tbody>` +
+      rows.map(r => `<tr class="${r.id === me ? "me" : ""}"><td>${esc(r.name)}</td>` +
+        days.map(n => cell((R[day(n)] || {})[r.id])).join("") + `</tr>`).join("") + `</tbody></table></div>`;
+    return lead + `<div class="hd gsub">${DAYS} החידות האחרונות · המספר = באיזה ניחוש פיצח</div>` + hist;
+  }
+
+  function explain(max) {
+    return S().vModal(`<b>איך זה מחושב?</b><br>` +
+      `• כל מי שבקבוצה ומסיים את החידה היומית — התוצאה שלו נכנסת לבד. מי שמצטרף נספר מאותו יום והלאה.<br>` +
+      `• <b>נקודות:</b> פיצוח בניחוש הראשון = ${max}, בשני = ${max - 1}, וכך הלאה עד ניחוש ${max} = 1. לא פיצח = 0. יום שלא שיחקת = 0.<br>` +
+      `• <b>הדירוג</b> לפי סך הנקודות. בשוויון — מי שפיצח יותר, ואז מי שהממוצע שלו נמוך יותר.<br>` +
+      `• <b>חידות</b> = כמה שיחק, <b>פיצח</b> = כמה פתר, <b>ממוצע</b> = ניחושים בממוצע בחידות שפתר.<br>` +
+      `• ביומן: המספר הוא הניחוש שבו פיצח, ✗ = לא פיצח, · = לא שיחק. שם השחקן מופיע רק אחרי שהחידה נסגרה — בחידה של היום רק "היום".<br>` +
+      `• חידה מהארכיון לא נספרת — רק החידה של אותו יום.`,
+      [{ id: "ok", label: "הבנתי", primary: true }]);
   }
 
   let ctx = null;   // { el, today, max }
@@ -190,17 +221,17 @@
     const { el, today, max } = ctx, list = mine();
     const actions = `<div class="gact"><button type="button" class="ghost" data-g="create">פתיחת קבוצה</button>` +
       `<button type="button" class="ghost" data-g="join">הצטרפות בקוד</button></div>`;
+    const how = `<button type="button" class="glink" data-g="how">איך זה מחושב?</button>`;
     if (!list.length) {
-      el.innerHTML = `<div class="hd"><b>קבוצת חברים</b> · טבלה סגורה רק לכם: מי פיצח, בכמה ניסיונות, ומי מוביל השבוע.</div>${actions}`;
+      el.innerHTML = `<div class="hd"><b>קבוצת חברים</b> · תחרות סגורה רק לכם: מי פיצח, בכמה ניסיונות, ומי מוביל. ${how}</div>${actions}`;
       el.classList.add("on"); return;
     }
     el.innerHTML = `<div class="hd"><b>קבוצות החברים</b> · טוען…</div>`;
     el.classList.add("on");
     await bans();
-    const since = `orderBy=${encodeURIComponent('"$key"')}&startAt=${encodeURIComponent(`"${day(Math.max(1, today - 29))}"`)}`;
     const parts = await Promise.all(list.map(async x => {
       try {
-        const [m, r] = await Promise.all([call("GET", `${x.c}/m`), call("GET", `${x.c}/r`, undefined, since)]);
+        const [m, r] = await Promise.all([call("GET", `${x.c}/m`), call("GET", `${x.c}/r`)]);
         /* הוצאו (חסימה של מנהל, או שהמזהה הוסר) — הקבוצה יוצאת מהרשימה המקומית */
         if (!m || !m[uid()]) return { x, gone: true };
         return { x, g: { m, r } };
@@ -210,11 +241,10 @@
     if (gone.length) saveMine(mine().filter(x => !gone.includes(x.c)));
     if (!ctx || ctx.el !== el) return;
     el.innerHTML = parts.filter(p => !p.gone).map(p =>
-      `<div class="grp1"><div class="hd"><b>${esc(p.x.name)}</b> · קוד <b dir="ltr">${p.x.c}</b></div>` +
+      `<div class="grp1"><div class="hd"><b>${esc(p.x.name)}</b> · קוד <b dir="ltr">${p.x.c}</b> · ${how}</div>` +
       (p.err ? `<div class="hd">אין חיבור כרגע.</div>` : table(p.g, today, max)) +
       `<div class="gact"><button type="button" class="ghost" data-g="invite" data-c="${p.x.c}">הזמנת חברים</button>` +
-      `<button type="button" class="ghost" data-g="leave" data-c="${p.x.c}">יציאה</button></div></div>`).join("") +
-      `<div class="gfoot">ניקוד: פיצוח בניסיון הראשון = ${max} נק׳, בכל ניסיון נוסף אחת פחות, לא פיצח = 0.</div>` + actions;
+      `<button type="button" class="ghost" data-g="leave" data-c="${p.x.c}">יציאה</button></div></div>`).join("") + actions;
   }
 
   document.addEventListener("click", async e => {
@@ -225,9 +255,10 @@
     if (a === "join") return join();
     if (a === "leave") return leave(c);
     if (a === "invite") return invite(c, (mine().find(x => x.c === c) || {}).name || "");
+    if (a === "how") return explain(ctx ? ctx.max : 8);
     /* דיווח / חסימה — כמו בקרב החברים */
     const id = b.dataset.id, s = S();
-    const nm = (b.closest("td") && b.closest("td").firstChild && b.closest("td").firstChild.textContent) || "";
+    const nm = ((b.closest("td") && b.closest("td").querySelector(".gnm")) || {}).textContent || "";
     const grp = b.closest(".grp1"), code = grp ? grp.querySelector("b[dir]").textContent : "";
     if (b.dataset.gmod === "block" && s.blocked.has(id)) { s.blocked.delete(id); s.saveBlocked(); return show(); }
     const rep = b.dataset.gmod === "report";
