@@ -350,6 +350,14 @@ function finish(won){
     $("#next").style.display = practice ? "none" : "";
     $("#stats").innerHTML = "";
     $("#comm").classList.remove("on");
+    /* ארכיון שנפתר: איך הלך לכולם באותו יום. התוצאה שלי מהארכיון לא
+       נשלחת לשרת ולא נכנסת לספירה — live=false. */
+    if (!practice && ANALYTICS_URL){
+      const n = puzzleNo, g = guesses.length;
+      fetchStats(n).catch(() => null).then(r => {
+        if (puzzleNo === n && over) renderComm(r && r.stats, g, won, false, true);
+      });
+    }
   }
   if (WEB_GATE && practice){
     store.set(K("webPlays"), String(webPlays() + 1));
@@ -1130,7 +1138,7 @@ function renderRank(r){
   el.classList.add("on");
 }
 
-function renderComm(st, myGuesses, iWon, live){
+function renderComm(st, myGuesses, iWon, live, past){
   const el = $("#comm");
   if (!st || st.done < MIN_HEAD){ el.classList.remove("on"); return; }
 
@@ -1141,7 +1149,7 @@ function renderComm(st, myGuesses, iWon, live){
 
      בלי המספר המוחלט של השחקנים: מדגם קטן נראה עלוב גם כשהוא נכון. */
   const pct = Math.round(st.wins / st.done * 100);
-  let line = `<b>${pct}%</b> פיצחו היום`;
+  let line = past ? `באותו יום <b>${pct}%</b> פיצחו` : `<b>${pct}%</b> פיצחו היום`;
 
   /* המכנה הוא סכום הפילוח עצמו, ולא st.done.
 
