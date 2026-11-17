@@ -215,27 +215,31 @@ footer .who a:hover{color:var(--dim)}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
-#grp{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
-#grp.on{display:block}
-#grp .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
-#grp .hd b{color:var(--text);font-weight:900}
-#grp .grp1+.grp1{margin-top:14px}
-#grp .gtab{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;color:var(--text)}
-#grp .gtab th{font-size:11px;font-weight:700;color:var(--dim);text-align:right;padding:4px 6px;border-bottom:1px solid var(--line)}
-#grp .gtab td{padding:6px;border-bottom:1px solid var(--line)}
-#grp .gtab tr.me td{font-weight:900;background:rgba(255,199,44,.14)}
-#grp .gact{display:flex;gap:8px;margin-top:10px}
-#grp .gact button{flex:1}
-#grp .gsub{margin-top:12px;font-size:12px}
-#grp .ghist{overflow-x:auto;-webkit-overflow-scrolling:touch}
-#grp .gday{font-size:12px}
-#grp .gday th{text-align:center;white-space:nowrap;vertical-align:bottom}
-#grp .gday th i{display:block;font-style:normal;font-weight:500;font-size:10px;max-width:64px;overflow:hidden;text-overflow:ellipsis}
-#grp .gday td{text-align:center;white-space:nowrap}
-#grp .gday td:first-child{text-align:right;max-width:90px;overflow:hidden;text-overflow:ellipsis}
-#grp .gday td.ok{font-weight:900}
-#grp .gday td.no,#grp .gday td.nx{color:var(--dim)}
-#grp .glink{background:none;border:0;padding:0;margin:0;width:auto;min-height:0;font:inherit;font-size:12.5px;color:var(--text);text-decoration:underline;cursor:pointer}
+#grp,#gGrp{margin-top:14px;display:none;text-align:center}
+#grp.on,#gGrp.on{display:block}
+#groupsBody{padding:4px 2px 24px}
+#groupsBody .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#groupsBody .hd b{color:var(--text);font-weight:900}
+#groupsBody .gweb{margin-top:10px}
+#groupsBody .grp1{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+#groupsBody .gtitle{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+#groupsBody .gchip{font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;background:var(--brand);color:var(--on-brand,#121214)}
+#groupsBody .gtab{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;color:var(--text)}
+#groupsBody .gtab th{font-size:11px;font-weight:700;color:var(--dim);text-align:right;padding:4px 6px;border-bottom:1px solid var(--line)}
+#groupsBody .gtab td{padding:6px;border-bottom:1px solid var(--line)}
+#groupsBody .gtab tr.me td{font-weight:900;background:rgba(255,199,44,.14)}
+#groupsBody .gact{display:flex;gap:8px;margin-top:10px}
+#groupsBody .gact button{flex:1}
+#groupsBody .gsub{margin-top:12px;font-size:12px}
+#groupsBody .ghist{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#groupsBody .gday{font-size:12px}
+#groupsBody .gday th{text-align:center;white-space:nowrap;vertical-align:bottom}
+#groupsBody .gday th i{display:block;font-style:normal;font-weight:500;font-size:10px;max-width:64px;overflow:hidden;text-overflow:ellipsis}
+#groupsBody .gday td{text-align:center;white-space:nowrap}
+#groupsBody .gday td:first-child{text-align:right;max-width:90px;overflow:hidden;text-overflow:ellipsis}
+#groupsBody .gday td.ok{font-weight:900}
+#groupsBody .gday td.no,#groupsBody .gday td.nx{color:var(--dim)}
+.glink{background:none;border:0;padding:0;margin:0;width:auto;min-height:0;font:inherit;font-size:12.5px;color:var(--text);text-decoration:underline;cursor:pointer}
 #comm .hd,#rank .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
 #comm .ctab{display:flex;gap:6px;align-items:flex-end;margin-top:10px}
 #comm .ctab .c{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
@@ -1447,6 +1451,7 @@ button.wa,button.act.wa{background:#15803D}
     <button type="button" class="on" data-tab="daily">חידה יומית</button>
     <button type="button" data-tab="versus">קרב חברים</button>
     <button type="button" data-tab="grid">3×3</button>
+    <button type="button" data-tab="groups">קבוצות</button>
   </nav>
 
   <div id="dailyView">
@@ -1538,8 +1543,12 @@ button.wa,button.act.wa{background:#15803D}
       <button class="act wa" id="gWa">שליחה בוואטסאפ</button>
       <button class="act ghost" id="gStory">תמונה לשיתוף</button>
       <button class="act ghost" id="gReveal">מה היו התשובות?</button>
+      <div id="gGrp"></div>
     </div>
   </div>
+
+  <!-- קבוצות חברים — חידה יומית ו-3×3, כל המועדונים (src/groups.js) -->
+  <div id="groupsView" class="hide"><div id="groupsBody"></div></div>
 
   <div id="versusView" class="hide">
     <div class="vtop"><button type="button" id="vHelpBtn">איך משחקים?</button></div>
@@ -1997,6 +2006,11 @@ button.wa,button.act.wa{background:#15803D}
 __BOOT__
 </script>
 
+<!-- קבוצות חברים. **לפני** המנוע: restore() קורא ל-finish כבר בטעינה. -->
+<script>
+__GROUPS__
+</script>
+
 <script>
 __ENGINE__
 </script>
@@ -2021,11 +2035,6 @@ __GRID__
 <!-- איקס-עיגול בקרב חברים. משתמש ב-SportGrid; versus.js יוצר אותו. -->
 <script>
 __TTT__
-</script>
-
-<!-- קבוצות חברים: טבלה סגורה של החידה היומית. REST לפיירבייס, בלי SDK. -->
-<script>
-__GROUPS__
 </script>
 
 <script type="module">

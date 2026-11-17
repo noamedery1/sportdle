@@ -1557,15 +1557,16 @@ $("#vHelpClose").addEventListener("click", () => vHelp.classList.remove("on"));
 vHelp.addEventListener("click", e => { if (e.target === vHelp) vHelp.classList.remove("on"); });
 addEventListener("keydown", e => { if (e.key === "Escape") vHelp.classList.remove("on"); });
 
-const views = { daily: $("#dailyView"), versus: $("#versusView"), grid: $("#gridView") };
+const views = { daily: $("#dailyView"), versus: $("#versusView"), grid: $("#gridView"), groups: $("#groupsView") };
 function openTab(t){
   /* נבחרת: אין קרב — הוא עובר על המועדונים בלבד */
-  if ((t === "versus" || t === "grid") && document.documentElement.dataset.kind === "national") t = "daily";
+  if ((t === "versus" || t === "grid" || t === "groups") && document.documentElement.dataset.kind === "national") t = "daily";
   document.querySelectorAll(".nav button").forEach(b =>
     b.classList.toggle("on", b.dataset.tab === t));
   views.daily.classList.toggle("hide", t !== "daily");
   views.versus.classList.toggle("hide", t !== "versus");
   views.grid.classList.toggle("hide", t !== "grid");
+  views.groups.classList.toggle("hide", t !== "groups");
   try{ history.replaceState(null, "", t === "daily" ? location.pathname : "#" + t); }
   catch(e){ /* iframe עם origin שונה — לא קריטי */ }
   // גלילה לראש כדי שהמעבר לא יקפוץ באמצע הדף
@@ -1574,6 +1575,7 @@ function openTab(t){
   window.scrollTo({ top: 0, behavior: "instant" in document.documentElement.style ? "instant" : "auto" });
   if (t === "versus") bootVersus();
   if (t === "grid" && window.SportGrid) window.SportGrid.boot();
+  if (t === "groups" && window.SportGroups) window.SportGroups.render();
 }
 document.querySelectorAll(".nav button").forEach(b =>
   b.addEventListener("click", () => openTab(b.dataset.tab)));

@@ -30,7 +30,9 @@
     "ttt .validate: אי אפשר למחוק את cells בלי למחוק את ttt כולו (ריוואנש). grid/$k .write newData.exists(): מונה לא נמחק — רק +1.",
     "נוסף לקבוצות חברים (src/groups.js): groups/v1/<מועדון>/<קוד 6>/{name,host,at,m/<uid>/n,r/d<חידה>/<uid>}.",
     "name/host/at נכתבים פעם אחת (יצירה ב-PATCH, נבדק לכל נתיב). תוצאה r נכתבת פעם אחת, רק לחבר בקבוצה, 0..12 (0 = לא פיצח).",
-    "m/<uid> כתיב לכל מי שיודע את הקוד (הצטרפות, יציאה, הוצאה) — אותו מודל כמו חדרי הקרב, בלי התחברות."
+    "m/<uid> כתיב לכל מי שיודע את הקוד (הצטרפות, יציאה, הוצאה) — אותו מודל כמו חדרי הקרב, בלי התחברות.",
+    "groups/v2/<קוד> (17/11 ערב): קוד גלובלי + slug + kind (daily|grid) — לשונית \"קבוצות\", כמה קבוצות ממועדונים שונים. v1 נשאר לקבוצות שכבר נפתחו.",
+    "r ב-v2: daily 0..12, grid משבצות*1000+נדירות 0..9900 (לפי kind של הקבוצה)."
   ],
   "rules": {
     "_bans": [
@@ -255,6 +257,55 @@
             "$other": {
               ".validate": false
             }
+          }
+        }
+      },
+      "v2": {
+        "$code": {
+          ".read": true,
+          ".validate": "$code.matches(/^[A-Z2-9]{6}$/) && newData.hasChildren(['name','host','slug','kind'])",
+          "name": {
+            ".write": "!data.exists()",
+            ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 24"
+          },
+          "host": {
+            ".write": "!data.exists()",
+            ".validate": "newData.isString() && newData.val().length <= 40"
+          },
+          "at": {
+            ".write": "!data.exists()",
+            ".validate": "newData.isNumber() && newData.val() <= now + 60000"
+          },
+          "slug": {
+            ".write": "!data.exists()",
+            ".validate": "newData.isString() && newData.val().matches(/^[a-z-]{2,20}$/)"
+          },
+          "kind": {
+            ".write": "!data.exists()",
+            ".validate": "newData.isString() && (newData.val() === 'daily' || newData.val() === 'grid')"
+          },
+          "m": {
+            "$uid": {
+              ".write": true,
+              ".validate": "$uid.length <= 40 && newData.hasChildren(['n'])",
+              "n": {
+                ".validate": "newData.isString() && newData.val().length >= 1 && newData.val().length <= 16"
+              },
+              "$other": {
+                ".validate": false
+              }
+            }
+          },
+          "r": {
+            "$d": {
+              "$uid": {
+                ".write": "!data.exists() && newData.exists()",
+                ".validate": "$d.matches(/^d[0-9]{5}$/) && newData.isNumber() && newData.val() >= 0 && newData.val() <= (root.child('groups/v2/' + $code + '/kind').val() === 'grid' ? 9900 : 12) && root.child('groups/v2/' + $code + '/m/' + $uid).exists()"
+              }
+            }
+          },
+          "$other": {
+            ".validate": false
           }
         }
       }
