@@ -215,7 +215,37 @@ footer .who a:hover{color:var(--dim)}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
+#grp{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
+#grp.on{display:block}
+#grp .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#grp .hd b{color:var(--text);font-weight:900}
+#grp .grp1+.grp1{margin-top:14px}
+#grp .gtab{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;color:var(--text)}
+#grp .gtab th{font-size:11px;font-weight:700;color:var(--dim);text-align:right;padding:4px 6px;border-bottom:1px solid var(--line)}
+#grp .gtab td{padding:6px;border-bottom:1px solid var(--line)}
+#grp .gtab tr.me td{font-weight:900;background:rgba(255,199,44,.14)}
+#grp .gact{display:flex;gap:8px;margin-top:10px}
+#grp .gact button{flex:1}
+#grp .gsub{margin-top:12px;font-size:12px}
+#grp .ghist{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#grp .gday{font-size:12px}
+#grp .gday th{text-align:center;white-space:nowrap;vertical-align:bottom}
+#grp .gday th i{display:block;font-style:normal;font-weight:500;font-size:10px;max-width:64px;overflow:hidden;text-overflow:ellipsis}
+#grp .gday td{text-align:center;white-space:nowrap}
+#grp .gday td:first-child{text-align:right;max-width:90px;overflow:hidden;text-overflow:ellipsis}
+#grp .gday td.ok{font-weight:900}
+#grp .gday td.no,#grp .gday td.nx{color:var(--dim)}
+#grp .glink{background:none;border:0;padding:0;margin:0;width:auto;min-height:0;font:inherit;font-size:12.5px;color:var(--text);text-decoration:underline;cursor:pointer}
 #comm .hd,#rank .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#comm .ctab{display:flex;gap:6px;align-items:flex-end;margin-top:10px}
+#comm .ctab .c{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+#comm .ctab span{width:100%;border-radius:3px;background:var(--miss,var(--slate))}
+#comm .ctab b{font-size:11px;font-weight:800;color:var(--dim)}
+#comm .ctab i{font-style:normal;font-size:12px;font-weight:900;color:var(--dim)}
+#comm .ctab .me span{background:var(--brand)}
+#comm .ctab .me b,#comm .ctab .me i{color:var(--text)}
+#comm .cfoot{margin-top:8px;font-size:13px;color:var(--dim);text-align:center}
+#comm .cfoot b{color:var(--text);font-weight:900}
 #comm .hd b,#rank .hd b{color:var(--text);font-weight:900}
 #rank .rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 #rank .rows div{font-size:12px;line-height:1.35;padding:8px 6px;border-radius:10px;background:rgba(127,127,127,.1);text-align:center}
@@ -1462,6 +1492,8 @@ button.wa,button.act.wa{background:#15803D}
       <div class="legend mlegend" aria-hidden="true"><span><i class="dot y"></i> מדויק</span><span><i class="dot o"></i> קרוב</span><span><i class="dot s"></i> רחוק</span></div>
       <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
       <div id="comm"></div>
+      <!-- קבוצות חברים — אפליקציה בלבד (src/groups.js) -->
+      <div id="grp"></div>
       <!-- איפה אני במועדון: אחוזונים מ-fn=ranks, המיקום מחושב במכשיר (renderRank) -->
       <div id="rank"></div>
       <div class="stats" id="stats"></div>
@@ -1989,6 +2021,11 @@ __GRID__
 <!-- איקס-עיגול בקרב חברים. משתמש ב-SportGrid; versus.js יוצר אותו. -->
 <script>
 __TTT__
+</script>
+
+<!-- קבוצות חברים: טבלה סגורה של החידה היומית. REST לפיירבייס, בלי SDK. -->
+<script>
+__GROUPS__
 </script>
 
 <script type="module">
