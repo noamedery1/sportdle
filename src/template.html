@@ -216,6 +216,15 @@ footer .who a:hover{color:var(--dim)}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
 #comm .hd,#rank .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#comm .ctab{display:flex;gap:6px;align-items:flex-end;margin-top:10px}
+#comm .ctab .c{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+#comm .ctab span{width:100%;border-radius:3px;background:var(--miss,var(--slate))}
+#comm .ctab b{font-size:11px;font-weight:800;color:var(--dim)}
+#comm .ctab i{font-style:normal;font-size:12px;font-weight:900;color:var(--dim)}
+#comm .ctab .me span{background:var(--brand)}
+#comm .ctab .me b,#comm .ctab .me i{color:var(--text)}
+#comm .cfoot{margin-top:8px;font-size:13px;color:var(--dim);text-align:center}
+#comm .cfoot b{color:var(--text);font-weight:900}
 #comm .hd b,#rank .hd b{color:var(--text);font-weight:900}
 #rank .rows{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 #rank .rows div{font-size:12px;line-height:1.35;padding:8px 6px;border-radius:10px;background:rgba(127,127,127,.1);text-align:center}

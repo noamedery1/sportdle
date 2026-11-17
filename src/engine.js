@@ -342,7 +342,8 @@ function finish(won){
 
        המחיר הוא שהמספר בן כמה דקות. ל"59% פיצחו היום" זה לא משנה
        דבר, ולעדכניות של שנייה אין שום ערך מול הופעה מיידית. */
-    if (statsReq) statsReq.then(r => renderComm(r && r.stats, guesses.length, won));
+    const live = !restoring;   // ספירת הקהילה נשלפה לפני שסיימתי — בסיום חי מוסיפים אותי ביד
+    if (statsReq) statsReq.then(r => renderComm(r && r.stats, guesses.length, won, live));
     $("#next").style.display = "";
   } else {
     if (!practice) saveState();
@@ -1129,7 +1130,7 @@ function renderRank(r){
   el.classList.add("on");
 }
 
-function renderComm(st, myGuesses, iWon){
+function renderComm(st, myGuesses, iWon, live){
   const el = $("#comm");
   if (!st || st.done < MIN_HEAD){ el.classList.remove("on"); return; }
 
@@ -1170,8 +1171,29 @@ function renderComm(st, myGuesses, iWon){
   /* הממוצע רק כשאין דירוג — שניהם יחד עושים את השורה עמוסה */
   if (!ranked && st.avg) line += ` · ממוצע <b>${st.avg}</b> ניחושים`;
 
-  el.innerHTML = `<div class="hd">${line}</div>`;
+  el.innerHTML = `<div class="hd">${line}</div>` + commTable(st, myGuesses, iWon, live);
   el.classList.add("on");
+}
+
+/* טבלת היום: כמה פיצחו בכל מספר ניחושים, העמודה שלי מודגשת, ומקום.
+   ביקשו את זה מפורשות — זה מה שיוצר תחרות בקבוצה. עמודות אנכיות ולא
+   שורות, כדי לא להכפיל שוב את גובה מסך התוצאה (הסיבה שהגרף הוסר).
+   live: הספירה נשלפה בטעינת הדף, לפני שהתוצאה שלי נשלחה — מוסיפים אותי. */
+function commTable(st, myGuesses, iWon, live){
+  const d = Array.from({length: MAX}, (_, i) => (st.dist || [])[i] || 0);
+  let fail = st.fail || 0;
+  if (live){ if (iWon) d[myGuesses - 1]++; else fail++; }
+  const tot = d.reduce((a, b) => a + b, 0) + fail;
+  if (tot < MIN_RANK) return "";
+  const cols = [...d, fail], top = Math.max(1, ...cols);
+  const mine = iWon ? myGuesses - 1 : MAX;
+  const cell = (v, i) => `<div class="c${i === mine ? " me" : ""}">
+      <span style="height:${Math.round(6 + v / top * 44)}px"></span>
+      <b>${Math.round(v / tot * 100)}%</b><i>${i < MAX ? i + 1 : "✗"}</i></div>`;
+  const place = iWon ? d.slice(0, myGuesses - 1).reduce((a, b) => a + b, 0) + 1 : 0;
+  const foot = iWon ? `מקום <b>${place}</b> מתוך <b>${tot}</b>`
+                    : `<b>${fail}</b> מתוך <b>${tot}</b> לא פיצחו`;
+  return `<div class="ctab">${cols.map(cell).join("")}</div><div class="cfoot">${foot}</div>`;
 }
 
 /* ---------- סטטיסטיקה אישית ---------- */
@@ -1486,6 +1508,7 @@ $("#closeArch").addEventListener("click", closeArch);
 arch.addEventListener("click", e => { if (e.target === arch) closeArch(); });
 
 /* ---------- שחזור מהלך ---------- */
+let restoring = false;
 function restore(){
   try{
     const st = stateOf(puzzleNo);
@@ -1502,8 +1525,9 @@ function restore(){
     if (hinted){ $("#hintOut").textContent = hintText(); $("#hintBtn").style.display = "none"; }
     else $("#hintBtn").style.display = "";
     const last = guesses[guesses.length - 1];
-    if (st.over || last.name === answer.name || guesses.length >= MAX)
-      finish(last.name === answer.name);
+    if (st.over || last.name === answer.name || guesses.length >= MAX){
+      restoring = true; finish(last.name === answer.name); restoring = false;
+    }
     else { maybeHint(); maybeFriend(); }
   }catch(e){}
 }
