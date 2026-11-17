@@ -353,6 +353,8 @@
       const k = st.cells.filter(Boolean).length;
       const rar = st.cells.filter(Boolean).reduce((s, v) => s + v.rar, 0);
       $("#gScore").textContent = k + "/9 · נדירות " + rar;
+      /* קבוצות חברים (src/groups.js) — גריד מועדון בלבד, ולא באתר */
+      if (window.SportGroups && G.slug && !G.gate) window.SportGroups.grid($("#gGrp"), G.slug, G.grid.n + 1, k, rar);
       $("#gReveal").hidden = st.reveal;
     }
   }

@@ -343,7 +343,7 @@ function finish(won){
        המחיר הוא שהמספר בן כמה דקות. ל"59% פיצחו היום" זה לא משנה
        דבר, ולעדכניות של שנייה אין שום ערך מול הופעה מיידית. */
     /* קבוצות חברים: רק באפליקציה (באתר אין חידה יומית). מפרסם ומציג. */
-    if (window.SportGroups && !WEB_GATE) window.SportGroups.done($("#grp"), puzzleNo, won ? guesses.length : 0, MAX);
+    if (window.SportGroups && !WEB_GATE) window.SportGroups.daily($("#grp"), puzzleNo, won ? guesses.length : 0);
     const live = !restoring;   // ספירת הקהילה נשלפה לפני שסיימתי — בסיום חי מוסיפים אותי ביד
     if (statsReq) statsReq.then(r => renderComm(r && r.stats, guesses.length, won, live));
     $("#next").style.display = "";
@@ -352,7 +352,7 @@ function finish(won){
     $("#next").style.display = practice ? "none" : "";
     $("#stats").innerHTML = "";
     $("#comm").classList.remove("on");
-    $("#grp").classList.remove("on"); if (window.SportGroups) window.SportGroups.hide();
+    if (window.SportGroups) window.SportGroups.hideLine($("#grp"));
     /* ארכיון שנפתר: איך הלך לכולם באותו יום. התוצאה שלי מהארכיון לא
        נשלחת לשרת ולא נכנסת לספירה — live=false. */
     if (!practice && ANALYTICS_URL){
@@ -1201,10 +1201,8 @@ function commTable(st, myGuesses, iWon, live){
   const cell = (v, i) => `<div class="c${i === mine ? " me" : ""}">
       <span style="height:${Math.round(6 + v / top * 44)}px"></span>
       <b>${Math.round(v / tot * 100)}%</b><i>${i < MAX ? i + 1 : "✗"}</i></div>`;
-  const place = iWon ? d.slice(0, myGuesses - 1).reduce((a, b) => a + b, 0) + 1 : 0;
-  const foot = iWon ? `מקום <b>${place}</b> מתוך <b>${tot}</b>`
-                    : `<b>${fail}</b> מתוך <b>${tot}</b> לא פיצחו`;
-  return `<div class="ctab">${cols.map(cell).join("")}</div><div class="cfoot">${foot}</div>`;
+  /* בלי "מקום X מתוך Y": מספר המשחקים המוחלט לא מוצג אף פעם (ראה renderComm) — אחוזים בלבד */
+  return `<div class="ctab">${cols.map(cell).join("")}</div>`;
 }
 
 /* ---------- סטטיסטיקה אישית ---------- */
