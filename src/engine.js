@@ -342,6 +342,8 @@ function finish(won){
 
        המחיר הוא שהמספר בן כמה דקות. ל"59% פיצחו היום" זה לא משנה
        דבר, ולעדכניות של שנייה אין שום ערך מול הופעה מיידית. */
+    /* קבוצות חברים: רק באפליקציה (באתר אין חידה יומית). מפרסם ומציג. */
+    if (window.SportGroups && !WEB_GATE) window.SportGroups.done($("#grp"), puzzleNo, won ? guesses.length : 0, MAX);
     const live = !restoring;   // ספירת הקהילה נשלפה לפני שסיימתי — בסיום חי מוסיפים אותי ביד
     if (statsReq) statsReq.then(r => renderComm(r && r.stats, guesses.length, won, live));
     $("#next").style.display = "";
@@ -350,6 +352,7 @@ function finish(won){
     $("#next").style.display = practice ? "none" : "";
     $("#stats").innerHTML = "";
     $("#comm").classList.remove("on");
+    $("#grp").classList.remove("on"); if (window.SportGroups) window.SportGroups.hide();
     /* ארכיון שנפתר: איך הלך לכולם באותו יום. התוצאה שלי מהארכיון לא
        נשלחת לשרת ולא נכנסת לספירה — live=false. */
     if (!practice && ANALYTICS_URL){

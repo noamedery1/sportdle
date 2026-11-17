@@ -505,7 +505,9 @@
                      ...((window.SD && window.SD.teamOrder) || [])];
       if (!seg || !known.includes(seg)) return false;
       if (new URLSearchParams(location.search).get("club") === seg) return true;
-      location.replace(`/?club=${encodeURIComponent(seg)}`);
+      /* g = הזמנה לקבוצת חברים (src/groups.js) — עובר הלאה */
+      let g = null; try { g = new URL(url).searchParams.get("g"); } catch (e) {}
+      location.replace(`/?club=${encodeURIComponent(seg)}` + (g ? `&g=${encodeURIComponent(g)}` : ""));
       return true;
     };
 

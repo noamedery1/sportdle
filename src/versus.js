@@ -164,6 +164,9 @@ const modBtns = (id, me) => id === me ? "" :
   `<span class="mods"><button type="button" data-mod="report" data-id="${id}">דיווח</button>` +
   `<button type="button" data-mod="block" data-id="${id}">${blocked.has(id) ? "חסום" : "חסימה"}</button></span>`;
 
+/* קבוצות החברים (src/groups.js) משתמשות באותם כלי בטיחות */
+window.SportSafety = { isBadNick, dispName, vModal, ensureTerms, sendReport, blocked, saveBlocked, banned };
+
 (function vSafetyCss(){
   const s = document.createElement("style");
   s.textContent = `

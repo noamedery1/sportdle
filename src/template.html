@@ -215,6 +215,18 @@ footer .who a:hover{color:var(--dim)}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
+#grp{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
+#grp.on{display:block}
+#grp .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
+#grp .hd b{color:var(--text);font-weight:900}
+#grp .grp1+.grp1{margin-top:14px}
+#grp .gtab{width:100%;border-collapse:collapse;margin-top:8px;font-size:13px;color:var(--text)}
+#grp .gtab th{font-size:11px;font-weight:700;color:var(--dim);text-align:right;padding:4px 6px;border-bottom:1px solid var(--line)}
+#grp .gtab td{padding:6px;border-bottom:1px solid var(--line)}
+#grp .gtab tr.me td{font-weight:900;background:rgba(255,199,44,.14)}
+#grp .gact{display:flex;gap:8px;margin-top:10px}
+#grp .gact button{flex:1}
+#grp .gfoot{margin-top:10px;font-size:11.5px;color:var(--dim);text-align:center}
 #comm .hd,#rank .hd{font-size:13.5px;color:var(--dim);line-height:1.6}
 #comm .ctab{display:flex;gap:6px;align-items:flex-end;margin-top:10px}
 #comm .ctab .c{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
@@ -1471,6 +1483,8 @@ button.wa,button.act.wa{background:#15803D}
       <div class="legend mlegend" aria-hidden="true"><span><i class="dot y"></i> מדויק</span><span><i class="dot o"></i> קרוב</span><span><i class="dot s"></i> רחוק</span></div>
       <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
       <div id="comm"></div>
+      <!-- קבוצות חברים — אפליקציה בלבד (src/groups.js) -->
+      <div id="grp"></div>
       <!-- איפה אני במועדון: אחוזונים מ-fn=ranks, המיקום מחושב במכשיר (renderRank) -->
       <div id="rank"></div>
       <div class="stats" id="stats"></div>
@@ -1998,6 +2012,11 @@ __GRID__
 <!-- איקס-עיגול בקרב חברים. משתמש ב-SportGrid; versus.js יוצר אותו. -->
 <script>
 __TTT__
+</script>
+
+<!-- קבוצות חברים: טבלה סגורה של החידה היומית. REST לפיירבייס, בלי SDK. -->
+<script>
+__GROUPS__
 </script>
 
 <script type="module">

@@ -484,6 +484,8 @@ html = html
   .split("__GRID__").join(readText("src/grid.js", "")
     .split('"__FBDB__"').join(JSON.stringify((site.firebase && site.firebase.databaseURL) || "")))
   .split("__TTT__").join(readText("src/ttt.js", ""))
+  .split("__GROUPS__").join(readText("src/groups.js", "")
+    .split('"__FBDB__"').join(JSON.stringify((site.firebase && site.firebase.databaseURL) || "")))
   /* באנר האפליקציה — מקור אחד עם דפי התוכן. ראה content.mjs. */
   .split("__APP_BANNER__").join(appBannerHtml(site))
   .split("__IOS_META__").join(iosMetaHtml(site))
