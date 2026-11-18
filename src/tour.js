@@ -37,7 +37,7 @@
       { t: "#guess", m: "מקלידים שם של שחקן ובוחרים אותו מהרשימה. כל ניחוש מקרב אתכם לתשובה." },
       { t: ".tour-demo, #board .row", m: "כל ניחוש מחזיר חמישה רמזים: עמדה, לאום, עונה ראשונה, תארים ושנת לידה — כל אחד בהשוואה לשחקן המסתורי." },
       { t: ".tour-demo .tile.hit, #board .row .tile.hit", m: "צבע המועדון = מדויק. הרמז הזה זהה לתשובה." },
-      { t: ".tour-demo .tile.near, #board .row .tile.near", m: "גוון כהה = קרוב: אותה יבשת, או שנה-שלוש הפרש." },
+      { t: ".tour-demo .tile.near, #board .row .tile.near", m: "גוון אחר של צבע המועדון, עם נקודה בפינה = קרוב: אותה יבשת, או שנה-שלוש הפרש." },
       { t: ".tour-demo .ar, #board .row .ar", m: "החץ אומר לאן ללכת: ↑ התשובה גבוהה או מאוחרת יותר, ↓ נמוכה או מוקדמת יותר." },
       { t: "#left", m: `יש ${MAXG()} ניסיונות. חידה חדשה כל יום בחצות.` },
       { t: "#hintBtn", m: "נתקעתם? אפשר לקבל רמז נוסף." },
@@ -46,8 +46,7 @@
     versus: () => [
       { t: "#modePick", m: "בוחרים משחק: מי השחקן (רמזים נחשפים, מי שמזהה ראשון), מספרים, או איקס-עיגול 3×3." },
       { t: "#btnCreate", m: "פותחים חדר ומקבלים קוד בן ארבע אותיות. שולחים אותו לחברים." },
-      { t: "#btnJoin", m: "קיבלתם קוד מחבר? מזינים אותו כאן ונכנסים לחדר." },
-      { t: '.nav [data-tab="versus"]', m: "צריך לפחות שני שחקנים. מי שצובר הכי הרבה נקודות — מנצח." }
+      { t: "#btnJoin", m: "קיבלתם קוד מחבר? מזינים אותו כאן ונכנסים לחדר. צריך לפחות שני שחקנים — מי שצובר הכי הרבה נקודות מנצח." }
     ],
     grid: () => [
       { t: "#gBoard", m: "לוח 3×3: לכל שורה ולכל עמודה יש תנאי. בכל משבצת צריך שחקן שעונה על שניהם." },
@@ -81,8 +80,8 @@
     const s = document.createElement("style");
     s.textContent = `
     .tour{position:fixed;inset:0;z-index:10000;pointer-events:auto}
-    .tour .spot{position:fixed;border-radius:14px;box-shadow:0 0 0 9999px rgba(10,10,14,.68);outline:3px solid var(--brand);outline-offset:3px;transition:all .35s cubic-bezier(.3,.8,.3,1);pointer-events:none}
-    .tour .hand{position:fixed;width:42px;height:42px;transition:left .35s,top .35s;pointer-events:none;animation:tourTap 1.1s ease-in-out infinite;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
+    .tour .spot{position:fixed;border-radius:14px;box-shadow:0 0 0 3px var(--brand),0 0 0 9999px rgba(10,10,14,.68);outline:2px solid #fff;outline-offset:0;transition:all .35s cubic-bezier(.3,.8,.3,1);pointer-events:none}
+    .tour .hand{position:fixed;z-index:2;width:38px;height:38px;transition:left .35s,top .35s;pointer-events:none;animation:tourTap 1.1s ease-in-out infinite;filter:drop-shadow(0 2px 3px rgba(0,0,0,.4))}
     @keyframes tourTap{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(-4px,-8px) rotate(-8deg) scale(.94)}}
     .tour .bub{position:fixed;left:12px;right:12px;max-width:420px;margin:0 auto;background:#fff;color:#17181c;border-radius:16px;padding:14px 14px 12px 32px;direction:rtl;text-align:right;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:top .35s;font-size:15px;line-height:1.55}
     .tour .bub .top{display:flex;align-items:center;gap:10px}
@@ -104,16 +103,20 @@
     T.el.remove();
     if (T.demo) T.demo.remove();
     removeEventListener("resize", place); removeEventListener("scroll", place, true);
+    const back = T.back;
     T = null;
+    if (back && back.isConnected && back.focus) back.focus({ preventScroll: true });
   }
   function target() { return T && document.querySelector(T.steps[T.i].t); }
   function place() {
     if (!T) return;
     const el = target(); if (!el) return;
-    const r = el.getBoundingClientRect(), pad = 6, vh = innerHeight;
+    const r = el.getBoundingClientRect(), vh = innerHeight;
+    const pad = Math.min(r.width, r.height) < 60 ? 2 : 4;   // מטרות קטנות (אריח, כפתור) — בלי לחתוך את השכנים
     const spot = $(".spot", T.el), hand = $(".hand", T.el), bub = $(".bub", T.el);
     Object.assign(spot.style, { left: r.left - pad + "px", top: r.top - pad + "px", width: r.width + pad * 2 + "px", height: r.height + pad * 2 + "px" });
-    Object.assign(hand.style, { left: Math.min(innerWidth - 50, r.left + r.width / 2 - 8) + "px", top: Math.min(vh - 50, r.top + r.height / 2) + "px" });
+    /* היד בפינה השמאלית-תחתונה של המטרה, לא באמצע — שלא תסתיר את מה שמסבירים */
+    Object.assign(hand.style, { left: Math.max(4, Math.min(innerWidth - 44, r.left - 12)) + "px", top: Math.min(vh - 44, r.bottom - 14) + "px" });
     const bh = bub.offsetHeight || 150;
     const below = r.bottom + 16 + bh < vh - 8;
     bub.style.top = (below ? r.bottom + 16 : Math.max(8, r.top - bh - 16)) + "px";
@@ -140,6 +143,11 @@
   function start(kind) {
     stop();
     const make = TOURS[kind]; if (!make) return;
+    /* הסיור רץ על הלשונית שלו: "?" פתוח מכל לשונית, ומלשונית אחרת היו
+       רק שני צעדים ושורת הדוגמה נכנסה ללוח מוסתר */
+    const tab = document.querySelector(`.nav [data-tab="${kind}"]`);
+    if (tab && !tab.classList.contains("on") && vis(tab)) { tab.click(); return void setTimeout(() => start(kind), 350); }
+    const back = document.activeElement;
     let demo = null;
     if (kind === "daily" && !$("#board .row")) { demo = demoRow(); $("#board").prepend(demo); }
     const el = document.createElement("div");
@@ -150,7 +158,7 @@
       `<div class="top"><div class="mas">${MASCOT}</div><div class="txt" aria-live="polite"></div></div>` +
       `<div class="row2"><span class="cnt"></span><button type="button" class="pv">הקודם</button><button type="button" class="nx">הבא</button></div></div>`;
     document.body.appendChild(el);
-    T = { steps: make(), i: 0, el, demo };
+    T = { steps: make(), i: 0, el, demo, back };
     el.addEventListener("click", e => {
       if (e.target.closest(".x")) return stop();
       if (e.target.closest(".nx")) return show(T.i + 1);
@@ -177,5 +185,14 @@
     setTimeout(() => start(b.dataset.tour), 120);
   });
 
-  window.SportTour = { start, stop };
+  /* "?" שבראש הדף פותח את ההסבר של הלשונית הפתוחה, לא תמיד של החידה היומית */
+  document.addEventListener("click", e => {
+    if (!e.target.closest("#helpBtn")) return;
+    const t = (document.querySelector(".nav button.on") || {}).dataset?.tab;
+    const other = t === "grid" ? "#gHelpBtn" : t === "versus" ? "#vHelpBtn" : null;
+    if (other && document.querySelector(other)) { e.stopImmediatePropagation(); e.preventDefault(); document.querySelector(other).click(); }
+    else if (t === "groups" && window.SportGroups && window.SportGroups.explain) { e.stopImmediatePropagation(); e.preventDefault(); window.SportGroups.explain(); }
+  }, true);
+
+  window.SportTour = { start, stop, active: () => !!T };
 })();
