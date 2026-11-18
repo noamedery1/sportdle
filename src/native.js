@@ -277,6 +277,9 @@
       if (window.SportTour && window.SportTour.active()) { window.SportTour.stop(); return; }
       const vm = document.querySelector(".vmodal");
       if (vm) { vm.click(); return; }
+      /* חלונית תחתונה של הקבוצות (src/groups.js) — לחיצה על הרקע סוגרת */
+      const gs = document.querySelector(".gsheet");
+      if (gs) { gs.click(); return; }
       /* סדר סגירה מהפנימי לחיצוני */
       const open = [
         document.querySelector("#sugg.on"),

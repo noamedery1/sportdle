@@ -273,17 +273,46 @@
     if (x.k !== "daily" || n >= today || x.s !== slug()) return "";
     try { const a = typeof answerFor === "function" ? answerFor(n) : null; return a ? a.name : ""; } catch (e) { return ""; }
   }
+
+  /* צבע הקבוצה = צבע המועדון שלה (לא של הדף — קבוצת בית"ר בדף מכבי נשארת צהובה) */
+  function clubColors(s) {
+    const c = (window.SD && window.SD.clubs && window.SD.clubs[s] && window.SD.clubs[s].colors) || {};
+    const bg = c.brand || "var(--brand)", hex = /^#([0-9a-f]{6})$/i.exec(c.brand || "");
+    let fg = "#121214";
+    if (hex) { const n = parseInt(hex[1], 16), l = (0.299 * (n >> 16) + 0.587 * (n >> 8 & 255) + 0.114 * (n & 255)) / 255; if (l < 0.55) fg = "#fff"; }
+    return { bg, fg };
+  }
+
+  /* ---------- חלונית תחתונה (bottom sheet) ----------
+     לתפריט ⋯ של קבוצה ולראש בראש. מחזירה את מזהה הפריט שנבחר, או null.
+     "חזור" באנדרואיד סוגר אותה (native.js מחפש .gsheet). */
+  function sheet(head, items, color) {
+    return new Promise(res => {
+      const w = document.createElement("div");
+      w.className = "gsheet";
+      w.innerHTML = `<div class="gscrim"></div><div class="gbs" role="dialog" aria-modal="true" style="--gc:${color || "var(--brand)"}">` +
+        `<div class="grab"></div>${head}<div class="glist">` +
+        items.map(i => `<button type="button" data-v="${i.id}" class="${i.danger ? "danger" : ""}">${i.label}</button>`).join("") +
+        `</div></div>`;
+      const done = v => { w.remove(); res(v); };
+      w.addEventListener("click", e => {
+        const b = e.target.closest("[data-v]");
+        if (b) return done(b.dataset.v);
+        if (e.target === w || e.target.classList.contains("gscrim")) done(null);
+      });
+      document.body.appendChild(w);
+      const f = w.querySelector(".glist button"); if (f) setTimeout(() => f.focus({ preventScroll: true }), 30);
+    });
+  }
+
   function table(x, g) {
     const me = uid(), R = g.r || {}, grid = x.k === "grid", S1 = season(x, g), { rows, today } = S1;
-    const mods = id => id === me ? "" :
-      `<span class="mods"><button type="button" data-gmod="report" data-id="${id}">דיווח</button>` +
-      `<button type="button" data-gmod="block" data-id="${id}">${S().blocked && S().blocked.has(id) ? "חסום" : "חסימה"}</button></span>`;
     const medal = i => ["🥇", "🥈", "🥉"][i] || String(i + 1);
-    const lead = `<div class="hd gweek">השבוע ${weekLabel(S1.thisWeek)} · מתאפס ביום ראשון · בסופו מוכתר אלוף השבוע 👑</div>` +
-      `<table class="gtab"><thead><tr><th>#</th><th>שם</th><th>השבוע</th><th>סה״כ</th><th>👑</th></tr></thead><tbody>` +
+    const lead = `<div class="gweek"><span>השבוע ${weekLabel(S1.thisWeek)}</span><span>👑 מוכתר ביום ראשון</span></div>` +
+      `<table class="lb"><thead><tr><th></th><th>שם</th><th>השבוע</th><th>סה״כ</th><th>👑</th></tr></thead><tbody>` +
       rows.map((r, i) => `<tr class="${r.id === me ? "me" : ""}"><td>${r.week ? medal(i) : i + 1}</td>` +
-        `<td><button type="button" class="gnm" data-g="h2h" data-id="${r.id}">${esc(r.name)}${r.crown ? " 👑" : ""}</button>${mods(r.id)}</td>` +
-        `<td><b>${r.week}</b></td><td>${r.p}</td><td>${r.titles || "—"}</td></tr>`).join("") + `</tbody></table>`;
+        `<td class="nm"><button type="button" data-g="h2h" data-id="${r.id}"><span class="gnm">${esc(r.name)}</span>${r.crown ? " 👑" : ""}${r.id === me ? " <i>(אני)</i>" : ""}</button></td>` +
+        `<td class="wk">${r.week}</td><td class="dim">${r.p}</td><td class="dim">${r.titles || "—"}</td></tr>`).join("") + `</tbody></table>`;
     const days = Array.from({ length: DAYS }, (_, i) => today - i).filter(n => n >= 1);
     const cell = v => v == null ? `<td class="nx">·</td>`
       : grid ? `<td class="ok">${Math.floor(v / 1000)}</td>`
@@ -293,41 +322,85 @@
         return `<th>${n === today ? "היום" : "#" + n}${nm ? `<i>${esc(nm)}</i>` : ""}</th>`; }).join("") +
       `</tr></thead><tbody>` +
       rows.map(r => `<tr class="${r.id === me ? "me" : ""}"><td>${esc(r.name)}</td>` +
-        days.map(n => cell((R[day(n)] || {})[r.id])).join("") + `</tr>`).join("") + `</tbody></table></div>`;
+        days.map(n => cell((R[day(n)] || {})[r.id])).join("") + `</tr>`).join("") + `</tbody></table></div>` +
+      `<div class="gnote">${grid ? "המספר = כמה משבצות מילא" : "המספר = באיזה ניחוש פיצח · ✗ לא פיצח"} · · לא שיחק</div>`;
     const cab = S1.champs.length
-      ? `<details class="gcab"><summary>🏆 ארון הגביעים · ${S1.champs.length} שבועות</summary><ul>` +
-        S1.champs.slice(0, 26).map(c => `<li><span>${weekLabel(c.w)}</span> <b>👑 ${c.ids.map(id => esc(S1.names[id] || "")).join(" + ")}</b> · ${c.p} נק׳</li>`).join("") +
-        `</ul></details>`
-      : `<div class="hd gsub">🏆 ארון הגביעים יתמלא בסוף השבוע הראשון.</div>`;
-    return lead + `<div class="hd gsub">לחצו על שם — מאזן ראש בראש מולו</div>` +
-      `<div class="hd gsub">${DAYS} הימים האחרונים · ${grid ? "המספר = כמה משבצות מילא" : "המספר = באיזה ניחוש פיצח"}</div>` + hist + cab;
+      ? `<ul class="gcabl">` + S1.champs.slice(0, 26).map(c => `<li><span>${weekLabel(c.w)}</span> <b>👑 ${c.ids.map(id => esc(S1.names[id] || "")).join(" + ")}</b> · ${c.p} נק׳</li>`).join("") + `</ul>`
+      : `<div class="gnote">יתמלא בסוף השבוע הראשון.</div>`;
+    return lead +
+      `<details class="more-sec"><summary>${DAYS} הימים האחרונים</summary>${hist}</details>` +
+      `<details class="more-sec"><summary>🏆 ארון הגביעים${S1.champs.length ? ` · ${S1.champs.length} שבועות` : ""}</summary>${cab}</details>`;
   }
 
-  /* ---------- ראש בראש ----------
+  /* שורת סיכום לקבוצה מקופלת: המקום שלי, הנקודות שלי, מי מוביל */
+  function summary(x, g) {
+    const S1 = season(x, g), me = uid(), i = S1.rows.findIndex(r => r.id === me), r = S1.rows[i], top = S1.rows[0];
+    if (!r) return "";
+    return `אתה <b>#${i + 1}</b> השבוע · <b>${r.week}</b> נק׳` + (top && top.id !== me && top.week ? ` · מוביל: ${esc(top.name)}` : "");
+  }
+
+  /* ---------- ראש בראש (חלונית תחתונה, עם דיווח וחסימה) ----------
      כל יום ששניכם שיחקתם: מי קיבל יותר נקודות. */
-  function h2h(x, g, other) {
-    const me = uid(), R = g.r || {}, S1 = season(x, g);
+  function record(x, g, a, b) {
+    let w = 0, l = 0, t = 0;
+    for (const byU of Object.values(g.r || {})) {
+      const va = byU[a], vb = byU[b]; if (va == null || vb == null) continue;
+      const pa = ptsOf(x, va), pb = ptsOf(x, vb); pa > pb ? w++ : pa < pb ? l++ : t++;
+    }
+    return { w, l, t };
+  }
+  async function h2h(x, g, other) {
+    const me = uid(), S1 = season(x, g), col = clubColors(x.s).bg;
     if (other === me) {
       const rs = S1.rows.filter(r => r.id !== me).map(r => {
-        let w = 0, l = 0, t = 0;
-        for (const byU of Object.values(R)) {
-          const a = byU[me], b = byU[r.id]; if (a == null || b == null) continue;
-          const pa = ptsOf(x, a), pb = ptsOf(x, b); pa > pb ? w++ : pa < pb ? l++ : t++;
-        }
-        return `<li><b>${esc(r.name)}</b> · ${w} נצחונות · ${l} הפסדים · ${t} תיקו</li>`;
+        const { w, l, t } = record(x, g, me, r.id);
+        return `<li><b>${esc(r.name)}</b><span>${w}–${l}${t ? ` · ${t} תיקו` : ""}</span></li>`;
       });
-      return S().vModal(`<b>ראש בראש — אתה מול כולם</b><br><ul class="gh2h">${rs.join("") || "<li>עוד אין חברים בקבוצה.</li>"}</ul>`,
-        [{ id: "ok", label: "סגירה", primary: true }]);
+      return sheet(`<h3>ראש בראש — אתה מול כולם</h3><div class="gsub2">ניצחונות–הפסדים, בכל יום ששניכם שיחקתם</div>` +
+        `<ul class="gvs">${rs.join("") || "<li>עוד אין חברים בקבוצה.</li>"}</ul>`, [{ id: "x", label: "סגירה" }], col);
     }
-    let w = 0, l = 0, t = 0;
-    for (const byU of Object.values(R)) {
-      const a = byU[me], b = byU[other]; if (a == null || b == null) continue;
-      const pa = ptsOf(x, a), pb = ptsOf(x, b); pa > pb ? w++ : pa < pb ? l++ : t++;
-    }
-    const nm = esc(S1.names[other] || ""), n = w + l + t;
-    const verdict = !n ? "עוד לא שיחקתם באותו יום." : w > l ? "אתה מוביל 💪" : w < l ? `${nm} מוביל 👀` : "שוויון מוחלט 🤝";
-    return S().vModal(`<b>אתה מול ${nm}</b><br>${n ? `<span class="gbig">${w} – ${l}</span>${t ? ` · ${t} תיקו` : ""}<br>` : ""}${verdict}` +
-      `<br><span class="gsmall">כל יום ששניכם שיחקתם: מי קיבל יותר נקודות.</span>`, [{ id: "ok", label: "סגירה", primary: true }]);
+    const nm = S1.names[other] || "", { w, l, t } = record(x, g, me, other), n = w + l + t;
+    const verdict = !n ? "עוד לא שיחקתם באותו יום." : w > l ? "אתה מוביל 💪" : w < l ? `${esc(nm)} מוביל 👀` : "שוויון מוחלט 🤝";
+    const s = S(), isBlocked = s.blocked && s.blocked.has(other);
+    const v = await sheet(`<h3>אתה מול ${esc(nm)}</h3><div class="gsub2">כל יום ששניכם שיחקתם — מי קיבל יותר נקודות</div>` +
+      (n ? `<div class="gscore"><div><b>${w}</b>אתה</div><div class="dash">–</div><div><b>${l}</b>${esc(nm)}</div></div>${t ? `<div class="gsub2 c">${t} תיקו</div>` : ""}` : "") +
+      `<div class="gsub2 c">${verdict}</div>`,
+      [{ id: "report", label: "🚩 דיווח על הכינוי" },
+       { id: "block", label: isBlocked ? "↩️ ביטול חסימה" : `⛔ חסימת ${esc(nm)}`, danger: !isBlocked }], col);
+    if (v === "report" || v === "block") return moderate(x, other, nm, v);
+  }
+
+  /* דיווח / חסימה — כמו בקרב החברים */
+  async function moderate(x, id, nm, kind) {
+    const s = S();
+    if (kind === "block" && s.blocked.has(id)) { s.blocked.delete(id); s.saveBlocked(); return render(); }
+    const rep = kind === "report";
+    const v = await s.vModal(rep
+      ? `<b>לדווח על "${esc(nm)}"?</b><br>הדיווח נשלח אלינו ונבדק תוך 24 שעות. השחקן גם ייחסם אצלך.`
+      : `<b>לחסום את "${esc(nm)}"?</b><br>הכינוי שלו יוסתר אצלך מיד. אפשר גם לצאת מהקבוצה בכל רגע. החסימה מדווחת גם לנו, ונבדקת תוך 24 שעות.`,
+      [{ id: "ok", label: rep ? "דיווח" : "חסימה", primary: true }, { id: "no", label: "ביטול" }]);
+    if (v !== "ok") return;
+    s.sendReport(id, nm, "קבוצה " + x.c, rep ? "דיווח" : "חסימה");
+    s.blocked.add(id); s.saveBlocked();
+    /* מנהל הקבוצה מוציא את מי שחסם — הקבוצה כתיבה לכל מי שיודע את הקוד */
+    try { const host = await call("GET", `${gp(x)}/host`); if (host === uid()) await call("DELETE", `${gp(x)}/m/${id}`); } catch (e) {}
+    render();
+  }
+
+  /* תפריט ⋯ של קבוצה */
+  async function menu(x) {
+    const v = await sheet(`<h3>${esc(x.name)}</h3><div class="gsub2">${KIND[x.k].he} · ${esc(clubName(x.s))} · קוד <b dir="ltr">${x.c}</b></div>`,
+      [{ id: "copy", label: "🔗 העתקת קוד הקבוצה" }, { id: "nick", label: "✏️ שינוי הכינוי שלי" },
+       { id: "how", label: "ℹ️ איך זה מחושב?" }, { id: "leave", label: "🚪 יציאה מהקבוצה", danger: true }], clubColors(x.s).bg);
+    if (v === "copy") {
+      try { await navigator.clipboard.writeText(x.c); say(`הקוד <b dir="ltr">${x.c}</b> הועתק.`); }
+      catch (e) { say(`קוד הקבוצה: <b dir="ltr">${x.c}</b>`); }
+    } else if (v === "nick") {
+      const nick = await askNick(); if (!nick) return;
+      try { await call("PUT", `${gp(x)}/m/${uid()}`, { n: nick }); } catch (e) { return say("לא הצלחנו לשנות. נסו שוב."); }
+      render();
+    } else if (v === "how") explain();
+    else if (v === "leave") leave(x);
   }
 
   /* ---------- "מי עוד לא שיחק היום" ---------- */
@@ -399,25 +472,32 @@
       .then(v => { if (v === "tour" && window.SportTour) setTimeout(() => window.SportTour.start("groups"), 120); });
   }
 
-  /* ---------- הלשונית ---------- */
+  /* ---------- הלשונית ----------
+     היררכיה (סקירת UX 18/11): למעלה הפעולות הכלליות (קבוצה חדשה /
+     הצטרפות) בסגנון אחר; כל קבוצה כרטיס משלה עם פס בצבע המועדון שלה,
+     ⋯ לתפריט, ופעולות הקבוצה בתחתית הכרטיס. קבוצה שאינה הראשונה —
+     מקופלת לשורת סיכום (הפתוחות נזכרות ב-localStorage). */
   const body = () => $("#groupsBody");
   const DATA = {};   // קוד → { m, r } מהטעינה האחרונה (לתמונה, לתזכורת ולראש בראש)
+  const OPEN = "sportdel:groupsOpen";
+  const openSet = list => { const o = get(OPEN); return new Set(Array.isArray(o) ? o : list.slice(0, 1).map(x => x.c)); };
   async function render() {
     const el = body(); if (!el) return;
     const how = `<button type="button" class="glink" data-g="how">איך זה מחושב?</button>`;
+    const top = `<div class="gtop"><h2>הקבוצות שלי</h2>${how}</div>`;
     if (!native()) {
-      el.innerHTML = `<div class="hd"><b>קבוצות חברים</b> · תחרות סגורה רק לכם על החידה היומית ועל ה-3×3. ${how}</div>` +
-        `<div class="hd gweb">הקבוצות פועלות באפליקציה — שם משחקים את החידה היומית ואת ה-3×3. הורידו אותה מהבאנר למטה.</div>`;
+      el.innerHTML = top + `<div class="gempty gweb">תחרות סגורה רק לכם על החידה היומית ועל ה-3×3.<br>` +
+        `<b>הקבוצות פועלות באפליקציה</b> — שם משחקים את החידה היומית ואת ה-3×3. הורידו אותה מהבאנר למטה.</div>`;
       return;
     }
-    const actions = `<div class="gact"><button type="button" class="ghost" data-g="create">פתיחת קבוצה</button>` +
-      `<button type="button" class="ghost" data-g="join">הצטרפות בקוד</button></div>`;
+    const global = `<div class="gglobal"><button type="button" class="plus" data-g="create">＋ קבוצה חדשה</button>` +
+      `<button type="button" data-g="join">הצטרפות בקוד</button></div>`;
     const list = mine();
     if (!list.length) {
-      el.innerHTML = `<div class="hd"><b>הקבוצות שלי</b> · תחרות סגורה רק לכם: חידה יומית או 3×3, לכל מועדון. ${how}</div>${actions}`;
+      el.innerHTML = top + `<div class="gempty">🏆 <b>תחרות סגורה רק לכם ולחברים</b><br>חידה יומית או 3×3 · טבלה שבועית עם אלוף 👑 · ראש בראש.<br>פתחו קבוצה ושלחו את הקישור בוואטסאפ.</div>` + global;
       return;
     }
-    el.innerHTML = `<div class="hd"><b>הקבוצות שלי</b> · טוען…</div>`;
+    el.innerHTML = top + global + `<div class="gnote">טוען…</div>`;
     await bans();
     const parts = await Promise.all(list.map(async x => {
       try {
@@ -430,15 +510,27 @@
     }));
     const gone = parts.filter(p => p.gone).map(p => p.x.c);
     if (gone.length) saveMine(mine().filter(x => !gone.includes(x.c)));
-    el.innerHTML = `<div class="hd"><b>הקבוצות שלי</b> · ${how}</div>` + actions +
-      parts.filter(p => !p.gone).map(p =>
-        `<div class="grp1" data-c="${p.x.c}"><div class="hd gtitle"><b>${esc(p.x.name)}</b>` +
-        `<span class="gchip">${KIND[p.x.k].he} · ${esc(clubName(p.x.s))}</span> · קוד <b dir="ltr">${p.x.c}</b></div>` +
-        (p.err ? `<div class="hd">אין חיבור כרגע.</div>` : table(p.x, p.g)) +
-        (p.err ? "" : `<div class="gact"><button type="button" class="ghost" data-g="card">📸 טבלת השבוע לוואטסאפ</button>` +
-          `<button type="button" class="ghost" data-g="nudge">👀 מי עוד לא שיחק היום</button></div>`) +
-        `<div class="gact"><button type="button" class="ghost" data-g="invite">הזמנת חברים</button>` +
-        `<button type="button" class="ghost" data-g="leave">יציאה</button></div></div>`).join("");
+    const open = openSet(list);
+    el.innerHTML = top + global + parts.filter(p => !p.gone).map(p => {
+      const { x, g } = p, c = clubColors(x.s), isOpen = open.has(x.c) || p.err;
+      const members = g ? Object.keys(g.m || {}).length : 0;
+      const head = `<header class="gcard-h"><button type="button" class="gtog" data-g="toggle" aria-expanded="${isOpen}">` +
+        `<span class="n">${esc(x.name)}</span><span class="s"><span class="pill" style="background:${c.bg};color:${c.fg}">${KIND[x.k].he} · ${esc(clubName(x.s))}</span>` +
+        `<span>${members ? members + " חברים · " : ""}קוד <b class="code" dir="ltr">${x.c}</b></span></span></button>` +
+        `<button type="button" class="gmore" data-g="menu" aria-label="עוד פעולות לקבוצה">⋯</button></header>`;
+      const inner = p.err ? `<div class="gnote">אין חיבור כרגע.</div>`
+        : isOpen ? table(x, g) +
+            `<div class="gfoot"><button type="button" class="pri" data-g="invite">הזמנת חברים</button>` +
+            `<button type="button" class="sec" data-g="card">📸 טבלה</button><button type="button" class="sec" data-g="nudge">👀 מי לא שיחק</button></div>`
+        : `<button type="button" class="gsum" data-g="toggle"><span>${summary(x, g)}</span><span aria-hidden="true">▾</span></button>`;
+      return `<section class="gcard${isOpen ? "" : " collapsed"}" data-c="${x.c}" style="--gc:${c.bg}">${head}${inner}</section>`;
+    }).join("");
+  }
+  function toggle(x) {
+    const o = openSet(mine());
+    o.has(x.c) ? o.delete(x.c) : o.add(x.c);
+    put(OPEN, [...o]);
+    render();
   }
   function openTab() {
     const b = document.querySelector('.nav [data-tab="groups"]');
@@ -456,37 +548,23 @@
   }
 
   document.addEventListener("click", async e => {
-    const b = e.target.closest("button[data-g], #groupsBody button[data-gmod]");
+    const b = e.target.closest("button[data-g]");
     if (!b) return;
-    const a = b.dataset.g, card = b.closest(".grp1");
+    const a = b.dataset.g, card = b.closest(".gcard");
     const x = card ? mine().find(y => y.c === card.dataset.c) : null;
     if (a === "tab") return openTab();
     if (a === "create") return create();
     if (a === "join") return join();
     if (a === "how") return explain();
-    if (a === "leave" && x) return leave(x);
-    if (a === "invite" && x) return invite(x);
-    if (x && DATA[x.c]) {
+    if (!x) return;
+    if (a === "toggle") return toggle(x);
+    if (a === "menu") return menu(x);
+    if (a === "invite") return invite(x);
+    if (DATA[x.c]) {
       if (a === "card") return shareCard(x, DATA[x.c], b);
       if (a === "nudge") return nudge(x, DATA[x.c]);
       if (a === "h2h") return h2h(x, DATA[x.c], b.dataset.id);
     }
-    if (!b.dataset.gmod || !x) return;
-    /* דיווח / חסימה — כמו בקרב החברים */
-    const id = b.dataset.id, s = S();
-    const nm = ((b.closest("td") && b.closest("td").querySelector(".gnm")) || {}).textContent || "";
-    if (b.dataset.gmod === "block" && s.blocked.has(id)) { s.blocked.delete(id); s.saveBlocked(); return render(); }
-    const rep = b.dataset.gmod === "report";
-    const v = await s.vModal(rep
-      ? `<b>לדווח על "${esc(nm)}"?</b><br>הדיווח נשלח אלינו ונבדק תוך 24 שעות. השחקן גם ייחסם אצלך.`
-      : `<b>לחסום את "${esc(nm)}"?</b><br>הכינוי שלו יוסתר אצלך מיד. אפשר גם לצאת מהקבוצה בכל רגע. החסימה מדווחת גם לנו, ונבדקת תוך 24 שעות.`,
-      [{ id: "ok", label: rep ? "דיווח" : "חסימה", primary: true }, { id: "no", label: "ביטול" }]);
-    if (v !== "ok") return;
-    s.sendReport(id, nm, "קבוצה " + x.c, rep ? "דיווח" : "חסימה");
-    s.blocked.add(id); s.saveBlocked();
-    /* מנהל הקבוצה מוציא את מי שחסם — הקבוצה כתיבה לכל מי שיודע את הקוד */
-    try { const host = await call("GET", `${gp(x)}/host`); if (host === uid()) await call("DELETE", `${gp(x)}/m/${id}`); } catch (e) {}
-    render();
   });
 
   window.SportGroups = {
