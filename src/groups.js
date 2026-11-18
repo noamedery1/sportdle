@@ -132,6 +132,37 @@
     return list.length;
   }
 
+  /* ---------- השלמה לאחור ----------
+     (נועם 18/11) מי שהצטרף באמצע השבוע — הימים ששיחק מתחילת השבוע
+     נכנסים מהשמירה המקומית. רק השבוע הנוכחי, ורק משחקים ביומם: חידה
+     שנפתרה מהארכיון מסומנת a ולא נכנסת. r נכתב פעם אחת, אז 401 = כבר שם. */
+  function localRes(x, n) {
+    if (x.k === "grid") {
+      const st = get(`sportdel:grid:${x.s}:${n - 1}`);   // grid.js: KEY + slug + ":" + dayNo
+      if (!st || !Array.isArray(st.cells) || !(st.left <= 0 || st.cells.every(Boolean))) return null;
+      const c = st.cells.filter(Boolean);
+      return c.length * 1000 + Math.min(900, Math.max(0, Math.round(c.reduce((t, v) => t + (v.rar || 0), 0))));
+    }
+    /* ponytail: answerFor הוא של המועדון שבדף — קבוצה של מועדון אחר תושלם כשנכנסים אליו */
+    if (x.s !== slug() || typeof answerFor !== "function") return null;
+    const st = get(`sportdel:${x.s}:p${n}`);
+    if (!st || !st.over || st.a || !Array.isArray(st.g) || !st.g.length) return null;
+    return st.g[st.g.length - 1] === answerFor(n).name ? st.g.length : 0;
+  }
+  async function fill(x, r) {
+    r = r || {};
+    const today = KIND[x.k].today(), me = uid();
+    const from = Math.max(1, today - new Date(dateOf(x, today)).getUTCDay());
+    const jobs = [];
+    for (let n = from; n < today; n++) {
+      if (r[day(n)] && r[day(n)][me] != null) continue;
+      const v = localRes(x, n); if (v == null) continue;
+      jobs.push(call("PUT", `${gp(x)}/r/${day(n)}/${me}`, v).then(() => { (r[day(n)] ||= {})[me] = v; }, () => {}));
+    }
+    await Promise.all(jobs);
+    return r;
+  }
+
   /* ---------- פתיחה, הצטרפות, יציאה ---------- */
   async function create() {
     if (!native()) return say("קבוצות החברים פועלות באפליקציה.");
@@ -504,8 +535,9 @@
         const [m, r] = await Promise.all([call("GET", `${gp(x)}/m`), call("GET", `${gp(x)}/r`)]);
         /* הוצאו מהקבוצה (חסימה של המנהל) — יוצאת מהרשימה המקומית */
         if (!m || !m[uid()]) return { x, gone: true };
-        DATA[x.c] = { m, r };
-        return { x, g: { m, r } };
+        const rr = await fill(x, r);
+        DATA[x.c] = { m, r: rr };
+        return { x, g: { m, r: rr } };
       } catch (e) { return { x, err: true }; }
     }));
     const gone = parts.filter(p => p.gone).map(p => p.x.c);
