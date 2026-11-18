@@ -273,6 +273,8 @@
       /* חלון של הקרב (תנאים, דיווח, חסימה) יושב מעל הכל. לחיצה על הרקע
          שלו היא "ביטול" (vModal ב-versus.js) — בלי זה "חזור" ממזער את
          כל האפליקציה כשהחלון פתוח. */
+      /* סיור על המסך (src/tour.js) — "חזור" מסיים אותו, ולא משאיר מסך מוחשך */
+      if (window.SportTour && window.SportTour.active()) { window.SportTour.stop(); return; }
       const vm = document.querySelector(".vmodal");
       if (vm) { vm.click(); return; }
       /* סדר סגירה מהפנימי לחיצוני */

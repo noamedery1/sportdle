@@ -220,6 +220,8 @@ footer .who a:hover{color:var(--dim)}
 #practiceBar b,.practiceBar b{color:var(--text)}
 #practiceBar span,.practiceBar span{flex:1;min-width:180px}
 #practiceBar button,.practiceBar button{width:auto;min-height:0;margin:0;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+.tourbtn{display:block;width:100%;margin:4px 0 14px;padding:11px 14px;border-radius:12px;border:2px solid var(--brand);background:transparent;color:inherit;font:inherit;font-weight:900;font-size:15px;cursor:pointer}
+.tourbtn:hover{background:rgba(255,199,44,.12)}
 #grp,#gGrp{margin-top:14px;display:none;text-align:center}
 #grp.on,#gGrp.on{display:block}
 #groupsBody{padding:4px 2px 24px}
@@ -1778,6 +1780,7 @@ button.wa,button.act.wa{background:#15803D}
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים">
     <button class="x" id="closeHelp" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>איך משחקים</h3>
+    <button type="button" class="tourbtn" data-tour="daily">👆 קח אותי לסיור על המסך</button>
     <div class="only-club">
     <p>יש שחקן <span class="clubShort">—</span> אחד מסתורי, ויש לכם <b>8 ניסיונות</b> לגלות אותו.
        כל שם שתקלידו מחזיר חמישה רמזים — <b>עמדה, לאום, עונה ראשונה, תארים ושנת לידה</b> —
@@ -1939,6 +1942,7 @@ button.wa,button.act.wa{background:#15803D}
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים 3 על 3">
     <button class="x" id="gHelpClose" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>3×3</h3>
+    <button type="button" class="tourbtn" data-tour="grid">👆 קח אותי לסיור על המסך</button>
     <p>לוח של 3×3. לכל שורה ולכל עמודה יש תנאי, ובכל משבצת צריך שחקן
        <span class="clubShort">—</span> שעונה על <b>שני</b> התנאים — של השורה ושל העמודה.</p>
     <p>לדוגמה: שורה "שחקן זר" ועמודה "חלוץ" — כל חלוץ זר ששיחק במועדון.</p>
@@ -1965,6 +1969,7 @@ button.wa,button.act.wa{background:#15803D}
   <div class="sheet" role="dialog" aria-modal="true" aria-label="איך משחקים קרב">
     <button class="x" id="vHelpClose" aria-label="סגירה"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
     <h3>קרב חברים</h3>
+    <button type="button" class="tourbtn" data-tour="versus">👆 קח אותי לסיור על המסך</button>
     <p>אחד פותח חדר ומקבל קוד בן ארבע אותיות. כולם מזינים אותו ונכנסים.
        צריך לפחות שני שחקנים כדי להתחיל.</p>
 
@@ -2047,6 +2052,11 @@ __GRID__
 <!-- איקס-עיגול בקרב חברים. משתמש ב-SportGrid; versus.js יוצר אותו. -->
 <script>
 __TTT__
+</script>
+
+<!-- סיור על המסך לכל לשונית (src/tour.js) -->
+<script>
+__TOUR__
 </script>
 
 <script type="module">
