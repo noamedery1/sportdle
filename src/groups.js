@@ -362,7 +362,7 @@
     /** סיום ה-3×3 של היום (גריד מועדון בלבד). n = מספר הלוח המוצג. */
     grid(el, s, n, k, rar) { line(el, post("grid", s, n, k * 1000 + Math.min(900, Math.max(0, Math.round(rar))))); },
     hideLine(el) { if (el) { el.classList.remove("on"); el.innerHTML = ""; } },
-    render,
+    render, explain,
     /** ?g=CODE בכתובת. באפליקציה — מצטרפים; בדפדפן — מסבירים. */
     async invited(code) {
       if (native()) { openTab(); return join(code); }
