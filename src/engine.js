@@ -624,7 +624,8 @@ function practiceGame(){
   answer = POOL[Math.floor(Math.random()*POOL.length)];
   board.innerHTML = ""; $("#result").classList.remove("on");
   input.disabled = false; input.value = ""; $("#left").textContent = MAX;
-  $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "אימון";
+  $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "🧪 אימון";
+  if (!WEB_GATE) $(".sub").firstChild.textContent = "";   // היה "חידה אימון"
   /* מה שמבדיל אימון מהחידה של היום — שלא יתבלבלו ויחשבו שהרצף נשבר.
      באתר אין חידה יומית לחזור אליה, ולכן בלי הכפתור. */
   $("#practiceBar").hidden = false;
@@ -779,6 +780,7 @@ function answerFor(n){
 
 function loadPuzzle(n){
   $("#practiceBar").hidden = true;
+  if (!WEB_GATE) $(".sub").firstChild.textContent = "חידה ";
   practice = false; puzzleNo = n; answer = answerFor(n); $("#twin").hidden = true;
   guesses = []; over = false; hinted = false;
   board.innerHTML = "";
@@ -1578,7 +1580,7 @@ function renderPicker(){
     return `<button type="button" data-slug="${slug}" style="--c:${c.colors.brand};--c2:${c.colors.second || c.colors.ink}"
               class="${club && club.slug===slug ? "cur" : ""}">
         <span class="swatch"></span>
-        <span class="t"><b>${c.game}</b><i>${c.he} · ${cov}</i></span>
+        <span class="t"><b>${c.game}</b><i>${c.he} · <bdi style="white-space:nowrap">${cov}</bdi></i></span>
       </button>`;
   }).join("");
   $("#clubList").querySelectorAll("button").forEach(b =>
