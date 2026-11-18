@@ -1544,6 +1544,21 @@ header .meta #clubBtn svg{width:15px;height:15px}
 .row .rowfix{font-size:15px;padding:4px 8px;min-width:32px;min-height:32px;line-height:1}
 #board .row .who{padding:4px 12px}
 #board .row .tiles{padding:21px 8px 8px}
+
+/* ===== כרטיס התוצאה (סקירת UX 18/11, P3) ===== */
+#result .sharerow{display:flex;gap:8px;margin:14px 0 4px}
+#result .card .sharerow button.act{margin:0;width:auto;min-height:48px}
+#result .card .sharerow #wa{flex:1 1 0;min-width:0;padding:0 10px;font-size:16px;white-space:nowrap}
+#result .card .sharerow #story,#result .card .sharerow #share{flex:0 0 auto;padding:0 12px;font-size:14px;white-space:nowrap}
+#result #next{margin-top:10px}
+#result .rtabs{display:flex;margin:14px 0 0;border-bottom:1px solid var(--ui-line,var(--line))}
+#result .rtabs[hidden]{display:none}
+#result .rtabs button{flex:1;min-height:44px;margin:0;width:auto;background:none;border:0;border-bottom:2px solid transparent;border-radius:0;font:inherit;font-size:13px;font-weight:700;color:var(--dim);box-shadow:none;cursor:pointer}
+#result .rtabs button.on{color:var(--text);border-bottom-color:var(--text)}
+#result .card[data-rt="comm"] #stats .bars{display:none}
+#result .card[data-rt="stats"] #comm .ctab{display:none}
+#result .card[data-rt] #comm,#result .card[data-rt] .stats{margin-top:10px}
+#result #again{min-height:44px;font-size:14px}
 </style>
 </head>
 <body>
@@ -1615,16 +1630,21 @@ header .meta #clubBtn svg{width:15px;height:15px}
       <p id="rtext"></p>
       <div class="mini" id="mini"></div>
       <div class="legend mlegend" aria-hidden="true"><span><i class="dot y"></i> מדויק</span><span><i class="dot o"></i> קרוב</span><span><i class="dot s"></i> רחוק</span></div>
+      <!-- שיתוף בשורה אחת, מיד מתחת לתוצאה (סקירת UX P3): וואטסאפ ראשי -->
+      <div class="sharerow">
+        <button class="act wa" id="wa">שליחה בוואטסאפ</button>
+        <button class="act ghost" id="story">🖼️ סטורי</button>
+        <button class="act ghost" id="share">📋 העתקה</button>
+      </div>
       <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
+      <!-- גרף אחד עם מתג: היום (כולם) / שלי — במקום שני גרפים זה מתחת לזה (syncRtabs) -->
+      <div class="rtabs" id="rtabs" hidden><button type="button" data-rt="comm">היום (כולם)</button><button type="button" data-rt="stats">שלי</button></div>
       <div id="comm"></div>
       <!-- קבוצות חברים — אפליקציה בלבד (src/groups.js) -->
       <div id="grp"></div>
       <!-- איפה אני במועדון: אחוזונים מ-fn=ranks, המיקום מחושב במכשיר (renderRank) -->
       <div id="rank"></div>
       <div class="stats" id="stats"></div>
-      <button class="act wa" id="wa">שליחה בוואטסאפ</button>
-      <button class="act ghost" id="story">תמונה לסטורי</button>
-      <button class="act ghost" id="share">העתקת התוצאה</button>
       <!-- דירוג בחנות: רק באפליקציה, אחרי 3 פיצוחים, עד לחיצה אחת (native.js) -->
       <button class="rate" id="rateApp" hidden><span class="stars" aria-hidden="true">★★★★★</span>
         <span>נהנים? דירוג קצר בחנות עוזר למשחק לגדול</span></button>

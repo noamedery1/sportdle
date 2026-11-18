@@ -379,6 +379,7 @@ function finish(won){
   $("#wa").style.display = practice ? "none" : "";
   $("#story").style.display = practice ? "none" : "";
   $("#result").classList.add("on");
+  syncRtabs();
   $("#result").scrollIntoView({behavior:"smooth", block:"nearest"});
 }
 
@@ -443,8 +444,8 @@ async function copyText(txt){
 $("#share").addEventListener("click", async ()=>{
   const btn = $("#share");
   const ok = await copyText(shareText());
-  btn.textContent = ok ? "הועתק ✓" : "לא הצלחנו להעתיק — סמנו ידנית";
-  setTimeout(()=> btn.textContent = "העתקת התוצאה", 2200);
+  btn.textContent = ok ? "הועתק ✓" : "לא הועתק";
+  setTimeout(()=> btn.textContent = "📋 העתקה", 2200);
 });
 
 $("#wa").addEventListener("click", ()=>{
@@ -605,7 +606,7 @@ $("#story").addEventListener("click", async () => {
     btn.textContent = how === "shared" ? "נשלח ✓" : "ירד למחשב ✓";
   } catch (e) {
     /* ביטול של בורר השיתוף מגיע כ-AbortError וזו לא שגיאה */
-    btn.textContent = e && e.name === "AbortError" ? was : "לא הצלחנו לייצר תמונה";
+    btn.textContent = e && e.name === "AbortError" ? was : "שגיאה";
     if (!(e && e.name === "AbortError")) console.error("story:", e);
   } finally {
     btn.disabled = false;
@@ -1195,6 +1196,7 @@ function renderComm(st, myGuesses, iWon, live, past){
 
   el.innerHTML = `<div class="hd">${line}</div>` + commTable(st, myGuesses, iWon, live);
   el.classList.add("on");
+  syncRtabs();
 }
 
 /* טבלת היום: כמה פיצחו בכל מספר ניחושים, העמודה שלי מודגשת, ומקום.
@@ -1231,6 +1233,24 @@ function addStat(won, n){
   store.set(K("stats"), JSON.stringify(st));
   return st;
 }
+/* מתג "היום (כולם) / שלי": מוצג רק כששני הגרפים קיימים. הכותרת של
+   היום והמספרים שלי נשארים גלויים תמיד — מתחלפים רק הגרפים. */
+let rtSel = null;
+function syncRtabs(){
+  const card = $("#result .card"), tabs = $("#rtabs"); if (!card || !tabs) return;
+  const hasC = $("#comm").classList.contains("on") && !!$("#comm .ctab");
+  const hasS = !!$("#stats .bars");
+  const both = hasC && hasS;
+  tabs.hidden = !both;
+  const sel = both ? (rtSel || "comm") : "";
+  if (sel) card.dataset.rt = sel; else delete card.dataset.rt;
+  tabs.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.rt === sel));
+}
+$("#rtabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-rt]"); if (!b) return;
+  rtSel = b.dataset.rt; syncRtabs();
+});
+
 function renderStats(highlight){
   const st = loadStats();
   const el = $("#stats");
@@ -1251,6 +1271,7 @@ function renderStats(highlight){
        <div><b>${st.max||0}</b>רצף שיא</div>
      </div>
      <div class="bars">${bars}</div>`;
+  syncRtabs();
 }
 
 /* המקרא בחלונית מתיישר עם סט האמוג'ים שנבחר */
