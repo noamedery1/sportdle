@@ -358,7 +358,7 @@
         } else {
           el.disabled = done() || !!G.gate;
           el.setAttribute("aria-label", A.he + " × " + B.he);
-          if (i === G.sel) el.classList.add("sel");
+          if (i === G.sel && !done()) el.classList.add("sel");   // בסוף הלוח בלי מסגרת "נבחר" תקועה
         }
         b.appendChild(el);
       }

@@ -234,7 +234,7 @@ function render(g, instant){
   row.className = "row";
   if (instant) row.style.cssText = "animation:none";
   row.innerHTML =
-    `<p class="who"><span class="nm">${g.name}</span><i>ניחוש ${guesses.length}</i><button type="button" class="rowfix" data-i="${guesses.length - 1}" aria-label="דיווח טעות בפרטי ${g.name}">דיווח טעות</button></p><div class="tiles">` +
+    `<p class="who"><span class="nm">${g.name}</span><i>ניחוש ${guesses.length}</i><button type="button" class="rowfix" data-i="${guesses.length - 1}" aria-label="דיווח טעות בפרטי ${g.name}" title="דיווח טעות">⚑</button></p><div class="tiles">` +
     cells.map((c,i)=>
       `<div class="tile ${c.s}" style="${instant?"animation:none;opacity:1;transform:none":`animation-delay:${i*90}ms`}">
          <span class="k">${c.k}</span>
@@ -379,6 +379,7 @@ function finish(won){
   $("#wa").style.display = practice ? "none" : "";
   $("#story").style.display = practice ? "none" : "";
   $("#result").classList.add("on");
+  syncRtabs();
   $("#result").scrollIntoView({behavior:"smooth", block:"nearest"});
 }
 
@@ -443,8 +444,8 @@ async function copyText(txt){
 $("#share").addEventListener("click", async ()=>{
   const btn = $("#share");
   const ok = await copyText(shareText());
-  btn.textContent = ok ? "הועתק ✓" : "לא הצלחנו להעתיק — סמנו ידנית";
-  setTimeout(()=> btn.textContent = "העתקת התוצאה", 2200);
+  btn.textContent = ok ? "הועתק ✓" : "לא הועתק";
+  setTimeout(()=> btn.textContent = "📋 העתקה", 2200);
 });
 
 $("#wa").addEventListener("click", ()=>{
@@ -605,7 +606,7 @@ $("#story").addEventListener("click", async () => {
     btn.textContent = how === "shared" ? "נשלח ✓" : "ירד למחשב ✓";
   } catch (e) {
     /* ביטול של בורר השיתוף מגיע כ-AbortError וזו לא שגיאה */
-    btn.textContent = e && e.name === "AbortError" ? was : "לא הצלחנו לייצר תמונה";
+    btn.textContent = e && e.name === "AbortError" ? was : "שגיאה";
     if (!(e && e.name === "AbortError")) console.error("story:", e);
   } finally {
     btn.disabled = false;
@@ -624,7 +625,8 @@ function practiceGame(){
   answer = POOL[Math.floor(Math.random()*POOL.length)];
   board.innerHTML = ""; $("#result").classList.remove("on");
   input.disabled = false; input.value = ""; $("#left").textContent = MAX;
-  $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "אימון";
+  $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "🧪 אימון";
+  if (!WEB_GATE) $(".sub").firstChild.textContent = "";   // היה "חידה אימון"
   /* מה שמבדיל אימון מהחידה של היום — שלא יתבלבלו ויחשבו שהרצף נשבר.
      באתר אין חידה יומית לחזור אליה, ולכן בלי הכפתור. */
   $("#practiceBar").hidden = false;
@@ -779,6 +781,7 @@ function answerFor(n){
 
 function loadPuzzle(n){
   $("#practiceBar").hidden = true;
+  if (!WEB_GATE) $(".sub").firstChild.textContent = "חידה ";
   practice = false; puzzleNo = n; answer = answerFor(n); $("#twin").hidden = true;
   guesses = []; over = false; hinted = false;
   board.innerHTML = "";
@@ -1193,6 +1196,7 @@ function renderComm(st, myGuesses, iWon, live, past){
 
   el.innerHTML = `<div class="hd">${line}</div>` + commTable(st, myGuesses, iWon, live);
   el.classList.add("on");
+  syncRtabs();
 }
 
 /* טבלת היום: כמה פיצחו בכל מספר ניחושים, העמודה שלי מודגשת, ומקום.
@@ -1229,6 +1233,24 @@ function addStat(won, n){
   store.set(K("stats"), JSON.stringify(st));
   return st;
 }
+/* מתג "היום (כולם) / שלי": מוצג רק כששני הגרפים קיימים. הכותרת של
+   היום והמספרים שלי נשארים גלויים תמיד — מתחלפים רק הגרפים. */
+let rtSel = null;
+function syncRtabs(){
+  const card = $("#result .card"), tabs = $("#rtabs"); if (!card || !tabs) return;
+  const hasC = $("#comm").classList.contains("on") && !!$("#comm .ctab");
+  const hasS = !!$("#stats .bars");
+  const both = hasC && hasS;
+  tabs.hidden = !both;
+  const sel = both ? (rtSel || "comm") : "";
+  if (sel) card.dataset.rt = sel; else delete card.dataset.rt;
+  tabs.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.rt === sel));
+}
+$("#rtabs").addEventListener("click", e => {
+  const b = e.target.closest("[data-rt]"); if (!b) return;
+  rtSel = b.dataset.rt; syncRtabs();
+});
+
 function renderStats(highlight){
   const st = loadStats();
   const el = $("#stats");
@@ -1249,6 +1271,7 @@ function renderStats(highlight){
        <div><b>${st.max||0}</b>רצף שיא</div>
      </div>
      <div class="bars">${bars}</div>`;
+  syncRtabs();
 }
 
 /* המקרא בחלונית מתיישר עם סט האמוג'ים שנבחר */
@@ -1578,7 +1601,7 @@ function renderPicker(){
     return `<button type="button" data-slug="${slug}" style="--c:${c.colors.brand};--c2:${c.colors.second || c.colors.ink}"
               class="${club && club.slug===slug ? "cur" : ""}">
         <span class="swatch"></span>
-        <span class="t"><b>${c.game}</b><i>${c.he} · ${cov}</i></span>
+        <span class="t"><b>${c.game}</b><i>${c.he} · <bdi style="white-space:nowrap">${cov}</bdi></i></span>
       </button>`;
   }).join("");
   $("#clubList").querySelectorAll("button").forEach(b =>
@@ -1746,7 +1769,7 @@ function bootClub(slug){
 
   if (WEB_GATE){
     document.documentElement.dataset.web = "1";
-    document.querySelector('.nav [data-tab="daily"]').textContent = "משחק אקראי";
+    document.querySelector('.nav [data-tab="daily"]').textContent = "אקראי";
     startWebGame();
     track("view", {web: 1});
     return;

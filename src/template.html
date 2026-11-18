@@ -246,6 +246,72 @@ footer .who a:hover{color:var(--dim)}
 #groupsBody .gday td:first-child{text-align:right;max-width:90px;overflow:hidden;text-overflow:ellipsis}
 #groupsBody .gday td.ok{font-weight:900}
 #groupsBody .gday td.no,#groupsBody .gday td.nx{color:var(--dim)}
+/* ===== קבוצות — כרטיסים (סקירת UX 18/11, P1) ===== */
+#groupsBody .gtop{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:6px 0 10px}
+#groupsBody .gtop h2{margin:0;font-size:20px;font-weight:900;color:var(--text)}
+#groupsBody .gglobal{display:flex;gap:8px;margin-bottom:16px}
+#groupsBody .gglobal button{flex:1;height:44px;min-height:0;margin:0;width:auto;border-radius:22px;font:inherit;font-size:14px;font-weight:800;border:1.5px dashed var(--ui-ctl,var(--line));background:transparent;color:var(--text);cursor:pointer;padding:0 10px}
+#groupsBody .gglobal button.plus{border-style:solid;background:var(--text);color:var(--surface,#fff);border-color:var(--text)}
+#groupsBody .gempty{background:var(--surface,var(--ink-2));border:1px solid var(--ui-line,var(--line));border-radius:16px;padding:14px;font-size:14px;line-height:1.6;color:var(--dim);margin-bottom:14px}
+#groupsBody .gempty b{color:var(--text)}
+#groupsBody .gnote{font-size:12px;color:var(--dim);padding:6px 14px}
+#groupsBody .gcard{background:var(--surface,var(--ink-2));border:1px solid var(--ui-line,var(--line));border-radius:16px;margin-bottom:14px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+#groupsBody .gcard-h{display:flex;align-items:center;gap:6px;padding:10px 8px 10px 4px;border-inline-start:6px solid var(--gc,var(--brand))}
+#groupsBody .gtog{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:3px;background:none;border:0;margin:0;width:auto;min-height:0;padding:2px 8px;font:inherit;color:var(--text);text-align:right;cursor:pointer}
+#groupsBody .gtog .n{font-size:17px;font-weight:900;line-height:1.2}
+#groupsBody .gtog .s{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--dim)}
+#groupsBody .pill{font-size:11px;font-weight:800;padding:2px 8px;border-radius:9px}
+#groupsBody .code{color:var(--text);letter-spacing:.5px}
+#groupsBody .gmore{flex:0 0 44px;width:44px;height:44px;min-height:0;margin:0;border-radius:50%;border:0;background:none;font-size:22px;line-height:1;color:var(--dim);cursor:pointer;padding:0}
+#groupsBody .gweek{display:flex;justify-content:space-between;gap:8px;margin:0;padding:6px 14px;font-size:12px;color:var(--dim);background:var(--well,rgba(0,0,0,.04));border-block:1px solid var(--ui-line,var(--line))}
+#groupsBody .lb{width:100%;border-collapse:collapse;font-size:14px;color:var(--text)}
+#groupsBody .lb th{font-size:11px;font-weight:700;color:var(--dim);text-align:center;padding:6px 4px}
+#groupsBody .lb th:nth-child(2){text-align:right}
+#groupsBody .lb td{padding:0 4px;height:44px;border-top:1px solid var(--ui-line,var(--line));text-align:center;font-variant-numeric:tabular-nums}
+#groupsBody .lb td:first-child{width:34px;padding-inline-start:12px}
+#groupsBody .lb td:last-child{padding-inline-end:12px}
+#groupsBody .lb td.nm{text-align:right}
+#groupsBody .lb td.nm button{display:flex;align-items:center;gap:4px;height:44px;width:100%;min-height:0;margin:0;padding:0;background:none;border:0;font:inherit;font-weight:600;color:inherit;text-align:right;cursor:pointer}
+#groupsBody .lb .gnm{text-decoration:none}
+#groupsBody .lb td.nm button i{font-style:normal;font-weight:500;color:var(--dim);font-size:12px}
+#groupsBody .lb td.nm button::after{content:"‹";margin-inline-start:auto;color:var(--dim);font-size:18px}
+#groupsBody .lb td.wk{font-weight:900;font-size:15px}
+#groupsBody .lb td.dim{color:var(--dim);font-size:13px}
+#groupsBody .lb tr.me td{background:rgba(255,199,44,.16);font-weight:900}
+#groupsBody details.more-sec{border-top:1px solid var(--ui-line,var(--line))}
+#groupsBody details.more-sec summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:0 14px;font-size:13px;font-weight:700;color:var(--dim);cursor:pointer}
+#groupsBody details.more-sec summary::-webkit-details-marker{display:none}
+#groupsBody details.more-sec summary::after{content:"▾";font-size:12px}
+#groupsBody details.more-sec[open] summary::after{content:"▴"}
+#groupsBody details.more-sec .ghist{padding:0 10px;-webkit-mask-image:linear-gradient(to left,transparent,#000 24px);mask-image:linear-gradient(to left,transparent,#000 24px)}
+#groupsBody .gcabl{margin:0;padding:0 32px 10px 14px;font-size:13px;color:var(--dim)}
+#groupsBody .gcabl li{margin:4px 0}
+#groupsBody .gcabl b{color:var(--text)}
+#groupsBody .gfoot{display:flex;gap:8px;padding:10px 12px 12px;border-top:1px solid var(--ui-line,var(--line))}
+#groupsBody .gfoot button{height:44px;min-height:0;margin:0;width:auto;border-radius:12px;font:inherit;cursor:pointer}
+#groupsBody .gfoot .pri{flex:1;border:0;background:var(--gc,var(--brand));color:var(--on-brand,#121214);font-weight:900;font-size:15px}
+#groupsBody .gfoot .sec{padding:0 12px;border:1.5px solid var(--ui-ctl,var(--line));background:transparent;font-size:13px;font-weight:700;color:var(--text);white-space:nowrap}
+#groupsBody .gsum{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;min-height:44px;margin:0;padding:8px 14px 10px;background:none;border:0;border-top:1px solid var(--ui-line,var(--line));font:inherit;font-size:13px;color:var(--dim);text-align:right;cursor:pointer}
+#groupsBody .gsum b{color:var(--text)}
+/* חלונית תחתונה */
+.gsheet{position:fixed;inset:0;z-index:9998;direction:rtl}
+.gsheet .gscrim{position:absolute;inset:0;background:rgba(10,10,14,.55)}
+.gsheet .gbs{position:absolute;inset-inline:0;bottom:0;max-width:520px;margin:0 auto;background:var(--surface,#fff);color:var(--text,#17181c);border-radius:18px 18px 0 0;border-top:6px solid var(--gc,var(--brand));padding:8px 16px calc(16px + env(safe-area-inset-bottom));animation:gsUp .22s ease-out;text-align:right}
+@keyframes gsUp{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.gsheet .grab{width:40px;height:4px;border-radius:2px;background:var(--ui-line,#ccc);margin:4px auto 10px}
+.gsheet h3{margin:0 0 2px;font-size:18px}
+.gsheet .gsub2{font-size:13px;color:var(--dim,#555);margin-bottom:10px}
+.gsheet .gsub2.c{text-align:center}
+.gsheet .gscore{display:flex;justify-content:center;gap:18px;align-items:center;margin:6px 0 6px}
+.gsheet .gscore div{text-align:center;font-size:12px;color:var(--dim,#555)}
+.gsheet .gscore b{display:block;font-size:30px;color:var(--text,#17181c);font-weight:900}
+.gsheet .gscore .dash{font-size:20px}
+.gsheet .gvs{list-style:none;margin:0 0 6px;padding:0}
+.gsheet .gvs li{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--ui-line,#ddd);font-size:15px}
+.gsheet .glist button{display:flex;align-items:center;gap:10px;width:100%;height:48px;min-height:0;margin:0;padding:0 2px;border:0;border-top:1px solid var(--ui-line,#ddd);background:none;font:inherit;font-size:15px;text-align:right;color:var(--text,#17181c);cursor:pointer;border-radius:0}
+.gsheet .glist button.danger{color:#C62828;font-weight:700}
+@media (prefers-reduced-motion:reduce){.gsheet .gbs{animation:none}}
+
 #groupsBody .gweek{margin-top:10px;font-size:12.5px}
 #groupsBody .gnm{background:none;border:0;padding:0;margin:0;width:auto;min-height:0;font:inherit;color:inherit;font-weight:inherit;text-decoration:underline dotted;text-underline-offset:3px;cursor:pointer;text-align:right}
 #groupsBody .gcab{margin-top:12px;font-size:13px;color:var(--dim)}
@@ -1446,6 +1512,53 @@ button.wa,button.act.wa{background:#15803D}
 #webGate,#gGate{margin:0 auto 14px}
 #webGate.wall{padding:22px 16px;border:2px solid var(--brand)}
 #webGate.wall b{font-size:17px}
+
+/* ===== מעבר קומפקטי (סקירת UX 18/11, P2) =====
+   בטלפון קטן הראש תפס 55% מהמסך לפני התוכן. שכבה אחרונה — גוברת על
+   הקודמות בלי לגעת בהן: כותרת נמוכה (הצעיף נשאר), שורת חידה + מועדון
+   אחת, לשוניות בשורה אחת, שדה ומקרא צפופים יותר. */
+header{padding:48px 0 4px}
+h1{margin:0 26px;padding:10px 14px 12px;font-size:clamp(30px,9vw,40px);background:
+    linear-gradient(var(--second-band),var(--second-band)) top/100% 7px no-repeat,
+    linear-gradient(var(--second-band),var(--second-band)) bottom/100% 7px no-repeat,
+    linear-gradient(rgba(var(--brand-rgb),var(--knit-mute)),rgba(var(--brand-rgb),var(--knit-mute))),
+    var(--knit) center/auto 100% repeat-x,
+    var(--brand)}
+[data-club] h1{font-size:clamp(30px,9vw,40px)}
+[data-club="hapoel-bs"] h1{font-size:clamp(26px,8vw,38px)}
+h1::before,h1::after{width:24px}
+h1::after{right:-22px}
+h1::before{left:-22px}
+@media (min-width:640px){header{padding:56px 0 6px}h1{margin:0 40px;padding:14px 30px 16px;font-size:52px}[data-club] h1{font-size:52px}}
+header .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;flex-wrap:wrap}
+header .meta .sub{margin:0;font-size:14px;text-align:right}
+header .meta #clubBtn{margin:0;min-height:36px;padding:0 12px;font-size:13px;border-radius:18px;position:relative}
+header .meta #clubBtn::after{content:"";position:absolute;inset:-4px 0}
+header .meta #clubBtn svg{width:15px;height:15px}
+.nav{margin:12px auto;max-width:none}
+.nav button,.nav button:not(.on){min-height:40px;padding:8px 6px;font-size:14px;white-space:nowrap}
+#guess{min-height:50px;padding:10px 14px;font-size:17px}
+.legend{margin:8px 0 2px;gap:10px;font-size:12px}
+#board{margin-top:10px}
+#yday,#hintRow,#friendRow{margin-top:10px}
+.row .rowfix{font-size:15px;padding:4px 8px;min-width:32px;min-height:32px;line-height:1}
+#board .row .who{padding:4px 12px}
+#board .row .tiles{padding:21px 8px 8px}
+
+/* ===== כרטיס התוצאה (סקירת UX 18/11, P3) ===== */
+#result .sharerow{display:flex;gap:8px;margin:14px 0 4px}
+#result .card .sharerow button.act{margin:0;width:auto;min-height:48px}
+#result .card .sharerow #wa{flex:1 1 0;min-width:0;padding:0 10px;font-size:16px;white-space:nowrap}
+#result .card .sharerow #story,#result .card .sharerow #share{flex:0 0 auto;padding:0 12px;font-size:14px;white-space:nowrap}
+#result #next{margin-top:10px}
+#result .rtabs{display:flex;margin:14px 0 0;border-bottom:1px solid var(--ui-line,var(--line))}
+#result .rtabs[hidden]{display:none}
+#result .rtabs button{flex:1;min-height:44px;margin:0;width:auto;background:none;border:0;border-bottom:2px solid transparent;border-radius:0;font:inherit;font-size:13px;font-weight:700;color:var(--dim);box-shadow:none;cursor:pointer}
+#result .rtabs button.on{color:var(--text);border-bottom-color:var(--text)}
+#result .card[data-rt="comm"] #stats .bars{display:none}
+#result .card[data-rt="stats"] #comm .ctab{display:none}
+#result .card[data-rt] #comm,#result .card[data-rt] .stats{margin-top:10px}
+#result #again{min-height:44px;font-size:14px}
 </style>
 </head>
 <body>
@@ -1456,17 +1569,19 @@ button.wa,button.act.wa{background:#15803D}
   <header>
     <div id="streak">רצף <b id="streakn">0</b></div>
     <button id="helpBtn" aria-label="איך משחקים" title="איך משחקים"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.6 8.8a3.5 3.5 0 1 1 4.8 3.3c-1.1.5-1.9 1.4-1.9 2.6v.5"/><circle cx="11.5" cy="19" r="1.35" fill="currentColor" stroke="none"/></svg></button>
-    <button id="archBtn" aria-label="ארכיון חידות" title="ארכיון"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4.5 7h15M4.5 12h15M4.5 17h15"/></svg></button>
+    <button id="archBtn" aria-label="ארכיון חידות" title="ארכיון"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg></button>
     <!-- ערכת צבעים: לפי המכשיר → ההפך → השני → חזרה. הלחיצה והתווית ב-THEME_BOOT. -->
     <button id="themeBtn" type="button" aria-label="ערכת צבעים" title="ערכת צבעים"><svg class="ts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg><svg class="td" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1z"/></svg><svg class="tl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="3.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
     <h1><a href="./" id="gameName" aria-label="ספורטדל">ספורטדל</a></h1>
+    <div class="meta">
     <p class="sub">חידה <b id="pnum">#1</b> · <b id="left">8</b> ניסיונות נותרו</p>
     <button id="clubBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14l-3.5-3.5M20 16H6l3.5 3.5"/></svg>החלפת מועדון</button>
+    </div>
   </header>
 
   <nav class="nav">
-    <button type="button" class="on" data-tab="daily">חידה יומית</button>
-    <button type="button" data-tab="versus">קרב חברים</button>
+    <button type="button" class="on" data-tab="daily">יומית</button>
+    <button type="button" data-tab="versus">קרב</button>
     <button type="button" data-tab="grid">3×3</button>
     <button type="button" data-tab="groups">קבוצות</button>
   </nav>
@@ -1485,9 +1600,13 @@ button.wa,button.act.wa{background:#15803D}
     <span><i class="dot y"></i> מדויק</span>
     <span><i class="dot o"></i> קרוב</span>
     <span><i class="dot s"></i> רחוק</span>
-    <span><span class="ar"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> מאוחר/גבוה יותר · <span class="ar dn"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> מוקדם/נמוך יותר</span>
+    <span><span class="ar"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> גבוה/מאוחר · <span class="ar dn"><svg class="arw" viewBox="0 0 12 14" aria-hidden="true"><path d="M6 1.5v11M1.8 5.7 6 1.5l4.2 4.2" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> נמוך/מוקדם</span>
   </div>
 
+  <!-- משחק אימון: שחקן אקראי, לא נספר בשום מקום (practiceGame ב-engine.js) -->
+  <div id="practiceBar" hidden><span><b>🧪 משחק אימון</b> · שחקן אקראי · לא נספר ברצף, בסטטיסטיקה ובקבוצות</span>
+    <button type="button" id="backDaily">חזרה לחידה היומית</button></div>
+  <div id="board"></div>
   <div id="yday">
     <span id="ydayTxt"></span>
     <button id="ydayShow">גילוי</button>
@@ -1504,10 +1623,6 @@ button.wa,button.act.wa{background:#15803D}
     <button id="friendBtn">צריכים עזרה? שאלו חבר בוואטסאפ</button>
   </div>
 
-  <!-- משחק אימון: שחקן אקראי, לא נספר בשום מקום (practiceGame ב-engine.js) -->
-  <div id="practiceBar" hidden><span><b>🧪 משחק אימון</b> · שחקן אקראי · לא נספר ברצף, בסטטיסטיקה ובקבוצות</span>
-    <button type="button" id="backDaily">חזרה לחידה היומית</button></div>
-  <div id="board"></div>
 
   <div id="result">
     <div class="card">
@@ -1515,16 +1630,21 @@ button.wa,button.act.wa{background:#15803D}
       <p id="rtext"></p>
       <div class="mini" id="mini"></div>
       <div class="legend mlegend" aria-hidden="true"><span><i class="dot y"></i> מדויק</span><span><i class="dot o"></i> קרוב</span><span><i class="dot s"></i> רחוק</span></div>
+      <!-- שיתוף בשורה אחת, מיד מתחת לתוצאה (סקירת UX P3): וואטסאפ ראשי -->
+      <div class="sharerow">
+        <button class="act wa" id="wa">שליחה בוואטסאפ</button>
+        <button class="act ghost" id="story">🖼️ סטורי</button>
+        <button class="act ghost" id="share">📋 העתקה</button>
+      </div>
       <div id="next">החידה הבאה בעוד <b id="cd">--:--:--</b> · שחקן חדש מחכה</div>
+      <!-- גרף אחד עם מתג: היום (כולם) / שלי — במקום שני גרפים זה מתחת לזה (syncRtabs) -->
+      <div class="rtabs" id="rtabs" hidden><button type="button" data-rt="comm">היום (כולם)</button><button type="button" data-rt="stats">שלי</button></div>
       <div id="comm"></div>
       <!-- קבוצות חברים — אפליקציה בלבד (src/groups.js) -->
       <div id="grp"></div>
       <!-- איפה אני במועדון: אחוזונים מ-fn=ranks, המיקום מחושב במכשיר (renderRank) -->
       <div id="rank"></div>
       <div class="stats" id="stats"></div>
-      <button class="act wa" id="wa">שליחה בוואטסאפ</button>
-      <button class="act ghost" id="story">תמונה לסטורי</button>
-      <button class="act ghost" id="share">העתקת התוצאה</button>
       <!-- דירוג בחנות: רק באפליקציה, אחרי 3 פיצוחים, עד לחיצה אחת (native.js) -->
       <button class="rate" id="rateApp" hidden><span class="stars" aria-hidden="true">★★★★★</span>
         <span>נהנים? דירוג קצר בחנות עוזר למשחק לגדול</span></button>
