@@ -242,11 +242,13 @@
   const fbKey = s => String(s).replace(/[.#$\[\]\/]/g, "_").slice(0, 60);
   const dayPath = () => "grid/v1/" + (G.slug || "all") + "/" + G.grid.n;
   function vote(i, label) {
+    if (G.practice) return Promise.resolve();   // לוח אימון לא נכנס לספירה של אף אחד
     const u = fbUrl(dayPath() + "/" + i + "/" + fbKey(label));
     if (!u) return Promise.resolve();
     return fetch(u, { method: "PUT", body: JSON.stringify({ ".sv": { increment: 1 } }) }).catch(() => {});
   }
   async function liveRarity() {
+    if (G.practice) return;
     const u = fbUrl(dayPath()); if (!u || !G.st.cells.some(Boolean)) return;
     const g = G;
     let d; try { const r = await fetch(u); if (!r.ok) return; d = await r.json(); } catch (e) { return; }
@@ -262,7 +264,7 @@
     if (ch) { save(); render(); }
   }
 
-  function save() { try { localStorage.setItem(G.key, JSON.stringify(G.st)); } catch (e) {} }
+  function save() { if (G.practice) return; try { localStorage.setItem(G.key, JSON.stringify(G.st)); } catch (e) {} }
   const $ = s => document.querySelector(s);
   const cellConds = i => [G.grid.rows[Math.floor(i / 3)], G.grid.cols[i % 3]];
   const done = () => G.st.left <= 0 || G.st.cells.every(Boolean);
@@ -306,6 +308,23 @@
     }
     render();
   }
+  /* ---------- לוח אימון ----------
+     לוח אקראי (לא של היום) למועדון שבדף. לא נשמר, לא נספר בנדירות
+     האמיתית ולא בקבוצות, בלי שיתוף. הנדירות שמוצגת — הפרוקסי המקומי. */
+  function practice() {
+    if (!G) return;
+    const n = 100000 + Math.floor(Math.random() * 900000);
+    const grid = makeGrid(IDX, CONDS, n, G.slug);
+    if (!grid) return;
+    G = { idx: IDX, grid, slug: G.slug, key: null, practice: true,
+          st: { sig: "", cells: Array(9).fill(null), left: 9, reveal: false }, sel: -1, gate: G.gate };
+    $("#gNo").textContent = "לוח אימון";
+    msg("");
+    render();
+    $("#gridView").scrollIntoView({ block: "start" });
+  }
+  function backToday() { G = null; boot(); $("#gridView").scrollIntoView({ block: "start" }); }
+
   /* החלפת מועדון כשהלשונית פתוחה */
   if (typeof MutationObserver !== "undefined" && typeof document !== "undefined")
     new MutationObserver(() => { const v = document.getElementById("gridView");
@@ -349,12 +368,16 @@
     if (fin) G.sel = -1;
     $("#gPick").hidden = fin || G.sel < 0 || !!G.gate;
     $("#gEnd").hidden = !fin;
+    /* לוח אימון: בלי שיתוף; הפס למעלה אומר שזה לא נספר */
+    $("#gPracticeBar").hidden = !G.practice;
+    $("#gWa").hidden = $("#gStory").hidden = !!G.practice;
+    $("#gAgain").textContent = G.practice ? "🧪 עוד לוח אימון" : "🧪 לוח אימון — לוח אקראי, לא נספר";
     if (fin) {
       const k = st.cells.filter(Boolean).length;
       const rar = st.cells.filter(Boolean).reduce((s, v) => s + v.rar, 0);
-      $("#gScore").textContent = k + "/9 · נדירות " + rar;
+      $("#gScore").textContent = (G.practice ? "אימון · " : "") + k + "/9 · נדירות " + rar;
       /* קבוצות חברים (src/groups.js) — גריד מועדון בלבד, ולא באתר */
-      if (window.SportGroups && G.slug && !G.gate) window.SportGroups.grid($("#gGrp"), G.slug, G.grid.n + 1, k, rar);
+      if (window.SportGroups && G.slug && !G.gate && !G.practice) window.SportGroups.grid($("#gGrp"), G.slug, G.grid.n + 1, k, rar);
       $("#gReveal").hidden = st.reveal;
     }
   }
@@ -557,6 +580,8 @@
       } finally { btn.disabled = false; setTimeout(() => btn.textContent = was, 2400); }
     });
     $("#gReveal").addEventListener("click", () => { G.st.reveal = true; save(); render(); });
+    $("#gAgain").addEventListener("click", practice);
+    $("#gBack").addEventListener("click", backToday);
   }
 
   /* גריד מלוח התנאים השמור (build.mjs → config/grid-schedule.json) */
