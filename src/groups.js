@@ -217,37 +217,73 @@
   /* ---------- הטבלה ----------
      יומית: פיצוח ב-k ניחושים = MAX+1-k נקודות, לא פיצח = 0.
      3×3: הנקודות הן סכום הנדירות (עד 900 ללוח).
-     הדירוג לפי סך הנקודות מאז ההצטרפות; שוויון — יותר פיצוחים/משבצות. */
-  const DAYS = 7;
-  function rowsOf(x, g) {
-    const max = KIND[x.k].max(), R = g.r || {};
-    return Object.entries(g.m || {}).filter(([id]) => !(S().banned && S().banned.has(id))).map(([id, m]) => {
-      let games = 0, wins = 0, sumG = 0, p = 0;
-      for (const byU of Object.values(R)) {
-        const v = byU[id]; if (v == null) continue;
-        games++;
-        if (x.k === "grid") { wins += Math.floor(v / 1000); p += v % 1000; }
-        else { p += v > 0 ? max + 1 - v : 0; if (v > 0) { wins++; sumG += v; } }
-      }
-      return { id, name: S().dispName ? S().dispName(id, m.n) : m.n, games, wins, avg: wins ? sumG / wins : 0, p };
-    }).sort((a, b) => b.p - a.p || b.wins - a.wins || (a.avg || 99) - (b.avg || 99));
+
+     **עונה שבועית** (נועם 18/11: "מה שאנשים אוהבים — תחרות בין החברים
+     לאורך זמן"): שבוע = ראשון–שבת. הדירוג הראשי לפי נקודות השבוע; בסוף
+     כל שבוע מי שהוביל הוא "אלוף השבוע" 👑 — הכתר ליד השם לכל השבוע
+     הבא, וארון הגביעים סופר תארים. הכל מחושב כאן מ-r, בלי שדה חדש בשרת. */
+  const DAYS = 7, DAY_MS = 864e5;
+  /* תאריך (UTC חצות) של יום n בקבוצה — לפי הלוח של הסוג */
+  function dateOf(x, n) {
+    if (x.k === "grid") return Date.UTC(2026, 10, 11) + (n - 1) * DAY_MS;
+    const st = typeof START !== "undefined" ? START : [2026, 9, 1];
+    return Date.UTC(st[0], st[1] - 1, st[2]) + (n - 1) * DAY_MS;
   }
+  const weekOf = ms => ms - new Date(ms).getUTCDay() * DAY_MS;          // ראשון של אותו שבוע
+  const dm = ms => { const d = new Date(ms); return `${d.getUTCDate()}/${d.getUTCMonth() + 1}`; };
+  /* ⁦…⁩: טווח תאריכים לטיני בתוך שורה עברית מתהפך ("21/11–15/11") בלי בידוד */
+  const weekLabel = w => `⁦${dm(w)}–${dm(w + 6 * DAY_MS)}⁩`;
+  const ptsOf = (x, v) => x.k === "grid" ? v % 1000 : (v > 0 ? KIND[x.k].max() + 1 - v : 0);
+  const winOf = (x, v) => x.k === "grid" ? Math.floor(v / 1000) : (v > 0 ? 1 : 0);
+
+  function season(x, g) {
+    const R = g.r || {}, members = Object.entries(g.m || {}).filter(([id]) => !(S().banned && S().banned.has(id)));
+    const ids = members.map(([id]) => id), names = Object.fromEntries(members.map(([id, m]) => [id, S().dispName ? S().dispName(id, m.n) : m.n]));
+    const today = KIND[x.k].today(), thisWeek = weekOf(dateOf(x, today));
+    const tot = {}, wk = {}, byWeek = {};
+    ids.forEach(id => { tot[id] = { games: 0, wins: 0, sumG: 0, p: 0 }; wk[id] = { p: 0, wins: 0 }; });
+    for (const [d, byU] of Object.entries(R)) {
+      const w = weekOf(dateOf(x, +d.slice(1)));
+      for (const id of ids) {
+        const v = byU[id]; if (v == null) continue;
+        const p = ptsOf(x, v), wn = winOf(x, v), t = tot[id];
+        t.games++; t.p += p; t.wins += wn; if (x.k === "daily" && v > 0) t.sumG += v;
+        if (w === thisWeek) { wk[id].p += p; wk[id].wins += wn; }
+        else if (w < thisWeek) { const b = (byWeek[w] ||= {}); const e = (b[id] ||= { p: 0, wins: 0 }); e.p += p; e.wins += wn; }
+      }
+    }
+    /* אלופי כל שבוע שנגמר: הכי הרבה נקודות, ואז הכי הרבה פיצוחים. תיקו מוחלט — שני אלופים */
+    const champs = Object.keys(byWeek).map(Number).sort((a, b) => b - a).map(w => {
+      const e = Object.entries(byWeek[w]).filter(([, s]) => s.p > 0);
+      if (!e.length) return null;
+      const top = Math.max(...e.map(([, s]) => s.p)), c1 = e.filter(([, s]) => s.p === top);
+      const tw = Math.max(...c1.map(([, s]) => s.wins));
+      return { w, ids: c1.filter(([, s]) => s.wins === tw).map(([id]) => id), p: top };
+    }).filter(Boolean);
+    const titles = {}; champs.forEach(c => c.ids.forEach(id => titles[id] = (titles[id] || 0) + 1));
+    const lastW = thisWeek - 7 * DAY_MS, crowned = new Set((champs.find(c => c.w === lastW) || { ids: [] }).ids);
+    const rows = ids.map(id => ({ id, name: names[id], week: wk[id].p, weekWins: wk[id].wins, ...tot[id],
+      avg: tot[id].wins && x.k === "daily" ? tot[id].sumG / tot[id].wins : 0, titles: titles[id] || 0, crown: crowned.has(id) }))
+      .sort((a, b) => b.week - a.week || b.weekWins - a.weekWins || b.p - a.p);
+    return { rows, champs, names, thisWeek, today };
+  }
+
   /* שם התשובה רק לחידה יומית שכבר נסגרה, ורק במועדון של הדף (answerFor שייך לו) */
   function answerName(x, n, today) {
     if (x.k !== "daily" || n >= today || x.s !== slug()) return "";
     try { const a = typeof answerFor === "function" ? answerFor(n) : null; return a ? a.name : ""; } catch (e) { return ""; }
   }
   function table(x, g) {
-    const me = uid(), R = g.r || {}, rows = rowsOf(x, g), today = KIND[x.k].today(), grid = x.k === "grid";
+    const me = uid(), R = g.r || {}, grid = x.k === "grid", S1 = season(x, g), { rows, today } = S1;
     const mods = id => id === me ? "" :
       `<span class="mods"><button type="button" data-gmod="report" data-id="${id}">דיווח</button>` +
       `<button type="button" data-gmod="block" data-id="${id}">${S().blocked && S().blocked.has(id) ? "חסום" : "חסימה"}</button></span>`;
     const medal = i => ["🥇", "🥈", "🥉"][i] || String(i + 1);
-    const head = grid ? `<th>לוחות</th><th>משבצות</th><th>נק׳</th>` : `<th>חידות</th><th>פיצח</th><th>ממוצע</th><th>נק׳</th>`;
-    const lead = `<table class="gtab"><thead><tr><th>#</th><th>שם</th>${head}</tr></thead><tbody>` +
-      rows.map((r, i) => `<tr class="${r.id === me ? "me" : ""}"><td>${r.p ? medal(i) : i + 1}</td><td><span class="gnm">${esc(r.name)}</span>${mods(r.id)}</td>` +
-        `<td>${r.games}</td><td>${r.wins}</td>` + (grid ? "" : `<td>${r.wins ? r.avg.toFixed(1) : "—"}</td>`) +
-        `<td><b>${r.p}</b></td></tr>`).join("") + `</tbody></table>`;
+    const lead = `<div class="hd gweek">השבוע ${weekLabel(S1.thisWeek)} · מתאפס ביום ראשון · בסופו מוכתר אלוף השבוע 👑</div>` +
+      `<table class="gtab"><thead><tr><th>#</th><th>שם</th><th>השבוע</th><th>סה״כ</th><th>👑</th></tr></thead><tbody>` +
+      rows.map((r, i) => `<tr class="${r.id === me ? "me" : ""}"><td>${r.week ? medal(i) : i + 1}</td>` +
+        `<td><button type="button" class="gnm" data-g="h2h" data-id="${r.id}">${esc(r.name)}${r.crown ? " 👑" : ""}</button>${mods(r.id)}</td>` +
+        `<td><b>${r.week}</b></td><td>${r.p}</td><td>${r.titles || "—"}</td></tr>`).join("") + `</tbody></table>`;
     const days = Array.from({ length: DAYS }, (_, i) => today - i).filter(n => n >= 1);
     const cell = v => v == null ? `<td class="nx">·</td>`
       : grid ? `<td class="ok">${Math.floor(v / 1000)}</td>`
@@ -258,7 +294,93 @@
       `</tr></thead><tbody>` +
       rows.map(r => `<tr class="${r.id === me ? "me" : ""}"><td>${esc(r.name)}</td>` +
         days.map(n => cell((R[day(n)] || {})[r.id])).join("") + `</tr>`).join("") + `</tbody></table></div>`;
-    return lead + `<div class="hd gsub">${DAYS} הימים האחרונים · ${grid ? "המספר = כמה משבצות מילא" : "המספר = באיזה ניחוש פיצח"}</div>` + hist;
+    const cab = S1.champs.length
+      ? `<details class="gcab"><summary>🏆 ארון הגביעים · ${S1.champs.length} שבועות</summary><ul>` +
+        S1.champs.slice(0, 26).map(c => `<li><span>${weekLabel(c.w)}</span> <b>👑 ${c.ids.map(id => esc(S1.names[id] || "")).join(" + ")}</b> · ${c.p} נק׳</li>`).join("") +
+        `</ul></details>`
+      : `<div class="hd gsub">🏆 ארון הגביעים יתמלא בסוף השבוע הראשון.</div>`;
+    return lead + `<div class="hd gsub">לחצו על שם — מאזן ראש בראש מולו</div>` +
+      `<div class="hd gsub">${DAYS} הימים האחרונים · ${grid ? "המספר = כמה משבצות מילא" : "המספר = באיזה ניחוש פיצח"}</div>` + hist + cab;
+  }
+
+  /* ---------- ראש בראש ----------
+     כל יום ששניכם שיחקתם: מי קיבל יותר נקודות. */
+  function h2h(x, g, other) {
+    const me = uid(), R = g.r || {}, S1 = season(x, g);
+    if (other === me) {
+      const rs = S1.rows.filter(r => r.id !== me).map(r => {
+        let w = 0, l = 0, t = 0;
+        for (const byU of Object.values(R)) {
+          const a = byU[me], b = byU[r.id]; if (a == null || b == null) continue;
+          const pa = ptsOf(x, a), pb = ptsOf(x, b); pa > pb ? w++ : pa < pb ? l++ : t++;
+        }
+        return `<li><b>${esc(r.name)}</b> · ${w} נצחונות · ${l} הפסדים · ${t} תיקו</li>`;
+      });
+      return S().vModal(`<b>ראש בראש — אתה מול כולם</b><br><ul class="gh2h">${rs.join("") || "<li>עוד אין חברים בקבוצה.</li>"}</ul>`,
+        [{ id: "ok", label: "סגירה", primary: true }]);
+    }
+    let w = 0, l = 0, t = 0;
+    for (const byU of Object.values(R)) {
+      const a = byU[me], b = byU[other]; if (a == null || b == null) continue;
+      const pa = ptsOf(x, a), pb = ptsOf(x, b); pa > pb ? w++ : pa < pb ? l++ : t++;
+    }
+    const nm = esc(S1.names[other] || ""), n = w + l + t;
+    const verdict = !n ? "עוד לא שיחקתם באותו יום." : w > l ? "אתה מוביל 💪" : w < l ? `${nm} מוביל 👀` : "שוויון מוחלט 🤝";
+    return S().vModal(`<b>אתה מול ${nm}</b><br>${n ? `<span class="gbig">${w} – ${l}</span>${t ? ` · ${t} תיקו` : ""}<br>` : ""}${verdict}` +
+      `<br><span class="gsmall">כל יום ששניכם שיחקתם: מי קיבל יותר נקודות.</span>`, [{ id: "ok", label: "סגירה", primary: true }]);
+  }
+
+  /* ---------- "מי עוד לא שיחק היום" ---------- */
+  function nudge(x, g) {
+    const me = uid(), S1 = season(x, g), today = (g.r || {})[day(S1.today)] || {};
+    const missing = S1.rows.filter(r => r.id !== me && today[r.id] == null).map(r => r.name);
+    if (!missing.length) return S().vModal("כולם כבר שיחקו היום 💪", [{ id: "ok", label: "סגירה", primary: true }]);
+    const txt = `${missing.join(", ")} — עוד לא שיחקתם היום ב"${x.name}" 👀\n${KIND[x.k].he} · ${clubName(x.s)} · SportDle\n${inviteUrl(x)}`;
+    const a = document.createElement("a"); a.href = "https://wa.me/?text=" + encodeURIComponent(txt); a.target = "_blank"; a.rel = "noopener";
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  /* ---------- תמונת "טבלת השבוע" לוואטסאפ ---------- */
+  async function shareCard(x, g, btn) {
+    const S1 = season(x, g), cs = getComputedStyle(document.documentElement);
+    const brand = cs.getPropertyValue("--brand").trim() || "#FFC72C", onB = cs.getPropertyValue("--on-brand").trim() || "#121214";
+    try { await Promise.all(['400 90px "Suez One"', '800 60px Heebo', '500 40px Heebo'].map(f => document.fonts.load(f))); } catch (e) {}
+    const rows = S1.rows.slice(0, 8), W = 1080, H = 560 + rows.length * 110;
+    const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    const c = cv.getContext("2d"); c.direction = "rtl"; c.textAlign = "center";
+    c.fillStyle = "#0C0C0E"; c.fillRect(0, 0, W, H);
+    c.fillStyle = brand; c.fillRect(0, 0, W, 16);
+    c.fillStyle = brand; c.font = `400 86px "Suez One", serif`; c.fillText(x.name, W / 2, 140);
+    c.fillStyle = "#A0A0A8"; c.font = `500 40px Heebo, sans-serif`;
+    c.fillText(`טבלת השבוע ${weekLabel(S1.thisWeek)} · ${KIND[x.k].he} · ${clubName(x.s)}`, W / 2, 210);
+    rows.forEach((r, i) => {
+      const y = 290 + i * 110;
+      c.fillStyle = i === 0 ? brand : "#1C1C21"; c.beginPath(); c.roundRect(70, y, W - 140, 90, 22); c.fill();
+      const ink = i === 0 ? onB : "#EDEDEF";
+      c.fillStyle = ink; c.font = `800 52px Heebo, sans-serif`;
+      c.textAlign = "right"; c.fillText(`${["🥇", "🥈", "🥉"][i] || i + 1}  ${r.name}${r.crown ? " 👑" : ""}`, W - 110, y + 63);
+      c.textAlign = "left"; c.fillText(String(r.week), 110, y + 63);
+      c.textAlign = "center";
+    });
+    const last = S1.champs[0];
+    c.fillStyle = "#A0A0A8"; c.font = `500 38px Heebo, sans-serif`;
+    if (last) c.fillText(`👑 אלוף ${weekLabel(last.w)}: ${last.ids.map(id => S1.names[id]).join(" + ")}`, W / 2, H - 150);
+    c.fillStyle = brand; c.font = `800 44px Heebo, sans-serif`; c.fillText("sportdle.techbynoam.com", W / 2, H - 70);
+    const name = `sportdle-week-${x.c}.png`, text = `טבלת השבוע ב"${x.name}" 🏆 מי מוריד את ${rows[0] ? rows[0].name : "המוביל"} מהפסגה?\n${inviteUrl(x)}`;
+    const C = window.Capacitor, P = C && C.isNativePlatform && C.isNativePlatform() ? (C.Plugins || {}) : null;
+    const was = btn && btn.textContent; if (btn) { btn.disabled = true; btn.textContent = "מכין…"; }
+    try {
+      if (P && P.Filesystem && P.Share) {
+        const { uri } = await P.Filesystem.writeFile({ path: name, data: cv.toDataURL("image/png").split(",")[1], directory: "CACHE" });
+        await P.Share.share({ files: [uri], text, dialogTitle: "טבלת השבוע" });
+      } else {
+        const blob = await new Promise(res => cv.toBlob(res, "image/png"));
+        const file = new File([blob], name, { type: "image/png" });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) await navigator.share({ files: [file], text });
+        else { const u = URL.createObjectURL(blob), a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000); }
+      }
+    } catch (e) { /* ביטול שיתוף */ }
+    finally { if (btn) { btn.disabled = false; btn.textContent = was; } }
   }
 
   function explain() {
@@ -268,7 +390,9 @@
       `• כשמסיימים את המשחק של היום, התוצאה נכנסת לבד לכל הקבוצות של אותו סוג ואותו מועדון. מי שמצטרף נספר מאותו יום והלאה.<br>` +
       `• <b>חידה יומית:</b> פיצוח בניחוש הראשון = ${max} נקודות, בשני = ${max - 1}, וכך הלאה. לא פיצח = 0.<br>` +
       `• <b>3×3:</b> הנקודות הן סכום הנדירות של המשבצות שמילאת (עד 900 ללוח) — שחקן שפחות אנשים בחרו שווה יותר.<br>` +
-      `• יום שלא שיחקת = 0. הדירוג לפי סך הנקודות; בשוויון — מי שפיצח (או מילא) יותר.<br>` +
+      `• <b>עונה שבועית:</b> הטבלה מדורגת לפי נקודות השבוע (ראשון–שבת) ומתאפסת ביום ראשון. מי שסיים ראשון הוא <b>אלוף השבוע 👑</b> — הכתר ליד השם כל השבוע הבא, והתואר נשמר ב"ארון הגביעים". בשוויון — מי שפיצח (או מילא) יותר; אם עדיין שוויון — שני אלופים.<br>` +
+      `• <b>סה״כ</b> = כל הנקודות מאז ההצטרפות. יום שלא שיחקת = 0.<br>` +
+      `• <b>ראש בראש:</b> לחיצה על שם מראה את המאזן מולו — בכל יום ששניכם שיחקתם, מי קיבל יותר נקודות.<br>` +
       `• ביומן: המספר הוא הניחוש שבו פיצח (או כמה משבצות מילא), ✗ = לא פיצח, · = לא שיחק. שם השחקן מופיע רק אחרי שהחידה נסגרה.<br>` +
       `• משחק מהארכיון לא נספר — רק המשחק של אותו יום.`,
       [{ id: "tour", label: "👆 סיור על המסך" }, { id: "ok", label: "הבנתי", primary: true }])
@@ -277,6 +401,7 @@
 
   /* ---------- הלשונית ---------- */
   const body = () => $("#groupsBody");
+  const DATA = {};   // קוד → { m, r } מהטעינה האחרונה (לתמונה, לתזכורת ולראש בראש)
   async function render() {
     const el = body(); if (!el) return;
     const how = `<button type="button" class="glink" data-g="how">איך זה מחושב?</button>`;
@@ -299,6 +424,7 @@
         const [m, r] = await Promise.all([call("GET", `${gp(x)}/m`), call("GET", `${gp(x)}/r`)]);
         /* הוצאו מהקבוצה (חסימה של המנהל) — יוצאת מהרשימה המקומית */
         if (!m || !m[uid()]) return { x, gone: true };
+        DATA[x.c] = { m, r };
         return { x, g: { m, r } };
       } catch (e) { return { x, err: true }; }
     }));
@@ -309,6 +435,8 @@
         `<div class="grp1" data-c="${p.x.c}"><div class="hd gtitle"><b>${esc(p.x.name)}</b>` +
         `<span class="gchip">${KIND[p.x.k].he} · ${esc(clubName(p.x.s))}</span> · קוד <b dir="ltr">${p.x.c}</b></div>` +
         (p.err ? `<div class="hd">אין חיבור כרגע.</div>` : table(p.x, p.g)) +
+        (p.err ? "" : `<div class="gact"><button type="button" class="ghost" data-g="card">📸 טבלת השבוע לוואטסאפ</button>` +
+          `<button type="button" class="ghost" data-g="nudge">👀 מי עוד לא שיחק היום</button></div>`) +
         `<div class="gact"><button type="button" class="ghost" data-g="invite">הזמנת חברים</button>` +
         `<button type="button" class="ghost" data-g="leave">יציאה</button></div></div>`).join("");
   }
@@ -338,6 +466,11 @@
     if (a === "how") return explain();
     if (a === "leave" && x) return leave(x);
     if (a === "invite" && x) return invite(x);
+    if (x && DATA[x.c]) {
+      if (a === "card") return shareCard(x, DATA[x.c], b);
+      if (a === "nudge") return nudge(x, DATA[x.c]);
+      if (a === "h2h") return h2h(x, DATA[x.c], b.dataset.id);
+    }
     if (!b.dataset.gmod || !x) return;
     /* דיווח / חסימה — כמו בקרב החברים */
     const id = b.dataset.id, s = S();
