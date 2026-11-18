@@ -225,7 +225,8 @@ function compare(g, a){
 
 function saveState(){
   if (practice) return;
-  store.set(K("p"+puzzleNo), JSON.stringify({ g: guesses.map(x => x.name), over, h: hinted }));
+  /* a = שוחק מהארכיון (לא ביומו) — לא נכנס להשלמה לאחור של הקבוצות (src/groups.js) */
+  store.set(K("p"+puzzleNo), JSON.stringify({ g: guesses.map(x => x.name), over, h: hinted, a: puzzleNo !== todayNo || undefined }));
 }
 
 function render(g, instant){
