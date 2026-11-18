@@ -215,11 +215,11 @@ footer .who a:hover{color:var(--dim)}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
-#practiceBar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px;padding:10px 12px;border-radius:12px;border:1.5px dashed var(--brand);font-size:13.5px;line-height:1.5;color:var(--dim)}
-#practiceBar[hidden]{display:none}
-#practiceBar b{color:var(--text)}
-#practiceBar span{flex:1;min-width:180px}
-#practiceBar button{width:auto;min-height:0;margin:0;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+#practiceBar,.practiceBar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px;padding:10px 12px;border-radius:12px;border:1.5px dashed var(--brand);font-size:13.5px;line-height:1.5;color:var(--dim)}
+#practiceBar[hidden],.practiceBar[hidden]{display:none}
+#practiceBar b,.practiceBar b{color:var(--text)}
+#practiceBar span,.practiceBar span{flex:1;min-width:180px}
+#practiceBar button,.practiceBar button{width:auto;min-height:0;margin:0;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
 #grp,#gGrp{margin-top:14px;display:none;text-align:center}
 #grp.on,#gGrp.on{display:block}
 #groupsBody{padding:4px 2px 24px}
@@ -1535,6 +1535,9 @@ button.wa,button.act.wa{background:#15803D}
   <div id="gridView" class="hide">
     <div class="vtop"><button type="button" id="gHelpBtn">איך משחקים?</button></div>
     <p class="gsub"><span id="gWho"></span>עונה על <b>שני</b> התנאים · 9 ניחושים · <span id="gNo"></span></p>
+    <!-- לוח אימון: לוח אקראי, לא נספר (practice ב-grid.js) -->
+    <div id="gPracticeBar" class="practiceBar" hidden><span><b>🧪 לוח אימון</b> · לוח אקראי · לא נספר בנדירות ובקבוצות</span>
+      <button type="button" id="gBack">חזרה ללוח היומי</button></div>
     <div id="gBoard" role="grid" aria-label="לוח 3 על 3"></div>
     <div id="gPick" hidden>
       <div class="gnow">מנחשים עכשיו: <b id="gNow"></b></div>
@@ -1551,6 +1554,7 @@ button.wa,button.act.wa{background:#15803D}
       <button class="act wa" id="gWa">שליחה בוואטסאפ</button>
       <button class="act ghost" id="gStory">תמונה לשיתוף</button>
       <button class="act ghost" id="gReveal">מה היו התשובות?</button>
+      <button class="act ghost" id="gAgain">🧪 לוח אימון — לוח אקראי, לא נספר</button>
       <div id="gGrp"></div>
     </div>
   </div>
