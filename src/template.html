@@ -215,6 +215,11 @@ footer .who a:hover{color:var(--dim)}
 .sitenav + footer{margin-top:14px;padding-top:12px;border-top:0}
 #comm,#rank{margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.09);display:none}
 #comm.on,#rank.on{display:block}
+#practiceBar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 4px;padding:10px 12px;border-radius:12px;border:1.5px dashed var(--brand);font-size:13.5px;line-height:1.5;color:var(--dim)}
+#practiceBar[hidden]{display:none}
+#practiceBar b{color:var(--text)}
+#practiceBar span{flex:1;min-width:180px}
+#practiceBar button{width:auto;min-height:0;margin:0;padding:7px 12px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:13px;font-weight:800;cursor:pointer}
 #grp,#gGrp{margin-top:14px;display:none;text-align:center}
 #grp.on,#gGrp.on{display:block}
 #groupsBody{padding:4px 2px 24px}
@@ -1487,6 +1492,9 @@ button.wa,button.act.wa{background:#15803D}
     <button id="friendBtn">צריכים עזרה? שאלו חבר בוואטסאפ</button>
   </div>
 
+  <!-- משחק אימון: שחקן אקראי, לא נספר בשום מקום (practiceGame ב-engine.js) -->
+  <div id="practiceBar" hidden><span><b>🧪 משחק אימון</b> · שחקן אקראי · לא נספר ברצף, בסטטיסטיקה ובקבוצות</span>
+    <button type="button" id="backDaily">חזרה לחידה היומית</button></div>
   <div id="board"></div>
 
   <div id="result">
@@ -1514,7 +1522,7 @@ button.wa,button.act.wa{background:#15803D}
       <!-- מהאתר לאפליקציה: רק בדפדפן בטלפון, אחרי חידת היום (showGetApp) -->
       <a class="rate" id="getApp" hidden target="_blank" rel="noopener"><span class="stars" aria-hidden="true">📲</span>
         <span>תזכורת כל בוקר ב-08:30 — באפליקציה, בחינם</span></a>
-      <button class="act ghost" id="again">משחק אימון (שחקן אקראי)</button>
+      <button class="act ghost" id="again">🧪 משחק אימון — שחקן אקראי, לא נספר</button>
       <div id="report"><a id="fixLink" href="#">טעות בפרטי השחקן?</a> ·
         <a id="reportLink" href="#">פידבק ובאגים</a></div>
       <div class="promo">אהבתם? אני בונה מערכות כאלה —

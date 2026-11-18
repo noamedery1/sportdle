@@ -308,7 +308,10 @@ setInterval(tickCountdown, 1000);
 
 function finish(won){
   over = true; input.disabled = true;
-  $("#rtitle").textContent = won ? "פיצחתם!" : "נגמרו הניסיונות";
+  $("#rtitle").textContent = practice ? (won ? "פיצחתם באימון!" : "נגמרו הניסיונות באימון")
+                                      : (won ? "פיצחתם!" : "נגמרו הניסיונות");
+  /* באתר הכפתור מנוהל ב-WEB_GATE למטה (מונה המשחקים); באפליקציה — אימון */
+  if (!WEB_GATE) $("#again").textContent = practice ? "🧪 עוד משחק אימון" : "🧪 משחק אימון — שחקן אקראי, לא נספר";
   /* בלי טווח העונות. הוא היה ארוך ("79/80–88/89 / 90/91–93/94"),
      הוא נשבר כיוונית בין ה-LTR של המספרים לעברית סביבם, והוא לא
      מוסיף כלום אחרי שהשם נחשף. השם מספיק. */
@@ -622,9 +625,14 @@ function practiceGame(){
   board.innerHTML = ""; $("#result").classList.remove("on");
   input.disabled = false; input.value = ""; $("#left").textContent = MAX;
   $("#pnum").textContent = WEB_GATE ? `משחק ${webPlays() + 1} מתוך ${WEB_FREE}` : "אימון";
+  /* מה שמבדיל אימון מהחידה של היום — שלא יתבלבלו ויחשבו שהרצף נשבר.
+     באתר אין חידה יומית לחזור אליה, ולכן בלי הכפתור. */
+  $("#practiceBar").hidden = false;
+  $("#backDaily").hidden = WEB_GATE;
   $("#wa").style.display = "none";
   input.focus();
 }
+$("#backDaily").addEventListener("click", () => { loadPuzzle(todayNo); });
 $("#again").addEventListener("click", ()=>{
   if (WEB_GATE && webPlays() >= WEB_FREE) return showWall(true);
   practiceGame();
@@ -770,6 +778,7 @@ function answerFor(n){
 }
 
 function loadPuzzle(n){
+  $("#practiceBar").hidden = true;
   practice = false; puzzleNo = n; answer = answerFor(n); $("#twin").hidden = true;
   guesses = []; over = false; hinted = false;
   board.innerHTML = "";
