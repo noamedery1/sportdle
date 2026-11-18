@@ -43,7 +43,7 @@
   ]
  },
  "counts": {
-  "players": 513,
+  "players": 512,
   "targets": 214
  },
  "players": [
@@ -6447,7 +6447,10 @@
    ],
    "seasons": 3,
    "titles": 1,
-   "target": true
+   "target": true,
+   "aliases": [
+    "גלאופילו וליגטר"
+   ]
   },
   {
    "he": "ירדן שועה",
@@ -6585,21 +6588,6 @@
    "pos": "FW",
    "nat": "GH",
    "born": 1991,
-   "spells": [
-    [
-     2022,
-     2022
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
-   "he": "גלאופילו וליגטר",
-   "pos": "FW",
-   "nat": "SR",
-   "born": 1999,
    "spells": [
     [
      2022,

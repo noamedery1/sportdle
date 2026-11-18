@@ -64,10 +64,11 @@
    "ו-9 שחצו שתי עונות סומנו guessOnly — targets לא זז.",
    "11/11/2026: 505 → 507. שני שחקנים מאומתים ממחקר סבב 2 (פביאני, קוויאר), guessOnly.",
    "11/11/2026: 507 → 510. שלושה מאומתים מסבב 3 (tools/apply-round3b.mjs), guessOnly.",
-   "11/11/2026: 510 → 513. שלושה מאומתים מסבב 4 (apply-round3b.mjs round4), guessOnly."
+   "11/11/2026: 510 → 513. שלושה מאומתים מסבב 4 (apply-round3b.mjs round4), guessOnly.",
+   "18/11/2026: 513 → 512. \"גלאופילו וליגטר\" אוחד לתוך \"חלאופילו פלייטר\" — אותו אדם (Gleofilo Vlijter), tools/fix-dupes.mjs."
   ],
   "expect": {
-   "players": 513,
+   "players": 512,
    "targets": 214
   },
   "wikiEn": "Beitar Jerusalem",
