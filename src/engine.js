@@ -234,7 +234,7 @@ function render(g, instant){
   row.className = "row";
   if (instant) row.style.cssText = "animation:none";
   row.innerHTML =
-    `<p class="who"><span class="nm">${g.name}</span><i>ניחוש ${guesses.length}</i><button type="button" class="rowfix" data-i="${guesses.length - 1}" aria-label="דיווח טעות בפרטי ${g.name}">דיווח טעות</button></p><div class="tiles">` +
+    `<p class="who"><span class="nm">${g.name}</span><i>ניחוש ${guesses.length}</i><button type="button" class="rowfix" data-i="${guesses.length - 1}" aria-label="דיווח טעות בפרטי ${g.name}" title="דיווח טעות">⚑</button></p><div class="tiles">` +
     cells.map((c,i)=>
       `<div class="tile ${c.s}" style="${instant?"animation:none;opacity:1;transform:none":`animation-delay:${i*90}ms`}">
          <span class="k">${c.k}</span>
@@ -1748,7 +1748,7 @@ function bootClub(slug){
 
   if (WEB_GATE){
     document.documentElement.dataset.web = "1";
-    document.querySelector('.nav [data-tab="daily"]').textContent = "משחק אקראי";
+    document.querySelector('.nav [data-tab="daily"]').textContent = "אקראי";
     startWebGame();
     track("view", {web: 1});
     return;
