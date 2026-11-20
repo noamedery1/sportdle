@@ -849,14 +849,14 @@
    "spells": [
     [
      1987,
-     1992
+     1991
     ],
     [
      1994,
      1996
     ]
    ],
-   "seasons": 9,
+   "seasons": 8,
    "titles": 2,
    "target": true
   },
@@ -2020,13 +2020,9 @@
     [
      2000,
      2001
-    ],
-    [
-     2006,
-     2006
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 0,
    "target": true
   },
@@ -2456,13 +2452,9 @@
     [
      2003,
      2007
-    ],
-    [
-     2010,
-     2010
     ]
    ],
-   "seasons": 6,
+   "seasons": 5,
    "titles": 1,
    "target": true
   },
@@ -5144,21 +5136,6 @@
    "target": false
   },
   {
-   "he": "דן מורי",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1988,
-   "spells": [
-    [
-     2016,
-     2017
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": true
-  },
-  {
    "he": "דניאל אסקלינג",
    "pos": "DF",
    "nat": "SE",
@@ -5387,6 +5364,21 @@
     ]
    ],
    "seasons": 4,
+   "titles": 0,
+   "target": true
+  },
+  {
+   "he": "דן מורי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2017,
+     2017
+    ]
+   ],
+   "seasons": 1,
    "titles": 0,
    "target": true
   },
@@ -6545,14 +6537,10 @@
    "spells": [
     [
      2021,
-     2024
-    ],
-    [
-     2026,
-     2026
+     2023
     ]
    ],
-   "seasons": 5,
+   "seasons": 3,
    "titles": 1,
    "target": true
   },
