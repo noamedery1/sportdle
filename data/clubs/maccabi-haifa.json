@@ -6090,6 +6090,29 @@
    ]
   },
   {
+   "he": "יונתן לוי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1998,
+   "spells": [
+    [
+     2017,
+     2018
+    ],
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "יונתן לוי",
+    "Yonatan Levi"
+   ]
+  },
+  {
    "he": "מוחמד עואד",
    "pos": "FW",
    "nat": "IL",
@@ -6434,33 +6457,6 @@
    "target": true,
    "aliases": [
     "Yahav Gurfinkel"
-   ]
-  },
-  {
-   "he": "יונתן לוי",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1998,
-   "spells": [
-    [
-     2018,
-     2018
-    ],
-    [
-     2020,
-     2020
-    ],
-    [
-     2022,
-     2022
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "יונתן לוי",
-    "Yonatan Levi"
    ]
   },
   {
