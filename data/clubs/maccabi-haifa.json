@@ -5179,6 +5179,24 @@
    ]
   },
   {
+   "he": "דור חוגי",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1995,
+   "spells": [
+    [
+     2014,
+     2014
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "Dor Hugi"
+   ]
+  },
+  {
    "he": "יובל יוסיפוביץ",
    "pos": "DF",
    "nat": "IL",
@@ -5430,24 +5448,6 @@
    "aliases": [
     "אוהד לויטה",
     "Ohad Levita"
-   ]
-  },
-  {
-   "he": "דור חוגי",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1995,
-   "spells": [
-    [
-     2015,
-     2016
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "Dor Hugi"
    ]
   },
   {
@@ -8373,25 +8373,6 @@
    ]
   },
   {
-   "he": "ירין לוי",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 2005,
-   "spells": [
-    [
-     2025,
-     2025
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": true,
-   "aliases": [
-    "ירין לוי",
-    "Yarin Levi"
-   ]
-  },
-  {
    "he": "ליאם חרמש",
    "pos": "MF",
    "nat": "IL",
@@ -9047,6 +9028,25 @@
    "target": false,
    "aliases": [
     "ינון פיינגזיכט"
+   ]
+  },
+  {
+   "he": "ירין לוי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2005,
+   "spells": [
+    [
+     2027,
+     2027
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "ירין לוי",
+    "Yarin Levi"
    ]
   },
   {
