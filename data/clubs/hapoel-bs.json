@@ -1119,32 +1119,6 @@
    "target": false
   },
   {
-   "he": "יניב אלול",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1978,
-   "spells": [
-    [
-     1999,
-     1999
-    ],
-    [
-     2001,
-     2005
-    ],
-    [
-     2008,
-     2009
-    ]
-   ],
-   "seasons": 8,
-   "titles": 0,
-   "target": true,
-   "aliases": [
-    "יניב אלול"
-   ]
-  },
-  {
    "he": "חיים חג'ג'",
    "pos": "MF",
    "nat": "IL",
@@ -1245,6 +1219,28 @@
    "target": true,
    "aliases": [
     "Davy Cooreman"
+   ]
+  },
+  {
+   "he": "יניב אלול",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1978,
+   "spells": [
+    [
+     2001,
+     2005
+    ],
+    [
+     2008,
+     2009
+    ]
+   ],
+   "seasons": 7,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "יניב אלול"
    ]
   },
   {
