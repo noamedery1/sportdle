@@ -3377,13 +3377,9 @@
     [
      2005,
      2005
-    ],
-    [
-     2009,
-     2009
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -4051,32 +4047,6 @@
    ]
   },
   {
-   "he": "תום מנשרוב",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1987,
-   "spells": [
-    [
-     2007,
-     2007
-    ],
-    [
-     2009,
-     2010
-    ],
-    [
-     2012,
-     2012
-    ]
-   ],
-   "seasons": 4,
-   "titles": 0,
-   "target": true,
-   "aliases": [
-    "תום מנשרוב"
-   ]
-  },
-  {
    "he": "תמיר כחלון",
    "pos": "MF",
    "nat": "IL",
@@ -4700,6 +4670,28 @@
    ]
   },
   {
+   "he": "תום מנשרוב",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1987,
+   "spells": [
+    [
+     2009,
+     2010
+    ],
+    [
+     2012,
+     2012
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "תום מנשרוב"
+   ]
+  },
+  {
    "he": "איוויצה אילייב",
    "pos": "FW",
    "nat": "RS",
@@ -5088,13 +5080,9 @@
     [
      2011,
      2014
-    ],
-    [
-     2018,
-     2018
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -5207,10 +5195,10 @@
    "spells": [
     [
      2012,
-     2016
+     2015
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -5376,11 +5364,11 @@
    "spells": [
     [
      2012,
-     2013
+     2012
     ]
    ],
-   "seasons": 2,
-   "titles": 1,
+   "seasons": 1,
+   "titles": 0,
    "target": true,
    "aliases": [
     "רועי קהת"
@@ -5414,11 +5402,11 @@
    "spells": [
     [
      2012,
-     2014
+     2013
     ]
    ],
-   "seasons": 3,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": true,
    "aliases": [
     "רפאל דהן",
@@ -5722,28 +5710,6 @@
    "target": true,
    "aliases": [
     "Carlos García"
-   ]
-  },
-  {
-   "he": "רוסלן ברסקי",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1992,
-   "spells": [
-    [
-     2013,
-     2013
-    ],
-    [
-     2019,
-     2021
-    ]
-   ],
-   "seasons": 4,
-   "titles": 4,
-   "target": true,
-   "aliases": [
-    "Ruslan Barsky"
    ]
   },
   {
@@ -6307,15 +6273,11 @@
      2016
     ],
     [
-     2018,
-     2018
-    ],
-    [
      2022,
      2025
     ]
    ],
-   "seasons": 6,
+   "seasons": 5,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -6407,33 +6369,6 @@
    ]
   },
   {
-   "he": "יונתן כהן",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1996,
-   "spells": [
-    [
-     2016,
-     2016
-    ],
-    [
-     2019,
-     2021
-    ],
-    [
-     2023,
-     2024
-    ]
-   ],
-   "seasons": 6,
-   "titles": 4,
-   "target": true,
-   "aliases": [
-    "יונתן כהן",
-    "Yonatan Cohen"
-   ]
-  },
-  {
    "he": "מקסים גרצ'קין",
    "pos": "DF",
    "nat": "IL",
@@ -6442,40 +6377,13 @@
     [
      2016,
      2016
-    ],
-    [
-     2019,
-     2019
     ]
    ],
-   "seasons": 2,
-   "titles": 1,
+   "seasons": 1,
+   "titles": 0,
    "target": true,
    "aliases": [
     "Maksim Grechkin"
-   ]
-  },
-  {
-   "he": "מתן חוזז",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1996,
-   "spells": [
-    [
-     2016,
-     2016
-    ],
-    [
-     2019,
-     2024
-    ]
-   ],
-   "seasons": 7,
-   "titles": 4,
-   "target": true,
-   "aliases": [
-    "מתן חוזז",
-    "Matan Hozez"
    ]
   },
   {
@@ -6539,10 +6447,10 @@
    "spells": [
     [
      2016,
-     2017
+     2016
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -7188,11 +7096,15 @@
    "spells": [
     [
      2019,
+     2019
+    ],
+    [
+     2021,
      2023
     ]
    ],
-   "seasons": 5,
-   "titles": 3,
+   "seasons": 4,
+   "titles": 2,
    "target": true,
    "aliases": [
     "אדוארדו גררו"
@@ -7277,6 +7189,29 @@
    ]
   },
   {
+   "he": "יונתן כהן",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2019,
+     2021
+    ],
+    [
+     2023,
+     2024
+    ]
+   ],
+   "seasons": 5,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "יונתן כהן",
+    "Yonatan Cohen"
+   ]
+  },
+  {
    "he": "מאור קנדיל",
    "pos": "DF",
    "nat": "IL",
@@ -7293,6 +7228,25 @@
    "aliases": [
     "מאור קנדיל",
     "Maor Kandil"
+   ]
+  },
+  {
+   "he": "מתן חוזז",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1996,
+   "spells": [
+    [
+     2019,
+     2023
+    ]
+   ],
+   "seasons": 5,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "מתן חוזז",
+    "Matan Hozez"
    ]
   },
   {
@@ -7332,6 +7286,24 @@
     "צ'יקו אופואדו",
     "Chikeluba Ofoedu",
     "ציקו אופואדו"
+   ]
+  },
+  {
+   "he": "רוסלן ברסקי",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1992,
+   "spells": [
+    [
+     2019,
+     2021
+    ]
+   ],
+   "seasons": 3,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "Ruslan Barsky"
    ]
   },
   {
@@ -7440,26 +7412,6 @@
    "target": false
   },
   {
-   "he": "דניאל פרץ",
-   "pos": "GK",
-   "nat": "IL",
-   "born": 2000,
-   "spells": [
-    [
-     2020,
-     2023
-    ]
-   ],
-   "seasons": 4,
-   "titles": 2,
-   "target": true,
-   "aliases": [
-    "Daniel Peretz",
-    "דניאל פרץ (2000)",
-    "דניאל פרץ"
-   ]
-  },
-  {
    "he": "יואב הופמייסטר",
    "pos": "MF",
    "nat": "IL",
@@ -7502,44 +7454,13 @@
     [
      2020,
      2020
-    ],
-    [
-     2026,
-     2026
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "Nadav Niddam"
-   ]
-  },
-  {
-   "he": "עידו שחר",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 2001,
-   "spells": [
-    [
-     2020,
-     2020
-    ],
-    [
-     2022,
-     2022
-    ],
-    [
-     2024,
-     2026
-    ]
-   ],
-   "seasons": 5,
-   "titles": 4,
-   "target": true,
-   "aliases": [
-    "עידו שחר",
-    "Ido Shahar"
    ]
   },
   {
@@ -7699,6 +7620,26 @@
    ]
   },
   {
+   "he": "דניאל פרץ",
+   "pos": "GK",
+   "nat": "IL",
+   "born": 2000,
+   "spells": [
+    [
+     2021,
+     2023
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "Daniel Peretz",
+    "דניאל פרץ (2000)",
+    "דניאל פרץ"
+   ]
+  },
+  {
    "he": "לואיס הרננדס רודריגס",
    "pos": "DF",
    "nat": "ES",
@@ -7850,28 +7791,6 @@
    "target": false
   },
   {
-   "he": "איתי בן חמו",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 2002,
-   "spells": [
-    [
-     2022,
-     2022
-    ],
-    [
-     2026,
-     2026
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "איתי בן חמו"
-   ]
-  },
-  {
    "he": "ברנדלי קוואס",
    "pos": "MF",
    "nat": "NL",
@@ -7977,6 +7896,29 @@
    "aliases": [
     "עדן שמיר",
     "Eden Shamir"
+   ]
+  },
+  {
+   "he": "עידו שחר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2001,
+   "spells": [
+    [
+     2022,
+     2022
+    ],
+    [
+     2024,
+     2026
+    ]
+   ],
+   "seasons": 4,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "עידו שחר",
+    "Ido Shahar"
    ]
   },
   {
@@ -8418,11 +8360,11 @@
    "spells": [
     [
      2024,
-     2025
+     2024
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "Kiko Bondoso"
@@ -8562,11 +8504,11 @@
    "spells": [
     [
      2025,
-     2026
+     2025
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "Hisham Layous"
@@ -8834,6 +8776,24 @@
    "aliases": [
     "רז שלמה",
     "Raz Shlomo"
+   ]
+  },
+  {
+   "he": "איתי בן חמו",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2002,
+   "spells": [
+    [
+     2026,
+     2026
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "איתי בן חמו"
    ]
   },
   {
