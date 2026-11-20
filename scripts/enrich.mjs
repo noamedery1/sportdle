@@ -792,9 +792,19 @@ for (const club of clubs) {
   }
 
   /* --- תקופות, עונות, תארים --- */
+  function dropNotSeasons(p) {
+    if (!p.notSeasons?.length || !p.spells) return;
+    const ns = new Set(p.notSeasons);
+    const ys = p.spells.flatMap(([a, b]) => Array.from({ length: b - a + 1 }, (_, i) => a + i)).filter(y => !ns.has(y));
+    if (ys.length) p.spells = toSpells(ys);
+  }
   const titleYears = [...club.titles.league, ...club.titles.cup];
   for (const p of players) {
     if (!p.spells) p.spells = toSpells(p.years || []);
+    /* notSeasons (config/names-<slug>.json): עונות שבהן לא היה במועדון —
+       לפי היסטוריית ההעברות בטרנספרמרקט (tools/tm-seasons.mjs). מורידים
+       אחרי כל האיחודים; עונות חדשות ממשיכות להיכנס מהמקורות. */
+    dropNotSeasons(p);
     p.seasons = seasonsIn(p.spells);
     p.titles  = countTitles(p.spells, titleYears);
   }
@@ -865,8 +875,9 @@ for (const club of clubs) {
           ...(hit.spells || []).flatMap(([a, b]) => Array.from({length: b-a+1}, (_, i) => a+i)),
           ...p.spells.flatMap(([a, b]) => Array.from({length: b-a+1}, (_, i) => a+i))
         ]);
-        for (const f of ["pos", "born", "nat", "ifaId", "official"])
+        for (const f of ["pos", "born", "nat", "ifaId", "official", "notSeasons"])
           if (hit[f] == null && p[f] != null) hit[f] = p[f];
+        dropNotSeasons(hit);
         for (const a of [p.he, ...(p.aliases || [])])
           if (a && !hit.aliases.includes(a)) hit.aliases.push(a);
         hit.src.push("merged");
@@ -1002,6 +1013,24 @@ for (const club of clubs) {
      4. לוח החידות — סדר מקובע (באג 6.2)
         קיים → נשמר כלשונו. חדשים נוספים בסוף בלבד.
      ============================================================ */
+  /* notSeasons — סבב אחרון לפי שם וכינויים: רשומה שאוחדה/נבלעה אחרי
+     התיקון הידני (דניאל פרץ) מאבדת את השדה, והרשומה ששרדה לא. */
+  {
+    const ns = new Map();
+    for (const [k, v] of Object.entries(namesFix || {}))
+      if (v && typeof v === "object" && v.notSeasons) ns.set(normName(k), v.notSeasons);
+    /* "_notSeasonsByName": { שם: [עונות] } — לשחקן שהמפתח הרגיל לא תופס */
+    for (const [k, v] of Object.entries(namesFix?._notSeasonsByName || {})) ns.set(normName(k), v);
+    for (const p of players) if (p.notSeasons) ns.set(normName(p.he), p.notSeasons);
+    for (const p of players) {
+      const hit = [p.he, ...(p.aliases || [])].map(n => ns.get(normName(n))).find(Boolean);
+      if (!hit || !p.spells) continue;
+      const before = JSON.stringify(p.spells);
+      p.notSeasons = hit; dropNotSeasons(p);
+      if (JSON.stringify(p.spells) !== before) { p.seasons = seasonsIn(p.spells); p.titles = countTitles(p.spells, titleYears); }
+    }
+  }
+
   const schedFile = `config/schedule-${club.slug}.json`;
   let schedule = readJSON(schedFile, null)?.order || null;
 

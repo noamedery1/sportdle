@@ -3100,11 +3100,15 @@
     ],
     [
      2008,
+     2008
+    ],
+    [
+     2010,
      2011
     ]
    ],
-   "seasons": 7,
-   "titles": 5,
+   "seasons": 6,
+   "titles": 4,
    "target": true,
    "aliases": [
     "שי מימון",
@@ -3353,15 +3357,11 @@
      2006
     ],
     [
-     2008,
-     2008
-    ],
-    [
      2018,
      2018
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -4091,14 +4091,10 @@
     [
      2009,
      2009
-    ],
-    [
-     2011,
-     2011
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "ליעד אלמליח",
@@ -4114,13 +4110,9 @@
     [
      2009,
      2012
-    ],
-    [
-     2015,
-     2015
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -4455,29 +4447,6 @@
    ]
   },
   {
-   "he": "מוחמד כליבאת",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1990,
-   "spells": [
-    [
-     2011,
-     2011
-    ],
-    [
-     2015,
-     2016
-    ]
-   ],
-   "seasons": 3,
-   "titles": 2,
-   "target": true,
-   "aliases": [
-    "Mohammed Kalibat",
-    "כליבאת מוחמד"
-   ]
-  },
-  {
    "he": "סיידו יאיא",
    "pos": "MF",
    "nat": "GH",
@@ -4614,10 +4583,10 @@
    "spells": [
     [
      2012,
-     2017
+     2016
     ]
    ],
-   "seasons": 6,
+   "seasons": 5,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -5273,13 +5242,9 @@
     [
      2014,
      2014
-    ],
-    [
-     2018,
-     2018
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -5565,6 +5530,25 @@
    "target": false
   },
   {
+   "he": "מוחמד כליבאת",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1990,
+   "spells": [
+    [
+     2015,
+     2015
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "Mohammed Kalibat",
+    "כליבאת מוחמד"
+   ]
+  },
+  {
    "he": "מוחמד קמארה",
    "pos": "MF",
    "nat": "FI",
@@ -5697,25 +5681,6 @@
    "aliases": [
     "שון וייסמן",
     "Shon Weissman"
-   ]
-  },
-  {
-   "he": "שחר הירש",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1993,
-   "spells": [
-    [
-     2015,
-     2017
-    ]
-   ],
-   "seasons": 3,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "שחר הירש",
-    "Shahar Hirsh"
    ]
   },
   {
@@ -5961,6 +5926,25 @@
    "target": false,
    "aliases": [
     "רומאריו סנטוס פירס"
+   ]
+  },
+  {
+   "he": "שחר הירש",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2016,
+     2017
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": true,
+   "aliases": [
+    "שחר הירש",
+    "Shahar Hirsh"
    ]
   },
   {
@@ -6331,10 +6315,10 @@
    "spells": [
     [
      2018,
-     2020
+     2019
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -6575,25 +6559,6 @@
    ]
   },
   {
-   "he": "עופרי ארד",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1998,
-   "spells": [
-    [
-     2018,
-     2023
-    ]
-   ],
-   "seasons": 6,
-   "titles": 3,
-   "target": true,
-   "aliases": [
-    "עופרי ארד",
-    "Ofri Arad"
-   ]
-  },
-  {
    "he": "קאיו אלבס",
    "pos": "MF",
    "nat": "BR",
@@ -6665,14 +6630,10 @@
     [
      2020,
      2020
-    ],
-    [
-     2023,
-     2023
     ]
    ],
-   "seasons": 3,
-   "titles": 1,
+   "seasons": 2,
+   "titles": 0,
    "target": true,
    "aliases": [
     "שי בן-דוד",
@@ -6811,6 +6772,25 @@
    "target": false,
    "aliases": [
     "Seydouba Soumah"
+   ]
+  },
+  {
+   "he": "עופרי ארד",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1998,
+   "spells": [
+    [
+     2019,
+     2023
+    ]
+   ],
+   "seasons": 5,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "עופרי ארד",
+    "Ofri Arad"
    ]
   },
   {
@@ -7100,30 +7080,6 @@
    ]
   },
   {
-   "he": "מחמוד ג'אבר",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1999,
-   "spells": [
-    [
-     2020,
-     2020
-    ],
-    [
-     2022,
-     2025
-    ]
-   ],
-   "seasons": 5,
-   "titles": 2,
-   "target": true,
-   "aliases": [
-    "מחמוד ג'אבר",
-    "Mahmoud Jaber",
-    "מחמוד גאבר"
-   ]
-  },
-  {
    "he": "מקסים פלקושצ'נקו",
    "pos": "MF",
    "nat": "IL",
@@ -7132,14 +7088,10 @@
     [
      2020,
      2020
-    ],
-    [
-     2023,
-     2023
     ]
    ],
-   "seasons": 2,
-   "titles": 1,
+   "seasons": 1,
+   "titles": 0,
    "target": true,
    "aliases": [
     "מקסים פלקושצנקו",
@@ -7334,10 +7286,10 @@
    "spells": [
     [
      2021,
-     2026
+     2023
     ]
    ],
-   "seasons": 6,
+   "seasons": 3,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -7521,6 +7473,26 @@
    "target": false,
    "aliases": [
     "מאויס צ'יבוטה דפונו"
+   ]
+  },
+  {
+   "he": "מחמוד ג'אבר",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1999,
+   "spells": [
+    [
+     2022,
+     2025
+    ]
+   ],
+   "seasons": 4,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "מחמוד ג'אבר",
+    "Mahmoud Jaber",
+    "מחמוד גאבר"
    ]
   },
   {
@@ -8161,10 +8133,10 @@
    "spells": [
     [
      2024,
-     2026
+     2025
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 0,
    "target": true,
    "aliases": [

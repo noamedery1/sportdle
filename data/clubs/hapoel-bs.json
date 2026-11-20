@@ -3321,24 +3321,6 @@
    ]
   },
   {
-   "he": "גרשון קופי",
-   "pos": "FW",
-   "nat": "GH",
-   "born": 1991,
-   "spells": [
-    [
-     2009,
-     2011
-    ]
-   ],
-   "seasons": 3,
-   "titles": 0,
-   "target": true,
-   "aliases": [
-    "James Bissue"
-   ]
-  },
-  {
    "he": "דנדי אוקוגו",
    "pos": null,
    "nat": "IL",
@@ -3564,6 +3546,24 @@
    "target": false,
    "aliases": [
     "גיל בלומשטיין"
+   ]
+  },
+  {
+   "he": "גרשון קופי",
+   "pos": "FW",
+   "nat": "GH",
+   "born": 1991,
+   "spells": [
+    [
+     2010,
+     2011
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "James Bissue"
    ]
   },
   {
@@ -3975,10 +3975,10 @@
    "spells": [
     [
      2011,
-     2012
+     2011
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -4952,10 +4952,10 @@
    "spells": [
     [
      2013,
-     2015
+     2014
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -5481,10 +5481,10 @@
    "spells": [
     [
      2016,
-     2021
+     2020
     ]
    ],
-   "seasons": 6,
+   "seasons": 5,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -6433,11 +6433,11 @@
    "spells": [
     [
      2019,
-     2020
+     2019
     ]
    ],
-   "seasons": 2,
-   "titles": 1,
+   "seasons": 1,
+   "titles": 0,
    "target": true,
    "aliases": [
     "עדן בן בסט",
@@ -6933,10 +6933,10 @@
    "spells": [
     [
      2020,
-     2024
+     2023
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -8163,25 +8163,6 @@
    ]
   },
   {
-   "he": "זאהי אחמד",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 2001,
-   "spells": [
-    [
-     2024,
-     2026
-    ]
-   ],
-   "seasons": 3,
-   "titles": 2,
-   "target": true,
-   "aliases": [
-    "זאהי אחמד",
-    "Zahi Ahmed"
-   ]
-  },
-  {
    "he": "כריסטופר פטרסון",
    "pos": "FW",
    "nat": "SE",
@@ -8396,6 +8377,25 @@
    "aliases": [
     "גיא מזרחי",
     "Guy Mizrahi"
+   ]
+  },
+  {
+   "he": "זאהי אחמד",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 2001,
+   "spells": [
+    [
+     2025,
+     2026
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "זאהי אחמד",
+    "Zahi Ahmed"
    ]
   },
   {
