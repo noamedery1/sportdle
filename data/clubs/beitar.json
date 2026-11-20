@@ -2579,6 +2579,25 @@
    "target": false
   },
   {
+   "he": "שלומי משה",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1983,
+   "spells": [
+    [
+     2003,
+     2003
+    ],
+    [
+     2005,
+     2006
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true
+  },
+  {
    "he": "אבי נמני",
    "pos": "MF",
    "nat": "IL",
@@ -2607,6 +2626,21 @@
    "seasons": 1,
    "titles": 0,
    "target": false
+  },
+  {
+   "he": "אופיר עזו",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2004,
+     2006
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true
   },
   {
    "he": "אלירן דנין",
@@ -2756,21 +2790,6 @@
    "pos": "GK",
    "nat": "IL",
    "born": 1981,
-   "spells": [
-    [
-     2005,
-     2006
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": true
-  },
-  {
-   "he": "אופיר עזו",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1982,
    "spells": [
     [
      2005,
@@ -2993,21 +3012,6 @@
    ],
    "seasons": 8,
    "titles": 3,
-   "target": true
-  },
-  {
-   "he": "שלומי משה",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1983,
-   "spells": [
-    [
-     2005,
-     2006
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
    "target": true
   },
   {
@@ -4139,6 +4143,21 @@
    "target": true
   },
   {
+   "he": "שי נסים",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1988,
+   "spells": [
+    [
+     2011,
+     2012
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false
+  },
+  {
    "he": "אבירם זיאת",
    "pos": "GK",
    "nat": "IL",
@@ -4323,21 +4342,6 @@
    "target": true
   },
   {
-   "he": "שי נסים",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1988,
-   "spells": [
-    [
-     2012,
-     2012
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false
-  },
-  {
    "he": "תומר ירוחם",
    "pos": "DF",
    "nat": "IL",
@@ -4434,6 +4438,25 @@
    "seasons": 1,
    "titles": 0,
    "target": false
+  },
+  {
+   "he": "עומר נחמני",
+   "pos": "FW",
+   "nat": "IL",
+   "born": 1993,
+   "spells": [
+    [
+     2013,
+     2013
+    ],
+    [
+     2015,
+     2016
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true
   },
   {
    "he": "אבישי כהן",
@@ -4943,21 +4966,6 @@
    "target": false
   },
   {
-   "he": "עומר נחמני",
-   "pos": "FW",
-   "nat": "IL",
-   "born": 1993,
-   "spells": [
-    [
-     2015,
-     2016
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": true
-  },
-  {
    "he": "קלאודמיר פריירה",
    "pos": "MF",
    "nat": "BR",
@@ -5368,6 +5376,21 @@
    "target": true
   },
   {
+   "he": "דור קונסטנטינוס",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2017,
+     2018
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": true
+  },
+  {
    "he": "דן מורי",
    "pos": "DF",
    "nat": "IL",
@@ -5659,21 +5682,6 @@
    "seasons": 1,
    "titles": 0,
    "target": false
-  },
-  {
-   "he": "דור קונסטנטינוס",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1997,
-   "spells": [
-    [
-     2018,
-     2018
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": true
   },
   {
    "he": "דייוויד בויסן",
@@ -7715,6 +7723,24 @@
    "target": false
   },
   {
+   "he": "זיו בן שימול",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 2004,
+   "spells": [
+    [
+     2026,
+     2027
+    ]
+   ],
+   "seasons": 2,
+   "titles": 0,
+   "target": false,
+   "aliases": [
+    "זיו ישראל בן שימול"
+   ]
+  },
+  {
    "he": "זיו בן שמול",
    "pos": "MF",
    "nat": "IL",
@@ -7985,24 +8011,6 @@
    "target": false,
    "aliases": [
     "דג'אץ וורקו"
-   ]
-  },
-  {
-   "he": "זיו בן שימול",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 2004,
-   "spells": [
-    [
-     2027,
-     2027
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "זיו ישראל בן שימול"
    ]
   },
   {

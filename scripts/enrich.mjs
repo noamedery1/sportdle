@@ -1022,11 +1022,20 @@ for (const club of clubs) {
     /* "_notSeasonsByName": { שם: [עונות] } — לשחקן שהמפתח הרגיל לא תופס */
     for (const [k, v] of Object.entries(namesFix?._notSeasonsByName || {})) ns.set(normName(k), v);
     for (const p of players) if (p.notSeasons) ns.set(normName(p.he), p.notSeasons);
+    /* addSeasons — ההפך: עונות שחסרו אצלנו, וטרנספרמרקט + ההתאחדות
+       מציבים אותו במועדון (tools/tm-audit). מוסיף בלבד; target לא משתנה
+       (נקבע קודם), ולכן הבריכה והלוח לא זזים. */
+    const as = new Map();
+    for (const [k, v] of Object.entries(namesFix || {}))
+      if (v && typeof v === "object" && v.addSeasons) as.set(normName(k), v.addSeasons);
+    for (const [k, v] of Object.entries(namesFix?._addSeasonsByName || {})) as.set(normName(k), v);
     for (const p of players) {
       const hit = [p.he, ...(p.aliases || [])].map(n => ns.get(normName(n))).find(Boolean);
-      if (!hit || !p.spells) continue;
+      const add = [p.he, ...(p.aliases || [])].map(n => as.get(normName(n))).find(Boolean);
+      if ((!hit && !add) || !p.spells) continue;
       const before = JSON.stringify(p.spells);
-      p.notSeasons = hit; dropNotSeasons(p);
+      if (add) p.spells = toSpells([...p.spells.flatMap(([a, b]) => Array.from({ length: b - a + 1 }, (_, i) => a + i)), ...add]);
+      if (hit) { p.notSeasons = hit; dropNotSeasons(p); }
       if (JSON.stringify(p.spells) !== before) { p.seasons = seasonsIn(p.spells); p.titles = countTitles(p.spells, titleYears); }
     }
   }
