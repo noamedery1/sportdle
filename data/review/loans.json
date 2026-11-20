@@ -188,7 +188,7 @@
    ],
    [
     2011,
-    2013
+    2012
    ]
   ],
   "loans": [
@@ -2322,7 +2322,7 @@
    ],
    [
     1991,
-    1992
+    1991
    ]
   ],
   "loans": [
@@ -4386,10 +4386,6 @@
   "target": true,
   "spells": [
    [
-    2018,
-    2018
-   ],
-   [
     2020,
     2026
    ]
@@ -4422,8 +4418,8 @@
    }
   ],
   "titles": {
-   "now": 5,
-   "withLoans": 5
+   "now": 4,
+   "withLoans": 4
   }
  },
  {
@@ -4536,7 +4532,7 @@
   "spells": [
    [
     1994,
-    2001
+    2000
    ],
    [
     2003,
@@ -4546,7 +4542,7 @@
   "loans": [
    {
     "season": "00/01",
-    "verdict": "conflict",
+    "verdict": "remove",
     "seen": [
      "tm"
     ]
@@ -5234,6 +5230,10 @@
   "spells": [
    [
     1994,
+    1994
+   ],
+   [
+    1996,
     1996
    ],
    [
@@ -5263,8 +5263,8 @@
    }
   ],
   "titles": {
-   "now": 3,
-   "withLoans": 3
+   "now": 2,
+   "withLoans": 2
   }
  },
  {
@@ -6646,13 +6646,17 @@
   "spells": [
    [
     1981,
+    1983
+   ],
+   [
+    1985,
     1987
    ]
   ],
   "loans": [
    {
     "season": "83/84",
-    "verdict": "conflict",
+    "verdict": "remove",
     "seen": [
      "tm"
     ]
@@ -6677,6 +6681,10 @@
   "spells": [
    [
     1982,
+    1984
+   ],
+   [
+    1986,
     1989
    ],
    [
@@ -6687,7 +6695,7 @@
   "loans": [
    {
     "season": "84/85",
-    "verdict": "conflict",
+    "verdict": "remove",
     "seen": [
      "tm"
     ]
@@ -7322,6 +7330,10 @@
   "spells": [
    [
     2016,
+    2016
+   ],
+   [
+    2019,
     2023
    ],
    [
@@ -7332,14 +7344,14 @@
   "loans": [
    {
     "season": "16/17",
-    "verdict": "conflict",
+    "verdict": "remove",
     "seen": [
      "tm"
     ]
    },
    {
     "season": "17/18",
-    "verdict": "conflict",
+    "verdict": "remove",
     "seen": []
    }
   ],
@@ -7492,13 +7504,46 @@
  },
  {
   "club": "maccabi-ta",
-  "he": "שחר פיבן",
+  "he": "שגיב יחזקאל",
   "target": true,
   "spells": [
    [
-    2016,
-    2016
+    2017,
+    2017
    ],
+   [
+    2019,
+    2019
+   ],
+   [
+    2025,
+    2026
+   ]
+  ],
+  "loans": [
+   {
+    "season": "17/18",
+    "verdict": "remove",
+    "seen": []
+   }
+  ],
+  "to": [
+   {
+    "years": "2017–2018",
+    "club": "עירוני קריית שמונה",
+    "loan": false
+   }
+  ],
+  "titles": {
+   "now": 3,
+   "withLoans": 3
+  }
+ },
+ {
+  "club": "maccabi-ta",
+  "he": "שחר פיבן",
+  "target": true,
+  "spells": [
    [
     2019,
     2023
@@ -7553,43 +7598,6 @@
    {
     "years": "2018–2023",
     "club": "מ.ס. אשדוד",
-    "loan": false
-   }
-  ],
-  "titles": {
-   "now": 3,
-   "withLoans": 3
-  }
- },
- {
-  "club": "maccabi-ta",
-  "he": "שגיב יחזקאל",
-  "target": true,
-  "spells": [
-   [
-    2017,
-    2017
-   ],
-   [
-    2019,
-    2019
-   ],
-   [
-    2025,
-    2026
-   ]
-  ],
-  "loans": [
-   {
-    "season": "17/18",
-    "verdict": "remove",
-    "seen": []
-   }
-  ],
-  "to": [
-   {
-    "years": "2017–2018",
-    "club": "עירוני קריית שמונה",
     "loan": false
    }
   ],

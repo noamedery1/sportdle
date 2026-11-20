@@ -551,10 +551,10 @@
     ],
     [
      1991,
-     1992
+     1991
     ]
    ],
-   "seasons": 10,
+   "seasons": 9,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -1207,6 +1207,10 @@
    "spells": [
     [
      1994,
+     1994
+    ],
+    [
+     1996,
      1996
     ],
     [
@@ -1214,8 +1218,8 @@
      1999
     ]
    ],
-   "seasons": 5,
-   "titles": 3,
+   "seasons": 4,
+   "titles": 2,
    "target": true,
    "aliases": [
     "Alon Mizrahi"

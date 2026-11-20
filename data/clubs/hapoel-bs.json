@@ -5985,29 +5985,6 @@
    "target": false
   },
   {
-   "he": "אור דדיה",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1997,
-   "spells": [
-    [
-     2018,
-     2018
-    ],
-    [
-     2020,
-     2026
-    ]
-   ],
-   "seasons": 8,
-   "titles": 5,
-   "target": true,
-   "aliases": [
-    "אור דדיה",
-    "Or Dadya"
-   ]
-  },
-  {
    "he": "אורן ביטון",
    "pos": "DF",
    "nat": "IL",
@@ -6516,6 +6493,25 @@
    "target": false,
    "aliases": [
     "אדיר פיטוסי"
+   ]
+  },
+  {
+   "he": "אור דדיה",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2020,
+     2026
+    ]
+   ],
+   "seasons": 7,
+   "titles": 4,
+   "target": true,
+   "aliases": [
+    "אור דדיה",
+    "Or Dadya"
    ]
   },
   {

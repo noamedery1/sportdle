@@ -1215,14 +1215,14 @@
    "spells": [
     [
      1994,
-     2001
+     2000
     ],
     [
      2003,
      2004
     ]
    ],
-   "seasons": 10,
+   "seasons": 9,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -2473,10 +2473,10 @@
     ],
     [
      2011,
-     2013
+     2012
     ]
    ],
-   "seasons": 7,
+   "seasons": 6,
    "titles": 3,
    "target": true,
    "aliases": [
