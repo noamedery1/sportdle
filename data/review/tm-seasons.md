@@ -85,3 +85,5 @@
 - maccabi-haifa | בוני גינצבורג | 98/99@H. Ashkelon
 - maccabi-haifa | אופיר קופל | 99/00@H. Kfar Saba
 - maccabi-haifa | שאדי שעבאן | 12/13@Without Club/Hapoel Bnei Lod
+
+**עדכון 20/11:** ששת השחקנים נבדקו ותוקנו (spells ידני). בכולם שורת ויקיפדיה הייתה מוזזת או שגויה, והעונות האמיתיות תואמות לסגלי ההתאחדות.

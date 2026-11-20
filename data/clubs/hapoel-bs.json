@@ -6445,6 +6445,24 @@
    ]
   },
   {
+   "he": "קווין טאפוקו",
+   "pos": "MF",
+   "nat": "FR",
+   "born": 1994,
+   "spells": [
+    [
+     2019,
+     2019
+    ]
+   ],
+   "seasons": 1,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "Kevin Tapoko"
+   ]
+  },
+  {
    "he": "קווין טפוקו",
    "pos": "MF",
    "nat": "FR",
@@ -6813,24 +6831,6 @@
    "target": true,
    "aliases": [
     "עילאי טרוסט"
-   ]
-  },
-  {
-   "he": "קווין טאפוקו",
-   "pos": "MF",
-   "nat": "FR",
-   "born": 1994,
-   "spells": [
-    [
-     2020,
-     2021
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "Kevin Tapoko"
    ]
   },
   {
