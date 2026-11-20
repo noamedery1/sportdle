@@ -5196,9 +5196,13 @@
     [
      2012,
      2015
+    ],
+    [
+     2017,
+     2017
     ]
    ],
-   "seasons": 4,
+   "seasons": 5,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -5731,6 +5735,26 @@
    ]
   },
   {
+   "he": "תומר חנצ'ינסקי",
+   "pos": "GK",
+   "nat": "CA",
+   "born": 1984,
+   "spells": [
+    [
+     2013,
+     2014
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "תומר חנצינסקי",
+    "Tomer Chencinski",
+    "תומר חנצ'ינסקי"
+   ]
+  },
+  {
    "he": "דן איינבינדר",
    "pos": "MF",
    "nat": "IL",
@@ -5963,26 +5987,6 @@
    ]
   },
   {
-   "he": "תומר חנצ'ינסקי",
-   "pos": "GK",
-   "nat": "CA",
-   "born": 1984,
-   "spells": [
-    [
-     2014,
-     2014
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "תומר חנצינסקי",
-    "Tomer Chencinski",
-    "תומר חנצ'ינסקי"
-   ]
-  },
-  {
    "he": "בן רייכרט",
    "pos": "MF",
    "nat": "IL",
@@ -6028,10 +6032,10 @@
     ],
     [
      2023,
-     2026
+     2027
     ]
    ],
-   "seasons": 11,
+   "seasons": 12,
    "titles": 8,
    "target": true,
    "aliases": [
@@ -6159,11 +6163,11 @@
    "spells": [
     [
      2016,
-     2019
+     2018
     ]
    ],
-   "seasons": 4,
-   "titles": 1,
+   "seasons": 3,
+   "titles": 0,
    "target": false
   },
   {
@@ -7906,10 +7910,10 @@
     ],
     [
      2024,
-     2026
+     2027
     ]
    ],
-   "seasons": 4,
+   "seasons": 5,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -8120,25 +8124,6 @@
    ]
   },
   {
-   "he": "שון עדרי",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 2003,
-   "spells": [
-    [
-     2023,
-     2023
-    ],
-    [
-     2025,
-     2025
-    ]
-   ],
-   "seasons": 2,
-   "titles": 1,
-   "target": false
-  },
-  {
    "he": "תומר אלון",
    "pos": "GK",
    "nat": "IL",
@@ -8238,10 +8223,10 @@
    "spells": [
     [
      2024,
-     2026
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -8374,10 +8359,10 @@
    "spells": [
     [
      2024,
-     2026
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -8447,10 +8432,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -8466,10 +8451,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -8763,16 +8748,31 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 2,
    "target": true,
    "aliases": [
     "רז שלמה",
     "Raz Shlomo"
    ]
+  },
+  {
+   "he": "שון עדרי",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 2003,
+   "spells": [
+    [
+     2025,
+     2025
+    ]
+   ],
+   "seasons": 1,
+   "titles": 1,
+   "target": false
   },
   {
    "he": "איתי בן חמו",
@@ -8782,10 +8782,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -8800,10 +8800,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -8857,10 +8857,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [
@@ -9003,10 +9003,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 1,
    "target": false,
    "aliases": [

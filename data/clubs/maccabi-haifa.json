@@ -2300,14 +2300,10 @@
     [
      2002,
      2002
-    ],
-    [
-     2006,
-     2006
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": false,
    "aliases": [
     "Islam Cana'an"
@@ -5308,14 +5304,10 @@
     [
      2014,
      2014
-    ],
-    [
-     2016,
-     2016
     ]
    ],
-   "seasons": 2,
-   "titles": 1,
+   "seasons": 1,
+   "titles": 0,
    "target": false
   },
   {
@@ -6304,6 +6296,30 @@
    ]
   },
   {
+   "he": "שי בן דוד",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1997,
+   "spells": [
+    [
+     2017,
+     2018
+    ],
+    [
+     2020,
+     2020
+    ]
+   ],
+   "seasons": 3,
+   "titles": 0,
+   "target": true,
+   "aliases": [
+    "שי בן-דוד",
+    "Shay Ben David",
+    "שי בן דוד"
+   ]
+  },
+  {
    "he": "אופיר מזרחי",
    "pos": "FW",
    "nat": "IL",
@@ -6611,30 +6627,6 @@
    "aliases": [
     "רמי גרשון",
     "Rami Gershon"
-   ]
-  },
-  {
-   "he": "שי בן דוד",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1997,
-   "spells": [
-    [
-     2018,
-     2018
-    ],
-    [
-     2020,
-     2020
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": true,
-   "aliases": [
-    "שי בן-דוד",
-    "Shay Ben David",
-    "שי בן דוד"
    ]
   },
   {
@@ -7345,10 +7337,10 @@
     ],
     [
      2023,
-     2026
+     2027
     ]
    ],
-   "seasons": 5,
+   "seasons": 6,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -7695,10 +7687,10 @@
    "spells": [
     [
      2022,
-     2026
+     2027
     ]
    ],
-   "seasons": 5,
+   "seasons": 6,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -7850,10 +7842,10 @@
     ],
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -8203,13 +8195,9 @@
     [
      2024,
      2024
-    ],
-    [
-     2026,
-     2026
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -8266,10 +8254,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -8668,10 +8656,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false,
    "aliases": [

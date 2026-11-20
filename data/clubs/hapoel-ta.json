@@ -4349,11 +4349,11 @@
    "spells": [
     [
      2009,
-     2009
+     2010
     ]
    ],
-   "seasons": 1,
-   "titles": 0,
+   "seasons": 2,
+   "titles": 2,
    "target": true,
    "aliases": [
     "סמואל יבואה",
@@ -6725,10 +6725,10 @@
     ],
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 6,
+   "seasons": 7,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -7374,13 +7374,9 @@
     [
      2018,
      2018
-    ],
-    [
-     2020,
-     2020
     ]
    ],
-   "seasons": 2,
+   "seasons": 1,
    "titles": 0,
    "target": false
   },
@@ -7850,9 +7846,13 @@
     [
      2019,
      2021
+    ],
+    [
+     2027,
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -8588,10 +8588,10 @@
     ],
     [
      2023,
-     2024
+     2023
     ]
    ],
-   "seasons": 3,
+   "seasons": 2,
    "titles": 0,
    "target": false
   },
@@ -8660,10 +8660,10 @@
    "spells": [
     [
      2022,
-     2026
+     2027
     ]
    ],
-   "seasons": 5,
+   "seasons": 6,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -9692,10 +9692,10 @@
    "spells": [
     [
      2024,
-     2026
+     2027
     ]
    ],
-   "seasons": 3,
+   "seasons": 4,
    "titles": 0,
    "target": false,
    "aliases": [
@@ -10024,10 +10024,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -10080,10 +10080,10 @@
    "spells": [
     [
      2025,
-     2026
+     2027
     ]
    ],
-   "seasons": 2,
+   "seasons": 3,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -10172,10 +10172,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false,
    "aliases": [
@@ -10191,10 +10191,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": false,
    "aliases": [
@@ -10447,10 +10447,10 @@
    "spells": [
     [
      2026,
-     2026
+     2027
     ]
    ],
-   "seasons": 1,
+   "seasons": 2,
    "titles": 0,
    "target": true,
    "aliases": [
