@@ -615,10 +615,14 @@
    "spells": [
     [
      1979,
+     1981
+    ],
+    [
+     1983,
      1984
     ]
    ],
-   "seasons": 6,
+   "seasons": 5,
    "titles": 1,
    "target": false
   },
@@ -796,11 +800,15 @@
    "spells": [
     [
      1983,
+     1984
+    ],
+    [
+     1987,
      1988
     ]
    ],
-   "seasons": 6,
-   "titles": 3,
+   "seasons": 4,
+   "titles": 1,
    "target": false
   },
   {
@@ -890,11 +898,15 @@
    "spells": [
     [
      1987,
+     1994
+    ],
+    [
+     2000,
      2000
     ]
    ],
-   "seasons": 14,
-   "titles": 5,
+   "seasons": 9,
+   "titles": 3,
    "target": true
   },
   {
@@ -972,10 +984,14 @@
    "spells": [
     [
      1989,
+     1999
+    ],
+    [
+     2001,
      2003
     ]
    ],
-   "seasons": 15,
+   "seasons": 14,
    "titles": 4,
    "target": true
   },
@@ -1153,11 +1169,19 @@
    "spells": [
     [
      1992,
+     1992
+    ],
+    [
+     1995,
+     1996
+    ],
+    [
+     1998,
      1998
     ]
    ],
-   "seasons": 7,
-   "titles": 3,
+   "seasons": 4,
+   "titles": 1,
    "target": true
   },
   {
@@ -1292,11 +1316,19 @@
    "spells": [
     [
      1993,
+     1995
+    ],
+    [
+     1998,
+     1998
+    ],
+    [
+     2000,
      2002
     ]
    ],
-   "seasons": 10,
-   "titles": 3,
+   "seasons": 7,
+   "titles": 2,
    "target": true
   },
   {
@@ -2604,11 +2636,15 @@
    "spells": [
     [
      2004,
+     2007
+    ],
+    [
+     2009,
      2010
     ]
    ],
-   "seasons": 7,
-   "titles": 4,
+   "seasons": 6,
+   "titles": 2,
    "target": true
   },
   {
@@ -2968,11 +3004,15 @@
    "spells": [
     [
      2005,
+     2008
+    ],
+    [
+     2011,
      2014
     ]
    ],
-   "seasons": 10,
-   "titles": 4,
+   "seasons": 8,
+   "titles": 3,
    "target": true
   },
   {
@@ -3062,11 +3102,15 @@
    "spells": [
     [
      2006,
+     2007
+    ],
+    [
+     2010,
      2010
     ]
    ],
-   "seasons": 5,
-   "titles": 4,
+   "seasons": 3,
+   "titles": 1,
    "target": true
   },
   {
@@ -3122,6 +3166,10 @@
    "spells": [
     [
      2006,
+     2008
+    ],
+    [
+     2010,
      2011
     ],
     [
@@ -3129,8 +3177,8 @@
      2013
     ]
    ],
-   "seasons": 7,
-   "titles": 4,
+   "seasons": 6,
+   "titles": 3,
    "target": true
   },
   {
@@ -3231,6 +3279,10 @@
    "spells": [
     [
      2006,
+     2007
+    ],
+    [
+     2010,
      2013
     ],
     [
@@ -3238,8 +3290,8 @@
      2017
     ]
    ],
-   "seasons": 10,
-   "titles": 4,
+   "seasons": 8,
+   "titles": 1,
    "target": true
   },
   {
@@ -3460,11 +3512,15 @@
    "spells": [
     [
      2008,
+     2008
+    ],
+    [
+     2010,
      2013
     ]
    ],
-   "seasons": 6,
-   "titles": 3,
+   "seasons": 5,
+   "titles": 2,
    "target": true
   },
   {
@@ -3490,11 +3546,15 @@
    "spells": [
     [
      2008,
+     2008
+    ],
+    [
+     2010,
      2010
     ]
    ],
-   "seasons": 3,
-   "titles": 3,
+   "seasons": 2,
+   "titles": 2,
    "target": true
   },
   {
@@ -3550,10 +3610,14 @@
    "spells": [
     [
      2008,
+     2009
+    ],
+    [
+     2011,
      2011
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 3,
    "target": false
   },
@@ -3595,10 +3659,18 @@
    "spells": [
     [
      2008,
+     2009
+    ],
+    [
+     2011,
+     2013
+    ],
+    [
+     2015,
      2015
     ]
    ],
-   "seasons": 8,
+   "seasons": 6,
    "titles": 3,
    "target": true
   },
@@ -3727,10 +3799,14 @@
    "spells": [
     [
      2009,
+     2009
+    ],
+    [
+     2011,
      2013
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 1,
    "target": true
   },
@@ -4582,10 +4658,14 @@
    "spells": [
     [
      2014,
+     2014
+    ],
+    [
+     2018,
      2018
     ]
    ],
-   "seasons": 5,
+   "seasons": 2,
    "titles": 0,
    "target": true
   },
@@ -4665,10 +4745,14 @@
    "spells": [
     [
      2014,
+     2014
+    ],
+    [
+     2016,
      2017
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 0,
    "target": false
   },
@@ -4680,10 +4764,14 @@
    "spells": [
     [
      2014,
+     2014
+    ],
+    [
+     2016,
      2017
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 0,
    "target": true
   },
@@ -6298,10 +6386,14 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2022,
      2023
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 1,
    "target": true
   },
