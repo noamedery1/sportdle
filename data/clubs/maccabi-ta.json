@@ -2369,15 +2369,15 @@
    "spells": [
     [
      1999,
-     2000
+     2001
     ],
     [
      2010,
      2011
     ]
    ],
-   "seasons": 4,
-   "titles": 0,
+   "seasons": 5,
+   "titles": 1,
    "target": true,
    "aliases": [
     "רוני גפני",
@@ -2489,6 +2489,24 @@
    "target": false,
    "aliases": [
     "Felix Halfon"
+   ]
+  },
+  {
+   "he": "איל שן",
+   "pos": "MF",
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     2001,
+     2003
+    ]
+   ],
+   "seasons": 3,
+   "titles": 3,
+   "target": false,
+   "aliases": [
+    "איל שן"
    ]
   },
   {
@@ -2688,6 +2706,28 @@
    ]
   },
   {
+   "he": "טל בן חיים (1982)",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2002,
+     2004
+    ],
+    [
+     2016,
+     2018
+    ]
+   ],
+   "seasons": 6,
+   "titles": 2,
+   "target": true,
+   "aliases": [
+    "טל בן חיים"
+   ]
+  },
+  {
    "he": "סאלם אבו סיאם",
    "pos": "DF",
    "nat": "IL",
@@ -2703,6 +2743,28 @@
    "target": true,
    "aliases": [
     "סאלם אבו סיאם"
+   ]
+  },
+  {
+   "he": "קובי מוסה",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2002,
+     2005
+    ],
+    [
+     2007,
+     2008
+    ]
+   ],
+   "seasons": 6,
+   "titles": 3,
+   "target": true,
+   "aliases": [
+    "קובי מוסה"
    ]
   },
   {
@@ -2758,24 +2820,6 @@
    "target": false,
    "aliases": [
     "אורן רותם"
-   ]
-  },
-  {
-   "he": "איל שן",
-   "pos": "MF",
-   "nat": "IL",
-   "born": 1980,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 1,
-   "target": false,
-   "aliases": [
-    "איל שן"
    ]
   },
   {
@@ -2887,28 +2931,6 @@
    "target": false,
    "aliases": [
     "דן משען"
-   ]
-  },
-  {
-   "he": "טל בן חיים (1982)",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1982,
-   "spells": [
-    [
-     2003,
-     2004
-    ],
-    [
-     2016,
-     2018
-    ]
-   ],
-   "seasons": 5,
-   "titles": 1,
-   "target": true,
-   "aliases": [
-    "טל בן חיים"
    ]
   },
   {
@@ -3036,28 +3058,6 @@
    "target": false,
    "aliases": [
     "פרוחננקובס אנדרס"
-   ]
-  },
-  {
-   "he": "קובי מוסה",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1982,
-   "spells": [
-    [
-     2003,
-     2005
-    ],
-    [
-     2007,
-     2008
-    ]
-   ],
-   "seasons": 5,
-   "titles": 2,
-   "target": true,
-   "aliases": [
-    "קובי מוסה"
    ]
   },
   {

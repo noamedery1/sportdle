@@ -1794,6 +1794,28 @@
    ]
   },
   {
+   "he": "אבי אזולאי",
+   "pos": null,
+   "nat": "IL",
+   "born": null,
+   "spells": [
+    [
+     1999,
+     1999
+    ],
+    [
+     2003,
+     2004
+    ]
+   ],
+   "seasons": 3,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "אבי אזולאי"
+   ]
+  },
+  {
    "he": "אדי אלקיים",
    "pos": "DF",
    "nat": "IL",
@@ -2011,6 +2033,28 @@
    "target": false,
    "aliases": [
     "Kobi Shalo"
+   ]
+  },
+  {
+   "he": "אביב וולנרמן",
+   "pos": null,
+   "nat": "IL",
+   "born": 1980,
+   "spells": [
+    [
+     2000,
+     2000
+    ],
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 2,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "אביב וולנרמן"
    ]
   },
   {
@@ -2327,24 +2371,6 @@
    ]
   },
   {
-   "he": "אבי אזולאי",
-   "pos": null,
-   "nat": "IL",
-   "born": null,
-   "spells": [
-    [
-     2003,
-     2004
-    ]
-   ],
-   "seasons": 2,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אבי אזולאי"
-   ]
-  },
-  {
    "he": "אבי קנפו",
    "pos": null,
    "nat": "IL",
@@ -2382,24 +2408,6 @@
    "target": false,
    "aliases": [
     "אביב אלחדד"
-   ]
-  },
-  {
-   "he": "אביב וולנרמן",
-   "pos": null,
-   "nat": "IL",
-   "born": 1980,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "אביב וולנרמן"
    ]
   },
   {

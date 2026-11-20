@@ -2200,14 +2200,32 @@
    "spells": [
     [
      2001,
-     2001
+     2002
     ]
    ],
-   "seasons": 1,
-   "titles": 1,
+   "seasons": 2,
+   "titles": 2,
    "target": false,
    "aliases": [
     "יואב זיו"
+   ]
+  },
+  {
+   "he": "כאמל גבארין",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1981,
+   "spells": [
+    [
+     2001,
+     2003
+    ]
+   ],
+   "seasons": 3,
+   "titles": 2,
+   "target": false,
+   "aliases": [
+    "כאמל ג'בארין"
    ]
   },
   {
@@ -2244,6 +2262,28 @@
    "target": true,
    "aliases": [
     "Nenad Pralija"
+   ]
+  },
+  {
+   "he": "שי דהן",
+   "pos": null,
+   "nat": "IL",
+   "born": 1981,
+   "spells": [
+    [
+     2001,
+     2001
+    ],
+    [
+     2003,
+     2003
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "שי דהן"
    ]
   },
   {
@@ -2350,6 +2390,24 @@
    "aliases": [
     "Dudu Aouate",
     "דודו אואט"
+   ]
+  },
+  {
+   "he": "יוסי נגר",
+   "pos": "DF",
+   "nat": "IL",
+   "born": 1982,
+   "spells": [
+    [
+     2002,
+     2003
+    ]
+   ],
+   "seasons": 2,
+   "titles": 1,
+   "target": false,
+   "aliases": [
+    "יוסי נגר"
    ]
   },
   {
@@ -2571,42 +2629,6 @@
    ]
   },
   {
-   "he": "יוסי נגר",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1982,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "יוסי נגר"
-   ]
-  },
-  {
-   "he": "כאמל גבארין",
-   "pos": "DF",
-   "nat": "IL",
-   "born": 1981,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "כאמל ג'בארין"
-   ]
-  },
-  {
    "he": "כליל כנעני",
    "pos": null,
    "nat": "IL",
@@ -2768,24 +2790,6 @@
    "aliases": [
     "שי בירוק",
     "Shai Biruk"
-   ]
-  },
-  {
-   "he": "שי דהן",
-   "pos": null,
-   "nat": "IL",
-   "born": 1981,
-   "spells": [
-    [
-     2003,
-     2003
-    ]
-   ],
-   "seasons": 1,
-   "titles": 0,
-   "target": false,
-   "aliases": [
-    "שי דהן"
    ]
   },
   {
