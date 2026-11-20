@@ -751,11 +751,15 @@
    "spells": [
     [
      1973,
+     1973
+    ],
+    [
+     1978,
      1983
     ]
    ],
-   "seasons": 11,
-   "titles": 3,
+   "seasons": 7,
+   "titles": 1,
    "target": true,
    "aliases": [
     "Moshe Schweitzer"
@@ -769,10 +773,14 @@
    "spells": [
     [
      1974,
+     1984
+    ],
+    [
+     1986,
      1989
     ]
    ],
-   "seasons": 16,
+   "seasons": 15,
    "titles": 5,
    "target": true,
    "aliases": [
@@ -907,10 +915,14 @@
    "spells": [
     [
      1978,
+     1984
+    ],
+    [
+     1987,
      1991
     ]
    ],
-   "seasons": 14,
+   "seasons": 12,
    "titles": 3,
    "target": false
   },
@@ -973,10 +985,14 @@
    "spells": [
     [
      1982,
+     1989
+    ],
+    [
+     1991,
      1999
     ]
    ],
-   "seasons": 18,
+   "seasons": 17,
    "titles": 7,
    "target": true,
    "aliases": [
@@ -1136,10 +1152,14 @@
    "spells": [
     [
      1984,
+     1984
+    ],
+    [
+     1986,
      1988
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 2,
    "target": false
   },
@@ -1448,10 +1468,14 @@
    "spells": [
     [
      1990,
+     1990
+    ],
+    [
+     1992,
      1993
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 1,
    "target": false
   },
@@ -2500,11 +2524,11 @@
    "spells": [
     [
      2001,
-     2002
+     2001
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": false
   },
   {
@@ -2589,10 +2613,14 @@
    "spells": [
     [
      2001,
+     2005
+    ],
+    [
+     2007,
      2008
     ]
    ],
-   "seasons": 8,
+   "seasons": 7,
    "titles": 4,
    "target": false
   },
@@ -3140,10 +3168,18 @@
    "spells": [
     [
      2004,
+     2006
+    ],
+    [
+     2009,
+     2009
+    ],
+    [
+     2012,
      2013
     ]
    ],
-   "seasons": 10,
+   "seasons": 6,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -3214,11 +3250,15 @@
    "spells": [
     [
      2004,
+     2004
+    ],
+    [
+     2006,
      2007
     ]
    ],
-   "seasons": 4,
-   "titles": 1,
+   "seasons": 3,
+   "titles": 0,
    "target": true,
    "aliases": [
     "רועי דיין",
@@ -3328,10 +3368,14 @@
    "spells": [
     [
      2005,
+     2005
+    ],
+    [
+     2009,
      2009
     ]
    ],
-   "seasons": 5,
+   "seasons": 2,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -3382,10 +3426,14 @@
    "spells": [
     [
      2005,
+     2006
+    ],
+    [
+     2013,
      2013
     ]
    ],
-   "seasons": 9,
+   "seasons": 3,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -4002,6 +4050,10 @@
    "spells": [
     [
      2007,
+     2007
+    ],
+    [
+     2009,
      2010
     ],
     [
@@ -4009,7 +4061,7 @@
      2012
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 0,
    "target": true,
    "aliases": [
@@ -4304,10 +4356,18 @@
    "spells": [
     [
      2008,
+     2008
+    ],
+    [
+     2010,
+     2010
+    ],
+    [
+     2013,
      2013
     ]
    ],
-   "seasons": 6,
+   "seasons": 3,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -4695,11 +4755,15 @@
    "spells": [
     [
      2010,
+     2013
+    ],
+    [
+     2017,
      2017
     ]
    ],
-   "seasons": 8,
-   "titles": 4,
+   "seasons": 5,
+   "titles": 1,
    "target": true,
    "aliases": [
     "בן בן יאיר"
@@ -4804,11 +4868,11 @@
    "spells": [
     [
      2010,
-     2016
+     2013
     ]
    ],
-   "seasons": 7,
-   "titles": 4,
+   "seasons": 4,
+   "titles": 1,
    "target": true,
    "aliases": [
     "ריף פרץ",
@@ -4846,11 +4910,15 @@
    "spells": [
     [
      2011,
+     2012
+    ],
+    [
+     2014,
      2018
     ]
    ],
-   "seasons": 8,
-   "titles": 4,
+   "seasons": 7,
+   "titles": 3,
    "target": true,
    "aliases": [
     "ברק יצחקי",
@@ -5011,11 +5079,15 @@
    "spells": [
     [
      2011,
+     2014
+    ],
+    [
+     2018,
      2018
     ]
    ],
-   "seasons": 8,
-   "titles": 4,
+   "seasons": 5,
+   "titles": 2,
    "target": true,
    "aliases": [
     "משה לוגסי",
@@ -5216,11 +5288,15 @@
    "spells": [
     [
      2012,
+     2012
+    ],
+    [
+     2014,
      2014
     ]
    ],
-   "seasons": 3,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": true,
    "aliases": [
     "יוסי גינזבורג"
@@ -5406,10 +5482,14 @@
    "spells": [
     [
      2013,
+     2015
+    ],
+    [
+     2017,
      2017
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -5476,11 +5556,15 @@
    "spells": [
     [
      2013,
+     2014
+    ],
+    [
+     2018,
      2018
     ]
    ],
-   "seasons": 6,
-   "titles": 4,
+   "seasons": 3,
+   "titles": 2,
    "target": true,
    "aliases": [
     "דור ג'אן",
@@ -5551,11 +5635,11 @@
    "spells": [
     [
      2013,
-     2015
+     2013
     ]
    ],
-   "seasons": 3,
-   "titles": 4,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "חסן אבו זייד",
@@ -5640,11 +5724,15 @@
    "spells": [
     [
      2013,
+     2013
+    ],
+    [
+     2019,
      2021
     ]
    ],
-   "seasons": 9,
-   "titles": 7,
+   "seasons": 4,
+   "titles": 4,
    "target": true,
    "aliases": [
     "Ruslan Barsky"
@@ -5908,11 +5996,11 @@
    "spells": [
     [
      2014,
-     2015
+     2014
     ]
    ],
-   "seasons": 2,
-   "titles": 3,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "תומר חנצינסקי",
@@ -6058,10 +6146,14 @@
    "spells": [
     [
      2015,
+     2015
+    ],
+    [
+     2018,
      2018
     ]
    ],
-   "seasons": 4,
+   "seasons": 2,
    "titles": 2,
    "target": false
   },
@@ -6163,10 +6255,14 @@
    "spells": [
     [
      2016,
+     2017
+    ],
+    [
+     2019,
      2019
     ]
    ],
-   "seasons": 4,
+   "seasons": 3,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -6200,6 +6296,10 @@
    "spells": [
     [
      2016,
+     2016
+    ],
+    [
+     2018,
      2018
     ],
     [
@@ -6207,7 +6307,7 @@
      2025
     ]
    ],
-   "seasons": 7,
+   "seasons": 6,
    "titles": 2,
    "target": true,
    "aliases": [
@@ -6302,6 +6402,10 @@
    "spells": [
     [
      2016,
+     2016
+    ],
+    [
+     2019,
      2021
     ],
     [
@@ -6309,7 +6413,7 @@
      2024
     ]
    ],
-   "seasons": 8,
+   "seasons": 6,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -6325,10 +6429,14 @@
    "spells": [
     [
      2016,
+     2016
+    ],
+    [
+     2019,
      2019
     ]
    ],
-   "seasons": 4,
+   "seasons": 2,
    "titles": 1,
    "target": true,
    "aliases": [
@@ -6343,10 +6451,14 @@
    "spells": [
     [
      2016,
+     2016
+    ],
+    [
+     2019,
      2024
     ]
    ],
-   "seasons": 9,
+   "seasons": 7,
    "titles": 4,
    "target": true,
    "aliases": [
@@ -6415,10 +6527,14 @@
    "spells": [
     [
      2016,
+     2016
+    ],
+    [
+     2019,
      2023
     ]
    ],
-   "seasons": 8,
+   "seasons": 6,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -6729,6 +6845,10 @@
    "spells": [
     [
      2017,
+     2017
+    ],
+    [
+     2019,
      2019
     ],
     [
@@ -6736,7 +6856,7 @@
      2026
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -6771,11 +6891,15 @@
    "spells": [
     [
      2018,
+     2018
+    ],
+    [
+     2020,
      2023
     ]
    ],
-   "seasons": 6,
-   "titles": 3,
+   "seasons": 5,
+   "titles": 2,
    "target": true,
    "aliases": [
     "אילון אלמוג",
@@ -7017,11 +7141,15 @@
    "spells": [
     [
      2018,
+     2018
+    ],
+    [
+     2020,
      2020
     ]
    ],
-   "seasons": 3,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": true,
    "aliases": [
     "עומר כץ",
@@ -7187,11 +7315,15 @@
    "spells": [
     [
      2019,
+     2019
+    ],
+    [
+     2022,
      2022
     ]
    ],
-   "seasons": 4,
-   "titles": 3,
+   "seasons": 2,
+   "titles": 1,
    "target": false
   },
   {
@@ -7222,11 +7354,15 @@
    "spells": [
     [
      2019,
+     2019
+    ],
+    [
+     2021,
      2021
     ]
    ],
-   "seasons": 3,
-   "titles": 3,
+   "seasons": 2,
+   "titles": 2,
    "target": true,
    "aliases": [
     "תומר אלטמן"
@@ -7284,11 +7420,15 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2023,
      2023
     ]
    ],
-   "seasons": 4,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": false
   },
   {
@@ -7334,11 +7474,15 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2022,
      2022
     ]
    ],
-   "seasons": 3,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": false
   },
   {
@@ -7349,11 +7493,15 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2026,
      2026
     ]
    ],
-   "seasons": 7,
-   "titles": 5,
+   "seasons": 2,
+   "titles": 2,
    "target": true,
    "aliases": [
     "Nadav Niddam"
@@ -7367,11 +7515,19 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2022,
+     2022
+    ],
+    [
+     2024,
      2026
     ]
    ],
-   "seasons": 7,
-   "titles": 5,
+   "seasons": 5,
+   "titles": 4,
    "target": true,
    "aliases": [
     "עידו שחר",
@@ -7408,11 +7564,15 @@
    "spells": [
     [
      2020,
+     2020
+    ],
+    [
+     2024,
      2024
     ]
    ],
-   "seasons": 5,
-   "titles": 3,
+   "seasons": 2,
+   "titles": 2,
    "target": false
   },
   {
@@ -7494,10 +7654,14 @@
    "spells": [
     [
      2021,
+     2021
+    ],
+    [
+     2023,
      2025
     ]
    ],
-   "seasons": 5,
+   "seasons": 4,
    "titles": 3,
    "target": true,
    "aliases": [
@@ -7666,11 +7830,15 @@
    "spells": [
     [
      2022,
+     2022
+    ],
+    [
+     2025,
      2025
     ]
    ],
-   "seasons": 4,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": false
   },
   {
@@ -7681,11 +7849,15 @@
    "spells": [
     [
      2022,
+     2022
+    ],
+    [
+     2026,
      2026
     ]
    ],
-   "seasons": 5,
-   "titles": 3,
+   "seasons": 2,
+   "titles": 1,
    "target": true,
    "aliases": [
     "איתי בן חמו"
@@ -7826,11 +7998,11 @@
    "spells": [
     [
      2022,
-     2026
+     2022
     ]
    ],
-   "seasons": 5,
-   "titles": 3,
+   "seasons": 1,
+   "titles": 0,
    "target": false
   },
   {
@@ -7860,11 +8032,11 @@
    "spells": [
     [
      2023,
-     2026
+     2023
     ]
    ],
-   "seasons": 4,
-   "titles": 3,
+   "seasons": 1,
+   "titles": 0,
    "target": true,
    "aliases": [
     "Orel Baye"
@@ -8009,11 +8181,15 @@
    "spells": [
     [
      2023,
+     2023
+    ],
+    [
+     2025,
      2025
     ]
    ],
-   "seasons": 3,
-   "titles": 2,
+   "seasons": 2,
+   "titles": 1,
    "target": false
   },
   {
@@ -8150,11 +8326,11 @@
    "spells": [
     [
      2024,
-     2026
+     2024
     ]
    ],
-   "seasons": 3,
-   "titles": 3,
+   "seasons": 1,
+   "titles": 1,
    "target": false
   },
   {
@@ -8363,11 +8539,11 @@
    "spells": [
     [
      2025,
-     2026
+     2025
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": false
   },
   {
@@ -8396,11 +8572,11 @@
    "spells": [
     [
      2025,
-     2026
+     2025
     ]
    ],
-   "seasons": 2,
-   "titles": 2,
+   "seasons": 1,
+   "titles": 1,
    "target": true,
    "aliases": [
     "הנרי אדו",

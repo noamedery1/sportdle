@@ -800,6 +800,13 @@ async function scrapeIfaPlayers(clubList, page, thr) {
    חץ ← לפני שם מועדון הוא השאלה. השאלה **אל** המועדון שלנו היא
    עונה לכל דבר; השאלה ממנו החוצה רשומה על המועדון האחר ולכן
    נופלת מעצמה בסינון.
+
+   **אבל עונות ההשאלה החוצה נבלעות בשורה שלנו** (נועם 20/11, איתן
+   טיבי): "2006–2010 בית"ר" ואחריה "2007–2008 ← הפועל רעננה",
+   "2008–2009 ← הכח רמת גן". השורה שלנו לבדה נותנת ארבע עונות, ושתי
+   עונות ההשאלה היו בדיוק עונות התארים — 4 תארים במקום 1. לכן נשמר
+   גם `away`: עונות שבהן שורה של מועדון **אחר** (שנים מלאות, לא שנה
+   בודדת) יושבת בתוך התקופה שלנו. enrich.mjs מוריד אותן.
    ============================================================ */
 const SPLIT_ROWS = /\{\{\s*ש\s*\}\}|<\s*br\s*\/?\s*>/i;
 
@@ -868,7 +875,8 @@ async function scrapeWikiCareer(club) {
       if (p.missing) continue;
       const wt = p.revisions?.[0]?.slots?.main?.content;
       if (!wt || !/\{\{\s*אישיות כדורגל/.test(wt)) { noBox++; continue; }
-      const rows = careerRows(wt).filter(r => isOurs(r.club));
+      const all = careerRows(wt);
+      const rows = all.filter(r => isOurs(r.club));
       if (!rows.length) continue;
       const spells = [], raw = [];
       let ambiguous = false;
@@ -882,10 +890,27 @@ async function scrapeWikiCareer(club) {
       if (!spells.length) continue;
       const years = new Set();
       for (const [a, b] of spells) for (let y = a; y <= b; y++) years.add(y);
+      /* השאלות/מעברים בתוך התקופה שלנו — רק שורות של שנים מלאות */
+      /* עונת קצה של השורה שלנו יכולה להיות מעבר באמצע עונה (חצי פה, חצי
+         שם) — נחשבת "בחוץ" רק כשהשורה האחרת מסומנת השאלה (←). */
+      const away = new Set(), awayRows = [];
+      for (const r of all) {
+        if (isOurs(r.club)) continue;
+        const got = rowSpell(r.years, openEnd);
+        if (!got || got.ambiguous) continue;
+        const loan = /^\s*[←→]/.test(r.club) || /השאלה/.test(r.club);
+        const ys = [];
+        for (let y = got.spell[0]; y <= got.spell[1]; y++)
+          if (years.has(y) && (loan || spells.some(([a, b]) => y > a && y < b))) ys.push(y);
+        if (!ys.length) continue;
+        ys.forEach(y => away.add(y));
+        awayRows.push({ years: r.years, club: r.club.replace(/^\s*[←→]\s*/, ""), loan });
+      }
       details.push({
         title: p.title, name: stripParen(p.title),
         spells: toSpells([...years]), years: [...years].sort((a, b) => a - b),
-        ambiguous, rows: raw
+        ambiguous, rows: raw,
+        ...(away.size ? { away: [...away].sort((a, b) => a - b), awayRows } : {})
       });
       withRows++;
     }

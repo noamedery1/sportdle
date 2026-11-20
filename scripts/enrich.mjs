@@ -11,6 +11,7 @@
 import { existsSync } from "node:fs";
 import { plausible } from "./lib/translit.mjs";
 import { NAT_HE_TO_ISO } from "./lib/nat-he.mjs";
+import { seasonIndex, loanVerdicts } from "./lib/loans.mjs";
 import {
   parseArgs, pickClubs, readJSON, writeJSON, log, warn, die,
   normName, normLatin, shortName, stripParen, hasYearDisambig, toSpells, seasonsIn, countTitles, season, nameVariants
@@ -750,13 +751,26 @@ for (const club of clubs) {
       const flat = sp => (sp || []).flatMap(([a, b]) =>
         Array.from({ length: b - a + 1 }, (_, i) => a + i));
 
-      let touched = 0, added = 0, extra = 0;
+      /* עונות השאלה (scripts/lib/loans.mjs): מורידים לפני האיחוד, ולא
+         מוסיפים אותן מהשורה של ויקיפדיה. סתירה עם מקור עונתי — לאדם. */
+      const sIdx = seasonIndex(club.slug);
+      let touched = 0, added = 0, extra = 0, loanP = 0, loanY = 0;
       for (const p of players) {
         if (p.spellsManual) continue;
         const w = (p.wiki && byTitle.get(p.wiki)) || byName.get(normName(stripParen(p.he)));
         if (!w) continue;
+        const v = loanVerdicts(p.he, w.away, new Set([...flat(p.spells), ...flat(w.spells)]), sIdx);
+        const drop = new Set(v.filter(x => x.verdict === "remove").map(x => x.y));
+        for (const x of v) if (x.verdict === "conflict")
+          review.notes.push(`השאלה לפי ויקיפדיה אבל רשום אצלנו (${x.seen.join("+")}): "${p.he}" ${season(x.y)}`);
+        const kept = flat(p.spells).filter(y => !drop.has(y));
+        if (drop.size && kept.length) {
+          p.spells = toSpells(kept);
+          p.src.push("wikicareer:loans");
+          loanP++; loanY += drop.size;
+        }
         const mine = new Set(flat(p.spells));
-        const theirs = flat(w.spells);
+        const theirs = flat(w.spells).filter(y => !drop.has(y));
         const missing = theirs.filter(y => !mine.has(y));
         const mineOnly = [...mine].filter(y => !theirs.includes(y));
         if (mineOnly.length) {
@@ -769,6 +783,7 @@ for (const club of clubs) {
         p.src.push("wikicareer:spells");
         touched++; added += missing.length;
       }
+      if (loanP) log(`  עונות השאלה שהוסרו: ${loanP} שחקנים · ${loanY} עונות`);
       if (touched) {
         sources.push("wikicareer");
         log(`  עונות מטבלת הקריירה: ${touched} שחקנים · +${added} עונות · ${extra} עם עונות עודפות`);

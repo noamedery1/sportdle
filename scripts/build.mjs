@@ -445,8 +445,13 @@ for (const slug of order) {
     if (!g) die(`גריד ${slug} #${n + 1}: תנאי לא מוכר ב-${list[n]}`);
     for (const a of g.rows) for (const c of g.cols) {
       const ans = GR.answers(gIdx, a, c, g.home);
-      if (ans.length < 3 || !ans.some(GR.known))
+      if (ans.length < 3)
         die(`גריד ${slug} #${n + 1}: "${a.he} × ${c.he}" — ${ans.length} תשובות. תיקון נתונים שבר משבצת מתוזמנת.`);
+      /* "מוכר" (4+ עונות) הוא דרישת איכות של המחולל, לא של נכונות. לוח
+         שכבר תוזמן לא נשבר כשתיקון עונות (השאלות, 20/11) מוריד את
+         המוכר היחיד מתחת לרף — המשבצת עדיין פתירה. */
+      else if (!ans.some(GR.known))
+        warn(`גריד ${slug} #${n + 1}: "${a.he} × ${c.he}" — אין תשובה "מוכרת" אחרי תיקון נתונים (${ans.length} תשובות)`);
     }
   }
 }
